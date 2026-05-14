@@ -87,8 +87,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
       <span class="nav-logo-text">Elevate<span>AI</span></span>
     </a>
     <div class="nav-links">
-      <!-- Narrowed nav · 2 featured services. Legacy offer pages still live at direct URLs. -->
-      <!-- When the Cohort launches, add it here + enable the sticky announcement banner below. -->
+      <!-- Featured services in price order — lowest-friction entry first. -->
+      <a href="/brand-os">Brand OS</a>
       <a href="/build-your-brand">Build Your Brand</a>
       <a href="/seo-audit-landing-page">Search Visibility</a>
       <a href="/about">About</a>
@@ -106,6 +106,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   mobileNav.id = 'mobileNav';
   mobileNav.innerHTML = `
     <a href="/">Home</a>
+    <a href="/brand-os">Brand OS</a>
     <a href="/build-your-brand">Build Your Brand</a>
     <a href="/seo-audit-landing-page">Search Visibility</a>
     <a href="/about">About</a>
