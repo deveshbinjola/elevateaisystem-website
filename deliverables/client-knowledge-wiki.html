@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Client Knowledge Wiki — ElevateAI System</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 15L35 35L40 60L50 75L60 60L65 35Z' fill='%2300FF41'/></svg>">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dark: #00cc34;
+    --green-soft: rgba(0,255,65,0.09);
+    --navy: #0A0F1C;
+    --bg: #FAFAF8;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #ffffff;
+    --amber: #f59e0b;
+    --amber-soft: rgba(245,158,11,0.1);
+    --blue: #3b82f6;
+    --blue-soft: rgba(59,130,246,0.08);
+    --teal: #0d9488;
+    --teal-soft: rgba(13,148,136,0.09);
+    --violet: #8b5cf6;
+    --violet-soft: rgba(139,92,246,0.09);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--navy);
+    color: white;
+    padding: 64px 40px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,255,65,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cover-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .cover-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .cover-logo svg { width: 32px; height: 32px; }
+  .cover-logo span {
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+  .cover-logo span em { color: var(--green); font-style: normal; }
+  .cover-badge {
+    display: inline-block;
+    background: var(--green-soft);
+    border: 1px solid rgba(0,255,65,0.3);
+    color: var(--green);
+    font-family: 'Azeret Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .cover h1 span { color: var(--green); }
+  .cover .sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .client-name-box {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Azeret Mono', monospace;
+  }
+  .client-name-box strong {
+    color: var(--green);
+    font-size: 18px;
+    display: block;
+    margin-top: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+  }
+
+  /* ── BODY ── */
+  .body { max-width: 760px; margin: 0 auto; padding: 56px 32px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  /* ── CONCEPT VISUAL ── */
+  .concept-block {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .concept-block::before {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .vs-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .vs-col {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .vs-col.old { border-color: rgba(244,63,94,0.25); }
+  .vs-col.new { border-color: rgba(0,255,65,0.3); background: rgba(0,255,65,0.04); }
+  .vs-label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .vs-col.old .vs-label { color: rgba(244,63,94,0.8); }
+  .vs-col.new .vs-label { color: var(--green); }
+  .vs-col h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .vs-col p {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+  .vs-arrow {
+    font-size: 24px;
+    color: rgba(255,255,255,0.2);
+    font-weight: 300;
+  }
+  .concept-tagline {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+  .concept-tagline span { color: var(--green); }
+
+  /* ── LAYERS ── */
+  .layers-section { margin-bottom: 48px; }
+  .layer-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .layer {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: white;
+  }
+  .layer:last-child { border-bottom: none; }
+  .layer-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+  }
+  .layer-num::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 12px; bottom: 12px;
+    width: 1px;
+    background: var(--border);
+  }
+  .layer:nth-child(1) .layer-num { color: var(--muted); background: #f9fafb; }
+  .layer:nth-child(2) .layer-num { color: var(--blue); background: var(--blue-soft); }
+  .layer:nth-child(3) .layer-num { color: var(--teal); background: var(--teal-soft); }
+  .layer-body { padding: 20px 24px; }
+  .layer-body h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .layer-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .layer-body .examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .layer-body .ex-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  .layer:nth-child(1) .ex-tag { background: #f1f5f9; color: var(--muted); }
+  .layer:nth-child(2) .ex-tag { background: var(--blue-soft); color: #2563eb; }
+  .layer:nth-child(3) .ex-tag { background: var(--teal-soft); color: var(--teal); }
+
+  /* ── HOW IT WORKS ── */
+  .flow-section { margin-bottom: 48px; }
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .step-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .flow-step:nth-child(1) .step-icon { background: var(--green-soft); }
+  .flow-step:nth-child(2) .step-icon { background: var(--blue-soft); }
+  .flow-step:nth-child(3) .step-icon { background: var(--amber-soft); }
+  .flow-step:nth-child(4) .step-icon { background: var(--teal-soft); }
+  .step-body h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .step-body p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .step-body .detail {
+    margin-top: 8px;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 12px;
+    color: var(--green-dark);
+    background: var(--green-soft);
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  /* ── WHAT THE WIKI CONTAINS ── */
+  .wiki-pages { margin-bottom: 48px; }
+  .page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .page-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .page-card:hover {
+    box-shadow: 0 4px 20px rgba(10,15,28,0.07);
+    transform: translateY(-2px);
+  }
+  .page-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 12px;
+  }
+  .page-card:nth-child(1) .page-icon { background: var(--green-soft); }
+  .page-card:nth-child(2) .page-icon { background: var(--amber-soft); }
+  .page-card:nth-child(3) .page-icon { background: var(--blue-soft); }
+  .page-card:nth-child(4) .page-icon { background: var(--violet-soft); }
+  .page-card:nth-child(5) .page-icon { background: var(--teal-soft); }
+  .page-card:nth-child(6) .page-icon { background: rgba(244,63,94,0.08); }
+  .page-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .page-card p {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── COMPOUND CURVE ── */
+  .compound-card {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 48px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .compound-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,255,65,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .compound-card .inner { position: relative; z-index: 1; }
+  .compound-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .compound-card h3 span { color: var(--green); }
+  .compound-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .month-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .month-col {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .month-col.active { border-color: rgba(0,255,65,0.3); background: rgba(0,255,65,0.04); }
+  .month-label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 8px;
+  }
+  .month-col.active .month-label { color: var(--green); }
+  .month-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .month-col p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* ── HOW TO FEED IT ── */
+  .feeding-section { margin-bottom: 48px; }
+  .feeding-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media(max-width: 560px) { .feeding-grid { grid-template-columns: 1fr; } }
+  .feed-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .feed-icon {
+    font-size: 22px; flex-shrink: 0; margin-top: 2px;
+  }
+  .feed-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .feed-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── WHAT THIS REPLACES ── */
+  .replaces-section { margin-bottom: 48px; }
+  .replaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .replace-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .replace-card .old-way {
+    font-size: 12px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    margin-bottom: 6px;
+  }
+  .replace-card .new-way {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-dark);
+  }
+
+  /* ── QUOTE ── */
+  .quote-pull {
+    border-left: 3px solid var(--green);
+    padding: 16px 24px;
+    background: var(--green-soft);
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 48px;
+  }
+  .quote-pull blockquote {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .quote-pull cite {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* ── CTA ── */
+  .cta-block {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(0,255,65,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-block .inner { position: relative; z-index: 1; }
+  .cta-block h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .cta-block h3 span { color: var(--green); }
+  .cta-block p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .cta-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+  }
+  footer p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  footer a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 15L35 35L40 60L50 75L60 60L65 35Z" fill="#00FF41"/>
+      </svg>
+      <span>Elevate<em>AI</em> System</span>
+    </div>
+    <div class="cover-badge">Build Your Brand — Bonus Deliverable</div>
+    <h1>Your <span>Client Knowledge Wiki</span></h1>
+    <p class="sub">A compounding intelligence layer that learns your niche, captures your expertise, and gets smarter every single month — automatically.</p>
+    <div class="client-name-box">
+      Prepared for
+      <strong>[Client Name]</strong>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- THE IDEA -->
+  <div style="margin-bottom: 48px;">
+    <div class="section-label">What This Is</div>
+    <h2>You're Not Buying Tools.<br>You're Buying a Brain That Grows.</h2>
+    <p class="lead">Most AI tools retrieve information and forget it. Every session starts from zero. Every answer disappears into chat history. Your Client Knowledge Wiki changes that permanently — it's a living document system your AI reads, updates, and reasons from. The longer you use it, the smarter it gets.</p>
+  </div>
+
+  <!-- CONCEPT VISUAL -->
+  <div class="concept-block">
+    <div class="vs-row">
+      <div class="vs-col old">
+        <div class="vs-label">The Old Way</div>
+        <h4>Stateless AI</h4>
+        <p>You ask. It answers. You forget. Repeat forever. Knowledge disappears into chat history. Nothing compounds.</p>
+      </div>
+      <div class="vs-arrow">→</div>
+      <div class="vs-col new">
+        <div class="vs-label">Your Wiki</div>
+        <h4>Compiling Intelligence</h4>
+        <p>Every source you add improves the system. Every question builds the graph. Knowledge compounds automatically.</p>
+      </div>
+    </div>
+    <div class="concept-tagline">
+      <span>Retrieval</span> = temporary intelligence &nbsp;·&nbsp; <span>Compilation</span> = permanent intelligence
+    </div>
+  </div>
+
+  <!-- 3 LAYERS -->
+  <div class="layers-section">
+    <div class="section-label">How It's Built</div>
+    <h2>Three Layers. One Brain.</h2>
+    <p class="lead">Your wiki has three distinct layers that work together. We set up all three during Build Your Brand.</p>
+
+    <div class="layer-stack">
+      <div class="layer">
+        <div class="layer-num">01</div>
+        <div class="layer-body">
+          <h4>Raw Sources — Your Input Layer</h4>
+          <p>Everything you know, create, or experience gets added here. Immutable. Always the source of truth. You don't organise it — you just add to it.</p>
+          <div class="examples">
+            <span class="ex-tag">Voice notes</span>
+            <span class="ex-tag">Session transcripts</span>
+            <span class="ex-tag">Articles you read</span>
+            <span class="ex-tag">Client questions</span>
+            <span class="ex-tag">Frameworks you create</span>
+          </div>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">02</div>
+        <div class="layer-body">
+          <h4>The Wiki — Your AI-Maintained Brain</h4>
+          <p>LLM-generated markdown pages that summarise, connect, and flag contradictions across everything you've added. The AI reads your sources and writes the wiki automatically. You never write a note again.</p>
+          <div class="examples">
+            <span class="ex-tag">Topic pages</span>
+            <span class="ex-tag">Client patterns</span>
+            <span class="ex-tag">Framework summaries</span>
+            <span class="ex-tag">Concept comparisons</span>
+            <span class="ex-tag">Cross-links</span>
+          </div>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">03</div>
+        <div class="layer-body">
+          <h4>Schema — The Rules Layer</h4>
+          <p>A set of instructions that tells the AI how to maintain everything — what pages to create, how to structure summaries, when to flag contradictions. We write this for you during setup. You never touch it.</p>
+          <div class="examples">
+            <span class="ex-tag">Maintenance rules</span>
+            <span class="ex-tag">Page templates</span>
+            <span class="ex-tag">Update workflows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="flow-section">
+    <div class="section-label">The Loop</div>
+    <h2>How It Compounds Over Time</h2>
+    <p class="lead">This is what makes it different from every other AI workflow. Each input improves the whole system — not just answers one question.</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-icon">📥</div>
+        <div class="step-body">
+          <h4>You add a source</h4>
+          <p>Drop in a voice note, paste a client transcript, add a link to an article you read. No organising required.</p>
+          <span class="detail">→ 30 seconds of effort</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-icon">🤖</div>
+        <div class="step-body">
+          <h4>The AI reads and writes</h4>
+          <p>The AI reads your source, extracts key ideas, creates or updates wiki pages, adds cross-references, and flags any contradictions with existing knowledge.</p>
+          <span class="detail">→ One source touches 10+ pages</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-icon">💬</div>
+        <div class="step-body">
+          <h4>You ask a question</h4>
+          <p>Instead of querying raw documents, the AI searches your compiled wiki — drawing on everything it's learned about your niche, clients, and expertise.</p>
+          <span class="detail">→ Answers rooted in YOUR knowledge</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-icon">📈</div>
+        <div class="step-body">
+          <h4>The system learns</h4>
+          <p>New insights get filed back. Every question you ask improves the wiki. Every answer becomes part of the system. Nothing is ever lost.</p>
+          <span class="detail">→ Compounds forever</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT'S INSIDE THE WIKI -->
+  <div class="wiki-pages">
+    <div class="section-label">What Your Wiki Includes</div>
+    <h2>Your Wiki Comes Pre-Seeded With 6 Core Page Types</h2>
+    <p class="lead">We build these during your Build Your Brand engagement using everything we learn in discovery. Your wiki launches already populated — not empty.</p>
+
+    <div class="page-grid">
+      <div class="page-card">
+        <div class="page-icon">🎯</div>
+        <h4>Niche Expertise Index</h4>
+        <p>Your core frameworks, methodologies, and areas of expertise. Linked and cross-referenced automatically.</p>
+      </div>
+      <div class="page-card">
+        <div class="page-icon">👥</div>
+        <h4>Client Pattern Library</h4>
+        <p>Common questions, objections, and patterns from your client base — anonymised and compiled into insight pages.</p>
+      </div>
+      <div class="page-card">
+        <div class="page-icon">✍️</div>
+        <h4>Voice & Style Guide</h4>
+        <p>Your writing tone, phrases you use, words you avoid, stories you tell. Every agent reads this first.</p>
+      </div>
+      <div class="page-card">
+        <div class="page-icon">💡</div>
+        <h4>Content Idea Bank</h4>
+        <p>Insights, angles, and content hooks extracted from everything you add. Updated automatically.</p>
+      </div>
+      <div class="page-card">
+        <div class="page-icon">❓</div>
+        <h4>FAQ Master Index</h4>
+        <p>Every question you've ever been asked — with your answer. Powers the Customer Support Agent directly.</p>
+      </div>
+      <div class="page-card">
+        <div class="page-icon">📖</div>
+        <h4>Offer & Story Archive</h4>
+        <p>Your services, pricing context, client stories, and transformation proof. Referenced in every sales asset.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-pull">
+    <blockquote>"The human curates sources. The LLM does everything else. That's the future of thinking."</blockquote>
+    <cite>— Andrej Karpathy's LLM Wiki concept, the architecture behind your Client Knowledge Wiki</cite>
+  </div>
+
+  <!-- COMPOUND CURVE -->
+  <div class="compound-card">
+    <div class="inner">
+      <h3>What You Own After <span>3 Months</span></h3>
+      <p>This is why the data moat matters. Tools can be copied. Your compiled intelligence cannot.</p>
+      <div class="month-timeline">
+        <div class="month-col">
+          <div class="month-label">Month 1</div>
+          <h4>Seeded &amp; Running</h4>
+          <p>Core pages built. All agents reading from the wiki. First sources being added weekly.</p>
+        </div>
+        <div class="month-col active">
+          <div class="month-label">Month 2</div>
+          <h4>Patterns Emerging</h4>
+          <p>Client patterns surfacing. Content ideas compounding. Answers getting more specific to your niche.</p>
+        </div>
+        <div class="month-col">
+          <div class="month-label">Month 3+</div>
+          <h4>Proprietary Intelligence</h4>
+          <p>Hundreds of pages. Cross-linked insights. A knowledge layer your competitors cannot replicate or buy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO FEED IT -->
+  <div class="feeding-section">
+    <div class="section-label">Your Only Job</div>
+    <h2>What You Add. The AI Handles the Rest.</h2>
+    <p class="lead">Your job is curation. Drop things in. The AI organises, connects, and maintains everything automatically.</p>
+
+    <div class="feeding-grid">
+      <div class="feed-card">
+        <div class="feed-icon">🎙️</div>
+        <div>
+          <h4>Voice Notes</h4>
+          <p>Had an insight in the shower? Record 2 minutes. Drop it in. The wiki extracts and files it.</p>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="feed-icon">📝</div>
+        <div>
+          <h4>Client Session Notes</h4>
+          <p>Anonymised notes from sessions become pattern pages — trends, breakthroughs, recurring blocks.</p>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="feed-icon">📰</div>
+        <div>
+          <h4>Articles &amp; Research</h4>
+          <p>Paste a link or article you read. The wiki extracts what's relevant and links it to your existing knowledge.</p>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="feed-icon">💬</div>
+        <div>
+          <h4>Client Questions</h4>
+          <p>Every DM or email question goes in. Becomes an FAQ page. Powers the Support Agent automatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IT REPLACES -->
+  <div class="replaces-section">
+    <div class="section-label">The Shift</div>
+    <h2>What This Replaces in Your Workflow</h2>
+    <p class="lead">You'll stop doing these manually — the wiki handles them automatically.</p>
+    <div class="replaces-grid">
+      <div class="replace-card">
+        <div class="old-way">Manual note-taking</div>
+        <div class="new-way">Auto-compiled pages</div>
+      </div>
+      <div class="replace-card">
+        <div class="old-way">Organising Notion</div>
+        <div class="new-way">AI-maintained wiki</div>
+      </div>
+      <div class="replace-card">
+        <div class="old-way">Re-explaining your niche</div>
+        <div class="new-way">Wiki as context layer</div>
+      </div>
+      <div class="replace-card">
+        <div class="old-way">Starting from zero</div>
+        <div class="new-way">Compounding knowledge</div>
+      </div>
+      <div class="replace-card">
+        <div class="old-way">Inconsistent agent answers</div>
+        <div class="new-way">Grounded in your wiki</div>
+      </div>
+      <div class="replace-card">
+        <div class="old-way">Lost client insights</div>
+        <div class="new-way">Pattern library, filed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="inner">
+      <h3>Questions About Your Wiki?<br><span>We're Here.</span></h3>
+      <p>Your Client Knowledge Wiki is set up, seeded, and handed off during your Build Your Brand engagement. If you want to expand it, add new page types, or need help feeding it — just reach out.</p>
+      <a href="https://cal.com/sunny-binjola/quick-seo-chat" class="cta-btn">
+        Book a Quick Call
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p><strong>ElevateAI System</strong> · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+  <p>Build Your Brand — Bonus Deliverable &nbsp;·&nbsp; <a href="https://elevateaisystem.com">elevateaisystem.com</a></p>
+</footer>
+
+</body>
+</html>

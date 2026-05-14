@@ -1,0 +1,49 @@
+# =====================================================================
+# elevateaisystem.com — Cloudflare Pages redirects & rewrites
+# =====================================================================
+
+# 1. Canonical domain — force www (301 permanent)
+# This ensures Google treats www.elevateaisystem.com as the single canonical domain.
+https://elevateaisystem.com/* https://www.elevateaisystem.com/:splat 301
+
+# 2. Pretty-URL rewrites for marketing pages (clean, no .html)
+# NOTE: only list ALIASES here — pages whose source filename differs from the URL.
+# Pages handles /foo → /foo.html automatically when the filename matches the URL.
+# Adding a redundant rule for those collides with Pages' built-in clean-URL handler
+# and can cause loops. Only /free-map is a true alias to a different filename.
+/brand-os            /brand-os.html            200
+/augmented-coach     /augmented-coach.html     200
+/cohort-application  /cohort-application.html  200
+/coach-platform      /coach-platform.html      200
+/signal              /signal.html              200
+/free-map            /your-map.html            200
+
+# 3. Portal pretty-URLs (auth-gated in the browser via Supabase)
+# NOTE: Cloudflare can't enforce auth on static files. These rewrites just make
+# URLs clean. The actual access gate is in each portal page's JS — it calls
+# supa.auth.getSession() and redirects to /portal/login if no session, and then
+# checks the cohort_members table to confirm paid status before rendering.
+/portal              /portal/login.html        200
+/portal/             /portal/login.html        200
+/portal/login        /portal/login.html        200
+/portal/dashboard    /portal/dashboard.html    200
+/portal/week-1       /portal/week-1.html       200
+/portal/week-2       /portal/week-2.html       200
+/portal/week-3       /portal/week-3.html       200
+/portal/week-4       /portal/week-4.html       200
+/portal/week-5       /portal/week-5.html       200
+/portal/week-6       /portal/week-6.html       200
+/portal/week-7       /portal/week-7.html       200
+/portal/week-8       /portal/week-8.html       200
+/portal/your-drop    /portal/your-drop.html    200
+
+# 4. Legacy Sprint $497 page → deprecated, send to cohort
+/sprint              /augmented-coach          301
+/sprint.html         /augmented-coach          301
+
+# 5. Coach Platform page consolidation (May 2026)
+# Old long-form coach-platform.html was archived to coach-platform-archived-2026-05.html
+# (kept on disk for reference, NOT linked from anywhere). The new simple entry page
+# (formerly /start) is now the canonical /coach-platform. Redirect /start → /coach-platform.
+/start               /coach-platform           301
+/start.html          /coach-platform           301

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>elevateaisystem.com — AI Visibility Audit — 2026-04-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0F1C;--bg2:#111827;--card:#141C30;--border:#1E2840;
+  --text:#E8ECF3;--muted:#8A94A8;--accent:#00FF41;--accent2:#4FC3F7;
+  --red:#FF5252;--amber:#FFB74D;--yellow:#FFEB3B;--green:#69F0AE;--purple:#B388FF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Bricolage Grotesque',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding:48px 56px;min-height:100vh;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.container{max-width:1200px;margin:0 auto;}
+header{border-bottom:2px solid var(--accent);padding-bottom:32px;margin-bottom:40px;}
+.site-label{color:var(--muted);font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+h1{font-size:48px;font-weight:700;letter-spacing:-1.5px;margin-bottom:8px;}
+.audit-type{color:var(--accent);font-size:18px;font-weight:500;margin-bottom:24px;}
+.header-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:flex-end;}
+.score-badge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 32px;text-align:center;min-width:220px;}
+.score-val{font-size:56px;font-weight:700;line-height:1;color:var(--accent);}
+.score-max{color:var(--muted);font-size:18px;margin-left:4px;}
+.grade{font-size:36px;font-weight:700;margin-top:12px;color:var(--amber);}
+.score-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+.delta-chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text);margin-top:12px;}
+.delta-up{color:var(--green);}
+.delta-down{color:var(--red);}
+section{margin-bottom:48px;}
+h2{font-size:26px;font-weight:600;letter-spacing:-.5px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);color:var(--text);}
+h3{font-size:18px;font-weight:600;margin-bottom:12px;color:var(--text);}
+.gauge-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gauge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;}
+.gauge-title{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.gauge-sub{font-size:11px;color:var(--muted);margin-bottom:16px;}
+.gauge-svg{width:160px;height:88px;margin:0 auto;display:block;}
+.gauge-val{font-size:34px;font-weight:700;margin-top:-16px;position:relative;z-index:2;}
+.gauge-max{font-size:14px;color:var(--muted);}
+.gauge-label{font-size:12px;color:var(--muted);margin-top:6px;}
+.section-block{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;}
+.section-block h3{font-size:20px;color:var(--accent);margin-bottom:6px;}
+.section-block .subtitle{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:16px;}
+.issue-item{padding:14px 0;border-bottom:1px solid var(--border);}
+.issue-item:last-child{border-bottom:none;}
+.issue-title{font-weight:600;margin-bottom:4px;}
+.issue-fix{color:var(--muted);font-size:14px;}
+.issue-fix strong{color:var(--accent);}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+th{background:var(--bg2);text-align:left;padding:12px 16px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:500;}
+td{padding:14px 16px;font-size:14px;border-top:1px solid var(--border);vertical-align:top;}
+tr:first-child td{border-top:none;}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.badge-yes{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-no{background:rgba(255,82,82,.15);color:var(--red);}
+.badge-partial{background:rgba(255,183,77,.15);color:var(--amber);}
+.badge-high{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-med{background:rgba(255,183,77,.15);color:var(--amber);}
+.badge-low{background:rgba(255,82,82,.15);color:var(--red);}
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;}
+.grade-A{color:var(--green);} .grade-B{color:var(--accent2);} .grade-C{color:var(--amber);} .grade-D{color:#FF9800;} .grade-F{color:var(--red);}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="site-label">elevateaisystem.com</div>
+<div class="header-grid">
+<div>
+<h1>AI Visibility Audit</h1>
+<div class="audit-type">AEO · GEO · LLMO Weekly Report · 23 April 2026</div>
+<div class="delta-chip"><span class="delta-up">▲ +2 pts</span> <span>vs last week (62 → 64)</span></div>
+</div>
+<div class="score-badge">
+<div><span class="score-val">64</span><span class="score-max">/100</span></div>
+<div class="grade grade-C">C</div>
+<div class="score-label">AI Visibility</div>
+</div>
+</div>
+</header>
+
+<section>
+<h2>Sub-Scores · AEO / GEO / LLMO</h2>
+<div class="gauge-row">
+<div class="gauge"><div class="gauge-title">AEO</div><div class="gauge-sub">Answer Engine Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#FFB74D" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="99"/></svg>
+<div class="gauge-val">55<span class="gauge-max">/100</span></div><div class="gauge-label">FAQ depth + structured Q&amp;A</div></div>
+
+<div class="gauge"><div class="gauge-title">GEO</div><div class="gauge-sub">Generative Engine Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#FF5252" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="121"/></svg>
+<div class="gauge-val">45<span class="gauge-max">/100</span></div><div class="gauge-label">Entity &amp; citation presence</div></div>
+
+<div class="gauge"><div class="gauge-title">LLMO</div><div class="gauge-sub">LLM Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#69F0AE" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="44"/></svg>
+<div class="gauge-val">80<span class="gauge-max">/100</span></div><div class="gauge-label">llms.txt + AI crawler access</div></div>
+</div>
+</section>
+
+<section class="section-block">
+<h3>AEO · Answer Engine Optimisation</h3>
+<div class="subtitle">Can Perplexity, ChatGPT Search, You.com answer questions using your content?</div>
+<div class="issue-item"><div class="issue-title">FAQ content lives on /faq but isn't marked up as FAQPage schema</div><div class="issue-fix"><strong>Fix:</strong> Wrap each Q&amp;A in FAQPage JSON-LD so answer engines can extract directly. Add FAQPage blocks to homepage, Lead OS, Content OS, Growth Engine.</div></div>
+<div class="issue-item"><div class="issue-title">Homepage lacks concise "What is ElevateAI System?" answer block</div><div class="issue-fix"><strong>Fix:</strong> Add a ~60-word definitional paragraph near top of page wrapped in an HTML article tag with SpeakSchema. This becomes the snippet AI engines quote.</div></div>
+<div class="issue-item"><div class="issue-title">Blog answer patterns are long-form narrative, not scannable Q&amp;A</div><div class="issue-fix"><strong>Fix:</strong> Restructure 10 top blog posts with H2 questions, 1-sentence direct answers, then depth. Model after "People Also Ask" patterns.</div></div>
+<div class="issue-item"><div class="issue-title">No TL;DR or "Key Takeaway" blocks on service pages</div><div class="issue-fix"><strong>Fix:</strong> Add a 3–5 bullet TL;DR at the top of each service page. Answer engines preferentially cite summary blocks.</div></div>
+</section>
+
+<section class="section-block">
+<h3>GEO · Generative Engine Optimisation</h3>
+<div class="subtitle">Does the entity "ElevateAI System" appear in the AI training &amp; citation graph?</div>
+<div class="issue-item"><div class="issue-title">Sparse external mentions (no measurable press, directory, or podcast citations)</div><div class="issue-fix"><strong>Fix:</strong> Target 3 guest-podcast appearances this quarter (Peaceful Marketing, Communipass, The Fully Booked Coach) + submit to G2, Capterra, Coach Training Alliance directory.</div></div>
+<div class="issue-item"><div class="issue-title">Brand entity (Sunny Binjola + ElevateAI) not cross-linked across web</div><div class="issue-fix"><strong>Fix:</strong> Create a structured Person bio with links to LinkedIn, X/Twitter, YouTube, podcast feeds. Use sameAs schema to bind entities.</div></div>
+<div class="issue-item"><div class="issue-title">Case study "$83K in 62 days" is in llms.txt only — not structured</div><div class="issue-fix"><strong>Fix:</strong> Publish a fully-structured case-study page with CaseStudy / Article schema + a date, testimonial, metrics. This becomes a citation anchor for AI engines.</div></div>
+<div class="issue-item"><div class="issue-title">No Wikidata or Crunchbase entry for ElevateAI System</div><div class="issue-fix"><strong>Fix:</strong> Create Crunchbase + Wikidata entries (low effort, high authority signal for LLMs training on structured data).</div></div>
+</section>
+
+<section class="section-block">
+<h3>LLMO · LLM Optimisation</h3>
+<div class="subtitle">How cleanly can ChatGPT / Claude / Gemini ingest your site?</div>
+<div class="issue-item"><div class="issue-title">llms.txt is present and well-structured — keep it fresh</div><div class="issue-fix"><strong>Maintain:</strong> Update llms.txt quarterly with latest pricing, case studies, and service edits. Consider an llms-full.txt with extended content for deeper model context.</div></div>
+<div class="issue-item"><div class="issue-title">Robots.txt allows 15+ AI crawlers — best-in-class</div><div class="issue-fix"><strong>Maintain:</strong> Re-verify every 30 days that no CDN or security rule blocks the allowlisted bots at the edge.</div></div>
+<div class="issue-item"><div class="issue-title">Missing Person schema for founder (Sunny Binjola)</div><div class="issue-fix"><strong>Fix:</strong> Add Person JSON-LD to /about with sameAs array linking LinkedIn, X, YouTube, Substack, Apollo-tracked profile.</div></div>
+<div class="issue-item"><div class="issue-title">Content freshness + authorship signals weak</div><div class="issue-fix"><strong>Fix:</strong> Every blog post should carry datePublished, dateModified, author (Person schema), and an "Expertise" snippet block. LLMs weigh author-bound content higher.</div></div>
+</section>
+
+<section>
+<h2>Live AI Query Results</h2>
+<table>
+<thead><tr><th>Query</th><th>Site Appears?</th><th>What Appeared Instead</th></tr></thead>
+<tbody>
+<tr><td>"best AI marketing system for coaches 2026"</td><td><span class="badge badge-no">No</span></td><td>Coachvox, Planetary Labour, Pickaxe, Blaze, LearnWorlds</td></tr>
+<tr><td>"how coaches use AI for lead generation"</td><td><span class="badge badge-no">No</span></td><td>Coachvox, WiseOwl Marketing, Coaching Federation, Clay, Instantly</td></tr>
+<tr><td>"AI content creation for online coaches"</td><td><span class="badge badge-no">No</span></td><td>Coachvox, Kimberly Ann Jimenez, Aprimo, Executive Coach College</td></tr>
+</tbody>
+</table>
+<div style="margin-top:16px;color:var(--muted);font-size:13px;">Score impact: 3/15 — AI query visibility is the single biggest gap. Most of the 64/100 is earned on llms.txt + robots.txt + content depth. Breaking into AI answers requires external citations + FAQPage schema + authority signals.</div>
+</section>
+
+<section>
+<h2>Priority Action Table · Ranked by Impact</h2>
+<table>
+<thead><tr><th>#</th><th>Action</th><th>Effort (hrs)</th><th>Expected Gain</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Add FAQPage + Organization + Service JSON-LD to homepage, Lead OS, Content OS, Growth Engine</td><td>4</td><td><span class="badge badge-high">+8 pts</span></td></tr>
+<tr><td>2</td><td>Publish Person schema for Sunny Binjola on /about with sameAs array</td><td>1</td><td><span class="badge badge-med">+4 pts</span></td></tr>
+<tr><td>3</td><td>Pitch + lock 3 podcast features this quarter</td><td>8</td><td><span class="badge badge-high">+6 pts</span></td></tr>
+<tr><td>4</td><td>Create Crunchbase + Wikidata entry</td><td>2</td><td><span class="badge badge-med">+3 pts</span></td></tr>
+<tr><td>5</td><td>Restructure 10 top blog posts with H2 questions + 1-sentence direct answers</td><td>10</td><td><span class="badge badge-high">+5 pts</span></td></tr>
+<tr><td>6</td><td>Publish structured "$83K in 62 days" case study page with CaseStudy schema</td><td>3</td><td><span class="badge badge-med">+3 pts</span></td></tr>
+<tr><td>7</td><td>Add TL;DR + Key Takeaway blocks to 9 service pages</td><td>3</td><td><span class="badge badge-med">+3 pts</span></td></tr>
+<tr><td>8</td><td>Submit llms.txt + sitemap to Perplexity, You.com, Brave webmaster tools</td><td>1</td><td><span class="badge badge-low">+2 pts</span></td></tr>
+<tr><td>9</td><td>Create llms-full.txt with extended model context</td><td>2</td><td><span class="badge badge-low">+2 pts</span></td></tr>
+<tr><td>10</td><td>Apply for G2 + Capterra + ICF directory listings</td><td>4</td><td><span class="badge badge-med">+4 pts</span></td></tr>
+</tbody>
+</table>
+</section>
+
+<footer>
+<div>Report generated: 23 April 2026 · ElevateAI System AI Visibility audit</div>
+<div class="mono">elevateaisystem.com · AI 64/100 · Grade C</div>
+</footer>
+</div>
+</body>
+</html>

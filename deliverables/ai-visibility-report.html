@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your AI Visibility Report — ElevateAI System</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dark: #00cc34;
+    --green-soft: rgba(0,255,65,0.08);
+    --navy: #0A0F1C;
+    --bg: #FAFAF8;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e5e5;
+    --card: #ffffff;
+    --purple: #8b5cf6;
+    --purple-soft: rgba(139,92,246,0.07);
+    --rose: #f43f5e;
+    --rose-soft: rgba(244,63,94,0.07);
+    --amber: #f59e0b;
+    --blue: #3b82f6;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Cover */
+  .cover {
+    background: var(--navy);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.04;
+  }
+  .cover .logo {
+    display: inline-block;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .cover h1 span { color: var(--green); }
+  .cover .sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto 1rem;
+  }
+  .cover .client-name {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-top: 1.5rem;
+    opacity: 0.7;
+  }
+
+  /* Placeholder styling */
+  .placeholder {
+    background: var(--green-soft);
+    color: var(--green-dark);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* Section headers */
+  .sec {
+    padding: 3.5rem 0 1rem;
+  }
+  .sec-num {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  .sec h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.25rem 0;
+    line-height: 1.25;
+  }
+  .sec p.desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin-top: 0.35rem;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .card.full { grid-column: 1 / -1; }
+  .card .tag {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .tag-green { color: var(--green-dark); }
+  .tag-purple { color: var(--purple); }
+  .tag-rose { color: var(--rose); }
+  .tag-amber { color: var(--amber); }
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  /* Score card */
+  .score-main {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 2.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .score-main .label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.5rem;
+  }
+  .score-main .big-num {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+  }
+  .score-main .denom {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: -0.25rem;
+  }
+
+  .sub-scores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 700px) { .sub-scores { grid-template-columns: 1fr; } }
+  .sub-score-item {
+    background: rgba(0,255,65,0.06);
+    border: 1px solid rgba(0,255,65,0.12);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .sub-score-item .label {
+    font-size: 0.75rem;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .sub-score-item .score {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--green-dark);
+  }
+  .sub-score-item .desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* AI Response card */
+  .ai-response-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .ai-response-box .query {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .ai-response-box .query-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .ai-response-box .response {
+    background: #f9fafb;
+    border-left: 3px solid var(--green);
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .ai-response-box .verdict {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .ai-response-box .verdict strong {
+    color: var(--navy);
+  }
+
+  /* Gap cards */
+  .gap-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .gap-card .gap-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+  .gap-card .gap-section {
+    margin-bottom: 1rem;
+  }
+  .gap-card .gap-section:last-child {
+    margin-bottom: 0;
+  }
+  .gap-card .label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .gap-card .content {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+  .gap-card .effort-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: 0.75rem;
+  }
+  .effort-quick { background: rgba(16,185,129,0.1); color: var(--emerald); }
+  .effort-medium { background: rgba(245,158,11,0.1); color: var(--amber); }
+  .effort-major { background: rgba(244,63,94,0.1); color: var(--rose); }
+
+  /* Comparison table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .comparison-table th {
+    background: var(--navy);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: #4b5563;
+  }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+  .check { color: var(--emerald); font-weight: 700; }
+  .cross { color: var(--rose); font-weight: 700; }
+  .partial { color: var(--amber); font-weight: 700; }
+
+  /* Next steps */
+  .next-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .step-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+  .step-box .tier {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .step-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--navy);
+  }
+  .step-box p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .step-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+  }
+  .step-box li {
+    font-size: 0.85rem;
+    color: #4b5563;
+    padding: 0.35rem 0 0.35rem 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .step-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+  .step-box .cta-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--green);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+  .step-box .cta-link:hover {
+    background: var(--green-dark);
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 2.5rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--green);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .cta-button:hover {
+    background: var(--green-dark);
+  }
+
+  /* Footer */
+  .foot {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .foot a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">ElevateAI System</div>
+  <h1>Your AI <span>Visibility</span> Report</h1>
+  <div class="sub">Where you stand in AI search — and what to do about it.</div>
+  <div class="client-name"><span class="placeholder">[Client Name]</span> · <span id="date-stamp"></span></div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: SCORE -->
+  <div class="sec">
+    <div class="sec-num">Section 01</div>
+    <h2>Your AI Visibility Score</h2>
+    <p class="desc">This score measures how visible and discoverable you are across AI models, answer engines, and generative search platforms. It breaks down across 4 critical pillars.</p>
+  </div>
+
+  <div class="score-main">
+    <div class="label">Your Current AI Visibility Score</div>
+    <div class="big-num"><span class="placeholder">[Score]</span></div>
+    <div class="denom">/ 100</div>
+  </div>
+
+  <div class="sub-scores">
+    <div class="sub-score-item">
+      <div class="label">SEO Foundation</div>
+      <div class="score"><span class="placeholder">[X]</span>/25</div>
+      <div class="desc">Traditional search signals: schema, sitemap, meta tags, page speed</div>
+    </div>
+    <div class="sub-score-item">
+      <div class="label">AEO Readiness</div>
+      <div class="score"><span class="placeholder">[X]</span>/25</div>
+      <div class="desc">Answer engine signals: FAQ schema, question headers, AI Overviews eligibility</div>
+    </div>
+    <div class="sub-score-item">
+      <div class="label">GEO Presence</div>
+      <div class="score"><span class="placeholder">[X]</span>/25</div>
+      <div class="desc">Generative engine signals: citations, entity mentions, structured data</div>
+    </div>
+    <div class="sub-score-item">
+      <div class="label">LLMO Optimization</div>
+      <div class="score"><span class="placeholder">[X]</span>/25</div>
+      <div class="desc">LLM signals: llms.txt, topical authority, content density</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 2: AI RESPONSES -->
+  <div class="sec">
+    <div class="sec-num">Section 02</div>
+    <h2>What AI Models Say About You Right Now</h2>
+    <p class="desc">We ran your niche queries through ChatGPT, Claude, and other major AI models to see exactly what they know about you — and how they position you vs. competitors.</p>
+  </div>
+
+  <!-- Query 1 -->
+  <div class="ai-response-box">
+    <div class="query">Query 1</div>
+    <div class="query-text">"<span class="placeholder">[Query about client's niche]</span>"</div>
+    <div class="response">
+      <span class="placeholder">[Paste actual AI response here]</span>
+    </div>
+    <div class="verdict">
+      <strong>Verdict:</strong> <span class="placeholder">[Are you mentioned? Cited? Recommended? Ignored?]</span>
+    </div>
+  </div>
+
+  <!-- Query 2 -->
+  <div class="ai-response-box">
+    <div class="query">Query 2</div>
+    <div class="query-text">"<span class="placeholder">[Query about client's niche]</span>"</div>
+    <div class="response">
+      <span class="placeholder">[Paste actual AI response here]</span>
+    </div>
+    <div class="verdict">
+      <strong>Verdict:</strong> <span class="placeholder">[Are you mentioned? Cited? Recommended? Ignored?]</span>
+    </div>
+  </div>
+
+  <!-- Query 3 -->
+  <div class="ai-response-box">
+    <div class="query">Query 3</div>
+    <div class="query-text">"<span class="placeholder">[Query about client's niche]</span>"</div>
+    <div class="response">
+      <span class="placeholder">[Paste actual AI response here]</span>
+    </div>
+    <div class="verdict">
+      <strong>Verdict:</strong> <span class="placeholder">[Are you mentioned? Cited? Recommended? Ignored?]</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3: TOP 5 GAPS -->
+  <div class="sec">
+    <div class="sec-num">Section 03</div>
+    <h2>Your Top 5 Gaps</h2>
+    <p class="desc">These are the specific areas holding you back from being AI-visible. Each gap has a clear fix — some quick wins, some bigger projects.</p>
+  </div>
+
+  <!-- Gap 1 -->
+  <div class="gap-card">
+    <div class="gap-title"><span class="placeholder">[Gap Name]</span></div>
+    <div class="gap-section">
+      <div class="label">Current State</div>
+      <div class="content"><span class="placeholder">[What's happening now]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Impact</div>
+      <div class="content"><span class="placeholder">[What this costs you]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Fix</div>
+      <div class="content"><span class="placeholder">[Specific action to take]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Effort</div>
+      <span class="effort-badge effort-quick">Quick Win</span>
+    </div>
+  </div>
+
+  <!-- Gap 2 -->
+  <div class="gap-card">
+    <div class="gap-title"><span class="placeholder">[Gap Name]</span></div>
+    <div class="gap-section">
+      <div class="label">Current State</div>
+      <div class="content"><span class="placeholder">[What's happening now]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Impact</div>
+      <div class="content"><span class="placeholder">[What this costs you]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Fix</div>
+      <div class="content"><span class="placeholder">[Specific action to take]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Effort</div>
+      <span class="effort-badge effort-medium">Medium</span>
+    </div>
+  </div>
+
+  <!-- Gap 3 -->
+  <div class="gap-card">
+    <div class="gap-title"><span class="placeholder">[Gap Name]</span></div>
+    <div class="gap-section">
+      <div class="label">Current State</div>
+      <div class="content"><span class="placeholder">[What's happening now]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Impact</div>
+      <div class="content"><span class="placeholder">[What this costs you]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Fix</div>
+      <div class="content"><span class="placeholder">[Specific action to take]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Effort</div>
+      <span class="effort-badge effort-medium">Medium</span>
+    </div>
+  </div>
+
+  <!-- Gap 4 -->
+  <div class="gap-card">
+    <div class="gap-title"><span class="placeholder">[Gap Name]</span></div>
+    <div class="gap-section">
+      <div class="label">Current State</div>
+      <div class="content"><span class="placeholder">[What's happening now]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Impact</div>
+      <div class="content"><span class="placeholder">[What this costs you]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Fix</div>
+      <div class="content"><span class="placeholder">[Specific action to take]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Effort</div>
+      <span class="effort-badge effort-major">Major Project</span>
+    </div>
+  </div>
+
+  <!-- Gap 5 -->
+  <div class="gap-card">
+    <div class="gap-title"><span class="placeholder">[Gap Name]</span></div>
+    <div class="gap-section">
+      <div class="label">Current State</div>
+      <div class="content"><span class="placeholder">[What's happening now]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Impact</div>
+      <div class="content"><span class="placeholder">[What this costs you]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Fix</div>
+      <div class="content"><span class="placeholder">[Specific action to take]</span></div>
+    </div>
+    <div class="gap-section">
+      <div class="label">Effort</div>
+      <span class="effort-badge effort-major">Major Project</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 4: COMPETITOR COMPARISON -->
+  <div class="sec">
+    <div class="sec-num">Section 04</div>
+    <h2>Your Competitor Comparison</h2>
+    <p class="desc">How you stack up on the signals that matter most for AI visibility. These are the battles you're winning — and losing.</p>
+  </div>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Signal</th>
+        <th>You</th>
+        <th><span class="placeholder">[Competitor 1]</span></th>
+        <th><span class="placeholder">[Competitor 2]</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Schema Markup</strong></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+      </tr>
+      <tr>
+        <td><strong>llms.txt File</strong></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+      </tr>
+      <tr>
+        <td><strong>Blog Frequency</strong></td>
+        <td><span class="placeholder">X posts/month</span></td>
+        <td><span class="placeholder">X posts/month</span></td>
+        <td><span class="placeholder">X posts/month</span></td>
+      </tr>
+      <tr>
+        <td><strong>Niche Pages</strong></td>
+        <td><span class="placeholder">X pages</span></td>
+        <td><span class="placeholder">X pages</span></td>
+        <td><span class="placeholder">X pages</span></td>
+      </tr>
+      <tr>
+        <td><strong>AI Citations</strong></td>
+        <td><span class="placeholder">X times</span></td>
+        <td><span class="placeholder">X times</span></td>
+        <td><span class="placeholder">X times</span></td>
+      </tr>
+      <tr>
+        <td><strong>Social Proof</strong></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+        <td><span class="placeholder">✓/✗/◐</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <!-- SECTION 5: NEXT STEPS -->
+  <div class="sec">
+    <div class="sec-num">Section 05</div>
+    <h2>Recommended Next Steps</h2>
+    <p class="desc">Three paths forward. Choose the one that fits your bandwidth, budget, and timeline.</p>
+  </div>
+
+  <div class="next-steps">
+    <!-- DIY -->
+    <div class="step-box">
+      <div class="tier">Path 1: DIY</div>
+      <h3>Do It Yourself (Free)</h3>
+      <p>Here's exactly what you can implement yourself right now. These are the quick wins from the gaps above.</p>
+      <ul>
+        <li><span class="placeholder">[Quick win from Section 3]</span></li>
+        <li><span class="placeholder">[Quick win from Section 3]</span></li>
+        <li><span class="placeholder">[Quick win from Section 3]</span></li>
+      </ul>
+    </div>
+
+    <!-- AI Strategy Hour -->
+    <div class="step-box">
+      <div class="tier">Path 2: Guided</div>
+      <h3>AI Strategy Hour Deep Dive ($375)</h3>
+      <p>One hour, one specific gap, one executable plan. We dive deep into whichever challenge is most urgent for you right now.</p>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">Best for: Clarity on priorities, custom strategy, accountability</p>
+      <a href="https://cal.com/elevateaisystem/ai-strategy-call" class="cta-link">Book Strategy Call →</a>
+    </div>
+
+    <!-- Build Your Brand -->
+    <div class="step-box">
+      <div class="tier">Path 3: Full Implementation</div>
+      <h3>Build Your Brand ($5K–$12K)</h3>
+      <p>We implement everything. Full brand strategy, AI visibility audit, technical SEO, content system, AI agent integration. Done for you.</p>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">Best for: Serious growth, zero bandwidth, fast results (60–90 days)</p>
+      <a href="https://cal.com/elevateaisystem/discovery-call" class="cta-link">Schedule Discovery Call →</a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Ready to Become AI-Visible?</h2>
+    <p>AI visibility isn't luck. It's systematic. Every gap you fix compounds. Every signal you optimize moves the needle. Pick your path above, or let's talk through what's right for you.</p>
+    <a href="https://cal.com/elevateaisystem/discovery-call" class="cta-button">Book a Call →</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <p>ElevateAI System · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+    <p style="margin-top:0.35rem;"><a href="https://www.elevateaisystem.com">www.elevateaisystem.com</a></p>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('date-stamp').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+</script>
+</body>
+</html>

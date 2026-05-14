@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lead Clarity Score - Free Assessment | ElevateAI</title>
+<meta name="description" content="Take the free Lead Clarity Score assessment. Find out if your lead infrastructure is costing you revenue — and exactly where to fix it.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sunny Binjola">
+<meta name="keywords" content="lead clarity score, lead assessment, lead infrastructure audit, coaching business assessment, free lead quiz, revenue leak assessment">
+<link rel="canonical" href="https://www.elevateaisystem.com/lead-clarity-score">
+<link rel="alternate" hreflang="en" href="https://www.elevateaisystem.com/lead-clarity-score">
+<link rel="alternate" hreflang="x-default" href="https://www.elevateaisystem.com/lead-clarity-score">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lead Clarity Score - Free Assessment | ElevateAI">
+<meta property="og:description" content="Take the free Lead Clarity Score assessment. Find out if your lead infrastructure is costing you revenue — and exactly where to fix it.">
+<meta property="og:url" content="https://www.elevateaisystem.com/lead-clarity-score">
+<meta property="og:site_name" content="ElevateAI System">
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lead Clarity Score - Free Assessment | ElevateAI">
+<meta name="twitter:description" content="Take the free Lead Clarity Score assessment. Find out if your lead infrastructure is costing you revenue — and exactly where to fix it.">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Quiz",
+  "name":"Lead Clarity Score",
+  "description":"Free assessment to evaluate your lead infrastructure and identify revenue leaks in your coaching or consulting business.",
+  "educationalLevel":"Professional",
+  "creator":{"@type":"Organization","name":"ElevateAI System","url":"https://www.elevateaisystem.com"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8;--bg-alt:#F2F2EE;--green:#00FF41;--green-dark:#00CC34;
+  --navy:#0A0F1C;--navy-light:#1A2035;--text:#1A1A2E;--text-muted:#5A5A6E;
+  --border:#E0E0D8;--white:#FFFFFF;--card-bg:#FFFFFF;
+  --radius:12px;--radius-lg:20px;
+  --red:#DC2626;--yellow:#F59E0B;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* HERO */
+.hero{padding:9rem 2rem 4rem;text-align:center;max-width:800px;margin:0 auto}
+.hero-badge{display:inline-block;background:var(--navy);color:var(--green);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;border-radius:50px;margin-bottom:2rem}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--navy);margin-bottom:1.2rem}
+.hero h1 .accent{color:var(--green-dark)}
+.hero p{font-size:1.1rem;color:var(--text-muted);max-width:580px;margin:0 auto 1rem;line-height:1.7}
+.hero-sub{font-size:.95rem;color:var(--text-muted);opacity:.7;margin-bottom:2rem}
+.hero-start{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 2.4rem;border-radius:10px;font-size:1rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.hero-start:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,15,28,.2)}
+.hero-start svg{width:18px;height:18px}
+
+/* QUIZ CONTAINER */
+.quiz-wrapper{max-width:720px;margin:0 auto;padding:0 2rem 6rem}
+.quiz-container{display:none}
+.quiz-container.active{display:block}
+
+/* PROGRESS */
+.progress-bar{width:100%;height:6px;background:var(--bg-alt);border-radius:3px;margin-bottom:2.5rem;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:3px;transition:width .4s ease}
+.progress-text{font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem;font-weight:600}
+
+/* QUESTION */
+.question-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;margin-bottom:2rem}
+.question-number{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.75rem}
+.question-text{font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:2rem}
+.options{display:flex;flex-direction:column;gap:.75rem}
+.option{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .2s;background:var(--white)}
+.option:hover{border-color:var(--navy);background:var(--bg-alt)}
+.option.selected{border-color:var(--green);background:rgba(0,255,65,.06)}
+.option-marker{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.option.selected .option-marker{border-color:var(--green);background:var(--green)}
+.option.selected .option-marker::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--white)}
+.option-text{font-size:.95rem;font-weight:500;color:var(--text)}
+
+/* NAV BUTTONS */
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem}
+.btn-back{background:none;border:2px solid var(--border);color:var(--text-muted);padding:.75rem 1.5rem;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+.btn-next{background:var(--navy);color:var(--white);border:none;padding:.75rem 2rem;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit;display:flex;align-items:center;gap:.4rem}
+.btn-next:hover{background:var(--navy-light);transform:translateY(-1px)}
+.btn-next:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn-next svg{width:16px;height:16px}
+
+/* RESULTS */
+.results-container{display:none;text-align:center;padding:4rem 2rem 6rem;max-width:800px;margin:0 auto}
+.results-container.active{display:block}
+.score-ring{width:200px;height:200px;margin:0 auto 2rem;position:relative}
+.score-ring svg{width:200px;height:200px;transform:rotate(-90deg)}
+.score-ring circle{fill:none;stroke-width:10}
+.ring-bg{stroke:var(--bg-alt)}
+.ring-fill{stroke:var(--green);stroke-linecap:round;transition:stroke-dashoffset 1.5s ease,stroke 1s ease}
+.score-value{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.score-value .number{font-size:3.5rem;font-weight:800;color:var(--navy);line-height:1}
+.score-value .label{font-size:.8rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+
+.results-grade{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+.results-grade.good{color:var(--green-dark)}
+.results-grade.mid{color:var(--yellow)}
+.results-grade.bad{color:var(--red)}
+.results-summary{font-size:1.05rem;color:var(--text-muted);max-width:550px;margin:0 auto 3rem;line-height:1.7}
+
+/* BREAKDOWN */
+.breakdown{text-align:left;max-width:600px;margin:0 auto 3rem}
+.breakdown-title{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem}
+.breakdown-item{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--border)}
+.breakdown-item:last-child{border-bottom:none}
+.breakdown-label{font-size:.95rem;font-weight:500;color:var(--text)}
+.breakdown-score{font-size:.9rem;font-weight:700;padding:.3rem .8rem;border-radius:50px}
+.breakdown-score.good{background:rgba(0,204,52,.1);color:var(--green-dark)}
+.breakdown-score.mid{background:rgba(245,158,11,.1);color:var(--yellow)}
+.breakdown-score.bad{background:rgba(220,38,38,.1);color:var(--red)}
+
+/* CTA */
+.results-cta{margin-top:2rem}
+.results-cta h3{font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:.75rem}
+.results-cta p{font-size:1rem;color:var(--text-muted);margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cta-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 2.4rem;border-radius:10px;font-size:1rem;font-weight:700;transition:all .3s;border:none;cursor:pointer;text-decoration:none}
+.cta-btn:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,15,28,.2)}
+.cta-btn svg{width:18px;height:18px}
+.cta-secondary{display:inline-flex;align-items:center;gap:.5rem;color:var(--green-dark);font-weight:600;font-size:.95rem;margin-top:1rem;text-decoration:none}
+.cta-secondary:hover{text-decoration:underline}
+
+/* LEAD OS TEASER */
+.lead-os-teaser{padding:6rem 2rem;background:var(--bg-alt)}
+.teaser-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.teaser-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);display:block;margin-bottom:.75rem}
+.teaser-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+.teaser-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.7;margin-bottom:2rem}
+.teaser-features{display:grid;grid-template-columns:1fr 1fr;gap:.6rem .5rem;margin-bottom:2rem}
+.teaser-feat{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500;color:var(--text)}
+.teaser-feat svg{color:var(--green-dark);flex-shrink:0}
+.teaser-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:.85rem 2rem;border-radius:10px;font-size:.95rem;font-weight:700;transition:all .3s}
+.teaser-btn:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,15,28,.2)}
+.teaser-stat-card{background:var(--navy);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;color:var(--white)}
+.teaser-stat-number{font-size:clamp(3rem,6vw,4rem);font-weight:800;color:var(--green);line-height:1}
+.teaser-stat-label{font-size:1.1rem;font-weight:600;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.05em}
+.teaser-stat-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:1.5rem}
+.teaser-stat-divider{height:1px;background:rgba(255,255,255,.1);margin-bottom:1.5rem}
+.teaser-stat-bottom{font-size:.95rem;font-weight:600;color:var(--green)}
+
+/* FOOTER */
+.footer{padding:3rem 2rem;text-align:center;border-top:1px solid var(--border)}
+.footer p{font-size:.85rem;color:var(--text-muted)}
+
+/* EMAIL CAPTURE */
+.email-gate{display:none;text-align:center;max-width:520px;margin:0 auto;padding:4rem 2rem 6rem}
+.email-gate.active{display:block}
+.email-gate h2{font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:.75rem}
+.email-gate p{font-size:1rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.6}
+.email-form{display:flex;flex-direction:column;gap:.75rem;max-width:400px;margin:0 auto}
+.email-input{padding:1rem 1.25rem;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
+.email-input:focus{border-color:var(--green)}
+.email-submit{background:var(--navy);color:var(--white);border:none;padding:1rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s}
+.email-submit:hover{background:var(--navy-light)}
+.email-skip{background:none;border:none;color:var(--text-muted);font-size:.85rem;cursor:pointer;margin-top:.5rem;font-family:inherit;text-decoration:underline}
+
+@media(max-width:900px){
+  .teaser-inner{grid-template-columns:1fr}
+  .teaser-features{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero{padding:7rem 1.5rem 3rem}
+  .quiz-wrapper{padding:0 1.5rem 4rem}
+  .question-card{padding:1.75rem}
+  .question-text{font-size:1.1rem}
+  .hero h1{font-size:2rem}
+  .lead-os-teaser{padding:4rem 1.5rem}
+}
+</style>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body>
+<script src="navbar.js"></script>
+
+<!-- HERO -->
+<section class="hero" id="hero-section">
+  <span class="hero-badge">Free Assessment</span>
+  <h1>What's Your<br><span class="accent">Lead Clarity Score?</span></h1>
+  <p>Answer 10 quick questions about your current lead infrastructure. Get a personalized score and find out exactly where revenue is leaking.</p>
+  <p class="hero-sub">Takes less than 2 minutes. No fluff. Just clarity.</p>
+  <button class="hero-start" onclick="startQuiz()">
+    Take the Free Assessment
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </button>
+</section>
+
+<!-- QUIZ -->
+<div class="quiz-wrapper">
+  <div class="quiz-container" id="quizContainer">
+    <div class="progress-text" id="progressText">Question 1 of 10</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:10%"></div></div>
+    <div class="question-card">
+      <div class="question-number" id="questionNumber">Question 1</div>
+      <div class="question-text" id="questionText"></div>
+      <div class="options" id="optionsContainer"></div>
+    </div>
+    <div class="quiz-nav">
+      <button class="btn-back" id="btnBack" onclick="prevQuestion()" style="visibility:hidden">Back</button>
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()" disabled>
+        Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL GATE -->
+<div class="email-gate" id="emailGate">
+  <h2>Almost there!</h2>
+  <p>Enter your email to unlock your personalized Lead Clarity Score report with actionable recommendations.</p>
+  <div class="email-form">
+    <input type="text" class="email-input" id="userName" placeholder="Your first name">
+    <input type="email" class="email-input" id="userEmail" placeholder="Your best email">
+    <button class="email-submit" onclick="submitEmail()">See My Score</button>
+    <button class="email-skip" onclick="skipEmail()">Skip for now</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-container" id="resultsContainer">
+  <div class="score-ring">
+    <svg viewBox="0 0 200 200">
+      <circle class="ring-bg" cx="100" cy="100" r="85"/>
+      <circle class="ring-fill" id="scoreRing" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534"/>
+    </svg>
+    <div class="score-value">
+      <div class="number" id="scoreNumber">0</div>
+      <div class="label">out of 100</div>
+    </div>
+  </div>
+  <div class="results-grade" id="resultsGrade"></div>
+  <p class="results-summary" id="resultsSummary"></p>
+
+  <div class="breakdown">
+    <div class="breakdown-title">Score Breakdown</div>
+    <div id="breakdownList"></div>
+  </div>
+
+  <div class="results-cta">
+    <h3>Want to Fix This?</h3>
+    <p>Book a free Lead Infrastructure Audit and we'll build you a custom roadmap to plug the leaks and systemize your pipeline.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" class="cta-btn">
+      Book Your Free Audit Call
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+    <br>
+    <a href="/lead-os" class="cta-secondary">Learn about Lead OS &rarr;</a>
+  </div>
+</div>
+
+<!-- LEAD OS TEASER -->
+<section class="lead-os-teaser">
+  <div class="teaser-inner">
+    <div class="teaser-content">
+      <span class="teaser-label">The Fix</span>
+      <h2 class="teaser-title">Meet Lead OS</h2>
+      <p class="teaser-desc">Lead OS is the backend operating system that captures, tracks, and converts your leads automatically. No more scattered spreadsheets, forgotten follow-ups, or guessing where revenue went.</p>
+      <div class="teaser-features">
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Centralized CRM Pipeline</span>
+        </div>
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Automated Follow-Up Sequences</span>
+        </div>
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Real-Time Lead Tracking Dashboard</span>
+        </div>
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Multi-Channel Nurture (Email + SMS)</span>
+        </div>
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Booking & No-Show Reduction</span>
+        </div>
+        <div class="teaser-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>AI-Driven Conversion Optimization</span>
+        </div>
+      </div>
+      <a href="/lead-os" class="teaser-btn">
+        Explore Lead OS
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="teaser-stat-card">
+      <div class="teaser-stat-number">40%</div>
+      <div class="teaser-stat-label">of revenue lost</div>
+      <p class="teaser-stat-desc">Businesses without lead infrastructure lose up to 40% of potential revenue to missed follow-ups and leaky pipelines.</p>
+      <div class="teaser-stat-divider"></div>
+      <div class="teaser-stat-bottom">Lead OS was built to fix this.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    category: "Lead Capture",
+    text: "Where do most of your leads currently live?",
+    options: [
+      { text: "In a centralized CRM with clear pipeline stages", score: 10 },
+      { text: "In a basic spreadsheet or simple tool", score: 6 },
+      { text: "Scattered across DMs, email, and notes", score: 3 },
+      { text: "I honestly don't know where all my leads are", score: 0 }
+    ]
+  },
+  {
+    category: "Lead Capture",
+    text: "When a new lead comes in, what happens next?",
+    options: [
+      { text: "They automatically enter a nurture sequence", score: 10 },
+      { text: "I manually add them somewhere and follow up when I can", score: 5 },
+      { text: "It depends — sometimes I follow up, sometimes I forget", score: 2 },
+      { text: "Nothing systematic — I react when I remember", score: 0 }
+    ]
+  },
+  {
+    category: "Follow-Up System",
+    text: "How quickly do leads get a follow-up after first contact?",
+    options: [
+      { text: "Within minutes — it's fully automated", score: 10 },
+      { text: "Within 24 hours — I have a routine", score: 7 },
+      { text: "Within a few days, if I'm not too busy", score: 3 },
+      { text: "I have no consistent follow-up timeline", score: 0 }
+    ]
+  },
+  {
+    category: "Follow-Up System",
+    text: "What does your follow-up sequence look like?",
+    options: [
+      { text: "Multi-step automated emails/SMS that educate and convert", score: 10 },
+      { text: "A few manual emails I send when I remember", score: 5 },
+      { text: "One follow-up message, then I move on", score: 2 },
+      { text: "I don't have a follow-up sequence", score: 0 }
+    ]
+  },
+  {
+    category: "Pipeline Visibility",
+    text: "Can you tell me right now how many active leads you have and at what stage?",
+    options: [
+      { text: "Yes — I have a dashboard that shows this in real-time", score: 10 },
+      { text: "Roughly — I'd need to check a few places", score: 5 },
+      { text: "Not really — I'd have to dig through messages and notes", score: 2 },
+      { text: "No idea — I don't track pipeline stages", score: 0 }
+    ]
+  },
+  {
+    category: "Pipeline Visibility",
+    text: "Do you know which lead source brings you the most revenue?",
+    options: [
+      { text: "Yes — I track attribution and know exactly what works", score: 10 },
+      { text: "I have a general sense but no hard data", score: 5 },
+      { text: "I've never tracked where my best clients come from", score: 1 },
+      { text: "I don't even know where most of my leads come from", score: 0 }
+    ]
+  },
+  {
+    category: "Booking & Conversion",
+    text: "How do prospects book calls with you?",
+    options: [
+      { text: "Automated scheduling with reminders and show-up sequences", score: 10 },
+      { text: "A scheduling link like Calendly, but no automated reminders", score: 6 },
+      { text: "Back-and-forth messages to find a time", score: 2 },
+      { text: "It's random — sometimes they book, sometimes they don't", score: 0 }
+    ]
+  },
+  {
+    category: "Booking & Conversion",
+    text: "What's your no-show rate on discovery/sales calls?",
+    options: [
+      { text: "Under 10% — my show-up sequences work great", score: 10 },
+      { text: "Around 20-30% — some people ghost", score: 5 },
+      { text: "Over 30% — it's a real problem", score: 2 },
+      { text: "I don't track it, but it feels high", score: 1 }
+    ]
+  },
+  {
+    category: "Automation & Systems",
+    text: "How much of your lead management is automated vs. manual?",
+    options: [
+      { text: "Mostly automated — I've built systems for everything", score: 10 },
+      { text: "Some automation but still a lot of manual work", score: 5 },
+      { text: "Almost everything is manual", score: 2 },
+      { text: "100% manual — I do everything myself", score: 0 }
+    ]
+  },
+  {
+    category: "Automation & Systems",
+    text: "If you took a week off, what would happen to your leads?",
+    options: [
+      { text: "The system keeps running — leads still get nurtured and booked", score: 10 },
+      { text: "Things slow down but some automations keep going", score: 6 },
+      { text: "Everything stops — leads go cold", score: 2 },
+      { text: "I'd probably lose most of them", score: 0 }
+    ]
+  }
+];
+
+const categories = ["Lead Capture", "Follow-Up System", "Pipeline Visibility", "Booking & Conversion", "Automation & Systems"];
+
+let currentQ = 0;
+let answers = new Array(questions.length).fill(null);
+
+function startQuiz() {
+  document.getElementById('hero-section').style.display = 'none';
+  document.getElementById('quizContainer').classList.add('active');
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('progressText').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('progressFill').style.width = `${((currentQ + 1) / questions.length) * 100}%`;
+  document.getElementById('questionNumber').textContent = `${q.category}`;
+  document.getElementById('questionText').textContent = q.text;
+
+  const container = document.getElementById('optionsContainer');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const div = document.createElement('div');
+    div.className = 'option' + (answers[currentQ] === i ? ' selected' : '');
+    div.innerHTML = `<div class="option-marker"></div><div class="option-text">${opt.text}</div>`;
+    div.onclick = () => selectOption(i);
+    container.appendChild(div);
+  });
+
+  document.getElementById('btnBack').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+  document.getElementById('btnNext').disabled = answers[currentQ] === null;
+  document.getElementById('btnNext').innerHTML = currentQ === questions.length - 1
+    ? 'See My Score <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>'
+    : 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+}
+
+function selectOption(idx) {
+  answers[currentQ] = idx;
+  document.querySelectorAll('.option').forEach((el, i) => {
+    el.classList.toggle('selected', i === idx);
+  });
+  document.getElementById('btnNext').disabled = false;
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    showEmailGate();
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+  }
+}
+
+function showEmailGate() {
+  document.getElementById('quizContainer').classList.remove('active');
+  document.getElementById('emailGate').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── SUPABASE CONFIG ───
+const SUPABASE_URL = 'https://modepuhwinzdngirlnkz.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZGVwdWh3aW56ZG5naXJsbmt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1MDYxNTEsImV4cCI6MjA4ODA4MjE1MX0.1S2wC8CxE8_MCTmsGwoiOoqNYw_lXIM7_CT_-AG6DAI';
+
+async function saveToSupabase(data) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+  } catch (e) { console.error('Supabase save error:', e); }
+}
+
+function submitEmail() {
+  const name = document.getElementById('userName').value.trim();
+  const email = document.getElementById('userEmail').value.trim();
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Please enter a valid email to see your results.');
+    return;
+  }
+
+  // Calculate score
+  let total = 0;
+  answers.forEach((ans, i) => { total += questions[i].options[ans].score; });
+
+  // Save to Supabase
+  saveToSupabase({
+    name: name || null,
+    email: email,
+    source: 'lead-clarity-quiz',
+    quiz_score: total,
+    created_at: new Date().toISOString()
+  });
+
+  showResults();
+}
+
+function skipEmail() {
+  showResults();
+}
+
+function showResults() {
+  document.getElementById('emailGate').classList.remove('active');
+  document.getElementById('resultsContainer').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Calculate total score
+  let total = 0;
+  answers.forEach((ans, i) => {
+    total += questions[i].options[ans].score;
+  });
+
+  // Animate score ring
+  const circumference = 2 * Math.PI * 85; // ~534
+  const offset = circumference - (total / 100) * circumference;
+  const ring = document.getElementById('scoreRing');
+
+  setTimeout(() => {
+    ring.style.strokeDashoffset = offset;
+    if (total >= 70) ring.style.stroke = 'var(--green)';
+    else if (total >= 40) ring.style.stroke = 'var(--yellow)';
+    else ring.style.stroke = 'var(--red)';
+  }, 100);
+
+  // Animate number
+  let count = 0;
+  const numEl = document.getElementById('scoreNumber');
+  const interval = setInterval(() => {
+    count += 1;
+    numEl.textContent = count;
+    if (count >= total) clearInterval(interval);
+  }, 20);
+
+  // Grade
+  const gradeEl = document.getElementById('resultsGrade');
+  const summaryEl = document.getElementById('resultsSummary');
+  if (total >= 80) {
+    gradeEl.textContent = 'Excellent — Your systems are dialed in.';
+    gradeEl.className = 'results-grade good';
+    summaryEl.textContent = "You're running a tight operation. Your lead infrastructure is strong, but there may be opportunities to optimize conversion rates and scale further with AI-driven insights.";
+  } else if (total >= 60) {
+    gradeEl.textContent = 'Good Foundation — But revenue is still leaking.';
+    gradeEl.className = 'results-grade mid';
+    summaryEl.textContent = "You have some pieces in place, but gaps in your system mean leads are slipping through. A few strategic upgrades could significantly increase your close rate and revenue.";
+  } else if (total >= 35) {
+    gradeEl.textContent = "Needs Work — You're leaving serious money on the table.";
+    gradeEl.className = 'results-grade mid';
+    summaryEl.textContent = "Your lead infrastructure has major gaps. Follow-ups are inconsistent, pipeline visibility is low, and you're relying too heavily on manual effort. This is fixable — but it needs a system.";
+  } else {
+    gradeEl.textContent = 'Critical — Your backend is costing you clients daily.';
+    gradeEl.className = 'results-grade bad';
+    summaryEl.textContent = "You don't have lead infrastructure — you have chaos. Leads are being lost, follow-ups aren't happening, and there's no visibility into your pipeline. The good news? This is exactly what we fix.";
+  }
+
+  // Category breakdown
+  const catScores = {};
+  const catMax = {};
+  questions.forEach((q, i) => {
+    if (!catScores[q.category]) { catScores[q.category] = 0; catMax[q.category] = 0; }
+    catScores[q.category] += q.options[answers[i]].score;
+    catMax[q.category] += 10;
+  });
+
+  const breakdownList = document.getElementById('breakdownList');
+  breakdownList.innerHTML = '';
+  categories.forEach(cat => {
+    if (!catScores.hasOwnProperty(cat)) return;
+    const pct = Math.round((catScores[cat] / catMax[cat]) * 100);
+    let cls = 'good';
+    if (pct < 40) cls = 'bad';
+    else if (pct < 70) cls = 'mid';
+    const item = document.createElement('div');
+    item.className = 'breakdown-item';
+    item.innerHTML = `<span class="breakdown-label">${cat}</span><span class="breakdown-score ${cls}">${pct}%</span>`;
+    breakdownList.appendChild(item);
+  });
+}
+</script>
+</body>
+</html>

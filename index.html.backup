@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElevateAI System | AI Marketing Systems for Coaches, Creators & Businesses</title>
+<meta name="description" content="AI-powered marketing systems that get you found on Google, AI Overviews, ChatGPT & Perplexity. Lead OS, Content OS, Growth Engine. Free 4-pillar search visibility audit.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sunny Binjola">
+<meta name="keywords" content="AI lead systems, lead generation for coaches, AI automation, lead infrastructure, coaching business growth, AI systems for creators, lead OS, CRM automation">
+<link rel="canonical" href="https://www.elevateaisystem.com/">
+<link rel="alternate" hreflang="en" href="https://www.elevateaisystem.com/">
+<link rel="alternate" hreflang="x-default" href="https://www.elevateaisystem.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ElevateAI System | AI Marketing Systems for Coaches, Creators & Businesses">
+<meta property="og:description" content="AI-powered marketing systems that get you found on Google, AI Overviews, ChatGPT & Perplexity. Lead OS, Content OS, Growth Engine. Free 4-pillar search visibility audit.">
+<meta property="og:url" content="https://www.elevateaisystem.com/">
+<meta property="og:site_name" content="ElevateAI System">
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ElevateAI System | AI Marketing Systems for Coaches, Creators & Businesses">
+<meta name="twitter:description" content="AI-powered marketing systems that get you found on Google, AI Overviews, ChatGPT & Perplexity. Lead OS, Content OS, Growth Engine. Free 4-pillar search visibility audit.">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ElevateAI System",
+  "alternateName": "Elevate AI System",
+  "url": "https://www.elevateaisystem.com",
+  "logo": "https://www.elevateaisystem.com/logo.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Sunny Binjola",
+    "jobTitle": "Founder & AI Marketing Strategist",
+    "url": "https://www.sunnybinjola.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/sunnybinjola",
+      "https://www.instagram.com/sunnybinjola"
+    ]
+  },
+  "description": "AI-powered marketing systems for coaches, consultants, creators, and service businesses. We optimize for all 4 search channels: SEO, AEO, GEO, and LLMO.",
+  "areaServed": "Worldwide",
+  "knowsAbout": [
+    "SEO", "AEO", "GEO", "LLMO",
+    "Search Engine Optimization",
+    "Answer Engine Optimization",
+    "Generative Engine Optimization",
+    "Large Language Model Optimization",
+    "AI Marketing Systems",
+    "Lead Generation for Coaches"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/elevateaisystem",
+    "https://www.linkedin.com/company/elevateaisystem"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "url": "https://cal.com/sunny-binjola/quick-seo-chat",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<!-- Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sunny Binjola",
+  "jobTitle": "Founder & AI Marketing Strategist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ElevateAI System",
+    "url": "https://www.elevateaisystem.com"
+  },
+  "url": "https://www.sunnybinjola.com",
+  "knowsAbout": [
+    "AI Marketing", "SEO", "AEO", "GEO", "LLMO",
+    "Marketing Automation", "Lead Generation",
+    "Content Strategy", "Search Visibility"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/sunnybinjola",
+    "https://www.instagram.com/sunnybinjola"
+  ]
+}
+</script>
+<!-- Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI Marketing System",
+  "provider": {
+    "@type": "Organization",
+    "name": "ElevateAI System",
+    "url": "https://www.elevateaisystem.com"
+  },
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Free Search Visibility Audit",
+          "description": "Comprehensive 4-pillar audit covering SEO, AEO, GEO, and LLMO with AI citation testing and competitor analysis"
+        },
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Strategy Hour",
+          "description": "1-on-1 AI strategy session for your business"
+        },
+        "price": "375",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lead OS",
+          "description": "AI-powered lead capture and context system"
+        },
+        "price": "375",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content OS",
+          "description": "AI content creation system optimized for SEO + AEO + GEO + LLMO"
+        },
+        "price": "1500",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Growth Engine",
+          "description": "Full-stack AI marketing system combining Lead OS, Content OS, and automated outreach"
+        },
+        "price": "5000",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+}
+</script>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Elevate AI System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elevate AI System builds AI-powered marketing systems for coaches, consultants, creators, and service businesses. We help you get found across Google, AI Overviews, ChatGPT, Perplexity, and Claude using our 4-pillar framework: SEO, AEO, GEO, and LLMO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Search Visibility Audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Search Visibility Audit uses The ELEVATE Method to analyze how your website performs across all 4 search channels: traditional Google search (SEO), AI Overviews and Featured Snippets (AEO), Google's generative summaries (GEO), and AI chatbot citations from ChatGPT, Perplexity, and Claude (LLMO). The audit includes visibility scores, competitor comparison, AI citation testing, and a prioritized action plan. It is completely free and delivered within 48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is LLMO (Large Language Model Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LLMO is the practice of optimizing your online presence so that AI chatbots like ChatGPT, Perplexity, Claude, and Gemini cite, recommend, or reference your business when users ask relevant questions. It involves LLM seeding strategies, Reddit and forum presence, directory listings, and getting mentioned on authority sites that AI models preferentially cite. As more people use AI to find services, LLMO is rapidly becoming as important as traditional SEO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Lead OS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lead OS is an AI-powered lead generation system that finds, captures, enriches, nurtures, and converts leads on autopilot. It includes AI prospecting, automated outbound email sequences, CRM integration, and lead scoring. Built for coaches and consultants doing $10K–$50K/month who want 24/7 automated lead generation. Starting at $375/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Content OS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content OS is an AI content creation system that produces 120+ pieces of content per month — blog posts, social media captions, carousels, newsletters, and video scripts — all optimized for all 4 search visibility pillars: SEO, AEO, GEO, and LLMO. Content is written in your voice using AI agents trained on your brand. Starting at $1,500/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an SEO audit cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Search Visibility Audit is completely free. It covers all 4 pillars (SEO, AEO, GEO, LLMO) and is delivered within 48 hours. If you want us to implement the fixes, we offer an Essential Fix at $497, a Complete Search Visibility Overhaul at $1,497, or Ongoing Search Growth at $97/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is The ELEVATE Method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ELEVATE Method is Elevate AI System's proprietary 4-pillar search visibility framework: SEO (Google rankings), AEO (AI Overviews and Featured Snippets), GEO (Google generative search citations), and LLMO (ChatGPT, Perplexity, Claude recommendations). Most businesses only optimize for SEO. The ELEVATE Method ensures you're visible across every modern search surface — not just Google."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Growth Engine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Growth Engine is Elevate AI System's complete AI marketing infrastructure. It combines Lead OS (AI lead generation), Content OS (120+ content pieces/month), automated outreach, analytics dashboard, and weekly strategy oversight — all working together as one system. Starting at $5,000/month. Designed for coaches and consultants at $50K+/month who are ready to scale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Build Your Brand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build Your Brand is the flagship done-for-you service from Elevate AI System. We build your complete AI marketing infrastructure from scratch: brand identity, custom website, 11 AI agents (for content, operations, and growth), social media system, email sequences, and 4-pillar search visibility setup. Starting at $5,000 as a one-time project, delivered in 4–8 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AEO (Answer Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO stands for Answer Engine Optimization. It's the practice of optimizing content to appear in Google's Featured Snippets, AI Overviews, and People Also Ask boxes. AEO requires direct-answer content formatting, FAQ schema markup, question-based headings, and authoritative concise responses. It's Pillar 2 of The ELEVATE Method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is GEO (Generative Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO stands for Generative Engine Optimization. It's the practice of optimizing your website and content to be cited by Google's AI-generated summaries and AI Overviews. GEO requires entity clarity, structured data, strong E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness), original data, and clear topical authority. It's Pillar 3 of The ELEVATE Method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results from AI marketing systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lead OS typically shows measurable results within 2–3 weeks. Content OS takes 60–90 days to fully compound as content gets indexed and begins ranking. Build Your Brand full results are visible at the 90-day mark. One client generated $83,000 in new revenue within 62 days of launching their Growth Engine system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be tech-savvy to use Elevate AI System's services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Elevate AI System builds everything for you. You don't need to know how to code, use AI tools, or understand marketing technology. We handle the entire setup and provide simple training for day-to-day use. Our clients are coaches and consultants, not developers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Elevate AI System different from a marketing agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional marketing agencies do the work for you temporarily and require ongoing monthly fees. Elevate AI System builds AI systems that work for you 24/7. You own the systems — they're yours forever. We also optimize across all 4 search pillars (SEO, AEO, GEO, LLMO), not just Google rankings like most agencies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of coaches does Elevate AI System work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elevate AI System works with life coaches, business coaches, executive coaches, health coaches, fitness coaches, relationship coaches, career coaches, mindset coaches, financial coaches, and any other coaching or consulting niche. The ideal client is a coach or consultant doing $10,000+ per month who wants to automate and scale their marketing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI tools and platforms do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elevate AI System uses a curated stack of AI tools tailored to each client's needs. This typically includes AI writing and content tools, CRM automation, email sequence platforms, social scheduling systems, and custom AI agents built on platforms like Paperclip. We select the best tools for your specific situation — not a one-size-fits-all tech stack."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI-generated content rank on Google?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Google's stance is that AI content is acceptable as long as it's helpful, original, and high-quality — it's about the quality of the content, not how it was created. Elevate AI System's Content OS produces AI-assisted content that is edited, personalized, and optimized to meet Google's quality standards, including E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an AI Strategy Hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AI Strategy Hour is a $375 one-on-one consulting session with Sunny Binjola. You bring your specific marketing challenge and we map out the exact AI system to solve it. Includes a custom action plan, tool recommendations, and 7 days of follow-up support. Perfect for coaches who want expert guidance before committing to a full system build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started with Elevate AI System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best first step is to book a free Search Visibility Audit at elevateaisystem.com/seo-audit-landing-page. We'll analyze your current visibility across all 4 pillars and show you exactly where you stand and what to prioritize. Alternatively, book a Discovery Call at cal.com/sunny-binjola/discovery-call to talk through your situation directly with Sunny."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What results have Elevate AI System clients achieved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elevate AI System clients have generated $83,000+ in new revenue within 62 days using the Growth Engine system. Other typical results include a 3–5x increase in monthly content output within 30 days, a 40–70% reduction in time spent on marketing, a 2–4x increase in qualified leads within 60–90 days, and measurable visibility across all 4 search pillars within 90 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is The 3-2-1 Newsletter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 3-2-1 is Elevate AI System's weekly newsletter published on Beehiiv. Each issue delivers 3 AI marketing strategies, 2 tool recommendations, and 1 action step you can implement immediately. It covers the latest in AI marketing, SEO updates, LLMO strategies, and coaching business growth tips. Subscribe at elevateaisystem.com/the-3-2-1."
+      }
+    }
+  ]
+}
+</script>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8;--bg-alt:#F2F2EE;--green:#00FF41;--green-dark:#00CC34;
+  --navy:#0A0F1C;--navy-light:#1A2035;--text:#1A1A2E;--text-muted:#5A5A6E;
+  --border:#E0E0D8;--white:#FFFFFF;--card-bg:#FFFFFF;
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes typing{from{width:0}to{width:100%}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+
+
+
+
+
+/* HERO */
+.hero{padding:10rem 2rem 6rem;text-align:center;max-width:900px;margin:0 auto;position:relative}
+.hero::before{content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;z-index:-1}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg-alt);color:var(--text);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.4rem;border-radius:50px;margin-bottom:2rem;border:1px solid var(--border);animation:fadeIn .8s ease .2s both}
+.hero-badge svg{width:16px;height:16px;color:var(--green-dark)}
+.hero h1{font-size:clamp(3.5rem,8vw,6.5rem);font-weight:800;line-height:1.02;letter-spacing:-.04em;color:var(--navy);margin-bottom:1.5rem;animation:fadeUp .8s ease .3s both}
+.hero h1 .accent{color:var(--green-dark)}
+.hero h1 .rotating-text{display:inline-block;position:relative;color:var(--navy);background:var(--green);padding:.1em .3em;min-width:240px}
+.hero p{font-size:1.25rem;color:var(--text-muted);max-width:650px;margin:0 auto 2.5rem;line-height:1.7;font-style:italic;font-weight:400;animation:fadeUp .8s ease .5s both}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .7s both}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.hero-cta:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,15,28,.2)}
+.hero-cta svg{width:18px;height:18px}
+.hero-cta-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--navy);padding:1rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:600;transition:all .3s;border:2px solid var(--border);cursor:pointer}
+.hero-cta-secondary:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* TRUST BAR */
+.trust-bar{padding:2rem 2rem 0;text-align:center;animation:fadeIn 1s ease 1s both}
+.trust-bar p{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);opacity:.5;margin-bottom:1rem}
+.trust-logos{display:flex;gap:3rem;justify-content:center;align-items:center;flex-wrap:wrap;opacity:.35}
+.trust-logos span{font-size:.85rem;font-weight:700;letter-spacing:.05em;color:var(--text-muted)}
+
+/* SECTIONS */
+.section{padding:6rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.75rem}
+.section-title{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--navy);margin-bottom:1rem}
+.section-subtitle{font-size:1.05rem;color:var(--text-muted);max-width:620px;line-height:1.7}
+
+/* FRICTION SECTION */
+.friction{background:var(--bg-alt);position:relative;overflow:hidden}
+.friction::after{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,255,65,.04),transparent 70%);border-radius:50%;pointer-events:none}
+.friction-intro{font-size:1.1rem;color:var(--text);max-width:680px;margin-top:1rem;line-height:1.7}
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.friction-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);transition:all .4s;position:relative;overflow:hidden}
+.friction-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06);border-color:transparent}
+.friction-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#DC2626,#F59E0B);opacity:0;transition:opacity .3s}
+.friction-card:hover::before{opacity:1}
+.friction-card .card-num{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase;margin-bottom:1rem;opacity:.5}
+.friction-card h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.friction-card p{font-size:.95rem;color:var(--text-muted);line-height:1.65}
+
+/* LEAD OS SECTION */
+.leados{position:relative}
+.leados-header{text-align:center;margin-bottom:3rem}
+.leados-header .section-subtitle{margin:0 auto}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.phase-card{text-align:center;position:relative;padding:2rem}
+.phase-num{width:56px;height:56px;background:var(--navy);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;margin:0 auto 1.2rem;position:relative;z-index:2}
+.phase-card h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.phase-card p{font-size:.95rem;color:var(--text-muted);line-height:1.65}
+.phase-connector{display:none}
+@media(min-width:769px){
+  .phase-connector{display:block;position:absolute;top:28px;right:-1rem;width:2rem;height:2px;background:var(--border)}
+  .phase-card:last-child .phase-connector{display:none}
+}
+
+/* FRICTION REMOVAL */
+.removal{background:var(--bg-alt)}
+.removal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.removal-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);display:flex;gap:1.2rem;align-items:flex-start;transition:all .3s}
+.removal-card:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.removal-icon{flex-shrink:0;width:44px;height:44px;background:rgba(0,204,52,.1);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.removal-icon svg{width:20px;height:20px;color:var(--green-dark)}
+.removal-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.removal-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.service-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:2.5rem;border:1px solid var(--border);transition:all .4s;position:relative;overflow:hidden}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,.06);border-color:transparent}
+.service-card.featured{background:var(--navy);color:var(--white);border-color:transparent}
+.service-card.featured:hover{box-shadow:0 16px 50px rgba(10,15,28,.3)}
+.service-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .8rem;border-radius:50px;margin-bottom:1.2rem}
+.service-card .service-badge{background:var(--bg-alt);color:var(--text-muted)}
+.service-card.featured .service-badge{background:rgba(0,255,65,.15);color:var(--green)}
+.service-card h3{font-size:1.4rem;font-weight:800;margin-bottom:.3rem}
+.service-card.featured h3{color:var(--white)}
+.service-price{font-size:.9rem;color:var(--text-muted);margin-bottom:1rem;font-weight:500}
+.service-card.featured .service-price{color:rgba(255,255,255,.5)}
+.service-card .service-desc{font-size:.95rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.5rem}
+.service-card.featured .service-desc{color:rgba(255,255,255,.7)}
+.service-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.8rem}
+.service-features li{display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:var(--text);list-style:none}
+.service-card.featured .service-features li{color:rgba(255,255,255,.8)}
+.service-features li svg{width:16px;height:16px;color:var(--green-dark);flex-shrink:0}
+.service-card.featured .service-features li svg{color:var(--green)}
+.service-cta{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:700;color:var(--navy);transition:all .3s;padding:.7rem 1.4rem;border-radius:8px;border:2px solid var(--border)}
+.service-cta:hover{border-color:var(--navy);transform:translateX(4px)}
+.service-card.featured .service-cta{background:var(--green);color:var(--navy);border-color:var(--green)}
+.service-card.featured .service-cta:hover{background:var(--green-dark);border-color:var(--green-dark);transform:translateX(4px)}
+
+/* PHILOSOPHY */
+.philosophy{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.philosophy::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,.06),transparent);border-radius:50%;pointer-events:none}
+.philosophy .section-label{color:var(--green)}
+.philosophy .section-title{color:var(--white)}
+.philosophy-quote{font-size:1.3rem;font-weight:500;line-height:1.7;color:rgba(255,255,255,.85);max-width:700px;margin-top:2rem;position:relative;padding-left:1.5rem;border-left:3px solid var(--green)}
+.philosophy-body{font-size:1rem;color:rgba(255,255,255,.55);max-width:700px;margin-top:1.5rem;line-height:1.75}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.pillar{text-align:center;padding:1.5rem 1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);transition:all .3s}
+.pillar:hover{border-color:rgba(0,255,65,.2);background:rgba(0,255,65,.04)}
+.pillar-icon{width:44px;height:44px;background:rgba(0,255,65,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem}
+.pillar-icon svg{width:20px;height:20px;color:var(--green)}
+.pillar h4{font-size:.9rem;font-weight:700;color:var(--white)}
+
+/* CASE STUDIES */
+.cases{background:var(--bg-alt)}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.case-card{background:var(--card-bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:all .4s}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.case-header{background:var(--navy);color:var(--white);padding:1.5rem 2rem}
+.case-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
+.case-header h3{font-size:1.15rem;font-weight:700}
+.case-body{padding:2rem}
+.case-columns{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.case-col h4{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem}
+.case-col.before h4{color:#DC2626}
+.case-col.after h4{color:var(--green-dark)}
+.case-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.case-col li{font-size:.85rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:.5rem}
+.case-col li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.case-col.before li::before{background:#DC2626}
+.case-col.after li::before{background:var(--green-dark)}
+.case-context{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-muted);font-style:italic}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.process-step{text-align:center;padding:2rem;position:relative}
+.step-num{font-size:3rem;font-weight:800;color:var(--green);opacity:.2;line-height:1;margin-bottom:1rem}
+.process-step h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.process-step p{font-size:.95rem;color:var(--text-muted);line-height:1.65}
+
+/* FIT CHECK */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.fit-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:2.5rem;border:1px solid var(--border)}
+.fit-card h3{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.fit-card.yes h3{color:var(--green-dark)}
+.fit-card.no h3{color:#DC2626}
+.fit-list{display:flex;flex-direction:column;gap:.8rem;list-style:none}
+.fit-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;color:var(--text-muted)}
+.fit-list li .dot{flex-shrink:0;width:6px;height:6px;border-radius:50%;margin-top:8px}
+.fit-card.yes .dot{background:var(--green-dark)}
+.fit-card.no .dot{background:#DC2626}
+
+/* FOUNDER */
+.founder{position:relative;overflow:hidden}
+.founder::before{content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(0,255,65,.05),transparent 70%);border-radius:50%;pointer-events:none}
+.founder-grid{display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:center;margin-top:2.5rem}
+.founder-photo{position:relative}
+.founder-photo-frame{width:280px;height:340px;border-radius:var(--radius-lg);overflow:hidden;border:3px solid var(--border);position:relative;background:var(--bg-alt)}
+.founder-photo-frame img{width:100%;height:100%;object-fit:cover}
+.founder-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--text-muted)}
+.founder-photo-placeholder svg{width:64px;height:64px;opacity:.3}
+.founder-photo-placeholder span{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.4}
+.founder-accent{position:absolute;bottom:-8px;right:-8px;width:100px;height:100px;border-radius:var(--radius);background:var(--green);opacity:.08;z-index:-1}
+.founder-content h3{font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:.3rem;line-height:1.2}
+.founder-role{font-size:.85rem;font-weight:600;color:var(--green-dark);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.founder-role::before{content:'';width:20px;height:2px;background:var(--green-dark)}
+.founder-story{font-size:1.05rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem}
+.founder-values{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.founder-value{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--text);padding:.4rem .9rem;border-radius:50px;background:var(--bg-alt);border:1px solid var(--border)}
+.founder-value svg{width:14px;height:14px;color:var(--green-dark)}
+.founder-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:700;color:var(--navy);transition:all .3s}
+.founder-link:hover{color:var(--green-dark);transform:translateX(4px)}
+.founder-link svg{width:16px;height:16px}
+@media(max-width:768px){
+  .founder-grid{grid-template-columns:1fr;text-align:center}
+  .founder-photo{display:flex;justify-content:center}
+  .founder-photo-frame{width:200px;height:240px}
+  .founder-values{justify-content:center}
+}
+
+/* NEWSLETTER */
+.newsletter{background:var(--navy);position:relative;overflow:hidden}
+.newsletter::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,255,65,.06),transparent);border-radius:50%;pointer-events:none}
+.newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.newsletter-content .section-label{color:var(--green)}
+.newsletter-content .section-title{color:var(--white)}
+.newsletter-desc{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;margin-top:.8rem}
+.newsletter-format{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.newsletter-format-item{display:flex;align-items:center;gap:.5rem}
+.newsletter-format-num{width:32px;height:32px;border-radius:50%;background:rgba(0,255,65,.12);color:var(--green);font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.newsletter-format-text{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.8)}
+.newsletter-signup{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2.5rem}
+.newsletter-signup h3{font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.newsletter-signup p{font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+.newsletter-form{display:flex;flex-direction:column;gap:.6rem}
+.newsletter-form input[type="email"]{padding:.9rem 1.2rem;border:2px solid rgba(255,255,255,.12);border-radius:10px;font-family:inherit;font-size:.95rem;background:rgba(255,255,255,.06);color:var(--white);outline:none;transition:border-color .3s}
+.newsletter-form input[type="email"]:focus{border-color:var(--green)}
+.newsletter-form input[type="email"]::placeholder{color:rgba(255,255,255,.35)}
+.newsletter-form button{padding:.9rem 1.8rem;background:var(--green);color:var(--navy);border:none;border-radius:10px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .3s}
+.newsletter-form button:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,255,65,.25)}
+.newsletter-note{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.5rem}
+.newsletter-success{display:none;text-align:center;padding:1.5rem;background:rgba(0,255,65,.08);border-radius:10px;border:1px solid rgba(0,255,65,.2)}
+.newsletter-success h4{font-size:1.1rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
+.newsletter-success p{font-size:.88rem;color:rgba(255,255,255,.6)}
+.newsletter-proof{display:flex;align-items:center;gap:.6rem;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.newsletter-proof svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+.newsletter-proof span{font-size:.78rem;color:rgba(255,255,255,.4)}
+@media(max-width:768px){
+  .newsletter-inner{grid-template-columns:1fr}
+  .newsletter-signup{padding:1.8rem}
+}
+
+/* FINAL CTA */
+
+/* FOOTER */
+.footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
+.footer p{font-size:.82rem;color:var(--text-muted);font-weight:500}
+.footer span{color:var(--green-dark)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .hero{padding:8rem 1.5rem 4rem}
+  .hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}
+  .hero-buttons{flex-direction:column;align-items:center}
+  .section{padding:4rem 1.5rem}
+  .friction-grid{grid-template-columns:1fr}
+  .phase-grid{grid-template-columns:1fr}
+  .removal-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:1fr}
+  .case-columns{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr}
+  .fit-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="navbar.js"></script>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Systems for Human Beings</div>
+  <h1>AI Systems for<br><span class="rotating-text" id="rotatingText">Creators</span></h1>
+  <p>Turn attention into real conversations — and conversations into clients.</p>
+  <div class="hero-buttons">
+    <a href="/seo-audit-landing-page" class="hero-cta">Get Your Free Search Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- THE FRICTION -->
+<section class="section friction" id="friction">
+  <div class="section-inner">
+    <div class="section-label reveal">The Friction</div>
+    <h2 class="section-title reveal">You've built something real.<br>But the leads don't reflect it.</h2>
+    <p class="friction-intro reveal">Most coaches, consultants, businesses, and creators don't have a lead problem — they have a systems problem.</p>
+    <div class="friction-grid">
+      <div class="friction-card reveal" style="transition-delay:.1s">
+        <div class="card-num">Problem 01</div>
+        <h3>Content Without Capture</h3>
+        <p>You're posting, sharing, showing up — but there's no mechanism to turn attention into an actual conversation. Visibility without a system is just noise.</p>
+      </div>
+      <div class="friction-card reveal" style="transition-delay:.2s">
+        <div class="card-num">Problem 02</div>
+        <h3>Leads Without Context</h3>
+        <p>Someone fills out a form or sends a DM. But you don't know what they need, what they've seen, or how warm they are. Every call starts from zero.</p>
+      </div>
+      <div class="friction-card reveal" style="transition-delay:.3s">
+        <div class="card-num">Problem 03</div>
+        <h3>Follow-Up Without Flow</h3>
+        <p>People show interest and then disappear — not because they weren't ready, but because nothing guided them forward. Without a system, follow-up dies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD OS INFRASTRUCTURE -->
+<section class="section leados" id="leados">
+  <div class="section-inner">
+    <div class="leados-header">
+      <div class="section-label reveal">The New Infrastructure</div>
+      <h2 class="section-title reveal">Lead OS — Built for How You Work</h2>
+      <p class="section-subtitle reveal">A system that captures trust, tracks readiness, and converts with integrity. No cold outreach. No manipulative funnels.</p>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-card reveal" style="transition-delay:.1s">
+        <div class="phase-connector"></div>
+        <div class="phase-num">01</div>
+        <h3>Capture</h3>
+        <p>A quiz, assessment, or lead asset that lets people experience your thinking before buying. They self-select. You get real data.</p>
+      </div>
+      <div class="phase-card reveal" style="transition-delay:.2s">
+        <div class="phase-connector"></div>
+        <div class="phase-num">02</div>
+        <h3>Track</h3>
+        <p>A centralized CRM that shows you who's warm, what they need, and where they are in their journey — without manual tagging or guesswork.</p>
+      </div>
+      <div class="phase-card reveal" style="transition-delay:.3s">
+        <div class="phase-num">03</div>
+        <h3>Convert</h3>
+        <p>Automated nurture that feels personal. Sequences, follow-ups, and re-engagement — timed to readiness, not arbitrary schedules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRICTION REMOVAL -->
+<section class="section removal" id="removal">
+  <div class="section-inner">
+    <div class="section-label reveal">What Gets Resolved</div>
+    <h2 class="section-title reveal">Friction We Remove</h2>
+    <div class="removal-grid">
+      <div class="removal-card reveal" style="transition-delay:.1s">
+        <div class="removal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div>
+          <h3>Content</h3>
+          <p>From scattered posting to strategic content that pre-qualifies and warms leads before they ever reach out.</p>
+        </div>
+      </div>
+      <div class="removal-card reveal" style="transition-delay:.2s">
+        <div class="removal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h3>Leads</h3>
+          <p>From "who is this?" to full context on every person — what they want, where they are, and whether they're ready.</p>
+        </div>
+      </div>
+      <div class="removal-card reveal" style="transition-delay:.3s">
+        <div class="removal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div>
+          <h3>Decisions</h3>
+          <p>From gut-feel follow-up to data-informed outreach — know exactly who to talk to and when.</p>
+        </div>
+      </div>
+      <div class="removal-card reveal" style="transition-delay:.4s">
+        <div class="removal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+        <div>
+          <h3>Operations</h3>
+          <p>From duct-taped tools to a single integrated system that runs while you do the real work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label reveal">What We Build</div>
+    <h2 class="section-title reveal">Services</h2>
+    <div class="services-grid">
+
+      <!-- Build Your Brand — TOP SERVICE -->
+      <div class="service-card featured reveal" style="transition-delay:.1s">
+        <div class="service-badge">Done-For-You · New</div>
+        <h3>Build Your Brand</h3>
+        <p class="service-price">From $5,000 · Brand + Website + AI Agents + Social</p>
+        <p class="service-desc">Done-for-you brand building with up to 11 custom AI agents trained on your voice. Website, LinkedIn, Instagram, and a content machine that runs on autopilot.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Up to 11 custom AI agents (voice-trained)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Website + LinkedIn + Instagram + content</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ELEVATE Method optimized from day one</li>
+        </ul>
+        <a href="/build-your-brand" class="service-cta">Explore Build Your Brand →</a>
+      </div>
+
+      <!-- AI Strategy Hour -->
+      <div class="service-card reveal" style="transition-delay:.2s">
+        <div class="service-badge">AI Consultancy</div>
+        <h3>AI Strategy Hour</h3>
+        <p class="service-price">$375 · 60 Minutes · A Solution to Your Problem</p>
+        <p class="service-desc">You've heard about AI everywhere. You don't know what actually applies to your business. One hour. Whatever problem you've got. You leave with an answer — no slides, no fluff.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 60-minute live strategy session</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Specific next step guaranteed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Session notes within 24 hours</li>
+        </ul>
+        <a href="/ai-strategy-hour" class="service-cta">Book a Strategy Hour — $375 →</a>
+      </div>
+
+      <!-- Lead OS -->
+      <div class="service-card reveal" style="transition-delay:.3s">
+        <div class="service-badge">Core Infrastructure</div>
+        <h3>Lead OS</h3>
+        <p class="service-price">90-Day Build · Full System Installation</p>
+        <p class="service-desc">The complete lead system — from capture to conversion. Built over 90 days. Designed to run without you.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Centralized CRM &amp; Pipeline</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Automated Follow-Up Engine</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Multi-Channel Nurture System</li>
+        </ul>
+        <a href="/lead-os" class="service-cta">Explore Lead OS →</a>
+      </div>
+
+      <!-- Content OS -->
+      <div class="service-card reveal" style="transition-delay:.4s">
+        <div class="service-badge">Content Engine</div>
+        <h3>Content OS</h3>
+        <p class="service-price">AI-Powered Content Creation System</p>
+        <p class="service-desc">120+ voice-matched content pieces per month across 6 channels — Instagram, LinkedIn, email, YouTube, blog, and ads. All automated.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI voice-matched content generation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 6-channel distribution engine</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Audience research &amp; pain-point mining</li>
+        </ul>
+        <a href="/content-os" class="service-cta">Explore Content OS →</a>
+      </div>
+
+      <!-- Growth Engine -->
+      <div class="service-card reveal" style="transition-delay:.5s">
+        <div class="service-badge">Full Stack Growth</div>
+        <h3>Growth Engine</h3>
+        <p class="service-price">Complete AI Marketing Infrastructure</p>
+        <p class="service-desc">5 AI agents running your entire marketing — content, leads, ads, outreach, and podcast bookings. One system, every channel, 24/7.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5 integrated AI agent systems</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paid ads + retargeting automation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Podcast OS &amp; outreach engine</li>
+        </ul>
+        <a href="/growth-engine" class="service-cta">Explore Growth Engine →</a>
+      </div>
+
+      <!-- SEO Services -->
+      <div class="service-card reveal" style="transition-delay:.6s">
+        <div class="service-badge">Get Found Everywhere</div>
+        <h3>The ELEVATE Method (SEO + AEO + GEO + LLMO)</h3>
+        <p class="service-price">From $750 one-time · Retainers from $1,500/mo</p>
+        <p class="service-desc">Google, AI Overviews, ChatGPT, Perplexity — your clients search everywhere. The ELEVATE Method is our 4-pillar framework that gets you found across all four search channels, not just the old 10 blue links.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full 4-pillar audit: SEO + AEO + GEO + LLMO</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI citation, snippet &amp; LLM optimization</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Reddit seeding &amp; AI share of voice tracking</li>
+        </ul>
+        <a href="/seo-audit-landing-page" class="service-cta">Explore Search Visibility →</a>
+      </div>
+
+      <!-- AI Systems Audit -->
+      <div class="service-card reveal" style="transition-delay:.7s">
+        <div class="service-badge">Deep Diagnostic</div>
+        <h3>The AI Systems Audit</h3>
+        <p class="service-price">$999 · Full Operational Truth Reveal</p>
+        <p class="service-desc">"You can't fix what you can't see." The audit creates distance — and distance creates clarity.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Complete systems analysis</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Lead flow mapping &amp; diagnosis</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Prioritized action roadmap</li>
+        </ul>
+        <a href="https://buy.stripe.com/28E3cva8A015cfU2PM9oc02" class="service-cta" target="_blank" rel="noopener noreferrer">Book Your Audit — $999 →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section philosophy" id="philosophy">
+  <div class="section-inner">
+    <div class="section-label reveal">Our Philosophy</div>
+    <h2 class="section-title reveal">AI Is a Second Brain, Not a Second Heart</h2>
+    <p class="philosophy-quote reveal">AI cannot replace intuition, creativity, or emotional depth. We use it to edit, sharpen, and optimize — never to originate.</p>
+    <p class="philosophy-body reveal">We build infrastructure that handles the work you shouldn't be doing — so you have more time for the work only you can do. Every system is designed to feel like you, at scale.</p>
+    <div class="pillars">
+      <div class="pillar reveal" style="transition-delay:.1s">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+        <h4>Intuition First</h4>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.2s">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Human Systems</h4>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.3s">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Operational Clarity</h4>
+      </div>
+      <div class="pillar reveal" style="transition-delay:.4s">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <h4>Sustainable Scale</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section cases" id="cases">
+  <div class="section-inner">
+    <div class="section-label reveal">Results</div>
+    <h2 class="section-title reveal">Case Studies</h2>
+    <div class="case-grid">
+
+      <div class="case-card reveal" style="transition-delay:.1s">
+        <div class="case-header">
+          <div class="case-label">Case Study 01</div>
+          <h3>Lead Magnet → Revenue Clarity</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-columns">
+            <div class="case-col before">
+              <h4>Before</h4>
+              <ul>
+                <li>No lead capture</li>
+                <li>Relied on referrals</li>
+                <li>No follow-up system</li>
+                <li>Inconsistent revenue</li>
+              </ul>
+            </div>
+            <div class="case-col after">
+              <h4>After</h4>
+              <ul>
+                <li>Quiz-based lead magnet</li>
+                <li>Automated nurture sequence</li>
+                <li>CRM with full context</li>
+                <li>Predictable pipeline</li>
+              </ul>
+            </div>
+          </div>
+          <p class="case-context">Men's work coach — went from zero digital infrastructure to a functioning lead system in 60 days.</p>
+        </div>
+      </div>
+
+      <div class="case-card reveal" style="transition-delay:.2s">
+        <div class="case-header">
+          <div class="case-label">Case Study 02</div>
+          <h3>Content → Momentum</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-columns">
+            <div class="case-col before">
+              <h4>Before</h4>
+              <ul>
+                <li>Posting without strategy</li>
+                <li>No content-to-lead path</li>
+                <li>Courses with low enrollment</li>
+                <li>No audience segmentation</li>
+              </ul>
+            </div>
+            <div class="case-col after">
+              <h4>After</h4>
+              <ul>
+                <li>Strategic content system</li>
+                <li>Assessment driving signups</li>
+                <li>Cohort-based enrollment flow</li>
+                <li>Segmented by struggle</li>
+              </ul>
+            </div>
+          </div>
+          <p class="case-context">Facilitator with courses and cohorts — transformed scattered content into a system that fills programs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="section-label reveal">How We Work</div>
+    <h2 class="section-title reveal">The Flow</h2>
+    <p class="section-subtitle reveal">Three phases. One integrated system. Built to match the way you actually work.</p>
+    <div class="process-steps">
+      <div class="process-step reveal" style="transition-delay:.1s">
+        <div class="step-num">01</div>
+        <h3>Audit</h3>
+        <p>We map your current systems, identify the friction, and clarify what's actually needed — not what's trending.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.2s">
+        <div class="step-num">02</div>
+        <h3>Build</h3>
+        <p>We design and install your lead infrastructure — CRM, automations, nurture flows, and capture assets — in phases.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.3s">
+        <div class="step-num">03</div>
+        <h3>Integration</h3>
+        <p>We train you on the system, hand over the controls, and make sure it runs — on your terms, at your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT CHECK -->
+<section class="section" id="fit" style="background:var(--bg-alt)">
+  <div class="section-inner">
+    <div class="section-label reveal">Fit Check</div>
+    <h2 class="section-title reveal">Right Fit / Wrong Fit</h2>
+    <div class="fit-grid">
+      <div class="fit-card yes reveal" style="transition-delay:.1s">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Right Fit</h3>
+        <ul class="fit-list">
+          <li><span class="dot"></span> Coaches, consultants, businesses, or creators with real offers</li>
+          <li><span class="dot"></span> You have clients — you need systems to scale</li>
+          <li><span class="dot"></span> You value integrity and long-term thinking</li>
+          <li><span class="dot"></span> You want AI to enhance, not replace, the human</li>
+          <li><span class="dot"></span> Course creators &amp; educators ready to grow</li>
+          <li><span class="dot"></span> Local service businesses ready to modernize</li>
+        </ul>
+      </div>
+      <div class="fit-card no reveal" style="transition-delay:.2s">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg> Wrong Fit</h3>
+        <ul class="fit-list">
+          <li><span class="dot"></span> Looking for a magic bullet or overnight results</li>
+          <li><span class="dot"></span> No existing offer or audience to build on</li>
+          <li><span class="dot"></span> Want to automate the relationship away entirely</li>
+          <li><span class="dot"></span> Not willing to invest in infrastructure</li>
+          <li><span class="dot"></span> Expect results without participation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section founder" id="founder">
+  <div class="section-inner">
+    <div class="section-label reveal">Who's Behind This</div>
+    <h2 class="section-title reveal">Built by a Human, for Humans</h2>
+    <div class="founder-grid">
+      <div class="founder-photo reveal-left">
+        <div class="founder-photo-frame">
+          <img src="sunny.jpg" alt="Sunny Binjola — Founder of ElevateAI System" loading="lazy">
+        </div>
+        <div class="founder-accent"></div>
+      </div>
+      <div class="founder-content reveal-right">
+        <h3>Sunny Binjola</h3>
+        <div class="founder-role">Founder, ElevateAI System</div>
+        <p class="founder-story">I started ElevateAI because I watched great coaches — people doing real, transformational work — struggle to get found. Not because their work wasn't good enough, but because they didn't have the systems to match. I build AI-powered infrastructure that lets your reputation do the selling while you focus on your craft.</p>
+        <div class="founder-values">
+          <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Systems Thinker</span>
+          <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI Strategist</span>
+          <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Coach-First Approach</span>
+        </div>
+        <a href="/about" class="founder-link">Read the full story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter" id="newsletter">
+  <div class="section-inner">
+    <div class="newsletter-inner">
+      <div class="newsletter-content reveal-left">
+        <div class="section-label">Free Weekly Newsletter</div>
+        <h2 class="section-title">The 3-2-1</h2>
+        <p class="newsletter-desc">Your weekly AI brief — filtered for coaching businesses. No noise, no hype. Just the 3 technologies, 2 ideas, and 1 tool that matter. Every Tuesday.</p>
+        <div class="newsletter-format">
+          <div class="newsletter-format-item">
+            <div class="newsletter-format-num">3</div>
+            <div class="newsletter-format-text">Technologies</div>
+          </div>
+          <div class="newsletter-format-item">
+            <div class="newsletter-format-num">2</div>
+            <div class="newsletter-format-text">Ideas</div>
+          </div>
+          <div class="newsletter-format-item">
+            <div class="newsletter-format-num">1</div>
+            <div class="newsletter-format-text">Tool</div>
+          </div>
+        </div>
+      </div>
+      <div class="newsletter-signup reveal-right">
+        <h3>Stay ahead of AI — in 3 minutes.</h3>
+        <p>Every Tuesday at 8am. Free forever.</p>
+        <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSignup(event)">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit">Subscribe to The 3-2-1</button>
+        </form>
+        <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+        <div class="newsletter-success" id="newsletterSuccess">
+          <h4>You're in.</h4>
+          <p>Check your inbox this Tuesday for your first 3-2-1.</p>
+        </div>
+        <div class="newsletter-proof">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>3-minute read · Coaches only · Actionable every issue</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Elevate<span>AI</span> System · AI Systems for Coaches &amp; Creators</p>
+  <p style="font-size:.75rem;margin-top:.5rem"><a href="/lead-os" style="color:var(--text-muted);text-decoration:none">Lead OS</a> · <a href="/content-os" style="color:var(--text-muted);text-decoration:none">Content OS</a> · <a href="/growth-engine" style="color:var(--text-muted);text-decoration:none">Growth Engine</a> · <a href="/seo-audit-landing-page" style="color:var(--text-muted);text-decoration:none">Search Visibility</a> · <a href="/blog" style="color:var(--text-muted);text-decoration:none">Blog</a> · <a href="/seo-audit-landing-page" style="color:var(--text-muted);text-decoration:none">Free SEO Audit</a> · <a href="/the-3-2-1" style="color:var(--text-muted);text-decoration:none">The 3-2-1</a></p>
+  <p style="font-size:.75rem;margin-top:.4rem"><a href="mailto:sunny@elevateaisystem.com" style="color:var(--text-muted);text-decoration:none">sunny@elevateaisystem.com</a></p>
+</footer>
+
+<script>
+// Rotating text
+const words = ['Creators', 'Leaders', 'Coaches', 'Businesses', 'Consultants', 'Educators'];
+let wordIndex = 0;
+const rotEl = document.getElementById('rotatingText');
+
+function rotateWord() {
+  rotEl.style.opacity = '0';
+  rotEl.style.transform = 'translateY(10px)';
+  setTimeout(() => {
+    wordIndex = (wordIndex + 1) % words.length;
+    rotEl.textContent = words[wordIndex];
+    rotEl.style.opacity = '1';
+    rotEl.style.transform = 'translateY(0)';
+  }, 300);
+}
+rotEl.style.transition = 'opacity .3s ease, transform .3s ease';
+setInterval(rotateWord, 2500);
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ── SUPABASE CONFIG (Newsletter) ──
+const SUPABASE_URL = 'https://modepuhwinzdngirlnkz.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZGVwdWh3aW56ZG5naXJsbmt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1MDYxNTEsImV4cCI6MjA4ODA4MjE1MX0.1S2wC8CxE8_MCTmsGwoiOoqNYw_lXIM7_CT_-AG6DAI';
+
+// Newsletter signup
+async function handleNewsletterSignup(e) {
+  e.preventDefault();
+  const form = document.getElementById('newsletterForm');
+  const btn = form.querySelector('button');
+  const email = form.querySelector('input[type="email"]').value;
+
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+
+  try {
+    // 1. Save to Supabase (source of truth)
+    const response = await fetch(SUPABASE_URL + '/rest/v1/newsletter_subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        email: email,
+        source: 'homepage',
+        subscribed_at: new Date().toISOString()
+      })
+    });
+
+    if (!response.ok && response.status !== 409) {
+      throw new Error('Signup failed');
+    }
+
+    // 2. Sync to Beehiiv (for email delivery)
+    fetch('https://api.beehiiv.com/v2/publications/f390a157-1409-46d7-8d9e-1eff7e3a4d64/subscriptions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true }),
+      mode: 'no-cors'
+    }).catch(() => {}); // Silent — Supabase is source of truth
+
+    // Show success
+    form.style.display = 'none';
+    const note = form.nextElementSibling;
+    if (note) note.style.display = 'none';
+    document.getElementById('newsletterSuccess').style.display = 'block';
+
+  } catch (err) {
+    console.error('Newsletter signup error:', err);
+    btn.disabled = false;
+    btn.textContent = 'Subscribe to The 3-2-1';
+    alert('Something went wrong — please try again.');
+  }
+}
+</script>
+</body>
+</html>

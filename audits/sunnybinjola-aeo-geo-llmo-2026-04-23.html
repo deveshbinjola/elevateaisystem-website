@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sunnybinjola.com — AI Visibility Audit — 2026-04-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0F1C;--bg2:#111827;--card:#141C30;--border:#1E2840;
+  --text:#E8ECF3;--muted:#8A94A8;--accent:#00FF41;--accent2:#4FC3F7;
+  --red:#FF5252;--amber:#FFB74D;--yellow:#FFEB3B;--green:#69F0AE;--purple:#B388FF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Bricolage Grotesque',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding:48px 56px;min-height:100vh;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.container{max-width:1200px;margin:0 auto;}
+header{border-bottom:2px solid var(--accent);padding-bottom:32px;margin-bottom:40px;}
+.site-label{color:var(--muted);font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+h1{font-size:48px;font-weight:700;letter-spacing:-1.5px;margin-bottom:8px;}
+.audit-type{color:var(--accent);font-size:18px;font-weight:500;margin-bottom:24px;}
+.header-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:flex-end;}
+.score-badge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 32px;text-align:center;min-width:220px;}
+.score-val{font-size:56px;font-weight:700;line-height:1;color:#FF9800;}
+.score-max{color:var(--muted);font-size:18px;margin-left:4px;}
+.grade{font-size:36px;font-weight:700;margin-top:12px;color:#FF9800;}
+.score-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+.delta-chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text);margin-top:12px;}
+.delta-up{color:var(--green);}
+.delta-down{color:var(--red);}
+section{margin-bottom:48px;}
+h2{font-size:26px;font-weight:600;letter-spacing:-.5px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);color:var(--text);}
+h3{font-size:18px;font-weight:600;margin-bottom:12px;color:var(--text);}
+.gauge-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gauge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;}
+.gauge-title{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.gauge-sub{font-size:11px;color:var(--muted);margin-bottom:16px;}
+.gauge-svg{width:160px;height:88px;margin:0 auto;display:block;}
+.gauge-val{font-size:34px;font-weight:700;margin-top:-16px;position:relative;z-index:2;}
+.gauge-max{font-size:14px;color:var(--muted);}
+.gauge-label{font-size:12px;color:var(--muted);margin-top:6px;}
+.section-block{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;}
+.section-block h3{font-size:20px;color:var(--accent);margin-bottom:6px;}
+.section-block .subtitle{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:16px;}
+.issue-item{padding:14px 0;border-bottom:1px solid var(--border);}
+.issue-item:last-child{border-bottom:none;}
+.issue-title{font-weight:600;margin-bottom:4px;}
+.issue-fix{color:var(--muted);font-size:14px;}
+.issue-fix strong{color:var(--accent);}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+th{background:var(--bg2);text-align:left;padding:12px 16px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:500;}
+td{padding:14px 16px;font-size:14px;border-top:1px solid var(--border);vertical-align:top;}
+tr:first-child td{border-top:none;}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.badge-yes{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-no{background:rgba(255,82,82,.15);color:var(--red);}
+.badge-partial{background:rgba(255,183,77,.15);color:var(--amber);}
+.badge-high{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-med{background:rgba(255,183,77,.15);color:var(--amber);}
+.badge-low{background:rgba(255,82,82,.15);color:var(--red);}
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;}
+.grade-A{color:var(--green);} .grade-B{color:var(--accent2);} .grade-C{color:var(--amber);} .grade-D{color:#FF9800;} .grade-F{color:var(--red);}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="site-label">sunnybinjola.com</div>
+<div class="header-grid">
+<div>
+<h1>AI Visibility Audit</h1>
+<div class="audit-type">AEO · GEO · LLMO Weekly Report · 23 April 2026</div>
+<div class="delta-chip"><span class="delta-up">▲ +1 pt</span> <span>vs last week (46 → 47)</span></div>
+</div>
+<div class="score-badge">
+<div><span class="score-val">47</span><span class="score-max">/100</span></div>
+<div class="grade grade-D">D</div>
+<div class="score-label">AI Visibility</div>
+</div>
+</div>
+</header>
+
+<section>
+<h2>Sub-Scores · AEO / GEO / LLMO</h2>
+<div class="gauge-row">
+<div class="gauge"><div class="gauge-title">AEO</div><div class="gauge-sub">Answer Engine Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#FFB74D" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="88"/></svg>
+<div class="gauge-val">60<span class="gauge-max">/100</span></div><div class="gauge-label">FAQ content exists, schema missing</div></div>
+
+<div class="gauge"><div class="gauge-title">GEO</div><div class="gauge-sub">Generative Engine Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#FF5252" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="154"/></svg>
+<div class="gauge-val">30<span class="gauge-max">/100</span></div><div class="gauge-label">Entity + external citations thin</div></div>
+
+<div class="gauge"><div class="gauge-title">LLMO</div><div class="gauge-sub">LLM Optimisation</div>
+<svg class="gauge-svg" viewBox="0 0 160 88"><path d="M10,80 A70,70 0 0,1 150,80" stroke="#1E2840" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10,80 A70,70 0 0,1 150,80" stroke="#69F0AE" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="77"/></svg>
+<div class="gauge-val">65<span class="gauge-max">/100</span></div><div class="gauge-label">llms.txt + AI crawler access</div></div>
+</div>
+</section>
+
+<section class="section-block">
+<h3>AEO · Answer Engine Optimisation</h3>
+<div class="subtitle">Can Perplexity, ChatGPT, Claude answer men's-recovery questions using your content?</div>
+<div class="issue-item"><div class="issue-title">13 FAQ pairs on /heal-your-heartbreak — but no FAQPage schema</div><div class="issue-fix"><strong>Fix:</strong> Wrap the 13 existing Q&amp;As in FAQPage JSON-LD. This is the single highest-leverage change on the site.</div></div>
+<div class="issue-item"><div class="issue-title">Homepage "Common Questions" section unmarked-up</div><div class="issue-fix"><strong>Fix:</strong> Add FAQPage schema to homepage + repeat across 5 top programmatic pages.</div></div>
+<div class="issue-item"><div class="issue-title">Blog posts use long-form narrative, not scannable Q-answer pattern</div><div class="issue-fix"><strong>Fix:</strong> Restructure 10 top blog posts with H2 questions and 1-sentence direct answers before the depth.</div></div>
+<div class="issue-item"><div class="issue-title">No "definitional" answer block on homepage</div><div class="issue-fix"><strong>Fix:</strong> Add a concise "Who is Sunny Binjola? / What is Men's Heartbreak Recovery Coaching?" answer block near top of page.</div></div>
+</section>
+
+<section class="section-block">
+<h3>GEO · Generative Engine Optimisation</h3>
+<div class="subtitle">Does "Sunny Binjola" appear as a recognized entity in the AI training graph?</div>
+<div class="issue-item"><div class="issue-title">Zero measurable external citations in men's-coaching directories or press</div><div class="issue-fix"><strong>Fix:</strong> Submit to Psychology Today, Good Men Project, Noomii, Coach.me, and The Coaching Directory this quarter.</div></div>
+<div class="issue-item"><div class="issue-title">No podcast features indexed under Sunny Binjola name</div><div class="issue-fix"><strong>Fix:</strong> Pitch 3 podcasts (Mantalks, Evolving Man, Jamie Coach) — these are the authority hubs AI engines scrape for the niche.</div></div>
+<div class="issue-item"><div class="issue-title">Person entity not cross-linked — no sameAs graph</div><div class="issue-fix"><strong>Fix:</strong> Publish Person schema with sameAs LinkedIn, X/Twitter, Instagram, YouTube, Substack, podcast feeds.</div></div>
+<div class="issue-item"><div class="issue-title">No Wikipedia / Wikidata entry — AI engines lack an entity anchor</div><div class="issue-fix"><strong>Fix:</strong> Create a Wikidata entry for "Sunny Binjola" with profession = coach, specialty = men's heartbreak recovery, links.</div></div>
+</section>
+
+<section class="section-block">
+<h3>LLMO · LLM Optimisation</h3>
+<div class="subtitle">Can LLMs cleanly ingest, understand, and cite your site?</div>
+<div class="issue-item"><div class="issue-title">llms.txt is referenced in sitemap — content ingestion surface present</div><div class="issue-fix"><strong>Maintain:</strong> Update llms.txt quarterly with latest program pricing, methodology, and testimonials.</div></div>
+<div class="issue-item"><div class="issue-title">Robots.txt explicitly allows 7 AI crawlers including Applebot-Extended</div><div class="issue-fix"><strong>Maintain:</strong> Stable and well-configured — continue. Re-verify 30-day cycles that CDN doesn't block allowlisted bots.</div></div>
+<div class="issue-item"><div class="issue-title">No Course / Program schema on /heal-your-heartbreak or /get-your-ex-back</div><div class="issue-fix"><strong>Fix:</strong> Use Course + Product schema so LLMs surface the 60-Day Recovery program when asked "structured men's breakup programs".</div></div>
+<div class="issue-item"><div class="issue-title">Blog posts lack author + publish date + last-modified signals</div><div class="issue-fix"><strong>Fix:</strong> Add consistent author byline (Person schema) + datePublished + dateModified to every post. Weak authorship signals = weak LLM trust.</div></div>
+</section>
+
+<section>
+<h2>Live AI Query Results</h2>
+<table>
+<thead><tr><th>Query</th><th>Site Appears?</th><th>What Appeared Instead</th></tr></thead>
+<tbody>
+<tr><td>"men's work coach who uses AI"</td><td><span class="badge badge-no">No</span></td><td>The Fully Booked Coach, CareerVillage, Indeed, Valence, Kickresume</td></tr>
+<tr><td>"online men's life coaching programs"</td><td><span class="badge badge-no">No</span></td><td>BetterMen Coaching, Man-UP! Life Coaching, Josh Dolin, Man Talks, Life Architekture</td></tr>
+<tr><td>"men's personal development coach"</td><td><span class="badge badge-no">No</span></td><td>better-men.uk, Coaching Magazine, Man-UP! Life Coaching, Practical Intimacy</td></tr>
+</tbody>
+</table>
+<div style="margin-top:16px;color:var(--muted);font-size:13px;">Score impact: 2/15 — same as last week. Entire AI answer ecosystem for men's coaching is dominated by 3–5 established players. Breaking in requires external citations + Wikidata + 3+ podcast features.</div>
+</section>
+
+<section>
+<h2>Priority Action Table · Ranked by Impact</h2>
+<table>
+<thead><tr><th>#</th><th>Action</th><th>Effort (hrs)</th><th>Expected Gain</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Wrap 13 FAQ pairs on /heal-your-heartbreak in FAQPage JSON-LD</td><td>2</td><td><span class="badge badge-high">+8 pts</span></td></tr>
+<tr><td>2</td><td>Add FAQPage schema to homepage "Common Questions"</td><td>1</td><td><span class="badge badge-high">+5 pts</span></td></tr>
+<tr><td>3</td><td>Create Person schema for Sunny Binjola with sameAs array</td><td>1</td><td><span class="badge badge-med">+4 pts</span></td></tr>
+<tr><td>4</td><td>Pitch + secure 2 men's-work podcast features this quarter</td><td>8</td><td><span class="badge badge-high">+6 pts</span></td></tr>
+<tr><td>5</td><td>Submit to Psychology Today + Good Men Project + Noomii directories</td><td>3</td><td><span class="badge badge-med">+4 pts</span></td></tr>
+<tr><td>6</td><td>Create Wikidata entry for "Sunny Binjola"</td><td>2</td><td><span class="badge badge-med">+3 pts</span></td></tr>
+<tr><td>7</td><td>Add Course + Product schema to /heal-your-heartbreak and /get-your-ex-back</td><td>2</td><td><span class="badge badge-med">+3 pts</span></td></tr>
+<tr><td>8</td><td>Restructure 10 top blog posts with H2 questions + 1-sentence direct answers</td><td>10</td><td><span class="badge badge-high">+5 pts</span></td></tr>
+<tr><td>9</td><td>Add datePublished + dateModified + author to every post</td><td>4</td><td><span class="badge badge-low">+2 pts</span></td></tr>
+<tr><td>10</td><td>Publish structured "Somatic Healing for Men After Breakup" pillar</td><td>6</td><td><span class="badge badge-med">+4 pts</span></td></tr>
+</tbody>
+</table>
+</section>
+
+<footer>
+<div>Report generated: 23 April 2026 · Sunny Binjola AI Visibility audit</div>
+<div class="mono">sunnybinjola.com · AI 47/100 · Grade D</div>
+</footer>
+</div>
+</body>
+</html>

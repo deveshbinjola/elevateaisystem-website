@@ -1,0 +1,15 @@
+ElevateAI Lighthouse Summary  2026-05-05
+Browser: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+Page                   Device        P    A   BP  SEO
+----                   ------       --   --   --  ---
+home                   mobile       63   90   96  100
+home                   desktop      82   90   96  100
+brand-os               mobile      ERR  ERR  ERR  ERR
+brand-os               desktop     ERR  ERR  ERR  ERR
+build-your-brand       mobile       74   87   96  100
+build-your-brand       desktop      92   86   96  100
+augmented-coach        mobile      ERR  ERR  ERR  ERR
+augmented-coach        desktop     ERR  ERR  ERR  ERR
+blog-index             mobile       81   91   96  100
+blog-index             desktop      90   91   96  100

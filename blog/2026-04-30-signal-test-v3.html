@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal · 2026-04-30 · The Cost Curve Bent | ElevateAI</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#00FF41;
+  --green-dark:#00CC34;
+  --green-deep:#008822;
+  --green-tint:#E6FFEC;
+  --navy:#0A0F1C;
+  --navy-soft:#1A2035;
+  --bg:#FAFAF8;
+  --bg-warm:#F5F2EA;
+  --bg-card:#FFFFFF;
+  --text:#1A1A2E;
+  --text-mid:#4A4A5E;
+  --text-dim:#7A7A8E;
+  --border:#E8E5DD;
+  --border-soft:#F0EDE5;
+  --amber:#D97706;
+  --red:#B91C1C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+.test-banner{background:#FFE9A8;color:#5A4500;text-align:center;padding:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+.wrap{max-width:680px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+/* ─── MASTHEAD ─── */
+.masthead{text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.mast-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.22em;color:var(--green-dark);margin-bottom:.5rem}
+.mast-eyebrow::before{content:'◆ '}
+.mast-title{font-weight:800;font-size:2.6rem;letter-spacing:-.035em;color:var(--navy);line-height:1}
+.mast-tag{font-size:.82rem;color:var(--text-dim);margin-top:.6rem;font-style:italic}
+
+/* ─── ISSUE HEADER ─── */
+.issue-meta{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:2rem 0 1.5rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim)}
+.issue-meta .badge{background:var(--navy);color:var(--green);padding:.35rem .9rem;border-radius:50px;font-weight:800;letter-spacing:.18em}
+.issue-meta .dot{color:var(--border)}
+
+h1.title{font-size:clamp(2rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.025em;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:1rem}
+h1.title .accent{color:var(--green-dark)}
+.dek{font-size:1.1rem;color:var(--text-mid);text-align:center;max-width:520px;margin:0 auto 3rem;line-height:1.5}
+
+/* ─── HERO CHART ─── */
+.hero-chart{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2rem 1.5rem 1.5rem;margin-bottom:3rem;box-shadow:0 4px 24px rgba(10,15,28,.04)}
+.chart-eyebrow{font-size:.65rem;font-weight:800;letter-spacing:.18em;color:var(--text-dim);text-transform:uppercase;margin-bottom:.4rem}
+.chart-title{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:1.5rem;letter-spacing:-.01em}
+.chart-svg{width:100%;height:auto;display:block}
+.chart-caption{font-size:.78rem;color:var(--text-dim);margin-top:1rem;text-align:center;font-style:italic}
+
+/* ─── INTRO ─── */
+.intro p{font-size:1.05rem;color:var(--text);margin-bottom:1rem;line-height:1.65}
+.intro p strong{color:var(--navy);font-weight:800}
+
+/* ─── SECTION DIVIDER ─── */
+.divider{display:flex;align-items:center;gap:1rem;margin:3.5rem 0 2rem}
+.divider-line{flex:1;height:1px;background:var(--border)}
+.divider-label{font-size:.7rem;font-weight:800;letter-spacing:.25em;color:var(--navy);text-transform:uppercase}
+
+/* ─── ITEM BLOCKS ─── */
+.item{margin-bottom:2.5rem}
+.item-num{font-size:.65rem;font-weight:800;color:var(--green-dark);letter-spacing:.2em;margin-bottom:.5rem}
+.item h3{font-size:1.4rem;font-weight:800;color:var(--navy);line-height:1.25;letter-spacing:-.015em;margin-bottom:.6rem}
+.item-body{font-size:1rem;color:var(--text-mid);line-height:1.6;margin-bottom:1.25rem}
+.item-body strong{color:var(--navy);font-weight:700}
+.item-source{font-size:.75rem;color:var(--text-dim);margin-top:.6rem}
+.item-source a{color:var(--green-dark);font-weight:700;text-decoration:none}
+.item-source a:hover{text-decoration:underline}
+
+/* ─── INLINE VISUAL CARDS ─── */
+.viz{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin:1rem 0}
+.viz-svg{width:100%;height:auto;display:block}
+
+/* viz: agentic flow */
+.flow{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:nowrap}
+.flow-node{flex:1;text-align:center;padding:.85rem .4rem;background:var(--bg-warm);border:1px solid var(--border);border-radius:10px;min-width:0}
+.flow-node.active{background:var(--green-tint);border-color:var(--green-dark)}
+.flow-node-num{font-size:.6rem;font-weight:800;color:var(--green-dark);letter-spacing:.15em;margin-bottom:.2rem}
+.flow-node-name{font-size:.82rem;font-weight:700;color:var(--navy)}
+.flow-arrow{color:var(--green-dark);font-weight:800;font-size:1.1rem;flex-shrink:0}
+
+/* viz: comparison rows */
+.compare{display:flex;flex-direction:column;gap:.75rem}
+.compare-row{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:10px}
+.compare-row.old{background:#FBEEEE;border:1px solid #F4D5D5}
+.compare-row.new{background:var(--green-tint);border:1px solid #B8E8C5}
+.compare-year{font-size:.7rem;font-weight:800;letter-spacing:.15em;width:48px;flex-shrink:0}
+.compare-row.old .compare-year{color:var(--red)}
+.compare-row.new .compare-year{color:var(--green-deep)}
+.compare-content{flex:1;font-size:.95rem;font-weight:600;color:var(--navy)}
+.compare-content .num{font-size:1.05rem;font-weight:800}
+.compare-content .meta{font-size:.78rem;color:var(--text-dim);font-weight:500;display:block;margin-top:.15rem}
+
+/* viz: donut split */
+.split-viz{display:flex;align-items:center;gap:2rem;padding:.5rem}
+.split-viz svg{flex-shrink:0}
+.split-legend{flex:1;display:flex;flex-direction:column;gap:.85rem}
+.legend-item{display:flex;align-items:flex-start;gap:.75rem}
+.legend-swatch{width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:.25rem}
+.legend-text .pct{font-size:1.3rem;font-weight:800;color:var(--navy);line-height:1;display:block}
+.legend-text .lbl{font-size:.85rem;color:var(--text-mid);font-weight:600;margin-top:.2rem;display:block}
+
+/* ─── TOOL CARD ─── */
+.tool-card{background:var(--navy);color:#F5F5F5;border-radius:20px;padding:2.25rem;margin-top:1rem;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;top:-40%;right:-15%;width:55%;height:200%;background:radial-gradient(closest-side,rgba(0,255,65,.18),transparent 70%);pointer-events:none}
+.tool-eyebrow{font-size:.65rem;font-weight:800;color:var(--green);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;position:relative}
+.tool-name{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.4rem;color:#fff;position:relative}
+.tool-byline{font-size:.92rem;color:#B8BCC8;margin-bottom:1.75rem;position:relative}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-bottom:1.5rem;position:relative}
+.tl-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem .5rem;text-align:center}
+.tl-step.active{background:var(--green-tint);border-color:var(--green)}
+.tl-week{font-size:.6rem;font-weight:800;color:var(--green);letter-spacing:.15em;margin-bottom:.3rem}
+.tl-step.active .tl-week{color:var(--green-deep)}
+.tl-name{font-size:.78rem;font-weight:700;color:#fff}
+.tl-step.active .tl-name{color:var(--navy)}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:1.75rem;position:relative}
+.pillar{background:rgba(0,255,65,.06);border:1px solid rgba(0,255,65,.18);border-radius:8px;padding:.85rem 1rem}
+.pillar-num{font-size:.6rem;font-weight:800;color:var(--green);letter-spacing:.15em;margin-bottom:.25rem}
+.pillar-name{font-size:.88rem;font-weight:700;color:#fff;line-height:1.3}
+.tool-cta{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--green);font-weight:700;text-decoration:none;position:relative}
+.tool-cta:hover{color:#fff}
+.tool-cta .arr{transition:transform .2s}
+.tool-cta:hover .arr{transform:translateX(3px)}
+
+/* ─── ACTION ─── */
+.action-row{background:var(--bg-card);border:2px solid var(--green);border-radius:18px;padding:1.75rem 2rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;box-shadow:0 8px 32px rgba(0,255,65,.08)}
+.action-text{flex:1;min-width:200px}
+.action-eyebrow{font-size:.65rem;font-weight:800;color:var(--amber);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.action-h{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
+.action-cta{background:var(--green);color:var(--navy);padding:.95rem 1.5rem;border-radius:50px;font-weight:800;text-decoration:none;font-size:.88rem;white-space:nowrap;transition:all .2s;letter-spacing:.01em}
+.action-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* ─── SIGN OFF ─── */
+.signoff{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.95rem;color:var(--text-mid)}
+.signoff p{margin-bottom:.75rem}
+.signoff .name{color:var(--navy);font-weight:800;margin-top:1.25rem}
+.footer{text-align:center;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-soft);font-size:.72rem;color:var(--text-dim);line-height:1.7}
+.footer a{color:var(--green-dark);font-weight:700;text-decoration:none}
+
+/* responsive */
+@media(max-width:560px){
+  .flow{flex-wrap:wrap;justify-content:center}
+  .flow-node{min-width:60px}
+  .split-viz{flex-direction:column;gap:1.25rem;text-align:center}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .pillars{grid-template-columns:1fr}
+}
+</style>
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ElevateAI System, AI for coaches and creators">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta name="twitter:image:alt" content="ElevateAI System, AI for coaches and creators">
+</head>
+<body>
+
+<div class="test-banner">◆ TEST PREVIEW V3 · NEWSLETTER FORMAT · NOT PUBLISHED</div>
+
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <p class="mast-eyebrow">THE SIGNAL</p>
+    <p class="mast-title">The Signal</p>
+    <p class="mast-tag">AI for embodied operators · By Sunny Binjola</p>
+  </div>
+
+  <!-- ISSUE BAR -->
+  <div class="issue-meta">
+    <span class="badge">ISSUE 18</span>
+    <span class="dot">·</span>
+    <span>Apr 30, 2026</span>
+    <span class="dot">·</span>
+    <span>Cost Curve</span>
+  </div>
+
+  <!-- HEADLINE -->
+  <h1 class="title">The agent cost curve <span class="accent">just bent.</span></h1>
+  <p class="dek">3 technologies, 2 ideas, 1 tool. Read time: 4 minutes. The agent economy isn't coming. It just got priced in.</p>
+
+  <!-- HERO CHART: capex curve 2022 → 2026 -->
+  <div class="hero-chart">
+    <p class="chart-eyebrow">The setup</p>
+    <p class="chart-title">Big Tech AI capex, 2022 to 2026 (combined: MSFT, GOOG, META, AMZN)</p>
+    <svg class="chart-svg" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <!-- Grid lines -->
+      <g stroke="#F0EDE5" stroke-width="1">
+        <line x1="60" y1="40" x2="580" y2="40"/>
+        <line x1="60" y1="100" x2="580" y2="100"/>
+        <line x1="60" y1="160" x2="580" y2="160"/>
+        <line x1="60" y1="220" x2="580" y2="220"/>
+      </g>
+      <!-- Y axis labels -->
+      <g font-family="Plus Jakarta Sans" font-size="11" fill="#7A7A8E" font-weight="600">
+        <text x="50" y="44" text-anchor="end">$700B</text>
+        <text x="50" y="104" text-anchor="end">$500B</text>
+        <text x="50" y="164" text-anchor="end">$300B</text>
+        <text x="50" y="224" text-anchor="end">$100B</text>
+      </g>
+      <!-- Area gradient -->
+      <defs>
+        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#00FF41" stop-opacity="0.32"/>
+          <stop offset="100%" stop-color="#00FF41" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- Area fill -->
+      <path d="M 90 218 L 210 200 L 330 178 L 450 130 L 565 40 L 565 240 L 90 240 Z" fill="url(#areaGrad)"/>
+      <!-- Line -->
+      <path d="M 90 218 L 210 200 L 330 178 L 450 130 L 565 40" fill="none" stroke="#00CC34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Data points -->
+      <g>
+        <circle cx="90" cy="218" r="5" fill="#00CC34"/>
+        <circle cx="210" cy="200" r="5" fill="#00CC34"/>
+        <circle cx="330" cy="178" r="5" fill="#00CC34"/>
+        <circle cx="450" cy="130" r="5" fill="#00CC34"/>
+        <circle cx="565" cy="40" r="7" fill="#00FF41" stroke="#FAFAF8" stroke-width="3"/>
+      </g>
+      <!-- 2026 callout -->
+      <g>
+        <line x1="565" y1="40" x2="565" y2="60" stroke="#0A0F1C" stroke-width="1" stroke-dasharray="2,2" opacity=".3"/>
+        <rect x="445" y="6" width="135" height="32" rx="6" fill="#0A0F1C"/>
+        <text x="512" y="20" font-family="Plus Jakarta Sans" font-size="10" font-weight="700" fill="#00FF41" text-anchor="middle" letter-spacing="0.05em">2026 PLEDGE</text>
+        <text x="512" y="32" font-family="Plus Jakarta Sans" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">$700 BILLION</text>
+      </g>
+      <!-- X axis labels -->
+      <g font-family="Plus Jakarta Sans" font-size="11" fill="#4A4A5E" font-weight="700">
+        <text x="90" y="262" text-anchor="middle">2022</text>
+        <text x="210" y="262" text-anchor="middle">2023</text>
+        <text x="330" y="262" text-anchor="middle">2024</text>
+        <text x="450" y="262" text-anchor="middle">2025</text>
+        <text x="565" y="262" text-anchor="middle">2026</text>
+      </g>
+    </svg>
+    <p class="chart-caption">The hyperscaler arms race is your unit-economics tailwind.</p>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>Two weeks ago I told you the math was bending. This week it bent.</p>
+    <p><strong>$700B</strong> in capex. <strong>40%</strong> of business apps running agents by December. <strong>88%</strong> of operators in production already pulling ROI. The coaches still pricing 2024 hours are about to be the most expensive option in their market.</p>
+    <p>Here's the week.</p>
+  </div>
+
+  <!-- 3 TECHNOLOGIES -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">3 Technologies</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- TECH 1 -->
+  <div class="item">
+    <p class="item-num">01 / AGENTIC MODELS</p>
+    <h3>GPT-5.5 isn't a chatbot. It's your first autonomous employee.</h3>
+    <p class="item-body">It picks up a goal, plans the steps, executes against your tools, and reports back. The behavior shift matters more than the benchmark. For solo coaches, this is the difference between "I should hire" and "I already did."</p>
+
+    <div class="viz">
+      <div class="flow">
+        <div class="flow-node">
+          <div class="flow-node-num">01</div>
+          <div class="flow-node-name">Goal</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="flow-node-num">02</div>
+          <div class="flow-node-name">Plan</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node active">
+          <div class="flow-node-num">03</div>
+          <div class="flow-node-name">Act</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="flow-node-num">04</div>
+          <div class="flow-node-name">Report</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="item-source">Source: <a href="/blog/gpt-5-5-agentic-coaches">GPT-5.5 isn't a better chatbot</a></p>
+  </div>
+
+  <!-- TECH 2 -->
+  <div class="item">
+    <p class="item-num">02 / COMPUTE CURVE</p>
+    <h3>Big Tech just pledged $700 billion to AI infrastructure.</h3>
+    <p class="item-body">Microsoft, Alphabet, Meta, Amazon. The hyperscaler capex isn't enthusiasm. It's the next 36 months of unit economics. Compute gets cheaper. Inference gets faster. The agents you couldn't afford last quarter are a rounding error by Q4.</p>
+    <p class="item-source">See the chart at the top of this issue. <a href="/blog/big-tech-700b-ai-capex-coach-leverage">Read the breakdown</a></p>
+  </div>
+
+  <!-- TECH 3 -->
+  <div class="item">
+    <p class="item-num">03 / ADOPTION CURVE</p>
+    <h3>Gartner: 40% of business apps run on agents by December.</h3>
+    <p class="item-body">Up from 5% one year ago. An eight-times jump in twelve months. The enterprise window is closing on Q4 2026. If your offer doesn't fit into the agent layer of a buyer's stack, you're competing with a tool that already lives there.</p>
+
+    <div class="viz">
+      <svg class="viz-svg" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y axis tick -->
+        <g font-family="Plus Jakarta Sans" font-size="11" fill="#7A7A8E" font-weight="600">
+          <text x="50" y="36" text-anchor="end">40%</text>
+          <text x="50" y="160" text-anchor="end">5%</text>
+        </g>
+        <line x1="60" y1="30" x2="580" y2="30" stroke="#F0EDE5" stroke-width="1"/>
+        <line x1="60" y1="155" x2="580" y2="155" stroke="#F0EDE5" stroke-width="1"/>
+        <!-- Bar 2025 -->
+        <rect x="140" y="140" width="120" height="15" rx="3" fill="#7A7A8E" opacity="0.5"/>
+        <text x="200" y="172" font-family="Plus Jakarta Sans" font-size="12" fill="#4A4A5E" text-anchor="middle" font-weight="700">2025</text>
+        <text x="200" y="132" font-family="Plus Jakarta Sans" font-size="14" fill="#1A1A2E" text-anchor="middle" font-weight="800">5%</text>
+        <!-- Bar 2026 -->
+        <defs>
+          <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00FF41"/>
+            <stop offset="100%" stop-color="#00CC34"/>
+          </linearGradient>
+        </defs>
+        <rect x="340" y="30" width="120" height="125" rx="3" fill="url(#barGrad)"/>
+        <text x="400" y="172" font-family="Plus Jakarta Sans" font-size="12" fill="#0A0F1C" text-anchor="middle" font-weight="700">DEC 2026</text>
+        <text x="400" y="22" font-family="Plus Jakarta Sans" font-size="14" fill="#0A0F1C" text-anchor="middle" font-weight="800">40%</text>
+        <!-- Arrow -->
+        <g>
+          <path d="M 270 95 Q 305 60 330 75" fill="none" stroke="#0A0F1C" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4"/>
+          <text x="300" y="50" font-family="Plus Jakarta Sans" font-size="13" fill="#00CC34" text-anchor="middle" font-weight="800">8× in 12 months</text>
+        </g>
+      </svg>
+    </div>
+
+    <p class="item-source">Source: <a href="/blog/gartner-40-percent-agents-coaches-pilot-mode">Gartner: 40% of apps run agents by December</a></p>
+  </div>
+
+  <!-- 2 IDEAS -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">2 Ideas</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- IDEA 1 -->
+  <div class="item">
+    <p class="item-num">01 / THE MATH BROKE</p>
+    <h3>The team you were planning to hire is the team you don't need anymore.</h3>
+    <p class="item-body">A 23-year-old non-coder hit $500K ARR in six months with three people and an agent stack. Fortune flagged a wave of these. The bottleneck used to be headcount. Now it's voice. The thing only you can produce.</p>
+
+    <div class="viz">
+      <div class="compare">
+        <div class="compare-row old">
+          <div class="compare-year">2024</div>
+          <div class="compare-content">
+            <span class="num">12 hires</span> to reach <span class="num">$500K ARR</span>
+            <span class="meta">18 months · $480K burn · most still unprofitable</span>
+          </div>
+        </div>
+        <div class="compare-row new">
+          <div class="compare-year">2026</div>
+          <div class="compare-content">
+            <span class="num">3 humans + agents</span> to reach <span class="num">$500K ARR</span>
+            <span class="meta">6 months · $90K stack · profitable from month 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="item-source">Source: <a href="/blog/three-person-500k-arr-coach-economics">Three people, $500K ARR, six months</a></p>
+  </div>
+
+  <!-- IDEA 2 -->
+  <div class="item">
+    <p class="item-num">02 / PILOT MODE IS THE NEW PROCRASTINATION</p>
+    <h3>Production pays. Pilot mode bills.</h3>
+    <p class="item-body">The 88% who shipped agents into production are running ROI math by Q2. The "still testing" cohort has a Notion full of half-built prompts and the same retainer they had eighteen months ago. Pilot mode feels like progress. It isn't.</p>
+
+    <div class="viz">
+      <div class="split-viz">
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background ring -->
+          <circle cx="80" cy="80" r="62" fill="none" stroke="#E8E5DD" stroke-width="22"/>
+          <!-- 88% arc -->
+          <circle cx="80" cy="80" r="62" fill="none" stroke="#00CC34" stroke-width="22" stroke-dasharray="343 390" stroke-dashoffset="0" transform="rotate(-90 80 80)" stroke-linecap="butt"/>
+          <!-- Center text -->
+          <text x="80" y="76" font-family="Plus Jakarta Sans" font-size="30" font-weight="800" fill="#0A0F1C" text-anchor="middle">88%</text>
+          <text x="80" y="96" font-family="Plus Jakarta Sans" font-size="10" font-weight="700" fill="#7A7A8E" text-anchor="middle" letter-spacing=".1em">PRODUCTION</text>
+        </svg>
+        <div class="split-legend">
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:#00CC34"></div>
+            <div class="legend-text">
+              <span class="pct">88%</span>
+              <span class="lbl">In production. ROI by Q2. Raising prices.</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:#E8E5DD"></div>
+            <div class="legend-text">
+              <span class="pct">12%</span>
+              <span class="lbl">Still testing. Same retainer as 2024.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1 TOOL -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-label">1 Tool</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="tool-card">
+    <p class="tool-eyebrow">◆ FRAMEWORK · USE THIS WEEK</p>
+    <h3 class="tool-name">The AIOS Sales Blueprint</h3>
+    <p class="tool-byline">5-week delivery. Zero cold outreach. Pricing on outcomes, not hours.</p>
+
+    <div class="timeline">
+      <div class="tl-step active"><div class="tl-week">WK 1</div><div class="tl-name">Intake</div></div>
+      <div class="tl-step"><div class="tl-week">WK 2</div><div class="tl-name">Build</div></div>
+      <div class="tl-step"><div class="tl-week">WK 3</div><div class="tl-name">Integrate</div></div>
+      <div class="tl-step"><div class="tl-week">WK 4</div><div class="tl-name">Train</div></div>
+      <div class="tl-step"><div class="tl-week">WK 5</div><div class="tl-name">Handoff</div></div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 01</div>
+        <div class="pillar-name">Cash-on-Cash Return</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 02</div>
+        <div class="pillar-name">Time Value</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 03</div>
+        <div class="pillar-name">Problem Avoidance</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 04</div>
+        <div class="pillar-name">Future Opportunity</div>
+      </div>
+    </div>
+
+    <a href="/intel/2026-04-27-aios-sales-blueprint" class="tool-cta">
+      Read the full intel drop <span class="arr">→</span>
+    </a>
+  </div>
+
+  <!-- ACTION -->
+  <div class="action-row">
+    <div class="action-text">
+      <p class="action-eyebrow">◆ This week's move</p>
+      <p class="action-h">Pick one agent. Ship it by Sunday.</p>
+    </div>
+    <a href="https://elevateaisystem.com/quiz" class="action-cta">Take the Brand OS Quiz →</a>
+  </div>
+
+  <!-- SIGN OFF -->
+  <div class="signoff">
+    <p>That's the signal this week.</p>
+    <p>If something landed, hit reply and tell me which one. The technologies are easy to forward. The ideas are harder to act on. The tool is yours to keep.</p>
+    <p class="name">Sunny<br><span style="color:var(--text-dim);font-weight:600;font-size:.85rem">Founder, ElevateAI System</span></p>
+  </div>
+
+  <div class="footer">
+    The Signal · Weekly note for embodied operators in the AI era<br>
+    <a href="https://elevateaisystem.com">elevateaisystem.com</a> · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a><br>
+    <em style="display:block;margin-top:.6rem;color:#A8A8B8">Test preview v3 · 2026-04-30 · not yet on blog index</em>
+  </div>
+
+</div>
+
+</body>
+</html>

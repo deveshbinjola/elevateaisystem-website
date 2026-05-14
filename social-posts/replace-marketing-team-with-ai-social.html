@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Posts — How to Replace Your Marketing Team with AI | ElevateAI System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-deep: #059669;
+    --navy: #0A0F1C;
+    --bg: #FAFAF8;
+    --bg-alt: #F2F2EE;
+    --text: #1A1A2E;
+    --text-muted: #6B7280;
+    --border: #E5E7EB;
+    --card-bg: #FFFFFF;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0A0F1C;
+      --bg-alt: #111827;
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --border: #1F2937;
+      --card-bg: #111827;
+      --navy: #F3F4F6;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-deep);
+    margin-bottom: 0.5rem;
+  }
+  .header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .header-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Card */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  .card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .card-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    color: var(--text);
+  }
+  .copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .copy-btn:hover {
+    background: var(--green-deep);
+    color: #fff;
+    border-color: var(--green-deep);
+  }
+  .copy-btn.copied {
+    background: var(--green-deep);
+    color: #fff;
+    border-color: var(--green-deep);
+  }
+
+  /* Thread connector */
+  .thread-group {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .thread-group::before {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 2px;
+    background: var(--border);
+    border-radius: 1px;
+  }
+  .thread-group .card {
+    position: relative;
+  }
+  .thread-group .card::before {
+    content: '';
+    position: absolute;
+    left: -1.15rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green-deep);
+    border: 2px solid var(--card-bg);
+    box-shadow: 0 0 0 2px var(--border);
+  }
+  .thread-number {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--green-deep);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-label">Social Content Pack</div>
+    <h1>How to Replace Your Marketing Team with AI</h1>
+    <div class="header-meta">Blog published April 2, 2026 &middot; Content generated April 3, 2026</div>
+  </div>
+
+  <!-- ============ SINGLE TWEET ============ -->
+  <div class="section">
+    <div class="section-title">Single Tweet</div>
+    <div class="card">
+      <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+      <div class="card-label">Twitter/X &middot; Under 280 chars</div>
+      <div class="card-content">A full marketing team costs $6.5K-$14K/month.
+
+An AI system costs $5K-$12K once.
+
+One runs immediately. The other takes 6 months to learn your voice.
+
+The math isn't even close.</div>
+    </div>
+  </div>
+
+  <!-- ============ TWITTER THREAD ============ -->
+  <div class="section">
+    <div class="section-title">Twitter Thread</div>
+    <div class="thread-group">
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">1</span> Hook</div>
+        <div class="card-content">I replaced a $14K/month marketing team with five AI agents.
+
+My output went up. My stress went down.
+
+Here's exactly what I built and what I kept doing myself.</div>
+      </div>
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">2</span> The Problem</div>
+        <div class="card-content">Most coaches run this math:
+
+Content writer: $2K-$4K/mo
+Social media manager: $1.5K-$3K/mo
+SEO person: $2K-$5K/mo
+VA for admin: $1K-$2K/mo
+
+That's $6.5K-$14K/month before you've made a dollar.
+
+Then you wait 3-6 months for them to learn your voice.</div>
+      </div>
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">3</span> The System</div>
+        <div class="card-content">Five agents replaced all of that:
+
+Blog Agent — writes and publishes daily SEO content
+Caption Agent — turns one blog into LinkedIn, IG, Twitter, email
+Email Sequence Agent — runs welcome + nurture flows on autopilot
+Lead Scoring Agent — ranks every lead by warmth and fit
+Social Scheduling Agent — posts at the right times automatically
+
+They feed each other. Content flows. Leads come in.</div>
+      </div>
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">4</span> What AI Can't Replace</div>
+        <div class="card-content">Here's what I kept doing myself:
+
+Intuition — the gut feeling that says "this isn't my client" before the data does.
+Creativity — the unexpected metaphor. The breakthrough reframe.
+Emotional depth — the vulnerability that turns transactions into relationships.
+
+AI is a second brain. Not a second heart.</div>
+      </div>
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">5</span> The Real Shift</div>
+        <div class="card-content">The system finds the prospect. You write the email.
+The system fills the room. You deliver the workshop.
+The system does the follow-up. You have the real conversation.
+
+You're not being replaced. You're just not doing the boring parts anymore.</div>
+      </div>
+
+      <div class="card">
+        <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+        <div class="card-label"><span class="thread-number">6</span> CTA</div>
+        <div class="card-content">If you're spending $6K+/month on marketing hires — or doing it all yourself at 2 AM — there's another path.
+
+Full breakdown of the five-agent system and how to start:
+
+elevateaisystem.com/blog/replace-marketing-team-with-ai
+
+Follow for more on building AI systems for coaches.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ LINKEDIN POST ============ -->
+  <div class="section">
+    <div class="section-title">LinkedIn Post</div>
+    <div class="card">
+      <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+      <div class="card-label">LinkedIn &middot; Insight Post</div>
+      <div class="card-content">I fired my marketing team. Revenue went up.
+
+Not because they were bad.
+
+Because the system I built was faster, cheaper, and never forgot to follow up.
+
+Here's the uncomfortable truth most coaches avoid:
+
+You're paying $6.5K-$14K/month for humans to do work that five AI agents handle in minutes.
+
+Content drafting. Social scheduling. Email sequences. Lead scoring. SEO optimization.
+
+These don't need human judgment every time.
+
+What does need you?
+
+Your intuition. Your creativity. The emotional depth that turns a stranger into a client.
+
+AI is a second brain. Not a second heart.
+
+The coaches scaling fastest right now aren't working harder.
+
+They built a system that handles the infrastructure.
+
+Then they showed up only for the conversations that mattered.
+
+One costs you $14K/month forever.
+
+The other costs $5K-$12K once.
+
+Your move: which parts of your marketing could run without you tomorrow?
+
+#CoachingBusiness #AIMarketing #Automation #SoloPreneur</div>
+    </div>
+  </div>
+
+  <!-- ============ MICRO-VALUE TWEETS ============ -->
+  <div class="section">
+    <div class="section-title">Micro-Value Tweets</div>
+
+    <div class="card">
+      <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+      <div class="card-label">Micro Tweet 1</div>
+      <div class="card-content">AI is a second brain. Not a second heart.
+
+Your intuition, creativity, and emotional depth are irreplaceable.
+
+Everything else? Automate it.</div>
+    </div>
+
+    <div class="card">
+      <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+      <div class="card-label">Micro Tweet 2</div>
+      <div class="card-content">Most coaches spend 10 hours managing a marketing team.
+
+The ones scaling to $50K+/month spend 5 hours directing a system.
+
+Half the time. Double the output. Zero turnover.</div>
+    </div>
+
+    <div class="card">
+      <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+      <div class="card-label">Micro Tweet 3</div>
+      <div class="card-content">One blog post becomes 5 LinkedIn posts, 10 captions, a newsletter segment, and a Twitter thread.
+
+That's not working harder.
+
+That's having a system.</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    ElevateAI System &middot; Social Content Pack &middot; April 2026
+  </div>
+
+</div>
+
+<script>
+function copyCard(btn) {
+  const content = btn.parentElement.querySelector('.card-content').innerText;
+  navigator.clipboard.writeText(content).then(() => {
+    btn.textContent = 'Copied';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

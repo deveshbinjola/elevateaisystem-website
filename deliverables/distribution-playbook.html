@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Distribution Playbook — ElevateAI System</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dark: #00cc34;
+    --green-soft: rgba(0,255,65,0.08);
+    --navy: #0A0F1C;
+    --bg: #FAFAF8;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e5e5;
+    --card: #ffffff;
+    --purple: #8b5cf6;
+    --purple-soft: rgba(139,92,246,0.07);
+    --rose: #f43f5e;
+    --rose-soft: rgba(244,63,94,0.07);
+    --amber: #f59e0b;
+    --blue: #3b82f6;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Cover */
+  .cover {
+    background: var(--navy);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.04;
+  }
+  .cover .logo {
+    display: inline-block;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .cover h1 span { color: var(--green); }
+  .cover .sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto 1rem;
+  }
+  .cover .client-name {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-top: 1.5rem;
+    opacity: 0.7;
+  }
+
+  /* Section headers */
+  .sec {
+    padding: 3.5rem 0 1rem;
+  }
+  .sec-num {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  .sec h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.25rem 0;
+    line-height: 1.25;
+  }
+  .sec p.desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin-top: 0.35rem;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .card.full { grid-column: 1 / -1; }
+  .card .tag {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .tag-green { color: var(--green-dark); }
+  .tag-purple { color: var(--purple); }
+  .tag-rose { color: var(--rose); }
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  /* Calendar */
+  .cal-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 768px) { .cal-row { grid-template-columns: repeat(4, 1fr); } }
+  .cal-cell {
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+  .cal-cell .day {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+  }
+  .cal-cell .type {
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .cal-cell .what {
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .cal-cell .badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+  }
+  .cal-growth { background: var(--green-soft); border: 1px solid rgba(0,255,65,0.12); }
+  .cal-growth .day { color: var(--green-dark); }
+  .cal-growth .badge { background: rgba(0,255,65,0.12); color: var(--green-dark); }
+  .cal-nurture { background: var(--purple-soft); border: 1px solid rgba(139,92,246,0.12); }
+  .cal-nurture .day { color: var(--purple); }
+  .cal-nurture .badge { background: rgba(139,92,246,0.12); color: var(--purple); }
+  .cal-convert { background: var(--rose-soft); border: 1px solid rgba(244,63,94,0.12); }
+  .cal-convert .day { color: var(--rose); }
+  .cal-convert .badge { background: rgba(244,63,94,0.12); color: var(--rose); }
+
+  /* Funnel visual */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  .funnel-step {
+    width: 100%;
+    padding: 1.25rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  .funnel-step h4 { font-size: 0.9rem; font-weight: 700; }
+  .funnel-step p { font-size: 0.78rem; opacity: 0.8; margin-top: 0.2rem; }
+  .f1 { background: var(--navy); border-radius: 14px 14px 0 0; }
+  .f2 { background: #1a2744; width: 88%; margin: 0 auto; }
+  .f3 { background: #243354; width: 76%; margin: 0 auto; }
+  .f4 { background: var(--green-dark); width: 64%; margin: 0 auto; border-radius: 0 0 14px 14px; }
+  .f4 h4, .f4 p { color: var(--navy); }
+
+  /* Bio builder */
+  .bio-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+  .bio-box h3 {
+    color: var(--green);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .bio-line {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .bio-num {
+    min-width: 28px;
+    height: 28px;
+    background: rgba(0,255,65,0.12);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--green);
+  }
+  .bio-line p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+  .bio-line strong { color: white; }
+  .bio-example {
+    background: rgba(0,255,65,0.06);
+    border: 1px solid rgba(0,255,65,0.1);
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.75);
+  }
+  .bio-example strong { color: var(--green); }
+
+  /* Process doc */
+  .template-box {
+    background: var(--card);
+    border: 2px dashed var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+  }
+  .template-box .label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--green-dark);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  .template-box .tmpl {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--navy);
+  }
+  .template-box .tmpl span {
+    color: var(--green-dark);
+    background: var(--green-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .template-box .example {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  .checklist li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f3f3;
+    font-size: 0.88rem;
+  }
+  .checklist li:last-child { border: none; }
+  .checklist .check-icon {
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    margin-top: 2px;
+  }
+
+  /* Sprint timeline */
+  .sprint {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .sprint h3 {
+    color: var(--green);
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+  .sprint-week {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .sprint-week:last-child { margin-bottom: 0; }
+  .week-badge {
+    min-width: 52px;
+    padding: 4px 0;
+    text-align: center;
+    background: rgba(0,255,65,0.1);
+    border-radius: 6px;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+  .sprint-week p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+  }
+  .sprint-week strong { color: white; }
+
+  /* Footer */
+  .foot {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .foot a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Stat row */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr 1fr; } }
+  .stat-box {
+    text-align: center;
+    padding: 1.25rem 0.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .stat-box .num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  .stat-box .slab {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 0.15rem;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">ElevateAI System</div>
+  <h1>Your <span>Distribution</span> Playbook</h1>
+  <div class="sub">The complete system for building authority, growing your audience, and converting followers into clients — without guessing.</div>
+  <div class="client-name">Prepared for: <span style="border-bottom:1px dashed rgba(0,255,65,0.3)">[Client Name]</span> · <span id="date-stamp"></span></div>
+</div>
+
+<div class="container">
+
+  <!-- WHY DISTRIBUTION -->
+  <div class="sec">
+    <div class="sec-num">Section 01</div>
+    <h2>Why Distribution Is Your Only Moat</h2>
+    <p class="desc">AI made building products easy. Everyone can launch a course, start an agency, or create a coaching program in a weekend. The only advantages left are the ones that compound over time.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="num">40%</div>
+      <div class="slab">of searches now AI-powered</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">5.1x</div>
+      <div class="slab">higher conversion from AI search</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">3-5x</div>
+      <div class="slab">email converts vs social</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">50-200</div>
+      <div class="slab">true fans needed at $5K-$12K</div>
+    </div>
+  </div>
+
+  <div class="card full" style="margin-bottom:1.5rem;">
+    <p>This playbook gives you two compounding systems — <strong>Authority</strong> (how people find you) and <strong>Community</strong> (how people trust you). Together they create a distribution flywheel that money can't buy and competitors can't copy.</p>
+  </div>
+
+  <!-- PILLAR 1: AUTHORITY -->
+  <div class="sec">
+    <div class="sec-num">Section 02</div>
+    <h2>Building Authority: The Content System</h2>
+    <p class="desc">Authority isn't about being famous. It's about being the obvious answer when someone in your niche asks "who should I hire?" — whether they ask Google, ChatGPT, or a friend.</p>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;margin:1.5rem 0 0.75rem;">Step 1: Define Your One Problem</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="tag tag-green">Fill in</div>
+      <h3>What specific problem do you solve?</h3>
+      <p>Be brutally narrow. Not "I help with growth" — what exact transformation do you create?</p>
+      <div style="margin-top:0.75rem;padding:0.75rem;background:#f9fafb;border-radius:8px;border:1px dashed #d1d5db;min-height:48px;font-size:0.82rem;color:#9ca3af;">Your answer here...</div>
+    </div>
+    <div class="card">
+      <div class="tag tag-green">Fill in</div>
+      <h3>Who exactly are you solving it for?</h3>
+      <p>Industry, role, stage, revenue level. The more specific, the stronger your authority signal.</p>
+      <div style="margin-top:0.75rem;padding:0.75rem;background:#f9fafb;border-radius:8px;border:1px dashed #d1d5db;min-height:48px;font-size:0.82rem;color:#9ca3af;">Your answer here...</div>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <div class="label">Your positioning statement</div>
+    <div class="tmpl">"I help <span>[who]</span> go from <span>[problem state]</span> to <span>[result]</span> in <span>[timeframe]</span>"</div>
+    <div class="example"><strong>Example:</strong> "I help executive coaches go from invisible online to fully booked in 90 days using AI-powered content and SEO systems."</div>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;margin:2rem 0 0.75rem;">Step 2: Your 7-Day Content Calendar</h3>
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Every day has a purpose. Every post type serves a strategic function — growing your reach, deepening trust, or driving action.</p>
+
+  <div class="cal-row">
+    <div class="cal-cell cal-growth">
+      <div class="day">Mon</div>
+      <div class="type">Case Study</div>
+      <div class="what">Real client result with numbers</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Tue</div>
+      <div class="type">Personal</div>
+      <div class="what">Life update, lesson, behind-scenes</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-growth">
+      <div class="day">Wed</div>
+      <div class="type">Framework</div>
+      <div class="what">Tactical tip or system breakdown</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-growth">
+      <div class="day">Thu</div>
+      <div class="type">Hot Take</div>
+      <div class="what">Industry trend or bold opinion</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Fri</div>
+      <div class="type">Lesson</div>
+      <div class="what">Mistakes and what you'd change</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Sat</div>
+      <div class="type">Lighter</div>
+      <div class="what">Books, reflections, weekend vibes</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-convert">
+      <div class="day">Sun</div>
+      <div class="type">Engage</div>
+      <div class="what">Questions, polls, community</div>
+      <div class="badge">Conversion</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;margin:2rem 0 0.75rem;">Step 3: The "One Question, 100 Answers" Method</h3>
+  <div class="card full">
+    <p>Pick <strong>one question</strong> your ideal clients ask repeatedly. Answer it 100 different ways across every format — blog, thread, video, carousel, case study, framework diagram. Each answer adds a new angle, a new example, a new data point. This is how you become the default authority AI models cite when that question gets asked.</p>
+  </div>
+
+  <div class="template-box">
+    <div class="label">Your pillar question this month</div>
+    <div class="tmpl" style="font-size:0.95rem;">"<span>[The #1 question your ideal clients ask you]</span>"</div>
+    <div class="example"><strong>How to find it:</strong> Check your DMs for patterns. Look at questions in communities. Notice what people search for in your space. The question that keeps coming back — that's your pillar.</div>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;margin:2rem 0 0.75rem;">Step 4: Document Your Process Publicly</h3>
+  <div class="template-box">
+    <div class="label">Weekly process doc template</div>
+    <div class="tmpl"><span>[Client type]</span> was struggling with <span>[specific problem]</span>. We did <span>[specific action]</span>. Result: <span>[specific outcome with numbers]</span>.</div>
+    <div class="example"><strong>Example:</strong> "A health coach with 2K followers was getting zero inbound leads. We rebuilt her content system around one pillar question and launched a zero-click LinkedIn sprint. Result: 9 discovery calls in 2 weeks, 2 closed at $3,500 each."</div>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;margin:2rem 0 0.75rem;">Step 5: Optimize Your Bio Everywhere</h3>
+  <div class="bio-box">
+    <h3>The 3-Line Bio Formula</h3>
+    <div class="bio-line">
+      <div class="bio-num">1</div>
+      <p><strong>What you do + for who.</strong> One sentence. No jargon.</p>
+    </div>
+    <div class="bio-line">
+      <div class="bio-num">2</div>
+      <p><strong>Your best proof point.</strong> One specific result with numbers.</p>
+    </div>
+    <div class="bio-line">
+      <div class="bio-num">3</div>
+      <p><strong>One CTA.</strong> How to work with you. One link, one action.</p>
+    </div>
+    <div class="bio-example">
+      <strong>Example:</strong> "I help coaches fill their calendar using AI-powered content systems. One client went from 0 to 14 discovery calls in 3 weeks. DM me 'system' for a free audit."
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PILLAR 2: COMMUNITY -->
+  <div class="sec">
+    <div class="sec-num">Section 03</div>
+    <h2>Building Community: The Referral Engine</h2>
+    <p class="desc">Authority gets you found. Community gets you trusted. A tight group of 50 engaged people creates more business than 5,000 passive followers.</p>
+  </div>
+
+  <div class="funnel">
+    <div class="funnel-step f1">
+      <h4>Identify Your First 20</h4>
+      <p>People already engaging — commenting, sharing, asking questions</p>
+    </div>
+    <div class="funnel-step f2">
+      <h4>Personal Invite (DM)</h4>
+      <p>"I noticed you [specific thing]. I'm building a group of 20. Want in?"</p>
+    </div>
+    <div class="funnel-step f3">
+      <h4>Activate (Day 1-7)</h4>
+      <p>Intros, exclusives, spotlights, member-to-member connections</p>
+    </div>
+    <div class="funnel-step f4">
+      <h4>Grow by Nomination (5-10/month)</h4>
+      <p>"Who's one person you know who should be here?"</p>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="tag tag-purple">Day 1-7 Activation</div>
+      <h3>Make the First Week Matter</h3>
+      <p><strong>Day 1:</strong> Introduce everyone (tag + why you picked them)<br>
+      <strong>Day 2:</strong> Share something exclusive<br>
+      <strong>Day 3:</strong> Ask for real input on a decision<br>
+      <strong>Day 4:</strong> Spotlight a member's win<br>
+      <strong>Day 5:</strong> Intro two members who should know each other<br>
+      <strong>Day 6-7:</strong> Prompts that get people talking to each other</p>
+    </div>
+    <div class="card">
+      <div class="tag tag-purple">Weekly Rhythm</div>
+      <h3>Contribution Loops</h3>
+      <p><strong>Monday:</strong> Ask a question requiring experience<br>
+      <strong>Wednesday:</strong> Spotlight one member's contribution<br>
+      <strong>Friday:</strong> Share what you learned from the group<br><br>
+      <strong>Monthly:</strong> Co-working session, skill share, mastermind breakout, show-and-tell</p>
+    </div>
+  </div>
+
+  <div class="card full">
+    <div class="tag tag-rose">Growth Rule</div>
+    <h3>Depth Beats Width — Always</h3>
+    <p>After 30 days, ask your core members: "Who's one person you know who should be here?" Add 5-10 per month maximum. 50 highly engaged people create more referrals, more trust, and more revenue than 500 lurkers. Quality is the strategy.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- THE SPRINT -->
+  <div class="sec">
+    <div class="sec-num">Section 04</div>
+    <h2>Your 30-Day Launch Sprint</h2>
+    <p class="desc">Don't try to do everything at once. Here's the exact sequence — one week at a time.</p>
+  </div>
+
+  <div class="sprint">
+    <h3>Week-by-Week Execution Plan</h3>
+
+    <div class="sprint-week">
+      <div class="week-badge">Week 1</div>
+      <p><strong>Foundation.</strong> Define your one problem. Write your positioning statement. Update all bios with the 3-line formula. Identify your first 20 community members. Create 3 pieces of content teaching your methodology.</p>
+    </div>
+
+    <div class="sprint-week">
+      <div class="week-badge">Week 2</div>
+      <p><strong>Outreach.</strong> DM all 20 people with personal invitations. Create the private group space (Telegram, Discord, or X group). Post 7x on your main platform. Share one real client result or process doc.</p>
+    </div>
+
+    <div class="sprint-week">
+      <div class="week-badge">Week 3</div>
+      <p><strong>Activation.</strong> Execute Day 1-7 of community activation. Introduce members to each other (3 intros minimum). Post 7x on your main platform. Document one thing that worked and one that failed.</p>
+    </div>
+
+    <div class="sprint-week">
+      <div class="week-badge">Week 4</div>
+      <p><strong>Momentum.</strong> Facilitate first member-to-member collaboration. Spotlight 2 member contributions publicly. Post 7x on your main platform. Ask your core 20 for their first referrals. Begin pillar question rotation.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHECKLIST -->
+  <div class="sec">
+    <div class="sec-num">Section 05</div>
+    <h2>Your Distribution Checklist</h2>
+    <p class="desc">Print this. Check things off as you complete them. Every item compounds.</p>
+  </div>
+
+  <div class="card full">
+    <ul class="checklist">
+      <li><div class="check-icon"></div><div><strong>Positioning statement written</strong> — one sentence, brutally specific</div></li>
+      <li><div class="check-icon"></div><div><strong>Bio updated on all platforms</strong> — 3-line formula (what + proof + CTA)</div></li>
+      <li><div class="check-icon"></div><div><strong>Pillar question chosen for month 1</strong> — the #1 question your clients ask</div></li>
+      <li><div class="check-icon"></div><div><strong>7-day content calendar running</strong> — Mon case study through Sun engagement</div></li>
+      <li><div class="check-icon"></div><div><strong>First 20 community members identified</strong> — name, where they engage, why you picked them</div></li>
+      <li><div class="check-icon"></div><div><strong>Personal DMs sent to all 20</strong> — specific, exclusive, value-first</div></li>
+      <li><div class="check-icon"></div><div><strong>Private group created</strong> — Telegram, Discord, or X group</div></li>
+      <li><div class="check-icon"></div><div><strong>Day 1-7 activation completed</strong> — intros, exclusive share, spotlight, connections</div></li>
+      <li><div class="check-icon"></div><div><strong>Weekly process doc published</strong> — [client type] + [problem] + [action] + [result]</div></li>
+      <li><div class="check-icon"></div><div><strong>Weekly contribution loops running</strong> — Mon question, Wed spotlight, Fri learning</div></li>
+      <li><div class="check-icon"></div><div><strong>First member nominations requested</strong> — "Who's one person who should be here?"</div></li>
+      <li><div class="check-icon"></div><div><strong>First 100 answers to pillar question created</strong> — across all content formats</div></li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <p>Prepared by <a href="https://www.elevateaisystem.com">ElevateAI System</a> · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+    <p style="margin-top:0.35rem;">Questions? <a href="https://cal.com/elevateaisystem/discovery-call">Book a call →</a></p>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('date-stamp').textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+</script>
+</body>
+</html>

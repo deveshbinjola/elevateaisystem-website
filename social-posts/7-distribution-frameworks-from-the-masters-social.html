@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Posts — 7 Distribution Frameworks from the Masters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00FF41;
+            --green-deep: #059669;
+            --navy: #0A0F1C;
+            --bg: #FAFAF8;
+            --text: #1A1A2E;
+            --text-muted: #6B6B7B;
+            --border: #E0E0D8;
+            --white: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --card-border: #E8E8E2;
+            --thread-line: #D0D0C8;
+            --copy-bg: #F5F5F0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0A0F1C;
+                --text: #E8E8E2;
+                --text-muted: #9090A0;
+                --border: #1E2438;
+                --card-bg: #111827;
+                --card-border: #1E2438;
+                --thread-line: #2A3050;
+                --copy-bg: #1A2035;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Header */
+        .page-header {
+            margin-bottom: 56px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header .label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--green-deep);
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .page-header .meta {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .page-header .meta a {
+            color: var(--green-deep);
+            text-decoration: none;
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--text);
+            margin: 56px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: -16px;
+            margin-bottom: 24px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .card-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .card-content {
+            font-size: 15px;
+            line-height: 1.8;
+            white-space: pre-line;
+            color: var(--text);
+        }
+
+        .card-content .hashtags {
+            color: var(--green-deep);
+            font-size: 13px;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .char-count {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            text-align: right;
+        }
+
+        /* Copy button */
+        .copy-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--copy-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--green-deep);
+            color: var(--white);
+            border-color: var(--green-deep);
+        }
+
+        .copy-btn.copied {
+            background: var(--green-deep);
+            color: var(--white);
+            border-color: var(--green-deep);
+        }
+
+        /* Thread layout */
+        .thread-container {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .thread-container::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: var(--thread-line);
+            border-radius: 1px;
+        }
+
+        .thread-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .thread-card::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 28px;
+            width: 14px;
+            height: 2px;
+            background: var(--thread-line);
+        }
+
+        .thread-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: var(--navy);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-align: center;
+            line-height: 24px;
+            margin-bottom: 12px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .thread-num {
+                background: var(--green-deep);
+                color: var(--white);
+            }
+        }
+
+        .thread-card .card-content {
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        /* Micro tweets grid */
+        .micro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 600px) {
+            .micro-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .micro-grid .card {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Footer */
+        .page-footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .page-footer a {
+            color: var(--green-deep);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 32px 16px 60px; }
+            .card { padding: 20px; }
+            .thread-card { padding: 18px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="page-header">
+            <div class="label">Social Content</div>
+            <h1>7 Distribution Frameworks from the Masters</h1>
+            <div class="meta">April 1, 2026 &mdash; <a href="https://www.elevateaisystem.com/blog/7-distribution-frameworks-from-the-masters">View blog post</a></div>
+        </div>
+
+        <!-- ===== SINGLE TWEET ===== -->
+        <div class="section-title">Single Tweet</div>
+        <p class="section-subtitle">Under 280 characters. One bold insight.</p>
+
+        <div class="card">
+            <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+            <div class="card-label">Single Tweet</div>
+            <div class="card-content">Most coaches chase followers. The ones making $50K+/month chase distribution systems.
+
+7 frameworks from Balfour, Rachitsky, Godin, and more — applied to coaching.
+
+elevateaisystem.com/blog/7-distribution-frameworks-from-the-masters
+
+#CoachingBusiness #AIMarketing #GrowthMarketing</div>
+            <div class="char-count"></div>
+        </div>
+
+        <!-- ===== TWITTER THREAD ===== -->
+        <div class="section-title">Twitter Thread</div>
+        <p class="section-subtitle">6 connected tweets. Each stands alone.</p>
+
+        <div class="thread-container">
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">1</div>
+                <div class="card-content">I studied 7 distribution frameworks from the smartest growth minds alive.
+
+Balfour. Rachitsky. Natividad. Bloom. Barry. Godin.
+
+Then I applied every one of them to coaching businesses.
+
+Here's what I found.</div>
+            </div>
+
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">2</div>
+                <div class="card-content">Brian Balfour says distribution fails because of misalignment, not bad tactics.
+
+Four things must fit: Market-Product. Product-Channel. Channel-Model. Model-Market.
+
+Most coaches pick channels based on vibes.
+
+The ones scaling pick channels based on fit. LinkedIn + email + SEO fit coaching. TikTok doesn't.</div>
+            </div>
+
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">3</div>
+                <div class="card-content">Amanda Natividad dropped a truth bomb: algorithms punish outbound links.
+
+Sharing a link to your blog on LinkedIn? The algorithm throttles you.
+
+The fix: deliver 95% of the value in-feed. Move the curious to your email list.
+
+Zero-click content wins. Link-dumping loses.</div>
+            </div>
+
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">4</div>
+                <div class="card-content">Nathan Barry proved that email converts 3-5x better than social for services priced $375+.
+
+Your Instagram followers are rented from Meta. They can vanish overnight.
+
+Your email list is yours.
+
+Stop optimizing social for engagement. Optimize it for email signups.</div>
+            </div>
+
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">5</div>
+                <div class="card-content">Seth Godin says you don't need 200,000 followers.
+
+With a $5K-$12K service, you need 50-200 true fans.
+
+People who know you, trust you, and refer you.
+
+Stop measuring breadth. Start measuring depth.
+
+One email to 100 true fans beats one email to 10,000 strangers.</div>
+            </div>
+
+            <div class="thread-card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="thread-num">6</div>
+                <div class="card-content">These 7 frameworks aren't separate strategies.
+
+They're a system: find your fit, create once, distribute everywhere, deliver value in-feed, convert to email, deepen relationships.
+
+I broke down each one with coaching-specific applications.
+
+Full post: elevateaisystem.com/blog/7-distribution-frameworks-from-the-masters</div>
+            </div>
+        </div>
+
+        <!-- ===== LINKEDIN POST ===== -->
+        <div class="section-title">LinkedIn Post</div>
+        <p class="section-subtitle">500-1200 characters. Hook before the fold.</p>
+
+        <div class="card">
+            <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+            <div class="card-label">LinkedIn Post</div>
+            <div class="card-content">I studied 7 distribution frameworks from growth legends. Then I applied them to coaching.
+
+Here's what changed my thinking:
+
+Most coaches pick channels based on what feels right. Instagram because everyone's there. TikTok because it's trending. Podcasts because they seem like fun.
+
+Brian Balfour says that's backwards. Four things must align before a channel works: your market, your product, the channel, and your revenue model. For coaches selling $5K-$12K services, that means LinkedIn + email + SEO. Not TikTok.
+
+The one that hit hardest? Nathan Barry's proof that email converts 3-5x better than social for high-ticket services. Your followers are rented. Your email list is yours.
+
+And Seth Godin's reminder: you don't need 200,000 followers. You need 50-200 true fans who trust you enough to refer you.
+
+I broke down all 7 frameworks with specific applications for coaches and creators. Link in comments.
+
+Which distribution channel has actually brought you clients? Not engagement. Clients.
+
+#CoachingBusiness #AIMarketing #ContentMarketing #GrowthMarketing #Coaches</div>
+            <div class="char-count"></div>
+        </div>
+
+        <!-- ===== MICRO-VALUE TWEETS ===== -->
+        <div class="section-title">Micro-Value Tweets</div>
+        <p class="section-subtitle">3 standalone insights. Under 280 characters each.</p>
+
+        <div class="micro-grid">
+            <div class="card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="card-label">Micro 1</div>
+                <div class="card-content">Email converts 3-5x better than social for services priced $375+.
+
+Your Instagram followers are rented.
+
+Your email subscribers are yours.
+
+Stop building on borrowed land.
+
+#CoachingBusiness #LeadGeneration</div>
+                <div class="char-count"></div>
+            </div>
+
+            <div class="card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="card-label">Micro 2</div>
+                <div class="card-content">You don't need 200,000 followers to run a $500K coaching business.
+
+You need 50-200 people who trust you deeply.
+
+Depth beats breadth. Every time.
+
+#CoachingBusiness #Growth</div>
+                <div class="char-count"></div>
+            </div>
+
+            <div class="card">
+                <button class="copy-btn" onclick="copyCard(this)">Copy</button>
+                <div class="card-label">Micro 3</div>
+                <div class="card-content">Algorithms punish outbound links.
+
+Share a blog link on LinkedIn? You get throttled.
+
+Deliver 95% of the value in-feed instead. Move the curious to email.
+
+That's how distribution actually works now.
+
+#AIMarketing #ContentMarketing</div>
+                <div class="char-count"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="page-footer">
+            <p>Generated for <a href="https://www.elevateaisystem.com">ElevateAI System</a> &mdash; April 1, 2026</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Copy to clipboard
+        function copyCard(btn) {
+            const card = btn.closest('.card, .thread-card');
+            const content = card.querySelector('.card-content');
+            const text = content.innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Character counts
+        document.querySelectorAll('.char-count').forEach(el => {
+            const card = el.closest('.card');
+            const content = card.querySelector('.card-content');
+            const text = content.innerText;
+            const count = text.length;
+            el.textContent = count + ' characters';
+        });
+    </script>
+</body>
+</html>

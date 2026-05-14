@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>Content OS — AI Content Creation System | Elevate AI System</title>
+<meta name="description" content="AI content system that produces SEO + AI-optimized blog posts, social media & marketing materials. Every piece works across Google, AI Overviews & ChatGPT. From $1,500.">
+<meta name="keywords" content="AI content creation, content automation for coaches, AI social media for coaches, content marketing system, automated content engine, coach content strategy, Elevate AI">
+<meta name="author" content="Elevate AI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.elevateaisystem.com/content-os">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Content OS — AI Content Creation System | Elevate AI System">
+<meta property="og:description" content="AI content system that produces SEO + AI-optimized blog posts, social media & marketing materials. Every piece works across Google, AI Overviews & ChatGPT.">
+<meta property="og:url" content="https://www.elevateaisystem.com/content-os">
+<meta property="og:site_name" content="Elevate AI">
+<meta property="og:image" content="https://www.elevateaisystem.com/images/content-os-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Content Creation System for Coaches — Content OS | Elevate AI">
+<meta name="twitter:description" content="Your audience is waiting. Your AI agent is ready to show up. 120+ content pieces per month, voice-matched and distributed across every channel automatically.">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/images/content-os-og.jpg">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root {
+    --bg: #FAFAF8; --bg-alt: #F2F2EE;
+    --green: #00FF41; --green-dark: #00CC34;
+    --navy: #0A0F1C; --navy-light: #1A2035;
+    --text: #1A1A2E; --text-muted: #5A5A6E;
+    --border: #E0E0D8; --white: #FFFFFF; --card-bg: #FFFFFF;
+    --purple: #A855F7; --purple-dark: #9333EA; --purple-dim: rgba(168,85,247,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  /* HERO */
+  .hero { padding: 10rem 2rem 6rem; max-width: 900px; margin: 0 auto; position: relative; }
+  .hero::before { content: ''; position: absolute; top: 60%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, var(--purple-dim) 0%, transparent 70%); pointer-events: none; }
+  .badge { display: inline-flex; padding: 0.55rem 1.4rem; border-radius: 50px; background: var(--bg-alt); border: 1px solid var(--border); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple-dark); margin-bottom: 1.5rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: var(--navy); }
+  .hero h1 .hl { color: var(--purple-dark); }
+  .hero p.sub { font-size: 1.1rem; color: var(--text-muted); max-width: 620px; line-height: 1.7; margin-bottom: 2.5rem; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .cta-primary { background: var(--navy); color: var(--white); padding: 1rem 2.4rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-primary:hover { background: var(--navy-light); box-shadow: 0 8px 30px rgba(10,15,28,.2); transform: translateY(-2px); }
+  .cta-secondary { color: var(--text); padding: 1rem 2.4rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid var(--border); transition: all 0.3s; }
+  .cta-secondary:hover { border-color: var(--navy); }
+
+  /* METRICS */
+  .metrics { padding: 4rem 2rem; background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .metrics-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .metric-num { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; }
+  .metric-num .accent { color: var(--purple-dark); }
+  .metric-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+  /* SHARED SECTION STYLES */
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple-dark); margin-bottom: 0.75rem; }
+  .section-title { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1rem; color: var(--navy); }
+  .section-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 620px; margin-bottom: 3rem; line-height: 1.7; }
+
+  /* HOW IT WORKS — PIPELINE */
+  .how { padding: 6rem 2rem; }
+  .pipeline { display: flex; flex-direction: column; gap: 0; position: relative; margin-top: 2rem; }
+  .pipeline::before { content: ''; position: absolute; left: 39px; top: 40px; bottom: 40px; width: 2px; background: linear-gradient(180deg, var(--purple), var(--green-dark)); border-radius: 2px; }
+  .pipe-step { display: grid; grid-template-columns: 80px 1fr; gap: 0; padding: 2rem 0; position: relative; }
+  .pipe-dot { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--purple); background: var(--bg); position: relative; z-index: 2; margin: 4px auto 0; }
+  .pipe-step:last-child .pipe-dot { border-color: var(--green-dark); }
+  .pipe-content { background: var(--card-bg); border-radius: 20px; padding: 2rem 2.5rem; border: 1px solid var(--border); transition: all 0.3s; }
+  .pipe-content:hover { box-shadow: 0 12px 40px rgba(0,0,0,.06); transform: translateY(-4px); }
+  .pipe-content h4 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .pipe-content p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+  .pipe-tags { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+  .pipe-tag { font-size: 0.7rem; padding: 0.35rem 0.9rem; border-radius: 50px; background: var(--purple-dim); border: 1px solid rgba(168,85,247,0.15); color: var(--purple-dark); font-weight: 600; }
+  .pipe-tag.green { background: rgba(0,204,52,0.08); border-color: rgba(0,204,52,0.15); color: var(--green-dark); }
+
+  /* THE SYSTEM */
+  .system { padding: 6rem 2rem; background: var(--bg-alt); border-top: 1px solid var(--border); }
+  .system-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .sys-card { background: var(--card-bg); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--border); transition: all 0.3s; position: relative; }
+  .sys-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.06); transform: translateY(-4px); }
+  .sys-num { font-size: 3rem; font-weight: 800; color: rgba(168,85,247,0.12); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.75rem; }
+  .sys-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .sys-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+  .sys-card .sys-detail { margin-top: 1rem; font-size: 0.85rem; color: var(--purple-dark); font-weight: 600; background: var(--purple-dim); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block; }
+  .sys-arrow { display: flex; align-items: center; justify-content: center; color: var(--purple-dark); font-size: 1.5rem; font-weight: 700; padding: 0.5rem 0; }
+  @media (max-width: 900px) {
+    .system-grid { grid-template-columns: 1fr; }
+  }
+
+  /* 3-STAGE CONTENT */
+  .stages { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .stage-card { background: var(--card-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); text-align: center; transition: all 0.3s; }
+  .stage-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.06); transform: translateY(-4px); }
+  .stage-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .stage-card h5 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+  .stage-card .stage-goal { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple-dark); font-weight: 700; margin-bottom: 0.75rem; }
+  .stage-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 700px) {
+    .stages { grid-template-columns: 1fr; }
+  }
+
+  /* OUTPUT */
+  .output { padding: 6rem 2rem; }
+  .output-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .output-card { background: var(--card-bg); border-radius: 20px; padding: 2rem; border: 1px solid var(--border); transition: all 0.3s; }
+  .output-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.06); transform: translateY(-4px); }
+  .output-card .channel { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple-dark); font-weight: 700; margin-bottom: 0.75rem; }
+  .output-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .output-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+  .output-card .volume { margin-top: 1rem; font-size: 1.8rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+  .output-card .vol-label { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* DIFFERENTIATOR */
+  .diff { padding: 6rem 2rem; }
+  .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+  .diff-card { padding: 2.5rem; border-radius: 20px; }
+  .diff-them { background: var(--card-bg); border: 1px solid var(--border); }
+  .diff-us { background: var(--navy); color: var(--white); }
+  .diff-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.5rem; font-weight: 700; }
+  .diff-them h4 { color: var(--text-muted); }
+  .diff-us h4 { color: var(--green); }
+  .diff-item { padding: 0.6rem 0; font-size: 0.95rem; border-bottom: 1px solid rgba(0,0,0,.05); line-height: 1.6; }
+  .diff-us .diff-item { border-color: rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+  .diff-item:last-child { border: none; }
+
+  /* PRICING */
+  .pricing { padding: 6rem 2rem; background: var(--bg-alt); }
+  .pricing-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; text-align: left; }
+  .price-card { background: var(--card-bg); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--border); position: relative; transition: all 0.3s; }
+  .price-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.06); transform: translateY(-4px); }
+  .price-card.featured { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+  .price-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--navy); padding: 0.3rem 1.2rem; border-radius: 50px; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; }
+  .price-card h4 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 0.25rem; }
+  .price-tag { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .price-amount { font-size: 2.5rem; font-weight: 800; color: var(--navy); margin: 1rem 0; letter-spacing: -0.03em; }
+  .price-amount span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+  .price-list { list-style: none; margin: 1.5rem 0 2rem; }
+  .price-list li { padding: 0.5rem 0; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 8px; }
+  .price-list li::before { content: '✓'; color: var(--green-dark); font-weight: 700; flex-shrink: 0; }
+  .card-cta { display: block; text-align: center; padding: 0.9rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s; }
+  .card-cta.primary { background: var(--navy); color: var(--white); }
+  .card-cta.primary:hover { background: var(--navy-light); box-shadow: 0 8px 30px rgba(10,15,28,.2); }
+  .card-cta.outline { border: 2px solid var(--border); color: var(--text); }
+  .card-cta.outline:hover { border-color: var(--navy); }
+
+  /* FINAL CTA */
+  .final-cta { padding: 6rem 2rem; background: var(--navy); text-align: center; }
+  .final-inner { max-width: 700px; margin: 0 auto; }
+  .final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .final-cta p { font-size: 1.05rem; color: rgba(255,255,255,.65); margin-bottom: 2.5rem; line-height: 1.7; }
+  .cta-green { background: var(--green); color: var(--navy); padding: 1rem 2.4rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-green:hover { box-shadow: 0 8px 30px rgba(0,255,65,.25); transform: translateY(-2px); }
+
+  footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted); }
+
+  @media (max-width: 900px) {
+    .metrics-inner { grid-template-columns: repeat(2, 1fr); }
+    .diff-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero, .how, .output, .diff, .pricing, .final-cta, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .metrics-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .pipe-step { grid-template-columns: 50px 1fr; }
+    .pipeline::before { left: 24px; }
+  }
+  @media (max-width: 768px) {
+    .cal > div > div[style*="display:grid"] { grid-template-columns: repeat(4, 1fr) !important; }
+  }
+</style>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Content OS",
+  "description": "AI-powered content creation engine for coaches. Generates 120+ voice-matched content pieces per month across Instagram, LinkedIn, email, YouTube, blog, and ads.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Elevate AI",
+    "url": "https://www.elevateaisystem.com",
+    "logo": "https://www.elevateaisystem.com/images/logo.png"
+  },
+  "serviceType": "AI Content Creation System",
+  "areaServed": "Worldwide",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Coaches, Consultants, Personal Brand Owners"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Content Starter",
+      "price": "1500",
+      "priceCurrency": "USD",
+      "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" },
+      "description": "Brand voice profile, audience research, 30 social posts per month, 4 email newsletters, content calendar, and monthly performance review."
+    },
+    {
+      "@type": "Offer",
+      "name": "Content Pro",
+      "price": "3000",
+      "priceCurrency": "USD",
+      "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" },
+      "description": "Full content engine: 50+ social posts, 8 emails, 4 blog articles, 4 video scripts, 50+ ad variations, and weekly AI performance briefs."
+    },
+    {
+      "@type": "Offer",
+      "name": "Content + Lead OS Bundle",
+      "price": "5000",
+      "priceCurrency": "USD",
+      "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" },
+      "description": "Full Content Pro plus Lead OS Pro, integrated content-to-lead pipeline, outbound sequences, ad optimization, and bi-weekly strategy calls."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Content OS by Elevate AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content OS is an AI-powered content engine that researches your audience's real pain points, generates authentic voice-matched content, and distributes it across 6 channels automatically — producing over 120 pieces per month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Content OS different from a content agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike content agencies that use templates and VAs, Content OS uses AI trained on your actual voice and methodology. It delivers 120+ pieces per month across 6 channels for a fraction of agency costs, with just 2 hours per week of your time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What channels does Content OS cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content OS distributes content across Instagram, LinkedIn, email newsletters, YouTube/podcast scripts, SEO blog articles, and ad creative — each piece formatted and optimized for the specific platform."
+      }
+    }
+  ]
+}
+</script>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<script src="navbar.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Content &mdash; Your Voice, Everywhere</div>
+  <h1>You Write Once.<br>We Show Up Everywhere.</h1>
+  <p class="sub">Write one newsletter a week. Record one voice note. Share one insight. We turn that single seed into 30 days of content across Instagram, LinkedIn, email, YouTube, blog, and ads — in your voice, on your schedule, without you touching a thing.</p>
+  <div class="cta-row">
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="cta-primary">Start Showing Up Everywhere &rarr;</a>
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="cta-secondary">See how it works</a>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="metrics-inner">
+    <div><div class="metric-num"><span class="accent">120+</span></div><div class="metric-label">pieces created from your one weekly input</div></div>
+    <div><div class="metric-num"><span class="accent">6</span></div><div class="metric-label">channels running on autopilot</div></div>
+    <div><div class="metric-num"><span class="accent">30 min</span></div><div class="metric-label">your time per week</div></div>
+    <div><div class="metric-num"><span class="accent">3–5x</span></div><div class="metric-label">audience growth without extra effort</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="inner">
+    <div class="section-label">How it works</div>
+    <div class="section-title">Here's what your week actually looks like.</div>
+    <div class="section-sub">You do one thing. Everything else happens automatically.</div>
+
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div><div class="pipe-dot"></div></div>
+        <div class="pipe-content">
+          <h4>Monday: You hit send on your newsletter</h4>
+          <p>The same one you already write for your audience. Or you record a 5-minute voice note sharing what's on your mind. That's your only creative input for the entire week.</p>
+          <div class="pipe-tags">
+            <span class="pipe-tag">Perplexity API</span>
+            <span class="pipe-tag">Reddit Scraping</span>
+            <span class="pipe-tag">Pain Point Mapping</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipe-step">
+        <div><div class="pipe-dot"></div></div>
+        <div class="pipe-content">
+          <h4>Tuesday: Your content starts appearing</h4>
+          <p>Your LinkedIn has new posts pulled from your newsletter insights. Your Instagram has carousels and stories queued. Your blog has a long-form SEO article. All of it sounds like you — because it started as you.</p>
+          <div class="pipe-tags">
+            <span class="pipe-tag">Brand Voice Profile</span>
+            <span class="pipe-tag">Claude AI</span>
+            <span class="pipe-tag">Quality Scoring</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipe-step">
+        <div><div class="pipe-dot"></div></div>
+        <div class="pipe-content">
+          <h4>Wednesday–Friday: People start engaging</h4>
+          <p>Different hooks, different angles, different formats — all tested automatically. What resonates gets amplified. What doesn't gets refined. You never have to think about it.</p>
+          <div class="pipe-tags">
+            <span class="pipe-tag">React Components</span>
+            <span class="pipe-tag">A/B Hook Testing</span>
+            <span class="pipe-tag">Multi-Format</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipe-step">
+        <div><div class="pipe-dot"></div></div>
+        <div class="pipe-content">
+          <h4>Every week after: It compounds</h4>
+          <p>Your voice reaches more people. Your authority grows. Your calendar fills up. You never had to learn a dashboard, approve a batch, or think about a content calendar.</p>
+          <div class="pipe-tags">
+            <span class="pipe-tag green">Instagram</span>
+            <span class="pipe-tag green">LinkedIn</span>
+            <span class="pipe-tag green">Email</span>
+            <span class="pipe-tag green">YouTube</span>
+            <span class="pipe-tag green">Twitter/X</span>
+            <span class="pipe-tag green">Blog/SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SYSTEM: 4-STEP CONTENT ENGINE -->
+<section class="system">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div class="section-label">The engine under the hood</div>
+      <div class="section-title">Most AI content sounds like AI.<br>Ours sounds like you.</div>
+      <p class="section-sub" style="margin:0 auto 1.5rem; text-align:center;">Before a single post gets written, we run a 4-step process that makes every piece of content unmistakably yours. This is why our clients get inbound — not just impressions.</p>
+    </div>
+
+    <div class="system-grid">
+      <div class="sys-card">
+        <div class="sys-num">01</div>
+        <h4>Voice Extraction</h4>
+        <p>We study your sales calls, podcast appearances, client testimonials, and natural speech patterns. We capture the phrases you use without thinking, the opinions you hold that your best clients respond to, and the way you explain things when you're not trying to sound professional. The output is a voice blueprint — a reference document that sits behind everything the system writes.</p>
+        <div class="sys-detail">Your voice, not "a" voice</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-num">02</div>
+        <h4>Positioning Lock</h4>
+        <p>Content without positioning is noise with a consistent tone. Before any posts get created, we identify the single problem you understand better than anyone else in your market, the belief your best clients hold after working with you, and the take that would make competitors uncomfortable but your ideal clients would immediately recognize as true. Every piece of content builds toward that one authority stake.</p>
+        <div class="sys-detail">One position. Every post reinforces it.</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-num">03</div>
+        <h4>3-Stage Content Architecture</h4>
+        <p>Not all content does the same job. We structure every month across three stages designed to move people from stranger to client — so your content compounds instead of just existing.</p>
+      </div>
+      <div class="sys-card">
+        <div class="sys-num">04</div>
+        <h4>Funnel Integration</h4>
+        <p>Every post does double duty. Growth posts pair with outbound sequences — when someone engages, a personalized message goes out referencing what they just read. Nurture posts build authority. Conversion posts drive directly to your calendar. Content and pipeline run in parallel so you're building audience and warming prospects at the same time.</p>
+        <div class="sys-detail">Content that fills your calendar</div>
+      </div>
+    </div>
+
+    <!-- 3 Stages Detail -->
+    <div class="stages">
+      <div class="stage-card">
+        <div class="stage-icon">◉</div>
+        <h5>Growth Content</h5>
+        <div class="stage-goal">Get seen by the right people</div>
+        <p>Behind-the-scenes stories, personal experiences, and relatable takes. Designed for engagement, profile visits, and getting you in front of your ideal audience. This is how strangers find you.</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage-icon">◈</div>
+        <h5>Nurture Content</h5>
+        <div class="stage-goal">Build trust before the call</div>
+        <p>Process breakdowns, industry opinions, and your take on what matters. This positions you as the authority — the person they start trusting before they ever reach out. Followers become believers.</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage-icon">◆</div>
+        <h5>Conversion Content</h5>
+        <div class="stage-goal">Turn followers into clients</div>
+        <p>Case studies with real results, lead magnets, and direct offers. People already know and trust you — now they see proof and a clear path to work with you. Believers become clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTPUT -->
+<section class="output">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div class="section-label">Monthly output</div>
+      <div class="section-title">What shows up every month — from your one weekly input</div>
+    </div>
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="channel">Instagram</div>
+        <h4>Carousels, Reels Scripts &amp; Stories</h4>
+        <p>Educational carousels, engaging hooks, story sequences, and reel scripts&mdash;all designed for saves and shares.</p>
+        <div class="volume">30</div>
+        <div class="vol-label">posts per month</div>
+      </div>
+      <div class="output-card">
+        <div class="channel">LinkedIn</div>
+        <h4>Thought Leadership Posts</h4>
+        <p>Long-form posts that position you as an authority. Personal stories, frameworks, and insights that drive engagement.</p>
+        <div class="volume">20</div>
+        <div class="vol-label">posts per month</div>
+      </div>
+      <div class="output-card">
+        <div class="channel">Email</div>
+        <h4>Newsletter &amp; Nurture Sequences</h4>
+        <p>Weekly newsletters that build trust, plus automated nurture sequences for new subscribers. High open, high click.</p>
+        <div class="volume">8</div>
+        <div class="vol-label">emails per month</div>
+      </div>
+      <div class="output-card">
+        <div class="channel">YouTube / Podcast</div>
+        <h4>Scripts &amp; Show Notes</h4>
+        <p>Full episode scripts, compelling titles, thumbnail concepts, timestamps, and SEO-optimized descriptions.</p>
+        <div class="volume">4</div>
+        <div class="vol-label">scripts per month</div>
+      </div>
+      <div class="output-card">
+        <div class="channel">Blog / SEO</div>
+        <h4>Long-Form Articles</h4>
+        <p>SEO-optimized articles that rank on Google and establish topical authority. Research-backed, keyword-targeted.</p>
+        <div class="volume">4</div>
+        <div class="vol-label">articles per month</div>
+      </div>
+      <div class="output-card">
+        <div class="channel">Ad Creative</div>
+        <h4>Ad Copy &amp; Variations</h4>
+        <p>Headlines, body copy, and hook variations for paid campaigns. Based on real audience language, not guesswork.</p>
+        <div class="volume">50+</div>
+        <div class="vol-label">variations per month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY CONTENT CALENDAR -->
+<section class="cal" style="padding:5rem 0;background:var(--navy);color:#fff;">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div class="section-label" style="color:var(--green);">Your weekly rhythm</div>
+      <div class="section-title" style="color:#fff;">Every day has a purpose. Every post has a job.</div>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);margin:0 auto 2.5rem;text-align:center;">Content OS doesn't just produce volume — it follows a strategic 7-day cadence that balances authority-building, trust-deepening, and conversion-driving content. Here's what a typical week looks like for your brand.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:.75rem;margin-bottom:2rem;">
+      <div style="background:rgba(0,255,65,0.08);border:1px solid rgba(0,255,65,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--green);font-weight:700;margin-bottom:.5rem;">Mon</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Case Study</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Real client results with specific numbers</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,255,65,0.12);color:var(--green);padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Growth</div>
+      </div>
+      <div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#a78bfa;font-weight:700;margin-bottom:.5rem;">Tue</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Personal Story</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Life updates, lessons, behind-the-scenes</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(139,92,246,0.12);color:#a78bfa;padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Nurture</div>
+      </div>
+      <div style="background:rgba(0,255,65,0.08);border:1px solid rgba(0,255,65,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--green);font-weight:700;margin-bottom:.5rem;">Wed</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Framework</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Tactical tip, process, or system breakdown</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,255,65,0.12);color:var(--green);padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Growth</div>
+      </div>
+      <div style="background:rgba(0,255,65,0.08);border:1px solid rgba(0,255,65,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--green);font-weight:700;margin-bottom:.5rem;">Thu</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Hot Take</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Industry trend, contrarian opinion, prediction</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,255,65,0.12);color:var(--green);padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Growth</div>
+      </div>
+      <div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#a78bfa;font-weight:700;margin-bottom:.5rem;">Fri</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Lesson Learned</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Mistakes, failures, what you'd do differently</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(139,92,246,0.12);color:#a78bfa;padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Nurture</div>
+      </div>
+      <div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#a78bfa;font-weight:700;margin-bottom:.5rem;">Sat</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Behind the Scenes</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Weekend reflections, lighter content, book recs</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(139,92,246,0.12);color:#a78bfa;padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Nurture</div>
+      </div>
+      <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.15);border-radius:12px;padding:1.25rem .75rem;text-align:center;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#fb7185;font-weight:700;margin-bottom:.5rem;">Sun</div>
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:.35rem;">Engagement</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,0.5);line-height:1.4;">Questions, polls, community interaction</div>
+        <div style="margin-top:.6rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;background:rgba(244,63,94,0.12);color:#fb7185;padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600;">Conversion</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:1.5rem;font-size:.75rem;color:rgba(255,255,255,0.4);">
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:4px;vertical-align:middle;"></span> Growth — builds authority & reach</span>
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#a78bfa;margin-right:4px;vertical-align:middle;"></span> Nurture — deepens trust & connection</span>
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fb7185;margin-right:4px;vertical-align:middle;"></span> Conversion — drives action & revenue</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR -->
+<section class="diff">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div class="section-label">Why Content OS</div>
+      <div class="section-title">This isn't a content tool. It's a content team.</div>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card diff-them">
+        <h4>Hiring a content team</h4>
+        <div class="diff-item">Generic content that could be anyone's</div>
+        <div class="diff-item">VA writing posts from templates</div>
+        <div class="diff-item">No audience research&mdash;just trending topics</div>
+        <div class="diff-item">5&ndash;10 posts per month for $2,000+</div>
+        <div class="diff-item">You still spend hours reviewing and editing</div>
+        <div class="diff-item">No performance data or optimization</div>
+        <div class="diff-item">Content disappears after posting</div>
+      </div>
+      <div class="diff-card diff-us">
+        <h4>ElevateAI running your content</h4>
+        <div class="diff-item">Voice-matched content trained on your actual words</div>
+        <div class="diff-item">AI agents calibrated to your methodology</div>
+        <div class="diff-item">Deep audience research using real conversations</div>
+        <div class="diff-item">120+ pieces per month across 6 channels</div>
+        <div class="diff-item">2 hours per week of your time (review only)</div>
+        <div class="diff-item">Weekly performance briefs with optimization</div>
+        <div class="diff-item">Every piece repurposed into 5&ndash;10 formats</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-label">Investment</div>
+    <div class="section-title">Choose how visible you want to be</div>
+    <p class="section-sub" style="margin:0 auto 3rem; text-align:center;">Every tier starts with voice calibration. 3-month minimum commitment.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h4>Visibility</h4>
+        <div class="price-tag">We run your content</div>
+        <div class="price-amount">$1,500<span>/month</span></div>
+        <ul class="price-list">
+          <li>Brand voice profile creation</li>
+          <li>Audience pain point research</li>
+          <li>30 social posts/month (IG + LinkedIn)</li>
+          <li>4 email newsletters/month</li>
+          <li>Content calendar &amp; scheduling</li>
+          <li>Monthly performance review</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="card-cta outline">Start Showing Up</a>
+      </div>
+
+      <div class="price-card featured">
+        <h4>Growth</h4>
+        <div class="price-tag">We run your content + leads</div>
+        <div class="price-amount">$3,000<span>/month</span></div>
+        <ul class="price-list">
+          <li>Everything in Starter</li>
+          <li>50+ social posts/month (all platforms)</li>
+          <li>8 emails/month (newsletter + nurture)</li>
+          <li>4 blog articles/month (SEO-optimized)</li>
+          <li>4 YouTube/podcast scripts</li>
+          <li>50+ ad copy variations</li>
+          <li>Weekly AI performance briefs</li>
+          <li>Variation testing &amp; optimization</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="card-cta primary">Start Growing &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <h4>Scale</h4>
+        <div class="price-tag">We run your entire marketing operation</div>
+        <div class="price-amount">$5,000<span>/month</span></div>
+        <ul class="price-list">
+          <li>Full Content Pro package</li>
+          <li>Full Lead OS Pro system</li>
+          <li>Integrated content-to-lead pipeline</li>
+          <li>Outbound sequences powered by content</li>
+          <li>Ad factory with auto-optimization</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Priority Slack support</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="card-cta outline">Start Scaling</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-inner">
+    <h2>Imagine never worrying<br>about content again.</h2>
+    <p>Book a free call. We'll show you exactly what your content operation would look like — and what your week looks like when you're not the one creating it all.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="cta-green">Book Your Free Call &rarr;</a>
+  </div>
+</section>
+
+
+    <!-- From the Blog Section -->
+    <section style="
+        background: #0A0F1C;
+        border-top: 1px solid rgba(0,255,65,.15);
+        padding: 4rem 1.5rem;
+    ">
+        <div style="max-width:1000px;margin:0 auto;">
+            <p style="
+                font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                font-size:.7rem;
+                font-weight:700;
+                letter-spacing:.12em;
+                text-transform:uppercase;
+                color:#00FF41;
+                margin:0 0 .5rem;
+            ">From the Blog</p>
+            <h3 style="
+                font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                font-size:1.6rem;
+                font-weight:700;
+                color:#F9F9F7;
+                margin:0 0 .5rem;
+            ">How Content OS Actually Works</h3>
+            <p style="
+                font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                font-size:.95rem;
+                color:rgba(249,249,247,.55);
+                margin:0 0 2.5rem;
+            ">The strategy behind turning one idea into 120+ pieces.</p>
+            <div style="
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+                gap:1.25rem;
+            ">
+                <a href="/blog/content-os-explained" class="fb-card" style="text-decoration:none;">
+                    <span class="fb-badge">Content</span>
+                    <h4 class="fb-title">Content OS Explained: 120+ Pieces From One Idea</h4>
+                    <p class="fb-desc">How a single core idea becomes a month of content across LinkedIn, email, blog, and social.</p>
+                    <span class="fb-cta">7 min read &rarr;</span>
+                </a>
+                <a href="/blog/coaches-need-systems-not-content" class="fb-card" style="text-decoration:none;">
+                    <span class="fb-badge">Content</span>
+                    <h4 class="fb-title">Coaches Don't Need More Content. They Need Systems.</h4>
+                    <p class="fb-desc">The real reason most coaches' content goes nowhere — and the systems fix that actually works.</p>
+                    <span class="fb-cta">6 min read &rarr;</span>
+                </a>
+                <a href="/blog/distribution-is-the-moat" class="fb-card" style="text-decoration:none;">
+                    <span class="fb-badge">Content</span>
+                    <h4 class="fb-title">Distribution Is the Moat</h4>
+                    <p class="fb-desc">In the AI era, building is free. Distribution is the real competitive advantage — here's why.</p>
+                    <span class="fb-cta">8 min read &rarr;</span>
+                </a>
+            </div>
+            <div style="margin-top:2rem;text-align:center;">
+                <a href="/blog" style="
+                    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                    font-size:.85rem;
+                    font-weight:700;
+                    color:#00FF41;
+                    text-decoration:none;
+                    letter-spacing:.03em;
+                ">View All Posts &rarr;</a>
+            </div>
+        </div>
+    </section>
+    <style>
+        .fb-card {
+            display:block;
+            background:rgba(255,255,255,.03);
+            border:1px solid rgba(255,255,255,.07);
+            border-radius:12px;
+            padding:1.5rem 1.25rem;
+            transition:border-color .2s,transform .2s;
+            cursor:pointer;
+        }
+        .fb-card:hover {
+            border-color:rgba(0,255,65,.35);
+            transform:translateY(-3px);
+        }
+        .fb-badge {
+            display:inline-block;
+            background:rgba(0,255,65,.12);
+            color:#00FF41;
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.65rem;
+            font-weight:700;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            padding:.25rem .6rem;
+            border-radius:20px;
+            margin-bottom:.75rem;
+        }
+        .fb-title {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:1rem;
+            font-weight:700;
+            color:#F9F9F7;
+            margin:0 0 .5rem;
+            line-height:1.35;
+        }
+        .fb-desc {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.82rem;
+            color:rgba(249,249,247,.55);
+            line-height:1.55;
+            margin:0 0 1rem;
+        }
+        .fb-cta {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.78rem;
+            font-weight:700;
+            color:#00FF41;
+        }
+    </style>
+    <footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+</body>
+</html>

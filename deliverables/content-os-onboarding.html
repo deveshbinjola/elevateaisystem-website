@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content OS Onboarding Guide — ElevateAI System</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dark: #00cc34;
+    --green-soft: rgba(0,255,65,0.08);
+    --navy: #0A0F1C;
+    --bg: #FAFAF8;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e5e5;
+    --card: #ffffff;
+    --purple: #8b5cf6;
+    --purple-soft: rgba(139,92,246,0.07);
+    --rose: #f43f5e;
+    --rose-soft: rgba(244,63,94,0.07);
+    --amber: #f59e0b;
+    --blue: #3b82f6;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Cover */
+  .cover {
+    background: var(--navy);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.04;
+  }
+  .cover .logo {
+    display: inline-block;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .cover h1 span { color: var(--green); }
+  .cover .sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto 1rem;
+  }
+  .cover .client-name {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-top: 1.5rem;
+    opacity: 0.7;
+  }
+
+  /* Section headers */
+  .sec {
+    padding: 3.5rem 0 1rem;
+  }
+  .sec-num {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  .sec h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.25rem 0;
+    line-height: 1.25;
+  }
+  .sec p.desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin-top: 0.35rem;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .card.full { grid-column: 1 / -1; }
+  .card .tag {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .tag-green { color: var(--green-dark); }
+  .tag-purple { color: var(--purple); }
+  .tag-rose { color: var(--rose); }
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  /* Calendar */
+  .cal-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 768px) { .cal-row { grid-template-columns: repeat(4, 1fr); } }
+  .cal-cell {
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+  .cal-cell .day {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+  }
+  .cal-cell .type {
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .cal-cell .what {
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .cal-cell .badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+  }
+  .cal-growth { background: var(--green-soft); border: 1px solid rgba(0,255,65,0.12); }
+  .cal-growth .day { color: var(--green-dark); }
+  .cal-growth .badge { background: rgba(0,255,65,0.12); color: var(--green-dark); }
+  .cal-nurture { background: var(--purple-soft); border: 1px solid rgba(139,92,246,0.12); }
+  .cal-nurture .day { color: var(--purple); }
+  .cal-nurture .badge { background: rgba(139,92,246,0.12); color: var(--purple); }
+  .cal-convert { background: var(--rose-soft); border: 1px solid rgba(244,63,94,0.12); }
+  .cal-convert .day { color: var(--rose); }
+  .cal-convert .badge { background: rgba(244,63,94,0.12); color: var(--rose); }
+
+  /* Timeline visual */
+  .timeline {
+    margin: 2rem 0;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border: none; }
+  .timeline-day {
+    min-width: 70px;
+    background: var(--green-soft);
+    border: 2px solid var(--green-dark);
+    border-radius: 8px;
+    padding: 0.6rem;
+    text-align: center;
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    height: fit-content;
+  }
+  .timeline-content h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--navy);
+  }
+  .timeline-content p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  .checklist li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f3f3;
+    font-size: 0.88rem;
+  }
+  .checklist li:last-child { border: none; }
+  .checklist .check-icon {
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    margin-top: 2px;
+  }
+
+  /* Rhythm section */
+  .rhythm-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+  .rhythm-box h3 {
+    color: var(--green);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .rhythm-line {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+  .rhythm-line strong {
+    color: white;
+    min-width: 90px;
+  }
+  .rhythm-line p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+
+  /* FAQ Section */
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .faq-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .faq-item p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  /* What you bought box */
+  .highlight-box {
+    background: var(--green-soft);
+    border: 2px solid var(--green-dark);
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 {
+    color: var(--green-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .highlight-box .stat {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+  }
+  .highlight-box .stat strong {
+    color: var(--green-dark);
+    min-width: 140px;
+  }
+
+  /* Footer */
+  .foot {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .foot a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo">ElevateAI System</div>
+  <h1>Your Content <span>OS</span> Onboarding Guide</h1>
+  <div class="sub">Welcome to Content OS — here's exactly what happens in your first 7 days.</div>
+  <div class="client-name">Prepared for: <span style="border-bottom:1px dashed rgba(0,255,65,0.3)">[Client Name]</span> · <span id="date-stamp"></span></div>
+</div>
+
+<div class="container">
+
+  <!-- WHAT YOU BOUGHT -->
+  <div class="sec">
+    <div class="sec-num">Section 01</div>
+    <h2>What You Bought</h2>
+    <p class="desc">Content OS is a monthly system that produces 120+ pieces of content from ONE weekly input. Your job: send a newsletter or record a voice note. Everything else is handled.</p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Here's What Gets Generated Every Month</h3>
+    <div class="stat"><strong>30 Instagram posts</strong><span>across Reels, Carousels, Stories</span></div>
+    <div class="stat"><strong>20 LinkedIn posts</strong><span>threads, carousel, personal updates</span></div>
+    <div class="stat"><strong>8 Emails</strong><span>nurture sequences, launches, check-ins</span></div>
+    <div class="stat"><strong>4 Blog articles</strong><span>long-form, SEO-optimized</span></div>
+    <div class="stat"><strong>4 YouTube scripts</strong><span>short-form, 5-10 min ready-to-film</span></div>
+    <div class="stat"><strong>50+ Ad variations</strong><span>headline, copy, visual tests</span></div>
+  </div>
+
+  <div class="card full" style="margin-bottom:1.5rem;">
+    <p><strong>The system works like this:</strong> You send your newsletter Monday morning (or record a 5-min voice note). Our AI extracts your voice, positioning, and proof points. Tuesday-Wednesday, 120+ pieces appear across all your platforms. You do zero promotion work. We handle the calendar, the copy, the variations, the scheduling, the testing. Your only job: hit send Monday.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- YOUR FIRST 7 DAYS -->
+  <div class="sec">
+    <div class="sec-num">Section 02</div>
+    <h2>Your First 7 Days: Timeline</h2>
+    <p class="desc">Here's exactly what we do together to get your Content OS running.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-day">Day 1</div>
+      <div class="timeline-content">
+        <h4>Kickoff Call</h4>
+        <p>We extract your voice, your positioning, and your ICP. You bring 3 examples of content you love (yours or others') and 3 you hate. We record your speaking patterns, your phrases, what makes you uniquely you. 45 minutes. This is the foundation everything else is built on.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 2</div>
+      <div class="timeline-content">
+        <h4>Voice Calibration</h4>
+        <p>We build your Brand Voice Profile — the exact tone, phrases you use repeatedly, phrases you'd never say, your go-to stories, your analogies. We document this in a living guide. This ensures every piece of content sounds like you, not a robot.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 3</div>
+      <div class="timeline-content">
+        <h4>Positioning Lock</h4>
+        <p>We define your one problem, your transformation statement, your pillar question for month 1. This is the core message that runs through everything. Every post answers this question in a different way.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 4</div>
+      <div class="timeline-content">
+        <h4>Content Architecture Setup</h4>
+        <p>We configure Growth/Nurture/Conversion categories. Your 7-day calendar is locked. Publishing schedule is set. Platforms are connected. All systems ready for content generation.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 5</div>
+      <div class="timeline-content">
+        <h4>First Batch Generated</h4>
+        <p>Your first week of content is ready for review. 30 pieces across Instagram, LinkedIn, email, blog, YouTube. You can see exactly what you'll be publishing before it goes live.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 6</div>
+      <div class="timeline-content">
+        <h4>Feedback Round</h4>
+        <p>You review everything. Mark what sounds like you and what doesn't. Flag any tone misses, messaging adjustments, content you want re-written. We refine based on your feedback.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-day">Day 7</div>
+      <div class="timeline-content">
+        <h4>Go Live</h4>
+        <p>Your content starts publishing across all platforms. Your weekly rhythm begins. Monday newsletter in, content out by Tuesday. The engine is running.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 7-DAY CONTENT CALENDAR -->
+  <div class="sec">
+    <div class="sec-num">Section 03</div>
+    <h2>Your 7-Day Content Calendar</h2>
+    <p class="desc">Every day has a purpose. Every post type serves a strategic function — growing your reach, deepening trust, or driving action.</p>
+  </div>
+
+  <div class="cal-row">
+    <div class="cal-cell cal-growth">
+      <div class="day">Mon</div>
+      <div class="type">Case Study</div>
+      <div class="what">Real client result with numbers</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Tue</div>
+      <div class="type">Personal Story</div>
+      <div class="what">Life update, lesson, behind-scenes</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-growth">
+      <div class="day">Wed</div>
+      <div class="type">Framework</div>
+      <div class="what">Tactical tip or system breakdown</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-growth">
+      <div class="day">Thu</div>
+      <div class="type">Hot Take</div>
+      <div class="what">Industry trend or bold opinion</div>
+      <div class="badge">Growth</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Fri</div>
+      <div class="type">Lesson Learned</div>
+      <div class="what">Mistakes and what you'd change</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-nurture">
+      <div class="day">Sat</div>
+      <div class="type">Behind Scenes</div>
+      <div class="what">Personal, lighter, human side</div>
+      <div class="badge">Nurture</div>
+    </div>
+    <div class="cal-cell cal-convert">
+      <div class="day">Sun</div>
+      <div class="type">Engagement</div>
+      <div class="what">Questions, polls, community</div>
+      <div class="badge">Conversion</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHAT WE NEED -->
+  <div class="sec">
+    <div class="sec-num">Section 04</div>
+    <h2>What We Need From You</h2>
+    <p class="desc">To get your Content OS running smoothly, we'll need these seven things from you. Fill these out before Day 1.</p>
+  </div>
+
+  <div class="card full">
+    <ul class="checklist">
+      <li><div class="check-icon"></div><div><strong>Access to your newsletter archive</strong> — Beehiiv, Substack, ConvertKit, or Revue. We extract your voice from past newsletters.</div></li>
+      <li><div class="check-icon"></div><div><strong>3 examples of content that sounds like you</strong> — Posts, articles, or videos you've created (or admire) that capture your voice</div></li>
+      <li><div class="check-icon"></div><div><strong>3 examples of content you dislike</strong> — What NOT to do. Types of posts that don't feel authentic to you.</div></li>
+      <li><div class="check-icon"></div><div><strong>Your top 5 client questions</strong> — What do people ask you in DMs, emails, and calls? What problems do they bring to you?</div></li>
+      <li><div class="check-icon"></div><div><strong>Your best client result</strong> — With numbers if possible. The transformation you're most proud of.</div></li>
+      <li><div class="check-icon"></div><div><strong>Social media logins or publishing access</strong> — Instagram, LinkedIn, Twitter, YouTube. Or Meta Business Suite / scheduling tool access (Buffer, Later, etc.)</div></li>
+      <li><div class="check-icon"></div><div><strong>Your preferred review method</strong> — Google Doc, Notion, email, or Slack? How you want to give feedback on content.</div></li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MONTHLY RHYTHM -->
+  <div class="sec">
+    <div class="sec-num">Section 05</div>
+    <h2>Your Monthly Rhythm (After Week 1)</h2>
+    <p class="desc">Once Day 7 hits, here's your sustainable weekly pattern.</p>
+  </div>
+
+  <div class="rhythm-box">
+    <h3>Your Weekly & Monthly Cycle</h3>
+    <div class="rhythm-line">
+      <strong>Monday</strong>
+      <p>You send your newsletter or record a 5-min voice note. That's your input for the week.</p>
+    </div>
+    <div class="rhythm-line">
+      <strong>Tue–Wed</strong>
+      <p>Content appears across all platforms. 30 Instagram posts, 20 LinkedIn posts, emails, blog, YouTube scripts. All live.</p>
+    </div>
+    <div class="rhythm-line">
+      <strong>Thu–Fri</strong>
+      <p>Engagement compounds. Hooks get tested. Metrics start to flow. Your audience begins responding.</p>
+    </div>
+    <div class="rhythm-line">
+      <strong>Weekend</strong>
+      <p>We review analytics. We optimize. What worked? What didn't? We adjust next week's content themes.</p>
+    </div>
+    <div class="rhythm-line">
+      <strong>Monthly</strong>
+      <p>Strategy call with you. Review what's working, what's not. Pivot your pillar question if needed. Lock next month's themes.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FAQ -->
+  <div class="sec">
+    <div class="sec-num">Section 06</div>
+    <h2>Frequently Asked Questions</h2>
+    <p class="desc">Answers to what every Content OS client asks.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>What if I don't have a newsletter yet?</h4>
+    <p>We help you set one up. It takes 30 minutes. Your newsletter is the fuel for your Content OS engine — without it, we can't extract your voice at scale. But don't worry, we'll walk you through everything.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>What if I don't like something?</h4>
+    <p>Flag it in your review. We refine until it sounds like you. This is why Day 6 exists — we iterate on feedback. By the time content goes live on Day 7, it feels authentic.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>How long until I see results?</h4>
+    <p>Most clients see engagement lift in week 2–3 (comments, shares, saves going up). Lead flow typically starts showing in 30–60 days. Content is a compounding asset — it takes time, but it works.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Can I edit the content before it posts?</h4>
+    <p>Yes. You get a review window every week. You can approve, request changes, or ask us to re-write. The goal is for you to feel 100% confident in what's going live.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>What happens if I miss a Monday?</h4>
+    <p>We use your previous week's content and audience research to keep the engine running. You don't miss a beat. But ideally, Monday becomes your new power move — 5 minutes of input for a week of content output.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Can I pause for a month?</h4>
+    <p>Yes. You can pause anytime. Just give us 48 hours notice so we don't generate content you won't use.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>What platforms does Content OS cover?</h4>
+    <p>All of them. Instagram, LinkedIn, Twitter/X, YouTube, email, blog. We generate for every major platform. You choose which ones to publish to.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Do you handle scheduling and publishing?</h4>
+    <p>We generate and optimize the content. You approve it. For publishing, you can either give us access to your scheduling tool (Buffer, Later, Meta Business Suite) or handle it yourself. Your choice.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <p>ElevateAI System · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+    <p style="margin-top:0.35rem;">Questions? <a href="https://cal.com/elevateaisystem/discovery-call">Book a call →</a></p>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('date-stamp').textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+</script>
+</body>
+</html>

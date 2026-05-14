@@ -1,0 +1,88 @@
+# robots.txt for elevateaisystem.com
+# Updated: April 13, 2026
+
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+
+# ── Google ──
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Microsoft / Bing ──
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# ── OpenAI ──
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ── Anthropic / Claude ──
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── Perplexity ──
+User-agent: PerplexityBot
+Allow: /
+
+# ── Cohere ──
+User-agent: cohere-ai
+Allow: /
+
+# ── ByteDance / TikTok ──
+User-agent: Bytespider
+Allow: /
+
+# ── Apple ──
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Meta ──
+User-agent: FacebookBot
+Allow: /
+
+# ── Amazon ──
+User-agent: Amazonbot
+Allow: /
+
+# ── Brave ──
+User-agent: BraveBot
+Allow: /
+
+# ── DuckDuckGo ──
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Yandex ──
+User-agent: YandexBot
+Allow: /
+
+# ── Archive / Research ──
+User-agent: ia_archiver
+Allow: /
+
+Sitemap: https://www.elevateaisystem.com/sitemap.xml

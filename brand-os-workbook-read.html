@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brand OS Workbook · ElevateAI System</title>
+<meta name="description" content="A 90-minute workbook to build your Brand OS — Avatar, Voice, Pillars, Scripts. For coaches who've done the inner work.">
+<meta name="robots" content="noindex,follow">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300FF41'><path d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<style>
+  :root{
+    --navy:#0A0F1C;--navy-light:#1A2035;
+    --green:#00FF41;--green-dark:#00CC34;
+    --bg:#FAFAF8;--bg-alt:#F2F2EE;
+    --text:#1A1A2E;--muted:#5A5A6E;
+    --border:#E0E0D8;--white:#FFFFFF;
+    --danger:#C1282B;--warn:#B87900;
+    --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{max-width:100vw;overflow-x:hidden;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:var(--green-dark);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* LAYOUT */
+  .book{max-width:760px;margin:0 auto;padding:0 28px}
+  .topbar{padding:20px 28px;border-bottom:1px solid var(--border);background:var(--white);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .topbar .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:.95rem;letter-spacing:-.01em}
+  .topbar .logo svg{width:22px;height:22px;color:var(--green-dark)}
+  .topbar .actions{display:flex;gap:12px;align-items:center}
+  .topbar .actions a{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+  .topbar .actions button{font-family:var(--font);font-size:.75rem;font-weight:700;padding:8px 16px;border:1px solid var(--border);background:var(--white);color:var(--navy);border-radius:8px;cursor:pointer;letter-spacing:.02em}
+  .topbar .actions button:hover{background:var(--bg-alt)}
+
+  /* COVER */
+  .cover{padding:100px 28px 80px;text-align:center;max-width:760px;margin:0 auto;border-bottom:2px solid var(--navy)}
+  .cover-mark{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--green);padding:8px 18px;border-radius:99px;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;margin-bottom:32px}
+  .cover-mark svg{width:14px;height:14px}
+  .cover h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--navy);margin:0 0 20px}
+  .cover h1 .accent{color:var(--green-dark)}
+  .cover-sub{font-size:1.1rem;color:var(--muted);max-width:500px;margin:0 auto 32px;line-height:1.55;font-weight:500}
+  .cover-meta{display:inline-flex;gap:24px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .cover-meta span{display:flex;align-items:center;gap:6px}
+  .cover-meta span::before{content:'';width:6px;height:6px;background:var(--green-dark);border-radius:50%}
+  .cover-author{margin-top:40px;font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+  .cover-author b{color:var(--navy);font-weight:800}
+
+  /* SECTION HEADINGS */
+  h2.module-num{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green-dark);font-weight:800;margin:80px 0 8px}
+  h2.module-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.025em;line-height:1.05;color:var(--navy);margin:0 0 18px}
+  h2.module-title .accent{color:var(--green-dark)}
+  .module-intro{font-size:1.05rem;color:var(--text);line-height:1.7;margin:0 0 32px;max-width:620px}
+  .module-intro b{color:var(--navy);font-weight:700}
+  h3{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:40px 0 12px}
+  h3::before{content:'';display:inline-block;width:24px;height:3px;background:var(--green-dark);vertical-align:middle;margin-right:12px;transform:translateY(-4px)}
+  h4{font-size:.92rem;font-weight:800;color:var(--navy);margin:24px 0 8px;letter-spacing:-.005em}
+  p{margin:0 0 14px;color:var(--text)}
+  p b{color:var(--navy);font-weight:700}
+  p.lede-row{font-size:1.05rem;color:var(--navy);font-weight:600;border-left:3px solid var(--green-dark);padding-left:16px;margin:24px 0}
+
+  /* WHY BOX */
+  .why{background:var(--bg-alt);border-left:3px solid var(--green-dark);border-radius:0 10px 10px 0;padding:18px 22px;margin:24px 0}
+  .why-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-dark);font-weight:800;margin-bottom:6px}
+  .why p{margin:0;font-size:.9rem;line-height:1.6;color:var(--text)}
+  .why p b{color:var(--navy)}
+
+  /* EXERCISE CARDS */
+  .ex{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px 28px;margin:24px 0;box-shadow:0 1px 3px rgba(10,15,28,.04)}
+  .ex-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .ex-num{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-dark);font-weight:800;padding:3px 10px;background:rgba(0,204,52,.1);border-radius:99px}
+  .ex-time{font-size:.68rem;color:var(--muted);font-weight:700;letter-spacing:.04em;margin-left:auto}
+  .ex-title{font-size:1.15rem;font-weight:800;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
+  .ex p{font-size:.95rem;line-height:1.65}
+  .ex ul, .ex ol{padding-left:22px;margin:12px 0}
+  .ex li{font-size:.92rem;margin-bottom:8px;line-height:1.6}
+  .ex li b{color:var(--navy)}
+
+  /* WORKBOOK FILLABLE */
+  .fill{margin:16px 0;padding:20px 22px;background:var(--bg);border:1.5px dashed var(--border);border-radius:10px}
+  .fill-q{font-size:.88rem;font-weight:700;color:var(--navy);margin:0 0 10px;letter-spacing:-.005em}
+  .fill-q small{display:block;font-size:.72rem;color:var(--muted);font-weight:500;letter-spacing:.02em;margin-top:3px;font-style:italic}
+  .fill-lines{border-top:1px solid var(--border);margin-top:10px;min-height:64px;background:linear-gradient(to bottom,transparent 0,transparent 31px,var(--border) 32px) 0 0/100% 32px}
+
+  /* EXAMPLE CALLOUT */
+  .example{background:var(--navy);color:var(--white);border-radius:12px;padding:20px 22px;margin:16px 0;position:relative;overflow:hidden}
+  .example::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(0,255,65,.08) 0%,transparent 50%);pointer-events:none}
+  .example>*{position:relative}
+  .example .lbl{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:800;margin-bottom:8px}
+  .example p{font-size:.92rem;color:rgba(255,255,255,.9);margin:0 0 6px;line-height:1.55;font-style:italic}
+  .example p b{color:var(--green);font-style:normal}
+
+  /* CANVAS (summary one-pager per module) */
+  .canvas{background:var(--white);border:2px solid var(--navy);border-radius:14px;padding:28px 30px;margin:40px 0 60px;position:relative}
+  .canvas::before{content:'Canvas';position:absolute;top:-10px;left:20px;background:var(--navy);color:var(--green);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;padding:3px 14px;border-radius:99px}
+  .canvas h4{margin:0 0 4px;color:var(--navy);font-size:1rem}
+  .canvas .canvas-sub{font-size:.78rem;color:var(--muted);margin:0 0 20px;font-style:italic}
+  .canvas-row{padding:14px 0;border-top:1px solid var(--border)}
+  .canvas-row:first-of-type{border-top:none;padding-top:4px}
+  .canvas-row .q{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);font-weight:800;margin-bottom:4px}
+  .canvas-row .a{border-bottom:1px solid var(--border);min-height:32px;padding:6px 0;font-size:.92rem;color:var(--muted);font-style:italic}
+
+  /* VOICE SPECTRUM */
+  .spectrum{margin:20px 0}
+  .spec-row{padding:14px 0;border-top:1px solid var(--border)}
+  .spec-row:first-of-type{border-top:none}
+  .spec-top{display:flex;justify-content:space-between;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .spec-bar{height:4px;background:var(--bg-alt);border-radius:2px;position:relative}
+  .spec-bar .tick{position:absolute;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--green-dark);border:2px solid var(--white);box-shadow:0 0 0 1px var(--border)}
+
+  /* CLOSING CTA */
+  .closing{background:var(--navy);color:var(--white);border-radius:16px;padding:44px 40px;margin:60px 0 40px;text-align:center;position:relative;overflow:hidden}
+  .closing::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(0,255,65,.1) 0%,transparent 60%);pointer-events:none}
+  .closing>*{position:relative}
+  .closing .lbl{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green);font-weight:800;margin-bottom:12px}
+  .closing h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0 0 14px;color:var(--white)}
+  .closing h2 .accent{color:var(--green)}
+  .closing p{font-size:.98rem;color:rgba(255,255,255,.82);max-width:500px;margin:0 auto 28px;line-height:1.6}
+  .closing a.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green-dark);color:var(--navy);padding:16px 32px;border-radius:10px;font-weight:800;font-size:1rem;letter-spacing:-.01em}
+  .closing a.btn:hover{background:var(--green);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,255,65,.35);text-decoration:none}
+
+  /* FOOTER */
+  footer{padding:40px 28px;text-align:center;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border)}
+  footer a{color:var(--muted)}
+
+  /* PRINT */
+  @media print {
+    .topbar, .closing{display:none}
+    body{font-size:12pt;background:var(--white)}
+    .book{max-width:none;padding:0}
+    .cover, .ex, .canvas, .why, .example, .fill{page-break-inside:avoid}
+    h2.module-title{page-break-before:always}
+    .cover{page-break-after:always}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="/" class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+    ElevateAI · Brand OS Workbook
+  </a>
+  <div class="actions">
+    <button onclick="window.print()">Print / Save as PDF</button>
+    <a href="/">← Back</a>
+  </div>
+</div>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-mark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+    The Brand OS Workbook · v1
+  </div>
+  <h1>Build your <span class="accent">Brand OS</span> in 90 minutes.</h1>
+  <p class="cover-sub">The 4 documents every coach needs to stop guessing and start speaking directly to the right person. Do all 4 in one sitting — or 20 minutes a day for a week. Either works.</p>
+  <div class="cover-meta">
+    <span>4 Modules</span>
+    <span>90 Minutes</span>
+    <span>Free Forever</span>
+  </div>
+  <div class="cover-author">Built by <b>Sunny Binjola</b> · Founder, ElevateAI System</div>
+</section>
+
+<article class="book">
+
+  <!-- INTRO -->
+  <h2 class="module-num">Introduction</h2>
+  <h2 class="module-title">What is a <span class="accent">Brand OS?</span></h2>
+  <p class="lede-row">Your Brand OS is four documents: <b>Avatar · Voice · Pillars · Scripts</b>. Together they answer the only question that matters when anyone encounters your marketing: <em>"Is this for me?"</em></p>
+
+  <p>Most coaches don't have a Brand OS. They have fragments. A bio that sounds like everyone else's. A few content ideas that work and a dozen that don't. A pitch that shifts depending on who's asking. The result: people who'd love what you do never realize it, and people who aren't right for you take up your DMs.</p>
+
+  <p>A Brand OS fixes this because it forces you to answer <b>four non-negotiable questions in writing.</b> Once you have the answers, everything downstream — content, lead gen, offers, sales — becomes execution, not invention.</p>
+
+  <h3>The four documents</h3>
+  <p><b>Avatar —</b> One specific person you serve, described in enough detail that you could pick them out of a room.</p>
+  <p><b>Voice —</b> How you sound when you're at your best. The words you use, the rhythm you speak in, the energy you bring.</p>
+  <p><b>Pillars —</b> The 3–5 themes you own. The things you could write about for 10 years without running out.</p>
+  <p><b>Scripts —</b> The 4 reusable messages you'll use 1,000 times — elevator pitch, cold outreach, discovery call opener, referral ask.</p>
+
+  <div class="why">
+    <div class="why-label">Why this order matters</div>
+    <p>Avatar comes first because you can't write voice for no one. Voice comes second because you can't pick pillars without knowing how you'll sound in them. Pillars come third because scripts are pillar-flavored. <b>Each document feeds the next.</b></p>
+  </div>
+
+  <h3>How to use this workbook</h3>
+  <p><b>Option 1 — In one sitting (90 min):</b> Best for when you have a quiet morning and enough coffee.</p>
+  <p><b>Option 2 — 20 min a day for 4 days:</b> Module per day. Sleep on each one.</p>
+  <p>Either way: write first, edit later. Don't hunt for the perfect answer on page one. Get something down. You can refine every document over time — but you can't refine nothing.</p>
+
+
+  <!-- ===== MODULE 1: AVATAR ===== -->
+  <h2 class="module-num">Module 01 · 25 minutes</h2>
+  <h2 class="module-title">Your <span class="accent">Avatar</span></h2>
+  <p class="module-intro">You're going to write about <b>one specific person</b>. Not a demographic. Not a customer segment. One real human with a name, a life, a pain, and a desire. Marketing to "entrepreneurs who want more" is marketing to no one. Marketing to "James, 38, recovering high-performer, two kids, moved from finance to men's coaching after his divorce" is marketing to thousands of exactly-right people.</p>
+
+  <div class="why">
+    <div class="why-label">The rule</div>
+    <p>If the person reading your content thinks <b>"how did they know that about me?"</b> — you did this right. If they think "I could be this, or I could be that" — you went too broad.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 1.1</span>
+      <span class="ex-time">5 min</span>
+    </div>
+    <h4 class="ex-title">Pick one real person.</h4>
+    <p>Think of someone you've actually coached — or someone you wished you had — who was <b>a perfect fit</b>. Not the average. The ideal. Write their first name (real or invented) below.</p>
+    <div class="fill">
+      <div class="fill-q">My avatar's name is:</div>
+      <div class="fill-lines"></div>
+    </div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 1.2</span>
+      <span class="ex-time">8 min</span>
+    </div>
+    <h4 class="ex-title">Their life, in specifics.</h4>
+    <p>Write answers for your avatar. Real numbers. Real details. No ranges.</p>
+    <div class="fill"><div class="fill-q">Age:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Relationship / family:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">What they do for work:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Monthly income (approx):</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">The last book / podcast / retreat they consumed:</div><div class="fill-lines"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 1.3</span>
+      <span class="ex-time">8 min</span>
+    </div>
+    <h4 class="ex-title">The pain / desire map.</h4>
+    <p>This is the emotional backbone of the avatar. Be specific. Pain is not "stress." Pain is "waking up at 4am with his jaw clenched thinking about the partner meeting."</p>
+    <div class="fill"><div class="fill-q">The pain they wake up with:<small>What's the feeling in their body at 6am on a Tuesday?</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">What they've tried that didn't work:<small>Books / therapists / programs / substances. Be real.</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">What they actually want (not "success"):<small>What changes in their body, relationships, or self-talk when it works?</small></div><div class="fill-lines"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 1.4</span>
+      <span class="ex-time">4 min</span>
+    </div>
+    <h4 class="ex-title">In his own words.</h4>
+    <p>Write one sentence that your avatar would say out loud to a trusted friend at 11pm. Not the polished version. The real one.</p>
+    <div class="example">
+      <div class="lbl">Example (from a real coach's Brand OS)</div>
+      <p><b>"I look successful on paper, but I haven't felt like a man in years — I'm performing every role and I don't know who I am underneath it."</b></p>
+    </div>
+    <div class="fill"><div class="fill-q">My avatar would say:</div><div class="fill-lines"></div></div>
+  </div>
+
+  <!-- AVATAR CANVAS -->
+  <div class="canvas">
+    <h4>Your Avatar Canvas</h4>
+    <p class="canvas-sub">Copy your answers here. This is the one-page summary you'll reference every time you write content.</p>
+    <div class="canvas-row"><div class="q">Name</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Age · Work · Income</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">The 6am feeling</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">What they've tried</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">What they actually want</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Their 11pm sentence</div><div class="a"></div></div>
+  </div>
+
+
+  <!-- ===== MODULE 2: VOICE ===== -->
+  <h2 class="module-num">Module 02 · 20 minutes</h2>
+  <h2 class="module-title">Your <span class="accent">Voice</span></h2>
+  <p class="module-intro">Your voice is the <b>consistent emotional signature</b> of everything you put out. When it's clear, a stranger can tell a post is yours without seeing your name. When it's not, your content feels like it was written by three different people — which, effectively, it was.</p>
+
+  <div class="why">
+    <div class="why-label">The rule</div>
+    <p>Voice is not "professional" or "casual." Voice is a specific position on four axes. Once you know your position on each axis, every piece of content gets easier to write.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 2.1</span>
+      <span class="ex-time">5 min</span>
+    </div>
+    <h4 class="ex-title">Pull 5 pieces of content you loved writing.</h4>
+    <p>Instagram captions, newsletters, LinkedIn posts, DMs — any writing you produced where you felt <b>"that's me."</b> Paste or note them below.</p>
+    <div class="fill"><div class="fill-q">Piece 1:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Piece 2:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Piece 3:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Piece 4:</div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Piece 5:</div><div class="fill-lines"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 2.2</span>
+      <span class="ex-time">10 min</span>
+    </div>
+    <h4 class="ex-title">Find your position on the 4 voice axes.</h4>
+    <p>Read the 5 pieces again. Place yourself on each spectrum by where your content <em>actually sits</em> — not where you wish it did.</p>
+
+    <div class="spectrum">
+      <div class="spec-row">
+        <div class="spec-top"><span>Formal</span><span>Casual</span></div>
+        <div class="spec-bar"><div class="tick" style="left:50%;margin-left:-6px"></div></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-top"><span>Serious</span><span>Playful</span></div>
+        <div class="spec-bar"><div class="tick" style="left:50%;margin-left:-6px"></div></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-top"><span>Analytical</span><span>Emotional</span></div>
+        <div class="spec-bar"><div class="tick" style="left:50%;margin-left:-6px"></div></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-top"><span>Direct</span><span>Nuanced</span></div>
+        <div class="spec-bar"><div class="tick" style="left:50%;margin-left:-6px"></div></div>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:12px;font-style:italic">The dots are where "neutral" sits. Mark your own position with a pen — or mentally — somewhere on each line.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 2.3</span>
+      <span class="ex-time">5 min</span>
+    </div>
+    <h4 class="ex-title">Words you use. Words you don't.</h4>
+    <p>Every brand has a vocabulary. List the words/phrases that feel <b>unmistakably you</b>, and the ones that feel like a costume.</p>
+    <div class="fill"><div class="fill-q">Words / phrases I use often (and own):<small>10 of them. Write fast.</small></div><div class="fill-lines" style="min-height:96px"></div></div>
+    <div class="fill"><div class="fill-q">Words / phrases I will never use:<small>"Crushing it" / "hustle" / "cutting-edge" — whatever feels wrong on your tongue.</small></div><div class="fill-lines" style="min-height:96px"></div></div>
+  </div>
+
+  <!-- VOICE CANVAS -->
+  <div class="canvas">
+    <h4>Your Voice Canvas</h4>
+    <p class="canvas-sub">The one-pager. Pin this above your desk.</p>
+    <div class="canvas-row"><div class="q">Formal ↔ Casual</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Serious ↔ Playful</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Analytical ↔ Emotional</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Direct ↔ Nuanced</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">My vocabulary (top 5)</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">My anti-vocabulary (top 5)</div><div class="a"></div></div>
+  </div>
+
+
+  <!-- ===== MODULE 3: PILLARS ===== -->
+  <h2 class="module-num">Module 03 · 20 minutes</h2>
+  <h2 class="module-title">Your <span class="accent">Pillars</span></h2>
+  <p class="module-intro">Pillars are the <b>3 to 5 themes you could write about for 10 years without running out.</b> They're the terrain you own. Every piece of content you publish should trace back to one of them. When you don't have pillars, your content reacts to the algorithm. When you do, the algorithm reacts to you.</p>
+
+  <div class="why">
+    <div class="why-label">The pillar test</div>
+    <p>A real pillar passes three tests: <b>(1)</b> you can write 50 posts about it without reaching, <b>(2)</b> your avatar searches for something inside it, and <b>(3)</b> your offer sits inside it. If a pillar fails any test, cut it.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 3.1</span>
+      <span class="ex-time">7 min</span>
+    </div>
+    <h4 class="ex-title">Brain-dump 20 potential pillars.</h4>
+    <p>Write fast. Topics you care about, topics you've taught, topics you've lived through. Don't filter yet.</p>
+    <div class="fill" style="min-height:200px"><div class="fill-q">20 potential pillars:</div><div class="fill-lines" style="min-height:168px"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 3.2</span>
+      <span class="ex-time">8 min</span>
+    </div>
+    <h4 class="ex-title">Narrow to 5 using the three tests.</h4>
+    <p>For each candidate, score 1–3 on the three tests. Keep only those scoring 7+.</p>
+    <div class="example">
+      <div class="lbl">Example scoring</div>
+      <p><b>Pillar candidate:</b> "Men's nervous system regulation"</p>
+      <p>Can I write 50 posts? → <b>3</b> (obviously)</p>
+      <p>Does my avatar search for this? → <b>2</b> (yes but not in these words)</p>
+      <p>Does my offer sit inside it? → <b>3</b> (yes, it's the core mechanism)</p>
+      <p><b>Score: 8/9 → keep.</b></p>
+    </div>
+    <div class="fill"><div class="fill-q">Pillar 1:<small>Score: __/9</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 2:<small>Score: __/9</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 3:<small>Score: __/9</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 4:<small>Score: __/9</small></div><div class="fill-lines"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 5:<small>Score: __/9</small></div><div class="fill-lines"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Exercise 3.3</span>
+      <span class="ex-time">5 min</span>
+    </div>
+    <h4 class="ex-title">For each pillar, list 3 sub-topics.</h4>
+    <p>Sub-topics are the individual posts / sessions / offers inside each pillar. This gives you 15 content ideas immediately.</p>
+    <div class="fill"><div class="fill-q">Pillar 1 sub-topics:</div><div class="fill-lines" style="min-height:96px"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 2 sub-topics:</div><div class="fill-lines" style="min-height:96px"></div></div>
+    <div class="fill"><div class="fill-q">Pillar 3 sub-topics:</div><div class="fill-lines" style="min-height:96px"></div></div>
+  </div>
+
+  <!-- PILLARS CANVAS -->
+  <div class="canvas">
+    <h4>Your Pillars Canvas</h4>
+    <p class="canvas-sub">Everything you publish ties back here.</p>
+    <div class="canvas-row"><div class="q">Pillar 1</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Pillar 2</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Pillar 3</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Pillar 4 (optional)</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Pillar 5 (optional)</div><div class="a"></div></div>
+  </div>
+
+
+  <!-- ===== MODULE 4: SCRIPTS ===== -->
+  <h2 class="module-num">Module 04 · 25 minutes</h2>
+  <h2 class="module-title">Your <span class="accent">Scripts</span></h2>
+  <p class="module-intro">Scripts are the 4 messages you'll reuse <b>1,000 times</b>. Elevator pitch. Cold outreach. Discovery call opener. Referral ask. Write them once in your Voice, directed at your Avatar, inside your Pillars — and you never think about them again.</p>
+
+  <div class="why">
+    <div class="why-label">The rule</div>
+    <p>A script is not a template you copy verbatim. It's a <b>skeleton</b> you can riff on. Write the bones so the muscles can flex.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Script 4.1 · Elevator Pitch</span>
+      <span class="ex-time">6 min</span>
+    </div>
+    <h4 class="ex-title">"What do you do?"</h4>
+    <p>The single question you'll answer every week for the rest of your career. Write the version that filters in your people and filters out the wrong ones.</p>
+    <div class="example">
+      <div class="lbl">Skeleton</div>
+      <p><b>"I help [Avatar] [move from pain to desire] using [your unique mechanism]."</b></p>
+      <p>Example: "I help high-performing men who've lost themselves inside their own success rebuild an embodied identity — using an AI-powered daily practice system."</p>
+    </div>
+    <div class="fill" style="min-height:120px"><div class="fill-q">My elevator pitch:</div><div class="fill-lines" style="min-height:88px"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Script 4.2 · Cold Outreach</span>
+      <span class="ex-time">7 min</span>
+    </div>
+    <h4 class="ex-title">First DM to a cold prospect.</h4>
+    <p>3–4 sentences. Specific. Not salesy. Shows you actually looked at them.</p>
+    <div class="example">
+      <div class="lbl">Skeleton (4 beats)</div>
+      <p><b>1.</b> Specific observation about them (not generic praise).</p>
+      <p><b>2.</b> What caught your attention and why it connects to what you do.</p>
+      <p><b>3.</b> Offer something small and concrete (not "hop on a call").</p>
+      <p><b>4.</b> Exit ramp: "No worries if not."</p>
+    </div>
+    <div class="fill" style="min-height:120px"><div class="fill-q">My cold outreach DM:</div><div class="fill-lines" style="min-height:88px"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Script 4.3 · Discovery Call Opener</span>
+      <span class="ex-time">6 min</span>
+    </div>
+    <h4 class="ex-title">First 90 seconds of a sales call.</h4>
+    <p>Your first words set the frame. If you lead with "how's your week going" you've already lost it.</p>
+    <div class="example">
+      <div class="lbl">Skeleton</div>
+      <p><b>1.</b> Thank them for the time, name the duration (30 min, 60 min).</p>
+      <p><b>2.</b> State the outcome of the call, not the agenda.</p>
+      <p><b>3.</b> Ask one surgical opening question — not "tell me about yourself."</p>
+    </div>
+    <div class="fill" style="min-height:120px"><div class="fill-q">My discovery call opener:</div><div class="fill-lines" style="min-height:88px"></div></div>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">
+      <span class="ex-num">Script 4.4 · Referral Ask</span>
+      <span class="ex-time">6 min</span>
+    </div>
+    <h4 class="ex-title">The 2-line message sent at the right moment.</h4>
+    <p>Sent to a client who just had a win, or someone who shared your work. Makes referrals frictionless.</p>
+    <div class="example">
+      <div class="lbl">Skeleton</div>
+      <p><b>"[Win] — so glad. Quick one: if you know anyone like [very specific avatar descriptor], I'd love an intro. Not urgent."</b></p>
+    </div>
+    <div class="fill" style="min-height:120px"><div class="fill-q">My referral ask:</div><div class="fill-lines" style="min-height:88px"></div></div>
+  </div>
+
+  <!-- SCRIPTS CANVAS -->
+  <div class="canvas">
+    <h4>Your Scripts Canvas</h4>
+    <p class="canvas-sub">Paste each final version here. Save to your phone's notes app. Use forever.</p>
+    <div class="canvas-row"><div class="q">Elevator pitch</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Cold outreach DM</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Discovery call opener</div><div class="a"></div></div>
+    <div class="canvas-row"><div class="q">Referral ask</div><div class="a"></div></div>
+  </div>
+
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="lbl">You have a Brand OS</div>
+    <h2>Now what do you do <span class="accent">with it?</span></h2>
+    <p>Your Brand OS is useless if it sits in a doc nobody opens. The next step is operationalizing it — turning these 4 documents into daily content, weekly outreach, and monthly offers that run without you thinking about them.</p>
+    <a href="/brand-os-quiz" class="btn">
+      Take the Resonance Diagnostic →
+    </a>
+    <p style="font-size:.78rem;color:rgba(255,255,255,.55);margin-top:16px">See where your marketing system stands now that you have the Brand OS. 3 minutes. Free.</p>
+  </div>
+
+</article>
+
+<footer>
+  © 2026 ElevateAI System · <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a> · <a href="/privacy">Privacy</a>
+</footer>
+
+</body>
+</html>

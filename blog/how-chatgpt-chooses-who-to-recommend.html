@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How ChatGPT Chooses Who to Recommend (And How to Be One of Them)</title>
+    <meta name="description" content="Learn how ChatGPT, Perplexity, and Claude decide which coaches to recommend — and the exact steps to get found on ChatGPT and other AI search engines.">
+    <meta name="keywords" content="get found on ChatGPT, ChatGPT SEO for coaches, how to get found on ChatGPT, AI recommendations for coaches, ChatGPT recommendations, LLM citations, LLMO, AI chatbot optimization, Perplexity recommendations, Claude AI">
+    <link rel="canonical" href="https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How ChatGPT Chooses Who to Recommend (And How to Be One of Them)">
+    <meta property="og:description" content="Discover how LLMs decide which businesses to cite. Learn the LLMO strategy to get recommended by AI chatbots like ChatGPT and Perplexity.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend.html">
+    <meta property="og:image" content="https://www.elevateaisystem.com/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How ChatGPT Chooses Who to Recommend (And How to Be One of Them)">
+    <meta name="twitter:description" content="Discover how LLMs decide which businesses to cite. Learn the LLMO strategy to get recommended by AI chatbots.">
+    <meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- BlogPosting Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How ChatGPT Chooses Who to Recommend (And How to Be One of Them)",
+        "description": "Discover how LLMs like ChatGPT, Perplexity, and Claude decide which businesses to cite and recommend. Learn the LLMO strategy to get recommended by AI chatbots.",
+        "image": "https://www.elevateaisystem.com/og-image.jpg",
+        "datePublished": "2026-03-26",
+        "author": {
+            "@type": "Person",
+            "name": "Sunny Binjola"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ElevateAI System",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.elevateaisystem.com/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- Apollo Tracking Script -->
+    <script>
+    function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,
+        o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+        document.head.appendChild(o)
+    }
+    initApollo();
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF8;
+            --bg-alt: #F2F2EE;
+            --green: #00FF41;
+            --green-dark: #00CC34;
+            --navy: #0A0F1C;
+            --navy-light: #1A2035;
+            --text: #1A1A2E;
+            --text-muted: #5A5A6E;
+            --border: #E0E0D8;
+            --white: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            background-color: var(--white);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: var(--radius);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-badge.ai {
+            background-color: #E8F5E9;
+            color: var(--green-dark);
+        }
+
+        .category-badge.seo {
+            background-color: #E3F2FD;
+            color: #1565C0;
+        }
+
+        .category-badge.ai-tools {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+        }
+
+        .category-badge.ai-coaches {
+            background-color: #FCE4EC;
+            color: #C2185B;
+        }
+
+        .category-badge.lead-gen {
+            background-color: #FFF3E0;
+            color: #E65100;
+        }
+
+        .category-badge.strategy {
+            background-color: #E0F2F1;
+            color: #00695C;
+        }
+
+        .category-badge.business {
+            background-color: #F1F8E9;
+            color: #558B2F;
+        }
+
+        .article-date {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 32px 0 24px 0;
+            line-height: 1.2;
+            color: var(--text);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 40px 0 16px 0;
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 28px 0 12px 0;
+            color: var(--text);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        ul {
+            margin: 20px 0 20px 24px;
+            color: var(--text);
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--green);
+            padding-left: 20px;
+            margin: 28px 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--green-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--green);
+            text-decoration: underline;
+        }
+
+        .article-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            color: var(--white);
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .article-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--green);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--green);
+        }
+
+        .cta-button:hover {
+            background-color: var(--green-dark);
+            border-color: var(--green-dark);
+        }
+
+        .share-bar {
+            display: flex;
+            gap: 16px;
+            margin: 40px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .share-bar a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: var(--bg-alt);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .share-bar a:hover {
+            background-color: var(--border);
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 32px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .footer {
+            background-color: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 40px 24px;
+            margin-top: 80px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.elevateaisystem.com"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.elevateaisystem.com/blog"},
+    {"@type":"ListItem","position":3,"name":"How ChatGPT Chooses Who to Recommend (And How to Be One of Them)","item":"https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend"}
+  ]
+}
+</script>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get found on ChatGPT as a coach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To get found on ChatGPT as a coach, focus on building authority in the sources LLMs train on: get listed in high-authority directories, build presence in communities where coaches gather, publish original content that gets cited, and get mentioned on authority sites in your industry. These signals help ChatGPT and other LLMs recognize you as a credible coaching resource."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ChatGPT SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT SEO (or LLMO — LLM Optimization) is the practice of optimizing your online presence to be recommended by AI systems like ChatGPT, Perplexity, and Claude. Unlike traditional SEO which focuses on search rankings, LLMO focuses on getting cited and recommended by LLMs through directory listings, community presence, original research, and authority mentions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ChatGPT recommend coaches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ChatGPT does recommend coaches — but only those it recognizes as credible based on patterns in its training data. ChatGPT looks for signals like directory listings, community mentions, original published content, and references from authoritative sources. To be recommended, you need to build visibility in these sources."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <script src="../navbar.js"></script>
+
+    <article class="article-container">
+        <div class="article-meta">
+            <span class="category-badge ai">AI</span>
+            <span class="article-date">March 26, 2026 • 10 min read</span>
+        </div>
+
+        <h1>How ChatGPT Chooses Who to Recommend (And How to Be One of Them)</h1>
+
+        <p>Every time someone asks ChatGPT, Perplexity, or Claude for a recommendation — whether it's a coach, agency, or software tool — that LLM is making a choice about which business to cite. And here's the thing: those choices aren't random. They're based on patterns in training data, authority signals, and how frequently your business shows up in the conversations LLMs have learned from.</p>
+
+        <p>This is LLMO — the new frontier in visibility. And if you're still only thinking about Google rankings, you're already behind.</p>
+
+        <h2>How LLMs Decide What to Recommend</h2>
+
+        <p>Large Language Models like ChatGPT are trained on massive amounts of text data scraped from the internet. When you ask one for a recommendation, it's not searching the web in real-time (well, some versions do now, but the core knowledge comes from training data). It's pattern-matching against what it learned. The LLM learned which businesses, resources, and solutions people talk about, reference, cite, and trust.</p>
+
+        <p>The data sources matter most. Reddit is a goldmine for LLMs — real people having real conversations about real problems. Perplexity cites Reddit approximately 47% of the time across conversational queries. Why? Because Reddit is authentic, specific, and filled with genuine use cases and recommendations from actual users.</p>
+
+        <h3>The Authority Signals LLMs Care About</h3>
+
+        <p>LLMs recognize authority differently than Google does. Google cares about links. LLMs care about something deeper: how often and how prominently your business appears in trusted conversations.</p>
+
+        <ul>
+            <li><strong>Directory listings and reviews:</strong> Platforms like G2, Capterra, and industry-specific directories matter because they aggregate and validate recommendations. When dozens of people independently recommend your service on a trusted directory, LLMs notice.</li>
+            <li><strong>Forum presence:</strong> Reddit, industry forums, and niche communities where real users discuss solutions. This is where the 47% stat comes in — if your solution gets mentioned organically here, LLMs pick up on it.</li>
+            <li><strong>High-authority content:</strong> Blog posts, case studies, and thought leadership on well-established sites. But not just any mention — it needs to be specific, detailed, and positioned as a legitimate recommendation.</li>
+            <li><strong>Social proof signals:</strong> Testimonials, user-generated content, and public endorsements from recognized figures matter to LLMs because they validate your credibility through multiple independent sources.</li>
+        </ul>
+
+        <h2>Why Your Current SEO Strategy Isn't Enough</h2>
+
+        <p>You might rank on page one of Google. That's great. But here's the problem: search traffic is declining. Zero-click searches are up. And AI chatbot usage is growing exponentially.</p>
+
+        <p>A coaching client ranking in top 3 for their main keyword might still be invisible to ChatGPT users asking similar questions. Why? Because LLMs weren't trained on their ranking data — they were trained on the conversations, forums, and citations that existed when the model was built. You can't rank your way into an LLM's response if you're not in its training data.</p>
+
+        <p>This is where LLMO changes everything. It's not about rankings. It's about presence in the sources LLMs actually learn from.</p>
+
+        <h2>How Does the ELEVATE Framework Work?</h2>
+
+        <p>This is where we've integrated LLMO into The ELEVATE Method, our 4-pillar framework for complete visibility. SEO gets you visibility in search engines. AEO gets you visible in AI Overviews and featured snippets. GEO (Generative Engine Optimization) gets you cited by AI systems as an authority. But LLMO ties them all together for the new AI-native world, ensuring you're recommended by ChatGPT, Perplexity, and Claude.</p>
+
+        <p>Here's what you need to do to get cited by ChatGPT, Perplexity, Claude, and every other LLM that matters:</p>
+
+        <h3>1. Get Listed in High-Authority Directories</h3>
+
+        <p>Start with industry-specific directories related to your niche. If you're a coach, think directories for business coaches, executive coaches, or whatever your specialization is. G2 and Capterra are goldmines — they aggregate real user reviews and recommendations.</p>
+
+        <p>The key: write detailed, specific descriptions that explain what makes you different. LLMs scan these for signals about who you are and what problems you solve. Generic descriptions get skipped. Detailed ones get remembered.</p>
+
+        <h3>2. Build Authority in Communities Where Your Audience Talks</h3>
+
+        <p>Reddit, Facebook Groups, industry forums — wherever your ideal clients are having conversations. Don't spam. Contribute. Answer questions. Share insights. When you genuinely help people, they mention your name. That organic mention in a trusted community is signal gold for LLMs.</p>
+
+        <p>A single, genuine Reddit discussion where someone recommends your service carries more weight with LLMs than a hundred link-building campaigns.</p>
+
+        <h3>3. Publish Content That Gets Cited (Not Just Found)</h3>
+
+        <p>The difference matters. Content that ranks in Google might not get cited by LLMs. But content that's original, research-backed, and specifically answers common questions? That gets quoted. That gets referenced. That gets trained on.</p>
+
+        <p>When you publish original research, specific case studies, or data-backed insights, LLMs are more likely to cite you as a source. This is especially true when your content is the only one answering that specific question in that specific way.</p>
+
+        <h3>4. Get Mentioned on High-Authority Sites</h3>
+
+        <p>Media mentions, expert commentary, guest posts on well-known publications — these all signal authority to LLMs. It's not just about links. It's about being recognized as someone worth quoting by sites that LLMs were trained on.</p>
+
+        <p>Focus on getting mentioned (with your name and business) on authority sites in your industry. A quote in a Forbes article or a mention in a top industry publication carries signal that ChatGPT recognizes.</p>
+
+        <h2>What This Means for Your Business Right Now</h2>
+
+        <p>If you're a coach or creator, LLMO is where growth is headed. Relying only on Google SEO is like relying only on TV advertising when people are moving to podcasts and streaming.</p>
+
+        <p>The businesses that will dominate in 2026 and beyond are the ones visible to both Google AND ChatGPT. The ones that rank AND get cited. The ones that appear in search results AND in AI recommendations.</p>
+
+        <p>That's the competitive advantage. That's what we build into every strategy we work on — visibility across all four pillars, including LLMO.</p>
+
+        <h2>How Do Coaches Specifically Get Found on ChatGPT?</h2>
+
+        <p>Coaches live in a unique space. You're not a SaaS tool with a clear product comparison. You're not a physical service. You're a transformational relationship — and that makes getting found on ChatGPT both harder and more important. When someone asks ChatGPT "I need a coach for my business" or "How do I find a business coach?", you want your name in the answer.</p>
+
+        <p>Here's what moves the needle: <strong>Create a methodology that has a name.</strong> The frameworks coaches build — the systems you use to get results — those are goldmines for LLMO. When you name your approach, write about it specifically, and publish case studies that explain how it works, LLMs start recognizing you by that framework. "The [Your Name] Method" becomes citeable. It becomes specific enough to train on. A coach who teaches "The 5-Day Decision Framework" or "The Clarity-First Coaching Model" is immediately more visible to ChatGPT than a coach who just says "I help business owners."</p>
+
+        <p>Second — publish FAQ content that mirrors the exact questions your clients ask ChatGPT. If your clients are asking ChatGPT "How do I know if I need a business coach?" or "What should a business coach cost?", create a dedicated FAQ page answering exactly that. Write it with the language your clients use when they talk to AI. LLMs treat FAQ pages as authoritative sources — they scan them for answers to common questions. When your FAQ contains the real answers (not just promotional language), ChatGPT will reference it.</p>
+
+        <p>Third — get mentioned in coaching-specific communities and directories. Coaching platforms like Evercoach, CoachAccountable, directories in your niche (executive coaching, wellness coaching, etc.), and communities where coaches gather — these are sources LLMs actively pull from. When other coaches or satisfied clients mention you in these spaces, you gain visibility. You don't need to be everywhere, just in the right places where coaches cluster.</p>
+
+        <p>Finally — schema markup matters for coaches more than most. Add Person schema (so ChatGPT understands you as an expert), Service schema (so it knows what you offer), and FAQPage schema (so it recognizes your Q&A as structured answers). These markup signals help LLMs understand what makes you different from every other coach.</p>
+
+        <div class="article-cta">
+            <h3>Ready to Dominate AI and Search?</h3>
+            <p>Get a full audit of where you stand across The ELEVATE Method — SEO, AEO, GEO, and LLMO.</p>
+            <a href="https://www.elevateaisystem.com/seo-audit-landing-page" class="cta-button">Get Your Free Audit</a>
+        </div>
+
+        <div class="share-bar">
+            <a href="https://twitter.com/intent/tweet?text=How ChatGPT Chooses Who to Recommend&url=https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend.html" target="_blank">Share on Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend.html" target="_blank">Share on LinkedIn</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.elevateaisystem.com/blog/how-chatgpt-chooses-who-to-recommend.html" target="_blank">Share on Facebook</a>
+        </div>
+
+        <a href="/blog" class="back-link">← Back to Blog</a>
+    </article>
+
+    <!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+
+    <!-- Keep Reading Section -->
+    <section class="keep-reading-section" style="
+        background: #0A0F1C;
+        border-top: 1px solid rgba(0,255,65,.15);
+        padding: 3rem 1.5rem;
+        margin-top: 3rem;
+    ">
+        <div style="max-width:860px;margin:0 auto;">
+            <p style="
+                font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                font-size:.7rem;
+                font-weight:700;
+                letter-spacing:.12em;
+                text-transform:uppercase;
+                color:#00FF41;
+                margin:0 0 .5rem;
+            ">Keep Reading</p>
+            <h3 style="
+                font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+                font-size:1.4rem;
+                font-weight:700;
+                color:#F9F9F7;
+                margin:0 0 2rem;
+            ">More from the ElevateAI Blog</h3>
+            <div style="
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+                gap:1.25rem;
+            ">
+            <a href="/blog/what-is-llmo" class="kr-card" style="text-decoration:none;">
+                <span class="kr-badge">AI Search</span>
+                <h4 class="kr-title">What Is LLMO? (And Why Every Coach Needs to Know)</h4>
+                <p class="kr-desc">Large Language Model Optimization is the new frontier of search. Here's what it means for your business.</p>
+                <span class="kr-cta">7 min read &rarr;</span>
+            </a>
+            <a href="/blog/what-is-geo-2026" class="kr-card" style="text-decoration:none;">
+                <span class="kr-badge">AI Search</span>
+                <h4 class="kr-title">What Is GEO in 2026? Generative Engine Optimization Explained</h4>
+                <p class="kr-desc">AI search engines are rewriting results in real time. GEO is how you show up inside them.</p>
+                <span class="kr-cta">7 min read &rarr;</span>
+            </a>
+            <a href="/blog/get-featured-chatgpt-ai-search" class="kr-card" style="text-decoration:none;">
+                <span class="kr-badge">AI Search</span>
+                <h4 class="kr-title">How to Get Featured in ChatGPT & AI Search</h4>
+                <p class="kr-desc">A step-by-step playbook for getting your name, content, and business cited by AI tools.</p>
+                <span class="kr-cta">9 min read &rarr;</span>
+            </a>
+            </div>
+        </div>
+    </section>
+    <style>
+        .kr-card {
+            display:block;
+            background:rgba(255,255,255,.03);
+            border:1px solid rgba(255,255,255,.07);
+            border-radius:12px;
+            padding:1.4rem 1.25rem;
+            transition:border-color .2s,transform .2s;
+            cursor:pointer;
+        }
+        .kr-card:hover {
+            border-color:rgba(0,255,65,.35);
+            transform:translateY(-3px);
+        }
+        .kr-badge {
+            display:inline-block;
+            background:rgba(0,255,65,.12);
+            color:#00FF41;
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.65rem;
+            font-weight:700;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            padding:.25rem .6rem;
+            border-radius:20px;
+            margin-bottom:.75rem;
+        }
+        .kr-title {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:1rem;
+            font-weight:700;
+            color:#F9F9F7;
+            margin:0 0 .5rem;
+            line-height:1.35;
+        }
+        .kr-desc {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.82rem;
+            color:rgba(249,249,247,.55);
+            line-height:1.55;
+            margin:0 0 1rem;
+        }
+        .kr-cta {
+            font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+            font-size:.78rem;
+            font-weight:700;
+            color:#00FF41;
+            letter-spacing:.03em;
+        }
+    </style>
+    <footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+<script src="../author-bio.js"></script>
+<script src="../newsletter-popup.js"></script>
+</body>
+</html>

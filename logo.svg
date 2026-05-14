@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Leaf icon -->
+  <rect width="40" height="40" x="4" y="4" rx="10" fill="#00FF41"/>
+  <path d="M14 30 C13 22 14 16 20 10 C22 16 22 22 20 30 C18 28 16 28 14 30Z" fill="#0A0F1C"/>
+  <path d="M20 30 C24 24 28 20 34 18 C32 24 28 28 20 30Z" fill="#0A0F1C"/>
+  <!-- Wordmark -->
+  <text x="52" y="32" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="800" fill="#0A0F1C" letter-spacing="-0.5">Elevate<tspan fill="#00CC34">AI</tspan></text>
+</svg>

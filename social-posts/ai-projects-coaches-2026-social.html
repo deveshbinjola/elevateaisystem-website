@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Posts — 15 AI Projects Every Coach Should Build in 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #00FF41;
+      --green-deep: #059669;
+      --navy: #0A0F1C;
+      --bg: #FAFAF8;
+      --bg-alt: #F0F0EC;
+      --card: #FFFFFF;
+      --border: #E0E0D8;
+      --text: #1A1A2E;
+      --text-muted: #6B7280;
+      --thread-line: #D1D5DB;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0A0F1C;
+      --bg-alt: #111827;
+      --card: #1A2035;
+      --border: #2D3748;
+      --text: #F9FAFB;
+      --text-muted: #9CA3AF;
+      --thread-line: #374151;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header */
+    .page-header {
+      background: var(--navy);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(0,255,65,0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(5,150,105,0.04) 0%, transparent 60%);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(0,255,65,0.12);
+      border: 1px solid rgba(0,255,65,0.25);
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .page-header h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #FFFFFF;
+      max-width: 680px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.25;
+      position: relative;
+    }
+
+    .page-header .meta {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      position: relative;
+    }
+
+    .page-header .meta a {
+      color: var(--green-deep);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Section headers */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .section-label:first-child {
+      margin-top: 0;
+    }
+
+    .section-label h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--text);
+    }
+
+    .section-label .platform-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .tag-twitter {
+      background: rgba(0,0,0,0.06);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    [data-theme="dark"] .tag-twitter {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .tag-linkedin {
+      background: rgba(10,102,194,0.1);
+      color: #0a66c2;
+      border: 1px solid rgba(10,102,194,0.2);
+    }
+
+    /* Post Card */
+    .post-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .post-card:hover {
+      border-color: var(--green-deep);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .post-content {
+      font-size: 0.975rem;
+      line-height: 1.75;
+      color: var(--text);
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-bottom: 1rem;
+    }
+
+    .post-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .char-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--navy);
+      color: var(--green);
+      border: none;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #1A2035;
+      transform: translateY(-1px);
+    }
+
+    .copy-btn.copied {
+      background: var(--green-deep);
+      color: #fff;
+    }
+
+    .copy-btn svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+    }
+
+    /* Thread */
+    .thread-wrapper {
+      position: relative;
+    }
+
+    .thread-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+
+    .thread-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      padding-top: 0.25rem;
+    }
+
+    .thread-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      flex-shrink: 0;
+      margin-top: 0.35rem;
+    }
+
+    .thread-line-seg {
+      width: 2px;
+      flex: 1;
+      background: var(--thread-line);
+      min-height: 2rem;
+    }
+
+    .thread-card {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.2s;
+    }
+
+    .thread-card:hover {
+      border-color: var(--green-deep);
+    }
+
+    .tweet-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .thread-card .post-content {
+      margin-bottom: 0.75rem;
+    }
+
+    /* LinkedIn card */
+    .linkedin-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid #0a66c2;
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Micro tweets grid */
+    .micro-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* Hashtag pill */
+    .hashtag-line {
+      font-size: 0.82rem;
+      color: var(--green-deep);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* Divider */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { padding: 2rem 1rem 4rem; }
+      .post-card { padding: 1.25rem; }
+      .thread-card { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark</button>
+    <div class="header-badge">Social Content</div>
+    <h1>15 AI Projects Every Coach Should Build in 2026</h1>
+    <p class="meta">
+      April 4, 2026 &nbsp;&middot;&nbsp;
+      <a href="https://elevateaisystem.com/blog/ai-projects-coaches-2026" target="_blank">
+        elevateaisystem.com/blog/ai-projects-coaches-2026
+      </a>
+    </p>
+  </header>
+
+  <div class="container">
+
+    <!-- SINGLE TWEET -->
+    <div class="section-label">
+      <h2>Single Tweet</h2>
+      <span class="platform-tag tag-twitter">Twitter / X</span>
+    </div>
+
+    <div class="post-card">
+      <div class="post-content" id="single-tweet">Most coaches waste 8+ hours per week on work AI could handle in seconds.
+
+Not because they lack tools.
+Because they've never mapped what to build first.
+
+We tested 25 AI projects. 15 actually move the needle.
+
+elevateaisystem.com/blog/ai-projects-coaches-2026</div>
+      <div class="post-footer">
+        <span class="char-count" id="single-tweet-count">191 chars</span>
+        <button class="copy-btn" onclick="copyPost('single-tweet', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- TWITTER THREAD -->
+    <div class="section-label">
+      <h2>Twitter Thread</h2>
+      <span class="platform-tag tag-twitter">Twitter / X &nbsp;&middot;&nbsp; 6 Tweets</span>
+    </div>
+
+    <div class="thread-wrapper">
+
+      <!-- Tweet 1 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+          <div class="thread-line-seg"></div>
+        </div>
+        <div class="thread-card" style="flex:1">
+          <div class="tweet-num">Tweet 1 — Hook</div>
+          <div class="post-content" id="thread-1">Most coaches waste 8+ hours per week on work AI could handle in seconds.
+
+Not because they lack tools.
+Because they've never mapped what to build first.
+
+We tested 25 projects across coaching businesses doing $10K–$50K/month.
+
+Here are the 15 that actually move the needle.</div>
+          <div class="post-footer">
+            <span class="char-count">267 chars</span>
+            <button class="copy-btn" onclick="copyPost('thread-1', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet 2 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+          <div class="thread-line-seg"></div>
+        </div>
+        <div class="thread-card">
+          <div class="tweet-num">Tweet 2 — Tier 1 Insight</div>
+          <div class="post-content" id="thread-2">Tier 1: Build this weekend. No code.
+
+The Personal Writing Editor — a system prompt trained on 5–10 samples of your writing.
+
+You paste a draft. It comes back polished, in your voice, ready to send.
+
+Setup time: 30 minutes. Time saved per week: 3+ hours.</div>
+          <div class="post-footer">
+            <span class="char-count">255 chars</span>
+            <button class="copy-btn" onclick="copyPost('thread-2', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet 3 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+          <div class="thread-line-seg"></div>
+        </div>
+        <div class="thread-card">
+          <div class="tweet-num">Tweet 3 — Tier 2 Insight</div>
+          <div class="post-content" id="thread-3">Tier 2: Build next month with basic tools.
+
+Lead Scorer — reads every inquiry form, scores it 1–10 for ICP fit, tells you who to call first.
+
+One coach went from following up randomly to knowing immediately which 3 of her 15 weekly submissions were worth her first call.
+
+Her conversion rate jumped 40%.</div>
+          <div class="post-footer">
+            <span class="char-count">300 chars — trim if needed</span>
+            <button class="copy-btn" onclick="copyPost('thread-3', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet 4 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+          <div class="thread-line-seg"></div>
+        </div>
+        <div class="thread-card">
+          <div class="tweet-num">Tweet 4 — The Stat</div>
+          <div class="post-content" id="thread-4">The data surprised me.
+
+Coaches who build even 3 of these projects see a 30–40% increase in billable time within three months.
+
+Not from working longer.
+From stopping the duplication.
+
+8 hours wasted per week is 400 hours per year. That's 10 full work weeks. Gone.</div>
+          <div class="post-footer">
+            <span class="char-count">262 chars</span>
+            <button class="copy-btn" onclick="copyPost('thread-4', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet 5 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+          <div class="thread-line-seg"></div>
+        </div>
+        <div class="thread-card">
+          <div class="tweet-num">Tweet 5 — The Real Insight</div>
+          <div class="post-content" id="thread-5">Here's what most people miss about these projects:
+
+They're not just efficiency plays.
+
+Each one teaches you how AI actually works.
+
+Build a lead scorer — you learn classification.
+Build a repurposer — you learn that structure equals scalability.
+
+That's the real return on investment.</div>
+          <div class="post-footer">
+            <span class="char-count">276 chars</span>
+            <button class="copy-btn" onclick="copyPost('thread-5', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweet 6 -->
+      <div class="thread-item">
+        <div class="thread-connector">
+          <div class="thread-dot"></div>
+        </div>
+        <div class="thread-card">
+          <div class="tweet-num">Tweet 6 — CTA</div>
+          <div class="post-content" id="thread-6">15 AI projects. Three tiers.
+
+Build this weekend. Build next month. Or let someone else build the infrastructure.
+
+Full breakdown with real coach examples at each tier:
+
+elevateaisystem.com/blog/ai-projects-coaches-2026
+
+Follow for more on building AI systems that scale without losing your voice.</div>
+          <div class="post-footer">
+            <span class="char-count">290 chars</span>
+            <button class="copy-btn" onclick="copyPost('thread-6', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end thread-wrapper -->
+
+    <div class="section-divider"></div>
+
+    <!-- LINKEDIN POST -->
+    <div class="section-label">
+      <h2>LinkedIn Post</h2>
+      <span class="platform-tag tag-linkedin">LinkedIn</span>
+    </div>
+
+    <div class="linkedin-card">
+      <div class="post-content" id="linkedin-post">Most coaches I know are using AI.
+
+Most of them are wasting it.
+
+Not because AI doesn't work. Because nobody showed them what to build first.
+
+I spent the last year testing 25 AI projects across coaching businesses doing $10K–$50K/month. 15 actually moved the needle.
+
+Here's how I'd organize them if I were starting from scratch:
+
+Tier 1 — Build this weekend, no code required.
+
+A Personal Writing Editor that encodes your voice into a prompt. A Lead Qualifier that reads every inbound inquiry and scores it before you ever pick up the phone. A Discovery Call Prep tool that generates a one-page brief on every prospect in seconds, not 30 minutes of LinkedIn stalking.
+
+Tier 2 — Build next month with basic tool-stacking.
+
+A Content Repurposer that turns one blog post into seven platform-ready assets. A Lead Scorer that tells you exactly who to call first. A Competitor Watch that surfaces positioning shifts in your market before you notice them manually.
+
+Tier 3 — Where you let someone else build the infrastructure.
+
+SEO Content Engines. Automated reporting pipelines. Customer support agents trained on your methodology, answering questions at 11 PM when you're asleep.
+
+Here's what the data showed:
+
+Coaches who build even three of these projects see a 30–40% increase in billable time within three months. Not from working harder. From stopping the duplication.
+
+The coaches winning right now aren't the most talented. They have the best systems.
+
+Which tier are you on — and what's the one project you'd build first?
+
+#CoachingBusiness #AIMarketing #Automation #SoloPreneur #Coaches</div>
+      <div class="post-footer">
+        <span class="char-count">~1,180 chars</span>
+        <button class="copy-btn" onclick="copyPost('linkedin-post', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- MICRO-VALUE TWEETS -->
+    <div class="section-label">
+      <h2>Micro-Value Tweets</h2>
+      <span class="platform-tag tag-twitter">Twitter / X &nbsp;&middot;&nbsp; Standalone</span>
+    </div>
+
+    <div class="micro-grid">
+
+      <div class="post-card">
+        <div class="post-content" id="micro-1">AI is not a tool. It's a system.
+
+Tools break. Systems compound.
+
+The coaches winning aren't using more AI tools.
+They're building fewer, better systems — and letting them run.</div>
+        <div class="post-footer">
+          <span class="char-count">169 chars</span>
+          <button class="copy-btn" onclick="copyPost('micro-1', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-content" id="micro-2">8 hours per week.
+
+That's how much time the average coach wastes on work AI could handle in seconds.
+
+That's 400 hours per year. 10 full work weeks.
+
+Not a small problem.</div>
+        <div class="post-footer">
+          <span class="char-count">171 chars</span>
+          <button class="copy-btn" onclick="copyPost('micro-2', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-content" id="micro-3">Most coaches think they need to learn AI.
+
+They actually need to build with it.
+
+Reading about AI is a hobby.
+Building one system that saves 5 hours a week is a business advantage.</div>
+        <div class="post-footer">
+          <span class="char-count">182 chars</span>
+          <button class="copy-btn" onclick="copyPost('micro-3', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end micro-grid -->
+
+  </div><!-- end container -->
+
+  <script>
+    function copyPost(id, btn) {
+      const el = document.getElementById(id);
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy`;
+        }, 2200);
+      });
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+      document.querySelector('.theme-toggle').textContent = current === 'dark' ? 'Toggle Dark' : 'Toggle Light';
+    }
+  </script>
+
+</body>
+</html>

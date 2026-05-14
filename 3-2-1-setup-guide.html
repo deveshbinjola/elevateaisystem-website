@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <link rel="canonical" href="https://www.elevateaisystem.com/3-2-1-setup-guide">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal Newsletter — Setup Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f7;--bg-alt:#f0efeb;--surface:#ffffff;--surface-dim:#f5f4f0;
+  --border:rgba(0,0,0,.08);--border-accent:rgba(5,150,105,.2);
+  --text:#1a1a2e;--text-dim:#5a5a6e;--text-muted:#8a8a9e;
+  --accent:#059669;--accent-dim:rgba(5,150,105,.08);
+  --navy:#0A0F1C;--navy-dim:rgba(10,15,28,.06);
+  --amber:#d97706;--amber-dim:rgba(217,119,6,.08);
+  --rose:#be123c;--rose-dim:rgba(190,18,60,.08);
+  --font-body:'IBM Plex Sans',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono','Fira Code',monospace;
+  --radius:8px;--radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#111820;--bg-alt:#171f2a;--surface:#1c2635;--surface-dim:#151d28;
+  --border:rgba(255,255,255,.06);--border-accent:rgba(5,150,105,.25);
+  --text:#dce3ed;--text-dim:#8a95a5;--text-muted:#5c6a7e;
+  --accent:#34d399;--accent-dim:rgba(52,211,153,.1);
+  --navy-dim:rgba(220,227,237,.06);
+  --amber-dim:rgba(217,119,6,.12);--rose-dim:rgba(190,18,60,.12);
+}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;
+  background-image:radial-gradient(ellipse 70% 40% at 20% 10%,var(--accent-dim),transparent),
+  radial-gradient(ellipse 50% 30% at 80% 85%,var(--navy-dim),transparent)}
+.page{max-width:860px;margin:0 auto;padding:3rem 1.5rem 4rem}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:3rem;animation:fadeUp .5s ease both}
+.hero-label{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.hero-label::before,.hero-label::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.4}
+.hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.hero-sub{font-size:.88rem;color:var(--text-dim);max-width:500px;margin:0 auto}
+
+/* Section */
+.section{margin-bottom:2.5rem;animation:fadeUp .5s ease both}
+.section-label{font-family:var(--font-mono);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.section-label .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.section h2{font-size:1.4rem;font-weight:700;margin-bottom:.5rem;line-height:1.25}
+.section-desc{font-size:.88rem;color:var(--text-dim);line-height:1.7;margin-bottom:1.2rem;max-width:650px}
+
+/* Steps */
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;position:relative}
+.step:hover{border-color:var(--border-accent)}
+.step-num{position:absolute;top:-.6rem;left:1rem;font-family:var(--font-mono);font-size:.6rem;font-weight:600;background:var(--accent);color:white;padding:.15rem .5rem;border-radius:4px;letter-spacing:.06em}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;padding-top:.2rem}
+.step p{font-size:.85rem;color:var(--text-dim);line-height:1.65}
+.step a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* Code blocks */
+.code-block{background:var(--navy-dim);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin:.8rem 0;overflow-x:auto}
+.code-block pre{font-family:var(--font-mono);font-size:.78rem;line-height:1.7;white-space:pre-wrap;word-break:break-all;color:var(--text)}
+.code-label{font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.3rem}
+
+/* Callout */
+.callout{background:var(--accent-dim);border:1px solid var(--border-accent);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1rem 1.2rem;margin:1rem 0}
+.callout-title{font-family:var(--font-mono);font-size:.72rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.callout p{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+.callout code{font-family:var(--font-mono);font-size:.75rem;background:var(--navy-dim);padding:.1rem .3rem;border-radius:3px}
+
+/* Template preview */
+.template-preview{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1rem 0}
+.template-header{background:var(--navy-dim);padding:.8rem 1.2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.template-header span{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);font-weight:500}
+.template-body{padding:1.5rem}
+.template-section{margin-bottom:1.5rem}
+.template-section:last-child{margin-bottom:0}
+.template-section-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+.template-section-num{width:28px;height:28px;border-radius:50%;background:var(--accent-dim);border:2px solid var(--accent);color:var(--accent);font-family:var(--font-mono);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.template-section-title{font-family:var(--font-mono);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.template-item{background:var(--bg-alt);border-radius:var(--radius);padding:.8rem 1rem;margin-bottom:.4rem}
+.template-item h4{font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.template-item p{font-size:.78rem;color:var(--text-dim);line-height:1.6}
+.template-cta{background:var(--accent-dim);border:1px dashed var(--accent);border-radius:var(--radius);padding:.8rem 1rem;text-align:center;margin-top:1rem}
+.template-cta p{font-size:.8rem;color:var(--accent);font-weight:600}
+
+/* Warning */
+.warning{background:var(--amber-dim);border:1px solid rgba(217,119,6,.2);border-left:3px solid var(--amber);border-radius:var(--radius);padding:1rem 1.2rem;margin:1rem 0}
+.warning-title{font-family:var(--font-mono);font-size:.72rem;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.warning p{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+
+/* Footer */
+.footer{text-align:center;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.68rem;color:var(--text-muted);margin-top:2rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.template-body{padding:1rem}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <div class="hero-label">Setup Guide</div>
+  <h1>The Signal Newsletter — Full Setup</h1>
+  <p class="hero-sub">Supabase for tracking signups. Beehiiv for sending. Your website for capturing.</p>
+</header>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART 1: SUPABASE -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="dot"></span> Part 1 — Supabase</div>
+  <h2>Create the Newsletter Subscribers Table</h2>
+  <p class="section-desc">Run this SQL in your Supabase dashboard under SQL Editor. This creates the table that stores every signup from your website.</p>
+
+  <div class="step">
+    <span class="step-num">STEP 1</span>
+    <h3>Go to Supabase SQL Editor</h3>
+    <p>Open <a href="https://supabase.com/dashboard" target="_blank">supabase.com/dashboard</a> → select your project → click "SQL Editor" in the left sidebar.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">STEP 2</span>
+    <h3>Run this SQL</h3>
+    <p>Paste and execute:</p>
+    <div class="code-block">
+      <div class="code-label">SQL</div>
+      <pre>-- Newsletter subscribers table
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL,
+  source TEXT DEFAULT 'homepage',
+  subscribed_at TIMESTAMPTZ DEFAULT now(),
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Prevent duplicate emails
+CREATE UNIQUE INDEX IF NOT EXISTS
+  idx_newsletter_email ON newsletter_subscribers (email);
+
+-- Enable Row Level Security
+ALTER TABLE newsletter_subscribers ENABLE ROW LEVEL SECURITY;
+
+-- Allow anonymous inserts (for website forms)
+CREATE POLICY "Allow anonymous inserts"
+  ON newsletter_subscribers FOR INSERT
+  TO anon
+  WITH CHECK (true);
+
+-- Allow authenticated reads (for you to export)
+CREATE POLICY "Allow authenticated reads"
+  ON newsletter_subscribers FOR SELECT
+  TO authenticated
+  USING (true);</pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="step-num">STEP 3</span>
+    <h3>Add your Supabase credentials to the website</h3>
+    <p>In both <code>index.html</code> and <code>the-3-2-1.html</code>, find and replace the placeholder values:</p>
+    <div class="code-block">
+      <div class="code-label">Find these lines</div>
+      <pre>const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</pre>
+    </div>
+    <p style="margin-top:.5rem">Replace with your actual values from Supabase → Settings → API:</p>
+    <div class="code-block">
+      <div class="code-label">Replace with</div>
+      <pre>const SUPABASE_URL = 'https://yourproject.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOi...(your anon key)';</pre>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">How it works</div>
+    <p>When someone subscribes on your website, the form sends their email + source (which page they signed up from) to Supabase. The <code>source</code> field tells you whether they came from the homepage (<code>homepage</code>), the 3-2-1 hero section (<code>the-3-2-1-hero</code>), or the bottom CTA (<code>the-3-2-1-footer</code>).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART 2: BEEHIIV -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="dot"></span> Part 2 — Beehiiv</div>
+  <h2>Set Up Beehiiv for Sending</h2>
+  <p class="section-desc">Beehiiv handles the actual newsletter delivery, analytics, and subscriber management. Free up to 2,500 subscribers.</p>
+
+  <div class="step">
+    <span class="step-num">STEP 1</span>
+    <h3>Create your Beehiiv account</h3>
+    <p>Go to <a href="https://www.beehiiv.com" target="_blank">beehiiv.com</a> → Sign up free → Name your publication "The Signal" → Set your sender name as "Sunny Binjola" and sender email as your business email.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">STEP 2</span>
+    <h3>Connect your custom domain (optional but recommended)</h3>
+    <p>In Beehiiv Settings → Custom Domain → add <code>newsletter.elevateaisystem.com</code>. This means emails come from your domain (better deliverability) and the web version lives at your URL.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">STEP 3</span>
+    <h3>Get your Beehiiv embed form code</h3>
+    <p>In Beehiiv → Grow → Subscribe Forms → Create a new form → Copy the form action URL. It looks like:</p>
+    <div class="code-block">
+      <div class="code-label">Beehiiv form action URL</div>
+      <pre>https://embeds.beehiiv.com/your-publication-id</pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="step-num">STEP 4</span>
+    <h3>Add Beehiiv to your website forms (dual submission)</h3>
+    <p>Update the signup functions in <code>index.html</code> and <code>the-3-2-1.html</code> to submit to BOTH Supabase (your database) AND Beehiiv (for delivery). Here's the updated code for the homepage:</p>
+    <div class="code-block">
+      <div class="code-label">JavaScript — add inside handleNewsletterSignup() after Supabase call</div>
+      <pre>// Also subscribe via Beehiiv for delivery
+const BEEHIIV_FORM = 'https://embeds.beehiiv.com/YOUR_PUBLICATION_ID';
+
+fetch(BEEHIIV_FORM, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: new URLSearchParams({ email: email }),
+  mode: 'no-cors'  // Beehiiv doesn't return CORS headers
+}).catch(() => {});  // Silently handle — Supabase is the source of truth</pre>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Why both Supabase + Beehiiv?</div>
+    <p>Supabase is your database — you own the data, can query it, export it, see which source converts best. Beehiiv handles email delivery, open rates, click tracking, and unsubscribes. You get the best of both: data ownership + professional delivery.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART 3: EMAIL TEMPLATE -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="dot"></span> Part 3 — The Email Template</div>
+  <h2>Your Reusable 3-2-1 Template for Beehiiv</h2>
+  <p class="section-desc">Copy this structure into Beehiiv's editor as a reusable template. Every Tuesday, duplicate it and fill in the blanks.</p>
+
+  <div class="template-preview">
+    <div class="template-header">
+      <span>Subject: The Signal — [Week's hook in under 50 chars]</span>
+      <span>Preview text: 3 technologies, 2 ideas, 1 tool</span>
+    </div>
+    <div class="template-body">
+
+      <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.2rem;line-height:1.7">Hey — here's this week's 3-2-1. Three AI developments that matter for your coaching business, two ideas you can use right now, and one tool worth trying.</p>
+
+      <!-- 3 Technologies -->
+      <div class="template-section">
+        <div class="template-section-head">
+          <div class="template-section-num">3</div>
+          <div class="template-section-title">Technologies This Week</div>
+        </div>
+        <div class="template-item">
+          <h4>1. [Technology headline]</h4>
+          <p>[2-3 sentences: what happened + why it matters for coaches. Link to source.]</p>
+        </div>
+        <div class="template-item">
+          <h4>2. [Technology headline]</h4>
+          <p>[2-3 sentences: what happened + why it matters for coaches. Link to source.]</p>
+        </div>
+        <div class="template-item">
+          <h4>3. [Technology headline]</h4>
+          <p>[2-3 sentences: what happened + why it matters for coaches. Link to source.]</p>
+        </div>
+      </div>
+
+      <!-- 2 Ideas -->
+      <div class="template-section">
+        <div class="template-section-head">
+          <div class="template-section-num">2</div>
+          <div class="template-section-title">Ideas You Can Use This Week</div>
+        </div>
+        <div class="template-item">
+          <h4>1. [Actionable idea headline]</h4>
+          <p>[One paragraph. Problem → idea → how to do it. Specific and concrete.]</p>
+        </div>
+        <div class="template-item">
+          <h4>2. [Actionable idea headline]</h4>
+          <p>[One paragraph. Problem → idea → how to do it. Specific and concrete.]</p>
+        </div>
+      </div>
+
+      <!-- 1 Tool -->
+      <div class="template-section">
+        <div class="template-section-head">
+          <div class="template-section-num">1</div>
+          <div class="template-section-title">Tool of the Week</div>
+        </div>
+        <div class="template-item">
+          <h4>[Tool Name] — [What it does in 5 words]</h4>
+          <p>[What it does + specific use case for coaches + pricing + link. Your honest take.]</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="template-cta">
+        <p>[Single CTA — rotate between: "Reply and tell me...", "Book a call", "Download the playbook", or "Try the tool"]</p>
+      </div>
+
+      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem;line-height:1.6">— Sunny<br>ElevateAI System · elevateaisystem.com</p>
+    </div>
+  </div>
+
+  <div class="warning">
+    <div class="warning-title">Rules to Follow</div>
+    <p>Under 800 words total. One CTA per issue. Write in your voice, not a newscaster's. Always coach-relevant — if a coach can't use it this month, cut it. Ship every Tuesday at 8am.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART 4: WEEKLY WORKFLOW -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="dot"></span> Part 4 — Weekly Workflow</div>
+  <h2>Under 2 Hours Per Week</h2>
+  <p class="section-desc">Your production rhythm so it never feels like a chore.</p>
+
+  <div class="step">
+    <span class="step-num">SUNDAY</span>
+    <h3>Scan &amp; Save (20 min)</h3>
+    <p>Scan AI news — X, Hacker News, Ben's Bites, The Neuron, or any AI newsletter you follow. Save 5-8 articles that caught your eye. Don't write yet, just collect.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">MONDAY AM</span>
+    <h3>Draft (45 min)</h3>
+    <p>Pick your 3 technologies, 2 ideas, 1 tool. Open Beehiiv, duplicate the template, fill in the blanks. Use Claude to help draft if needed — then edit for your voice.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">MONDAY PM</span>
+    <h3>Edit &amp; Schedule (30 min)</h3>
+    <p>Trim to under 800 words. Add links. Write the subject line (under 50 chars). Preview on mobile. Schedule for Tuesday 8am.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-num">TUESDAY</span>
+    <h3>Engage (15 min)</h3>
+    <p>It sends. Reply to responses — every reply is a relationship. People who reply to your newsletter become clients.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART 5: CHECKLIST -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="dot"></span> Quick Checklist</div>
+  <h2>Setup Checklist</h2>
+
+  <div class="code-block" style="background:var(--surface)">
+    <pre style="font-size:.82rem;line-height:2">[ ] Create Supabase table (run the SQL above)
+[ ] Copy your Supabase URL + anon key
+[ ] Paste credentials into index.html and the-3-2-1.html
+[ ] Upload both files to your hosting
+[ ] Test a signup on both pages — check Supabase table
+[ ] Create Beehiiv account (beehiiv.com)
+[ ] Name publication "The Signal"
+[ ] Set sender as Sunny Binjola + your email
+[ ] Optional: connect newsletter.elevateaisystem.com
+[ ] Get Beehiiv form action URL
+[ ] Add Beehiiv fetch call to both signup functions
+[ ] Create reusable template in Beehiiv editor
+[ ] Write and schedule Issue #001
+[ ] Ship every Tuesday at 8am</pre>
+  </div>
+</div>
+
+<!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

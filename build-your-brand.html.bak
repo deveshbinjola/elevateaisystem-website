@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Brand — AI-Powered Brand Building for Coaches | Elevate AI System</title>
+<meta name="description" content="Done-for-you brand building with custom AI agents. Website, LinkedIn, Instagram, content pipeline, and 11 AI agents that run your content, operations, and growth on autopilot. For coaches doing $10K+/month.">
+<link rel="canonical" href="https://www.elevateaisystem.com/build-your-brand">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Build Your Brand — AI-Powered Brand Building for Coaches | Elevate AI System">
+<meta property="og:description" content="Done-for-you brand building with custom AI agents — website, LinkedIn, Instagram, and 11 AI agents trained on your voice.">
+<meta property="og:url" content="https://www.elevateaisystem.com/build-your-brand">
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ElevateAI System">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build Your Brand — AI-Powered Brand Building for Coaches | Elevate AI System">
+<meta name="twitter:description" content="Done-for-you brand building with custom AI agents trained on your real voice. Website, social, content, and operations — all automated.">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Build Your Brand","description":"Done-for-you AI-powered brand building service for coaches, consultants, and creators. Includes brand discovery, custom website, LinkedIn and Instagram setup, content pipeline, custom AI agents (Blog, Carousel, Newsletter, Story, Caption, Calendar, Email Sequence, Social Scheduling, Client Intake, Lead Scoring, Analytics Dashboard), and full ELEVATE Method visibility optimization (SEO + AEO + GEO + LLMO).","provider":{"@type":"Organization","name":"ElevateAI System","url":"https://www.elevateaisystem.com"},"areaServed":"Worldwide","audience":{"@type":"Audience","audienceType":"Coaches, Consultants, Creators doing $10K+/month"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Build Your Brand Tiers","itemListElement":[{"@type":"Offer","name":"Foundation","price":"5000","priceCurrency":"USD","description":"Brand discovery, identity guide, ELEVATE Method-optimized website, Blog Agent, Caption Agent."},{"@type":"Offer","name":"Launch","price":"8500","priceCurrency":"USD","description":"Everything in Foundation plus LinkedIn and Instagram, 8 AI agents, content pipeline, 6 blog posts."},{"@type":"Offer","name":"Visibility","price":"12000","priceCurrency":"USD","description":"Everything in Launch plus 11 AI agents, ELEVATE Method visibility sprint, and 3 months ongoing growth with agent maintenance."}]}}
+</script>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8;--bg-alt:#F2F2EE;--green:#00FF41;--green-dark:#00CC34;
+  --navy:#0A0F1C;--navy-light:#1A2035;--text:#1A1A2E;--text-muted:#5A5A6E;
+  --border:#E0E0D8;--white:#FFFFFF;--card-bg:#FFFFFF;--radius:12px;--radius-lg:20px;
+  --amber:#F59E0B;--amber-light:#FEF3C7;
+  --purple:#8B5CF6;--purple-light:#EDE9FE;
+  --teal:#0D9488;--teal-light:#CCFBF1;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* ─── HERO ─── */
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;position:relative;overflow:hidden;background:var(--navy)}
+.hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,255,65,.08) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-inner{max-width:820px;position:relative;z-index:1}
+.hero-badge{display:inline-block;padding:6px 18px;border:1px solid rgba(0,255,65,.3);border-radius:100px;font-size:13px;color:var(--green);letter-spacing:.5px;margin-bottom:28px;background:rgba(0,255,65,.06);font-weight:600}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.4rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;margin-bottom:24px;color:var(--white)}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.65);max-width:680px;margin:0 auto 32px;line-height:1.7}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--green);color:var(--navy);font-weight:800;font-size:1rem;border-radius:50px;transition:all .3s;letter-spacing:.02em}
+.hero-cta:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,255,65,.25)}
+.hero-cta svg{width:18px;height:18px}
+.platform-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.platform-badges span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.platform-badges .web{border-color:rgba(0,255,65,.4);color:var(--green)}
+.platform-badges .lin{border-color:rgba(10,102,194,.5);color:#7eb8f0}
+.platform-badges .ig{border-color:rgba(225,48,108,.5);color:#f0a0be}
+.platform-badges .ai{border-color:rgba(139,92,246,.5);color:#c4b5fd}
+.hero-stat-row{display:flex;gap:32px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:2rem;font-weight:800;color:var(--green);display:block;line-height:1}
+.hero-stat .label{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:4px;display:block}
+
+/* ─── SECTIONS ─── */
+section{padding:80px 24px}
+.container{max-width:960px;margin:0 auto}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.6rem}
+.section-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:16px;color:var(--navy);line-height:1.15}
+.section-sub{color:var(--text-muted);font-size:1.05rem;max-width:640px;line-height:1.7}
+
+/* ─── PAIN POINTS ─── */
+.pain{text-align:center;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pain p{font-size:1.1rem;color:var(--text-muted);margin-bottom:16px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7}
+.pain strong{color:var(--navy)}
+
+/* ─── AI AGENTS SECTION ─── */
+.agents-section{background:var(--navy);color:var(--white)}
+.agents-section .section-label{color:var(--green)}
+.agents-section .section-title{color:var(--white)}
+.agents-section .section-sub{color:rgba(255,255,255,.6)}
+.agent-category{margin-top:40px}
+.agent-category-label{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:16px}
+.agent-category-label.content{background:rgba(0,255,65,.12);color:var(--green)}
+.agent-category-label.ops{background:rgba(139,92,246,.15);color:#c4b5fd}
+.agent-category-label.growth{background:rgba(245,158,11,.15);color:#fbbf24}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.agent-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;transition:transform .2s,border-color .2s}
+.agent-card:hover{transform:translateY(-2px);border-color:rgba(0,255,65,.3)}
+.agent-card h4{font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.agent-card h4 .icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+.agent-card p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.55}
+.agent-card .tier-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-top:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4)}
+
+/* ─── PHASES ─── */
+.phases{background:var(--bg-alt)}
+.phase-grid{display:flex;flex-direction:column;gap:24px;margin-top:40px}
+.phase-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:transform .2s,box-shadow .2s;display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start}
+.phase-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.phase-num{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--white);flex-shrink:0}
+.phase-card h3{font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.phase-meta{font-size:.78rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+.phase-card p{font-size:.92rem;color:var(--text-muted);line-height:1.7}
+.phase-card ul{list-style:none;margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.phase-card ul li{font-size:.8rem;padding:4px 12px;border-radius:6px;background:var(--bg-alt);color:var(--text-muted);font-weight:500;border:1px solid var(--border)}
+.phase-card ul li.agent-tag{background:rgba(0,204,52,.08);color:var(--green-dark);border-color:rgba(0,204,52,.2)}
+
+/* ─── PRICING ─── */
+.pricing-section{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.pricing-card{background:var(--card-bg);border:2px solid var(--border);border-radius:var(--radius-lg);padding:32px;position:relative;transition:transform .2s,box-shadow .2s}
+.pricing-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.pricing-card.featured{border-color:var(--green-dark);box-shadow:0 4px 24px rgba(0,204,52,.12)}
+.pricing-card.featured::before{content:'MOST POPULAR';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green-dark);color:var(--white);font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:5px 14px;border-radius:20px}
+.pricing-name{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.pricing-price{font-size:2.5rem;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1}
+.pricing-desc{font-size:.9rem;color:var(--text-muted);margin-bottom:20px;line-height:1.6}
+.pricing-agent-count{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:4px 10px;border-radius:6px;background:rgba(0,204,52,.08);color:var(--green-dark);margin-bottom:16px}
+.pricing-list{list-style:none;padding:0;margin-bottom:24px}
+.pricing-list li{font-size:.88rem;padding:8px 0;border-top:1px solid var(--border);padding-left:1.5rem;position:relative;color:var(--text)}
+.pricing-list li::before{content:"\2713";position:absolute;left:0;font-weight:700;color:var(--green-dark)}
+.pricing-list li.excluded{color:var(--text-muted);opacity:.45}
+.pricing-list li.excluded::before{content:"\2717";color:var(--text-muted)}
+.pricing-list li.agent-item{color:var(--green-dark);font-weight:600}
+.pricing-cta{display:block;width:100%;padding:14px;text-align:center;border-radius:50px;font-weight:800;font-size:.92rem;transition:all .3s;border:none;cursor:pointer;font-family:inherit}
+.pricing-cta.primary{background:var(--green);color:var(--navy)}
+.pricing-cta.primary:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,255,65,.25)}
+.pricing-cta.secondary{background:transparent;color:var(--navy);border:2px solid var(--border)}
+.pricing-cta.secondary:hover{border-color:var(--green-dark);color:var(--green-dark);transform:translateY(-2px)}
+.pricing-timeline{font-size:.78rem;color:var(--text-muted);text-align:center;margin-top:10px}
+
+/* ─── ROI ─── */
+.roi-section{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.roi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:32px}
+.roi-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
+.roi-card .replace{font-size:.78rem;color:var(--text-muted);margin-bottom:4px}
+.roi-card .cost{font-size:1.3rem;font-weight:800;color:var(--navy);text-decoration:line-through;text-decoration-color:rgba(239,68,68,.5)}
+.roi-card .you-pay{font-size:.78rem;font-weight:700;color:var(--green-dark);margin-top:6px}
+.roi-total{text-align:center;margin-top:32px;padding:28px;background:var(--card-bg);border:2px solid var(--green-dark);border-radius:var(--radius-lg)}
+.roi-total .old{font-size:1rem;color:var(--text-muted);margin-bottom:4px}
+.roi-total .old span{text-decoration:line-through;font-weight:700;color:var(--navy)}
+.roi-total .new{font-size:1.3rem;font-weight:800;color:var(--green-dark)}
+
+/* ─── WHAT MAKES DIFFERENT ─── */
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px}
+.diff-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:transform .2s}
+.diff-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.diff-card .tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:10px;background:rgba(0,204,52,.1);color:var(--green-dark)}
+.diff-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.diff-card p{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+
+/* ─── CTA SECTION ─── */
+.cta-section{background:var(--navy);text-align:center;color:var(--white)}
+.cta-section h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin-bottom:12px;color:var(--white)}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.65);max-width:600px;margin:0 auto 28px;line-height:1.7}
+
+/* ─── FAQ ─── */
+.faq-grid{display:flex;flex-direction:column;gap:16px;margin-top:32px;max-width:720px}
+.faq-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.faq-item h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.6}
+
+/* ─── FOOTER ─── */
+.footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
+.footer p{font-size:.82rem;color:var(--text-muted);font-weight:500}
+.footer span{color:var(--green-dark)}
+
+/* ─── ANIMATIONS ─── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .hero{padding:120px 20px 60px;min-height:auto}
+  .hero h1{font-size:clamp(1.8rem,8vw,2.6rem)}
+  .hero-stat-row{gap:20px}
+  .hero-stat .num{font-size:1.5rem}
+  .phase-card{grid-template-columns:1fr;gap:16px}
+  .phase-num{width:48px;height:48px;font-size:1.1rem;border-radius:12px}
+  .pricing-grid{grid-template-columns:1fr}
+  .agent-grid{grid-template-columns:1fr}
+  .roi-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<script src="navbar.js"></script>
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Brand + AI Agents — Done For You</div>
+    <h1>We'll <em>Build Your Brand</em> and Give You AI Agents to Run It</h1>
+    <div class="platform-badges">
+      <span class="web">Website</span>
+      <span class="lin">LinkedIn</span>
+      <span class="ig">Instagram</span>
+      <span class="ai">AI Agents</span>
+    </div>
+    <p class="hero-sub">A done-for-you brand building service with custom AI agents trained on your voice. We build your website, social presence, and content pipeline — then hand you AI agents that create content, manage operations, and grow your visibility on autopilot.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="hero-cta">Book a Discovery Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="hero-stat-row">
+      <div class="hero-stat"><span class="num">11</span><span class="label">Custom AI Agents</span></div>
+      <div class="hero-stat"><span class="num">3</span><span class="label">Platforms Launched</span></div>
+      <div class="hero-stat"><span class="num">4</span><span class="label">Search Channels</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PAIN ─── -->
+<section class="pain reveal">
+  <div class="container" style="text-align:center">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">You're Running a Coaching Business With Zero Systems</h2>
+    <p>You've built something real. Clients love your work. But behind the scenes? <strong>You're doing everything manually.</strong> Writing every post. Sending every email. Managing every booking. Scrambling to stay visible.</p>
+    <p>Your website is outdated — or doesn't exist. Your LinkedIn is a resume from 2019. Your Instagram has 3 posts from last year. And when someone asks ChatGPT to recommend a coach in your niche — you're nowhere.</p>
+    <p>You've thought about hiring a VA, a content writer, a social media manager. <strong>That's $5,000+/month.</strong> And you'd still have to manage all of them.</p>
+    <p><strong>What if you could replace all of that with AI agents trained on YOUR voice — and get your entire brand built at the same time?</strong></p>
+  </div>
+</section>
+
+<!-- ─── AI AGENTS ─── -->
+<section class="agents-section reveal">
+  <div class="container">
+    <div class="section-label">Your AI Team</div>
+    <h2 class="section-title">11 Custom AI Agents. Trained on You.</h2>
+    <p class="section-sub">Every agent learns your voice, your brand, your methodology. They don't sound like AI — they sound like you on your best day.</p>
+
+    <div class="agent-category">
+      <div class="agent-category-label content">Content Agents</div>
+      <div class="agent-grid">
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(0,255,65,.12);color:var(--green)">B</span> Blog Agent</h4>
+          <p>Drop in an idea or voice note. Get back a full SEO-optimized blog post in your voice — with schema, meta tags, internal links.</p>
+          <span class="tier-tag">All tiers</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(0,255,65,.12);color:var(--green)">C</span> Caption Agent</h4>
+          <p>One idea becomes captions for LinkedIn, Instagram, and X — each adapted to platform norms and your voice.</p>
+          <span class="tier-tag">All tiers</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(0,255,65,.12);color:var(--green)">Ca</span> Carousel Agent</h4>
+          <p>Turns any blog post or idea into branded LinkedIn/Instagram carousels. Your colours, your fonts, ready to post.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(0,255,65,.12);color:var(--green)">N</span> Newsletter Agent</h4>
+          <p>Pulls from your week's content and generates a formatted newsletter draft. Works with Beehiiv, ConvertKit, or Mailchimp.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(0,255,65,.12);color:var(--green)">S</span> Story Agent</h4>
+          <p>Repurposes content into branded Instagram story sequences — hooks, text overlays, swipe-up CTAs.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-category" style="margin-top:32px">
+      <div class="agent-category-label ops">Operations Agents</div>
+      <div class="agent-grid">
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(139,92,246,.12);color:#a78bfa">Cal</span> Calendar Agent</h4>
+          <p>Manages bookings, sends prep reminders, handles rescheduling, nudges no-shows. Connected to Cal.com or Calendly.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(139,92,246,.12);color:#a78bfa">E</span> Email Sequence Agent</h4>
+          <p>Runs welcome series, post-call follow-ups, and re-engagement sequences. Written in your voice, sent automatically.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(139,92,246,.12);color:#a78bfa">In</span> Client Intake Agent</h4>
+          <p>When a lead books, it sends a pre-call questionnaire, summarizes responses, and delivers a brief before your call.</p>
+          <span class="tier-tag">Visibility</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-category" style="margin-top:32px">
+      <div class="agent-category-label growth">Growth Agents</div>
+      <div class="agent-grid">
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(245,158,11,.12);color:#f59e0b">Sc</span> Social Scheduling Agent</h4>
+          <p>Auto-schedules posts across LinkedIn and Instagram at optimal times. You approve the queue weekly — it handles the rest.</p>
+          <span class="tier-tag">Launch +</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(245,158,11,.12);color:#f59e0b">L</span> Lead Scoring Agent</h4>
+          <p>Scores leads based on site visits, email opens, and content engagement. Surfaces your hottest prospects weekly.</p>
+          <span class="tier-tag">Visibility</span>
+        </div>
+        <div class="agent-card reveal">
+          <h4><span class="icon" style="background:rgba(245,158,11,.12);color:#f59e0b">A</span> Analytics Dashboard</h4>
+          <p>Monthly auto-report: Google rankings, social growth, email performance, AI citation progress. All in one view.</p>
+          <span class="tier-tag">Visibility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PHASES ─── -->
+<section class="phases reveal">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Five Phases. From Who You Are to Fully Automated.</h2>
+    <p class="section-sub">We start with the inner work. Then we build everything — brand, website, social, agents — from that foundation.</p>
+
+    <div class="phase-grid">
+      <div class="phase-card reveal">
+        <div class="phase-num" style="background:linear-gradient(135deg,#2c1810,#5a3925)">1</div>
+        <div>
+          <h3>Discovery — Who Are You, Really?</h3>
+          <div class="phase-meta">Week 1 · All tiers</div>
+          <p>A 90-minute brand discovery session. We uncover your real voice, values, and purpose. Your voice becomes the training data for every AI agent we build — they learn to sound like you because they literally learn from you.</p>
+          <ul>
+            <li>Brand discovery session</li>
+            <li>Voice extraction</li>
+            <li>Audience clarity</li>
+            <li class="agent-tag">AI agent blueprint</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--navy),#1a3a2a)">2</div>
+        <div>
+          <h3>Foundation — Brand + First Agents</h3>
+          <div class="phase-meta">Week 2-3 · All tiers</div>
+          <p>Your brand takes physical form — identity guide, custom website optimized with The ELEVATE Method. Then your first 2 AI agents come online: Blog Agent and Caption Agent, both trained on your voice.</p>
+          <ul>
+            <li>Brand identity guide</li>
+            <li>Custom website (5-7 pages)</li>
+            <li>Schema markup + SEO</li>
+            <li class="agent-tag">Blog Agent live</li>
+            <li class="agent-tag">Caption Agent live</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-num" style="background:linear-gradient(135deg,#0c4a5e,#0e7490)">3</div>
+        <div>
+          <h3>Platform Launch — Social + Full Agent Suite</h3>
+          <div class="phase-meta">Week 3-4 · Launch + Visibility tiers</div>
+          <p>LinkedIn and Instagram go live. 6 blog posts published. And 6 more agents come online — your content machine, calendar management, email sequences, and social scheduling all running automatically.</p>
+          <ul>
+            <li>LinkedIn + Instagram</li>
+            <li>6 blog posts</li>
+            <li>Content pipeline</li>
+            <li class="agent-tag">+6 agents deployed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-num" style="background:linear-gradient(135deg,#78350f,#b45309)">4</div>
+        <div>
+          <h3>Visibility Sprint — Growth Agents Go Live</h3>
+          <div class="phase-meta">Week 4-5 · Visibility tier</div>
+          <p>Full ELEVATE Method audit + AI citation seeding. The final 3 agents come online: Client Intake, Lead Scoring, and Analytics Dashboard. Your entire business is now AI-powered.</p>
+          <ul>
+            <li>ELEVATE Method audit</li>
+            <li>AI citation optimization</li>
+            <li>LLMO seeding</li>
+            <li class="agent-tag">+3 growth agents</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-num" style="background:linear-gradient(135deg,#166534,var(--green-dark))">5</div>
+        <div>
+          <h3>Handoff + Growth — Your System, Running</h3>
+          <div class="phase-meta">Week 5-6 + ongoing · All tiers (varies)</div>
+          <p>Full documentation, agent user guides, training session. Visibility clients get 3 months of ongoing growth with all agents maintained, monthly check-ins, and continuous optimization.</p>
+          <ul>
+            <li>Agent user guide</li>
+            <li>Training session</li>
+            <li>Brand guidelines PDF</li>
+            <li class="agent-tag">3-month agent maintenance (Visibility)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="pricing-section reveal" id="pricing">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Pricing</div>
+    <h2 class="section-title" style="text-align:center">Choose Your Level</h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 0">Every tier starts with the same inner-work discovery. The difference is how many AI agents you get and how far we take your visibility.</p>
+
+    <div class="pricing-grid">
+      <!-- Foundation -->
+      <div class="pricing-card">
+        <div class="pricing-name">Foundation</div>
+        <div class="pricing-price">$5,000</div>
+        <p class="pricing-desc">Brand identity + website + your first 2 AI agents. Everything you need to exist online as the real you.</p>
+        <div class="pricing-agent-count">2 AI Agents Included</div>
+        <ul class="pricing-list">
+          <li>Brand discovery session (90 min)</li>
+          <li>Voice extraction + brand brief</li>
+          <li>Brand identity guide (PDF)</li>
+          <li>Custom website (5-7 pages)</li>
+          <li>ELEVATE Method SEO foundation</li>
+          <li>Schema markup + llms.txt</li>
+          <li class="agent-item">Blog Agent (voice-trained)</li>
+          <li class="agent-item">Caption Agent (all platforms)</li>
+          <li>Handoff docs + agent user guide</li>
+          <li class="excluded">LinkedIn + Instagram setup</li>
+          <li class="excluded">6 more AI agents</li>
+          <li class="excluded">Visibility sprint + ongoing growth</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="pricing-cta secondary">Book a Call</a>
+        <p class="pricing-timeline">3 weeks · 2 agents</p>
+      </div>
+
+      <!-- Launch -->
+      <div class="pricing-card featured">
+        <div class="pricing-name">Launch</div>
+        <div class="pricing-price">$8,500</div>
+        <p class="pricing-desc">Full brand + social platforms + 8 AI agents running your content, operations, and scheduling.</p>
+        <div class="pricing-agent-count">8 AI Agents Included</div>
+        <ul class="pricing-list">
+          <li>Everything in Foundation</li>
+          <li>LinkedIn profile optimization</li>
+          <li>Instagram profile + content grid</li>
+          <li>Content pipeline system</li>
+          <li>6 SEO-optimized blog posts</li>
+          <li class="agent-item">+ Carousel Agent</li>
+          <li class="agent-item">+ Newsletter Agent</li>
+          <li class="agent-item">+ Story Agent</li>
+          <li class="agent-item">+ Calendar Agent</li>
+          <li class="agent-item">+ Email Sequence Agent</li>
+          <li class="agent-item">+ Social Scheduling Agent</li>
+          <li>60-min training session (recorded)</li>
+          <li class="excluded">Client Intake + Lead Scoring agents</li>
+          <li class="excluded">3 months ongoing + agent maintenance</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="pricing-cta primary">Book a Call</a>
+        <p class="pricing-timeline">4 weeks · 8 agents</p>
+      </div>
+
+      <!-- Visibility -->
+      <div class="pricing-card">
+        <div class="pricing-name">Visibility</div>
+        <div class="pricing-price">$12,000</div>
+        <p class="pricing-desc">The full AI-powered coaching business. 11 agents, full visibility sprint, 3 months ongoing growth.</p>
+        <div class="pricing-agent-count">All 11 AI Agents</div>
+        <ul class="pricing-list">
+          <li>Everything in Launch</li>
+          <li>ELEVATE Method baseline audit</li>
+          <li>AI citation testing (15+ prompts)</li>
+          <li>Reddit + community seeding</li>
+          <li>LLMO optimization strategy</li>
+          <li class="agent-item">+ Client Intake Agent</li>
+          <li class="agent-item">+ Lead Scoring Agent</li>
+          <li class="agent-item">+ Analytics Dashboard</li>
+          <li>2 blog posts/month for 3 months</li>
+          <li>All agents maintained for 3 months</li>
+          <li>Monthly 30-min check-in call</li>
+          <li>Priority support for 3 months</li>
+        </ul>
+        <a href="https://cal.com/sunny-binjola/discovery-call" class="pricing-cta secondary">Book a Call</a>
+        <p class="pricing-timeline">5 weeks + 3 months · 11 agents</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROI ─── -->
+<section class="roi-section reveal">
+  <div class="container" style="text-align:center">
+    <div class="section-label">The Math</div>
+    <h2 class="section-title">What You'd Pay Without AI Agents</h2>
+    <p class="section-sub" style="margin:0 auto 0">Hiring humans for everything these agents do costs $7,500/month. Build Your Brand replaces that for a one-time investment.</p>
+
+    <div class="roi-grid">
+      <div class="roi-card">
+        <div class="replace">Content Writer</div>
+        <div class="cost">$1,500/mo</div>
+        <div class="you-pay">Blog + Caption + Newsletter Agents</div>
+      </div>
+      <div class="roi-card">
+        <div class="replace">Social Media Manager</div>
+        <div class="cost">$1,500/mo</div>
+        <div class="you-pay">Carousel + Story + Scheduling Agents</div>
+      </div>
+      <div class="roi-card">
+        <div class="replace">Virtual Assistant</div>
+        <div class="cost">$2,000/mo</div>
+        <div class="you-pay">Calendar + Intake + Email Agents</div>
+      </div>
+      <div class="roi-card">
+        <div class="replace">SEO Consultant</div>
+        <div class="cost">$1,500/mo</div>
+        <div class="you-pay">ELEVATE Method + Analytics Dashboard</div>
+      </div>
+    </div>
+
+    <div class="roi-total">
+      <p class="old">Hiring all of that: <span>$90,000/year</span></p>
+      <p class="new">Build Your Brand (Visibility): $12,000 one-time + $197/mo ongoing</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT MAKES DIFFERENT ─── -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-label">Why Us</div>
+    <h2 class="section-title">This Isn't a Logo and a Squarespace Template</h2>
+    <p class="section-sub">Most branding agencies give you a colour palette and wave goodbye. We give you an AI-powered business.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="tag">Inside Out</div>
+        <h3>We Start With Inner Work</h3>
+        <p>Before a single pixel is designed, we understand who you are at your core — your voice, your values, your purpose. The brand we build IS you.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="tag">AI Agents</div>
+        <h3>Custom Agents, Not Generic Tools</h3>
+        <p>Your agents are trained on YOUR voice from the discovery session. They don't sound like AI — they sound like you on your best day. And they get better over time.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="tag">4-Pillar Visibility</div>
+        <h3>Optimized for AI Search</h3>
+        <p>Every page is built with The ELEVATE Method — SEO, AEO, GEO, and LLMO. You show up in Google, AI Overviews, ChatGPT, and Perplexity from launch.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="tag">Autopilot</div>
+        <h3>It Runs Without You</h3>
+        <p>Content creation, social scheduling, email sequences, calendar management, lead scoring — agents handle the repetitive work so you can focus on coaching.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="tag">Your Voice</div>
+        <h3>No Brand Personas</h3>
+        <p>We don't give you a "brand voice." We extract YOUR voice and train AI agents to use it. Everything they create sounds like you wrote it.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="tag">ROI</div>
+        <h3>Replaces a $90K/Year Team</h3>
+        <p>Content writer, social media manager, VA, SEO consultant — your AI agents do what that team does, for a one-time investment that pays for itself in weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="reveal" style="background:var(--bg-alt)">
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Frequently Asked</h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What exactly are the AI agents?</h3>
+        <p>Custom automation workflows trained on your voice and brand. They run on platforms like Paperclip, n8n, or Make — connected to your website, social accounts, email provider, and calendar. Think of them as a team that works 24/7 and sounds exactly like you.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does the whole process take?</h3>
+        <p>Foundation: 3 weeks. Launch: 4 weeks. Visibility: 5 weeks + 3 months ongoing. We build fast but never rush — your brand and agents need to be right.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will the agents actually sound like me?</h3>
+        <p>Yes. During discovery, we record how you naturally talk about your work. We extract your verbal patterns, favourite phrases, and sentence rhythm. Every agent is trained on this voice profile. We test with 3 sample outputs per agent and refine until you can't tell the difference.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What do I need to provide?</h3>
+        <p>Just yourself. Show up to the discovery session, give us access to your accounts, and provide feedback on drafts and agent outputs. We handle all the building, connecting, and testing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I pay in instalments?</h3>
+        <p>Yes. 2-payment plans (50/50) on all tiers. 3-payment plans (40/30/30) on Visibility. Monthly payment plans also available with a small premium.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What happens after the project is done?</h3>
+        <p>You own everything — the brand, the website, and all agent configurations. Foundation and Launch clients can continue with our Ongoing Growth plan ($197/month) for agent maintenance and content support. Visibility clients get 3 months included, then can continue monthly.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is The ELEVATE Method?</h3>
+        <p>Our 4-pillar search visibility framework: SEO (Google rankings), AEO (AI Overviews and Featured Snippets), GEO (Google AI generative citations), and LLMO (ChatGPT, Perplexity, and Claude recommendations). Most agencies only do SEO. We optimize for all four.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I already have a website?</h3>
+        <p>We can rebuild or optimize what you have. During the discovery session, we'll assess whether a refresh or full rebuild makes more sense. Either way, your AI agents get connected to whatever platform you're on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section reveal">
+  <div class="container">
+    <h2>Ready to Build a Brand That Runs Itself?</h2>
+    <p>Book a free discovery call. We'll talk about your coaching business, your goals, and how AI agents can take the manual work off your plate. No pressure — just a conversation.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="hero-cta">Book Your Discovery Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <p>&copy; 2026 <span>ElevateAI System</span> &mdash; Built from clarity. From breath. From purpose.</p>
+  <p style="font-size:.75rem;margin-top:.4rem"><a href="mailto:sunny@elevateaisystem.com" style="color:var(--text-muted);text-decoration:none">sunny@elevateaisystem.com</a></p>
+</footer>
+
+<!-- ─── SCROLL REVEAL ─── -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+});
+</script>
+
+</body>
+</html>

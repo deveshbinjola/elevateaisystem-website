@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missy Rose · Coach Platform Pilot · Action Tracker</title>
+<meta name="description" content="Action tracker for Missy Rose's 90-day Coach Platform pilot. Started 2026-05-12. First female coach onboarded.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8; --bg-alt:#F2F2EE; --green:#00FF41; --green-dark:#00CC34;
+  --navy:#0A0F1C; --navy-soft:#141A2C;
+  --text:#0A0F1C; --text-muted:#5A5A6E; --text-faint:#9CA3AF;
+  --border:#E5E5DD; --white:#FFFFFF; --card:#FFFFFF;
+  --amber:#B7791F; --amber-soft:#FFFBEB;
+  --red:#B42318; --red-soft:#FEE4E2;
+  --blue:#1D4ED8; --blue-soft:#EFF6FF;
+  --radius:14px; --radius-lg:22px;
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+.hero{background:var(--navy);color:var(--white);padding:80px 32px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(0,255,65,.10) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+.hero .eyebrow{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:18px;padding:5px 12px;background:rgba(0,255,65,.08);border:1px solid rgba(0,255,65,.25);border-radius:6px}
+.hero h1{font-size:clamp(2rem,5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .sub{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:720px;line-height:1.6}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+@media(max-width:780px){.hero-meta{grid-template-columns:repeat(2,1fr)}}
+.hero-meta div{padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px}
+.hero-meta span{display:block;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px}
+.hero-meta strong{font-size:1.05rem;color:var(--green);font-weight:800}
+
+.section{padding:56px 32px}
+.container{max-width:1040px;margin:0 auto}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px}
+.h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--navy);margin-bottom:12px}
+.lead{font-size:1rem;color:var(--text-muted);line-height:1.65;max-width:700px}
+
+.split{background:var(--white);border-bottom:1px solid var(--border)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+@media(max-width:780px){.split-grid{grid-template-columns:1fr}}
+.split-card{padding:28px 30px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--white)}
+.split-card.you{background:linear-gradient(180deg,rgba(0,204,52,.07) 0%,rgba(0,204,52,.02) 100%);border-color:rgba(0,204,52,.25)}
+.split-card.her{background:var(--bg-alt)}
+.split-card .badge{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:5px;margin-bottom:14px}
+.split-card.you .badge{background:rgba(0,204,52,.15);color:var(--green-dark)}
+.split-card.her .badge{background:var(--navy);color:var(--green)}
+.split-card h3{font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+.split-card .meta{font-size:.78rem;color:var(--text-muted);margin-bottom:18px;letter-spacing:.04em}
+.task{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border);align-items:flex-start}
+.task:first-of-type{border-top:none;padding-top:6px}
+.task .box{width:20px;height:20px;border-radius:5px;border:2px solid var(--text-faint);background:var(--white);margin-top:2px}
+.task .body{font-size:.93rem;line-height:1.5}
+.task .body strong{display:block;color:var(--navy);font-weight:700;margin-bottom:3px}
+.task .body span{color:var(--text-muted);font-size:.85rem}
+.task .pri{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.pri.p0{background:var(--red-soft);color:var(--red)}
+.pri.p1{background:var(--amber-soft);color:var(--amber)}
+.pri.p2{background:var(--blue-soft);color:var(--blue)}
+
+.context{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+@media(max-width:780px){.context-grid{grid-template-columns:1fr}}
+.ctx-card{padding:22px 24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius)}
+.ctx-card .tag{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px}
+.ctx-card h4{font-size:.98rem;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.005em}
+.ctx-card p{font-size:.88rem;color:var(--text-muted);line-height:1.55}
+
+.timeline-wrap{background:var(--white)}
+.timeline{margin-top:32px;border-left:2px solid var(--green);padding-left:30px;position:relative}
+.tl-item{position:relative;padding-bottom:30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-37px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--green);border:3px solid var(--white);box-shadow:0 0 0 2px var(--green)}
+.tl-item .when{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);margin-bottom:5px}
+.tl-item h4{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:5px;letter-spacing:-.005em}
+.tl-item p{font-size:.9rem;color:var(--text-muted);line-height:1.5}
+
+.callout{background:var(--navy);color:var(--white);padding:40px 32px}
+.callout-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+@media(max-width:780px){.callout-inner{grid-template-columns:1fr;gap:14px}}
+.callout .icon{width:54px;height:54px;border-radius:14px;background:rgba(0,255,65,.12);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--green)}
+.callout h3{font-size:1.15rem;font-weight:800;color:var(--green);margin-bottom:6px;letter-spacing:-.01em}
+.callout p{font-size:.95rem;color:rgba(255,255,255,.75);line-height:1.55}
+
+footer{padding:32px;text-align:center;font-size:.78rem;color:var(--text-faint);background:var(--bg)}
+footer .mono{font-size:.72rem;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Pilot Tracker · 2026-05-12</span>
+    <h1>Missy Rose <em>Coach Platform Pilot</em></h1>
+    <p class="sub">90-day free trial. First female coach onboarded. The proving case for whether the voice spine, the lead surfaces and the content engine actually work outside the male-coach ICP.</p>
+    <div class="hero-meta">
+      <div><span>Start</span><strong>2026-05-12</strong></div>
+      <div><span>30-Day Check</span><strong>2026-06-11</strong></div>
+      <div><span>60-Day Check</span><strong>2026-07-11</strong></div>
+      <div><span>End / Decision</span><strong>2026-08-10</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section split">
+  <div class="container">
+    <span class="label">Split of Work</span>
+    <h2 class="h2">Who owes what, and by when</h2>
+    <p class="lead">Two columns. Left is on Sunny. Right is on Missy. Nothing here is vague. Every item has an owner and a do-by date.</p>
+
+    <div class="split-grid">
+      <div class="split-card you">
+        <span class="badge">Sunny owns</span>
+        <h3>Platform side</h3>
+        <div class="meta">5 items · 2 P0 · 2 P1 · 1 P2</div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Female-coach voice adaptation <span class="pri p0">P0</span></strong>
+            <span>Branch the Instagram-import voice extractor by audience. Seed women-coach few-shot examples (somatic, nervous system, attachment). Strip male-coded copy from default templates. Spec in memory.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Brand kit customisation <span class="pri p0">P0</span></strong>
+            <span>Apply Missy's brand kit to her tenant once she sends spec. Playfair Display font, soft pinks + muted greens palette. Confirm with her before content generation.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Audit quiz for men's-work language <span class="pri p1">P1</span></strong>
+            <span>Read the 60-75 min quiz end to end. Flag every word that reads men's-work-coded ("edge", "brotherhood", "container", "warrior"). Write parallel phrasing for women-audience coaches.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Set the feedback loop <span class="pri p1">P1</span></strong>
+            <span>Lightweight 15-min check-in cadence at day 14, 30, 60, 90. Async Loom or written, whatever she'll actually use. Log every edit she makes to AI drafts in the first 30 days.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Route the "content hosting" ask elsewhere <span class="pri p2">P2</span></strong>
+            <span>Her ask for a client-facing tool library between sessions is out of scope. Politely suggest Notion or Kajabi. Do not bolt it onto the platform.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-card her">
+        <span class="badge">Missy owes</span>
+        <h3>Her side</h3>
+        <div class="meta">3 items · 2 P0 · 1 P1</div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Upload lead CSV <span class="pri p0">P0</span></strong>
+            <span>Pull her MailChimp list + any past inquiries into a CSV and upload to the platform. Without this, lead surfaces are empty and she can't evaluate the leak-plugging layer.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Send brand kit specification <span class="pri p0">P0</span></strong>
+            <span>Written spec: Playfair Display, exact hex codes for her pinks + greens, any logo or wordmark files. Email or upload. Confirms tenant customisation.</span>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="box"></div>
+          <div class="body">
+            <strong>Test every feature, give honest feedback <span class="pri p1">P1</span></strong>
+            <span>Voice mapping (does the first generated caption sound like her), lead surfaces, content scaffolds, repurposing, weekly outreach tracker. Tell Sunny what feels off, especially anything that reads male-coded.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section context">
+  <div class="container">
+    <span class="label">Why she matters</span>
+    <h2 class="h2">First female user = first signal</h2>
+    <p class="lead">The platform was built on Sunny's male-coach ICP. Missy is the canary. Three things to watch.</p>
+
+    <div class="context-grid">
+      <div class="ctx-card">
+        <div class="tag">Watch #1 · Voice</div>
+        <h4>Does the first caption sound like her?</h4>
+        <p>The acceptance test for the female-voice adaptation. If she says "this doesn't sound like me", iterate the few-shot block. Architecture stays.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="tag">Watch #2 · Lead Layer</div>
+        <h4>Does the inbox fill up in 15 minutes?</h4>
+        <p>CSV upload + MailChimp forward. If the platform can't show her a populated inbox the first session, time-to-value fails.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="tag">Watch #3 · Copy Hygiene</div>
+        <h4>Where does male-coded language slip through?</h4>
+        <p>"Brothers", "the work", "warrior", "edge", "container". Anywhere Missy sees these in default copy is a defect to log.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section timeline-wrap">
+  <div class="container">
+    <span class="label">90-Day Cadence</span>
+    <h2 class="h2">Check-ins and decision points</h2>
+    <p class="lead">Async by default. 15 minutes max each. The decision at day 90 is whether she becomes a paying subscriber and a case study.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="when">Week 1 · 2026-05-12 to 2026-05-18</div>
+        <h4>Setup sprint</h4>
+        <p>Missy uploads CSV, sends brand kit. Sunny ships female-voice adaptation, applies brand kit to her tenant. She runs voice mapping. First generated caption is the gate.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Day 14 · 2026-05-26</div>
+        <h4>First check-in</h4>
+        <p>Async Loom or written. Two questions: what's surprised you, what's felt off. Log every edit she's made to AI drafts.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Day 30 · 2026-06-11</div>
+        <h4>Voice acceptance read-out</h4>
+        <p>Is the voice spine working for a women-audience coach? If not, ship a second iteration of the few-shot block before day 45.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Day 60 · 2026-07-11</div>
+        <h4>Mid-pilot signal</h4>
+        <p>Is she using the platform weekly without prompting? If yes, this is the proof. If no, find the friction and fix it before day 90.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Day 90 · 2026-08-10</div>
+        <h4>Decision + case study</h4>
+        <p>Does she want to keep using it at $100/mo + $497 onboarding (or grandfathered terms). If yes, record a 20-minute case study. Either way, harvest every learning for the next female onboarding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="callout">
+  <div class="callout-inner">
+    <div class="icon">★</div>
+    <div>
+      <h3>The principle this tracker enforces</h3>
+      <p>One platform, audience-aware defaults. Branch the prompts and templates by audience signal, never water the voice down to neutral. Missy proves whether the branch works.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono">missy-pilot-onboarding-2026-05-12.html · Coach Platform Pilot Tracker</div>
+  <div style="margin-top:6px">sunny.binjola@gmail.com · ElevateAI System</div>
+</footer>
+
+</body>
+</html>

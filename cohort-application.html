@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Augmented Coach Founding Cohort | ElevateAI</title>
+<meta name="description" content="Apply to the Augmented Coach founding cohort. 8 questions. 4 minutes. For men's coaches and creators earning $10K+/month.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.elevateaisystem.com/cohort-application">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#00FF41;--green-dark:#00CC34;--navy:#0A0F1C;--bg:#FAFAF8;--bg-alt:#F2F2EE;--white:#FFFFFF;--text:#1A1A2E;--text-muted:#5A5A6E;--border:#E0E0D8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding:3rem 1.5rem 5rem}
+.wrap{max-width:680px;margin:0 auto}
+.hdr{text-align:center;margin-bottom:2.5rem}
+.hdr-badge{display:inline-block;padding:.3rem .9rem;background:rgba(0,255,65,.15);color:var(--green-dark);border-radius:50px;font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
+.hdr h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-bottom:.6rem}
+.hdr p{font-size:1rem;color:var(--text-muted);max-width:520px;margin:0 auto}
+.progress{height:6px;background:var(--bg-alt);border-radius:50px;overflow:hidden;margin:2rem 0}
+.progress-bar{height:100%;background:var(--green);border-radius:50px;transition:width .4s;width:0%}
+form{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2rem 1.8rem;box-shadow:0 8px 32px rgba(0,0,0,.04)}
+.field{margin-bottom:1.6rem}
+.field label{display:block;font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;letter-spacing:.01em}
+.field .hint{font-size:.75rem;color:var(--text-muted);margin-bottom:.5rem;font-weight:500}
+.field input,.field textarea,.field select{width:100%;padding:.85rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--text);background:var(--white);transition:border-color .2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green)}
+.field textarea{resize:vertical;min-height:90px}
+.radio-group{display:grid;gap:.5rem}
+.radio-group label{display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;font-weight:600;font-size:.88rem;transition:all .2s;margin:0}
+.radio-group label:hover{border-color:var(--green)}
+.radio-group input[type=radio]{margin:0}
+.radio-group input[type=radio]:checked + span{color:var(--green-dark)}
+.radio-group label:has(input:checked){border-color:var(--green);background:rgba(0,255,65,.05)}
+.submit{width:100%;background:var(--green);color:var(--navy);padding:1.1rem 1.5rem;border:none;border-radius:50px;font-family:inherit;font-weight:800;font-size:1rem;letter-spacing:.02em;cursor:pointer;margin-top:1rem;transition:all .2s}
+.submit:hover{background:var(--green-dark);transform:translateY(-1px)}
+.submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.foot{text-align:center;margin-top:2rem;font-size:.75rem;color:var(--text-muted)}
+.success{display:none;text-align:center;padding:3rem 1rem;background:var(--white);border:2px solid var(--green);border-radius:20px;margin-top:1rem}
+.success.on{display:block}
+.success h2{font-size:1.6rem;color:var(--navy);margin-bottom:1rem}
+.success p{color:var(--text-muted);margin-bottom:1.5rem}
+.success a{display:inline-block;background:var(--green);color:var(--navy);padding:.9rem 2rem;border-radius:50px;font-weight:800;text-decoration:none}
+.err{color:#D64545;font-size:.78rem;margin-top:.4rem;display:none}
+.err.on{display:block}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-badge">◆ Founding Cohort · 10 Seats</div>
+    <h1>Apply for the Augmented Coach Cohort</h1>
+    <p>8 questions. 4 minutes. We read every application within 24 hours and reply with next steps.</p>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="pb"></div></div>
+
+  <form id="applyForm" novalidate>
+
+    <div class="field">
+      <label for="name">Your name *</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="email">Best email *</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label>Q1. What's your revenue band right now? *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="revenue" value="pre_10k" required><span>Pre-$10K/mo (not a fit yet — here's my bigger play)</span></label>
+        <label><input type="radio" name="revenue" value="10_25k"><span>$10K–$25K/mo</span></label>
+        <label><input type="radio" name="revenue" value="25_50k"><span>$25K–$50K/mo</span></label>
+        <label><input type="radio" name="revenue" value="50_plus"><span>$50K+/mo</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="icp">Q2. Who do you coach, in one sentence? *</label>
+      <div class="hint">Who they are, what shift you create for them.</div>
+      <textarea id="icp" name="icp" required placeholder="I coach men who [describe who] through [describe what shift]."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="win">Q3. Your sharpest client win in the last 6 months *</label>
+      <div class="hint">One story. Specifics over abstractions.</div>
+      <textarea id="win" name="win" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="claim">Q4. What claim can you NOT yet make — but want to be true in 6 months? *</label>
+      <div class="hint">The proof you're missing. Be honest, this is diagnostic.</div>
+      <textarea id="claim" name="claim" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="voice_leak">Q5. Where does your voice leak hardest right now? *</label>
+      <div class="hint">DMs? Stage? Podcast? Newsletter? Where are you most yourself?</div>
+      <textarea id="voice_leak" name="voice_leak" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="ladder">Q6. Your current offer ladder (free → highest) *</label>
+      <div class="hint">Quick dump. Freebies → workshops → 1:1 → group → retreat → whatever.</div>
+      <textarea id="ladder" name="ladder" required placeholder="e.g. Free newsletter → $97 workshop → $5K 1:1 → $12K retreat"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Q7. Pay timeline if accepted *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="pay_timing" value="now" required><span>I can pay this week — want to lock a founding seat</span></label>
+        <label><input type="radio" name="pay_timing" value="2_weeks"><span>Within 2 weeks</span></label>
+        <label><input type="radio" name="pay_timing" value="exploring"><span>Still exploring — want a fit call</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="why">Q8. Why you. Why now. (2–3 sentences.) *</label>
+      <textarea id="why" name="why" required></textarea>
+    </div>
+
+    <button type="submit" class="submit" id="submitBtn">Submit application →</button>
+    <p class="err" id="errMsg">Something broke on our end. Email sunny.binjola@gmail.com directly and we'll handle it.</p>
+  </form>
+
+  <div class="success" id="successBox">
+    <h2>Application received.</h2>
+    <p>Check your inbox within 24 hours. If you're a fit, I'll send a Cal.com link for a 20-min fit call.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call">Book a fit call now instead →</a>
+  </div>
+
+  <p class="foot">Your application goes straight to Sunny. No sales team. No automation chain.<br>Questions? <a href="mailto:sunny.binjola@gmail.com" style="color:var(--green-dark);font-weight:700">sunny.binjola@gmail.com</a></p>
+</div>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL = 'https://modepuhwinzdngirlnkz.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZGVwdWh3aW56ZG5naXJsbmt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1MDYxNTEsImV4cCI6MjA4ODA4MjE1MX0.1S2wC8CxE8_MCTmsGwoiOoqNYw_lXIM7_CT_-AG6DAI';
+const supa = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+const form = document.getElementById('applyForm');
+const pb = document.getElementById('pb');
+const submitBtn = document.getElementById('submitBtn');
+const errMsg = document.getElementById('errMsg');
+const successBox = document.getElementById('successBox');
+
+// Live progress bar based on filled required fields
+function updateProgress(){
+  const reqd = form.querySelectorAll('[required]');
+  let filled = 0;
+  const groups = new Set();
+  reqd.forEach(el => {
+    if(el.type === 'radio'){
+      if(form.querySelector(`[name="${el.name}"]:checked`)) groups.add(el.name);
+    } else if(el.value.trim()){
+      filled++;
+    }
+  });
+  const total = [...new Set([...reqd].map(e => e.type === 'radio' ? e.name : e.id))].length;
+  const done = filled + groups.size;
+  pb.style.width = Math.min(100, (done/total)*100) + '%';
+}
+form.addEventListener('input', updateProgress);
+form.addEventListener('change', updateProgress);
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+  errMsg.classList.remove('on');
+
+  const data = Object.fromEntries(new FormData(form));
+  data.submitted_at = new Date().toISOString();
+  data.source = 'cohort-application-page';
+
+  const { error } = await supa.from('cohort_applications').insert([data]);
+
+  if(error){
+    console.error(error);
+    errMsg.classList.add('on');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit application →';
+    return;
+  }
+
+  form.style.display = 'none';
+  successBox.classList.add('on');
+
+  if(window.apollo && window.apollo.track){
+    window.apollo.track('Cohort Application Submitted', { revenue: data.revenue, pay_timing: data.pay_timing });
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+<!-- Apollo tracker -->
+<script>
+!function(n,t){var o,r,e=["getVisitorInfo","identify","page","track"];for(n.apollo=n.apollo||{},n.apollo.loaded=!0,n.apollo.methods=e,n.apollo.factory=function(t){return function(){var o=Array.prototype.slice.call(arguments);return o.unshift(t),n.apollo.push(o),n.apollo}},o=0;o<e.length;o++)r=e[o],n.apollo[r]=n.apollo.factory(r);n.apollo.load=function(n){var o=t.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+(Math.floor(Math.random()*1e6)+1)+"&appId="+n;var r=t.getElementsByTagName("script")[0];r.parentNode.insertBefore(o,r)},n.apollo.load("69af333ec98ca400116945f0")}(window,document);
+</script>
+
+</body>
+</html>

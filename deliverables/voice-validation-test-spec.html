@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Validation Test · Onboarding Spec | ElevateAI</title>
+<meta name="description" content="Onboarding feature spec. The moment of truth that proves voice signal before a coach pays. Rewrite generic paragraphs in their voice, they score the match, decide if the platform is real.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8; --bg-alt:#F2F2EE; --green:#00FF41; --green-dark:#00CC34;
+  --navy:#0A0F1C; --navy-soft:#141A2C;
+  --text:#0A0F1C; --text-muted:#5A5A6E; --text-faint:#9CA3AF;
+  --border:#E5E5DD; --white:#FFFFFF; --card:#FFFFFF;
+  --amber:#B7791F; --amber-soft:#FFFBEB;
+  --red:#B42318; --red-soft:#FEE4E2;
+  --blue:#1D4ED8; --blue-soft:#EFF6FF;
+  --radius:14px; --radius-lg:22px;
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+.hero{background:var(--navy);color:var(--white);padding:90px 32px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(0,255,65,.10) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
+.hero .eyebrow{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:18px;padding:5px 12px;background:rgba(0,255,65,.08);border:1px solid rgba(0,255,65,.25);border-radius:6px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:680px;line-height:1.6}
+.hero-meta{display:flex;gap:32px;margin-top:32px;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.hero-meta span strong{color:var(--green);font-weight:800;display:block;font-size:1rem;letter-spacing:0;text-transform:none;margin-top:2px}
+
+.section{padding:64px 32px}
+.container{max-width:980px;margin:0 auto}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px}
+.h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--navy);margin-bottom:14px}
+.lead{font-size:1rem;color:var(--text-muted);line-height:1.65;max-width:680px}
+
+/* Why */
+.why{background:var(--white);border-bottom:1px solid var(--border)}
+.why-quote{margin-top:28px;padding:28px 32px;background:var(--bg-alt);border-left:4px solid var(--green);border-radius:0 12px 12px 0;font-size:1.05rem;line-height:1.6;color:var(--navy);font-weight:600}
+.why-quote .src{display:block;margin-top:10px;font-size:.78rem;color:var(--text-muted);font-weight:600;font-family:'JetBrains Mono',monospace}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+@media (max-width:780px){.why-grid{grid-template-columns:1fr}}
+.why-card{padding:22px 24px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius)}
+.why-card h4{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:6px}
+.why-card p{font-size:.86rem;color:var(--text-muted);line-height:1.55}
+
+/* Test */
+.test{background:var(--bg-alt)}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+@media (max-width:880px){.flow-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.flow-grid{grid-template-columns:1fr}}
+.flow-step{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative}
+.flow-step .num{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:8px;background:var(--navy);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'JetBrains Mono',monospace;font-size:.78rem}
+.flow-step h4{font-size:.95rem;font-weight:800;color:var(--navy);margin:8px 0 6px;letter-spacing:-.005em}
+.flow-step p{font-size:.84rem;color:var(--text-muted);line-height:1.55}
+
+/* Sample */
+.sample{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sample-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+@media (max-width:780px){.sample-pair{grid-template-columns:1fr}}
+.sample-card{padding:24px 26px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--bg-alt)}
+.sample-card.before{background:#FFF7F5;border-color:#F2D5CD}
+.sample-card.after{background:linear-gradient(180deg,rgba(0,204,52,.06) 0%,rgba(0,204,52,.02) 100%);border-color:rgba(0,204,52,.25)}
+.sample-card .tag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:5px;margin-bottom:14px}
+.sample-card.before .tag{background:rgba(180,35,24,.1);color:var(--red)}
+.sample-card.after .tag{background:rgba(0,204,52,.15);color:var(--green-dark)}
+.sample-card p{font-size:.95rem;line-height:1.65;color:var(--text);font-weight:500}
+
+/* Score */
+.score{background:var(--navy);color:var(--white);padding:80px 32px}
+.score .label{color:var(--green)}
+.score .h2{color:var(--white)}
+.score .lead{color:rgba(255,255,255,.7)}
+.score-table{margin-top:32px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);overflow:hidden}
+.score-row{display:grid;grid-template-columns:80px 1fr 200px;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.92rem;align-items:center}
+.score-row.head{background:rgba(0,255,65,.06);font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.score-row .pt{font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--green);font-size:1.1rem}
+.score-row .desc{color:rgba(255,255,255,.85)}
+.score-row .action{font-size:.84rem;color:rgba(255,255,255,.6);text-align:right}
+.score-row:last-child{border-bottom:0}
+@media (max-width:680px){.score-row{grid-template-columns:60px 1fr;gap:6px}.score-row .action{grid-column:1 / -1;text-align:left;padding-top:6px}}
+
+/* Build */
+.build{background:var(--bg-alt)}
+.build-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+@media (max-width:780px){.build-grid{grid-template-columns:1fr}}
+.build-card{padding:26px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.build-card .ico{width:36px;height:36px;border-radius:9px;background:var(--navy);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'JetBrains Mono',monospace;font-size:.78rem;margin-bottom:14px}
+.build-card h4{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.005em}
+.build-card p{font-size:.86rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px}
+.build-card ul{list-style:none;padding:0}
+.build-card li{font-size:.84rem;color:var(--text);padding:6px 0 6px 20px;position:relative;line-height:1.5}
+.build-card li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--green-dark);border-radius:2px}
+
+/* Acceptance */
+.accept{background:var(--white);border-top:1px solid var(--border)}
+.accept-list{margin-top:28px;display:grid;gap:12px}
+.accept-item{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 22px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);align-items:flex-start}
+.accept-item .check{width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;margin-top:1px}
+.accept-item p{font-size:.95rem;line-height:1.55;color:var(--text);font-weight:500}
+.accept-item p strong{color:var(--navy);font-weight:800}
+
+/* Footer */
+.foot{background:var(--white);border-top:1px solid var(--border);padding:32px;text-align:center}
+.foot p{font-size:.78rem;color:var(--text-muted);margin-bottom:4px}
+.foot a{color:var(--text-muted);text-decoration:none}
+.foot a:hover{color:var(--green-dark)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Onboarding Feature Spec · v1</span>
+    <h1>The voice validation test. <em>Prove the spine works before they pay.</em></h1>
+    <p>Steve's insight from the demo: voice is the spine. If a coach can't feel themselves in the output, none of the leads, content, or carousels matter. This is the moment of truth, built into onboarding, that decides whether the platform is real for them.</p>
+    <div class="hero-meta">
+      <span>Time to complete<strong>3 to 5 min</strong></span>
+      <span>Lives in<strong>Onboarding step 3</strong></span>
+      <span>Pass threshold<strong>4 out of 5 avg</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why">
+  <div class="container">
+    <div class="label">Why this exists</div>
+    <h2 class="h2">Voice is either there or it isn't. Make them feel it on day one.</h2>
+    <p class="lead">Coaches have been burned by AI tools that sound generic. They sign up, generate a post, recognize none of themselves in it, and quietly stop using the product. The voice validation test removes that drift by forcing the moment of recognition into the first session, when they still have energy to engage.</p>
+
+    <div class="why-quote">
+      "The language wasn't perfect yet. The carousels are good but the voice still sounds a bit AI. If you can prove the voice works in the first 5 minutes, everything else lands. If you can't, nothing else matters."
+      <span class="src">Steve, demo session, 2026-05-07</span>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>Prevents silent churn</h4>
+        <p>Coaches who never trust the voice quietly stop logging in. By surfacing voice match in onboarding, we replace silent attrition with a visible decision the user makes consciously.</p>
+      </div>
+      <div class="why-card">
+        <h4>Sharpens the voice profile</h4>
+        <p>The user's score is training signal. A 2 means the voice profile missed; we re-run extraction with their flagged words. A 5 means we locked in. Either way, the system gets sharper.</p>
+      </div>
+      <div class="why-card">
+        <h4>Sets the bar for paid conversion</h4>
+        <p>If voice scores below threshold, we don't pitch the upgrade. We loop them back through Instagram import or the questionnaire. Trust first, payment second.</p>
+      </div>
+      <div class="why-card">
+        <h4>Becomes the demo wedge</h4>
+        <p>"Take 3 minutes. Rewrite a generic paragraph in your voice. If it doesn't sound like you, you don't pay." That's the line that closes pilots, not features.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEST FLOW -->
+<section class="section test">
+  <div class="container">
+    <div class="label">The Flow</div>
+    <h2 class="h2">Four steps. Three to five minutes. One decision.</h2>
+    <p class="lead">Runs after voice extraction (Instagram import or questionnaire) and before content generation unlocks. The user can't generate posts until they pass or explicitly choose to retry voice training.</p>
+
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="num">01</div>
+        <h4>Show the original</h4>
+        <p>3 generic paragraphs about a topic in their niche. Visibly bland on purpose. Labeled "Generic version."</p>
+      </div>
+      <div class="flow-step">
+        <div class="num">02</div>
+        <h4>Show the rewrite</h4>
+        <p>Same 3 paragraphs, rewritten in their voice using the extracted profile. Labeled "Your version." Side by side with the original on desktop, stacked on mobile.</p>
+      </div>
+      <div class="flow-step">
+        <div class="num">03</div>
+        <h4>They score it</h4>
+        <p>Single 1 to 5 slider per paragraph. Plain question: "Does this sound like you?" Plus an optional "what's off" text field per paragraph.</p>
+      </div>
+      <div class="flow-step">
+        <div class="num">04</div>
+        <h4>System decides</h4>
+        <p>Average score &ge; 4 unlocks the platform. 3 to 3.9 triggers a single re-train pass. Below 3 sends them back to questionnaire with their flagged words pre-loaded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE -->
+<section class="section sample">
+  <div class="container">
+    <div class="label">What the user sees</div>
+    <h2 class="h2">Side by side. No marketing copy. No spin.</h2>
+    <p class="lead">The contrast does the work. If the rewrite has signal, the user feels it before they finish reading. If the rewrite is generic, they catch it on the first sentence.</p>
+
+    <div class="sample-pair">
+      <div class="sample-card before">
+        <span class="tag">Generic version</span>
+        <p>Many coaches struggle with finding consistent leads in today's competitive market. The good news is that with the right systems and AI tools, you can build a sustainable pipeline that brings in qualified prospects every single week. Let's explore how to set this up properly.</p>
+      </div>
+      <div class="sample-card after">
+        <span class="tag">Your version</span>
+        <p>Most coaches don't have a lead problem. They have a system problem. The leads were always there. The pipeline was just leaking. Fix the leak. Build the rails. The leads come.</p>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:24px">The right side has rhythm, voice, sentence-length variation, and an opinion. The left side has none of those. The user scores honestly because the difference is felt, not argued.</p>
+  </div>
+</section>
+
+<!-- SCORING -->
+<section class="score">
+  <div class="container">
+    <div class="label">Scoring + thresholds</div>
+    <h2 class="h2">Average across 3 paragraphs. The system acts on the number.</h2>
+    <p class="lead">No human in the loop on the threshold. The user scores, the system routes. This keeps the experience fast and removes any sense that we're grading their honesty.</p>
+
+    <div class="score-table">
+      <div class="score-row head">
+        <div class="pt">Score</div>
+        <div class="desc">What it means</div>
+        <div class="action">System action</div>
+      </div>
+      <div class="score-row">
+        <div class="pt">4.0+</div>
+        <div class="desc">Voice locked. Coach feels themselves in the output.</div>
+        <div class="action">Unlock platform. Save profile.</div>
+      </div>
+      <div class="score-row">
+        <div class="pt">3.0 to 3.9</div>
+        <div class="desc">Close but not there. Specific words felt off.</div>
+        <div class="action">Single re-train pass. Try again.</div>
+      </div>
+      <div class="score-row">
+        <div class="pt">2.0 to 2.9</div>
+        <div class="desc">Voice missed. Tone is wrong, not just word choice.</div>
+        <div class="action">Back to import or questionnaire.</div>
+      </div>
+      <div class="score-row">
+        <div class="pt">Below 2.0</div>
+        <div class="desc">Profile failed. Rare. Means extraction broke.</div>
+        <div class="action">Human review. Flag for Sunny.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD -->
+<section class="section build">
+  <div class="container">
+    <div class="label">Build spec</div>
+    <h2 class="h2">What ships in the first cut.</h2>
+    <p class="lead">Scoped for a single sprint. Voice extraction already exists; this feature is the layer on top that surfaces and validates it.</p>
+
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="ico">01</div>
+        <h4>Generic paragraph library</h4>
+        <p>Curated set of bland baseline paragraphs across 5 niches: men's coaching, business coaching, fitness, mindset, creator economy.</p>
+        <ul>
+          <li>15 paragraphs minimum (3 per niche)</li>
+          <li>Stored as JSON in Supabase, niche-tagged</li>
+          <li>Random selection of 3 at test time, 1 per niche if user flagged multi</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="ico">02</div>
+        <h4>Voice rewrite endpoint</h4>
+        <p>Single API call that takes generic paragraph + voice profile and returns rewrite. Reuses the existing content generation prompt with a "rewrite this faithfully in their voice" instruction.</p>
+        <ul>
+          <li>Claude API, ~3 to 5 second response</li>
+          <li>Deterministic temperature (0.3) for consistency</li>
+          <li>Token budget: 800 in, 800 out per paragraph</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="ico">03</div>
+        <h4>Side-by-side UI</h4>
+        <p>Two-column layout on desktop, stacked on mobile. Each paragraph row has its own slider and optional text field.</p>
+        <ul>
+          <li>Slider with discrete stops at 1, 2, 3, 4, 5</li>
+          <li>Mid-slider label: "Sounds like me"</li>
+          <li>"What's off" field: 200 char max, optional</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="ico">04</div>
+        <h4>Routing engine</h4>
+        <p>On submit, compute average. Match against thresholds. Route the user without an intermediate page.</p>
+        <ul>
+          <li>Pass: navigate to dashboard with onboarding complete flag</li>
+          <li>Re-train: regenerate with flagged words inserted into prompt</li>
+          <li>Fail: send back to voice import step with progress preserved</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="ico">05</div>
+        <h4>Telemetry</h4>
+        <p>Every test attempt logged. We need this data to tune the voice profile pipeline over time.</p>
+        <ul>
+          <li>cp_voice_test_attempts table in Supabase</li>
+          <li>Fields: user_id, attempt_n, scores[], flagged_words[], outcome, ts</li>
+          <li>Dashboard cell on Sunny's command view: % first-attempt pass</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="ico">06</div>
+        <h4>Re-train logic</h4>
+        <p>If avg lands in 3.0 to 3.9, take the user's "what's off" text and inject it into the rewrite prompt as negative examples ("avoid: X, Y, Z").</p>
+        <ul>
+          <li>Hard cap of 1 re-train pass before falling back to voice import</li>
+          <li>Re-train counts toward attempt_n in telemetry</li>
+          <li>Show progress: "Tuning voice... ~10 seconds"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCEPTANCE -->
+<section class="section accept">
+  <div class="container">
+    <div class="label">Acceptance criteria</div>
+    <h2 class="h2">Six things must be true before this ships to the pilot.</h2>
+    <p class="lead">If any of these miss, hold the release. The whole point of this feature is trust. A buggy version causes the exact problem it's meant to solve.</p>
+
+    <div class="accept-list">
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>3 paragraphs render in under 8 seconds total</strong> on a fresh session. If the user waits more than 10 seconds for output they will close the tab.</p>
+      </div>
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>The rewrite uses the actual voice profile</strong>, not a mocked output. Test with 3 known voice profiles and confirm three distinctly different rewrites of the same generic paragraph.</p>
+      </div>
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>Re-train cycle works end to end</strong>. User flags "too corporate" on a paragraph, system re-runs, second rewrite measurably less corporate (verified in QA pass with 5 sample profiles).</p>
+      </div>
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>No em-dashes in any generated output</strong>. The rewrite prompt explicitly bans them. QA must grep all 15 baseline-paragraph rewrites and confirm zero em-dashes shipped.</p>
+      </div>
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>Telemetry writes correctly to cp_voice_test_attempts</strong>. Manually verified by triggering 5 test runs and reading the table. Dashboard cell on command view reflects the data within 60 seconds.</p>
+      </div>
+      <div class="accept-item">
+        <div class="check">&#10003;</div>
+        <p><strong>Mobile layout works on a 390px viewport</strong>. Stacked paragraphs, full-width sliders, no horizontal scroll. Tested on real iOS Safari, not just Chrome devtools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <p><strong>ElevateAI System</strong> &nbsp;&middot;&nbsp; Voice validation test &middot; Internal product spec</p>
+  <p><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+  <p style="margin-top:14px;font-size:.7rem;color:var(--text-faint)">For Sunny + AI Chief of Staff. Not for distribution.</p>
+</footer>
+
+</body>
+</html>

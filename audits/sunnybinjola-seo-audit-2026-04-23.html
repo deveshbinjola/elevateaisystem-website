@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sunnybinjola.com — SEO Audit — 2026-04-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0F1C;--bg2:#111827;--card:#141C30;--border:#1E2840;
+  --text:#E8ECF3;--muted:#8A94A8;--accent:#00FF41;--accent2:#4FC3F7;
+  --red:#FF5252;--amber:#FFB74D;--yellow:#FFEB3B;--green:#69F0AE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding:48px 56px;min-height:100vh;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.container{max-width:1200px;margin:0 auto;}
+header{border-bottom:2px solid var(--accent);padding-bottom:32px;margin-bottom:40px;}
+.site-label{color:var(--muted);font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+h1{font-size:44px;font-weight:700;letter-spacing:-1px;margin-bottom:8px;}
+.audit-type{color:var(--accent);font-size:18px;font-weight:500;margin-bottom:24px;}
+.header-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:flex-end;}
+.score-badge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 32px;text-align:center;min-width:220px;}
+.score-val{font-size:56px;font-weight:700;line-height:1;color:var(--amber);}
+.score-max{color:var(--muted);font-size:18px;margin-left:4px;}
+.grade{font-size:36px;font-weight:700;margin-top:12px;color:var(--amber);}
+.score-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+.delta-chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text);margin-top:12px;}
+.delta-up{color:var(--green);}
+.delta-down{color:var(--red);}
+section{margin-bottom:48px;}
+h2{font-size:22px;font-weight:600;letter-spacing:-.3px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);color:var(--text);}
+h3{font-size:16px;font-weight:600;margin-bottom:12px;color:var(--text);}
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.sig-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.sig-title{font-size:13px;color:var(--muted);margin-bottom:8px;line-height:1.3;}
+.sig-score{font-size:24px;font-weight:700;}
+.sig-score .max{font-size:14px;color:var(--muted);font-weight:400;}
+.bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:10px;}
+.bar-fill{height:100%;border-radius:3px;}
+.bar-good{background:var(--green);}
+.bar-warn{background:var(--amber);}
+.bar-bad{background:var(--red);}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+th{background:var(--bg2);text-align:left;padding:12px 16px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:500;}
+td{padding:14px 16px;font-size:14px;border-top:1px solid var(--border);vertical-align:top;}
+tr:first-child td{border-top:none;}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.badge-high{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-med{background:rgba(255,183,77,.15);color:var(--amber);}
+.badge-low{background:rgba(255,82,82,.15);color:var(--red);}
+.badge-yes{background:rgba(105,240,174,.15);color:var(--green);}
+.badge-no{background:rgba(138,148,168,.15);color:var(--muted);}
+.issue-card{border-left:4px solid;padding:16px 20px;background:var(--card);border-radius:8px;margin-bottom:12px;}
+.issue-critical{border-color:var(--red);}
+.issue-high{border-color:var(--amber);}
+.issue-medium{border-color:var(--yellow);}
+.win-card{border-left:4px solid var(--green);padding:16px 20px;background:var(--card);border-radius:8px;margin-bottom:12px;}
+.severity{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.sev-crit{color:var(--red);}
+.sev-high{color:var(--amber);}
+.sev-med{color:var(--yellow);}
+.sev-win{color:var(--green);}
+.issue-title{font-weight:600;margin-bottom:6px;}
+.issue-fix{color:var(--muted);font-size:13px;}
+.highlight-box{background:linear-gradient(135deg,rgba(0,255,65,.1),rgba(79,195,247,.05));border:1px solid var(--accent);border-radius:12px;padding:24px;margin-bottom:16px;}
+.highlight-box h3{color:var(--accent);margin-bottom:14px;}
+.quick-win{padding:10px 0;border-bottom:1px solid rgba(0,255,65,.15);display:flex;gap:12px;}
+.quick-win:last-child{border-bottom:none;}
+.qw-num{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;min-width:24px;}
+.qw-body{flex:1;}
+.qw-kw{font-weight:600;}
+.qw-action{color:var(--muted);font-size:13px;margin-top:3px;}
+ol.action-list{padding-left:0;list-style:none;counter-reset:a;}
+ol.action-list li{counter-increment:a;padding:14px 0 14px 48px;border-bottom:1px solid var(--border);position:relative;}
+ol.action-list li:last-child{border-bottom:none;}
+ol.action-list li::before{content:counter(a);position:absolute;left:0;top:12px;background:var(--accent);color:var(--bg);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'IBM Plex Mono',monospace;}
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;}
+.grade-A{color:var(--green);} .grade-B{color:var(--accent2);} .grade-C{color:var(--amber);} .grade-D{color:#FF9800;} .grade-F{color:var(--red);}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="site-label">sunnybinjola.com</div>
+<div class="header-grid">
+<div>
+<h1>SEO Audit</h1>
+<div class="audit-type">Weekly Search Visibility Report · 23 April 2026</div>
+<div class="delta-chip"><span class="delta-up">▲ +3 pts</span> <span>vs last week (67 → 70)</span></div>
+</div>
+<div class="score-badge">
+<div><span class="score-val">70</span><span class="score-max">/100</span></div>
+<div class="grade grade-C">C</div>
+<div class="score-label">SEO Score</div>
+</div>
+</div>
+</header>
+
+<section>
+<h2>12-Signal Scorecard</h2>
+<div class="sig-grid">
+<div class="sig-card"><div class="sig-title">1. Title tags &amp; keyword optimisation</div><div class="sig-score">8<span class="max">/10</span></div><div class="bar"><div class="bar-fill bar-good" style="width:80%"></div></div></div>
+<div class="sig-card"><div class="sig-title">2. Meta descriptions present &amp; compelling</div><div class="sig-score">3<span class="max">/8</span></div><div class="bar"><div class="bar-fill bar-bad" style="width:38%"></div></div></div>
+<div class="sig-card"><div class="sig-title">3. H1 present, single, keyword-matched</div><div class="sig-score">7<span class="max">/8</span></div><div class="bar"><div class="bar-fill bar-good" style="width:88%"></div></div></div>
+<div class="sig-card"><div class="sig-title">4. H2/H3 heading hierarchy</div><div class="sig-score">4<span class="max">/5</span></div><div class="bar"><div class="bar-fill bar-good" style="width:80%"></div></div></div>
+<div class="sig-card"><div class="sig-title">5. Schema markup (JSON-LD)</div><div class="sig-score">3<span class="max">/10</span></div><div class="bar"><div class="bar-fill bar-bad" style="width:30%"></div></div></div>
+<div class="sig-card"><div class="sig-title">6. Indexed page count (67 URLs)</div><div class="sig-score">10<span class="max">/10</span></div><div class="bar"><div class="bar-fill bar-good" style="width:100%"></div></div></div>
+<div class="sig-card"><div class="sig-title">7. Internal linking structure</div><div class="sig-score">5<span class="max">/6</span></div><div class="bar"><div class="bar-fill bar-good" style="width:83%"></div></div></div>
+<div class="sig-card"><div class="sig-title">8. Page speed / mobile-friendly</div><div class="sig-score">5<span class="max">/6</span></div><div class="bar"><div class="bar-fill bar-good" style="width:83%"></div></div></div>
+<div class="sig-card"><div class="sig-title">9. Blog freshness &amp; cadence</div><div class="sig-score">6<span class="max">/8</span></div><div class="bar"><div class="bar-fill bar-warn" style="width:75%"></div></div></div>
+<div class="sig-card"><div class="sig-title">10. Sitemap present &amp; structured</div><div class="sig-score">5<span class="max">/5</span></div><div class="bar"><div class="bar-fill bar-good" style="width:100%"></div></div></div>
+<div class="sig-card"><div class="sig-title">11. Robots.txt clean, not blocking</div><div class="sig-score">4<span class="max">/4</span></div><div class="bar"><div class="bar-fill bar-good" style="width:100%"></div></div></div>
+<div class="sig-card"><div class="sig-title">12. Keyword-to-page content relevance</div><div class="sig-score">10<span class="max">/10</span></div><div class="bar"><div class="bar-fill bar-good" style="width:100%"></div></div></div>
+</div>
+</section>
+
+<section>
+<h2>Keyword Research · Competitor Landscape</h2>
+<table>
+<thead><tr><th>Competitor</th><th>Top Keywords Targeted</th><th>Est. Volume</th><th>Domain Strength</th></tr></thead>
+<tbody>
+<tr><td><strong>bettermencoaching.com</strong></td><td>Men's life coach, life coach for men, men's groups &amp; retreats</td><td><span class="badge badge-high">High</span></td><td>Strong — 25+ yrs</td></tr>
+<tr><td><strong>manuplifecoaching.com</strong></td><td>Male personal development, confidence coaching for men</td><td><span class="badge badge-med">Med</span></td><td>Strong</td></tr>
+<tr><td><strong>lifecoachingny.com</strong> (Crafting Masculinity)</td><td>Life coach for men, masculinity coaching</td><td><span class="badge badge-med">Med</span></td><td>Medium</td></tr>
+<tr><td><strong>mantalks.com</strong></td><td>Men's coaching, ManTalks brand queries, modern masculinity</td><td><span class="badge badge-med">Med</span></td><td>Medium</td></tr>
+<tr><td><strong>practicalintimacy.com</strong></td><td>Masculinity coach, men's empowerment coaching</td><td><span class="badge badge-low">Low</span></td><td>Medium</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Keyword Opportunity Map — Target Site</h2>
+<table>
+<thead><tr><th>Keyword</th><th>Volume</th><th>Difficulty</th><th>Current Rank</th><th>Opportunity</th><th>Quick Win</th></tr></thead>
+<tbody>
+<tr><td>men's heartbreak recovery coach</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Owned term</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>how to heal after a breakup as a man</td><td><span class="badge badge-med">Med</span></td><td>Medium</td><td>Pillar page exists</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>somatic healing for men after breakup</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Not ranking</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>60-day breakup recovery program for men</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Program page ranks</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>men's life coach</td><td><span class="badge badge-high">High</span></td><td>Hard</td><td>Not ranking</td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-no">No</span></td></tr>
+<tr><td>heartbreak recovery for divorced men over 40</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Programmatic page exists</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>nervous system regulation after breakup</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Blog post exists</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>no contact rule for men</td><td><span class="badge badge-med">Med</span></td><td>Medium</td><td>FAQ mentions</td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-no">No</span></td></tr>
+<tr><td>anxious attachment after breakup men</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Programmatic page exists</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+<tr><td>men's emotional embodiment coach</td><td><span class="badge badge-low">Low</span></td><td>Easy</td><td>Brand-aligned, not ranking</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-yes">Yes</span></td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<div class="highlight-box">
+<h3>▶ Rank These First · 3 Quick-Win Keywords</h3>
+<div class="quick-win"><div class="qw-num">01</div><div class="qw-body"><div class="qw-kw">"somatic healing for men after breakup"</div><div class="qw-action">Still unowned after being flagged last week. Publish the promised 2,000-word pillar with H2 questions, embedded videos, and FAQPage schema.</div></div></div>
+<div class="quick-win"><div class="qw-num">02</div><div class="qw-body"><div class="qw-kw">"nervous system regulation after breakup"</div><div class="qw-action">Blog post exists but lacks meta description + schema. Ship Article schema + optimised meta + 5 internal links from niche recovery pages.</div></div></div>
+<div class="quick-win"><div class="qw-num">03</div><div class="qw-body"><div class="qw-kw">"men's emotional embodiment coach"</div><div class="qw-action">Brand-aligned but no dedicated page. Create /men-emotional-embodiment-coach landing page with Person schema + 8 FAQ.</div></div></div>
+</div>
+
+<div class="highlight-box" style="background:linear-gradient(135deg,rgba(79,195,247,.1),rgba(255,183,77,.05));border-color:var(--accent2);">
+<h3 style="color:var(--accent2);">△ Build Towards These · 3 Longer-Term Targets</h3>
+<div class="quick-win"><div class="qw-num">01</div><div class="qw-body"><div class="qw-kw">"men's life coach"</div><div class="qw-action">High volume but dominated by BetterMen, Man-Up! — compete via narrow positioning on "heartbreak + embodiment" instead of generic.</div></div></div>
+<div class="quick-win"><div class="qw-num">02</div><div class="qw-body"><div class="qw-kw">"how to heal after a breakup as a man"</div><div class="qw-action">Pillar exists; needs backlinks from 3+ men's-work podcasts and guest-post placements.</div></div></div>
+<div class="quick-win"><div class="qw-num">03</div><div class="qw-body"><div class="qw-kw">"no contact rule for men"</div><div class="qw-action">Break out into a standalone 2,500-word definitive guide; this is the #1 high-intent query in the niche.</div></div></div>
+</div>
+</section>
+
+<section>
+<h2>Top 5 Issues</h2>
+<div class="issue-card issue-critical"><div class="severity sev-crit">Critical</div><div class="issue-title">Meta descriptions still missing on homepage, /blog, /heal-your-heartbreak</div><div class="issue-fix">Fix: 155-character meta descriptions for the 10 top pages this week. Flagged 2 weeks running.</div></div>
+<div class="issue-card issue-critical"><div class="severity sev-crit">Critical</div><div class="issue-title">Site absent from all 3 AI-simulation queries — zero visibility in AI answers</div><div class="issue-fix">Fix: FAQPage + Person schema + 2 podcast citations before next audit.</div></div>
+<div class="issue-card issue-high"><div class="severity sev-high">High</div><div class="issue-title">No schema markup on key pillar or programmatic pages</div><div class="issue-fix">Fix: Add Article / FAQPage / Course / Person schema to /heal-your-heartbreak, /blog, and 5 top programmatic pages.</div></div>
+<div class="issue-card issue-high"><div class="severity sev-high">High</div><div class="issue-title">23 programmatic recovery pages lack unique testimonials / dates</div><div class="issue-fix">Fix: add 1 unique testimonial, 1 stat, and datePublished per page to pass thin-content signals.</div></div>
+<div class="issue-card issue-medium"><div class="severity sev-med">Medium</div><div class="issue-title">Blog cadence slipping — last major update April 3</div><div class="issue-fix">Fix: target weekly publishing cadence; publish 2 new pillar posts before next Thursday.</div></div>
+</section>
+
+<section>
+<h2>Top 3 Wins</h2>
+<div class="win-card"><div class="severity sev-win">Win</div><div class="issue-title">23 programmatic recovery pages form a defensible long-tail moat</div><div class="issue-fix">Covers Men Over 40, Divorced Men, Anxious Attachment, Co-parenting, etc. — rare first-mover advantage in men's coaching niche.</div></div>
+<div class="win-card"><div class="severity sev-win">Win</div><div class="issue-title">4,500-word /heal-your-heartbreak pillar with 13 FAQ Q&amp;As</div><div class="issue-fix">Strong content depth; only needs schema wrap-up to compete for featured snippets.</div></div>
+<div class="win-card"><div class="severity sev-win">Win</div><div class="issue-title">Robots.txt + llms.txt combo with 7 AI crawlers allowed</div><div class="issue-fix">Discovery setup is solid — Applebot-Extended added this cycle is a notable extra vs competitors.</div></div>
+</section>
+
+<section>
+<h2>90-Day Priority Action Plan</h2>
+<ol class="action-list">
+<li>Deploy meta descriptions on all 13 core pages this week.</li>
+<li>Add FAQPage JSON-LD to /heal-your-heartbreak (13 Q&amp;A already exist).</li>
+<li>Publish "Somatic Healing for Men After Breakup" 2,000-word pillar.</li>
+<li>Add Person schema for Sunny Binjola on /about with sameAs array.</li>
+<li>Wrap 13 FAQ pairs on homepage "Common Questions" section in FAQPage schema.</li>
+<li>Publish 2 new pillars: "No Contact Rule for Men" + "Men's Emotional Embodiment".</li>
+<li>Add 1 testimonial + 1 stat + datePublished to each of the 23 programmatic pages.</li>
+<li>Pitch + secure 3 men's-work podcast features (Mantalks, Evolving Man, Jamie Coach).</li>
+<li>Submit to Psychology Today + Good Men Project directories.</li>
+<li>Launch weekly blog publishing cadence; produce an editorial calendar for next 12 weeks.</li>
+</ol>
+</section>
+
+<footer>
+<div>Report generated: 23 April 2026 · Sunny Binjola weekly audit</div>
+<div class="mono">sunnybinjola.com · SEO 70/100 · Grade C</div>
+</footer>
+</div>
+</body>
+</html>

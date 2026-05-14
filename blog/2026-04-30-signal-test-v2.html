@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal · 2026-04-30 · The Cost Curve Bent | ElevateAI</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0F1C;
+  --surface:#111827;
+  --surface-2:#1A2035;
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.14);
+  --text:#F0F0F0;
+  --text-dim:#6B7280;
+  --text-mid:#9CA3AF;
+  --green:#00FF41;
+  --green-dark:#00CC34;
+  --green-dim:rgba(0,255,65,0.12);
+  --amber:#F59E0B;
+  --amber-dim:rgba(245,158,11,0.12);
+  --red:#EF4444;
+  --red-dim:rgba(239,68,68,0.12);
+  --blue:#3B82F6;
+  --font-body:'Plus Jakarta Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --radius:12px;
+  --radius-lg:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+.test-banner{background:var(--amber);color:#1a1300;text-align:center;padding:.45rem;font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+
+.shell{max-width:880px;margin:0 auto;padding:0 1.5rem 4rem}
+
+/* ─── NAV ─── */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:.6rem}
+.nav-mark{width:24px;height:24px;background:var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#020802;font-weight:800;font-size:.75rem}
+.nav-name{font-weight:800;font-size:.9rem;letter-spacing:-.01em}
+.nav-meta{display:flex;align-items:center;gap:1.25rem;font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:.05em}
+.nav-meta .live::before{content:'●';color:var(--green);margin-right:.4rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ─── HERO ─── */
+.hero{padding:3rem 0 2rem;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:1.25rem}
+.hero-eyebrow::before{content:'— '}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.4rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:.75rem}
+.hero h1 .accent{color:var(--green)}
+.hero-sub{font-size:1.05rem;color:var(--text-mid);max-width:520px}
+
+/* ─── STAT STRIP ─── */
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:2rem 0 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stat{background:var(--bg);padding:1.5rem 1.25rem;text-align:left}
+.stat .num{font-size:2.4rem;font-weight:800;color:var(--green);line-height:1;letter-spacing:-.02em;display:block}
+.stat .lbl{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;display:block}
+.stat .src{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim);margin-top:.3rem;display:block;opacity:.7}
+
+/* ─── SECTION HEADERS ─── */
+.section{padding:3rem 0 1rem}
+.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.section-line{width:24px;height:2px;background:var(--amber)}
+.section-title{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--text-dim);text-transform:uppercase}
+.section-count{margin-left:auto;font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim)}
+
+/* ─── TECH CARDS ─── */
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.tech-card{background:var(--surface-2);padding:1.5rem;display:flex;flex-direction:column;gap:.85rem;min-height:260px}
+.tech-num{font-family:var(--font-mono);font-size:.7rem;color:var(--green);letter-spacing:.1em}
+.tech-stat{font-size:2.4rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+.tech-stat .unit{font-size:1rem;color:var(--text-dim);margin-left:.2rem;font-weight:600}
+.tech-headline{font-size:.95rem;font-weight:700;color:var(--text);line-height:1.35}
+.tech-context{font-size:.8rem;color:var(--text-mid);margin-top:auto}
+.tech-tag{display:inline-block;font-family:var(--font-mono);font-size:.6rem;color:var(--green-dark);letter-spacing:.1em;text-transform:uppercase;background:var(--green-dim);padding:.2rem .55rem;border-radius:4px;align-self:flex-start}
+
+/* mini growth bar (for Tech 3) */
+.growth-bar{display:flex;align-items:flex-end;gap:6px;height:48px;margin-top:.4rem}
+.growth-col{flex:1;background:var(--surface);border-radius:3px 3px 0 0;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.growth-col.then{height:12%;background:var(--text-dim)}
+.growth-col.now{height:100%;background:linear-gradient(180deg,var(--green),var(--green-dark))}
+.growth-axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.6rem;color:var(--text-dim);margin-top:.4rem;letter-spacing:.05em}
+
+/* spark for capex */
+.capex-spark{display:flex;align-items:flex-end;gap:4px;height:48px;margin-top:.4rem}
+.capex-col{flex:1;border-radius:2px 2px 0 0;background:var(--surface)}
+.capex-col.b1{height:32%}
+.capex-col.b2{height:46%}
+.capex-col.b3{height:58%}
+.capex-col.b4{height:72%;background:var(--amber)}
+.capex-col.b5{height:100%;background:linear-gradient(180deg,var(--green),var(--green-dark))}
+
+/* GPT block */
+.agentic-flow{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.7rem;color:var(--text-mid);margin-top:.4rem;flex-wrap:wrap}
+.agentic-flow .step{background:var(--surface);border:1px solid var(--border);padding:.3rem .5rem;border-radius:4px}
+.agentic-flow .arrow{color:var(--green)}
+
+/* ─── IDEAS ─── */
+.ideas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.idea-card{background:var(--surface-2);padding:1.75rem;display:flex;flex-direction:column;gap:1rem}
+.idea-num{font-family:var(--font-mono);font-size:.7rem;color:var(--amber);letter-spacing:.1em}
+.idea-headline{font-size:1.25rem;font-weight:800;line-height:1.25;letter-spacing:-.01em;color:var(--text)}
+
+/* idea 1 — math comparison */
+.math-row{display:flex;align-items:center;gap:.75rem;padding:.85rem;background:var(--surface);border-radius:8px;margin-top:.4rem}
+.math-row.old{border-left:3px solid var(--red)}
+.math-row.new{border-left:3px solid var(--green)}
+.math-label{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;width:48px;flex-shrink:0}
+.math-value{font-size:.95rem;font-weight:700;color:var(--text)}
+.math-value .em{color:var(--green)}
+.math-value .red{color:var(--red)}
+
+/* idea 2 — split panel */
+.split-bar{display:flex;height:80px;border-radius:8px;overflow:hidden;margin-top:.5rem;border:1px solid var(--border)}
+.split-side{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:.75rem;text-align:center}
+.split-side.production{background:linear-gradient(135deg,var(--green-dim),rgba(0,255,65,0.04));flex:88;border-right:1px solid var(--border-strong)}
+.split-side.pilot{background:var(--surface);flex:12}
+.split-pct{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--green)}
+.split-pct.dim{color:var(--text-dim);font-size:1rem}
+.split-lbl{font-family:var(--font-mono);font-size:.6rem;color:var(--text-mid);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+
+/* ─── TOOL ─── */
+.tool-card{background:linear-gradient(135deg,var(--surface-2),rgba(0,255,65,0.02));border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:2rem;margin-top:1.5rem}
+.tool-eyebrow{font-family:var(--font-mono);font-size:.7rem;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.tool-name{font-size:1.6rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.tool-byline{font-size:.85rem;color:var(--text-mid);margin-bottom:1.5rem}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.pillar{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem .9rem;text-align:left}
+.pillar-num{font-family:var(--font-mono);font-size:.65rem;color:var(--green);letter-spacing:.1em;margin-bottom:.5rem}
+.pillar-name{font-size:.85rem;font-weight:700;color:var(--text);line-height:1.25}
+.tool-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.75rem;color:var(--green);margin-top:1.5rem;text-decoration:none;letter-spacing:.05em}
+.tool-link:hover{color:var(--green-dark)}
+.tool-link .arrow{transition:transform .2s}
+.tool-link:hover .arrow{transform:translateX(4px)}
+
+/* ─── ACTION ─── */
+.action{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin-top:3rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.action-content{flex:1;min-width:240px}
+.action-eyebrow{font-family:var(--font-mono);font-size:.7rem;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.action-headline{font-size:1.4rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.action-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--green);color:#020802;padding:1rem 1.6rem;border-radius:50px;font-weight:800;text-decoration:none;font-size:.9rem;letter-spacing:.02em;transition:all .2s}
+.action-cta:hover{background:var(--green-dark);transform:translateY(-2px)}
+
+/* ─── SIGN OFF ─── */
+.signoff{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-mid);font-family:var(--font-mono);letter-spacing:.02em}
+.signoff strong{color:var(--text);font-weight:700}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:720px){
+  .stat-strip,.tech-grid,.ideas-grid,.pillar-grid{grid-template-columns:1fr}
+  .tech-card,.idea-card{min-height:auto}
+  .nav-meta{display:none}
+}
+</style>
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ElevateAI System, AI for coaches and creators">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta name="twitter:image:alt" content="ElevateAI System, AI for coaches and creators">
+</head>
+<body>
+
+<div class="test-banner">◆ TEST PREVIEW V2 · NOT PUBLISHED · 2026-04-30</div>
+
+<div class="shell">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <div class="nav-mark">S</div>
+      <span class="nav-name">The Signal</span>
+    </div>
+    <div class="nav-meta">
+      <span>2026.04.30</span>
+      <span>ISSUE 18</span>
+      <span class="live">LIVE</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">2026-04-30 · COST CURVE</p>
+    <h1>The agent cost curve <span class="accent">just bent.</span></h1>
+    <p class="hero-sub">Are you priced for it? 3 technologies, 2 ideas, 1 tool. 90 seconds.</p>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="num">$700B</span>
+        <span class="lbl">2026 AI capex pledge</span>
+        <span class="src">MSFT · GOOG · META · AMZN</span>
+      </div>
+      <div class="stat">
+        <span class="num">5 → 40%</span>
+        <span class="lbl">apps with agents by Dec</span>
+        <span class="src">Gartner · 2026</span>
+      </div>
+      <div class="stat">
+        <span class="num">88%</span>
+        <span class="lbl">early adopters seeing ROI</span>
+        <span class="src">production deployments</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 TECHNOLOGIES -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-line"></div>
+      <span class="section-title">Technologies</span>
+      <span class="section-count">3 ENTRIES</span>
+    </div>
+
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <div class="tech-num">01</div>
+        <span class="tech-tag">AGENTIC</span>
+        <div class="tech-stat">GPT-5.5</div>
+        <div class="tech-headline">Goes from chatbot to autonomous employee.</div>
+        <div class="agentic-flow">
+          <span class="step">goal</span>
+          <span class="arrow">→</span>
+          <span class="step">plan</span>
+          <span class="arrow">→</span>
+          <span class="step">act</span>
+          <span class="arrow">→</span>
+          <span class="step">report</span>
+        </div>
+        <div class="tech-context">No more prompts. It picks up the goal and ships.</div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-num">02</div>
+        <span class="tech-tag">COMPUTE</span>
+        <div class="tech-stat">$700<span class="unit">B</span></div>
+        <div class="tech-headline">Big Tech 2026 AI capex.</div>
+        <div class="capex-spark" title="2022 → 2026 hyperscaler capex">
+          <div class="capex-col b1"></div>
+          <div class="capex-col b2"></div>
+          <div class="capex-col b3"></div>
+          <div class="capex-col b4"></div>
+          <div class="capex-col b5"></div>
+        </div>
+        <div class="growth-axis"><span>'22</span><span>'23</span><span>'24</span><span>'25</span><span>'26</span></div>
+        <div class="tech-context">Inference falls. Agent unit-cost approaches zero.</div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-num">03</div>
+        <span class="tech-tag">ADOPTION</span>
+        <div class="tech-stat">8×</div>
+        <div class="tech-headline">Agent app deployment, 12 months.</div>
+        <div class="growth-bar">
+          <div class="growth-col then"></div>
+          <div class="growth-col now"></div>
+        </div>
+        <div class="growth-axis"><span>5% (2025)</span><span>40% (Dec 2026)</span></div>
+        <div class="tech-context">Gartner. The enterprise window closes by year-end.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2 IDEAS -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-line"></div>
+      <span class="section-title">Ideas</span>
+      <span class="section-count">2 ENTRIES</span>
+    </div>
+
+    <div class="ideas-grid">
+
+      <div class="idea-card">
+        <div class="idea-num">01 · THE MATH BROKE</div>
+        <div class="idea-headline">The team you'd hire is the team you don't need.</div>
+        <div class="math-row old">
+          <div class="math-label">2024</div>
+          <div class="math-value">12 hires <span class="red">→</span> $500K ARR <span class="red">in 18 mo</span></div>
+        </div>
+        <div class="math-row new">
+          <div class="math-label">2026</div>
+          <div class="math-value">3 humans + agents <span class="em">→</span> $500K ARR <span class="em">in 6 mo</span></div>
+        </div>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-num">02 · PILOT MODE = PROCRASTINATION</div>
+        <div class="idea-headline">Production pays. Pilot mode bills.</div>
+        <div class="split-bar">
+          <div class="split-side production">
+            <span class="split-pct">88%</span>
+            <span class="split-lbl">In production · ROI Q2</span>
+          </div>
+          <div class="split-side pilot">
+            <span class="split-pct dim">12%</span>
+            <span class="split-lbl">Still testing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 1 TOOL -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-line"></div>
+      <span class="section-title">Tool</span>
+      <span class="section-count">1 ENTRY</span>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-eyebrow">◆ FRAMEWORK · USE THIS WEEK</div>
+      <div class="tool-name">The AIOS Sales Blueprint</div>
+      <div class="tool-byline">5-week delivery · zero cold outreach · 4-pillar value pricing</div>
+
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-name">Cash-on-Cash Return</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-name">Time Value</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-name">Problem Avoidance</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <div class="pillar-name">Future Opportunity</div>
+        </div>
+      </div>
+
+      <a href="/intel/2026-04-27-aios-sales-blueprint" class="tool-link">
+        Read the intel drop <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <div class="action">
+    <div class="action-content">
+      <div class="action-eyebrow">◆ This week's move</div>
+      <div class="action-headline">Ship one agent by Sunday.</div>
+    </div>
+    <a href="https://elevateaisystem.com/quiz" class="action-cta">Take the Brand OS Quiz →</a>
+  </div>
+
+  <!-- SIGN OFF -->
+  <div class="signoff">
+    <p>That's the signal.</p>
+    <p>Stay embodied. Ship weekly. <strong>— Sunny</strong></p>
+  </div>
+
+</div>
+
+</body>
+</html>

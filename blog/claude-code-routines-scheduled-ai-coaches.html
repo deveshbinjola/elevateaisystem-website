@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI That Runs While You Sleep. Anthropic Just Shipped It. | ElevateAI System</title>
+<meta name="description" content="Anthropic opened Claude Code Routines today. Scheduled AI agents that run on the cloud with your laptop closed. Here's what this actually means for coaches building systems in 2026.">
+<meta name="keywords" content="Claude Code Routines, scheduled AI agents, AI automation for coaches, cloud AI agents, Anthropic routines launch, AI employee, agent infrastructure, coach automation">
+<link rel="canonical" href="https://www.elevateaisystem.com/blog/claude-code-routines-scheduled-ai-coaches">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI That Runs While You Sleep. Anthropic Just Shipped It.">
+<meta property="og:description" content="Claude Code Routines just went live. Scheduled AI that runs on the cloud with your laptop closed. This is the moment AI stopped being a tool and started being an employee.">
+<meta property="og:url" content="https://www.elevateaisystem.com/blog/claude-code-routines-scheduled-ai-coaches">
+<meta property="og:site_name" content="ElevateAI System">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI That Runs While You Sleep. Anthropic Just Shipped It.">
+<meta name="twitter:description" content="Claude Code Routines just went live. Scheduled AI that runs on the cloud with your laptop closed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"AI That Runs While You Sleep. Anthropic Just Shipped It.","description":"Anthropic opened Claude Code Routines today. Scheduled AI agents that run on the cloud with your laptop closed. Here's what this actually means for coaches building systems in 2026.","url":"https://www.elevateaisystem.com/blog/claude-code-routines-scheduled-ai-coaches","datePublished":"2026-04-15","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"ElevateAI System","url":"https://www.elevateaisystem.com"}}
+</script>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+<style>
+:root {
+  --bg: #FAFAF8; --bg-alt: #F2F2EE;
+  --green: #00FF41; --green-dark: #00CC34;
+  --navy: #0A0F1C; --navy-light: #1A2035;
+  --text: #1A1A2E; --text-muted: #5A5A6E;
+  --border: #E0E0D8; --white: #FFFFFF; --card-bg: #FFFFFF;
+  --radius: 12px; --radius-lg: 20px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+.article-container { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; margin-top: 72px; }
+.article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.article-category { display: inline-block; padding: .35rem .8rem; border-radius: 20px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.article-category.seo { background: rgba(0,204,52,.1); color: var(--green-dark); }
+.article-category.ai { background: rgba(59,130,246,.1); color: #3B82F6; }
+.article-category.ai-tools { background: rgba(16,185,129,.1); color: #059669; }
+.article-category.ai-coaches { background: rgba(99,102,241,.1); color: #6366F1; }
+.article-category.lead-gen { background: rgba(249,115,22,.1); color: #F97316; }
+.article-category.strategy { background: rgba(139,92,246,.15); color: #7C3AED; }
+.article-category.business { background: rgba(239,68,68,.15); color: #DC2626; }
+.article-category.tools { background: rgba(16,185,129,.1); color: #059669; }
+.article-date { font-size: .85rem; color: var(--text-muted); }
+.article-container h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: 1.5rem; letter-spacing: -.02em; }
+.article-container h2 { font-size: 1.6rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+.article-container h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 2rem 0 .75rem; }
+.article-container p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem; }
+.article-container ul, .article-container ol { margin: 1rem 0 1.5rem 1.5rem; }
+.article-container li { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: .5rem; }
+.article-container strong { color: var(--navy); }
+.article-container blockquote { border-left: 4px solid var(--green); padding: 1rem 1.5rem; margin: 1.5rem 0; background: var(--bg-alt); border-radius: 0 var(--radius) var(--radius) 0; }
+.article-container blockquote p { color: var(--text-muted); font-style: italic; margin: 0; }
+.signal-box { background: var(--navy); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.signal-box p { color: rgba(255,255,255,.85); margin: 0; font-size: 1rem; }
+.signal-box strong { color: var(--green); }
+.article-cta { background: var(--navy); border-radius: var(--radius-lg); padding: 3rem; text-align: center; margin: 3rem 0; }
+.article-cta h3 { color: var(--white); font-size: 1.5rem; margin-bottom: .75rem; }
+.article-cta p { color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+.article-cta a { display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: .85rem 2rem; border-radius: 50px; font-weight: 800; font-size: .95rem; transition: all .3s; }
+.article-cta a:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,65,.3); }
+.share-bar { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+.share-bar span { font-size: .85rem; font-weight: 600; color: var(--text-muted); }
+.share-linkedin { display: inline-flex; align-items: center; gap: 6px; background: #0A66C2; color: #fff; padding: 8px 18px; border-radius: 50px; font-size: .8rem; font-weight: 700; transition: all .2s; }
+.share-linkedin:hover { background: #004182; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(10,102,194,.3); }
+.share-linkedin svg { width: 16px; height: 16px; fill: currentColor; }
+.back-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--green-dark); font-weight: 700; font-size: .9rem; margin-top: 2rem; transition: gap .2s; }
+.back-link:hover { gap: .75rem; }
+
+/* TRIGGER GRID VISUAL */
+.trigger-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+.trigger-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; transition: all .3s; }
+.trigger-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.trigger-icon { font-size: 2rem; margin-bottom: .5rem; }
+.trigger-card h4 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: .3rem; }
+.trigger-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+/* TIER TABLE */
+.tier-table { margin: 2rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+.tier-row { display: grid; grid-template-columns: 1fr 1fr 2fr; align-items: center; padding: .9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--white); }
+.tier-row:last-child { border-bottom: none; }
+.tier-row.header { background: var(--navy); color: var(--white); font-weight: 800; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+.tier-row .tier-name { font-weight: 800; color: var(--navy); }
+.tier-row .tier-count { font-weight: 800; font-size: 1.2rem; color: var(--green-dark); }
+.tier-row .tier-use { color: var(--text-muted); font-size: .9rem; }
+.tier-row.header .tier-count, .tier-row.header .tier-name, .tier-row.header .tier-use { color: var(--white); font-size: .8rem; }
+
+/* FLOW DIAGRAM */
+.flow-diagram { display: flex; align-items: stretch; gap: .5rem; margin: 2rem 0; flex-wrap: wrap; }
+.flow-step { flex: 1; min-width: 140px; background: var(--white); border: 2px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; position: relative; }
+.flow-step.highlight { border-color: var(--green); background: rgba(0,255,65,.04); }
+.flow-step .step-num { display: inline-block; width: 26px; height: 26px; line-height: 26px; border-radius: 50%; background: var(--navy); color: var(--green); font-weight: 800; font-size: .8rem; margin-bottom: .5rem; }
+.flow-step h5 { font-size: .9rem; font-weight: 800; color: var(--navy); margin-bottom: .3rem; }
+.flow-step p { font-size: .78rem; color: var(--text-muted); line-height: 1.4; margin: 0; }
+.flow-arrow { display: flex; align-items: center; justify-content: center; color: var(--green-dark); font-weight: 800; font-size: 1.2rem; }
+
+/* SHIFT COMPARE */
+.shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+.shift-col { padding: 1.5rem; border-radius: var(--radius); }
+.shift-col.old { background: #F9EAEA; border-left: 4px solid #DC2626; }
+.shift-col.new { background: rgba(0,255,65,.08); border-left: 4px solid var(--green-dark); }
+.shift-col h4 { font-size: 1rem; font-weight: 800; margin-bottom: .5rem; }
+.shift-col.old h4 { color: #DC2626; }
+.shift-col.new h4 { color: var(--green-dark); }
+.shift-col ul { margin: 0 0 0 1rem; }
+.shift-col li { font-size: .9rem; line-height: 1.6; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; background: var(--white); }
+.footer a { color: var(--text-muted); transition: color .2s; }
+.footer a:hover { color: var(--green-dark); }
+
+@media (max-width: 768px) {
+  .article-container { padding: 2rem 1rem; }
+  .article-container h1 { font-size: 2rem; }
+  .article-cta { padding: 2rem 1.5rem; }
+  .trigger-grid { grid-template-columns: 1fr; }
+  .shift-grid { grid-template-columns: 1fr; }
+  .tier-row { grid-template-columns: 1fr 1fr; }
+  .tier-row .tier-use { grid-column: 1 / -1; font-size: .8rem; margin-top: .3rem; }
+  .flow-step { min-width: 100%; }
+  .flow-arrow { transform: rotate(90deg); margin: 0 auto; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.elevateaisystem.com"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.elevateaisystem.com/blog"},
+    {"@type":"ListItem","position":3,"name":"Claude Code Routines for Coaches","item":"https://www.elevateaisystem.com/blog/claude-code-routines-scheduled-ai-coaches"}
+  ]
+}
+</script>
+<meta property="og:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ElevateAI System, AI for coaches and creators">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/og-image.png">
+<meta name="twitter:image:alt" content="ElevateAI System, AI for coaches and creators">
+</head>
+<body>
+
+<script src="../navbar.js"></script>
+
+<article class="article-container">
+  <div class="article-meta">
+    <span class="article-category tools">Tools</span>
+    <span class="article-date">2026-04-15 &middot; 7 min read</span>
+  </div>
+  <h1>AI That Runs While You Sleep. Anthropic Just Shipped It.</h1>
+
+  <div class="signal-box">
+    <p><strong>The Signal:</strong> Yesterday Anthropic opened Claude Code Routines in research preview. Scheduled AI agents that run on their cloud. Your laptop can be closed. This is the moment AI stopped being a chat tool and started being an employee. Most coaches won't notice for six months. By then, the people who moved first will be running five agents while their competition is still typing prompts.</p>
+  </div>
+
+  <p>Most coaches I talk to open Claude or ChatGPT the same way they open Google.</p>
+
+  <p>They type a question.</p>
+
+  <p>They read the answer.</p>
+
+  <p>They close the tab.</p>
+
+  <p>That's a pencil.</p>
+
+  <p>Anthropic just turned it into an employee.</p>
+
+  <h2>What Actually Shipped Yesterday</h2>
+
+  <p>On April 14, Anthropic opened the research preview of something called Claude Code Routines.</p>
+
+  <p>The name sounds technical. The implication is huge.</p>
+
+  <p>A routine is a saved AI job. You write the instructions once. You pick the data it can touch. You give it a trigger. Then it just... runs.</p>
+
+  <p>Not when you open your laptop.</p>
+
+  <p>Not when you remember.</p>
+
+  <p>On a schedule. On an API call. On an event somewhere in your stack.</p>
+
+  <p>Anthropic runs it on their cloud. You can close your computer. You can go to sleep. It keeps working.</p>
+
+  <h2>The Three Triggers That Change Everything</h2>
+
+  <div class="trigger-grid">
+    <div class="trigger-card">
+      <div class="trigger-icon">&#x1F551;</div>
+      <h4>Schedule</h4>
+      <p>Run every morning at 6 AM. Every Monday. Every first of the month. Whatever cadence you set.</p>
+    </div>
+    <div class="trigger-card">
+      <div class="trigger-icon">&#x1F517;</div>
+      <h4>API Call</h4>
+      <p>Trigger it from any tool. A form submission, a Zapier hook, a webhook from your CRM.</p>
+    </div>
+    <div class="trigger-card">
+      <div class="trigger-icon">&#x26A1;</div>
+      <h4>GitHub Event</h4>
+      <p>Hooked to PRs, pushes, issues, releases. For anyone building a product with a codebase.</p>
+    </div>
+  </div>
+
+  <p>Read those three again.</p>
+
+  <p>The first two apply to your coaching business right now.</p>
+
+  <p>You don't need to be a developer. You need to understand that AI just became something you can <strong>schedule like a Google Calendar event</strong>.</p>
+
+  <h2>The Limits Tell You Who This Is For</h2>
+
+  <div class="tier-table">
+    <div class="tier-row header">
+      <span class="tier-name">Plan</span>
+      <span class="tier-count">Routines / day</span>
+      <span class="tier-use">What that buys you</span>
+    </div>
+    <div class="tier-row">
+      <span class="tier-name">Pro</span>
+      <span class="tier-count">5</span>
+      <span class="tier-use">Daily lead recap. Weekly newsletter draft. Client check-in digest.</span>
+    </div>
+    <div class="tier-row">
+      <span class="tier-name">Max</span>
+      <span class="tier-count">15</span>
+      <span class="tier-use">A content engine. Lead scoring. Follow-up sequencing. Pipeline hygiene.</span>
+    </div>
+    <div class="tier-row">
+      <span class="tier-name">Team / Enterprise</span>
+      <span class="tier-count">25</span>
+      <span class="tier-use">Entire departments automated. Multiple agents, multiple schedules.</span>
+    </div>
+  </div>
+
+  <p>Five daily routines on the Pro plan.</p>
+
+  <p>That's not a feature. That's five employees you don't have to hire.</p>
+
+  <h2>The Shift Nobody's Naming Yet</h2>
+
+  <p>For the last two years, AI was a conversation.</p>
+
+  <p>You typed. It responded. You copied. You pasted.</p>
+
+  <p>The whole value chain was bottlenecked on you showing up to the chat window.</p>
+
+  <p>This ships that whole paradigm to the retirement home.</p>
+
+  <div class="shift-grid">
+    <div class="shift-col old">
+      <h4>The old way (2023 to now)</h4>
+      <ul>
+        <li>Open Claude or ChatGPT</li>
+        <li>Paste context every time</li>
+        <li>Read the answer</li>
+        <li>Copy it somewhere</li>
+        <li>Close the tab</li>
+        <li>Repeat tomorrow</li>
+      </ul>
+    </div>
+    <div class="shift-col new">
+      <h4>The new way (April 14, 2026 forward)</h4>
+      <ul>
+        <li>Write the job description once</li>
+        <li>Connect the data sources once</li>
+        <li>Set the schedule</li>
+        <li>Walk away</li>
+        <li>Output shows up in Slack, Notion, email</li>
+        <li>Every day. Forever.</li>
+      </ul>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>The first era of consumer AI was about speed. The second era is about absence. The tool that delivers value when you're not there is the tool that actually scales you.</p>
+  </blockquote>
+
+  <h2>Five Routines A Coach Can Set Up This Weekend</h2>
+
+  <p>Stop reading this like news. Start reading it like a punch list.</p>
+
+  <h3>1. Daily Lead Recap</h3>
+  <p>Trigger: 7 AM every morning. Job: scan your Calendly, your Apollo inbox, and your Stripe dashboard. Post a Slack message with the three leads that need your attention today, why, and the draft message to send them.</p>
+
+  <h3>2. Weekly Content Pipeline</h3>
+  <p>Trigger: Sunday at 8 PM. Job: pull last week's podcast transcript, Slack channel wins, and client call notes. Draft three LinkedIn posts, one newsletter section, and one blog outline. Deliver to your drafts folder.</p>
+
+  <h3>3. Monthly Offer Audit</h3>
+  <p>Trigger: 1st of every month. Job: review your landing pages against competitor pricing, current positioning, and last month's customer feedback. Flag the offers that feel stale.</p>
+
+  <h3>4. Client Intake Pre-Call</h3>
+  <p>Trigger: API call from your booking tool. Job: research the prospect who just booked. LinkedIn, company, last three posts. Write you a one-page brief 30 minutes before the call.</p>
+
+  <h3>5. Friday Clarity Ritual</h3>
+  <p>Trigger: Friday at 5 PM. Job: summarize what you shipped, what moved the needle, and the one question you want to sit with over the weekend. Drop it in your journaling app.</p>
+
+  <p>That last one is my favorite.</p>
+
+  <p>It's the inner work routine. The one that keeps you from becoming a content factory with no soul.</p>
+
+  <h2>The Real Unlock Is Mental, Not Technical</h2>
+
+  <p>Here's the quiet truth about Claude Code Routines.</p>
+
+  <p>The hard part was never the technology.</p>
+
+  <p>The hard part is <strong>believing a task could run without you</strong>.</p>
+
+  <p>Most coaches don't have a scheduling problem. They have a control problem.</p>
+
+  <p>They rewrite the same LinkedIn hook five times because they can't trust the draft. They write the same welcome email by hand because they can't trust the system. They research every lead personally because they can't trust the research.</p>
+
+  <p>Routines don't fix that by themselves.</p>
+
+  <p>What they do is expose it.</p>
+
+  <p>Once a piece of your business can run without you touching it, the question becomes: why was I touching it?</p>
+
+  <p>That's the question most coaches avoid for a decade.</p>
+
+  <h2>What I'm Doing This Week</h2>
+
+  <p>At ElevateAI, we rebuilt our entire Content OS engine in the last 48 hours to run as routines.</p>
+
+  <p>Blog research runs at 5 AM. Intel logging runs at 6 AM. Social drafts get generated at 8 PM for the next day. Client call prep fires automatically the morning of the call.</p>
+
+  <p>My job is no longer <em>making</em> the content.</p>
+
+  <p>My job is reviewing, signing, and shipping.</p>
+
+  <p>That shift alone freed up about 12 hours a week.</p>
+
+  <p>And we're still on day two.</p>
+
+  <h2>Your Move</h2>
+
+  <p>You don't need to rebuild your business around Claude Code Routines this week.</p>
+
+  <p>You need to pick <strong>one</strong> thing you do every Monday morning that feels like a chore.</p>
+
+  <p>One small, repeatable, soul-deadening task.</p>
+
+  <p>Ask yourself: could an employee do this with the right instructions and the right context?</p>
+
+  <p>If yes... that's your first routine.</p>
+
+  <p>Set it up. Let it run Monday. Feel what it's like to wake up and see the work already done.</p>
+
+  <p>That feeling is what the next decade of your business will be built on.</p>
+
+  <p>Or you can keep typing into the chat window.</p>
+
+  <p>Your call.</p>
+
+  <div class="article-cta">
+    <h3>Want an AI system that runs your business while you sleep?</h3>
+    <p>Book a free AI Strategy Hour. We'll map out the five routines you could set up this month based on where your business actually is today.</p>
+    <a href="https://cal.com/sunny-binjola/ai-strategy-call">Book Your Strategy Call &rarr;</a>
+  </div>
+
+  <div class="share-bar">
+    <span>Share this post:</span>
+    <a class="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.elevateaisystem.com/blog/claude-code-routines-scheduled-ai-coaches" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Share on LinkedIn</a>
+  </div>
+
+  <a href="/blog" class="back-link">&larr; Back to all posts</a>
+</article>
+
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+<script src="../author-bio.js"></script>
+<script src="../newsletter-popup.js"></script>
+</body>
+</html>

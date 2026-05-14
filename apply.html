@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for a Brand OS Call | ElevateAI System</title>
+<meta name="description" content="A free 1-on-1 Brand OS Call with Sunny. We build your personalized Brand OS in real time. By application only — three short questions before we book.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.elevateaisystem.com/apply.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#00FF41;
+    --green-dark:#00cc34;
+    --navy:#0A0F1C;
+    --navy-light:#1a2238;
+    --bg:#FAFAF8;
+    --bg-alt:#F0F0EC;
+    --white:#fff;
+    --text:#0A0F1C;
+    --text-muted:#5a6478;
+    --border:#e2e2dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+
+  /* Top bar */
+  .topbar{
+    padding:1.5rem 2rem;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .logo{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    font-weight:800;
+    color:var(--navy);
+    font-size:1.05rem;
+    letter-spacing:-.01em;
+  }
+  .logo svg{width:28px;height:28px}
+  .back-link{
+    font-size:.85rem;
+    color:var(--text-muted);
+    font-weight:500;
+    transition:color .2s;
+  }
+  .back-link:hover{color:var(--navy)}
+
+  /* Main */
+  main{
+    max-width:680px;
+    margin:0 auto;
+    padding:3rem 1.5rem 5rem;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    background:var(--bg-alt);
+    color:var(--text);
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:.5rem 1.2rem;
+    border-radius:50px;
+    margin-bottom:1.75rem;
+    border:1px solid var(--border);
+  }
+  .badge svg{width:14px;height:14px;color:var(--green-dark)}
+  h1{
+    font-size:clamp(2.2rem,4.5vw,3.4rem);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.03em;
+    color:var(--navy);
+    margin-bottom:1.25rem;
+  }
+  .lede{
+    font-size:1.15rem;
+    color:var(--text-muted);
+    margin-bottom:2.5rem;
+    line-height:1.55;
+  }
+  .lede strong{color:var(--navy);font-weight:600}
+
+  /* Score recap card (only shown if quiz score passed in URL) */
+  .score-recap{
+    background:linear-gradient(135deg,var(--navy) 0%,#161e35 100%);
+    color:var(--white);
+    border-radius:16px;
+    padding:1.5rem 1.75rem;
+    margin-bottom:2.5rem;
+    display:none;
+  }
+  .score-recap.active{display:block}
+  .score-recap-label{
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--green);
+    font-weight:700;
+    margin-bottom:.4rem;
+  }
+  .score-recap-row{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .score-recap-num{
+    font-size:2.4rem;
+    font-weight:800;
+    line-height:1;
+    color:var(--white);
+  }
+  .score-recap-denom{
+    font-size:1rem;
+    color:rgba(255,255,255,.5);
+    font-weight:500;
+  }
+  .score-recap-tier{
+    font-size:.95rem;
+    color:rgba(255,255,255,.85);
+    font-weight:500;
+  }
+
+  /* Repulsion block */
+  .filter-block{
+    background:var(--bg-alt);
+    border-left:3px solid var(--green);
+    padding:1.25rem 1.5rem;
+    margin-bottom:2.5rem;
+    border-radius:0 8px 8px 0;
+  }
+  .filter-block h3{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:.5rem;
+  }
+  .filter-block p{
+    font-size:.92rem;
+    color:var(--text-muted);
+    line-height:1.55;
+  }
+
+  /* Form */
+  form{display:flex;flex-direction:column;gap:2rem}
+  .field{display:flex;flex-direction:column;gap:.6rem}
+  .field-num{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+  }
+  .field-num span:first-child{
+    background:var(--green);
+    color:var(--navy);
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.75rem;
+    font-weight:800;
+  }
+  .field label{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.3;
+    letter-spacing:-.01em;
+  }
+  .field-hint{
+    font-size:.85rem;
+    color:var(--text-muted);
+    line-height:1.5;
+    margin-top:-.25rem;
+  }
+  textarea,input[type="email"],input[type="text"]{
+    width:100%;
+    border:1.5px solid var(--border);
+    border-radius:10px;
+    padding:.9rem 1rem;
+    font-size:1rem;
+    font-family:inherit;
+    background:var(--white);
+    color:var(--text);
+    transition:border-color .2s,box-shadow .2s;
+    resize:vertical;
+  }
+  textarea{min-height:130px;line-height:1.55}
+  textarea:focus,input:focus{
+    outline:none;
+    border-color:var(--green-dark);
+    box-shadow:0 0 0 3px rgba(0,255,65,.15);
+  }
+  .char-count{
+    font-size:.75rem;
+    color:var(--text-muted);
+    text-align:right;
+    margin-top:.2rem;
+    transition:color .2s;
+  }
+  .char-count.ok{color:var(--green-dark);font-weight:600}
+  .char-count.short{color:#c54b3c}
+
+  /* Identity row */
+  .id-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:540px){.id-row{grid-template-columns:1fr}}
+
+  /* Submit */
+  .submit-row{margin-top:1rem}
+  button[type="submit"]{
+    width:100%;
+    background:var(--navy);
+    color:var(--white);
+    border:none;
+    padding:1.15rem 2rem;
+    font-size:1.05rem;
+    font-weight:700;
+    border-radius:10px;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+    transition:all .25s;
+    font-family:inherit;
+    letter-spacing:-.005em;
+  }
+  button[type="submit"]:hover:not(:disabled){background:var(--navy-light);transform:translateY(-1px);box-shadow:0 8px 30px rgba(10,15,28,.18)}
+  button[type="submit"]:disabled{opacity:.5;cursor:not-allowed}
+  button[type="submit"] svg{width:18px;height:18px}
+  .submit-fineprint{
+    text-align:center;
+    font-size:.78rem;
+    color:var(--text-muted);
+    margin-top:.85rem;
+    line-height:1.5;
+  }
+
+  /* States */
+  .form-error{
+    background:#fdecea;
+    color:#c54b3c;
+    padding:.85rem 1rem;
+    border-radius:8px;
+    font-size:.9rem;
+    margin-top:1rem;
+    display:none;
+  }
+  .form-error.active{display:block}
+
+  /* Success state */
+  .success-state{
+    display:none;
+    text-align:center;
+    padding:3rem 1rem;
+  }
+  .success-state.active{display:block}
+  .success-icon{
+    width:72px;
+    height:72px;
+    background:var(--green);
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:1.5rem;
+  }
+  .success-icon svg{width:36px;height:36px;color:var(--navy);stroke-width:3}
+  .success-state h2{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:1rem;
+    letter-spacing:-.02em;
+  }
+  .success-state p{
+    color:var(--text-muted);
+    font-size:1.05rem;
+    margin-bottom:2rem;
+    max-width:480px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .success-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    background:var(--green);
+    color:var(--navy);
+    padding:1rem 2rem;
+    border-radius:10px;
+    font-weight:700;
+    font-size:1rem;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .success-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,255,65,.35)}
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--border);
+    padding:2rem;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:.85rem;
+  }
+  footer a{color:var(--navy);font-weight:600}
+
+  /* Spinner */
+  .spinner{
+    width:18px;
+    height:18px;
+    border:2.5px solid rgba(255,255,255,.3);
+    border-top-color:var(--white);
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+<style>
+/* GLOBAL MOBILE SAFETY — prevents horizontal overflow */
+html, body { max-width: 100vw; overflow-x: hidden; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/" class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="24" fill="#00FF41"/>
+      <path d="M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z" fill="#020802"/>
+      <path d="M50 80 L50 85" stroke="#020802" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    ElevateAI
+  </a>
+  <a href="/" class="back-link">← Back to home</a>
+</div>
+
+<main>
+
+  <!-- FORM STATE -->
+  <div id="formState">
+
+    <div class="badge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+      Brand OS Call · By application
+    </div>
+
+    <h1>Three questions before we book.</h1>
+
+    <p class="lede">
+      The Brand OS Call is a real 60 minutes with me, building your personalized Brand OS documents live — Avatar, Voice, Pillars, Scripts. <strong>I do this with two operators per week.</strong> So I read every application before sending a calendar link.
+    </p>
+
+    <!-- Score recap (only if URL has score) -->
+    <div class="score-recap" id="scoreRecap">
+      <div class="score-recap-label">Diagnostic in hand</div>
+      <div class="score-recap-row">
+        <div>
+          <span class="score-recap-num" id="recapScore">—</span><span class="score-recap-denom"> / 100</span>
+        </div>
+        <div class="score-recap-tier" id="recapTier">—</div>
+      </div>
+    </div>
+
+    <!-- Repulsion / qualifier -->
+    <div class="filter-block">
+      <h3>Who this is for</h3>
+      <p>Coaches, consultants, and creators who built a real practice through depth, lineage, or lived transformation — and are watching louder operators win clients they'd serve better. <strong style="color:var(--navy);font-weight:600">Not</strong> for tactical operators chasing hacks, "10x" promises, or DM scripts.</p>
+    </div>
+
+    <!-- FOUNDER — trust before the essays -->
+    <div style="padding:28px 26px;background:var(--bg-alt);border:1px solid var(--border);border-radius:14px;margin:28px 0 32px;display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center">
+      <div aria-label="Sunny Binjola" style="width:64px;height:64px;background:var(--navy);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;letter-spacing:-.02em;border:2px solid var(--green);flex-shrink:0">SB</div>
+      <div>
+        <div style="font-size:.78rem;font-weight:800;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px">Sunny Binjola · <span style="font-weight:600;color:var(--text-muted);text-transform:none;letter-spacing:-.01em">Founder, ElevateAI System</span></div>
+        <p style="font-size:.88rem;color:var(--text);line-height:1.5;margin:0;font-style:italic"><span style="color:var(--green-dark);font-weight:800">"</span>I read every application myself. The three essays below tell me more than an hour on a call would — so I'd rather read your honest version than book a wrong-fit meeting.<span style="color:var(--green-dark);font-weight:800">"</span></p>
+      </div>
+    </div>
+
+    <form id="applyForm" novalidate>
+
+      <!-- Identity -->
+      <div class="id-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="field">
+        <div class="field-num"><span>1</span><span>What you're building</span></div>
+        <label for="building">In one paragraph — what are you actually building, and who is it for?</label>
+        <p class="field-hint">Not the elevator pitch. The real version. The one you'd say to a friend at 11pm with a drink in your hand.</p>
+        <textarea id="building" name="building" data-min="80" required placeholder="I'm building..."></textarea>
+        <div class="char-count" id="cc-building">0 characters · aim for 80+</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="field">
+        <div class="field-num"><span>2</span><span>What you've tried</span></div>
+        <label for="tried">What have you already tried to grow this — and what specifically didn't work?</label>
+        <p class="field-hint">Be specific. "Posted on LinkedIn for 6 months and got 3 leads, all wrong-fit" tells me more than "tried social media."</p>
+        <textarea id="tried" name="tried" data-min="80" required placeholder="I've tried..."></textarea>
+        <div class="char-count" id="cc-tried">0 characters · aim for 80+</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="field">
+        <div class="field-num"><span>3</span><span>What changes if this works</span></div>
+        <label for="change">If your marketing actually started working — what would change in your life that has nothing to do with money?</label>
+        <p class="field-hint">This is the real question. Money is a metric. What does the rest of your life look like when this stops being heavy?</p>
+        <textarea id="change" name="change" data-min="80" required placeholder="If this worked, I'd..."></textarea>
+        <div class="char-count" id="cc-change">0 characters · aim for 80+</div>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" id="submitBtn">
+          Submit application
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="submit-fineprint">I read every application personally. If we're a fit, you'll get a calendar link within 24 hours. If we're not, I'll tell you why and point you somewhere better.</p>
+        <div class="form-error" id="formError"></div>
+      </div>
+    </form>
+  </div>
+
+  <!-- SUCCESS STATE -->
+  <div class="success-state" id="successState">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>Application received.</h2>
+    <p>I'll read this within 24 hours. If we're a fit, you'll get a calendar link in your inbox at <strong id="successEmail" style="color:var(--navy)">your email</strong>. While you wait — feel free to grab a slot directly if my calendar's open.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="success-cta">
+      View available times
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 ElevateAI System · Built by <a href="mailto:sunny.binjola@gmail.com">Sunny Binjola</a>
+</footer>
+
+<!-- Apollo tracker -->
+<script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
+
+<script>
+  // ============================================
+  // BRAND OS APPLICATION FORM
+  // Posts to: brand_os_applications (Supabase)
+  // ============================================
+  // SQL to create the table (run once in Supabase SQL editor):
+  //
+  //   create table public.brand_os_applications (
+  //     id uuid primary key default gen_random_uuid(),
+  //     created_at timestamptz default now(),
+  //     name text not null,
+  //     email text not null,
+  //     building text not null,
+  //     tried text not null,
+  //     change_if_worked text not null,
+  //     quiz_score int,
+  //     quiz_tier text,
+  //     source text default 'apply.html'
+  //   );
+  //   alter table public.brand_os_applications enable row level security;
+  //   create policy "anon insert" on public.brand_os_applications
+  //     for insert to anon with check (true);
+  //
+  // ============================================
+
+  const SUPABASE_URL  = 'https://modepuhwinzdngirlnkz.supabase.co';
+  const SUPABASE_KEY  = 'sb_publishable_cmok-dqlnfySxmdJVfv1CA_ESioiu0B';
+  const TABLE         = 'brand_os_applications';
+
+  // ── Read URL params (score/tier/email from quiz) ──
+  const params = new URLSearchParams(window.location.search);
+  const urlScore = params.get('score');
+  const urlTier  = params.get('tier');
+  const urlEmail = params.get('email');
+  const urlName  = params.get('name');
+
+  // Pre-fill name + email if passed from quiz
+  if (urlName) {
+    document.getElementById('name').value = decodeURIComponent(urlName);
+  }
+  if (urlEmail) {
+    document.getElementById('email').value = decodeURIComponent(urlEmail);
+  }
+
+  // Show score recap if present
+  if (urlScore) {
+    document.getElementById('scoreRecap').classList.add('active');
+    document.getElementById('recapScore').textContent = urlScore;
+    if (urlTier) document.getElementById('recapTier').textContent = decodeURIComponent(urlTier);
+  }
+
+  // ── Live char counts ──
+  ['building','tried','change'].forEach(id => {
+    const ta = document.getElementById(id);
+    const cc = document.getElementById('cc-' + id);
+    const min = parseInt(ta.dataset.min, 10);
+    ta.addEventListener('input', () => {
+      const n = ta.value.trim().length;
+      cc.textContent = n + ' character' + (n===1?'':'s') + (n >= min ? ' · good' : ' · aim for ' + min + '+');
+      cc.classList.toggle('ok', n >= min);
+      cc.classList.toggle('short', n > 0 && n < min);
+    });
+  });
+
+  // ── Submit ──
+  const form = document.getElementById('applyForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formError = document.getElementById('formError');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.classList.remove('active');
+
+    const data = {
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      building: document.getElementById('building').value.trim(),
+      tried: document.getElementById('tried').value.trim(),
+      change_if_worked: document.getElementById('change').value.trim(),
+      quiz_score: urlScore ? parseInt(urlScore,10) : null,
+      quiz_tier: urlTier ? decodeURIComponent(urlTier) : null,
+      source: 'apply.html'
+    };
+
+    // Validate
+    if (!data.name || !data.email) {
+      return showError('Name and email are required.');
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      return showError('That email doesn\'t look right.');
+    }
+    if (data.building.length < 80 || data.tried.length < 80 || data.change_if_worked.length < 80) {
+      return showError('Each answer needs at least 80 characters. The depth of your answer is the filter — please give it a real shot.');
+    }
+
+    // Submit
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<div class="spinner"></div> Sending...';
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        throw new Error(txt || ('HTTP ' + res.status));
+      }
+
+      // Success
+      document.getElementById('formState').style.display = 'none';
+      document.getElementById('successEmail').textContent = data.email;
+      document.getElementById('successState').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Optional: notify Apollo
+      if (window.trackingFunctions && window.trackingFunctions.identifyOnLoad) {
+        window.trackingFunctions.identifyOnLoad({ email: data.email });
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      showError('Something broke on our end. Email sunny.binjola@gmail.com directly and we\'ll book it from there.');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Submit application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    }
+  });
+
+  function showError(msg) {
+    formError.textContent = msg;
+    formError.classList.add('active');
+    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+
+</body>
+</html>

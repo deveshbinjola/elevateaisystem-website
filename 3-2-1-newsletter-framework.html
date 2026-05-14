@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <link rel="canonical" href="https://www.elevateaisystem.com/3-2-1-newsletter-framework">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal — Weekly AI Intel Brief Framework</title>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8;--bg-alt:#F2F2EE;--green:#00FF41;--green-dark:#00CC34;
+  --navy:#0A0F1C;--navy-light:#1A2035;--text:#1A1A2E;--text-muted:#5A5A6E;
+  --border:#E0E0D8;--white:#FFFFFF;--card-bg:#FFFFFF;--radius:12px;--radius-lg:20px;
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.page{max-width:900px;margin:0 auto;padding:3rem 1.5rem 4rem}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:3.5rem;padding-top:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--green);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.2rem;border-radius:50px;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--navy);margin-bottom:.75rem}
+.hero h1 .accent{color:var(--green-dark)}
+.hero-sub{font-size:1.1rem;color:var(--text-muted);max-width:580px;margin:0 auto;line-height:1.7}
+
+/* Section */
+.section{margin-bottom:3rem}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.6rem}
+.section-title{font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;line-height:1.15}
+.section-desc{font-size:1rem;color:var(--text-muted);line-height:1.7;max-width:700px;margin-bottom:1.5rem}
+
+/* Format breakdown */
+.format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem}
+.format-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:1.8rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:all .3s}
+.format-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.format-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green-dark)}
+.format-num{font-size:3.5rem;font-weight:800;color:var(--green);opacity:.15;line-height:1;margin-bottom:.3rem}
+.format-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.5rem}
+.format-title{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.format-desc{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem}
+.format-example{background:var(--bg-alt);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;color:var(--text);line-height:1.6}
+.format-example strong{color:var(--navy);font-weight:700}
+
+/* Example issue */
+.example-issue{background:var(--card-bg);border:2px solid var(--navy);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:2rem}
+.example-header{background:var(--navy);color:var(--white);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.example-header h3{font-size:1.1rem;font-weight:700}
+.example-header span{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:500}
+.example-body{padding:2rem}
+.example-section{margin-bottom:1.8rem}
+.example-section:last-child{margin-bottom:0}
+.example-section-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.example-section-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--green);font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.example-section-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark)}
+.example-items{display:flex;flex-direction:column;gap:.6rem;padding-left:44px}
+.example-item{background:var(--bg-alt);border-radius:8px;padding:.8rem 1rem}
+.example-item-title{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.example-item-body{font-size:.82rem;color:var(--text-muted);line-height:1.6}
+.example-item-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .5rem;border-radius:4px;background:rgba(0,204,52,.1);color:var(--green-dark);margin-top:.3rem}
+
+/* Separator */
+.sep{height:1px;background:var(--border);margin:2rem 0}
+
+/* Rules */
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.rule-card{background:var(--card-bg);border-radius:var(--radius);padding:1.4rem;border:1px solid var(--border)}
+.rule-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.rule-card h4 span{color:var(--green-dark)}
+.rule-card p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+
+/* Schedule */
+.schedule-table{width:100%;border-collapse:collapse;margin-top:1rem}
+.schedule-table th{text-align:left;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);padding:.6rem 1rem;border-bottom:2px solid var(--navy)}
+.schedule-table td{padding:.8rem 1rem;font-size:.88rem;border-bottom:1px solid var(--border)}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table .day{font-weight:700;color:var(--navy)}
+.schedule-table .task{color:var(--text)}
+.schedule-table .time{color:var(--text-muted);font-size:.8rem}
+
+/* Name ideas */
+.name-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:1rem}
+.name-option{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;transition:all .3s;cursor:default}
+.name-option:hover{border-color:var(--green-dark);background:rgba(0,204,52,.03)}
+.name-option h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.name-option p{font-size:.8rem;color:var(--text-muted)}
+.name-option.recommended{border-color:var(--green-dark);border-width:2px;position:relative}
+.name-option.recommended::after{content:'RECOMMENDED';position:absolute;top:-.6rem;right:1rem;font-size:.55rem;font-weight:700;letter-spacing:.08em;background:var(--green-dark);color:white;padding:.2rem .5rem;border-radius:4px}
+
+/* CTA */
+.cta-box{background:var(--navy);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;color:var(--white);margin-top:2rem}
+.cta-box h3{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+.cta-box p{font-size:.95rem;color:rgba(255,255,255,.6);margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--green);color:var(--navy);font-size:.95rem;font-weight:700;padding:.8rem 2rem;border-radius:8px;text-decoration:none;transition:all .3s}
+.cta-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+
+/* Footer */
+.footer{text-align:center;padding-top:2rem;margin-top:3rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--text-muted)}
+
+@media(max-width:768px){
+  .format-grid{grid-template-columns:1fr}
+  .rules-grid{grid-template-columns:1fr}
+  .name-grid{grid-template-columns:1fr}
+  .example-body{padding:1.2rem}
+  .example-items{padding-left:0}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">Newsletter Framework</div>
+    <h1>The <span class="accent">3-2-1</span><br>Weekly AI Intel Brief</h1>
+    <p class="hero-sub">A repeatable framework for a weekly email that positions you as the AI filter for coaches. Every issue, same structure, zero guesswork.</p>
+  </header>
+
+  <!-- THE FORMAT -->
+  <section class="section">
+    <div class="section-label">The Format</div>
+    <h2 class="section-title">3 Technologies. 2 Ideas. 1 Tool.</h2>
+    <p class="section-desc">Every issue follows the same 3-2-1 structure. Readers know exactly what they're getting. You know exactly what to write. Consistency builds trust.</p>
+
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-num">3</div>
+        <div class="format-label">Technologies</div>
+        <div class="format-title">What's New in AI</div>
+        <div class="format-desc">Three AI developments from the past week that matter for coaching businesses. Not everything — just what's relevant.</div>
+        <div class="format-example">
+          <strong>Format:</strong> 2-3 sentence summary + one line on why it matters for coaches. Link to source.
+        </div>
+      </div>
+      <div class="format-card">
+        <div class="format-num">2</div>
+        <div class="format-label">Ideas</div>
+        <div class="format-title">How to Apply It</div>
+        <div class="format-desc">Two actionable ideas coaches can implement this week. Concrete, specific, low-effort. This is the value they come back for.</div>
+        <div class="format-example">
+          <strong>Format:</strong> One paragraph each. Problem → idea → how to do it. No fluff.
+        </div>
+      </div>
+      <div class="format-card">
+        <div class="format-num">1</div>
+        <div class="format-label">Tool</div>
+        <div class="format-title">What to Try</div>
+        <div class="format-desc">One specific AI tool with a use case. Not a listicle — one tool, explained well, with a link. Readers try it immediately.</div>
+        <div class="format-example">
+          <strong>Format:</strong> Tool name + what it does + specific use case for coaches + link. Honest take (not sponsored).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- EXAMPLE ISSUE -->
+  <section class="section">
+    <div class="section-label">Example Issue</div>
+    <h2 class="section-title">What an Actual Issue Looks Like</h2>
+    <p class="section-desc">Here's a sample issue so you can see the format in action. Adapt the voice to yours — this is just the skeleton.</p>
+
+    <div class="example-issue">
+      <div class="example-header">
+        <h3>The Signal — Issue #001</h3>
+        <span>March 2026</span>
+      </div>
+      <div class="example-body">
+
+        <!-- 3 Technologies -->
+        <div class="example-section">
+          <div class="example-section-header">
+            <div class="example-section-num">3</div>
+            <div class="example-section-title">Technologies This Week</div>
+          </div>
+          <div class="example-items">
+            <div class="example-item">
+              <div class="example-item-title">Claude can now use your computer</div>
+              <div class="example-item-body">Anthropic launched "computer use" — Claude can click, type, and navigate your screen. For coaches, this means AI can now operate your CRM, post content, and manage workflows without custom integrations. It's early, but this changes automation economics.</div>
+              <div class="example-item-tag">Automation</div>
+            </div>
+            <div class="example-item">
+              <div class="example-item-title">Google's NotebookLM adds audio overviews</div>
+              <div class="example-item-body">Upload your course material or coaching framework, and NotebookLM generates a podcast-style audio summary. Coaches can turn their intellectual property into audio content in minutes — great for repurposing existing material.</div>
+              <div class="example-item-tag">Content</div>
+            </div>
+            <div class="example-item">
+              <div class="example-item-title">OpenAI launches GPT Store revenue sharing</div>
+              <div class="example-item-body">Creators of custom GPTs now earn a share of revenue. If you've built a coaching assessment or diagnostic tool as a GPT, this is a new monetization path — or at minimum, a lead magnet distribution channel.</div>
+              <div class="example-item-tag">Monetization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Ideas -->
+        <div class="example-section">
+          <div class="example-section-header">
+            <div class="example-section-num">2</div>
+            <div class="example-section-title">Ideas You Can Use This Week</div>
+          </div>
+          <div class="example-items">
+            <div class="example-item">
+              <div class="example-item-title">Turn your FAQ into a lead magnet quiz</div>
+              <div class="example-item-body">You already answer the same 10 questions on every sales call. Turn those into a self-assessment quiz — each question maps to a pain point, the results page positions your offer as the solution. Takes 2 hours to build, runs forever.</div>
+            </div>
+            <div class="example-item">
+              <div class="example-item-title">Use AI to write your email nurture sequence in one sitting</div>
+              <div class="example-item-body">Paste your top 5 client testimonials into Claude. Ask it to extract the transformation pattern, then draft a 5-email sequence that mirrors that journey — from pain point to realization to action. Edit for voice, schedule, done.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1 Tool -->
+        <div class="example-section">
+          <div class="example-section-header">
+            <div class="example-section-num">1</div>
+            <div class="example-section-title">Tool of the Week</div>
+          </div>
+          <div class="example-items">
+            <div class="example-item">
+              <div class="example-item-title">Descript — Edit video by editing text</div>
+              <div class="example-item-body">Record a 20-minute coaching Q&A, drop it in Descript, and edit the transcript like a Google Doc. Delete a sentence = delete that part of the video. It removes filler words automatically. For coaches making video content, this cuts editing time by 80%. Free tier available, paid from $24/mo.</div>
+              <div class="example-item-tag">Video + Content</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- EDITORIAL RULES -->
+  <section class="section">
+    <div class="section-label">Editorial Rules</div>
+    <h2 class="section-title">The Rules That Keep It Good</h2>
+    <p class="section-desc">Consistency is the product. These rules protect the quality and keep you from overthinking every issue.</p>
+
+    <div class="rules-grid">
+      <div class="rule-card">
+        <h4><span>01</span> Always coach-relevant</h4>
+        <p>If a coach can't use it in their business this month, it doesn't make the cut. No hype, no "cool but useless" tech news.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>02</span> Under 800 words total</h4>
+        <p>Respect the reader's time. The Signal should take 3-4 minutes to read. If it takes longer, you're overwriting.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>03</span> One CTA per issue</h4>
+        <p>Every issue ends with one thing: reply, book a call, download the playbook, or try the tool. Never more than one.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>04</span> Your voice, not a newscaster's</h4>
+        <p>Write like you talk to a coaching client. Opinionated, direct, helpful. "Here's what I'd do" beats "industry experts say."</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>05</span> Ship every Tuesday at 8am</h4>
+        <p>Same day, same time. Tuesday mornings have the highest open rates for B2B. Build the habit for yourself and your readers.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>06</span> Tag everything</h4>
+        <p>Tag each tech/idea/tool with a category (Automation, Content, Leads, Revenue). Over time, readers self-select what they care about.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- PRODUCTION SCHEDULE -->
+  <section class="section">
+    <div class="section-label">Production Schedule</div>
+    <h2 class="section-title">Weekly Workflow (Under 2 Hours)</h2>
+    <p class="section-desc">You don't need a content team. You need a system. Here's the weekly rhythm.</p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Task</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day">Sunday</td>
+          <td class="task">Scan AI news. Save 5-8 articles/posts that caught your eye during the week. Use Feedly, X, or a curated AI newsletter as source material.</td>
+          <td class="time">20 min</td>
+        </tr>
+        <tr>
+          <td class="day">Monday AM</td>
+          <td class="task">Pick the 3 technologies, 2 ideas, and 1 tool. Write the first draft. Use AI to help draft — then edit for your voice.</td>
+          <td class="time">45 min</td>
+        </tr>
+        <tr>
+          <td class="day">Monday PM</td>
+          <td class="task">Edit, trim to under 800 words. Add links and tags. Write the subject line (keep it under 50 chars). Schedule for Tuesday 8am.</td>
+          <td class="time">30 min</td>
+        </tr>
+        <tr>
+          <td class="day">Tuesday</td>
+          <td class="task">It sends. Reply to responses. Every reply is a relationship. People who reply become clients.</td>
+          <td class="time">15 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- NAMING -->
+  <section class="section">
+    <div class="section-label">Naming</div>
+    <h2 class="section-title">What to Call It</h2>
+    <p class="section-desc">The name should signal the format (3-2-1) and the audience (coaches/AI). Here are four options.</p>
+
+    <div class="name-grid">
+      <div class="name-option recommended">
+        <h4>The Signal</h4>
+        <p>Clean, memorable, format-first. "Did you read this week's 3-2-1?" Works as a brand on its own.</p>
+      </div>
+      <div class="name-option">
+        <h4>The AI Edge</h4>
+        <p>Positions readers as getting an advantage. "3 technologies, 2 ideas, 1 tool — your weekly AI edge."</p>
+      </div>
+      <div class="name-option">
+        <h4>The ElevateAI Intel Brief</h4>
+        <p>Ties directly to the brand. Sounds premium and exclusive. Good for brand building.</p>
+      </div>
+      <div class="name-option">
+        <h4>The Systems Signal</h4>
+        <p>Connects to your "systems not content" philosophy. Signal = cutting through noise. On-brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- GROWTH FLYWHEEL -->
+  <section class="section">
+    <div class="section-label">Growth Strategy</div>
+    <h2 class="section-title">How It Feeds the Business</h2>
+    <p class="section-desc">The newsletter isn't a standalone thing. It's the distribution layer for everything else.</p>
+
+    <div class="rules-grid">
+      <div class="rule-card">
+        <h4><span>→</span> Playbook drives signups</h4>
+        <p>The AI Systems Playbook is the lead magnet. Download it → join the 3-2-1 list. Every playbook download becomes a subscriber.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>→</span> Newsletter warms leads</h4>
+        <p>Weekly touchpoints build trust over time. By issue #8, they feel like they know you. The audit becomes an easy yes.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>→</span> Content repurposes</h4>
+        <p>Each issue becomes 3 LinkedIn posts, 3 Instagram carousels, and a blog post. One hour of writing → a week of content.</p>
+      </div>
+      <div class="rule-card">
+        <h4><span>→</span> Replies become sales calls</h4>
+        <p>End every issue with "Reply and tell me..." — the people who reply are your warmest leads. That's your pipeline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>The Playbook + The Signal = Your Lead Engine</h3>
+    <p>One creates the first touchpoint. The other keeps the relationship alive. Together, they replace cold outreach with warm conversations.</p>
+    <a href="/ai-audit" class="cta-btn">Book Your AI Systems Audit →</a>
+  </div>
+
+  <!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

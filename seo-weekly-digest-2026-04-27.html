@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Digest — Week of April 27, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --text: #1a1611;
+      --text-dim: #6b6358;
+      --amber: #c27d1a;
+      --amber-light: #fef6e8;
+      --amber-border: #f0d49a;
+      --green: #2e7d52;
+      --green-light: #eaf4ee;
+      --green-border: #a8d8ba;
+      --navy: #1e3a5f;
+      --navy-light: #e8eef6;
+      --navy-border: #a0b8d4;
+      --rule: #e8e3dc;
+      --callout-bg: #fffbf2;
+      --callout-border: #e8c87a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      padding: 0 0 80px;
+    }
+
+    /* ---------- HEADER ---------- */
+    .digest-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      padding: 48px 0 36px;
+      animation: fadeDown 0.5s ease both;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .summary-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-green { background: var(--green); }
+    .dot-amber { background: var(--amber); }
+    .dot-navy  { background: var(--navy); }
+
+    /* ---------- SOURCE BADGES ---------- */
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .badge-green { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-amber { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-border); }
+    .badge-navy  { background: var(--navy-light);  color: var(--navy);  border: 1px solid var(--navy-border); }
+
+    .source-key { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+    /* ---------- CARDS ---------- */
+    .cards-section { margin-top: 40px; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s ease both;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(26,22,17,0.07); }
+    .card-green { border-left: 4px solid var(--green); }
+    .card-amber { border-left: 4px solid var(--amber); }
+    .card-navy  { border-left: 4px solid var(--navy); }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .date-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .card-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .card-title a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--rule);
+      transition: border-color 0.2s;
+    }
+    .card-title a:hover { border-color: var(--text); }
+
+    .card-summary {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .so-what {
+      background: var(--callout-bg);
+      border: 1px solid var(--callout-border);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .so-what-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 5px;
+    }
+    .so-what p { font-size: 13.5px; line-height: 1.6; color: var(--text); }
+
+    /* ---------- TOP PICK ---------- */
+    .top-pick {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      margin-top: 40px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .top-pick-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+    .top-pick h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .top-pick p { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.8); margin-bottom: 18px; }
+    .top-pick-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .top-pick-link:hover { background: rgba(255,255,255,0.2); }
+
+    /* ---------- FOOTER ---------- */
+    .digest-footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 12.5px;
+      color: var(--text-dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .digest-footer strong { color: var(--text); }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.10s; }
+    .card:nth-child(3) { animation-delay: 0.15s; }
+    .card:nth-child(4) { animation-delay: 0.20s; }
+    .card:nth-child(5) { animation-delay: 0.25s; }
+    .card:nth-child(6) { animation-delay: 0.30s; }
+    .card:nth-child(7) { animation-delay: 0.35s; }
+
+    @media (max-width: 600px) {
+      .digest-header { padding: 32px 0 24px; }
+      .card { padding: 18px; }
+      .top-pick { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="digest-header">
+    <div class="container">
+      <p class="eyebrow">ElevateAI System — SEO Intelligence</p>
+      <h1>SEO Digest<br>Week of April 27, 2026</h1>
+      <div class="summary-bar">
+        <span class="summary-pill"><span class="dot dot-green"></span> Ahrefs: 2</span>
+        <span class="summary-pill"><span class="dot dot-amber"></span> Search Engine Land: 3</span>
+        <span class="summary-pill"><span class="dot dot-navy"></span> Growth Memo: 2</span>
+        <span class="summary-pill" style="background:var(--surface);">3 sources checked &nbsp;·&nbsp; <strong>7 items found</strong></span>
+      </div>
+      <div class="source-key">
+        <span class="source-badge badge-green">Ahrefs Blog</span>
+        <span class="source-badge badge-amber">Search Engine Land</span>
+        <span class="source-badge badge-navy">Growth Memo / Kevin Indig</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cards-section">
+      <p class="section-label">This week's signal — 7 items · filtered for coaches &amp; creators</p>
+
+      <!-- 1: Ahrefs – ChatGPT Citations -->
+      <article class="card card-green">
+        <div class="card-meta">
+          <span class="source-badge badge-green">Ahrefs Blog</span>
+          <span class="date-label">Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://ahrefs.com/blog/why-chatgpt-cites-pages/" target="_blank" rel="noopener">
+            Why ChatGPT Cites One Page Over Another (Study of 1.4M Prompts)
+          </a>
+        </h2>
+        <p class="card-summary">
+          Ahrefs analysed 1.4 million ChatGPT prompts to identify what makes a page get cited in AI-generated answers: topical authority depth, content freshness, and structural clarity all emerged as key signals.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>ElevateAI's blog and service pages need to signal deep topical authority on "AI marketing for coaches" — not general marketing. Publishing tightly focused clusters around Lead OS, Content OS, and Growth Engine increases your probability of being the page ChatGPT cites when coaches ask AI for help with lead generation or content creation.</p>
+        </div>
+      </article>
+
+      <!-- 2: Ahrefs – Fresh Content -->
+      <article class="card card-green">
+        <div class="card-meta">
+          <span class="source-badge badge-green">Ahrefs Blog</span>
+          <span class="date-label">Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://ahrefs.com/blog/fresh-content/" target="_blank" rel="noopener">
+            Fresh Content: Why Publish Dates Make or Break Rankings and AI Visibility
+          </a>
+        </h2>
+        <p class="card-summary">
+          Keeping content up to date — not merely publishing new posts — signals to both Google and AI assistants that your information is current and reliable, helping you hold rankings and earn more AI citations over time.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>Your daily blog publishing cadence is already building freshness signals. The next lever: schedule quarterly refreshes of your highest-traffic older posts — update stats, add new examples, and bump the publish date — to compound the freshness advantage in both Google search and LLM-based discovery.</p>
+        </div>
+      </article>
+
+      <!-- 3: SEL – Agentic Engine Optimization -->
+      <article class="card card-amber">
+        <div class="card-meta">
+          <span class="source-badge badge-amber">Search Engine Land</span>
+          <span class="date-label">April 11, 2026 &nbsp;·&nbsp; Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://searchengineland.com/agentic-engine-optimization-google-ai-director-474358" target="_blank" rel="noopener">
+            Agentic Engine Optimization: Google AI Director Outlines New Content Playbook
+          </a>
+        </h2>
+        <p class="card-summary">
+          Addy Osmani (Google Cloud AI Director of Engineering) published a framework for AEO — AI agents fetch and parse pages differently from humans, requiring machine-readable authority signals, clear service descriptions, and direct action paths.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>Audit each service page (Lead OS, Content OS, Growth Engine, SEO Services) to ensure the offering, target client, and booking CTA are clearly parseable within the first two paragraphs — not buried in persuasion copy. This makes it easier for AI agents to match your services to a coach's intent and surface the right booking link directly.</p>
+        </div>
+      </article>
+
+      <!-- 4: SEL – March 2026 Core Update -->
+      <article class="card card-amber">
+        <div class="card-meta">
+          <span class="source-badge badge-amber">Search Engine Land</span>
+          <span class="date-label">April 8, 2026 &nbsp;·&nbsp; Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397" target="_blank" rel="noopener">
+            March 2026 Google Core Update More Volatile Than December — Here's What Changed
+          </a>
+        </h2>
+        <p class="card-summary">
+          The March 2026 core update (completed April 8) shifted nearly 80% of top-3 results — the most volatile update in recent cycles — with specialist niche sites and established brands gaining while aggregators, directories, and comparison sites lost ground.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>This update structurally favours elevateaisystem.com: specialist niche sites are winning, and you are a specialist. If your rankings were neutral or slightly positive post-update, you're in the right lane — now is the time to press your depth-of-expertise advantage and build out author trust signals before the next core cycle.</p>
+        </div>
+      </article>
+
+      <!-- 5: SEL – SEO 2026 Higher Standards -->
+      <article class="card card-amber">
+        <div class="card-meta">
+          <span class="source-badge badge-amber">Search Engine Land</span>
+          <span class="date-label">2026 &nbsp;·&nbsp; Relevance: Medium</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://searchengineland.com/seo-2026-higher-standards-ai-influence-web-catching-up-473540" target="_blank" rel="noopener">
+            SEO in 2026: Higher Standards, AI Influence, and a Web Still Catching Up
+          </a>
+        </h2>
+        <p class="card-summary">
+          2026 SEO rewards first-hand expertise, real topic depth, and verifiable author trust signals — content that demonstrates genuine experience ranks; generic AI-generated filler drops fast as Google's quality bar rises alongside its own AI capabilities.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>Blog posts should prominently feature real client outcomes, before/after numbers, and Sunny's personal frameworks — not generic AI marketing tips anyone could write. Add a consistent author bio with photo and credentials to every post; first-hand expertise signals are now a direct ranking differentiator, not a nice-to-have.</p>
+        </div>
+      </article>
+
+      <!-- 6: Growth Memo – Ghost Citation Problem -->
+      <article class="card card-navy">
+        <div class="card-meta">
+          <span class="source-badge badge-navy">Growth Memo</span>
+          <span class="date-label">April 20, 2026 &nbsp;·&nbsp; Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://www.growth-memo.com/p/the-ghost-citation-problem" target="_blank" rel="noopener">
+            The Ghost Citation Problem
+          </a>
+        </h2>
+        <p class="card-summary">
+          Kevin Indig reveals that when AI models cite your content, they omit your brand name 62% of the time — being cited and being recognised as a named source are two distinct outcomes with very different business value.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>Embed "ElevateAI System" naturally in the body text of every article — not just in headers or bylines — so the brand name travels with the citation when LLMs reference your work. Indig's research shows that branded case studies and opinion pieces generate the highest name-drop rate, making those formats your most valuable brand-building content types.</p>
+        </div>
+      </article>
+
+      <!-- 7: Growth Memo – Intelligence Brief #17 -->
+      <article class="card card-navy">
+        <div class="card-meta">
+          <span class="source-badge badge-navy">Growth Memo</span>
+          <span class="date-label">April 17, 2026 &nbsp;·&nbsp; Relevance: High</span>
+        </div>
+        <h2 class="card-title">
+          <a href="https://www.growth-memo.com/p/growth-intelligence-brief-17" target="_blank" rel="noopener">
+            Growth Intelligence Brief #17
+          </a>
+        </h2>
+        <p class="card-summary">
+          Research shows 65–85% of what people ask ChatGPT is invisible to traditional keyword tools — the real coaching-niche search demand is flowing through LLMs, not Google, and existing keyword data dramatically underestimates it.
+        </p>
+        <div class="so-what">
+          <p class="so-what-label">So what for ElevateAI System</p>
+          <p>Supplement keyword research with conversational, problem-first queries like "how do I get consistent leads as a health coach using AI" — topics that Google search volume won't surface but are actively being asked in ChatGPT. A content calendar informed by LLM-query thinking will capture demand that your competitors aren't even tracking yet.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- TOP PICK -->
+    <div class="top-pick">
+      <p class="top-pick-eyebrow">This week's 80/20 — the one thing to read or act on</p>
+      <h2>The Ghost Citation Problem — Kevin Indig, Growth Memo</h2>
+      <p>
+        AI models cite your content but fail to mention your brand name 62% of the time. For a service business like ElevateAI System, this is the gap between building authority and building clients. The fix is specific and immediately actionable: embed your brand name in body copy throughout every article, lead with branded case studies, and treat each post as a training signal for LLMs — not just a Google ranking opportunity.
+      </p>
+      <a class="top-pick-link" href="https://www.growth-memo.com/p/the-ghost-citation-problem" target="_blank" rel="noopener">
+        Read the full issue &rarr;
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="digest-footer">
+      <span><strong>ElevateAI System</strong> &nbsp;·&nbsp; SEO Weekly Digest &nbsp;·&nbsp; Week of April 27, 2026</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;">Sources: Ahrefs · Search Engine Land · Growth Memo</span>
+    </footer>
+  </main>
+
+</body>
+</html>

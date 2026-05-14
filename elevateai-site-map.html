@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="canonical" href="https://www.elevateaisystem.com/elevateai-site-map">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElevateAI System — Website Architecture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    /* ── Theme: Editorial — Deep navy + gold ── */
+    :root {
+      --bg: #f7f5f0;
+      --bg-alt: #efece4;
+      --surface: #ffffff;
+      --surface-dim: #f2efea;
+      --border: rgba(0,0,0,.08);
+      --border-accent: rgba(26,42,68,.15);
+      --text: #1a2a44;
+      --text-dim: #5c6a7e;
+      --text-muted: #8a95a5;
+      --accent-gold: #c49a2a;
+      --accent-gold-dim: rgba(196,154,42,.1);
+      --accent-navy: #1a2a44;
+      --accent-navy-dim: rgba(26,42,68,.06);
+      --accent-green: #2d7a4f;
+      --accent-green-dim: rgba(45,122,79,.08);
+      --accent-rose: #9e3b47;
+      --accent-rose-dim: rgba(158,59,71,.08);
+      --accent-teal: #1a6b6a;
+      --accent-teal-dim: rgba(26,107,106,.08);
+      --accent-amber: #b67721;
+      --accent-amber-dim: rgba(182,119,33,.08);
+      --font-heading: 'Instrument Serif', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --font-body: 'JetBrains Mono', monospace;
+      --radius: 8px;
+      --radius-lg: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111820;
+        --bg-alt: #171f2a;
+        --surface: #1c2635;
+        --surface-dim: #151d28;
+        --border: rgba(255,255,255,.06);
+        --border-accent: rgba(196,154,42,.2);
+        --text: #dce3ed;
+        --text-dim: #8a95a5;
+        --text-muted: #5c6a7e;
+        --accent-gold: #d4a73a;
+        --accent-gold-dim: rgba(212,167,58,.1);
+        --accent-navy: #dce3ed;
+        --accent-navy-dim: rgba(220,227,237,.06);
+        --accent-green-dim: rgba(45,122,79,.15);
+        --accent-rose-dim: rgba(158,59,71,.15);
+        --accent-teal-dim: rgba(26,107,106,.15);
+        --accent-amber-dim: rgba(182,119,33,.15);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% 10%, var(--accent-gold-dim), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 90%, var(--accent-navy-dim), transparent);
+    }
+
+    /* ── Layout ── */
+    .page { max-width: 1120px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+    /* ── Hero ── */
+    .hero { text-align: center; margin-bottom: 3.5rem; animation: fadeUp .6s ease both; }
+    .hero-label {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .hero-label::before, .hero-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent-gold);
+      opacity: .4;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: .75rem;
+      letter-spacing: -.01em;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent-gold); }
+    .hero-sub {
+      font-size: .82rem;
+      color: var(--text-dim);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── KPI strip ── */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+      animation: fadeUp .6s ease .15s both;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+      text-align: center;
+    }
+    .kpi-num {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      line-height: 1;
+    }
+    .kpi-label {
+      font-size: .65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: .3rem;
+    }
+
+    /* ── Mermaid container ── */
+    .diagram-section {
+      margin-bottom: 3rem;
+      animation: fadeUp .6s ease .3s both;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .section-label .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+    }
+    .mermaid-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .mermaid-wrap .controls {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      display: flex;
+      gap: .25rem;
+      z-index: 10;
+    }
+    .mermaid-wrap .controls button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text-dim);
+      font-size: .75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+    }
+    .mermaid-wrap .controls button:hover {
+      background: var(--bg-alt);
+      color: var(--text);
+    }
+    .mermaid-inner {
+      display: flex;
+      justify-content: center;
+      transform-origin: center center;
+      transition: transform .2s ease;
+    }
+    .mermaid { max-width: 100%; }
+
+    /* ── Section heading ── */
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    /* ── Cards grid ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .ve-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      transition: all .2s;
+      min-width: 0;
+    }
+    .ve-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,.04);
+    }
+    .ve-card--hero {
+      border-left: 3px solid var(--accent-gold);
+      background: linear-gradient(135deg, var(--accent-gold-dim) 0%, var(--surface) 60%);
+    }
+    .card-badge {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .2rem .5rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: .6rem;
+    }
+    .badge-service { background: var(--accent-green-dim); color: var(--accent-green); }
+    .badge-landing { background: var(--accent-amber-dim); color: var(--accent-amber); }
+    .badge-blog { background: var(--accent-teal-dim); color: var(--accent-teal); }
+    .badge-util { background: var(--accent-rose-dim); color: var(--accent-rose); }
+    .badge-core { background: var(--accent-gold-dim); color: var(--accent-gold); }
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      margin-bottom: .4rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .card-path {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      color: var(--accent-gold);
+      margin-bottom: .5rem;
+      word-break: break-all;
+    }
+    .card-desc {
+      font-size: .75rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: .6rem;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .3rem;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: .58rem;
+      font-weight: 500;
+      padding: .15rem .45rem;
+      border-radius: 3px;
+      background: var(--accent-navy-dim);
+      color: var(--text-dim);
+    }
+
+    /* ── Tech Stack ── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: .75rem;
+      margin-bottom: 3rem;
+    }
+    .tech-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+    }
+    .tech-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .tech-name {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .15rem;
+    }
+    .tech-desc {
+      font-size: .68rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ── Shared component callout ── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-teal);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 3rem;
+    }
+    .callout-title {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--accent-teal);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .4rem;
+    }
+    .callout-body {
+      font-size: .76rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+    .callout-body code {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      background: var(--accent-navy-dim);
+      padding: .1rem .35rem;
+      border-radius: 3px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: .65rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stagger-1 { animation: fadeUp .5s ease .1s both; }
+    .stagger-2 { animation: fadeUp .5s ease .15s both; }
+    .stagger-3 { animation: fadeUp .5s ease .2s both; }
+    .stagger-4 { animation: fadeUp .5s ease .25s both; }
+    .stagger-5 { animation: fadeUp .5s ease .3s both; }
+    .stagger-6 { animation: fadeUp .5s ease .35s both; }
+    .stagger-7 { animation: fadeUp .5s ease .4s both; }
+    .stagger-8 { animation: fadeUp .5s ease .45s both; }
+    .stagger-9 { animation: fadeUp .5s ease .5s both; }
+    .stagger-10 { animation: fadeUp .5s ease .55s both; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0s !important; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .mermaid-wrap { padding: 1.2rem .5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-label">Site Architecture</div>
+      <h1>ElevateAI <em>System</em></h1>
+      <p class="hero-sub">Complete website architecture for elevateaisystem.com — an AI marketing agency serving coaches, creators, and businesses doing $10K+/month.</p>
+    </header>
+
+    <!-- KPIs -->
+    <div class="kpi-strip">
+      <div class="kpi stagger-1">
+        <div class="kpi-num">20</div>
+        <div class="kpi-label">Total Pages</div>
+      </div>
+      <div class="kpi stagger-2">
+        <div class="kpi-num">4</div>
+        <div class="kpi-label">Service Pages</div>
+      </div>
+      <div class="kpi stagger-3">
+        <div class="kpi-num">6</div>
+        <div class="kpi-label">Blog Posts</div>
+      </div>
+      <div class="kpi stagger-4">
+        <div class="kpi-num">5</div>
+        <div class="kpi-label">Integrations</div>
+      </div>
+    </div>
+
+    <!-- Topology Diagram -->
+    <section class="diagram-section">
+      <div class="section-label"><span class="dot"></span> Site Topology</div>
+      <div class="mermaid-wrap">
+        <div class="controls">
+          <button onclick="zoomDiagram(1.2)" title="Zoom in">+</button>
+          <button onclick="zoomDiagram(0.8)" title="Zoom out">−</button>
+          <button onclick="resetZoom()" title="Reset">1:1</button>
+          <button onclick="openMermaidInNewTab()" title="Expand">⛶</button>
+        </div>
+        <div class="mermaid-inner" id="mermaidInner">
+          <pre class="mermaid">
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#f7f5f0',
+  'primaryTextColor': '#1a2a44',
+  'primaryBorderColor': '#c49a2a',
+  'lineColor': '#8a95a5',
+  'secondaryColor': '#efece4',
+  'tertiaryColor': '#fff',
+  'fontFamily': 'JetBrains Mono, monospace',
+  'fontSize': '14px',
+  'nodeBorder': '#c49a2a',
+  'clusterBkg': '#f2efea',
+  'clusterBorder': '#c49a2a'
+}}}%%
+flowchart TD
+  HOME["index.html<br/><small>Homepage</small>"]
+
+  subgraph services [" Services "]
+    LO["lead-os.html<br/><small>Lead OS 2.0</small>"]
+    CO["content-os.html<br/><small>Content OS</small>"]
+    GE["growth-engine.html<br/><small>Growth Engine</small>"]
+    SEO["seo-audit-landing-page.html<br/><small>Search Visibility</small>"]
+  end
+
+  subgraph landing [" Landing Pages "]
+    AUDIT["ai-audit.html<br/><small>AI Audit — $1,000</small>"]
+    SEOAUDIT["seo-audit-landing-page.html<br/><small>Free SEO Audit</small>"]
+    LEAD["lead-clarity-score.html<br/><small>Lead Clarity Score</small>"]
+  end
+
+  subgraph content [" Content "]
+    BLOG["blog.html<br/><small>Blog Index</small>"]
+    B1["ai-for-coaches"]
+    B2["5-ai-tools"]
+    B3["coaches-need-systems"]
+    B4["coaching-mistakes"]
+    B5["getting-clients"]
+    B6["seo-for-coaches"]
+  end
+
+  ABOUT["about.html<br/><small>About Sunny</small>"]
+  ERR["404.html<br/><small>Error Page</small>"]
+
+  HOME --> services
+  HOME --> landing
+  HOME --> BLOG
+  HOME --> ABOUT
+  BLOG --> B1 & B2 & B3 & B4 & B5 & B6
+
+  AUDIT -.-|"Supabase"| DB[(Database)]
+  SEOAUDIT -.-|"Calendly"| CAL((Booking))
+  LO -.-|"Calendly"| CAL
+  CO -.-|"Calendly"| CAL
+  GE -.-|"Calendly"| CAL
+
+  classDef serviceNode fill:#2d7a4f15,stroke:#2d7a4f,stroke-width:2px
+  classDef landingNode fill:#b6772115,stroke:#b67721,stroke-width:2px
+  classDef blogNode fill:#1a6b6a15,stroke:#1a6b6a,stroke-width:2px
+  classDef utilNode fill:#9e3b4715,stroke:#9e3b47,stroke-width:2px
+  classDef extNode fill:#c49a2a15,stroke:#c49a2a,stroke-width:2px,stroke-dasharray: 5 5
+
+  class LO,CO,GE,SEO serviceNode
+  class AUDIT,SEOAUDIT,LEAD landingNode
+  class BLOG,B1,B2,B3,B4,B5,B6 blogNode
+  class ERR utilNode
+  class DB,CAL extNode
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared Component -->
+    <div class="callout stagger-5">
+      <div class="callout-title">Shared Component — navbar.js</div>
+      <div class="callout-body">
+        A vanilla JS IIFE that injects the nav bar (CSS + HTML) into every page at runtime. Used by <strong>14 of 17</strong> HTML pages. Three product pages (<code>lead-os</code>, <code>content-os</code>, <code>growth-engine</code>) use custom inline navs with product-specific CTAs. Includes desktop dropdown menu, mobile hamburger, and scroll shadow effect.
+      </div>
+    </div>
+
+    <!-- Core Pages -->
+    <div class="section-label stagger-5"><span class="dot"></span> Core Pages</div>
+    <div class="cards-grid">
+      <div class="ve-card ve-card--hero stagger-5">
+        <span class="card-badge badge-core">Homepage</span>
+        <div class="card-title">ElevateAI System</div>
+        <div class="card-path">/index.html</div>
+        <div class="card-desc">Main landing page. Hero with value prop, services overview cards, social proof, and discovery call CTA. Entry point for all organic and paid traffic.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">Plus Jakarta Sans</span>
+          <span class="tag">Apollo tracking</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-6">
+        <span class="card-badge badge-core">About</span>
+        <div class="card-title">About Sunny Binjola</div>
+        <div class="card-path">/about.html</div>
+        <div class="card-desc">Founder story, credentials, and agency mission. Builds trust for high-ticket service buyers.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">Schema.org Person</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-7">
+        <span class="card-badge badge-util">404 Error</span>
+        <div class="card-title">Page Not Found</div>
+        <div class="card-path">/404.html</div>
+        <div class="card-desc">Custom error page with brand styling and navigation back to homepage.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Pages -->
+    <div class="section-label stagger-6"><span class="dot"></span> Service Pages</div>
+    <div class="cards-grid">
+      <div class="ve-card stagger-6">
+        <span class="card-badge badge-service">Service</span>
+        <div class="card-title">Lead OS 2.0</div>
+        <div class="card-path">/lead-os.html</div>
+        <div class="card-desc">AI-powered lead generation and CRM system. Custom inline nav with product-specific Apply CTA. Multi-section product page with feature breakdowns and pricing.</div>
+        <div class="card-tags">
+          <span class="tag">custom nav</span>
+          <span class="tag">Calendly</span>
+          <span class="tag">Apply flow</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-7">
+        <span class="card-badge badge-service">Service</span>
+        <div class="card-title">Content OS</div>
+        <div class="card-path">/content-os.html</div>
+        <div class="card-desc">120+ content pieces/month on autopilot. AI content creation system for coaches. Custom nav with product CTA.</div>
+        <div class="card-tags">
+          <span class="tag">custom nav</span>
+          <span class="tag">Calendly</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-8">
+        <span class="card-badge badge-service">Service</span>
+        <div class="card-title">Growth Engine</div>
+        <div class="card-path">/growth-engine.html</div>
+        <div class="card-desc">Complete AI marketing infrastructure. Full-stack service bundle combining Lead OS + Content OS + SEO.</div>
+        <div class="card-tags">
+          <span class="tag">custom nav</span>
+          <span class="tag">Calendly</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-9">
+        <span class="card-badge badge-service">Service</span>
+        <div class="card-title">Search Visibility</div>
+        <div class="card-path">/seo-audit-landing-page.html</div>
+        <div class="card-desc">Free 4-pillar search visibility audit — SEO + AEO + GEO + LLMO. Uses shared navbar.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">Calendly</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing Pages -->
+    <div class="section-label stagger-7"><span class="dot"></span> Landing Pages</div>
+    <div class="cards-grid">
+      <div class="ve-card ve-card--hero stagger-7">
+        <span class="card-badge badge-landing">Landing</span>
+        <div class="card-title">AI Strategy &amp; Systems Audit</div>
+        <div class="card-path">/ai-audit.html</div>
+        <div class="card-desc">$1,000 paid audit for coaches doing $10K+/month. 7-step wizard form (23 questions) collecting business data. Submits to Supabase. Full Schema.org Service + FAQ markup.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">wizard form</span>
+          <span class="tag">$1,000</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-8">
+        <span class="card-badge badge-landing">Landing</span>
+        <div class="card-title">Free SEO Audit</div>
+        <div class="card-path">/seo-audit-landing-page.html</div>
+        <div class="card-desc">Lead gen landing page offering a free SEO audit. Primary nav CTA destination. Calendly integration for booking the audit call.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">Calendly</span>
+          <span class="tag">nav CTA</span>
+        </div>
+      </div>
+      <div class="ve-card stagger-9">
+        <span class="card-badge badge-landing">Landing</span>
+        <div class="card-title">Lead Clarity Score</div>
+        <div class="card-path">/lead-clarity-score.html</div>
+        <div class="card-desc">Free self-assessment tool. Interactive quiz that scores the visitor's lead generation maturity.</div>
+        <div class="card-tags">
+          <span class="tag">navbar.js</span>
+          <span class="tag">interactive quiz</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog -->
+    <div class="section-label stagger-8"><span class="dot"></span> Blog &amp; Content</div>
+    <div class="cards-grid">
+      <div class="ve-card stagger-8">
+        <span class="card-badge badge-blog">Index</span>
+        <div class="card-title">Blog Index</div>
+        <div class="card-path">/blog.html</div>
+        <div class="card-desc">Blog listing page with cards for all articles. SEO-optimized for "AI marketing for coaches" topics.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span><span class="tag">6 posts</span></div>
+      </div>
+      <div class="ve-card stagger-9">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">How AI Is Changing Coaching</div>
+        <div class="card-path">/blog/ai-for-coaches.html</div>
+        <div class="card-desc">Thought leadership on AI adoption trends in the coaching industry for 2026.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+      <div class="ve-card stagger-9">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">5 AI Tools Every Coach Needs</div>
+        <div class="card-path">/blog/5-ai-tools-every-coach-needs.html</div>
+        <div class="card-desc">Listicle covering essential AI tools for coaching businesses.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+      <div class="ve-card stagger-10">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">Coaches Need Systems, Not Content</div>
+        <div class="card-path">/blog/coaches-need-systems-not-content.html</div>
+        <div class="card-desc">Strategic piece arguing for systematized marketing over content volume.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+      <div class="ve-card stagger-10">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">5 Costly Coaching Business Mistakes</div>
+        <div class="card-path">/blog/coaching-business-mistakes.html</div>
+        <div class="card-desc">Pain-point article targeting coaches losing revenue to common operational mistakes.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+      <div class="ve-card stagger-10">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">Getting Clients Without Cold DMs</div>
+        <div class="card-path">/blog/getting-clients-online.html</div>
+        <div class="card-desc">Guide to inbound client acquisition for coaches using content and SEO.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+      <div class="ve-card stagger-10">
+        <span class="card-badge badge-blog">Post</span>
+        <div class="card-title">Why Most Coaching Websites Don't Rank</div>
+        <div class="card-path">/blog/seo-for-coaches.html</div>
+        <div class="card-desc">SEO deep dive — common ranking issues and fixes specific to coaching niches.</div>
+        <div class="card-tags"><span class="tag">navbar.js</span></div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="section-label stagger-9"><span class="dot"></span> Tech Stack &amp; Integrations</div>
+    <div class="tech-grid">
+      <div class="tech-item stagger-9">
+        <div class="tech-icon" style="background: var(--accent-green-dim); color: var(--accent-green);">JS</div>
+        <div>
+          <div class="tech-name">Vanilla HTML/CSS/JS</div>
+          <div class="tech-desc">Static site, no framework. Pure HTML pages with inline CSS and vanilla JavaScript.</div>
+        </div>
+      </div>
+      <div class="tech-item stagger-9">
+        <div class="tech-icon" style="background: var(--accent-teal-dim); color: var(--accent-teal);">SB</div>
+        <div>
+          <div class="tech-name">Supabase</div>
+          <div class="tech-desc">REST API for AI Audit form submissions. Stores 24-field quiz responses. Placeholder creds pending.</div>
+        </div>
+      </div>
+      <div class="tech-item stagger-10">
+        <div class="tech-icon" style="background: var(--accent-amber-dim); color: var(--accent-amber);">CA</div>
+        <div>
+          <div class="tech-name">Calendly</div>
+          <div class="tech-desc">Discovery call booking. Embedded across service and landing pages.</div>
+        </div>
+      </div>
+      <div class="tech-item stagger-10">
+        <div class="tech-icon" style="background: var(--accent-rose-dim); color: var(--accent-rose);">AP</div>
+        <div>
+          <div class="tech-name">Apollo.io</div>
+          <div class="tech-desc">Visitor tracking script (appId: 693b...). Identifies anonymous site visitors for outbound.</div>
+        </div>
+      </div>
+      <div class="tech-item stagger-10">
+        <div class="tech-icon" style="background: var(--accent-gold-dim); color: var(--accent-gold);">GF</div>
+        <div>
+          <div class="tech-name">Google Fonts</div>
+          <div class="tech-desc">Plus Jakarta Sans (400–800). Consistent typography across all pages.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design System -->
+    <div class="callout stagger-10">
+      <div class="callout-title">Design System</div>
+      <div class="callout-body">
+        Brand colors: <code>--green: #00FF41</code> <code>--green-dark: #00CC34</code> <code>--navy: #0A0F1C</code> <code>--bg: #FAFAF8</code>. Logo: green leaf SVG icon + "ElevateAI" wordmark. Font: Plus Jakarta Sans. Pill-shaped CTA buttons with hover lift + green glow. Fixed navbar with backdrop blur and scroll shadow.
+      </div>
+    </div>
+
+    <!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+
+    <!-- LEFT: Services -->
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+
+    <!-- MIDDLE: Compare + Free Tools -->
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+
+    <!-- RIGHT: Top Posts -->
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+
+  <!-- Bottom: copyright + email + company links -->
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+  </div>
+
+  <script>
+    // Mermaid init
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      flowchart: { curve: 'basis', padding: 20 },
+      themeVariables: {
+        primaryColor: '#f7f5f0',
+        primaryTextColor: '#1a2a44',
+        primaryBorderColor: '#c49a2a',
+        lineColor: '#8a95a5',
+        secondaryColor: '#efece4',
+        tertiaryColor: '#fff',
+        fontFamily: 'JetBrains Mono, monospace',
+        fontSize: '13px'
+      }
+    });
+
+    // Zoom controls
+    let currentZoom = 1;
+    const inner = document.getElementById('mermaidInner');
+    function zoomDiagram(factor) {
+      currentZoom *= factor;
+      currentZoom = Math.max(0.3, Math.min(3, currentZoom));
+      inner.style.transform = `scale(${currentZoom})`;
+    }
+    function resetZoom() {
+      currentZoom = 1;
+      inner.style.transform = 'scale(1)';
+    }
+    function openMermaidInNewTab() {
+      const svg = inner.querySelector('svg');
+      if (!svg) return;
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([`<!DOCTYPE html><html><head><style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f7f5f0;}</style></head><body>${svgData}</body></html>`], {type: 'text/html'});
+      window.open(URL.createObjectURL(blob), '_blank');
+    }
+
+    // Ctrl/Cmd+scroll zoom
+    document.querySelector('.mermaid-wrap').addEventListener('wheel', function(e) {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        zoomDiagram(e.deltaY < 0 ? 1.1 : 0.9);
+      }
+    }, { passive: false });
+  </script>
+</body>
+</html>
