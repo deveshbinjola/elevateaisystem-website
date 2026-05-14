@@ -573,7 +573,10 @@
     btn.textContent = 'Reading…';
 
     try {
-      const res = await fetch('/api/brand-os-preview', {
+      // Call the coach-app endpoint — keeps the Anthropic API key off
+      // the marketing site. CORS is allow-listed for elevateaisystem.com
+      // on the coach-app /api/brand-os-preview route.
+      const res = await fetch(APP_URL + '/api/brand-os-preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt: 'positioning', answer: ans }),
