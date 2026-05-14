@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand OS — Your Voice, Pillars, and Buyer in 30 Minutes · $7 · ElevateAI</title>
-<meta name="description" content="The brand discovery sprint AI coaches actually use. 13 questions. Voice DNA, pillars, named avatar, 5 ready-to-draft hooks. Yours forever. $7.">
-<meta name="keywords" content="brand discovery, AI brand builder, voice DNA, content pillars, coach branding, brand strategy, ICP, buyer mirror, brand archetype">
+<title>Brand OS · Voice DNA, Pillars, Buyer Mirror, 45-Day Calendar · $7 · ElevateAI</title>
+<meta name="description" content="The full Brand OS run for coaches. 6 modules, ~60 questions, ~90 minutes. Voice DNA, pillars, named avatar, 45-day content calendar. Yours forever. $7.">
+<meta name="keywords" content="brand discovery, AI brand builder, voice DNA, content pillars, coach branding, brand strategy, ICP, buyer mirror, brand archetype, content calendar">
 <meta name="author" content="Sunny Binjola">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ElevateAI Systems">
-<meta property="og:title" content="Brand OS — Your Voice, Pillars, and Buyer in 30 Minutes · $7">
-<meta property="og:description" content="13 questions. Voice DNA, pillars, named buyer avatar, 5 ready-to-draft hooks. Drops as a portable Markdown file you can paste into ChatGPT, Claude, or Gemini.">
+<meta property="og:title" content="Brand OS · Full Run · $7">
+<meta property="og:description" content="Voice DNA, content pillars, named buyer avatar, 45-day calendar. Drops as a portable Markdown file you can paste into ChatGPT, Claude, or Gemini.">
 <meta property="og:url" content="https://elevateaisystem.com/brand-os">
 <meta property="og:image" content="https://elevateaisystem.com/brand-os-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Brand OS — voice DNA + pillars + buyer mirror, generated from 13 questions">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brand OS — Your Voice, Pillars, and Buyer in 30 Minutes · $7">
-<meta name="twitter:description" content="13 questions. Voice DNA, pillars, named avatar, 5 ready-to-draft hooks. Portable Markdown file. Yours forever.">
+<meta name="twitter:title" content="Brand OS · Full Run · $7">
+<meta name="twitter:description" content="6 modules, ~60 questions. Voice DNA, pillars, buyer mirror, 45-day calendar. Portable .md file.">
 
 <link rel="canonical" href="https://elevateaisystem.com/brand-os">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300FF41' d='M12 2C9 4 4 8 4 14a8 8 0 0 0 16 0c0-6-5-10-8-12z'/%3E%3C/svg%3E">
+
+<!-- Canonical green-leaf favicon (matches rest of site) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2300FF41'/%3E%3Cpath d='M50 20 C35 20 25 35 25 55 C25 75 40 80 50 80 C60 80 75 75 75 55 C75 35 65 20 50 20 Z' fill='%23020802'/%3E%3Cpath d='M50 80 L50 85' stroke='%23020802' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT@9..144,500;9..144,600;9..144,700;9..144,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
@@ -32,8 +33,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Brand OS — Quick Start",
-  "description": "AI-guided brand discovery sprint. 13 questions. Outputs voice DNA, content pillars, named buyer avatar, and 5 ready-to-draft content hooks as a portable Markdown file.",
+  "name": "Brand OS — Full Run",
+  "description": "Full AI-guided brand discovery for coaches. 6 modules, ~60 questions, ~90 minutes. Outputs voice DNA, content pillars, named buyer avatar, 45-day content calendar as a portable Markdown file.",
   "brand": { "@type": "Brand", "name": "ElevateAI" },
   "offers": {
     "@type": "Offer",
@@ -54,35 +55,26 @@
     --surface: #FFFFFF;
     --surface-2: #F4F4F0;
     --border: #E5E5E0;
-    --text: #0A0F1C;
-    --text-muted: #6B7280;
-    --text-faint: #9CA3AF;
+    --ink: #0A0F1C;
+    --ink-mute: #6B7280;
+    --ink-faint: #9CA3AF;
     --danger: #EF4444;
+    --mono: 'JetBrains Mono', monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { max-width: 100vw; overflow-x: hidden; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     background: var(--bg);
-    color: var(--text);
+    color: var(--ink);
     line-height: 1.6;
+    padding-top: 72px; /* clear the fixed navbar */
   }
 
-  /* Nav */
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
-  }
-  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); }
-  .logo-mark { width: 28px; height: 28px; background: var(--green); border-radius: 50%; display: grid; place-items: center; }
-  .logo-mark svg { width: 16px; height: 16px; }
-  .logo-text { font-weight: 800; font-size: 16px; }
-  .nav a.link { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 14px; }
-  .nav a.link:hover { color: var(--text); }
-
-  /* Hero */
+  /* HERO */
   .hero {
-    max-width: 920px; margin: 0 auto; padding: 80px 24px 60px;
+    max-width: 920px; margin: 0 auto; padding: 60px 24px 40px;
     text-align: center;
   }
   .eyebrow {
@@ -95,28 +87,34 @@
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
   h1 {
     font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(40px, 6vw, 64px); font-weight: 800;
+    font-size: clamp(36px, 5.5vw, 60px); font-weight: 800;
     letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
     font-variation-settings: 'SOFT' 50;
   }
   h1 .accent { color: var(--green-dark); font-style: italic; }
   .lede {
-    font-size: clamp(17px, 1.8vw, 20px); color: var(--text-muted);
-    max-width: 640px; margin: 0 auto 32px; line-height: 1.5;
+    font-size: clamp(17px, 1.8vw, 20px); color: var(--ink-mute);
+    max-width: 640px; margin: 0 auto 28px; line-height: 1.5;
   }
-  .price-row {
-    display: inline-flex; align-items: baseline; gap: 12px;
-    padding: 14px 22px; background: var(--surface); border: 2px solid var(--navy);
-    border-radius: 12px; margin-bottom: 24px;
+
+  /* Inline checkout form */
+  .checkout {
+    max-width: 480px; margin: 0 auto;
+    display: flex; gap: 8px; flex-wrap: wrap;
   }
-  .price { font-size: 36px; font-weight: 800; color: var(--navy); font-family: 'Fraunces', serif; }
-  .price-label { font-size: 14px; color: var(--text-muted); font-weight: 600; }
-  .cta-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .checkout input {
+    flex: 1; min-width: 200px; height: 52px; padding: 0 18px;
+    border: 2px solid var(--border); border-radius: 100px;
+    font-size: 15px; font-family: inherit;
+    background: white; color: var(--ink);
+  }
+  .checkout input:focus { outline: none; border-color: var(--navy); }
   .btn {
     display: inline-flex; align-items: center; justify-content: center;
     height: 52px; padding: 0 28px; border-radius: 100px;
     font-weight: 700; font-size: 16px; text-decoration: none;
     transition: all 0.2s; cursor: pointer; border: none;
+    font-family: inherit;
   }
   .btn-primary {
     background: var(--navy); color: white;
@@ -124,21 +122,21 @@
   }
   .btn-primary:hover { background: #1a2035; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(10,15,28,0.35); }
   .btn-primary:disabled { opacity: 0.6; cursor: wait; }
-  .btn-ghost { background: transparent; color: var(--text-muted); font-weight: 600; font-size: 14px; padding: 0 8px; height: 40px; }
-  .btn-ghost:hover { color: var(--text); }
-  .trust-row { display: flex; gap: 24px; justify-content: center; margin-top: 24px; font-size: 13px; color: var(--text-faint); flex-wrap: wrap; }
+  .err-line { color: var(--danger); font-size: 13px; margin-top: 12px; font-weight: 600; text-align: center; }
+
+  .trust-row { display: flex; gap: 24px; justify-content: center; margin-top: 24px; font-size: 13px; color: var(--ink-faint); flex-wrap: wrap; }
   .trust-row span::before { content: "✓ "; color: var(--green-dark); font-weight: 700; }
 
-  /* Sections */
+  /* SECTIONS */
   section { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
   .section-title {
-    font-family: 'Fraunces', serif; font-size: clamp(32px, 4vw, 44px);
+    font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 42px);
     font-weight: 800; letter-spacing: -1px; line-height: 1.15; text-align: center;
     margin-bottom: 16px; font-variation-settings: 'SOFT' 50;
   }
-  .section-sub { text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 48px; font-size: 17px; }
+  .section-sub { text-align: center; color: var(--ink-mute); max-width: 600px; margin: 0 auto 48px; font-size: 17px; }
 
-  /* What you get grid */
+  /* DELIVERABLES GRID */
   .deliverables {
     display: grid; gap: 16px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -149,30 +147,33 @@
   }
   .deliv-card:hover { border-color: var(--green-dark); transform: translateY(-2px); }
   .deliv-num {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-family: var(--mono); font-size: 11px;
     letter-spacing: 2px; color: var(--green-dark); font-weight: 700;
     text-transform: uppercase; margin-bottom: 8px;
   }
   .deliv-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  .deliv-body { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .deliv-body { font-size: 14px; color: var(--ink-mute); line-height: 1.55; }
 
-  /* The Test */
+  /* THE TEST / WEDGE — properly centered with constrained width */
+  .test-wrap { padding: 40px 24px; }
   .test {
     background: var(--navy); color: white; border-radius: 24px;
-    padding: 48px; margin: 80px 24px; max-width: 980px;
+    padding: 48px clamp(24px, 5vw, 56px);
+    max-width: 980px; margin: 0 auto;
   }
   .test-eyebrow {
     color: var(--green); font-size: 12px; letter-spacing: 2px;
     text-transform: uppercase; font-weight: 700; margin-bottom: 12px;
   }
   .test h2 {
-    font-family: 'Fraunces', serif; font-size: 32px; font-weight: 800;
+    font-family: 'Fraunces', serif; font-size: clamp(28px, 3.5vw, 36px); font-weight: 800;
     margin-bottom: 16px; line-height: 1.2;
   }
-  .test-body { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.6; max-width: 640px; }
+  .test-body { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.65; max-width: 720px; }
   .test-body strong { color: white; }
+  .test-body em { color: var(--green); font-style: normal; }
 
-  /* How */
+  /* STEPS */
   .steps { display: grid; gap: 20px; grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
   @media (min-width: 720px) { .steps { grid-template-columns: 1fr 1fr 1fr; } }
   .step {
@@ -183,10 +184,10 @@
     width: 32px; height: 32px; background: var(--navy); color: var(--green);
     border-radius: 50%; display: grid; place-items: center;
     font-weight: 800; font-size: 14px; margin-bottom: 16px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--mono);
   }
   .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
-  .step p { color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+  .step p { color: var(--ink-mute); font-size: 14px; line-height: 1.5; }
 
   /* FAQ */
   .faq { display: grid; gap: 14px; max-width: 760px; margin: 0 auto; }
@@ -196,83 +197,144 @@
   }
   .faq summary { font-weight: 700; font-size: 16px; list-style: none; outline: none; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; float: right; font-size: 22px; color: var(--text-faint); font-weight: 300; transition: transform 0.2s; }
+  .faq summary::after { content: "+"; float: right; font-size: 22px; color: var(--ink-faint); font-weight: 300; transition: transform 0.2s; }
   .faq details[open] summary::after { content: "−"; }
   .faq details[open] summary { color: var(--green-dark); }
-  .faq p { margin-top: 12px; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+  .faq p { margin-top: 12px; color: var(--ink-mute); font-size: 15px; line-height: 1.6; }
+  .faq p a { color: var(--green-dark); }
 
-  /* Final CTA */
+  /* FINAL CTA */
+  .final-wrap { padding: 40px 24px 80px; }
   .final-cta {
     background: linear-gradient(135deg, var(--navy) 0%, #1a2035 100%);
-    color: white; border-radius: 24px; padding: 64px 32px;
-    text-align: center; margin: 60px 24px; max-width: 980px;
+    color: white; border-radius: 24px; padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 48px);
+    text-align: center; max-width: 980px; margin: 0 auto;
   }
   .final-cta h2 {
-    font-family: 'Fraunces', serif; font-size: clamp(32px, 4vw, 44px);
+    font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 42px);
     font-weight: 800; margin-bottom: 16px; line-height: 1.15;
   }
-  .final-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 17px; }
+  .final-cta p { color: rgba(255,255,255,0.75); margin-bottom: 28px; font-size: 17px; max-width: 540px; margin-left: auto; margin-right: auto; }
   .final-cta .btn-primary { background: var(--green); color: var(--navy); }
   .final-cta .btn-primary:hover { background: var(--green-dark); }
-
-  /* Inline checkout form */
-  .checkout-mini {
-    max-width: 480px; margin: 16px auto 0;
-    display: flex; gap: 8px; flex-wrap: wrap;
-  }
-  .checkout-mini input {
-    flex: 1; min-width: 200px; height: 52px; padding: 0 18px;
-    border: 2px solid var(--border); border-radius: 100px;
-    font-size: 15px; font-family: inherit;
-    background: white; color: var(--text);
-  }
-  .checkout-mini input:focus { outline: none; border-color: var(--navy); }
-  .final-cta .checkout-mini input { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white; }
-  .final-cta .checkout-mini input::placeholder { color: rgba(255,255,255,0.5); }
-  .err-line { color: var(--danger); font-size: 13px; margin-top: 12px; font-weight: 600; }
+  .final-cta .checkout { margin: 16px auto 0; }
+  .final-cta .checkout input { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white; }
+  .final-cta .checkout input::placeholder { color: rgba(255,255,255,0.5); }
   .final-cta .err-line { color: #FCA5A5; }
 
-  /* Footer */
-  footer { text-align: center; padding: 40px 24px; color: var(--text-faint); font-size: 13px; }
-  footer a { color: var(--text-muted); text-decoration: none; }
-  footer a:hover { color: var(--text); }
+  /* FREE PREVIEW WIDGET */
+  .preview-card {
+    background: var(--surface); border: 2px solid var(--navy); border-radius: 24px;
+    padding: clamp(28px, 4vw, 44px); max-width: 760px; margin: 0 auto;
+    box-shadow: 0 12px 32px rgba(10,15,28,0.08);
+  }
+  .preview-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
+    color: var(--green-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .preview-question {
+    font-family: 'Fraunces', serif; font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 700; line-height: 1.25; margin-bottom: 10px; color: var(--ink);
+    font-variation-settings: 'SOFT' 50;
+  }
+  .preview-hint {
+    color: var(--ink-mute); font-size: 14px; line-height: 1.55; margin-bottom: 18px;
+  }
+  .preview-form textarea {
+    width: 100%; padding: 14px 16px; border: 2px solid var(--border);
+    border-radius: 12px; font-family: inherit; font-size: 15px;
+    line-height: 1.5; resize: vertical; background: var(--bg); color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .preview-form textarea:focus { outline: none; border-color: var(--navy); }
+  .preview-form-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .preview-counter { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+  .preview-btn-disabled { opacity: 0.55; cursor: wait !important; }
+
+  .preview-result {
+    margin-top: 28px; padding: 24px; border-radius: 16px;
+    border: 2px solid var(--border); background: var(--bg);
+    animation: preview-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes preview-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .preview-result[data-verdict="push_back"] { border-color: #F59E0B; background: #FFFBEB; }
+  .preview-result[data-verdict="affirm"]    { border-color: var(--green-dark); background: #F0FDF4; }
+  .preview-result .pr-verdict {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; font-weight: 700; margin-bottom: 12px;
+  }
+  .preview-result[data-verdict="push_back"] .pr-verdict { color: #B45309; }
+  .preview-result[data-verdict="affirm"]    .pr-verdict { color: var(--green-dark); }
+  .preview-result .pr-headline {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700;
+    line-height: 1.25; margin-bottom: 10px; color: var(--ink);
+    font-variation-settings: 'SOFT' 50;
+  }
+  .preview-result .pr-body { color: var(--ink); line-height: 1.6; margin-bottom: 14px; }
+  .preview-result .pr-block { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .preview-result .pr-block-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
+    color: var(--ink-mute); text-transform: uppercase; font-weight: 700; margin-bottom: 6px;
+  }
+  .preview-result .pr-block-text { color: var(--ink); font-size: 14px; line-height: 1.55; }
+  .preview-result .pr-cta {
+    margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .preview-result .pr-cta-text { color: var(--ink-mute); font-size: 14px; font-weight: 600; }
+  .preview-result .pr-cta-btn {
+    background: var(--navy); color: white; padding: 10px 18px; border-radius: 100px;
+    font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap;
+  }
+  .preview-result .pr-cta-btn:hover { background: #1a2035; }
+  .preview-result .pr-err {
+    color: var(--danger); font-weight: 600; font-size: 14px;
+  }
+
+  /* FOOTER */
+  .foot {
+    text-align: center; padding: 32px 24px; color: var(--ink-faint);
+    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    font-family: var(--mono);
+  }
+  .foot a { color: var(--ink-mute); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="/" class="logo">
-    <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 4 4 8 4 14a8 8 0 0 0 16 0c0-6-5-10-8-12z" fill="#0A0F1C"/></svg></span>
-    <span class="logo-text">ElevateAI</span>
-  </a>
-  <div style="display:flex;gap:24px;align-items:center;">
-    <a href="/coach-platform" class="link">Platform</a>
-    <a href="/blog" class="link">Blog</a>
-  </div>
-</nav>
+<!-- Standard ElevateAI navbar (auto-injected via shared script) -->
+<script src="/navbar.js"></script>
 
 <!-- HERO -->
 <header class="hero">
   <div class="eyebrow">
     <span class="dot"></span>
-    Brand OS · Quick Start · $7
+    Brand OS · Full Run · $7
   </div>
   <h1>
-    Your <span class="accent">voice, pillars, and buyer</span> —<br>
-    in 30 minutes.
+    Your <span class="accent">voice, pillars, buyer,</span><br>
+    and 45 days of content.
   </h1>
   <p class="lede">
-    13 questions. We push back when your answers read generic. You walk away with a portable Markdown file that makes every AI you use sound like <em>you</em>.
+    The full Brand OS run for coaches. 6 modules, ~60 questions, ~90 minutes. We push back when answers read generic. You walk away with a Markdown file that makes every AI you use sound like <em>you</em>.
   </p>
 
-  <form id="checkout-form-hero" onsubmit="return startCheckout(event, 'hero')" class="checkout-mini">
+  <form id="checkout-form-hero" onsubmit="return startCheckout(event, 'hero')" class="checkout">
     <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
     <button type="submit" class="btn btn-primary" id="checkout-btn-hero">Get Brand OS · $7</button>
   </form>
   <div id="err-hero" class="err-line" style="display:none;"></div>
 
   <div class="trust-row">
-    <span>30 min</span>
+    <span>~90 minutes</span>
     <span>Yours forever</span>
     <span>Works with ChatGPT / Claude / Gemini</span>
   </div>
@@ -282,7 +344,7 @@
 <section>
   <h2 class="section-title">What lands in your inbox</h2>
   <p class="section-sub">
-    Every section is rendered from <em>your</em> answers. Not a template. Not Mad Libs. The system pushes back when your answers sound like every other coach's landing page — so what comes out actually sounds like you.
+    Every section is rendered from <em>your</em> answers. Not a template. Two coaches who buy this on the same day get two completely different deliverables.
   </p>
 
   <div class="deliverables">
@@ -312,24 +374,26 @@
       <div class="deliv-body">Each pillar earns its place — depth, pull, anchor. Each has an enemy it pushes against and your proof.</div>
     </div>
     <div class="deliv-card">
-      <div class="deliv-num">06 · 5 ready-to-draft hooks</div>
-      <div class="deliv-title">Specific content angles, this week.</div>
-      <div class="deliv-body">Headline + angle + pillar tag. Drop them straight into your editor of choice. No more staring at a blank page.</div>
+      <div class="deliv-num">06 · 45-day calendar</div>
+      <div class="deliv-title">Specific posts, scheduled by week.</div>
+      <div class="deliv-body">Funnel + distribution mapped. Hook + angle for every piece. No more staring at a blank week of content.</div>
     </div>
   </div>
 </section>
 
 <!-- THE TEST (the wedge) -->
-<div class="test">
-  <div class="test-eyebrow">The wedge</div>
-  <h2>The Markdown file is the asset.</h2>
-  <p class="test-body">
-    When you finish, you'll get a downloadable <strong>.md file</strong>. Paste it into ChatGPT, Claude, Gemini — any AI. Say <em>"Use this as my brand context for everything we work on going forward."</em>
-    <br><br>
-    Your AI will write in your voice. Hit your buyer by name. Stay inside your pillars. Avoid your anti-vocab. <strong>Without you ever explaining it again.</strong>
-    <br><br>
-    That's the asset. The platform we built is one place to use it. The .md file works everywhere.
-  </p>
+<div class="test-wrap">
+  <div class="test">
+    <div class="test-eyebrow">The wedge</div>
+    <h2>The Markdown file is the asset.</h2>
+    <p class="test-body">
+      When you finish, you'll get a downloadable <strong>.md file</strong>. Paste it into ChatGPT, Claude, Gemini — any AI. Say <em>"Use this as my brand context for everything we work on going forward."</em>
+      <br><br>
+      Your AI will write in your voice. Hit your buyer by name. Stay inside your pillars. Avoid your anti-vocab. <strong>Without you ever explaining it again.</strong>
+      <br><br>
+      That's the asset. The platform we built is one place to use it. The .md file works everywhere.
+    </p>
+  </div>
 </div>
 
 <!-- HOW IT WORKS -->
@@ -345,14 +409,45 @@
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <h3>Run the 13 questions.</h3>
-      <p>One at a time. Auto-saves. You can pause and resume from any device. About 30 minutes of real thinking.</p>
+      <h3>Run the full Brand OS.</h3>
+      <p>6 modules, ~60 questions. One at a time. Auto-saves. Pause and resume from any device. About 90 minutes of real thinking.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>Get your deliverable.</h3>
-      <p>Beautiful visual page + downloadable .md + optional email. Yours forever — no subscription.</p>
+      <p>Visual page + downloadable .md + optional email. Plus 10 days free on the coach platform that uses your DNA. Yours forever.</p>
     </div>
+  </div>
+</section>
+
+<!-- FREE PREVIEW — try one question before paying -->
+<section id="preview">
+  <h2 class="section-title">Try one question · free</h2>
+  <p class="section-sub">
+    Don't take our word for it. Answer the first positioning question. The AI will read it back, push back if it sounds generic, and show you what the full run feels like.
+  </p>
+
+  <div class="preview-card">
+    <div class="preview-eyebrow">Module 1 · Mirror · Q1</div>
+    <h3 class="preview-question">In one sentence, who do you work with and what do you do for them?</h3>
+    <p class="preview-hint">Think about a real client. Be specific. Names, numbers, actual situations. Don't write the "I help X go from Y to Z" template — we'll push back if you do.</p>
+
+    <form id="preview-form" onsubmit="return runPreview(event)" class="preview-form">
+      <textarea
+        name="answer"
+        id="preview-answer"
+        placeholder="Most coaching landing pages say 'I help [type] go from [pain] to [outcome] in [time].' Don't write that. Write what you actually do for one real person."
+        rows="4"
+        maxlength="1500"
+        required
+      ></textarea>
+      <div class="preview-form-row">
+        <span class="preview-counter"><span id="preview-count">0</span> / 1500</span>
+        <button type="submit" id="preview-btn" class="btn btn-primary">Get the pushback →</button>
+      </div>
+    </form>
+
+    <div id="preview-result" class="preview-result" hidden></div>
   </div>
 </section>
 
@@ -362,7 +457,7 @@
   <div class="faq">
     <details>
       <summary>Is this just another quiz that gives me a generic PDF?</summary>
-      <p>No. The questions push back when your answers read generic — using your audience type, your prior answers, and a marker list of overused coach-clichés. The output is generated from your specific words, not a template. Two coaches who buy this on the same day get two completely different deliverables.</p>
+      <p>No. The questions push back when answers read generic — using your audience type, your prior answers, and a marker list of overused coach-clichés. The output is generated from your specific words, not a template. Two coaches who buy this on the same day get two completely different deliverables.</p>
     </details>
     <details>
       <summary>What if I already know my pillars and buyer?</summary>
@@ -373,12 +468,16 @@
       <p>No. If you can answer email, you can do Brand OS. The .md file is just text — paste it anywhere.</p>
     </details>
     <details>
+      <summary>What's the 10-day free trial?</summary>
+      <p>When you finish Brand OS, you can activate 10 days free on the full coach platform — Content, Leads, and Clients all powered by your voice DNA. No card on file. After 10 days, choose a plan or stay on Brand OS-only. Either way, your $7 deliverable is yours forever.</p>
+    </details>
+    <details>
       <summary>Is the $7 a tripwire to a $2000 cohort?</summary>
-      <p>Yes, transparently. If Brand OS hits you, we offer paths deeper — a $2K cohort, a $12K Build Your Brand intensive. None of that is required. The $7 product is complete on its own and yours forever.</p>
+      <p>Yes, transparently. If Brand OS hits you, we offer paths deeper — a $2K cohort, a $12K Build Your Brand intensive. None of that is required. The $7 product is complete on its own.</p>
     </details>
     <details>
       <summary>Refund policy?</summary>
-      <p>If you complete Brand OS and don't get value, email <a href="mailto:sunny.binjola@gmail.com" style="color:var(--green-dark);">sunny.binjola@gmail.com</a> and we'll refund. No interrogation.</p>
+      <p>If you complete Brand OS and don't get value, email <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a> and we'll refund. No interrogation.</p>
     </details>
     <details>
       <summary>Who built this?</summary>
@@ -388,19 +487,21 @@
 </section>
 
 <!-- FINAL CTA -->
-<div class="final-cta">
-  <h2>Stop sounding like every other coach.</h2>
-  <p>30 minutes. $7. The asset is yours forever.</p>
+<div class="final-wrap">
+  <div class="final-cta">
+    <h2>Stop sounding like every other coach.</h2>
+    <p>~90 minutes. $7. The asset is yours forever — plus 10 days free on the platform that uses it.</p>
 
-  <form id="checkout-form-final" onsubmit="return startCheckout(event, 'final')" class="checkout-mini">
-    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-    <button type="submit" class="btn btn-primary" id="checkout-btn-final">Get Brand OS · $7</button>
-  </form>
-  <div id="err-final" class="err-line" style="display:none;"></div>
+    <form id="checkout-form-final" onsubmit="return startCheckout(event, 'final')" class="checkout">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      <button type="submit" class="btn btn-primary" id="checkout-btn-final">Get Brand OS · $7</button>
+    </form>
+    <div id="err-final" class="err-line" style="display:none;"></div>
+  </div>
 </div>
 
-<footer>
-  ElevateAI Systems · Built by <a href="mailto:sunny.binjola@gmail.com">Sunny Binjola</a> · <a href="/coach-platform">Coach Platform</a> · <a href="/blog">The Signal</a>
+<footer class="foot">
+  © 2026 ELEVATEAI SYSTEMS · <a href="mailto:sunny.binjola@gmail.com">SUNNY.BINJOLA@GMAIL.COM</a>
 </footer>
 
 <script>
@@ -413,7 +514,122 @@
     utm_campaign: params.get('utm_campaign') || '',
   };
 
+  // If the buyer was bounced back from Stripe's cancel URL, show a subtle note.
+  if (params.get('canceled') === '1') {
+    const note = document.createElement('div');
+    note.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #E5E5E0;padding:12px 20px;border-radius:100px;font-size:14px;color:#6B7280;box-shadow:0 4px 12px rgba(0,0,0,0.06);z-index:200;';
+    note.textContent = 'Checkout canceled. No charge — try again when you\'re ready.';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 6000);
+  }
+
   const APP_URL = 'https://app.elevateaisystem.com';
+
+  // ── FREE PREVIEW WIDGET ──────────────────────────────────────────
+  // Live character counter on the textarea.
+  const previewTextarea = document.getElementById('preview-answer');
+  const previewCount = document.getElementById('preview-count');
+  if (previewTextarea && previewCount) {
+    previewTextarea.addEventListener('input', () => {
+      previewCount.textContent = previewTextarea.value.length;
+    });
+  }
+
+  // 24h per-browser cap. Not security — just enough to deter abuse.
+  const PREVIEW_KEY = 'eai-bo-preview-used';
+  const PREVIEW_TTL_MS = 24 * 60 * 60 * 1000;
+
+  function previewUsedRecently() {
+    try {
+      const v = localStorage.getItem(PREVIEW_KEY);
+      if (!v) return false;
+      const ts = Number(v);
+      if (!Number.isFinite(ts)) return false;
+      return Date.now() - ts < PREVIEW_TTL_MS;
+    } catch { return false; }
+  }
+  function markPreviewUsed() {
+    try { localStorage.setItem(PREVIEW_KEY, String(Date.now())); } catch {}
+  }
+
+  async function runPreview(event) {
+    event.preventDefault();
+    const btn = document.getElementById('preview-btn');
+    const ans = previewTextarea.value.trim();
+    const resultEl = document.getElementById('preview-result');
+
+    if (ans.length < 8) {
+      renderPreviewError(resultEl, 'Try at least a sentence so the AI has something to read.');
+      return false;
+    }
+
+    if (previewUsedRecently()) {
+      renderPreviewError(resultEl, 'You already tried a preview from this browser in the last 24 hours. Ready for the full thing? Scroll up and check out for $7.');
+      return false;
+    }
+
+    btn.disabled = true;
+    btn.classList.add('preview-btn-disabled');
+    btn.textContent = 'Reading…';
+
+    try {
+      const res = await fetch('/api/brand-os-preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: 'positioning', answer: ans }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || ('HTTP ' + res.status));
+      renderPreviewResult(resultEl, data);
+      markPreviewUsed();
+    } catch (e) {
+      renderPreviewError(resultEl, e.message || 'Something went wrong. Try again.');
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('preview-btn-disabled');
+      btn.textContent = 'Get the pushback →';
+    }
+    return false;
+  }
+
+  function renderPreviewResult(el, data) {
+    const verdict = data.verdict === 'affirm' ? 'affirm' : 'push_back';
+    const verdictLabel = verdict === 'affirm' ? '✓ This is specific' : '⚠ Generic markers detected';
+    el.setAttribute('data-verdict', verdict);
+    el.hidden = false;
+    el.innerHTML = `
+      <div class="pr-verdict">${escapeHtml(verdictLabel)}</div>
+      <div class="pr-headline">${escapeHtml(data.headline || '')}</div>
+      <div class="pr-body">${escapeHtml(data.body || '')}</div>
+      ${data.next_prompt ? `
+        <div class="pr-block">
+          <div class="pr-block-label">Try this instead</div>
+          <div class="pr-block-text">${escapeHtml(data.next_prompt)}</div>
+        </div>
+      ` : ''}
+      ${data.what_brand_os_would_do ? `
+        <div class="pr-block">
+          <div class="pr-block-label">What the full Brand OS would do</div>
+          <div class="pr-block-text">${escapeHtml(data.what_brand_os_would_do)}</div>
+        </div>
+      ` : ''}
+      <div class="pr-cta">
+        <div class="pr-cta-text">That was 1 question. The full run is 60 more.</div>
+        <a href="#" onclick="document.querySelector('input[name=email]').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="pr-cta-btn">Get Brand OS · $7 →</a>
+      </div>
+    `;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function renderPreviewError(el, msg) {
+    el.removeAttribute('data-verdict');
+    el.hidden = false;
+    el.innerHTML = `<p class="pr-err">${escapeHtml(msg)}</p>`;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
   async function startCheckout(event, which) {
     event.preventDefault();

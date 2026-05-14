@@ -11,11 +11,6 @@ https://elevateaisystem.com/* https://www.elevateaisystem.com/:splat 301
 # Pages handles /foo → /foo.html automatically when the filename matches the URL.
 # Adding a redundant rule for those collides with Pages' built-in clean-URL handler
 # and can cause loops. Only /free-map is a true alias to a different filename.
-/brand-os            /brand-os.html            200
-/augmented-coach     /augmented-coach.html     200
-/cohort-application  /cohort-application.html  200
-/coach-platform      /coach-platform.html      200
-/signal              /signal.html              200
 /free-map            /your-map.html            200
 
 # 3. Portal pretty-URLs (auth-gated in the browser via Supabase)
