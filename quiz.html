@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Voice Archetype Quiz · Find Your Coach Voice in 60 Seconds · ElevateAI</title>
+<meta name="description" content="5 questions. 60 seconds. Find out which coach voice archetype you are and the 3 things your audience isn't hearing yet. Free.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300FF41'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12' fill='none' stroke='%2300FF41' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- OG -->
+<meta property="og:title" content="The Voice Archetype Quiz — find your coach voice in 60 seconds">
+<meta property="og:description" content="5 questions, 60 seconds. Find your coach voice archetype + the 3 things your audience isn't hearing yet. Free, no signup until the result.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevateaisystem.com/quiz">
+<meta property="og:image" content="https://elevateaisystem.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #00FF41;
+  --green-dark: #00CC34;
+  --green-soft: rgba(0,255,65,0.10);
+  --navy: #0A0F1C;
+  --navy-soft: rgba(10,15,28,0.06);
+  --bg: #FAFAF8;
+  --bg-alt: #F2F2EE;
+  --text: #1A1A2E;
+  --text-muted: #5A5A6E;
+  --text-faint: #8A8A9A;
+  --border: #E0E0D8;
+  --border-strong: #C8C8C0;
+  --white: #FFFFFF;
+  --amber: #C77B05;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { max-width: 100vw; overflow-x: hidden; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  min-height: 100vh;
+}
+
+/* ── PAGE FRAME ─────────────────────────────────── */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 90px 1.5rem 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px -20px rgba(10,15,28,0.08);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+}
+
+/* ── PROGRESS BAR ───────────────────────────────── */
+.progress-wrap {
+  padding: 1.2rem 1.6rem .8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.progress-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.progress {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  width: 0%;
+  border-radius: 4px;
+  transition: width .35s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ── SCREEN (each step) ─────────────────────────── */
+.screen {
+  flex: 1;
+  padding: 2rem 1.6rem 2rem;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fade-in .4s cubic-bezier(.2,.7,.2,1);
+}
+.screen.active { display: flex; }
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 640px) {
+  .screen { padding: 2.8rem 2.4rem 2.4rem; gap: 1.2rem; }
+  .progress-wrap { padding: 1.4rem 2.4rem 1rem; }
+}
+
+/* ── INTRO ──────────────────────────────────────── */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background: var(--green-dark);
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--navy);
+}
+h1 .em { font-weight: 300; font-style: italic; color: var(--text-muted); }
+h1 .hl { color: var(--green-dark); }
+
+.lede {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 520px;
+}
+
+.intro-meta {
+  display: flex;
+  gap: 1.8rem;
+  padding: 1rem 0 .5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-faint);
+  flex-wrap: wrap;
+}
+.intro-meta strong { color: var(--text); font-weight: 700; }
+
+/* ── BUTTONS ────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 1rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: inherit;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .25s cubic-bezier(.2,.7,.2,1);
+  letter-spacing: 0;
+  text-decoration: none;
+  background: var(--green);
+  color: var(--navy);
+  box-shadow: 0 6px 20px -8px rgba(0,255,65,0.5);
+}
+.btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px -8px rgba(0,255,65,0.6);
+}
+.btn:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+}
+.btn-ghost:hover { background: var(--bg-alt); color: var(--text); transform: none; }
+.btn-row {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+  margin-top: .8rem;
+}
+
+/* ── QUESTION ───────────────────────────────────── */
+.q-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: -.2rem;
+}
+.q-text {
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--navy);
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-top: .4rem;
+}
+.choice {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
+  padding: 1rem 1.2rem;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all .2s;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.4;
+  width: 100%;
+}
+.choice:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-alt);
+  transform: translateX(2px);
+}
+.choice.selected {
+  border-color: var(--green-dark);
+  background: var(--green-soft);
+  box-shadow: 0 0 0 1px var(--green-dark);
+}
+.choice-key {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: .8rem;
+  color: var(--text-muted);
+  transition: all .2s;
+}
+.choice.selected .choice-key {
+  background: var(--green);
+  color: var(--navy);
+}
+
+/* ── EMAIL CAPTURE ──────────────────────────────── */
+.email-card {
+  background: linear-gradient(135deg, var(--bg-alt), var(--white));
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem;
+  margin-top: .4rem;
+}
+.email-input {
+  width: 100%;
+  padding: .9rem 1.1rem;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: .8rem;
+  transition: border-color .2s;
+}
+.email-input:focus {
+  outline: none;
+  border-color: var(--green-dark);
+  box-shadow: 0 0 0 3px var(--green-soft);
+}
+.email-tiny {
+  font-size: .78rem;
+  color: var(--text-faint);
+  margin-top: .8rem;
+  line-height: 1.5;
+}
+
+.error-msg {
+  color: var(--amber);
+  font-size: .85rem;
+  font-weight: 600;
+  margin-top: .6rem;
+}
+
+/* ── RESULT ─────────────────────────────────────── */
+.result-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.result-h {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-bottom: .6rem;
+}
+.result-h .hl { color: var(--green-dark); }
+.result-portrait {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+.gaps-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+.gaps {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-bottom: 1.4rem;
+}
+.gap {
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: .9rem 1rem;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--green);
+  border-radius: 0 12px 12px 0;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.gap-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  flex-shrink: 0;
+  padding-top: .12rem;
+  letter-spacing: .04em;
+}
+
+.bridge {
+  padding: 1.2rem 1.4rem;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+.bridge-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  color: var(--green);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+.bridge-text {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+.bridge-text strong { color: var(--green); }
+
+.share-row {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.share-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: .55rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+}
+.share-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+  background: var(--bg-alt);
+}
+
+/* ── LOADING ───────────────────────────────────── */
+.loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── FOOTER LINE ───────────────────────────────── */
+.foot {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  color: var(--text-faint);
+  letter-spacing: .08em;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+.foot a { color: var(--green-dark); text-decoration: none; }
+.foot a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<script src="navbar.js"></script>
+
+<main>
+
+  <div class="shell" id="shell">
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap">
+      <span class="progress-label" id="progress-label">Start</span>
+      <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <!-- ── INTRO SCREEN ─────────────────────────── -->
+    <section class="screen active" id="screen-intro">
+      <div>
+        <span class="eyebrow">The Voice Archetype Quiz</span>
+        <h1><span class="em">Find your coach voice</span><br>in <span class="hl">60 seconds</span>.</h1>
+      </div>
+      <p class="lede">
+        Five questions. One archetype. Three things your audience isn't hearing yet.
+        No fluff. No sign-up until you see your result.
+      </p>
+      <div class="intro-meta">
+        <span><strong>5</strong> questions</span>
+        <span><strong>~60</strong> seconds</span>
+        <span><strong>4</strong> archetypes</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn" onclick="next()">Start the quiz →</button>
+      </div>
+    </section>
+
+    <!-- ── QUESTION SCREENS (rendered dynamically) ── -->
+    <section class="screen" id="screen-question">
+      <span class="q-number" id="q-number">Question 1 of 5</span>
+      <h2 class="q-text" id="q-text"></h2>
+      <div class="choices" id="q-choices"></div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" onclick="back()">← Back</button>
+        <button class="btn" id="q-next-btn" onclick="next()" disabled>Next →</button>
+      </div>
+    </section>
+
+    <!-- ── EMAIL CAPTURE ─────────────────────────── -->
+    <section class="screen" id="screen-email">
+      <div>
+        <span class="eyebrow">Almost there</span>
+        <h2 class="q-text">Where do we send your result?</h2>
+      </div>
+      <div class="email-card">
+        <p style="font-size:.95rem;color:var(--text);line-height:1.55;">
+          You'll see your archetype + the 3 things your voice is missing on the next screen. We'll also email you the breakdown so you can come back to it.
+        </p>
+        <input
+          type="email"
+          class="email-input"
+          id="email-input"
+          placeholder="you@yourdomain.com"
+          autocomplete="email"
+          inputmode="email"
+        >
+        <p class="email-tiny">
+          One email with your result. You can unsubscribe from anything else with one click. We don't spam, we don't sell lists, we don't use your data to train models.
+        </p>
+        <p class="error-msg" id="email-error" style="display:none;"></p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" onclick="back()">← Back</button>
+        <button class="btn" id="reveal-btn" onclick="reveal()">
+          <span id="reveal-label">Reveal my result →</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── RESULT ───────────────────────────────── -->
+    <section class="screen" id="screen-result">
+      <div>
+        <span class="result-eyebrow" id="r-eyebrow">Your archetype</span>
+        <h2 class="result-h">You're a <span class="hl" id="r-archetype-name">—</span>.</h2>
+        <p class="result-portrait" id="r-portrait">—</p>
+      </div>
+
+      <div>
+        <p class="gaps-label">The 3 things your audience isn't hearing yet</p>
+        <div class="gaps" id="r-gaps"></div>
+      </div>
+
+      <div class="bridge">
+        <p class="bridge-eyebrow">The fix</p>
+        <p class="bridge-text" id="r-bridge"></p>
+        <a href="/brand-os" class="btn" style="background:var(--green);color:var(--navy);">
+          Run my Brand OS · $7 →
+        </a>
+      </div>
+
+      <div class="share-row">
+        <a href="#" class="share-btn" id="share-twitter" target="_blank" rel="noopener">Share on X</a>
+        <button class="share-btn" id="share-copy" onclick="copyResult()">Copy link</button>
+        <a href="/" class="share-btn">Back home</a>
+      </div>
+    </section>
+
+  </div>
+
+  <p class="foot">
+    Built by <a href="/">ElevateAI</a> · The Voice Archetype Quiz uses your answers only to score the result · You can retake it anytime
+  </p>
+
+</main>
+
+<script>
+// ────────────────────────────────────────────────────────────
+// QUIZ CONTENT — 5 questions, 4 archetypes, situational not abstract
+// ────────────────────────────────────────────────────────────
+
+const ARCHETYPES = {
+  frame_setter: {
+    name: "Frame-Setter",
+    portrait: "Your positioning is sharp. People know what you do in one sentence. The pull is clean, the offer is clear — but readers respect your work more than they remember it.",
+    gaps: [
+      "Your framing carries the weight; your humanity gets buried under the structure.",
+      "You publish clean ideas, few stories. People learn from you, they don't fall for you.",
+      "Your CTAs read as exits, not invitations — they convert, but they don't land warm."
+    ],
+    bridge: "Brand OS pulls the human back into the frame. <strong>Voice DNA, buyer mirror, and signature moves</strong> — written from your actual rhythm, not the corporate one you slipped into."
+  },
+  mirror: {
+    name: "Mirror",
+    portrait: "You're a reflective voice. You ask better questions than most people answer. Clients tell you you 'really see them' — and your audience knows you're insightful, even when they can't quite say what you stand for.",
+    gaps: [
+      "You ask great questions. Claims are what build a voice — and you're letting other people make them.",
+      "Your audience knows you're deep; they don't know what you sell or who you're for.",
+      "Your guests, clients, and reposts carry the weight. Your own voice is the wedge that's missing."
+    ],
+    bridge: "Brand OS forces the claim. <strong>Pillars, stance map, and pre-mortem</strong> — three places where you have to take a position you'd defend in writing, not just hold in private."
+  },
+  catalyst: {
+    name: "Catalyst",
+    portrait: "Your edges get cited. You write the line everyone screenshots. You name what no one else will. The provocation is real — and it's the thing that pulls in the wrong crowd as often as the right one.",
+    gaps: [
+      "You go for heat when warmth would convert. Buyers reread the post and step back.",
+      "Your edges get cited; your work gets forgotten. The screenshot beats the system you actually run.",
+      "You're optimizing for the bounce, not the buyer. Volume of replies isn't the same as volume of conversations."
+    ],
+    bridge: "Brand OS makes the heat earn its weight. <strong>Buyer mirror, signature line, and 45-day broadcast plan</strong> — a system where the sharpest line is the one that brings the right person closer, not the loudest one in the room."
+  },
+  builder: {
+    name: "Builder",
+    portrait: "You think in systems. Your frameworks are clean, your steps are numbered, your audience can follow you because you've drawn the map. The work is useful — and the reader closes the tab feeling more competent than connected.",
+    gaps: [
+      "Your frameworks are useful. Your readers are tired. Systems without stories age fast.",
+      "You teach what to do. You don't share what it cost you to learn it.",
+      "Your work feels like a manual. Your reader wants a mirror — someone who's been where they are."
+    ],
+    bridge: "Brand OS turns the system into a voice. <strong>Voice DNA, buyer mirror, and signature moves</strong> — the layer underneath your frameworks that makes them feel like yours, not borrowed from a textbook."
+  }
+};
+
+// 5 questions. Each choice maps to ONE archetype.
+const QUESTIONS = [
+  {
+    text: "When a stranger asks \"so what do you do?\" — your actual reply is:",
+    choices: [
+      { key: "A", text: "\"I help [specific person] get [specific outcome] without [specific frustration].\" Clean, framed, ready.", archetype: "frame_setter" },
+      { key: "B", text: "I ask them a question back first. About their life, their work. Then I answer.", archetype: "mirror" },
+      { key: "C", text: "Drop a one-liner that makes them lean in. \"I help men stop performing for the wrong audience.\"", archetype: "catalyst" },
+      { key: "D", text: "Walk them through the system I use. Three pillars, two outcomes, how it connects.", archetype: "builder" }
+    ]
+  },
+  {
+    text: "Someone DMs you: \"your post hit me hard, thank you.\" Your gut reply:",
+    choices: [
+      { key: "A", text: "\"Glad it landed. Which part?\" — short, framed.", archetype: "frame_setter" },
+      { key: "B", text: "\"What's coming up for you?\" — open the door, don't fill it.", archetype: "mirror" },
+      { key: "C", text: "\"Good. Now sit with the part you wanted to scroll past.\"", archetype: "catalyst" },
+      { key: "D", text: "\"Glad. I have a piece that goes deeper on this — want the link?\"", archetype: "builder" }
+    ]
+  },
+  {
+    text: "When you sit down to write, the first thing you actually do is:",
+    choices: [
+      { key: "A", text: "Open a doc and outline the structure. Headline first, then bullets, then prose.", archetype: "frame_setter" },
+      { key: "B", text: "Reread something that moved me recently. Borrow the temperature, then start.", archetype: "mirror" },
+      { key: "C", text: "Open with the most provocative line I can write that's also true.", archetype: "catalyst" },
+      { key: "D", text: "Pull up my pillars / framework notes and decide which slot this post fills.", archetype: "builder" }
+    ]
+  },
+  {
+    text: "Your worst content habit, if you're honest:",
+    choices: [
+      { key: "A", text: "Polishing the framing so long the heat goes out of the piece.", archetype: "frame_setter" },
+      { key: "B", text: "Asking too many open questions. Forgetting to actually claim something.", archetype: "mirror" },
+      { key: "C", text: "Going for the punch when nuance would have landed harder.", archetype: "catalyst" },
+      { key: "D", text: "Posting a framework when a story would have done the work.", archetype: "builder" }
+    ]
+  },
+  {
+    text: "A client cancels last-minute. Your real first move:",
+    choices: [
+      { key: "A", text: "Send a clean reschedule link with a one-line note. Don't make it heavy.", archetype: "frame_setter" },
+      { key: "B", text: "Reach out: \"Hey — what's coming up for you today?\" before talking logistics.", archetype: "mirror" },
+      { key: "C", text: "Light follow-up that names what they might be avoiding. Loving, but pointed.", archetype: "catalyst" },
+      { key: "D", text: "Track the pattern. Update onboarding so this doesn't keep happening.", archetype: "builder" }
+    ]
+  }
+];
+
+// ────────────────────────────────────────────────────────────
+// STATE
+// ────────────────────────────────────────────────────────────
+
+const TOTAL_STEPS = 1 /* intro */ + QUESTIONS.length + 1 /* email */ + 1 /* result */;
+let stepIndex = 0;             // 0 = intro, 1..5 = questions, 6 = email, 7 = result
+let answers = new Array(QUESTIONS.length).fill(null);
+let resultArchetype = null;
+let scoreBreakdown = null;
+
+// ────────────────────────────────────────────────────────────
+// ROUTING
+// ────────────────────────────────────────────────────────────
+
+function render() {
+  // Hide all screens
+  document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
+
+  // Progress bar
+  const pct = (stepIndex / (TOTAL_STEPS - 1)) * 100;
+  document.getElementById("progress-fill").style.width = pct + "%";
+
+  // Step label
+  let label = "Start";
+  if (stepIndex === 0) label = "Start";
+  else if (stepIndex >= 1 && stepIndex <= QUESTIONS.length) label = `Question ${stepIndex} of ${QUESTIONS.length}`;
+  else if (stepIndex === QUESTIONS.length + 1) label = "Email";
+  else if (stepIndex === QUESTIONS.length + 2) label = "Result";
+  document.getElementById("progress-label").textContent = label;
+
+  if (stepIndex === 0) {
+    document.getElementById("screen-intro").classList.add("active");
+  } else if (stepIndex >= 1 && stepIndex <= QUESTIONS.length) {
+    renderQuestion(stepIndex - 1);
+  } else if (stepIndex === QUESTIONS.length + 1) {
+    document.getElementById("screen-email").classList.add("active");
+    setTimeout(() => document.getElementById("email-input").focus(), 200);
+  } else {
+    renderResult();
+  }
+}
+
+function renderQuestion(qIdx) {
+  const q = QUESTIONS[qIdx];
+  document.getElementById("q-number").textContent = `Question ${qIdx + 1} of ${QUESTIONS.length}`;
+  document.getElementById("q-text").textContent = q.text;
+
+  const container = document.getElementById("q-choices");
+  container.innerHTML = "";
+  q.choices.forEach((c, i) => {
+    const btn = document.createElement("button");
+    btn.className = "choice" + (answers[qIdx] === i ? " selected" : "");
+    btn.innerHTML = `<span class="choice-key">${c.key}</span><span>${c.text}</span>`;
+    btn.onclick = () => {
+      answers[qIdx] = i;
+      renderQuestion(qIdx);  // re-render to show selection
+      // Auto-advance after a short delay for smoothness
+      setTimeout(() => {
+        if (stepIndex - 1 === qIdx) next();
+      }, 280);
+    };
+    container.appendChild(btn);
+  });
+
+  // Enable Next if answered
+  const nextBtn = document.getElementById("q-next-btn");
+  nextBtn.disabled = answers[qIdx] === null;
+
+  document.getElementById("screen-question").classList.add("active");
+}
+
+function next() {
+  if (stepIndex >= TOTAL_STEPS - 1) return;
+  // Validate before advancing past a question
+  if (stepIndex >= 1 && stepIndex <= QUESTIONS.length) {
+    if (answers[stepIndex - 1] === null) return;
+  }
+  stepIndex++;
+  render();
+}
+
+function back() {
+  if (stepIndex === 0) return;
+  stepIndex--;
+  render();
+}
+
+// ────────────────────────────────────────────────────────────
+// SCORING
+// ────────────────────────────────────────────────────────────
+
+function score() {
+  const counts = { frame_setter: 0, mirror: 0, catalyst: 0, builder: 0 };
+  answers.forEach((aIdx, qIdx) => {
+    if (aIdx === null) return;
+    const choice = QUESTIONS[qIdx].choices[aIdx];
+    counts[choice.archetype] += 1;
+  });
+  // Find max
+  let max = -1;
+  let winner = "frame_setter";
+  for (const [key, val] of Object.entries(counts)) {
+    if (val > max) {
+      max = val;
+      winner = key;
+    }
+  }
+  return { winner, counts };
+}
+
+// ────────────────────────────────────────────────────────────
+// EMAIL CAPTURE & REVEAL
+// ────────────────────────────────────────────────────────────
+
+async function reveal() {
+  const emailInput = document.getElementById("email-input");
+  const email = emailInput.value.trim();
+  const errEl = document.getElementById("email-error");
+  errEl.style.display = "none";
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = "Please enter a valid email.";
+    errEl.style.display = "block";
+    emailInput.focus();
+    return;
+  }
+
+  // Score
+  const { winner, counts } = score();
+  resultArchetype = winner;
+  scoreBreakdown = counts;
+
+  // Show loading state on button
+  const btn = document.getElementById("reveal-btn");
+  const label = document.getElementById("reveal-label");
+  btn.disabled = true;
+  label.innerHTML = '<span class="loader"></span> Revealing…';
+
+  // Subscribe (don't block on failure — show result regardless)
+  try {
+    await fetch("/api/quiz-subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        archetype: winner,
+        score_breakdown: counts,
+      }),
+    });
+  } catch (err) {
+    console.error("[quiz] subscribe failed:", err);
+    // Still proceed to result
+  }
+
+  // Advance to result
+  btn.disabled = false;
+  label.textContent = "Reveal my result →";
+  stepIndex = TOTAL_STEPS - 1;
+  render();
+
+  // Scroll to top of result
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderResult() {
+  const a = ARCHETYPES[resultArchetype];
+  document.getElementById("r-archetype-name").textContent = a.name;
+  document.getElementById("r-portrait").textContent = a.portrait;
+  document.getElementById("r-bridge").innerHTML = a.bridge;
+
+  const gapsEl = document.getElementById("r-gaps");
+  gapsEl.innerHTML = "";
+  a.gaps.forEach((g, i) => {
+    const div = document.createElement("div");
+    div.className = "gap";
+    div.innerHTML = `<span class="gap-num">No. ${String(i + 1).padStart(2, "0")}</span><span>${g}</span>`;
+    gapsEl.appendChild(div);
+  });
+
+  // Share link
+  const shareText = encodeURIComponent(`I'm a ${a.name} — took The Voice Archetype Quiz at`);
+  const shareUrl = "https://elevateaisystem.com/quiz";
+  document.getElementById("share-twitter").href =
+    `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(shareUrl)}`;
+
+  document.getElementById("screen-result").classList.add("active");
+}
+
+function copyResult() {
+  const a = ARCHETYPES[resultArchetype];
+  const text = `I'm a ${a.name} — took The Voice Archetype Quiz at https://elevateaisystem.com/quiz`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("share-copy");
+    const orig = btn.textContent;
+    btn.textContent = "Copied ✓";
+    setTimeout(() => { btn.textContent = orig; }, 1800);
+  });
+}
+
+// ────────────────────────────────────────────────────────────
+// INIT
+// ────────────────────────────────────────────────────────────
+
+document.addEventListener("DOMContentLoaded", render);
+
+// Allow Enter key on email input to submit
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && stepIndex === QUESTIONS.length + 1) {
+    e.preventDefault();
+    reveal();
+  }
+});
+</script>
+
+</body>
+</html>

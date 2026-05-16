@@ -87,10 +87,10 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
       <span class="nav-logo-text">Elevate<span>AI</span></span>
     </a>
     <div class="nav-links">
-      <!-- Featured services in price order — lowest-friction entry first. -->
+      <!-- Lead magnet → trip-wire → flagship → ladder. Free quiz is the cold entry. -->
+      <a href="/quiz">Quiz</a>
       <a href="/brand-os">Brand OS</a>
       <a href="/build-your-brand">Build Your Brand</a>
-      <a href="/seo-audit-landing-page">Search Visibility</a>
       <a href="/about">About</a>
       <a href="/blog">Blog</a>
       <a href="https://app.elevateaisystem.com/login" class="nav-cta">Explore Coach Platform</a>
@@ -106,9 +106,9 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   mobileNav.id = 'mobileNav';
   mobileNav.innerHTML = `
     <a href="/">Home</a>
+    <a href="/quiz">Quiz · Free</a>
     <a href="/brand-os">Brand OS</a>
     <a href="/build-your-brand">Build Your Brand</a>
-    <a href="/seo-audit-landing-page">Search Visibility</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
     <a href="https://app.elevateaisystem.com/login" class="nav-cta">Explore Coach Platform</a>
