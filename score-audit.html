@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The S.C.O.R.E. Audit — Grade Your Coaching Business in 5 Minutes | ElevateAI</title>
+<meta name="description" content="5 sections. 25 questions. One score that tells you if you built a business or a job. Free, instant, no email required to start.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.elevateaisystem.com/score-audit">
+<meta property="og:title" content="The S.C.O.R.E. Audit — Grade Your Coaching Business">
+<meta property="og:description" content="5 sections. 25 questions. One score. Are you building a business or a job?">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300FF41'><path d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A0F1C;
+  --navy-light: #1A2035;
+  --green: #00FF41;
+  --green-dark: #00CC34;
+  --green-deep: #0B6E23;
+  --bg: #FAFAF8;
+  --bg-alt: #F2F2EE;
+  --text: #1A1A2E;
+  --muted: #5A5A6E;
+  --border: #E0E0D8;
+  --white: #FFFFFF;
+  --red: #C1282B;
+  --red-soft: rgba(255,60,60,0.08);
+  --amber: #B87900;
+  --amber-soft: rgba(184,121,0,0.08);
+  --green-soft: rgba(0,255,65,0.10);
+  --radius: 12px;
+  --shadow: 0 8px 25px rgba(10,15,28,.08);
+  --shadow-lg: 0 20px 60px rgba(10,15,28,.18);
+  --font: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { max-width: 100vw; overflow-x: hidden; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav { padding: 18px 28px; border-bottom: 1px solid var(--border); background: var(--white); display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: .95rem; color: var(--navy); letter-spacing: -.01em; text-decoration: none; }
+.brand svg { width: 22px; height: 22px; color: var(--green-dark); }
+.back-link { font-size: .78rem; color: var(--muted); font-weight: 600; text-decoration: none; }
+.back-link:hover { color: var(--navy); }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  color: white;
+  padding: 80px 28px 88px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,65,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 800;
+  margin-bottom: 24px;
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.hero h1 em { font-style: italic; color: var(--green); }
+.hero .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  max-width: 560px;
+  margin: 0 auto 36px;
+  position: relative;
+  line-height: 1.5;
+}
+.hero-letters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 36px;
+}
+.hero-letter {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 16px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+.hero-letter .letter {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--green);
+  line-height: 1;
+}
+.hero-letter .label {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green-dark);
+  color: var(--navy);
+  padding: 18px 40px;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+  letter-spacing: -.01em;
+  position: relative;
+}
+.start-btn:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,255,65,.35); }
+.hero-micro { font-size: .76rem; opacity: 0.4; margin-top: 16px; position: relative; }
+
+/* PROGRESS BAR */
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 28px;
+  display: none;
+}
+.progress-wrap.active { display: block; }
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.progress-labels {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+.progress-pip {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  transition: background .4s;
+}
+.progress-pip.done { background: var(--green-dark); }
+.progress-pip.current { background: var(--navy); }
+.progress-text { font-size: .72rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+
+/* SECTIONS */
+.audit-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 28px;
+  display: none;
+}
+.audit-section.active { display: block; }
+.section-header {
+  margin-bottom: 40px;
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--green);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.section-header h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: -1px;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.section-header h2 em { font-style: italic; color: var(--green-deep); }
+.section-header .lede {
+  font-size: .95rem;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 560px;
+}
+
+/* QUESTION CARDS */
+.question-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  margin-bottom: 16px;
+  transition: border-color .3s;
+}
+.question-card.answered { border-color: var(--green-dark); }
+.question-card .q-num {
+  font-size: .62rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--green-deep);
+  margin-bottom: 8px;
+}
+.question-card .q-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.options {
+  display: grid;
+  gap: 8px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s;
+  font-size: .88rem;
+  line-height: 1.4;
+}
+.option:hover { border-color: var(--green-dark); background: var(--green-soft); }
+.option.selected { border-color: var(--green-dark); background: var(--green-soft); }
+.option .radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+.option.selected .radio {
+  border-color: var(--green-dark);
+  background: var(--green-dark);
+}
+.option.selected .radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+.option .score-label {
+  margin-left: auto;
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--muted);
+  opacity: 0;
+}
+.option.selected .score-label { opacity: 1; color: var(--green-deep); }
+
+/* SECTION NAV */
+.section-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: .9rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+}
+.nav-btn.secondary { background: var(--bg-alt); color: var(--text); }
+.nav-btn.secondary:hover { background: var(--border); }
+.nav-btn.primary { background: var(--navy); color: white; }
+.nav-btn.primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.nav-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.section-score {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.section-score span { color: var(--green-deep); font-size: 1.1rem; }
+
+/* RESULTS */
+.results {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 28px 80px;
+  display: none;
+}
+.results.active { display: block; }
+.results-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.total-score {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 5rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.total-score span { color: var(--muted); font-size: 2rem; font-weight: 700; }
+.score-verdict {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 1.6rem;
+  margin-top: 12px;
+  line-height: 1.2;
+}
+.verdict-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-family: var(--font);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+.verdict-tag.red { background: var(--red-soft); color: var(--red); }
+.verdict-tag.amber { background: var(--amber-soft); color: var(--amber); }
+.verdict-tag.green { background: var(--green-soft); color: var(--green-deep); }
+
+/* SECTION BREAKDOWN */
+.breakdown-grid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.breakdown-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.breakdown-score {
+  text-align: center;
+}
+.breakdown-score .num {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+}
+.breakdown-score .out-of {
+  font-size: .68rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.breakdown-detail .bd-letter {
+  font-size: .62rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.breakdown-detail h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.breakdown-detail .diagnosis {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.bar-wrap {
+  grid-column: 1 / -1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width .8s ease;
+}
+
+/* CTA */
+.results-cta {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 48px 36px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.results-cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,255,65,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.results-cta h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  position: relative;
+}
+.results-cta h2 em { font-style: italic; color: var(--green); }
+.results-cta p {
+  font-size: .95rem;
+  opacity: 0.7;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.5;
+  position: relative;
+}
+.results-cta .capture {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.results-cta input {
+  padding: 16px 18px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1rem;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  transition: all .15s;
+}
+.results-cta input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,255,65,.15); }
+.results-cta input::placeholder { color: rgba(255,255,255,0.35); }
+.results-cta button {
+  background: var(--green-dark);
+  color: var(--navy);
+  padding: 16px 30px;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+.results-cta button:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,255,65,.35); }
+.results-cta .micro { font-size: .72rem; opacity: 0.4; margin-top: 12px; position: relative; }
+
+/* FOOTER */
+.footer {
+  padding: 24px 28px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+.footer p { margin: 4px 0; font-size: .72rem; color: var(--muted); }
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--navy); }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero-letters { gap: 8px; }
+  .hero-letter { min-width: 56px; padding: 12px 10px; }
+  .hero-letter .letter { font-size: 1.4rem; }
+  .hero-letter .label { font-size: .6rem; }
+  .breakdown-card { grid-template-columns: 1fr; text-align: center; }
+  .section-nav { flex-direction: column; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="https://www.elevateaisystem.com" class="brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+    ElevateAI
+  </a>
+  <a href="https://www.elevateaisystem.com" class="back-link">&larr; Back to site</a>
+</nav>
+
+<!-- ====== HERO ====== -->
+<header class="hero" id="hero">
+  <div class="hero-eyebrow">Free Diagnostic &middot; 5 Minutes &middot; No Email Required</div>
+  <h1>The S.C.O.R.E. <em>Audit</em></h1>
+  <p class="subtitle">5 sections. 25 questions. One number that tells you whether you built a business&nbsp;&mdash;&nbsp;or a job wearing a business costume.</p>
+  <div class="hero-letters">
+    <div class="hero-letter"><div class="letter">S</div><div class="label">Structure</div></div>
+    <div class="hero-letter"><div class="letter">C</div><div class="label">Cash Flow</div></div>
+    <div class="hero-letter"><div class="letter">O</div><div class="label">Offers</div></div>
+    <div class="hero-letter"><div class="letter">R</div><div class="label">Ratio</div></div>
+    <div class="hero-letter"><div class="letter">E</div><div class="label">Engine</div></div>
+  </div>
+  <button class="start-btn" onclick="startAudit()">Start the Audit &rarr;</button>
+  <div class="hero-micro">Takes about 5 minutes. Results are instant.</div>
+</header>
+
+<!-- ====== PROGRESS ====== -->
+<div class="progress-wrap" id="progressBar">
+  <div class="progress-row">
+    <div class="progress-labels">
+      <div class="progress-pip" id="pip-0"></div>
+      <div class="progress-pip" id="pip-1"></div>
+      <div class="progress-pip" id="pip-2"></div>
+      <div class="progress-pip" id="pip-3"></div>
+      <div class="progress-pip" id="pip-4"></div>
+    </div>
+    <div class="progress-text" id="progressText">S &middot; 1 of 5</div>
+  </div>
+</div>
+
+<!-- ====== SECTION 1: STRUCTURE (4-Worker Stack) ====== -->
+<div class="audit-section" id="section-0">
+  <div class="section-header">
+    <div class="section-tag">S &middot; Section 1 of 5</div>
+    <h2>Structure: Are you the CEO or the <em>entire company?</em></h2>
+    <p class="lede">Most coaches wear every hat: marketer, salesperson, fulfillment, admin. This section measures whether you've built roles or just a really long to-do list.</p>
+  </div>
+
+  <div class="question-card" data-section="0" data-q="0">
+    <div class="q-num">Question 1 of 5</div>
+    <div class="q-text">How much of your week is spent on tasks only you can do (coaching, strategy, vision)?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Less than 20% &mdash; I do everything<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>About 40% &mdash; I've offloaded a few things<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>About 60% &mdash; I have a VA or contractor<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>80%+ &mdash; I only do CEO-level work<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="0" data-q="1">
+    <div class="q-num">Question 2 of 5</div>
+    <div class="q-text">If you took two weeks off, what would happen to revenue?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>It stops completely<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>It drops significantly<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>It dips slightly &mdash; some things are automated<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>It stays roughly the same<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="0" data-q="2">
+    <div class="q-num">Question 3 of 5</div>
+    <div class="q-text">How do you handle content creation?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>I create every piece manually, from scratch<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>I batch create but it takes full days<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>I have templates or AI tools that speed it up<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>I have a system that generates content from my voice<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="0" data-q="3">
+    <div class="q-num">Question 4 of 5</div>
+    <div class="q-text">How many of the "4 workers" are you still doing yourself? (Marketing, Sales, Fulfillment, Operations)</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>All four &mdash; I am the business<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="4" onclick="selectOption(this)"><span class="radio"></span>Three &mdash; I've outsourced one<span class="score-label">4 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Two &mdash; I've delegated half<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>One or zero &mdash; I mostly do CEO work<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="0" data-q="4">
+    <div class="q-num">Question 5 of 5</div>
+    <div class="q-text">Do you have documented systems someone else could run?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Nothing is documented &mdash; it's all in my head<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Some rough notes, but not hand-off ready<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Key processes are documented<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Full SOPs &mdash; someone could step in tomorrow<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="nav-btn secondary" onclick="prevSection()" disabled>&larr; Back</button>
+    <div class="section-score">Section score: <span id="score-0">0</span> / 50</div>
+    <button class="nav-btn primary" onclick="nextSection()">Next: Cash Flow &rarr;</button>
+  </div>
+</div>
+
+<!-- ====== SECTION 2: CASH FLOW (Coach ARR Test) ====== -->
+<div class="audit-section" id="section-1">
+  <div class="section-header">
+    <div class="section-tag">C &middot; Section 2 of 5</div>
+    <h2>Cash Flow: Which offers actually <em>feed you?</em></h2>
+    <p class="lede">Revenue is vanity. Recurring, predictable income per hour invested is the only number that matters. This section exposes which offers are carrying you and which are bleeding you.</p>
+  </div>
+
+  <div class="question-card" data-section="1" data-q="0">
+    <div class="q-num">Question 1 of 5</div>
+    <div class="q-text">How many active revenue streams do you have?</div>
+    <div class="options">
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>1 &mdash; everything rides on one offer<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>2-3 &mdash; with one clearly dominant<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>2-3 &mdash; balanced and intentional<span class="score-label">10 pts</span></div>
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>4+ &mdash; I keep adding offers hoping one sticks<span class="score-label">1 pt</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="1" data-q="1">
+    <div class="q-num">Question 2 of 5</div>
+    <div class="q-text">What percentage of your revenue is recurring or predictable?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Nearly none &mdash; I hunt for every dollar<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>About 25% &mdash; some repeat clients<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>About 50% &mdash; mix of recurring and one-off<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>70%+ &mdash; subscriptions, retainers, or cohort cycles<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="1" data-q="2">
+    <div class="q-num">Question 3 of 5</div>
+    <div class="q-text">Do you know your effective hourly rate per offer?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No idea &mdash; I've never calculated it<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Rough sense, but I avoid looking<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>I know the ballpark for my main offer<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>I track it per offer and optimize quarterly<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="1" data-q="3">
+    <div class="q-num">Question 4 of 5</div>
+    <div class="q-text">If your worst-performing offer disappeared tomorrow, would you notice?</div>
+    <div class="options">
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>I'd actually be relieved &mdash; it drains energy<span class="score-label">10 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Probably not &mdash; it barely moves the needle<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>I'd lose some revenue but survive<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>I can't tell which one is worst &mdash; they all feel the same<span class="score-label">1 pt</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="1" data-q="4">
+    <div class="q-num">Question 5 of 5</div>
+    <div class="q-text">How long is your average client relationship?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>One session &mdash; then they're gone<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>A few weeks &mdash; short engagements<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>2-3 months &mdash; a program or cohort<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>6+ months &mdash; they stay, upgrade, or refer<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="nav-btn secondary" onclick="prevSection()">&larr; Structure</button>
+    <div class="section-score">Section score: <span id="score-1">0</span> / 50</div>
+    <button class="nav-btn primary" onclick="nextSection()">Next: Offers &rarr;</button>
+  </div>
+</div>
+
+<!-- ====== SECTION 3: OFFERS (GPS-Locked) ====== -->
+<div class="audit-section" id="section-2">
+  <div class="section-header">
+    <div class="section-tag">O &middot; Section 3 of 5</div>
+    <h2>Offers: Can your best client actually <em>buy from you?</em></h2>
+    <p class="lede">People want to buy. But most coach offers are GPS-locked: the destination exists, the path to get there is invisible. This section checks whether your buyer's journey has clear doors or dead ends.</p>
+  </div>
+
+  <div class="question-card" data-section="2" data-q="0">
+    <div class="q-num">Question 1 of 5</div>
+    <div class="q-text">Can someone go from discovering you to paying you without a DM conversation?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No &mdash; every sale requires manual outreach<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Technically yes, but nobody does<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; I have a page, but the flow is clunky<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; clear funnel from content to checkout<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="2" data-q="1">
+    <div class="q-num">Question 2 of 5</div>
+    <div class="q-text">How clear is your offer's outcome in one sentence?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>I struggle to explain what I do<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>I describe the process, not the result<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>I have a clear outcome but it's buried in my copy<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>One sentence. Specific outcome. No confusion.<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="2" data-q="2">
+    <div class="q-num">Question 3 of 5</div>
+    <div class="q-text">How many steps between "I'm interested" and "I'm in"?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>I don't know &mdash; I've never mapped it<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>5+ steps &mdash; DM, call, proposal, follow-up, close<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>3 steps &mdash; lead magnet, call, decision<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>2 steps &mdash; see it, buy it (or book it)<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="2" data-q="3">
+    <div class="q-num">Question 4 of 5</div>
+    <div class="q-text">Do your offers have clear pricing visible before a sales conversation?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No &mdash; "book a call to learn more"<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="4" onclick="selectOption(this)"><span class="radio"></span>Kind of &mdash; "starting at" with no real anchor<span class="score-label">4 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Yes, but only for my low-ticket offer<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; every tier is transparent<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="2" data-q="4">
+    <div class="q-num">Question 5 of 5</div>
+    <div class="q-text">When someone lands on your website, how quickly can they understand what you sell?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>They can't &mdash; it's mostly about me, not the offer<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Takes some scrolling and clicking<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Within 30 seconds &mdash; but it's not specific<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Instantly &mdash; above the fold, crystal clear<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="nav-btn secondary" onclick="prevSection()">&larr; Cash Flow</button>
+    <div class="section-score">Section score: <span id="score-2">0</span> / 50</div>
+    <button class="nav-btn primary" onclick="nextSection()">Next: Ratio &rarr;</button>
+  </div>
+</div>
+
+<!-- ====== SECTION 4: RATIO (80/20 Focus) ====== -->
+<div class="audit-section" id="section-3">
+  <div class="section-header">
+    <div class="section-tag">R &middot; Section 4 of 5</div>
+    <h2>Ratio: Where does your time <em>actually go?</em></h2>
+    <p class="lede">The 80/20 trap: spending 80% of your time on the 20% that doesn't drive revenue. This section forces you to look at where your hours actually land.</p>
+  </div>
+
+  <div class="question-card" data-section="3" data-q="0">
+    <div class="q-num">Question 1 of 5</div>
+    <div class="q-text">What did you spend most of last week on?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Admin, emails, "getting organized"<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Creating content that didn't lead anywhere<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Mix of client work and revenue activities<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Revenue-generating work &mdash; sales, delivery, partnerships<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="3" data-q="1">
+    <div class="q-num">Question 2 of 5</div>
+    <div class="q-text">How often do you work on things that feel productive but don't generate revenue?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Daily &mdash; I'm always busy but never profitable<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Most days &mdash; website tweaks, logo changes, "strategy"<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Sometimes &mdash; I catch myself and redirect<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Rarely &mdash; I know my revenue levers<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="3" data-q="2">
+    <div class="q-num">Question 3 of 5</div>
+    <div class="q-text">Can you name your top 3 revenue-generating activities right now?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Not really &mdash; everything feels equally important<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>I could guess, but I haven't tracked it<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; I know what works but don't always prioritize it<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; and they get my first energy every day<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="3" data-q="3">
+    <div class="q-num">Question 4 of 5</div>
+    <div class="q-text">How much time do you spend perfecting things before they ship?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>A lot &mdash; nothing ever feels ready<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>More than I should &mdash; I tweak endlessly<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Reasonable &mdash; I aim for 80% done then ship<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Minimal &mdash; I test fast and iterate based on data<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="3" data-q="4">
+    <div class="q-num">Question 5 of 5</div>
+    <div class="q-text">Have you audited your weekly calendar against actual revenue impact?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>Never<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Once, a while ago<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Quarterly &mdash; I review and adjust<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Monthly or more &mdash; it's part of my operating rhythm<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="nav-btn secondary" onclick="prevSection()">&larr; Offers</button>
+    <div class="section-score">Section score: <span id="score-3">0</span> / 50</div>
+    <button class="nav-btn primary" onclick="nextSection()">Next: Engine &rarr;</button>
+  </div>
+</div>
+
+<!-- ====== SECTION 5: ENGINE (4-Quadrant Audit) ====== -->
+<div class="audit-section" id="section-4">
+  <div class="section-header">
+    <div class="section-tag">E &middot; Section 5 of 5</div>
+    <h2>Engine: Is your business a machine or a <em>job?</em></h2>
+    <p class="lede">A business engine runs without you pushing every lever. This section measures whether you've built something that compounds or something that resets to zero every Monday.</p>
+  </div>
+
+  <div class="question-card" data-section="4" data-q="0">
+    <div class="q-num">Question 1 of 5</div>
+    <div class="q-text">Does your business generate leads without you actively posting or reaching out?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No &mdash; if I stop posting, leads stop<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>A few referrals trickle in<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Some organic &mdash; SEO, old content, word of mouth<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; funnels, automations, and evergreen content work for me<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="4" data-q="1">
+    <div class="q-num">Question 2 of 5</div>
+    <div class="q-text">Can you deliver your core offer to more people without working more hours?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No &mdash; it's 1:1, and I'm at capacity<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Barely &mdash; I could squeeze in one more client<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Somewhat &mdash; I have a group or cohort model<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; my model scales (group, digital, automated)<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="4" data-q="2">
+    <div class="q-num">Question 3 of 5</div>
+    <div class="q-text">Do clients naturally progress to your next offer?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>I don't have a "next" &mdash; they just leave<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Sometimes I pitch something, but it's ad hoc<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>There's a path, but it's not automated<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; ascension ladder from low to high ticket<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="4" data-q="3">
+    <div class="q-num">Question 4 of 5</div>
+    <div class="q-text">How does your revenue this month compare to 6 months ago?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>About the same or lower &mdash; I'm on a treadmill<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Slightly up, but inconsistent<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Steadily growing &mdash; clear upward trend<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Significantly up &mdash; compounding growth<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="question-card" data-section="4" data-q="4">
+    <div class="q-num">Question 5 of 5</div>
+    <div class="q-text">If you wanted to sell your business today, could someone buy it and run it?</div>
+    <div class="options">
+      <div class="option" data-val="1" onclick="selectOption(this)"><span class="radio"></span>No &mdash; I am the business, there's nothing to sell<span class="score-label">1 pt</span></div>
+      <div class="option" data-val="3" onclick="selectOption(this)"><span class="radio"></span>Maybe the brand, but not the operations<span class="score-label">3 pts</span></div>
+      <div class="option" data-val="7" onclick="selectOption(this)"><span class="radio"></span>Parts of it &mdash; the systems have some independence<span class="score-label">7 pts</span></div>
+      <div class="option" data-val="10" onclick="selectOption(this)"><span class="radio"></span>Yes &mdash; documented, systematized, transferable<span class="score-label">10 pts</span></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="nav-btn secondary" onclick="prevSection()">&larr; Ratio</button>
+    <div class="section-score">Section score: <span id="score-4">0</span> / 50</div>
+    <button class="nav-btn primary" onclick="showResults()">See My Score &rarr;</button>
+  </div>
+</div>
+
+<!-- ====== RESULTS ====== -->
+<div class="results" id="results">
+  <div class="results-hero">
+    <div style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green-deep);font-weight:800;margin-bottom:16px;">Your S.C.O.R.E.</div>
+    <div class="total-score" id="totalScore">0<span> / 250</span></div>
+    <div class="score-verdict" id="verdict"></div>
+    <div id="verdictTag"></div>
+  </div>
+
+  <div class="breakdown-grid" id="breakdownGrid"></div>
+
+  <div class="results-cta">
+    <h2>Your score told you <em>where.</em><br>Brand OS tells you <em>how.</em></h2>
+    <p>The S.C.O.R.E. Audit shows you where your business leaks. Brand OS is the system that plugs them: Avatar, Voice, Pillars, and a content engine built on your terms.</p>
+    <div class="capture">
+      <input type="text" id="ctaName" placeholder="Your first name" autocomplete="given-name">
+      <input type="email" id="ctaEmail" placeholder="Your best email" autocomplete="email">
+      <button onclick="handleCTA()">Get the Brand OS Workbook &rarr;</button>
+    </div>
+    <div class="micro">Free. Instant. No sales call required.</div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 ElevateAI System &middot; <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+  <p>Built for coaches who've done the inner work.</p>
+</footer>
+
+<script>
+const SECTIONS = ['Structure','Cash Flow','Offers','Ratio','Engine'];
+const LETTERS = ['S','C','O','R','E'];
+const scores = [[],[],[],[],[]];
+let currentSection = 0;
+
+function startAudit() {
+  document.getElementById('hero').style.display = 'none';
+  document.getElementById('progressBar').classList.add('active');
+  document.getElementById('section-0').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateProgress();
+}
+
+function selectOption(el) {
+  const card = el.closest('.question-card');
+  const sec = parseInt(card.dataset.section);
+  const q = parseInt(card.dataset.q);
+  card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  card.classList.add('answered');
+  scores[sec][q] = parseInt(el.dataset.val);
+  updateSectionScore(sec);
+}
+
+function updateSectionScore(sec) {
+  const total = scores[sec].reduce((a, b) => a + b, 0);
+  const el = document.getElementById('score-' + sec);
+  if (el) el.textContent = total;
+}
+
+function updateProgress() {
+  for (let i = 0; i < 5; i++) {
+    const pip = document.getElementById('pip-' + i);
+    pip.className = 'progress-pip';
+    if (i < currentSection) pip.classList.add('done');
+    if (i === currentSection) pip.classList.add('current');
+  }
+  document.getElementById('progressText').textContent = LETTERS[currentSection] + ' · ' + (currentSection + 1) + ' of 5';
+}
+
+function nextSection() {
+  if (currentSection < 4) {
+    document.getElementById('section-' + currentSection).classList.remove('active');
+    currentSection++;
+    document.getElementById('section-' + currentSection).classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function prevSection() {
+  if (currentSection > 0) {
+    document.getElementById('section-' + currentSection).classList.remove('active');
+    currentSection--;
+    document.getElementById('section-' + currentSection).classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showResults() {
+  document.getElementById('section-4').classList.remove('active');
+  document.getElementById('progressBar').classList.remove('active');
+  document.getElementById('results').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const sectionTotals = scores.map(s => s.reduce((a, b) => a + b, 0));
+  const total = sectionTotals.reduce((a, b) => a + b, 0);
+
+  document.getElementById('totalScore').innerHTML = total + '<span> / 250</span>';
+
+  let verdict, tagClass, tagText;
+  if (total <= 75) {
+    verdict = "You built a job wearing a business costume.";
+    tagClass = 'red'; tagText = 'NEEDS WORK';
+  } else if (total <= 125) {
+    verdict = "You're halfway between a job and a business.";
+    tagClass = 'red'; tagText = 'FOUNDATION MISSING';
+  } else if (total <= 175) {
+    verdict = "You have a real business with real gaps.";
+    tagClass = 'amber'; tagText = 'GETTING THERE';
+  } else if (total <= 210) {
+    verdict = "You're building something that compounds.";
+    tagClass = 'green'; tagText = 'STRONG';
+  } else {
+    verdict = "You built an engine, not a treadmill.";
+    tagClass = 'green'; tagText = 'EXCEPTIONAL';
+  }
+
+  document.getElementById('verdict').textContent = verdict;
+  document.getElementById('verdictTag').innerHTML = '<span class="verdict-tag ' + tagClass + '">' + tagText + '</span>';
+
+  const diagnoses = [
+    { low: "You are the entire company. Every role, every task, every decision runs through you.", mid: "You've started delegating but still own too many hats.", high: "Your structure is solid. You operate like a CEO." },
+    { low: "Your revenue is unpredictable and offer-dependent. You hunt for every dollar.", mid: "Some recurring revenue, but you haven't optimized which offers deserve your energy.", high: "Your cash flow is healthy, predictable, and you know your numbers." },
+    { low: "Your best clients can't find the door. The path from discovery to payment is invisible.", mid: "The path exists but has friction. People want to buy but get lost.", high: "Your offers are clear, accessible, and priced transparently." },
+    { low: "80% of your time goes to the 20% that doesn't drive revenue. You're decorating the stage.", mid: "You know your revenue levers but don't always protect them.", high: "Your time is ruthlessly allocated to what moves the needle." },
+    { low: "Your business resets to zero every Monday. There's no compounding, no leverage.", mid: "Some parts compound, but growth is inconsistent.", high: "You've built an engine that runs and grows without you pushing every lever." }
+  ];
+
+  const grid = document.getElementById('breakdownGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < 5; i++) {
+    const s = sectionTotals[i];
+    const pct = Math.round((s / 50) * 100);
+    let color, diag;
+    if (s <= 15) { color = 'var(--red)'; diag = diagnoses[i].low; }
+    else if (s <= 30) { color = 'var(--amber)'; diag = diagnoses[i].mid; }
+    else { color = 'var(--green-deep)'; diag = diagnoses[i].high; }
+
+    grid.innerHTML += '<div class="breakdown-card">' +
+      '<div class="breakdown-score"><div class="num" style="color:' + color + '">' + s + '</div><div class="out-of">/ 50</div></div>' +
+      '<div class="breakdown-detail"><div class="bd-letter" style="color:' + color + '">' + LETTERS[i] + ' — ' + SECTIONS[i] + '</div>' +
+      '<h3>' + SECTIONS[i] + '</h3><div class="diagnosis">' + diag + '</div></div>' +
+      '<div class="bar-wrap"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div>';
+  }
+}
+
+function handleCTA() {
+  const name = document.getElementById('ctaName').value.trim();
+  const email = document.getElementById('ctaEmail').value.trim();
+  if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+  window.location.href = 'https://www.elevateaisystem.com/brand-os-workbook?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&source=score-audit';
+}
+</script>
+
+<!-- Apollo Tracker -->
+<script>!function(t,e,n,s,a,c,i,o,p){t.AppId=a,t[s]=t[s]||function(){(t[s].q=t[s].q||[]).push(arguments)};i=e.createElement(n),o=e.getElementsByTagName(n)[0],i.async=1,i.src="https://cdn.apollo.io/p/"+a+"/sp.js",o.parentNode.insertBefore(i,o)}(window,document,"script","apollo","69af333ec98ca400116945f0")</script>
+
+</body>
+</html>
