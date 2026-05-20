@@ -56,7 +56,7 @@
 }
 </script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300FF41'><path d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1171,7 +1171,11 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
             <div class="qz-stat"><div class="n">Free</div><div class="l">Forever</div></div>
           </div>
 
-          <button class="qz-btn-primary" onclick="qzStart()">
+          <input type="text" id="qz-intro-name" class="qz-input" placeholder="Your first name" autocomplete="given-name" required>
+          <input type="email" id="qz-intro-email" class="qz-input" placeholder="Your best email" autocomplete="email" required>
+          <p class="qz-resume-msg" id="qzResumeMsg" style="display:none; margin-top:12px; font-size:14px; color:var(--green-dark); font-weight:600;"></p>
+
+          <button class="qz-btn-primary" onclick="qzStartWithEmail()">
             Start the Quiz
             <span>→</span>
           </button>
@@ -1361,13 +1365,11 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
         </div>
       </div>
 
-      <!-- EMAIL CAPTURE -->
+      <!-- FINAL SUBMIT (email already captured on intro) -->
       <div class="qz-slide" data-slide="email">
-        <div class="qz-label">One last thing · Where to send your score</div>
-        <h2 class="qz-prompt">Your name &amp; email.</h2>
-        <p class="qz-hint">Your Resonance Score + full breakdown — delivered in seconds.</p>
-        <input type="text" id="qz-name" class="qz-input" placeholder="Your first name" autocomplete="given-name" required>
-        <input type="email" id="qz-email" class="qz-input" placeholder="Your best email" autocomplete="email" required>
+        <div class="qz-label">All done!</div>
+        <h2 class="qz-prompt">Ready for your <span class="accent">Resonance Score</span>?</h2>
+        <p class="qz-hint">We'll generate your full breakdown instantly.</p>
         <div class="qz-controls">
           <button class="qz-btn-secondary" onclick="qzBack()">← Back</button>
           <button class="qz-btn-primary" onclick="qzSubmit()">Get My Score →</button>
@@ -1437,6 +1439,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   const QZ_SUPABASE_URL = 'https://modepuhwinzdngirlnkz.supabase.co';
   const QZ_SUPABASE_KEY = 'sb_publishable_cmok-dqlnfySxmdJVfv1CA_ESioiu0B';
   const QZ_TABLE = 'brand_os_quiz_submissions';
+  const QZ_PROGRESS_TABLE = 'brand_os_quiz_progress';
 
   // BOOKING LINK — routes through the application form (apply.html)
   // which captures 3 qualifying questions, then sends them to Cal.com.
@@ -1512,7 +1515,112 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   }
 
   function qzStart() { qzIndex = 1; qzGoToSlide(qzIndex); }
-  function qzNext() { if (qzIndex < qzSlides.length - 1) { qzIndex++; qzGoToSlide(qzIndex); } }
+
+  function qzStartWithEmail() {
+    const name = document.getElementById('qz-intro-name').value.trim();
+    const email = document.getElementById('qz-intro-email').value.trim();
+    if (!name || !email || !email.includes('@')) {
+      alert('Please enter your name and a valid email to start.');
+      return;
+    }
+    qzAnswers.name = name;
+    qzAnswers.email = email;
+    qzCheckForSavedProgress(email, name);
+  }
+
+  function qzCheckForSavedProgress(email, name) {
+    fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}?email=eq.${encodeURIComponent(email)}&select=*`, {
+      headers: { 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}` }
+    })
+    .then(r => r.json())
+    .then(rows => {
+      if (rows.length > 0 && rows[0].current_slide > 1) {
+        const saved = rows[0];
+        const savedAnswers = saved.answers || {};
+        Object.keys(savedAnswers).forEach(k => { qzAnswers[k] = savedAnswers[k]; });
+        qzAnswers.name = name;
+        qzAnswers.email = email;
+        qzRestoreSelections();
+        qzIndex = saved.current_slide;
+        qzGoToSlide(qzIndex);
+        document.getElementById('qzResumeMsg').style.display = 'none';
+      } else {
+        qzStart();
+      }
+    })
+    .catch(() => { qzStart(); });
+  }
+
+  function qzRestoreSelections() {
+    const optionMap = { q1: 'archetype', q2: 'revenue', q9: 'bottleneck', q10: 'readiness' };
+    Object.entries(optionMap).forEach(([qId, key]) => {
+      if (qzAnswers[key] == null) return;
+      const container = document.getElementById(`qz-${qId}-options`);
+      if (!container) return;
+      container.querySelectorAll('.qz-option').forEach(btn => {
+        if (btn.dataset.value === qzAnswers[key]) btn.classList.add('qz-selected');
+      });
+    });
+    const scaleMap = { q3: 'brandOS_message', q4: 'brandOS_audience', q5: 'contentOS', q6: 'leadOS', q7: 'salesOS', q8: 'opsOS' };
+    Object.entries(scaleMap).forEach(([qId, key]) => {
+      if (qzAnswers[key] == null) return;
+      const container = document.getElementById(`qz-${qId}-scale`);
+      if (!container) return;
+      container.querySelectorAll('.qz-scale-option').forEach(btn => {
+        if (parseInt(btn.dataset.score) === qzAnswers[key]) btn.classList.add('qz-selected');
+      });
+    });
+  }
+
+  function qzSaveProgress() {
+    if (!qzAnswers.email) return;
+    const payload = {
+      email: qzAnswers.email,
+      name: qzAnswers.name,
+      current_slide: qzIndex,
+      answers: Object.assign({}, qzAnswers),
+      updated_at: new Date().toISOString()
+    };
+    delete payload.answers.name;
+    delete payload.answers.email;
+    fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}?email=eq.${encodeURIComponent(qzAnswers.email)}`, {
+      method: 'GET',
+      headers: { 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}` }
+    })
+    .then(r => r.json())
+    .then(rows => {
+      if (rows.length > 0) {
+        fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}?email=eq.${encodeURIComponent(qzAnswers.email)}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}`, 'Prefer': 'return=minimal' },
+          body: JSON.stringify({ current_slide: payload.current_slide, answers: payload.answers, name: payload.name, updated_at: payload.updated_at })
+        }).catch(() => {});
+      } else {
+        fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}`, 'Prefer': 'return=minimal' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+      }
+    })
+    .catch(() => {});
+  }
+
+  function qzDeleteProgress() {
+    if (!qzAnswers.email) return;
+    fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}?email=eq.${encodeURIComponent(qzAnswers.email)}`, {
+      method: 'DELETE',
+      headers: { 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}` }
+    }).catch(() => {});
+  }
+
+  function qzNext() {
+    if (qzIndex < qzSlides.length - 1) {
+      qzIndex++;
+      qzGoToSlide(qzIndex);
+      qzSaveProgress();
+    }
+  }
   function qzBack() { if (qzIndex > 0) { qzIndex--; qzGoToSlide(qzIndex); } }
 
   // ============================================
@@ -1566,10 +1674,10 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   // Submit
   // ============================================
   function qzSubmit() {
-    const name = document.getElementById('qz-name').value.trim();
-    const email = document.getElementById('qz-email').value.trim();
+    const name = qzAnswers.name || document.getElementById('qz-intro-name').value.trim();
+    const email = qzAnswers.email || document.getElementById('qz-intro-email').value.trim();
     if (!name || !email || !email.includes('@')) {
-      alert('Please enter your name and a valid email.');
+      alert('Something went wrong. Please refresh and try again.');
       return;
     }
     qzAnswers.name = name;
@@ -1620,7 +1728,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify(payload)
-    }).catch(err => console.warn('Supabase submission failed (non-blocking):', err));
+    }).then(() => { qzDeleteProgress(); })
+      .catch(err => console.warn('Supabase submission failed (non-blocking):', err));
 
     // Simulate processing for UX (and render results)
     setTimeout(() => {
@@ -1773,6 +1882,36 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
     }, tick);
   }
 
+  // Check for saved progress as user types email on intro
+  let qzDebounceTimer = null;
+  const introEmail = document.getElementById('qz-intro-email');
+  if (introEmail) {
+    introEmail.addEventListener('input', function() {
+      clearTimeout(qzDebounceTimer);
+      const email = this.value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('qzResumeMsg').style.display = 'none';
+        return;
+      }
+      qzDebounceTimer = setTimeout(() => {
+        fetch(`${QZ_SUPABASE_URL}/rest/v1/${QZ_PROGRESS_TABLE}?email=eq.${encodeURIComponent(email)}&select=current_slide,updated_at`, {
+          headers: { 'apikey': QZ_SUPABASE_KEY, 'Authorization': `Bearer ${QZ_SUPABASE_KEY}` }
+        })
+        .then(r => r.json())
+        .then(rows => {
+          const msg = document.getElementById('qzResumeMsg');
+          if (rows.length > 0 && rows[0].current_slide > 1) {
+            msg.textContent = 'Welcome back! We saved your progress at question ' + rows[0].current_slide + '.';
+            msg.style.display = 'block';
+          } else {
+            msg.style.display = 'none';
+          }
+        })
+        .catch(() => {});
+      }, 500);
+    });
+  }
+
   // Init
   qzUpdateProgress(0);
 </script>
@@ -1803,10 +1942,10 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
     };
   };
   wrap('qzOpen',   function(){ qzTrack('quiz_opened'); });
-  wrap('qzStart',  function(){ qzTrack('quiz_started'); });
+  wrap('qzStartWithEmail', function(){ qzTrack('quiz_started'); });
   wrap('qzNext',   function(){ qzTrack('quiz_advanced'); });
   wrap('qzSubmit', function(){
-    var email = (document.getElementById('qz-email') || {}).value || '';
+    var email = (document.getElementById('qz-intro-email') || {}).value || '';
     qzTrack('quiz_email_submitted', { has_email: !!email });
   });
   wrap('qzClose',  function(){ qzTrack('quiz_closed'); });

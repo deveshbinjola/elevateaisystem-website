@@ -26,7 +26,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,248,.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--border, #E0E0D8); padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: all .3s; box-sizing: border-box; width: 100%; }
 .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.06); }
 .nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--navy, #0A0F1C); letter-spacing: -.02em; display: flex; align-items: center; gap: .5rem; text-decoration: none; }
-.nav-logo-icon { width: 36px; height: 36px; background: var(--green, #00FF41); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--navy, #0A0F1C); flex-shrink: 0; }
+.nav-logo-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .nav-logo-text span { color: var(--green-dark, #00CC34); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { font-size: .85rem; font-weight: 700; color: var(--navy, #0A0F1C); letter-spacing: .08em; text-transform: uppercase; transition: color .2s; position: relative; text-decoration: none; }
@@ -69,8 +69,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
 `;
   document.head.appendChild(style);
 
-  // ── Leaf SVG icon for logo ──
-  const leafSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>';
+  // ── Leaf SVG icon for logo (canonical — matches coach app BrandIcon) ──
+  const leafSVG = '<svg width="36" height="36" viewBox="0 0 48 48" fill="none"><rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/><path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/><path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/></svg>';
 
   // ── Chevron SVG for dropdown ──
   const chevronSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';

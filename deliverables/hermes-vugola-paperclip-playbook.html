@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hermes + Vugola + Paperclip Playbook | ElevateAI System</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    color-scheme: light;
+    --green: #00FF41;
+    --green-dim: #00B82E;
+    --navy: #0A0F1C;
+    --navy-2: #1A2030;
+    --bg: #FAFAF8;
+    --card: #FFFFFF;
+    --line: #E5E5E0;
+    --muted: #6B7280;
+    --warn: #F59E0B;
+    --good: #00B82E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    line-height: 1.55;
+    padding: 32px 24px 80px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green-dim); font-weight: 700;
+    padding: 6px 12px; border: 1px solid var(--green); border-radius: 999px;
+    background: rgba(0, 255, 65, 0.08);
+  }
+  h1 {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.1; font-weight: 800; letter-spacing: -0.02em;
+    margin: 16px 0 12px; color: var(--navy);
+  }
+  h1 span { color: var(--green-dim); }
+  .sub { font-size: 17px; color: var(--muted); max-width: 720px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 720px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(10, 15, 28, 0.08); }
+  .card.dark {
+    background: var(--navy); color: #fff; border-color: var(--navy-2);
+  }
+  .card.dark .muted { color: #9CA3AF; }
+  .card .role {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--green-dim); font-weight: 700;
+  }
+  .card h3 { font-size: 22px; margin: 8px 0 8px; font-weight: 800; }
+  .card p { font-size: 14px; color: var(--muted); }
+  .card.dark p { color: #B8BEC9; }
+
+  section { margin-top: 56px; }
+  h2 {
+    font-size: 26px; font-weight: 800; letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  h2 .num {
+    display: inline-block; width: 32px; height: 32px;
+    background: var(--green); color: var(--navy);
+    border-radius: 8px; text-align: center; line-height: 32px;
+    font-size: 16px; margin-right: 10px;
+    vertical-align: middle;
+  }
+  .lead { font-size: 16px; color: var(--muted); margin-bottom: 20px; max-width: 760px; }
+
+  .stack-diagram {
+    background: var(--navy); color: #fff;
+    border-radius: 20px; padding: 32px; margin-top: 16px;
+    overflow-x: auto;
+  }
+  .stack-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .node {
+    background: var(--navy-2); border: 1px solid #2A3245;
+    border-radius: 12px; padding: 14px 18px; min-width: 160px;
+    text-align: center;
+  }
+  .node.hot { border-color: var(--green); background: rgba(0,255,65,0.07); }
+  .node .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); font-weight: 700; }
+  .node .name { font-size: 16px; font-weight: 700; margin-top: 4px; }
+  .arrow { color: var(--green); font-weight: 700; font-size: 20px; }
+
+  .step {
+    display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line);
+  }
+  .step:last-child { border-bottom: none; }
+  .step .n {
+    flex: 0 0 36px; height: 36px; border-radius: 50%;
+    background: var(--navy); color: var(--green); font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .step .body h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .step .body p { font-size: 14px; color: var(--muted); }
+  .step .body code {
+    background: #F3F4F0; padding: 2px 6px; border-radius: 4px;
+    font-size: 12px; font-family: ui-monospace, SF Mono, monospace;
+    color: var(--navy);
+  }
+
+  .stat {
+    display: flex; flex-direction: column; padding: 18px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  }
+  .stat .v { font-size: 32px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+  .stat .v span { color: var(--green-dim); }
+  .stat .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .pill.green { background: rgba(0, 255, 65, 0.15); color: var(--green-dim); }
+  .pill.navy { background: var(--navy); color: var(--green); }
+  .pill.warn { background: rgba(245, 158, 11, 0.15); color: #B45309; }
+
+  table.timeline { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  table.timeline th, table.timeline td { padding: 14px 16px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--line); }
+  table.timeline th { background: var(--navy); color: var(--green); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  table.timeline tr:last-child td { border-bottom: none; }
+  table.timeline td.week { font-weight: 800; color: var(--green-dim); width: 90px; }
+
+  .verdict {
+    background: linear-gradient(135deg, var(--navy) 0%, #1F2A40 100%);
+    color: #fff; border-radius: 20px; padding: 32px;
+    border: 1px solid var(--green);
+    box-shadow: 0 20px 60px rgba(0, 255, 65, 0.15);
+  }
+  .verdict h2 { color: #fff; }
+  .verdict .lead { color: #B8BEC9; }
+  .verdict .badge { background: var(--green); color: var(--navy); padding: 4px 10px; border-radius: 6px; font-weight: 800; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+  .col {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+  }
+  .col.recommended { border: 2px solid var(--green); background: #FFFFFE; }
+  .col h3 { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+  .col .price { font-size: 14px; color: var(--green-dim); font-weight: 700; margin-bottom: 12px; }
+  .col ul { list-style: none; padding-left: 0; }
+  .col ul li { padding: 8px 0; font-size: 14px; color: var(--navy); display: flex; gap: 10px; align-items: flex-start; }
+  .col ul li::before { content: '→'; color: var(--green-dim); font-weight: 800; flex-shrink: 0; }
+
+  footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">Strategic Playbook · May 2026</span>
+    <h1>Hermes + Vugola + Paperclip:<br/>How to Turn <span>Podcast Clipping</span> Into a Coach Platform Wedge.</h1>
+    <p class="sub">Vadim's stack is leveragable. You already have Paperclip. The play is not to clone Vugola. It is to wrap clipping in <strong>voice</strong> (your spine) and ship it as the next surface in Coach Platform's progressive disclosure, with an agency tier that funds the buildout.</p>
+  </header>
+
+  <section>
+    <h2><span class="num">1</span>The 3-App Stack</h2>
+    <p class="lead">Each tool has one job. Together they replace a 4-person social media team.</p>
+    <div class="grid-3" style="margin-top: 16px;">
+      <div class="card">
+        <div class="role">Orchestrator</div>
+        <h3>Hermes Agent</h3>
+        <p>The "agent that builds agents." Runs locally (Mac Mini). Spins up specialized sub-agents on demand, manages their lifecycle, hands off tasks. Sits above Paperclip as a meta-layer.</p>
+        <div style="margin-top: 12px;"><span class="pill navy">Role: Brain</span></div>
+      </div>
+      <div class="card">
+        <div class="role">Production engine</div>
+        <h3>Vugola AI</h3>
+        <p>Long-form video and podcast in. Vertical clips out, with captions, hooks, and scheduling. Plugs into Claude via MCP. Opus Clip competitor at a lower price.</p>
+        <div style="margin-top: 12px;"><span class="pill green">Role: Hands</span></div>
+      </div>
+      <div class="card dark">
+        <div class="role">Chief of Staff</div>
+        <h3>Paperclip <span class="pill green">already yours</span></h3>
+        <p class="muted">Manages clients, deliverables, comms, reporting. The system that talks to coaches and stakeholders. Today: Brand OS + cohort ops. Tomorrow: clip workflow ops.</p>
+        <div style="margin-top: 12px;"><span class="pill navy">Role: Operator</span></div>
+      </div>
+    </div>
+
+    <div class="stack-diagram" style="margin-top: 24px;">
+      <div class="stack-row">
+        <div class="node hot"><div class="label">Layer 1</div><div class="name">Hermes Agent</div></div>
+      </div>
+      <div style="text-align:center;" class="arrow">↓</div>
+      <div class="stack-row">
+        <div class="node"><div class="label">Layer 2</div><div class="name">Paperclip CoS</div></div>
+        <span class="arrow">+</span>
+        <div class="node"><div class="label">Layer 2</div><div class="name">Vugola Producer</div></div>
+        <span class="arrow">+</span>
+        <div class="node hot"><div class="label">Layer 2</div><div class="name">Voice Mapping</div></div>
+      </div>
+      <div style="text-align:center;" class="arrow">↓</div>
+      <div class="stack-row">
+        <div class="node"><div class="label">Output</div><div class="name">Coach gets 20-30 clips/wk, scheduled, in their voice</div></div>
+      </div>
+      <p style="text-align:center; margin-top:16px; font-size:12px; color:#9CA3AF;">Voice Mapping is the wedge. Without it, you are reselling Vugola. With it, you are the only one whose clips actually sound like the coach.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>Two Paths (And the One That Fits Your Current Focus)</h2>
+    <p class="lead">You asked about Coach Platform AND agency. They are not either/or. Run the agency to fund and validate, productize the wins into Coach Platform.</p>
+    <div class="compare">
+      <div class="col recommended">
+        <span class="pill green">Recommended Primary</span>
+        <h3 style="margin-top:8px;">Path A. Coach Platform "Clip Engine" Module</h3>
+        <p class="price">$497 setup + $297/mo add-on (or bundled at $597/mo total)</p>
+        <ul>
+          <li>Vugola becomes a feature inside the Coach Platform, not a standalone</li>
+          <li>Voice Mapping rewrites every caption in coach's voice (your moat)</li>
+          <li>Coach swipes to approve, system auto-schedules to LinkedIn / IG / TikTok / X</li>
+          <li>Weekly "what converted" report ties clips to DMs and bookings (content → conversion proof)</li>
+          <li>Onboarding follows progressive disclosure: surfaces only when coach says "I need more reach"</li>
+          <li>50 coaches × $297/mo = <strong>$14.8K MRR ceiling at year one</strong></li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="pill warn">Secondary / Funded by Path A</span>
+        <h3 style="margin-top:8px;">Path B. Agency Retainer (DFY for top 5)</h3>
+        <p class="price">$3K-$5K/mo per coach, capped at 5 clients</p>
+        <ul>
+          <li>Pure done-for-you for coaches earning $30K+/mo who will not self-serve</li>
+          <li>Same stack, but Cassie + 1 VA execute and Sunny stays on strategy</li>
+          <li>Hermes spins up a per-client sub-agent that lives inside Paperclip</li>
+          <li>20-30 clips/wk per client, all platforms, weekly performance call</li>
+          <li>5 clients × $3K/mo = <strong>$15K MRR with ~3 hr/week of Sunny time</strong></li>
+          <li>Agency clients become the case-study fuel for Coach Platform sales</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Exact Steps · Path A (Coach Platform Module)</h2>
+    <p class="lead">This is the 7-step buildout to ship the Clip Engine module inside the existing Coach Platform stack.</p>
+
+    <div class="card" style="padding:8px 24px;">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h4>Wire Vugola into coach-app via MCP</h4>
+          <p>Vugola already exposes a Claude-compatible MCP. Add it as a connector inside the coach-app Supabase edge function. New env var: <code>VUGOLA_API_KEY</code>. New Supabase table: <code>cp_clip_jobs</code> (coach_id, source_url, status, clip_count, created_at).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h4>Source input: RSS or upload</h4>
+          <p>Coach pastes podcast RSS or YouTube URL in onboarding. Background job pulls newest episode every 24h. Store transcript in <code>cp_clip_sources</code>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h4>Vugola produces 8-12 clip candidates per hour of source</h4>
+          <p>Call Vugola with the source URL. It returns clip start/end timestamps, virality score, a draft caption, and a draft hook. Store in <code>cp_clip_candidates</code>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="body">
+          <h4>Voice Mapping rewrites every caption (this is the wedge)</h4>
+          <p>For each candidate, call the existing Voice Mapping pipeline with the draft caption. Output a 3-variant caption set (LinkedIn long, IG short, X punchy) all in the coach's voice. Branch by audience signal (male / female) per the female-voice adaptation work in flight.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <div class="body">
+          <h4>Swipe-to-approve UI</h4>
+          <p>One screen, one clip at a time. Approve, edit caption, or skip. Mobile-first. Follow Lex's feedback: open one surface tied to stated pain, do not show settings unless asked.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">6</div>
+        <div class="body">
+          <h4>Auto-schedule to LinkedIn / IG / TikTok / X</h4>
+          <p>Use Buffer or Postiz API behind the scenes. Coach never sees Buffer. Brand promise: "you approve, we post." Default cadence: 3-5 clips per week per platform.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">7</div>
+        <div class="body">
+          <h4>Weekly conversion report</h4>
+          <p>Tie clip views to DMs received, profile visits, Cal.com bookings, and Coach Platform signups (UTM attribution). Email digest every Monday at 7am via Paperclip. This is the "content → conversion" proof the platform sells on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Exact Steps · Path B (Agency Retainer)</h2>
+    <p class="lead">Five clients max. You are not building an agency. You are building case studies and recurring revenue while Path A ships.</p>
+
+    <div class="card" style="padding:8px 24px;">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h4>Stand up the agency engine on Hermes</h4>
+          <p>Install Hermes on the existing Mac Mini. Have Hermes scaffold a new sub-agent called <code>clip-ops</code> with three tools: Vugola API, Voice Mapping API, Paperclip task creation.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h4>Sell 3 retainer slots to existing warm relationships first</h4>
+          <p>Matthew, Steve (after his redesign), and one Council of Elders intro. Pitch: "I will produce 20-30 voice-matched clips per week from your podcast, scheduled across 4 platforms, with a weekly conversion call. $3K/mo, 90 day pilot."</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h4>Onboard each client into Paperclip as a workspace</h4>
+          <p>Per-client folder. Per-client voice profile (run Voice Mapping discovery on intake). Per-client Vugola project. Per-client schedule cadence. Hermes wires it once.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="body">
+          <h4>Cassie executes, Sunny does strategy only</h4>
+          <p>Cassie owns the swipe-approve queue per client (3-4 hrs/week per client). Sunny owns the Monday strategy call (30 min per client). Hermes owns everything else.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <div class="body">
+          <h4>Weekly delivery cadence</h4>
+          <p>Mon: strategy call + approve queue. Tue-Thu: clips ship throughout the week. Fri: performance digest email. Repeat.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">6</div>
+        <div class="body">
+          <h4>Convert each agency client into a Coach Platform case study at month 3</h4>
+          <p>Every agency client becomes a public case study. "Here is the system we used. Here is what it produced. You can run it yourself inside Coach Platform for $297/mo." This is your sales engine for Path A.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>30-Day Build Sequence</h2>
+    <p class="lead">Path A and Path B in parallel. Path A ships first because Coach Platform is current focus #1.</p>
+    <table class="timeline">
+      <thead>
+        <tr><th>Week</th><th>Path A (Platform)</th><th>Path B (Agency)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="week">Week 1<br/><span class="pill green">May 18-24</span></td>
+          <td>Vugola MCP wired into coach-app. Test on your own podcast. <code>cp_clip_jobs</code> table live.</td>
+          <td>Hermes installed on Mac Mini. Pitch deck for 3 retainer slots drafted.</td>
+        </tr>
+        <tr>
+          <td class="week">Week 2<br/><span class="pill green">May 25-31</span></td>
+          <td>Voice Mapping → caption rewrite pipeline live. Female-branch tested with Missy's voice profile.</td>
+          <td>Pitch Matthew and Steve. Aim for 2 verbal yeses.</td>
+        </tr>
+        <tr>
+          <td class="week">Week 3<br/><span class="pill green">Jun 1-7</span></td>
+          <td>Swipe-approve UI ships. Soft launch to Missy, Matthew, Steve as alpha users.</td>
+          <td>First retainer client onboarded into Paperclip. First clips shipped.</td>
+        </tr>
+        <tr>
+          <td class="week">Week 4<br/><span class="pill green">Jun 8-14</span></td>
+          <td>Auto-scheduler live. Weekly conversion report email goes out. Public launch to Coach Platform list.</td>
+          <td>Second retainer client live. Case study draft for first client begins.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>The Numbers at Month 3</h2>
+    <div class="grid-3" style="margin-top: 16px;">
+      <div class="stat"><div class="v"><span>$14.8K</span></div><div class="l">Path A ceiling · 50 coaches × $297</div></div>
+      <div class="stat"><div class="v"><span>$15K</span></div><div class="l">Path B ceiling · 5 clients × $3K</div></div>
+      <div class="stat"><div class="v"><span>$29.8K</span></div><div class="l">Combined MRR target by Aug 2026</div></div>
+      <div class="stat"><div class="v">3-4<span> hr/wk</span></div><div class="l">Sunny's time after week 4</div></div>
+      <div class="stat"><div class="v">12-15<span> hr/wk</span></div><div class="l">Cassie's execution time</div></div>
+      <div class="stat"><div class="v">95<span>%</span></div><div class="l">Automated (Hermes + Paperclip + Vugola)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="verdict">
+      <span class="badge">The Call</span>
+      <h2 style="margin-top:12px;">Build Path A. Run Path B in parallel with 2-3 clients max. Never grow past 5.</h2>
+      <p class="lead" style="margin-top:12px;">Coach Platform is your #1 focus. An agency at scale would pull you off it. But 2-3 agency clients at $3K/mo (a) funds the buildout, (b) hardens the workflow against real coach data, and (c) creates the case studies that make Path A sell itself. The wedge is voice. Vugola without voice is reselling Opus Clip. Vugola wrapped in Voice Mapping is the only product on the market where the clips actually sound like the coach.</p>
+      <p style="margin-top:16px; font-size:13px; color:#9CA3AF;">First action this week: install Hermes on the Mac Mini, wire Vugola MCP into coach-app, test on your own podcast. Everything else flows from that proof.</p>
+    </div>
+  </section>
+
+  <footer>
+    Generated 2026-05-18 · ElevateAI System · sunny.binjola@gmail.com<br/>
+    Source: Vadim Strizheus stack (Hermes Agent + Vugola AI) plus existing Paperclip orchestration.
+  </footer>
+</div>
+</body>
+</html>
