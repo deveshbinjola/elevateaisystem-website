@@ -163,6 +163,25 @@ document.head.appendChild(o)}initApollo();</script>
   .mini-footer p{margin:4px 0;font-size:.72rem;color:var(--text-muted)}
   .mini-footer a{color:var(--text-muted)}
   .mini-footer a:hover{color:var(--navy)}
+
+  /* MOTION — restrained entrances. Section fades, per-question card fade,
+     and a staggered cascade on the result reveal (the emotional peak). */
+  @keyframes secFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .sec-fade{animation:secFade .42s cubic-bezier(.16,1,.3,1)}
+  @keyframes qFade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+  .qfade{animation:qFade .32s cubic-bezier(.16,1,.3,1)}
+  @keyframes revealUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  #result.revealing>.result-hero,
+  #result.revealing>.voice-block,
+  #result.revealing>.posts,
+  #result.revealing>.result-cta{opacity:0;animation:revealUp .6s cubic-bezier(.16,1,.3,1) forwards}
+  #result.revealing>.result-hero{animation-delay:.04s}
+  #result.revealing>.voice-block{animation-delay:.18s}
+  #result.revealing>.posts{animation-delay:.32s}
+  #result.revealing>.result-cta{animation-delay:.46s}
+  @media(prefers-reduced-motion:reduce){
+    .sec-fade,.qfade,#result.revealing>*{animation:none !important;opacity:1 !important;transform:none !important}
+  }
 </style>
 </head>
 <body>
@@ -316,7 +335,13 @@ document.head.appendChild(o)}initApollo();</script>
   const SECTIONS = ["#hero", "#flow", "#email-gate", "#loading", "#result", "#error"];
   function show(sel) {
     SECTIONS.forEach((s) => document.querySelector(s).classList.add("hidden"));
-    document.querySelector(sel).classList.remove("hidden");
+    const el = document.querySelector(sel);
+    el.classList.remove("hidden");
+    // Restrained entrance: result gets the staggered cascade, others a soft fade.
+    const cls = sel === "#result" ? "revealing" : "sec-fade";
+    el.classList.remove(cls);
+    void el.offsetWidth;            // force reflow so the animation replays
+    el.classList.add(cls);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -353,6 +378,16 @@ document.head.appendChild(o)}initApollo();</script>
       else if (idx === state.i) seg.classList.add("current");
     });
     syncNextLabel();
+    pulseCard();
+  }
+
+  // Re-trigger a subtle fade on the question card each time the question changes.
+  function pulseCard() {
+    const c = document.querySelector("#flow .card");
+    if (!c) return;
+    c.classList.remove("qfade");
+    void c.offsetWidth;
+    c.classList.add("qfade");
   }
 
   function saveCurrent() {
