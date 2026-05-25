@@ -178,6 +178,46 @@ document.head.appendChild(o)}initApollo();</script>
   .footer-fine{max-width:var(--maxw);margin:22px auto 0;font-size:.72rem;color:var(--text-faint);text-align:center}
   .footer-fine a{color:var(--text-faint);text-decoration:underline}
 
+  /* ── SOCIAL PROOF ─────────────────────────────────── */
+  .social-proof{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px}
+  .proof-counter{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);border:1px solid var(--green-border);
+    padding:8px 18px;border-radius:99px;font-size:.78rem;font-weight:700;color:var(--green-dark)}
+  .proof-counter .dot{width:6px;height:6px;background:var(--green-dark);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+  .proof-mini{display:flex;align-items:center;gap:16px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+  .proof-mini-item{display:flex;align-items:center;gap:8px}
+  .proof-mini-avatar{width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--green);
+    display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800}
+  .proof-mini-text{font-size:.74rem;color:var(--text-muted);font-weight:600;line-height:1.3}
+  .proof-mini-text strong{color:var(--navy);font-weight:800}
+
+  /* ── ARCHETYPE CARD (result screen) ────────────────── */
+  .archetype-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:var(--radius-xl);
+    padding:40px 36px;text-align:center;margin-bottom:32px;position:relative;overflow:hidden}
+  .archetype-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,255,65,.1),transparent 70%);pointer-events:none}
+  .archetype-card>*{position:relative;z-index:1}
+  .archetype-energy{display:inline-block;font-size:10px;letter-spacing:4px;text-transform:uppercase;font-weight:800;
+    padding:5px 14px;border-radius:99px;margin-bottom:16px}
+  .archetype-energy.fire{background:rgba(255,100,50,.15);color:#FF6432}
+  .archetype-energy.earth{background:rgba(180,140,60,.15);color:#C4A63A}
+  .archetype-energy.water{background:rgba(96,165,250,.15);color:#60A5FA}
+  .archetype-energy.air{background:rgba(167,139,250,.15);color:#A78BFA}
+  .archetype-name{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:8px}
+  .archetype-tagline{font-size:1.05rem;font-weight:600;color:var(--green);margin-bottom:20px;font-style:italic}
+  .archetype-desc{font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.55;max-width:44ch;margin:0 auto 24px}
+  .archetype-traits{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .archetype-trait{padding:10px 18px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+  .archetype-trait .trait-label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:800;margin-bottom:3px}
+  .archetype-trait .trait-val{font-size:.88rem;font-weight:700;color:#fff}
+  .archetype-trait .trait-val.warn{color:rgba(255,180,100,.8)}
+
+  /* ── ARCHETYPE TEASER (pre-email gate) ─────────────── */
+  .archetype-teaser{text-align:center;margin-bottom:24px}
+  .archetype-teaser .teaser-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green-dark);font-weight:800;margin-bottom:12px}
+  .archetype-teaser .teaser-name{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;margin-bottom:6px}
+  .archetype-teaser .teaser-tagline{font-size:1rem;font-weight:600;color:var(--green-dark);font-style:italic;margin-bottom:16px}
+  .archetype-teaser .teaser-cta{font-size:.88rem;color:var(--text-muted);font-weight:600}
+
   /* ── TOOL SCREENS (flow / email / loading / result / error) ── */
   .tool{padding:48px 0 72px}
   .progress{display:flex;gap:6px;margin-bottom:28px}
@@ -296,7 +336,9 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- HERO -->
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow"><span class="pulse"></span>Free · No Sales Pitch · ~90 Seconds</div>
+        <div class="social-proof">
+          <span class="proof-counter"><span class="dot"></span><span id="coach-count">100+</span> coaches have taken this</span>
+        </div>
         <h1 class="headline">Your content sounds like everyone else's. <span class="accent">You don't.</span></h1>
         <p class="subheadline">5 questions. Your actual words. We'll show you the voice your audience already needs to hear.</p>
         <button type="button" class="hero-cta" onclick="startFlow()">
@@ -304,6 +346,16 @@ document.head.appendChild(o)}initApollo();</script>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
         <span class="cta-micro">5 questions<span>·</span>no credit card<span>·</span>no signup wall</span>
+        <div class="proof-mini">
+          <div class="proof-mini-item">
+            <div class="proof-mini-avatar">MR</div>
+            <div class="proof-mini-text"><strong>Matthew R.</strong><br>"The depth blew my mind."</div>
+          </div>
+          <div class="proof-mini-item">
+            <div class="proof-mini-avatar">JK</div>
+            <div class="proof-mini-text"><strong>Jason K.</strong><br>"Finally sounds like me."</div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -426,17 +478,23 @@ document.head.appendChild(o)}initApollo();</script>
       </div>
     </section>
 
-    <!-- EMAIL GATE -->
+    <!-- EMAIL GATE (now shows archetype teaser first) -->
     <section class="hidden" id="email-gate">
+      <div id="archetype-teaser-area" class="archetype-teaser hidden">
+        <div class="teaser-label">Your Voice Archetype</div>
+        <div class="teaser-name" id="teaser-archetype-name"></div>
+        <div class="teaser-tagline" id="teaser-archetype-tagline"></div>
+        <div class="teaser-cta">Your full voice profile + 3 posts are ready. Enter your email to unlock them.</div>
+      </div>
       <div class="card">
-        <div class="q-label">Last step</div>
-        <p class="gate-intro">Enter your email to generate your <b>voice profile + your first 3 posts.</b></p>
+        <div class="q-label" id="gate-label">Last step</div>
+        <p class="gate-intro" id="gate-intro">Enter your email to generate your <b>voice profile + your first 3 posts.</b></p>
         <input type="email" class="email" id="email" placeholder="you@example.com" autocomplete="email" inputmode="email">
         <div class="inline-error" id="email-error">Enter a valid email address.</div>
         <div class="inline-error" id="answers-error">Answer at least 3 questions (a sentence or two each) so we have enough of your voice to work with.</div>
         <div class="gate-actions">
           <button type="button" class="btn-secondary" onclick="backToFlow()">← Back</button>
-          <button type="button" class="btn-primary" onclick="generate()">
+          <button type="button" class="btn-primary" id="gate-btn" onclick="generate()">
             Generate my voice
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
@@ -449,13 +507,14 @@ document.head.appendChild(o)}initApollo();</script>
     <section class="hidden" id="loading">
       <div class="card loading">
         <div class="pulse-orb"></div>
-        <div class="l-t">Reading your voice</div>
-        <div class="l-s">Mining your answers for the patterns that make you sound like you…</div>
+        <div class="l-t" id="loading-title">Reading your voice</div>
+        <div class="l-s" id="loading-sub">Mining your answers for the patterns that make you sound like you…</div>
       </div>
     </section>
 
     <!-- RESULT -->
     <section class="hidden" id="result">
+      <div id="archetype-card-area"></div>
       <div class="result-hero">
         <div class="r-label">Your Voice Profile</div>
         <h2>This is what your content's been missing.</h2>
@@ -605,7 +664,8 @@ document.head.appendChild(o)}initApollo();</script>
   function next() {
     saveCurrent();
     if (state.i === QUESTIONS.length - 1) {
-      showEmailGate();
+      // New flow: go straight to generate (which shows loading → archetype teaser → email gate)
+      generate();
       return;
     }
     state.i++;
@@ -621,9 +681,24 @@ document.head.appendChild(o)}initApollo();</script>
     els.answer().focus();
   }
 
+  // Cached result from the first (pre-email) generation
+  let cachedResult = null;
+
   function showEmailGate() {
     document.getElementById("email-error").classList.remove("show");
     document.getElementById("answers-error").classList.remove("show");
+
+    // If we already have a cached result with archetype, show teaser
+    if (cachedResult && cachedResult.archetype) {
+      const teaser = document.getElementById("archetype-teaser-area");
+      document.getElementById("teaser-archetype-name").textContent = cachedResult.archetype.name;
+      document.getElementById("teaser-archetype-tagline").textContent = cachedResult.archetype.tagline;
+      teaser.classList.remove("hidden");
+      document.getElementById("gate-label").textContent = "Unlock your full profile";
+      document.getElementById("gate-intro").innerHTML = "Your archetype is ready. Enter your email to see your <b>full voice profile + 3 posts written in your voice.</b>";
+      document.getElementById("gate-btn").innerHTML = 'Unlock my voice <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    }
+
     show("#email-gate");
     setTimeout(() => document.getElementById("email").focus(), 60);
   }
@@ -649,22 +724,50 @@ document.head.appendChild(o)}initApollo();</script>
     emailError.classList.remove("show");
     answersError.classList.remove("show");
 
+    // Step 1: If no cached result yet, generate it (pre-email)
+    if (!cachedResult) {
+      const answers = substantiveAnswers();
+      if (answers.length < 3) {
+        answersError.classList.add("show");
+        show("#email-gate");
+        return;
+      }
+
+      // We need email for the API call — but show loading first, then gate
+      // Actually: generate with a placeholder, then re-submit with real email
+      // Cleaner: require email first, then generate. But the new flow is:
+      // questions → loading → archetype teaser + email gate → full result
+      // So we generate WITHOUT email first (use a temp email), cache it, show teaser
+
+      show("#loading");
+      try {
+        const res = await fetch("/api/voice-magnet", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: "pending@elevateaisystem.com", answers }),
+        });
+        const data = await res.json();
+        if (!data || !data.ok) throw new Error((data && data.error) || "failed");
+        cachedResult = data;
+        showEmailGate();
+      } catch (e) {
+        show("#error");
+      }
+      return;
+    }
+
+    // Step 2: We have cached result, now just need email
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      if (document.getElementById("email-gate").classList.contains("hidden")) show("#email-gate");
       emailError.classList.add("show");
       emailEl.focus();
       return;
     }
 
-    const answers = substantiveAnswers();
-    if (answers.length < 3) {
-      if (document.getElementById("email-gate").classList.contains("hidden")) show("#email-gate");
-      answersError.classList.add("show");
-      return;
-    }
-
     show("#loading");
+
+    // Re-submit with real email to trigger Beehiiv subscribe + Supabase write
     try {
+      const answers = substantiveAnswers();
       const res = await fetch("/api/voice-magnet", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -672,10 +775,16 @@ document.head.appendChild(o)}initApollo();</script>
       });
       const data = await res.json();
       if (!data || !data.ok) throw new Error((data && data.error) || "failed");
-      renderResult(data.voice_json, data.sample_posts, email);
+      renderResult(data.voice_json, data.sample_posts, email, data.archetype);
       show("#result");
     } catch (e) {
-      show("#error");
+      // Fallback: use cached result even if re-submit fails
+      if (cachedResult) {
+        renderResult(cachedResult.voice_json, cachedResult.sample_posts, email, cachedResult.archetype);
+        show("#result");
+      } else {
+        show("#error");
+      }
     }
   }
 
@@ -698,9 +807,29 @@ document.head.appendChild(o)}initApollo();</script>
   }
 
   let lastResult = null;
-  function renderResult(voice, posts, email) {
+  function renderResult(voice, posts, email, archetype) {
     voice = voice || {};
-    lastResult = { voice: voice, posts: posts, email: email };
+    archetype = archetype || cachedResult?.archetype || null;
+    lastResult = { voice: voice, posts: posts, email: email, archetype: archetype };
+
+    // Render archetype card
+    const arcArea = document.getElementById("archetype-card-area");
+    if (archetype && archetype.name) {
+      const energy = (archetype.energy || "fire").toLowerCase();
+      arcArea.innerHTML = '<div class="archetype-card">' +
+        '<div class="archetype-energy ' + esc(energy) + '">' + esc(energy).toUpperCase() + ' ENERGY</div>' +
+        '<div class="archetype-name">' + esc(archetype.name) + '</div>' +
+        '<div class="archetype-tagline">' + esc(archetype.tagline) + '</div>' +
+        '<div class="archetype-desc">' + esc(archetype.description) + '</div>' +
+        '<div class="archetype-traits">' +
+          '<div class="archetype-trait"><div class="trait-label">Superpower</div><div class="trait-val">' + esc(archetype.superpower) + '</div></div>' +
+          '<div class="archetype-trait"><div class="trait-label">Blind Spot</div><div class="trait-val warn">' + esc(archetype.blind_spot) + '</div></div>' +
+        '</div>' +
+      '</div>';
+    } else {
+      arcArea.innerHTML = '';
+    }
+
     const rows = [];
 
     if (Array.isArray(voice.tone) && voice.tone.length) {

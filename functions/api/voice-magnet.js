@@ -107,8 +107,9 @@ export async function onRequestPost({ request, env }) {
   }
   const sample_posts = parsed.sample_posts.slice(0, 3).map((p) => String(p));
 
-  // --- Beehiiv subscribe (soft-fail) ---
-  if (env.BEEHIIV_API_KEY) {
+  // --- Beehiiv subscribe (soft-fail, skip placeholder emails) ---
+  const isPlaceholder = email === "pending@elevateaisystem.com";
+  if (env.BEEHIIV_API_KEY && !isPlaceholder) {
     try {
       await fetch(
         `https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUB_ID || DEFAULT_PUB_ID}/subscriptions`,
@@ -135,8 +136,8 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
-  // --- Supabase: write pending profile (soft-fail) via PostgREST ---
-  if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY) {
+  // --- Supabase: write pending profile (soft-fail, skip placeholder) ---
+  if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY && !isPlaceholder) {
     try {
       await fetch(`${env.SUPABASE_URL}/rest/v1/cp_pending_voice_profiles`, {
         method: "POST",
@@ -158,7 +159,7 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
-  return json({ ok: true, voice_json: parsed.voice_json, sample_posts });
+  return json({ ok: true, voice_json: parsed.voice_json, sample_posts, archetype: parsed.archetype || null });
 }
 
 // Extract the combined JSON ({ voice_json, sample_posts }) from a possibly
@@ -191,12 +192,20 @@ ${answers.map((x, i) => `--- Q${i + 1} ---\n${x.q}\n\n--- A${i + 1} ---\n${x.a}`
 Output the JSON now.`;
 }
 
-const SYSTEM_PROMPT = `You analyze a coach's answers to voice-revealing interview questions and produce (1) a structured voice profile and (2) three sample social posts written in that voice.
+const SYSTEM_PROMPT = `You analyze a coach's answers to voice-revealing interview questions and produce (1) a voice archetype, (2) a structured voice profile, and (3) three sample social posts written in that voice.
 
 Pattern-match across the answers, find what's distinctive, and output JSON matching the schema below. Be specific. Generic descriptors like "friendly" or "professional" are useless — name the actual habits.
 
 OUTPUT JSON SCHEMA (use these exact keys):
 {
+  "archetype": {
+    "name": string,          // One of: "The Challenger", "The Guide", "The Provocateur", "The Sage", "The Alchemist", "The Mirror", "The Architect", "The Healer"
+    "tagline": string,       // One punchy sentence that captures this archetype (e.g., "You don't inspire people. You interrupt them.")
+    "description": string,   // 2-3 sentences about what makes this voice archetype distinctive
+    "superpower": string,    // Their #1 voice strength in 3-5 words
+    "blind_spot": string,    // Their likely voice blind spot in one sentence
+    "energy": string         // One of: "fire", "earth", "water", "air" — the elemental energy of their communication style
+  },
   "voice_json": {
     "tone": [string, ...],                 // 3-5 specific descriptors
     "sentence_rhythm": string,             // one-line description of cadence
@@ -211,8 +220,21 @@ OUTPUT JSON SCHEMA (use these exact keys):
   "sample_posts": [string, string, string] // exactly 3 Instagram-style posts, 60-120 words each, in THIS coach's voice, on themes implied by their answers, obeying do_nots
 }
 
+ARCHETYPE SELECTION GUIDE:
+- The Challenger: Confrontational, direct, cuts through BS. Uses short punchy sentences. Names hard truths.
+- The Guide: Warm authority, walks beside you. Uses "we" and "let's." Balances push with compassion.
+- The Provocateur: Contrarian, playful edge, reframes everything. Uses questions as weapons. Makes you think.
+- The Sage: Deep, philosophical, draws from traditions. Uses metaphor and story. Speaks in principles.
+- The Alchemist: Transforms pain into power. Uses personal experience as proof. Raw and honest.
+- The Mirror: Reflects back what clients can't see. Uses "you" language heavily. Observational, precise.
+- The Architect: Systems thinker, frameworks, structure. Uses numbered lists and processes. Clear and methodical.
+- The Healer: Somatic, embodied, nervous-system aware. Uses body language and sensation words. Gentle but firm.
+
+Choose the archetype that BEST fits the coach's actual voice from their answers, not what sounds most flattering.
+
 RULES:
 - Output the JSON inside a single \\\`\\\`\\\`json fenced code block. Nothing else.
 - Quote actual phrases from the answers in openers/closers when there's a clear pattern.
 - do_nots must be specific (e.g., no "I hope this finds you well"), not vague.
-- The 3 sample_posts are the payoff — they must sound unmistakably like this coach, not like generic AI. No hashtags unless the voice calls for them. No emojis unless the coach's answers use them.`;
+- The 3 sample_posts are the payoff — they must sound unmistakably like this coach, not like generic AI. No hashtags unless the voice calls for them. No emojis unless the coach's answers use them.
+- The archetype tagline must be sharp and specific to THIS coach, not a generic description of the archetype.`;
