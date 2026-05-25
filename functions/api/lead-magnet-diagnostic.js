@@ -2,11 +2,13 @@
 // Path: /api/lead-magnet-diagnostic  (POST)
 //
 // Body: { email: string, answers: [{ q: string, a: string }, ...] }
-// On success: subscribes email to Beehiiv, and returns
-// { ok: true, diagnostic }.
+// On success: subscribes email to Beehiiv, stores results in Supabase,
+// sends follow-up email via Resend, and returns { ok: true, diagnostic }.
 //
-// Uses same env vars as voice-magnet:
+// Env vars:
 //   ANTHROPIC_API_KEY, BEEHIIV_API_KEY, BEEHIIV_PUB_ID
+//   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
+//   RESEND_API_KEY
 
 const MIN_ANSWERS = 4;
 const MIN_ANSWER_CHARS = 5;
@@ -121,7 +123,120 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
+  // --- Supabase: store diagnostic results (soft-fail, skip placeholder) ---
+  if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY && !isPlaceholder) {
+    try {
+      await fetch(`${env.SUPABASE_URL}/rest/v1/cp_lead_magnet_diagnostics`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: env.SUPABASE_SERVICE_ROLE_KEY,
+          Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({
+          email,
+          overall_score: parsed.diagnostic.overall_score,
+          verdict: parsed.diagnostic.verdict,
+          diagnostic_json: parsed.diagnostic,
+          source: "lead_magnet_diagnostic",
+        }),
+      });
+    } catch (err) {
+      console.error("Supabase write error (non-fatal)", err);
+    }
+  }
+
+  // --- Resend: send follow-up email with Playbook link (soft-fail, skip placeholder) ---
+  if (env.RESEND_API_KEY && !isPlaceholder) {
+    try {
+      const d = parsed.diagnostic;
+      const verdictColor = d.verdict === "Critical" ? "#C1282B"
+        : d.verdict === "Fragile" ? "#F59E0B"
+        : d.verdict === "Functional" ? "#F59E0B"
+        : "#00CC34";
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Sunny from ElevateAI <sunny@elevateaisystem.com>",
+          to: [email],
+          subject: `Your Lead Magnet Score: ${d.overall_score}/100 (${d.verdict})`,
+          html: buildFollowUpEmail(d),
+        }),
+      });
+    } catch (err) {
+      console.error("Resend error (non-fatal)", err);
+    }
+  }
+
   return json({ ok: true, diagnostic: parsed.diagnostic });
+}
+
+function buildFollowUpEmail(d) {
+  const dims = (d.dimensions || []).map((dim) => {
+    const barColor = dim.status === "Broken" ? "#C1282B"
+      : dim.status === "Weak" ? "#F59E0B"
+      : dim.status === "Decent" ? "#F59E0B"
+      : "#00CC34";
+    return `<tr>
+      <td style="padding:8px 0;font-weight:700;color:#1A1A2E;width:90px">${dim.name}</td>
+      <td style="padding:8px 0">
+        <div style="background:#E5E7EB;border-radius:99px;height:8px;width:100%">
+          <div style="background:${barColor};border-radius:99px;height:8px;width:${(dim.score/20)*100}%"></div>
+        </div>
+      </td>
+      <td style="padding:8px 0;text-align:right;font-weight:700;color:${barColor};width:50px">${dim.score}/20</td>
+    </tr>`;
+  }).join("");
+
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;background:#FAFAF8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif">
+<div style="max-width:560px;margin:0 auto;padding:40px 20px">
+
+<div style="text-align:center;margin-bottom:32px">
+  <div style="font-weight:800;font-size:18px;color:#0A0F1C;letter-spacing:-.02em">Elevate<span style="color:#00CC34">AI</span></div>
+</div>
+
+<div style="background:#fff;border-radius:16px;padding:36px 28px;border:1px solid #E0E0D8">
+  <h1 style="font-size:22px;font-weight:800;color:#0A0F1C;margin:0 0 6px;line-height:1.2">Your Lead Magnet Score</h1>
+  <p style="color:#5A5A6E;font-size:14px;margin:0 0 24px">${d.headline || ""}</p>
+
+  <div style="text-align:center;margin:0 0 28px">
+    <div style="display:inline-block;font-size:56px;font-weight:800;color:#0A0F1C;line-height:1">${d.overall_score}</div>
+    <div style="font-size:14px;color:#5A5A6E;margin-top:2px">/100 &middot; <strong>${d.verdict}</strong></div>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px">
+    ${dims}
+  </table>
+
+  <div style="margin-top:28px;padding:20px;background:rgba(0,204,52,.06);border-radius:12px;border:1px solid rgba(0,204,52,.15)">
+    <div style="font-weight:800;font-size:13px;color:#0A0F1C;margin-bottom:6px">Your Quick Win</div>
+    <p style="margin:0;font-size:13px;color:#1A1A2E;line-height:1.5">${d.quick_win || ""}</p>
+  </div>
+</div>
+
+<div style="margin-top:24px;background:#fff;border-radius:16px;padding:28px;border:1px solid #E0E0D8;text-align:center">
+  <h2 style="font-size:17px;font-weight:800;color:#0A0F1C;margin:0 0 8px">The Lead Magnet Playbook</h2>
+  <p style="font-size:13px;color:#5A5A6E;margin:0 0 18px;line-height:1.5">The full breakdown: what converts in 2026, hook formulas, gating strategies, and the psychology behind 40%+ conversion rates.</p>
+  <a href="https://www.elevateaisystem.com/lead-magnet-playbook" style="display:inline-block;background:#00CC34;color:#0A0F1C;padding:12px 28px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none">Read the Playbook &rarr;</a>
+</div>
+
+<div style="margin-top:24px;background:#0A0F1C;border-radius:16px;padding:28px;text-align:center">
+  <h2 style="font-size:17px;font-weight:800;color:#fff;margin:0 0 8px">Want us to fix it for you?</h2>
+  <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0 0 18px;line-height:1.5">Book a free strategy call. We'll rebuild your lead magnet into something that converts.</p>
+  <a href="https://cal.com/sunny-binjola/ai-strategy-call" style="display:inline-block;background:#00CC34;color:#0A0F1C;padding:12px 28px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none">Book Your Free Call &rarr;</a>
+</div>
+
+<div style="margin-top:32px;text-align:center;font-size:12px;color:#8A8A9A;line-height:1.5">
+  <p>ElevateAI System &middot; <a href="https://www.elevateaisystem.com" style="color:#00CC34;text-decoration:none">elevateaisystem.com</a></p>
+</div>
+
+</div></body></html>`;
 }
 
 function parseResult(raw) {
