@@ -46,6 +46,63 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this just another quiz that gives me a generic PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The questions push back when answers read generic — using your audience type, your prior answers, and a marker list of overused coach-clichés. The output is generated from your specific words, not a template. Two coaches who buy this on the same day get two completely different deliverables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I already know my pillars and buyer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most coaches think they do. Then they see their own answers reflected back, sharper than they could have written, and realize the pillar they were defending isn't the one they actually care about. The pushback is the work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be technical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If you can answer email, you can do Brand OS. The output is a simple text file — copy, paste, done."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the 14-day free trial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you finish Brand OS, you can activate 14 days free on the full coach platform — Content, Leads, and Clients all powered by your voice DNA. No card on file. After 14 days, choose a plan or stay on Brand OS-only. Either way, your $7 deliverable is yours forever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the $7 a tripwire to a $2000 cohort?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, transparently. If Brand OS hits you, we offer paths deeper — a $2K cohort, a $12K Build Your Brand intensive. None of that is required. The $7 product is complete on its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who built this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sunny Binjola — founder of ElevateAI Systems, men's coach, builder of the coach platform Brand OS sits inside. Built this because every coaching client he worked with had the same blocker: their brand language sounded like every other coach."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   :root {
     --green: #00FF41;
@@ -126,6 +183,27 @@
 
   .trust-row { display: flex; gap: 24px; justify-content: center; margin-top: 24px; font-size: 13px; color: var(--ink-faint); flex-wrap: wrap; }
   .trust-row span::before { content: "✓ "; color: var(--green-dark); font-weight: 700; }
+
+  .urgency-row {
+    display: flex; gap: 20px; justify-content: center; align-items: center;
+    margin-top: 16px; flex-wrap: wrap;
+  }
+  .intro-price {
+    font-size: 13px; color: var(--ink-mute); font-weight: 600;
+    font-style: italic;
+  }
+  .momentum {
+    font-family: var(--mono); font-size: 12px; color: var(--ink-faint);
+    letter-spacing: 0.5px;
+    display: none; /* hidden until JS loads the count */
+  }
+  .momentum.loaded { display: inline-flex; align-items: center; gap: 5px; }
+  .momentum .dot {
+    width: 6px; height: 6px; background: var(--green-dark); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  .final-cta .intro-price { color: rgba(255,255,255,0.55); }
+  .final-cta .momentum { color: rgba(255,255,255,0.45); }
 
   /* SECTIONS */
   section { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
@@ -298,6 +376,69 @@
     color: var(--danger); font-weight: 600; font-size: 14px;
   }
 
+  /* TESTIMONIAL */
+  .proof-strip {
+    max-width: 760px; margin: 0 auto; padding: 0 24px 40px;
+  }
+  .proof-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+    padding: clamp(28px, 4vw, 40px); text-align: center;
+    box-shadow: 0 4px 16px rgba(10,15,28,0.04);
+  }
+  .proof-mark {
+    font-family: 'Fraunces', serif; font-size: 48px; color: var(--green-dark);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .proof-quote {
+    font-family: 'Fraunces', serif; font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 700; color: var(--ink); line-height: 1.35;
+    max-width: 28ch; margin: 0 auto 20px;
+    font-variation-settings: 'SOFT' 50;
+  }
+  .proof-person { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .proof-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), #1a2035);
+    color: var(--green); font-weight: 800; font-size: 16px;
+    display: grid; place-items: center; margin-bottom: 4px;
+  }
+  .proof-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .proof-role {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--green-dark);
+  }
+
+  /* BEFORE / AFTER */
+  .compare-wrap { padding: 0 24px 40px; }
+  .compare {
+    max-width: 980px; margin: 0 auto;
+  }
+  .compare-grid {
+    display: grid; gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 680px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-panel {
+    border-radius: 16px; padding: 24px; font-size: 14.5px; line-height: 1.65;
+  }
+  .compare-panel--before {
+    background: #FEF2F2; border: 1px solid #FECACA; color: #7F1D1D;
+  }
+  .compare-panel--after {
+    background: #F0FDF4; border: 1px solid #BBF7D0; color: #14532D;
+  }
+  .compare-label {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .compare-panel--before .compare-label { color: #DC2626; }
+  .compare-panel--after .compare-label { color: var(--green-dark); }
+  .compare-note {
+    text-align: center; color: var(--ink-faint); font-size: 13px;
+    margin-top: 16px; font-style: italic;
+  }
+
   /* FOOTER */
   .foot {
     text-align: center; padding: 32px 24px; color: var(--ink-faint);
@@ -324,7 +465,7 @@
     and 45 days of content.
   </h1>
   <p class="lede">
-    The full Brand OS run for coaches. 6 modules, ~60 questions, ~90 minutes. We push back when answers read generic. You walk away with a Markdown file that makes every AI you use sound like <em>you</em>.
+    The full Brand OS run for coaches. 6 modules, ~60 questions, ~90 minutes. We push back when answers read generic. You walk away with a single file that makes every AI you use sound like <em>you</em>.
   </p>
 
   <form id="checkout-form-hero" onsubmit="return startCheckout(event, 'hero')" class="checkout">
@@ -337,6 +478,10 @@
     <span>~90 minutes</span>
     <span>Yours forever</span>
     <span>Works with ChatGPT / Claude / Gemini</span>
+  </div>
+  <div class="urgency-row">
+    <span class="intro-price">$7 is the intro price. It won't stay here.</span>
+    <span class="momentum" id="momentum-hero"><span class="dot"></span> <span class="mo-count"></span> coaches have run Brand OS</span>
   </div>
 </header>
 
@@ -381,46 +526,7 @@
   </div>
 </section>
 
-<!-- THE TEST (the wedge) -->
-<div class="test-wrap">
-  <div class="test">
-    <div class="test-eyebrow">The wedge</div>
-    <h2>The Markdown file is the asset.</h2>
-    <p class="test-body">
-      When you finish, you'll get a downloadable <strong>.md file</strong>. Paste it into ChatGPT, Claude, Gemini — any AI. Say <em>"Use this as my brand context for everything we work on going forward."</em>
-      <br><br>
-      Your AI will write in your voice. Hit your buyer by name. Stay inside your pillars. Avoid your anti-vocab. <strong>Without you ever explaining it again.</strong>
-      <br><br>
-      That's the asset. The platform we built is one place to use it. The .md file works everywhere.
-    </p>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section>
-  <h2 class="section-title">How it works</h2>
-  <p class="section-sub">No setup. No installs. No "schedule a discovery call."</p>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Pay $7. Check email.</h3>
-      <p>A magic-link sign-in arrives in 30 seconds. One click in.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Run the full Brand OS.</h3>
-      <p>6 modules, ~60 questions. One at a time. Auto-saves. Pause and resume from any device. About 90 minutes of real thinking.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Get your deliverable.</h3>
-      <p>Visual page + downloadable .md + optional email. Plus 14 days free on the coach platform that uses your DNA. Yours forever.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FREE PREVIEW — try one question before paying -->
+<!-- FREE PREVIEW — moved up: best conversion asset -->
 <section id="preview">
   <h2 class="section-title">Try one question · free</h2>
   <p class="section-sub">
@@ -451,6 +557,78 @@
   </div>
 </section>
 
+<!-- PROOF — testimonial -->
+<div class="proof-strip">
+  <div class="proof-card">
+    <div class="proof-mark">&ldquo;</div>
+    <p class="proof-quote">I love this quiz. The depth it takes you in really blows my mind away, and what it helps me find and create is mind-blowing.</p>
+    <div class="proof-person">
+      <div class="proof-avatar">MR</div>
+      <div class="proof-name">Matthew Rose</div>
+      <div class="proof-role">Men's Embodiment Coach</div>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER — AI output comparison -->
+<div class="compare-wrap">
+  <div class="compare">
+    <h2 class="section-title">Same AI. Different input.</h2>
+    <p class="section-sub">Same topic. Same AI. One has Brand OS loaded. The other doesn't.</p>
+
+    <div class="compare-grid">
+      <div class="compare-panel compare-panel--before">
+        <div class="compare-label">✗ Without Brand OS</div>
+        <p>Most men struggle with heartbreak because they build their entire emotional world around one person. When that person leaves, they lose their sense of stability and identity.<br><br>The real issue is giving away their center — depending on someone else for purpose, validation, or emotional grounding. That creates pressure, dependency, and instability in relationships.</p>
+      </div>
+      <div class="compare-panel compare-panel--after">
+        <div class="compare-label">✓ With Brand OS loaded</div>
+        <p>Most men don't just lose a relationship in heartbreak.<br><br>They lose the center they built their life around.<br><br>Their nervous system organized itself around one person for safety, regulation, direction, and stability. So when she leaves, the body doesn't register "sad."<br><br>It registers <strong>threat.</strong><br><br>The work isn't becoming cold or detached.<br><br>It's becoming self-sourced.</p>
+      </div>
+    </div>
+    <p class="compare-note">Same coach. Same AI. The only difference is a single file pasted into the conversation.</p>
+  </div>
+</div>
+
+<!-- THE TEST (the wedge) -->
+<div class="test-wrap">
+  <div class="test">
+    <div class="test-eyebrow">The wedge</div>
+    <h2>The file is the asset.</h2>
+    <p class="test-body">
+      When you finish, you get a single text file — your entire brand brain in one document. Copy it. Paste it into ChatGPT, Claude, Gemini — any AI. Say <em>"Use this as my brand context for everything we work on going forward."</em>
+      <br><br>
+      Your AI will write in your voice. Hit your buyer by name. Stay inside your pillars. Avoid your anti-vocab. <strong>Without you ever explaining it again.</strong>
+      <br><br>
+      That's the asset. The platform we built is one place to use it. The file works everywhere — copy, paste, done.
+    </p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">No setup. No installs. No "schedule a discovery call."</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Pay $7. Check email.</h3>
+      <p>A magic-link sign-in arrives in 30 seconds. One click in.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Run the full Brand OS.</h3>
+      <p>6 modules, ~60 questions. One at a time. Auto-saves. Pause and resume from any device. About 90 minutes of real thinking.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Get your deliverable.</h3>
+      <p>A visual brand page + a portable text file you can paste into any AI + optional email summary. Plus 14 days free on the full coach platform. Yours forever.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section>
   <h2 class="section-title">Honest questions</h2>
@@ -465,7 +643,7 @@
     </details>
     <details>
       <summary>Do I need to be technical?</summary>
-      <p>No. If you can answer email, you can do Brand OS. The .md file is just text — paste it anywhere.</p>
+      <p>No. If you can answer email, you can do Brand OS. The file you get is just text — copy it, paste it into any AI, done. No software, no setup, no code.</p>
     </details>
     <details>
       <summary>What's the 14-day free trial?</summary>
@@ -491,12 +669,15 @@
   <div class="final-cta">
     <h2>Stop sounding like every other coach.</h2>
     <p>~90 minutes. $7. The asset is yours forever — plus 14 days free on the platform that uses it.</p>
-
     <form id="checkout-form-final" onsubmit="return startCheckout(event, 'final')" class="checkout">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
       <button type="submit" class="btn btn-primary" id="checkout-btn-final">Get Brand OS · $7</button>
     </form>
     <div id="err-final" class="err-line" style="display:none;"></div>
+    <div class="urgency-row" style="margin-top:20px;">
+      <span class="intro-price">$7 is the intro price. It won't stay here.</span>
+      <span class="momentum" id="momentum-final"><span class="dot"></span> <span class="mo-count"></span> coaches have run Brand OS</span>
+    </div>
   </div>
 </div>
 
@@ -664,6 +845,30 @@
     }
     return false;
   }
+
+  // ── LIVE MOMENTUM COUNTER ──────────────────────────────────────
+  // Calls a security-definer RPC on Supabase to get purchase count.
+  // If anything fails, the counter stays hidden — no broken UI.
+  (async function loadMomentum() {
+    try {
+      const SUPA_URL = 'https://modepuhwinzdngirlnkz.supabase.co';
+      const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZGVwdWh3aW56ZG5naXJsbmt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1MDYxNTEsImV4cCI6MjA4ODA4MjE1MX0.1S2wC8CxE8_MCTmsGwoiOoqNYw_lXIM7_CT_-AG6DAI';
+      const res = await fetch(SUPA_URL + '/rest/v1/rpc/get_brand_os_count', {
+        method: 'POST',
+        headers: {
+          'apikey': SUPA_KEY,
+          'Authorization': 'Bearer ' + SUPA_KEY,
+          'Content-Type': 'application/json',
+        },
+        body: '{}',
+      });
+      if (!res.ok) return;
+      const total = await res.json();
+      if (!total || total < 1) return;
+      document.querySelectorAll('.mo-count').forEach(el => el.textContent = total);
+      document.querySelectorAll('.momentum').forEach(el => el.classList.add('loaded'));
+    } catch (_) { /* silent — counter just stays hidden */ }
+  })();
 </script>
 
 </body>
