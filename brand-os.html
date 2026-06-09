@@ -174,16 +174,31 @@
 
   /* Inline checkout form */
   .checkout {
-    max-width: 480px; margin: 0 auto;
-    display: flex; gap: 8px; flex-wrap: wrap;
+    max-width: 520px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
   .checkout input {
-    flex: 1; min-width: 200px; height: 52px; padding: 0 18px;
+    height: 52px; padding: 0 18px;
     border: 2px solid var(--border); border-radius: 100px;
     font-size: 15px; font-family: inherit;
     background: white; color: var(--ink);
+    width: 100%;
   }
   .checkout input:focus { outline: none; border-color: var(--navy); }
+  /* Button spans both columns and centers below the inputs */
+  .checkout > button[type="submit"] {
+    grid-column: 1 / -1;
+    justify-self: center;
+    min-width: 260px;
+    margin-top: 4px;
+  }
+  /* Single column on small screens */
+  @media (max-width: 480px) {
+    .checkout { grid-template-columns: 1fr; }
+    .checkout > button[type="submit"] { min-width: 0; width: 100%; }
+  }
   .btn {
     display: inline-flex; align-items: center; justify-content: center;
     height: 52px; padding: 0 28px; border-radius: 100px;
