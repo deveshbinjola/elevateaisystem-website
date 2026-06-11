@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Your Lead Magnet Score — Free Diagnostic · ElevateAI</title>
-<meta name="description" content="Most coaching lead magnets convert at 3%. The top ones hit 40%+. Answer 5 questions and get your lead magnet score — plus the one fix that changes everything.">
+<title>Your Lead Magnet Score, Free Diagnostic · ElevateAI</title>
+<meta name="description" content="Most coaching lead magnets convert at 3%. The top ones hit 40%+. Answer 5 questions and get your lead magnet score, plus the one fix that changes everything.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.elevateaisystem.com/lead-magnet-diagnostic">
 
@@ -288,7 +288,7 @@ select.answer-select:focus{outline:none;border-color:var(--green-dark);box-shado
         <div class="p-card">
           <div class="p-num">01</div>
           <h3>Wrong format.</h3>
-          <p>You picked a PDF because it was easy. But 60-70% of PDFs are never opened. The format is dead — you just haven't buried it yet.</p>
+          <p>You picked a PDF because it was easy. But 60-70% of PDFs are never opened. The format is dead, you just haven't buried it yet.</p>
         </div>
         <div class="p-card">
           <div class="p-num">02</div>
@@ -307,7 +307,7 @@ select.answer-select:focus{outline:none;border-color:var(--green-dark);box-shado
   <section class="block final">
     <div class="wrap">
       <h2>Find the leak. Fix the funnel.</h2>
-      <p>5 questions about your current setup. AI-powered scoring across 5 dimensions. Your biggest leak identified — and how to fix it.</p>
+      <p>5 questions about your current setup. AI-powered scoring across 5 dimensions. Your biggest leak identified, and how to fix it.</p>
       <button type="button" class="hero-cta" onclick="startFlow()">
         Diagnose My Lead Magnet
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -403,7 +403,7 @@ select.answer-select:focus{outline:none;border-color:var(--green-dark);box-shado
     <div class="card error-card">
       <div class="e-icon">&#9888;&#65039;</div>
       <h3>That didn't go through.</h3>
-      <p>Something hiccuped while running your diagnostic. Your answers are still here — give it one more try.</p>
+      <p>Something hiccuped while running your diagnostic. Your answers are still here, give it one more try.</p>
       <button type="button" class="btn-primary" onclick="retryGenerate()" style="margin:0 auto">Try again</button>
     </div>
   </section>
@@ -425,7 +425,7 @@ select.answer-select:focus{outline:none;border-color:var(--green-dark);box-shado
       <a href="/">Home</a>
     </div>
   </div>
-  <p class="footer-fine">&copy; 2026 ElevateAI System &middot; You Coach. We Handle Everything Else. &middot; <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
+  <p class="footer-fine">&copy; 2026 ElevateAI Systems &middot; You Coach. We Handle Everything Else. &middot; <a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></p>
 </footer>
 
 <script>
@@ -458,7 +458,7 @@ const QUESTIONS = [
     q: "What information do you ask for before giving the lead magnet?",
     type: "select",
     options: [
-      { value: "nothing", text: "Nothing — it's totally free / ungated" },
+      { value: "nothing", text: "Nothing, it's totally free / ungated" },
       { value: "email", text: "Email only" },
       { value: "email_name", text: "Email + Name" },
       { value: "email_name_phone", text: "Email + Name + Phone" },
@@ -526,7 +526,7 @@ function renderQuestion() {
   });
 
   const hint = document.getElementById("char-hint");
-  hint.textContent = cur.type === "textarea" ? "Be specific — the more detail, the better your diagnostic." : "";
+  hint.textContent = cur.type === "textarea" ? "Be specific, the more detail, the better your diagnostic." : "";
 
   syncNextLabel();
 }
@@ -617,7 +617,7 @@ function showEmailGate() {
     teaser.classList.remove("hidden");
 
     document.getElementById("gate-label").textContent = "Your score is ready";
-    document.getElementById("gate-intro").innerHTML = "Enter your email to unlock your <b>full diagnostic — all 5 dimensions scored with specific fixes.</b>";
+    document.getElementById("gate-intro").innerHTML = "Enter your email to unlock your <b>full diagnostic, all 5 dimensions scored with specific fixes.</b>";
   }
 
   show("#email-gate");
@@ -704,7 +704,7 @@ function renderResult(d) {
     return '<div class="dim">' +
       '<div class="dim-header">' +
         '<span class="dim-name">' + esc(dim.name) + '</span>' +
-        '<span class="dim-status ' + statusClass + '">' + esc(dim.status) + ' — ' + (dim.score || 0) + '/20</span>' +
+        '<span class="dim-status ' + statusClass + '">' + esc(dim.status) + ', ' + (dim.score || 0) + '/20</span>' +
       '</div>' +
       '<div class="dim-bar"><div class="dim-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>' +
       '<div class="dim-finding">' + esc(dim.finding) + '</div>' +

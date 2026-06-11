@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Guy. 750,000 Lines of Code. 11 Days. The Coach Leverage Gap Just Opened. | ElevateAI Systems</title>
+<meta name="description" content="The creator of Bun pointed Claude Code at his JavaScript runtime and asked it to port the whole thing to Rust. Eleven days later: 750,000 lines, 6,755 commits, 99.8% of tests passing. He did not type the code. Here is what it means for coaches who keep waiting.">
+<meta name="keywords" content="Claude Code dynamic workflows, Bun Rust port, solo creator leverage, AI for coaches 2026, coach automation, one person company">
+<link rel="canonical" href="https://www.elevateaisystem.com/blog/bun-750k-lines-rust-solo-coach-leverage">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One Guy. 750,000 Lines of Code. 11 Days. The Coach Leverage Gap Just Opened.">
+<meta property="og:description" content="Bun's creator had Claude write 750,000 lines of Rust in 11 days. He did not type the code. Hundreds of agents did. Coaches, the leverage gap just became the Grand Canyon.">
+<meta property="og:url" content="https://www.elevateaisystem.com/blog/bun-750k-lines-rust-solo-coach-leverage">
+<meta property="og:site_name" content="ElevateAI Systems">
+<meta property="og:image" content="https://www.elevateaisystem.com/blog/images/bun-750k-lines-rust-solo-coach-leverage-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Solo creator, 750k lines of code in 11 days using Claude">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One Guy. 750,000 Lines of Code. 11 Days. The Coach Leverage Gap Just Opened.">
+<meta name="twitter:description" content="Bun's creator had Claude write 750,000 lines of Rust in 11 days. He did not type the code. Coaches, the leverage gap just became the Grand Canyon.">
+<meta name="twitter:image" content="https://www.elevateaisystem.com/blog/images/bun-750k-lines-rust-solo-coach-leverage-og.png">
+<meta name="twitter:image:alt" content="Solo creator, 750k lines of code in 11 days using Claude">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"One Guy. 750,000 Lines of Code. 11 Days. The Coach Leverage Gap Just Opened.","description":"Bun's creator had Claude write 750,000 lines of Rust in 11 days. He did not type the code. Hundreds of agents did. Coaches, the leverage gap just became the Grand Canyon.","image":"https://www.elevateaisystem.com/blog/images/bun-750k-lines-rust-solo-coach-leverage-og.png","url":"https://www.elevateaisystem.com/blog/bun-750k-lines-rust-solo-coach-leverage","datePublished":"2026-06-01","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"ElevateAI Systems","url":"https://www.elevateaisystem.com"}}
+</script>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+document.head.appendChild(o)}initApollo();</script>
+<style>
+:root {
+  --bg: #FAFAF8; --bg-alt: #F2F2EE;
+  --green: #00FF41; --green-dark: #00CC34;
+  --navy: #0A0F1C; --navy-light: #1A2035;
+  --text: #1A1A2E; --text-muted: #5A5A6E;
+  --border: #E0E0D8; --white: #FFFFFF; --card-bg: #FFFFFF;
+  --radius: 12px; --radius-lg: 20px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+.article-container { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; margin-top: 72px; }
+.article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.article-category { display: inline-block; padding: .35rem .8rem; border-radius: 20px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.article-category.tools { background: rgba(0,200,52,.18); color: #008822; }
+.article-date { font-size: .85rem; color: var(--text-muted); }
+.article-container h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: 1.5rem; letter-spacing: -.02em; }
+.article-container h2 { font-size: 1.6rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+.article-container h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 2rem 0 .75rem; }
+.article-container p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem; }
+.article-container ul, .article-container ol { margin: 1rem 0 1.5rem 1.5rem; }
+.article-container li { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: .5rem; }
+.article-container strong { color: var(--navy); }
+.article-container blockquote { border-left: 4px solid var(--green); padding: 1rem 1.5rem; margin: 1.5rem 0; background: var(--bg-alt); border-radius: 0 var(--radius) var(--radius) 0; }
+.article-container blockquote p { color: var(--text-muted); font-style: italic; margin: 0; }
+.signal-box { background: var(--navy); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.signal-box p { color: rgba(255,255,255,.85); margin: 0; font-size: 1rem; }
+.signal-box strong { color: var(--green); }
+.article-cta { background: var(--navy); border-radius: var(--radius-lg); padding: 3rem; text-align: center; margin: 3rem 0; }
+.article-cta h3 { color: var(--white); font-size: 1.5rem; margin-bottom: .75rem; }
+.article-cta p { color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+.article-cta a { display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: .85rem 2rem; border-radius: 50px; font-weight: 800; font-size: .95rem; transition: all .3s; }
+.article-cta a:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,65,.3); }
+.share-bar { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+.share-bar span { font-size: .85rem; font-weight: 600; color: var(--text-muted); }
+.share-linkedin { display: inline-flex; align-items: center; gap: 6px; background: #0A66C2; color: #fff; padding: 8px 18px; border-radius: 50px; font-size: .8rem; font-weight: 700; transition: all .2s; }
+.share-linkedin:hover { background: #004182; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(10,102,194,.3); }
+.share-linkedin svg { width: 16px; height: 16px; fill: currentColor; }
+.back-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--green-dark); font-weight: 700; font-size: .9rem; margin-top: 2rem; transition: gap .2s; }
+.back-link:hover { gap: .75rem; }
+
+.stat-row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; margin: 2rem 0; }
+.stat-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem .75rem; text-align: center; }
+.stat-card .stat-number { font-size: 1.9rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; color: var(--navy); }
+.stat-card .stat-number.green { color: var(--green-dark); }
+.stat-card .stat-label { font-size: .72rem; color: var(--text-muted); font-weight: 600; }
+
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+.compare-card { border-radius: var(--radius); padding: 1.5rem; }
+.compare-card.old { background: var(--bg-alt); border: 1px dashed var(--border); }
+.compare-card.new { background: var(--navy); color: var(--white); }
+.compare-card h4 { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .5rem; color: var(--text-muted); }
+.compare-card.new h4 { color: var(--green); }
+.compare-card p { font-size: 1.6rem; font-weight: 800; line-height: 1.2; color: var(--navy); margin: 0; }
+.compare-card.new p { color: var(--white); }
+.compare-card span { font-size: .85rem; font-weight: 600; color: var(--text-muted); display: block; margin-top: .25rem; }
+.compare-card.new span { color: rgba(255,255,255,.7); }
+
+.tier-list { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin: 2rem 0; }
+.tier-list h4 { font-size: .95rem; font-weight: 800; color: var(--navy); margin-bottom: .75rem; text-transform: uppercase; letter-spacing: .04em; }
+.tier-list .row { display: flex; align-items: flex-start; gap: .85rem; padding: .65rem 0; border-top: 1px solid var(--border); }
+.tier-list .row:first-of-type { border-top: 0; }
+.tier-list .badge { padding: .25rem .65rem; border-radius: 20px; font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; flex-shrink: 0; margin-top: 2px; }
+.tier-list .badge.t1 { background: rgba(220,38,38,.12); color: #DC2626; }
+.tier-list .badge.t2 { background: rgba(245,158,11,.15); color: #B45309; }
+.tier-list .badge.t3 { background: rgba(0,200,52,.18); color: #008822; }
+.tier-list .row p { margin: 0; font-size: .95rem; }
+
+.footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; background: var(--white); }
+.footer a { color: var(--text-muted); transition: color .2s; }
+.footer a:hover { color: var(--green-dark); }
+
+@media (max-width: 768px) {
+  .article-container { padding: 2rem 1rem; }
+  .article-container h1 { font-size: 2rem; }
+  .article-cta { padding: 2rem 1.5rem; }
+  .stat-row-4 { grid-template-columns: 1fr 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.elevateaisystem.com"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.elevateaisystem.com/blog"},
+    {"@type":"ListItem","position":3,"name":"Bun 750K Lines Coach Leverage","item":"https://www.elevateaisystem.com/blog/bun-750k-lines-rust-solo-coach-leverage"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<script src="../navbar.js"></script>
+
+<article class="article-container">
+  <div class="article-meta">
+    <span class="article-category tools">Tools</span>
+    <span class="article-date">2026-06-01 &middot; 6 min read</span>
+  </div>
+  <h1>One Guy. 750,000 Lines of Code. 11 Days. The Coach Leverage Gap Just Opened.</h1>
+
+  <div class="signal-box">
+    <p><strong>The Signal:</strong> Jarred Sumner, the creator of Bun, pointed Claude Code at his JavaScript runtime and asked it to port the whole thing from Zig to Rust. Eleven days later, a pull request landed on main. Roughly 750,000 lines of Rust. 6,755 commits. 99.8% of the test suite still passing. He says he did not type the code himself. Hundreds of Claude agents did, in parallel, with reviewers checking every file. The "AI is just an autocomplete" excuse died this week. The leverage gap between the coaches who use this and the ones who don't just became the Grand Canyon.</p>
+  </div>
+
+  <p>Most coaches I work with still treat AI like a clever intern.</p>
+
+  <p>Useful for first drafts. Good for cleaning up emails. Fine for a quick research summary.</p>
+
+  <p>That mental model is now three weeks old.</p>
+
+  <p>And three weeks in AI years is about a decade in coaching years.</p>
+
+  <h2>What Actually Happened</h2>
+
+  <p>Jarred Sumner is the founder of Bun, a JavaScript runtime that millions of developers use every day. Last month he wanted to see what would happen if he handed his entire codebase to Claude Code and asked it to port the project from Zig to Rust.</p>
+
+  <p>Two completely different programming languages. Hundreds of files. Years of work.</p>
+
+  <p>He turned on Claude Code's new dynamic workflows feature. The one that spawns hundreds of subagents in parallel and has them check each other's work.</p>
+
+  <p>Then he walked away.</p>
+
+  <p>Eleven days later, a pull request landed on main.</p>
+
+  <div class="stat-row-4">
+    <div class="stat-card">
+      <div class="stat-number green">750k</div>
+      <div class="stat-label">lines of Rust written</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">6,755</div>
+      <div class="stat-label">commits</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">11</div>
+      <div class="stat-label">days, end to end</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number green">99.8%</div>
+      <div class="stat-label">of the test suite still passing</div>
+    </div>
+  </div>
+
+  <p>Sumner posted it on X with a quiet line that should make every coach reading this stop and reread.</p>
+
+  <blockquote>
+    <p>"I didn't type the code. Hundreds of agents wrote it in parallel, with two reviewers checking every file."</p>
+  </blockquote>
+
+  <p>One person.</p>
+
+  <p>Eleven days.</p>
+
+  <p>A team-year of engineering output.</p>
+
+  <h2>Why a Coach Should Care About a Code Story</h2>
+
+  <p>You don't write Rust. You don't run a JavaScript runtime. You are not Jarred Sumner.</p>
+
+  <p>I hear you.</p>
+
+  <p>But you're missing what just got proven.</p>
+
+  <p>The bottleneck on knowledge work was never the typing. It was the orchestration. Who breaks the work into pieces. Who runs each piece. Who checks the result. Who folds it back into the whole.</p>
+
+  <p>For a hundred years, that orchestration happened inside a single human head, then got passed to other human heads, who passed it to other human heads. The team was the orchestration engine.</p>
+
+  <p>Claude just demonstrated, in public, with a real codebase, that an AI can be the orchestration engine. Dynamic workflows let one prompt fan out into hundreds of parallel subagents that argue with each other, check each other's work, and converge on an answer before anything reaches you.</p>
+
+  <p>Now substitute "codebase" for "your coaching offer."</p>
+
+  <p>Or "your launch."</p>
+
+  <p>Or "your client research."</p>
+
+  <p>Or "your content engine."</p>
+
+  <p>The mechanism that ported 750,000 lines of code in 11 days is the same mechanism that's about to rewrite what a single coach can build, ship, and operate alone.</p>
+
+  <div class="compare-grid">
+    <div class="compare-card old">
+      <h4>The 2024 mental model</h4>
+      <p>1 coach + 1 AI chat</p>
+      <span>You write the prompt. AI writes the draft. You edit. You ship.</span>
+    </div>
+    <div class="compare-card new">
+      <h4>The 2026 mental model</h4>
+      <p>1 coach + hundreds of agents</p>
+      <span>You name the outcome. AI spawns the team, runs the work, checks itself, hands you the result.</span>
+    </div>
+  </div>
+
+  <h2>What the Coach Version Looks Like</h2>
+
+  <p>Strip the Rust jargon out and the Bun story is a playbook.</p>
+
+  <p>One person sets the outcome. The model breaks it into pieces. Subagents run in parallel. Other subagents review. Convergence. Delivery. Eleven days.</p>
+
+  <p>Here are the coach translations I'm watching show up in client work right now.</p>
+
+  <div class="tier-list">
+    <h4>What hundreds of agents can do for one coach</h4>
+    <div class="row"><span class="badge t1">Launch</span><p><strong>"Plan and execute my fall cohort launch."</strong> Agents draft email sequence, ad copy, landing page, FAQ, objection responses, JV asks, partner outreach. Other agents stress-test each piece against your brand voice and ICP. You wake up to a launch plan that would have taken your team three weeks.</p></div>
+    <div class="row"><span class="badge t1">Content</span><p><strong>"Build a 90-day content engine in my voice."</strong> Agents pull your past posts, calls, and offers. Map your themes. Generate posts. Adversarial agents flag anything that sounds like a generic coach. Output: 90 days of LinkedIn, X, newsletter, and short-form scripts that actually sound like you.</p></div>
+    <div class="row"><span class="badge t2">Research</span><p><strong>"Find every objection my ICP has to my $12K offer."</strong> Subagents scrape Reddit, podcasts, YouTube comments, Quora. Other agents cluster the objections. A third pass writes your sales page and onboarding emails against the top five.</p></div>
+    <div class="row"><span class="badge t2">Funnel</span><p><strong>"Diagnose every drop-off in my quiz funnel."</strong> Agents read your analytics, your quiz logic, your follow-ups, your booking flow. They benchmark against 50 anonymized coach funnels. They hand you a punch list with priority.</p></div>
+    <div class="row"><span class="badge t3">Voice</span><p><strong>"Map my voice into a stance system clients can buy."</strong> Agents read every long-form thing you've ever written. They surface your repeated frames, words, and tensions. Output: your Mirror, Signal, Stance map. The thing you've been "going to do" for two years.</p></div>
+  </div>
+
+  <p>None of this is hypothetical. The orchestration layer that did it for Sumner is live. The cap right now is 1,000 subagents per run, 16 concurrent. That's not a coaching tool yet. That's a coaching company yet.</p>
+
+  <h2>The Coach Who's About to Win This Window</h2>
+
+  <p>It's not the coach with the biggest list.</p>
+
+  <p>Or the most followers.</p>
+
+  <p>Or the prettiest brand.</p>
+
+  <p>It's the coach who can clearly name an outcome.</p>
+
+  <p>Sumner's whole prompt was probably something close to: "Port this codebase from Zig to Rust. Match the existing test suite. Use these conventions. Stop when the tests pass."</p>
+
+  <p>Clear outcome. Clear constraints. Clear stop condition.</p>
+
+  <p>Now ask yourself.</p>
+
+  <p>Can you name the outcome of your next launch in one sentence?</p>
+
+  <p>Can you name the constraints? The brand voice rules. The price floor. The ICP you won't sell to. The deliverables that must show up.</p>
+
+  <p>Can you name the stop condition? The number of booked calls. The qualified leads. The revenue. The thing that tells you "we're done, hand it back."</p>
+
+  <p>If you can't, hundreds of agents will write you hundreds of mediocre things.</p>
+
+  <p>If you can, hundreds of agents will write you a year of launches in a week.</p>
+
+  <blockquote>
+    <p>In the agent era, clarity is the only moat. The coach who can name the outcome wins the agents. The coach who can't gets buried under their own output.</p>
+  </blockquote>
+
+  <h2>The Inner Work Hidden in This Story</h2>
+
+  <p>Here's the part the tech bros will miss.</p>
+
+  <p>Sumner could push that button because he knew, in his body, what "done" looked like. He's been building runtimes for years. He's compiled tests. He's debugged production. He has the embodied pattern of what a working Bun looks like.</p>
+
+  <p>The agents didn't give him that. They executed against it.</p>
+
+  <p>You can't outsource the knowing.</p>
+
+  <p>The coaches who try to use this leverage without doing the work to know what their offer actually is, who their client actually is, what their voice actually sounds like, what "done" actually means...</p>
+
+  <p>They will spawn hundreds of agents and get back a beautifully formatted swamp.</p>
+
+  <p>The coaches who have done the inner work, who can name the outcome in one breath, who have walked the offer in their own nervous system...</p>
+
+  <p>They are about to look like wizards.</p>
+
+  <h2>Your Move</h2>
+
+  <p>Open a blank doc.</p>
+
+  <p>Pick the one thing you've been meaning to ship for the last 90 days. The cohort. The new offer page. The lead magnet. The voice rewrite.</p>
+
+  <p>Write three lines.</p>
+
+  <ul>
+    <li><strong>Outcome:</strong> what specifically gets delivered.</li>
+    <li><strong>Constraints:</strong> the voice, brand, price, and ICP rules that can't be broken.</li>
+    <li><strong>Stop condition:</strong> the signal that tells you "we're done."</li>
+  </ul>
+
+  <p>If you can't write those three lines in 15 minutes, you don't have a tools problem. You have a clarity problem.</p>
+
+  <p>And no number of subagents will solve that for you.</p>
+
+  <p>Get clear first.</p>
+
+  <p>Then point the agents.</p>
+
+  <p>Then watch what one person can build in 11 days.</p>
+
+  <div class="article-cta">
+    <h3>Want help naming the outcome before you point the agents?</h3>
+    <p>Book a free Brand OS session. We'll map your offer, your voice, and your one-line outcome so the leverage actually lands when you turn the agents on.</p>
+    <a href="https://cal.com/sunny-binjola/discovery-call">Book Your Free Call &rarr;</a>
+  </div>
+
+  <div class="share-bar">
+    <span>Share this post:</span>
+    <a class="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.elevateaisystem.com/blog/bun-750k-lines-rust-solo-coach-leverage" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Share on LinkedIn</a>
+  </div>
+
+  <a href="/blog" class="back-link">&larr; Back to all posts</a>
+</article>
+
+<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+    <div style="text-align:left;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
+      <p style="margin:0"><a href="/lead-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead OS</a></p>
+      <p style="margin:0"><a href="/content-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Content OS</a></p>
+      <p style="margin:0"><a href="/growth-engine" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Growth Engine</a></p>
+      <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Systems Audit</a></p>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
+      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs HubSpot</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs Coachvox</a></p>
+      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">ElevateAI vs DIY</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
+      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Lead Clarity Score</a></p>
+      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Free SEO Audit</a></p>
+    </div>
+    <div style="text-align:right;">
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
+      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Marketing Guide</a></p>
+      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">4-Pillar Framework</a></p>
+      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">SEO for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI for Coaches</a></p>
+      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">What Is LLMO?</a></p>
+      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Done-for-You vs DIY</a></p>
+      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Getting Clients Online</a></p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#00CC34">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.56rem;color:#A0A0B4;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#A0A0B4;text-decoration:none">sunny.binjola@gmail.com</a></p>
+    <p style="font-size:.5rem;color:#B0B0C0;margin:0"><a href="/about" style="color:#B0B0C0;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#B0B0C0;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#B0B0C0;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#B0B0C0;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#B0B0C0;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#B0B0C0;text-decoration:none">Terms</a></p>
+  </div>
+</footer>
+
+<script src="../author-bio.js"></script>
+<script src="../newsletter-popup.js"></script>
+</body>
+</html>

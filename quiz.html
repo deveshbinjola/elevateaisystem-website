@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <!-- OG -->
-<meta property="og:title" content="The Voice Archetype Quiz — find your coach voice in 60 seconds">
+<meta property="og:title" content="The Voice Archetype Quiz, find your coach voice in 60 seconds">
 <meta property="og:description" content="5 questions, 60 seconds. Find your coach voice archetype + the 3 things your audience isn't hearing yet. Free, no signup until the result.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elevateaisystem.com/quiz">
@@ -538,8 +538,8 @@ h1 .hl { color: var(--green-dark); }
     <section class="screen" id="screen-result">
       <div>
         <span class="result-eyebrow" id="r-eyebrow">Your archetype</span>
-        <h2 class="result-h">You're a <span class="hl" id="r-archetype-name">—</span>.</h2>
-        <p class="result-portrait" id="r-portrait">—</p>
+        <h2 class="result-h">You're a <span class="hl" id="r-archetype-name">-</span>.</h2>
+        <p class="result-portrait" id="r-portrait">-</p>
       </div>
 
       <div>
@@ -572,56 +572,56 @@ h1 .hl { color: var(--green-dark); }
 
 <script>
 // ────────────────────────────────────────────────────────────
-// QUIZ CONTENT — 5 questions, 4 archetypes, situational not abstract
+// QUIZ CONTENT, 5 questions, 4 archetypes, situational not abstract
 // ────────────────────────────────────────────────────────────
 
 const ARCHETYPES = {
   frame_setter: {
     name: "Frame-Setter",
-    portrait: "Your positioning is sharp. People know what you do in one sentence. The pull is clean, the offer is clear — but readers respect your work more than they remember it.",
+    portrait: "Your positioning is sharp. People know what you do in one sentence. The pull is clean, the offer is clear, but readers respect your work more than they remember it.",
     gaps: [
       "Your framing carries the weight; your humanity gets buried under the structure.",
       "You publish clean ideas, few stories. People learn from you, they don't fall for you.",
-      "Your CTAs read as exits, not invitations — they convert, but they don't land warm."
+      "Your CTAs read as exits, not invitations, they convert, but they don't land warm."
     ],
-    bridge: "Brand OS pulls the human back into the frame. <strong>Voice DNA, buyer mirror, and signature moves</strong> — written from your actual rhythm, not the corporate one you slipped into."
+    bridge: "Brand OS pulls the human back into the frame. <strong>Voice DNA, buyer mirror, and signature moves</strong>, written from your actual rhythm, not the corporate one you slipped into."
   },
   mirror: {
     name: "Mirror",
-    portrait: "You're a reflective voice. You ask better questions than most people answer. Clients tell you you 'really see them' — and your audience knows you're insightful, even when they can't quite say what you stand for.",
+    portrait: "You're a reflective voice. You ask better questions than most people answer. Clients tell you you 'really see them', and your audience knows you're insightful, even when they can't quite say what you stand for.",
     gaps: [
-      "You ask great questions. Claims are what build a voice — and you're letting other people make them.",
+      "You ask great questions. Claims are what build a voice, and you're letting other people make them.",
       "Your audience knows you're deep; they don't know what you sell or who you're for.",
       "Your guests, clients, and reposts carry the weight. Your own voice is the wedge that's missing."
     ],
-    bridge: "Brand OS forces the claim. <strong>Pillars, stance map, and pre-mortem</strong> — three places where you have to take a position you'd defend in writing, not just hold in private."
+    bridge: "Brand OS forces the claim. <strong>Pillars, stance map, and pre-mortem</strong>, three places where you have to take a position you'd defend in writing, not just hold in private."
   },
   catalyst: {
     name: "Catalyst",
-    portrait: "Your edges get cited. You write the line everyone screenshots. You name what no one else will. The provocation is real — and it's the thing that pulls in the wrong crowd as often as the right one.",
+    portrait: "Your edges get cited. You write the line everyone screenshots. You name what no one else will. The provocation is real, and it's the thing that pulls in the wrong crowd as often as the right one.",
     gaps: [
       "You go for heat when warmth would convert. Buyers reread the post and step back.",
       "Your edges get cited; your work gets forgotten. The screenshot beats the system you actually run.",
       "You're optimizing for the bounce, not the buyer. Volume of replies isn't the same as volume of conversations."
     ],
-    bridge: "Brand OS makes the heat earn its weight. <strong>Buyer mirror, signature line, and 45-day broadcast plan</strong> — a system where the sharpest line is the one that brings the right person closer, not the loudest one in the room."
+    bridge: "Brand OS makes the heat earn its weight. <strong>Buyer mirror, signature line, and 45-day broadcast plan</strong>, a system where the sharpest line is the one that brings the right person closer, not the loudest one in the room."
   },
   builder: {
     name: "Builder",
-    portrait: "You think in systems. Your frameworks are clean, your steps are numbered, your audience can follow you because you've drawn the map. The work is useful — and the reader closes the tab feeling more competent than connected.",
+    portrait: "You think in systems. Your frameworks are clean, your steps are numbered, your audience can follow you because you've drawn the map. The work is useful, and the reader closes the tab feeling more competent than connected.",
     gaps: [
       "Your frameworks are useful. Your readers are tired. Systems without stories age fast.",
       "You teach what to do. You don't share what it cost you to learn it.",
-      "Your work feels like a manual. Your reader wants a mirror — someone who's been where they are."
+      "Your work feels like a manual. Your reader wants a mirror, someone who's been where they are."
     ],
-    bridge: "Brand OS turns the system into a voice. <strong>Voice DNA, buyer mirror, and signature moves</strong> — the layer underneath your frameworks that makes them feel like yours, not borrowed from a textbook."
+    bridge: "Brand OS turns the system into a voice. <strong>Voice DNA, buyer mirror, and signature moves</strong>, the layer underneath your frameworks that makes them feel like yours, not borrowed from a textbook."
   }
 };
 
 // 5 questions. Each choice maps to ONE archetype.
 const QUESTIONS = [
   {
-    text: "When a stranger asks \"so what do you do?\" — your actual reply is:",
+    text: "When a stranger asks \"so what do you do?\", your actual reply is:",
     choices: [
       { key: "A", text: "\"I help [specific person] get [specific outcome] without [specific frustration].\" Clean, framed, ready.", archetype: "frame_setter" },
       { key: "B", text: "I ask them a question back first. About their life, their work. Then I answer.", archetype: "mirror" },
@@ -632,10 +632,10 @@ const QUESTIONS = [
   {
     text: "Someone DMs you: \"your post hit me hard, thank you.\" Your gut reply:",
     choices: [
-      { key: "A", text: "\"Glad it landed. Which part?\" — short, framed.", archetype: "frame_setter" },
-      { key: "B", text: "\"What's coming up for you?\" — open the door, don't fill it.", archetype: "mirror" },
+      { key: "A", text: "\"Glad it landed. Which part?\", short, framed.", archetype: "frame_setter" },
+      { key: "B", text: "\"What's coming up for you?\", open the door, don't fill it.", archetype: "mirror" },
       { key: "C", text: "\"Good. Now sit with the part you wanted to scroll past.\"", archetype: "catalyst" },
-      { key: "D", text: "\"Glad. I have a piece that goes deeper on this — want the link?\"", archetype: "builder" }
+      { key: "D", text: "\"Glad. I have a piece that goes deeper on this, want the link?\"", archetype: "builder" }
     ]
   },
   {
@@ -660,7 +660,7 @@ const QUESTIONS = [
     text: "A client cancels last-minute. Your real first move:",
     choices: [
       { key: "A", text: "Send a clean reschedule link with a one-line note. Don't make it heavy.", archetype: "frame_setter" },
-      { key: "B", text: "Reach out: \"Hey — what's coming up for you today?\" before talking logistics.", archetype: "mirror" },
+      { key: "B", text: "Reach out: \"Hey, what's coming up for you today?\" before talking logistics.", archetype: "mirror" },
       { key: "C", text: "Light follow-up that names what they might be avoiding. Loving, but pointed.", archetype: "catalyst" },
       { key: "D", text: "Track the pattern. Update onboarding so this doesn't keep happening.", archetype: "builder" }
     ]
@@ -805,7 +805,7 @@ async function reveal() {
   btn.disabled = true;
   label.innerHTML = '<span class="loader"></span> Revealing…';
 
-  // Subscribe (don't block on failure — show result regardless)
+  // Subscribe (don't block on failure, show result regardless)
   try {
     await fetch("/api/quiz-subscribe", {
       method: "POST",
@@ -847,7 +847,7 @@ function renderResult() {
   });
 
   // Share link
-  const shareText = encodeURIComponent(`I'm a ${a.name} — took The Voice Archetype Quiz at`);
+  const shareText = encodeURIComponent(`I'm a ${a.name}, took The Voice Archetype Quiz at`);
   const shareUrl = "https://elevateaisystem.com/quiz";
   document.getElementById("share-twitter").href =
     `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(shareUrl)}`;
@@ -857,7 +857,7 @@ function renderResult() {
 
 function copyResult() {
   const a = ARCHETYPES[resultArchetype];
-  const text = `I'm a ${a.name} — took The Voice Archetype Quiz at https://elevateaisystem.com/quiz`;
+  const text = `I'm a ${a.name}, took The Voice Archetype Quiz at https://elevateaisystem.com/quiz`;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById("share-copy");
     const orig = btn.textContent;

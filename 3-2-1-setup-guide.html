@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
     <link rel="canonical" href="https://www.elevateaisystem.com/3-2-1-setup-guide">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Signal Newsletter — Setup Guide</title>
+<title>The Signal Newsletter, Setup Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -100,7 +100,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-he
 
 <header class="hero">
   <div class="hero-label">Setup Guide</div>
-  <h1>The Signal Newsletter — Full Setup</h1>
+  <h1>The Signal Newsletter, Full Setup</h1>
   <p class="hero-sub">Supabase for tracking signups. Beehiiv for sending. Your website for capturing.</p>
 </header>
 
@@ -108,7 +108,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-he
 <!-- PART 1: SUPABASE -->
 <!-- ═══════════════════════════════════ -->
 <div class="section">
-  <div class="section-label"><span class="dot"></span> Part 1 — Supabase</div>
+  <div class="section-label"><span class="dot"></span> Part 1, Supabase</div>
   <h2>Create the Newsletter Subscribers Table</h2>
   <p class="section-desc">Run this SQL in your Supabase dashboard under SQL Editor. This creates the table that stores every signup from your website.</p>
 
@@ -181,7 +181,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOi...(your anon key)';</pre>
 <!-- PART 2: BEEHIIV -->
 <!-- ═══════════════════════════════════ -->
 <div class="section">
-  <div class="section-label"><span class="dot"></span> Part 2 — Beehiiv</div>
+  <div class="section-label"><span class="dot"></span> Part 2, Beehiiv</div>
   <h2>Set Up Beehiiv for Sending</h2>
   <p class="section-desc">Beehiiv handles the actual newsletter delivery, analytics, and subscriber management. Free up to 2,500 subscribers.</p>
 
@@ -212,7 +212,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOi...(your anon key)';</pre>
     <h3>Add Beehiiv to your website forms (dual submission)</h3>
     <p>Update the signup functions in <code>index.html</code> and <code>the-3-2-1.html</code> to submit to BOTH Supabase (your database) AND Beehiiv (for delivery). Here's the updated code for the homepage:</p>
     <div class="code-block">
-      <div class="code-label">JavaScript — add inside handleNewsletterSignup() after Supabase call</div>
+      <div class="code-label">JavaScript, add inside handleNewsletterSignup() after Supabase call</div>
       <pre>// Also subscribe via Beehiiv for delivery
 const BEEHIIV_FORM = 'https://embeds.beehiiv.com/YOUR_PUBLICATION_ID';
 
@@ -221,13 +221,13 @@ fetch(BEEHIIV_FORM, {
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   body: new URLSearchParams({ email: email }),
   mode: 'no-cors'  // Beehiiv doesn't return CORS headers
-}).catch(() => {});  // Silently handle — Supabase is the source of truth</pre>
+}).catch(() => {});  // Silently handle, Supabase is the source of truth</pre>
     </div>
   </div>
 
   <div class="callout">
     <div class="callout-title">Why both Supabase + Beehiiv?</div>
-    <p>Supabase is your database — you own the data, can query it, export it, see which source converts best. Beehiiv handles email delivery, open rates, click tracking, and unsubscribes. You get the best of both: data ownership + professional delivery.</p>
+    <p>Supabase is your database, you own the data, can query it, export it, see which source converts best. Beehiiv handles email delivery, open rates, click tracking, and unsubscribes. You get the best of both: data ownership + professional delivery.</p>
   </div>
 </div>
 
@@ -235,18 +235,18 @@ fetch(BEEHIIV_FORM, {
 <!-- PART 3: EMAIL TEMPLATE -->
 <!-- ═══════════════════════════════════ -->
 <div class="section">
-  <div class="section-label"><span class="dot"></span> Part 3 — The Email Template</div>
+  <div class="section-label"><span class="dot"></span> Part 3, The Email Template</div>
   <h2>Your Reusable 3-2-1 Template for Beehiiv</h2>
   <p class="section-desc">Copy this structure into Beehiiv's editor as a reusable template. Every Tuesday, duplicate it and fill in the blanks.</p>
 
   <div class="template-preview">
     <div class="template-header">
-      <span>Subject: The Signal — [Week's hook in under 50 chars]</span>
+      <span>Subject: The Signal, [Week's hook in under 50 chars]</span>
       <span>Preview text: 3 technologies, 2 ideas, 1 tool</span>
     </div>
     <div class="template-body">
 
-      <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.2rem;line-height:1.7">Hey — here's this week's 3-2-1. Three AI developments that matter for your coaching business, two ideas you can use right now, and one tool worth trying.</p>
+      <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.2rem;line-height:1.7">Hey, here's this week's 3-2-1. Three AI developments that matter for your coaching business, two ideas you can use right now, and one tool worth trying.</p>
 
       <!-- 3 Technologies -->
       <div class="template-section">
@@ -291,23 +291,23 @@ fetch(BEEHIIV_FORM, {
           <div class="template-section-title">Tool of the Week</div>
         </div>
         <div class="template-item">
-          <h4>[Tool Name] — [What it does in 5 words]</h4>
+          <h4>[Tool Name], [What it does in 5 words]</h4>
           <p>[What it does + specific use case for coaches + pricing + link. Your honest take.]</p>
         </div>
       </div>
 
       <!-- CTA -->
       <div class="template-cta">
-        <p>[Single CTA — rotate between: "Reply and tell me...", "Book a call", "Download the playbook", or "Try the tool"]</p>
+        <p>[Single CTA, rotate between: "Reply and tell me...", "Book a call", "Download the playbook", or "Try the tool"]</p>
       </div>
 
-      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem;line-height:1.6">— Sunny<br>ElevateAI System · elevateaisystem.com</p>
+      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem;line-height:1.6">- Sunny<br>ElevateAI Systems · elevateaisystem.com</p>
     </div>
   </div>
 
   <div class="warning">
     <div class="warning-title">Rules to Follow</div>
-    <p>Under 800 words total. One CTA per issue. Write in your voice, not a newscaster's. Always coach-relevant — if a coach can't use it this month, cut it. Ship every Tuesday at 8am.</p>
+    <p>Under 800 words total. One CTA per issue. Write in your voice, not a newscaster's. Always coach-relevant, if a coach can't use it this month, cut it. Ship every Tuesday at 8am.</p>
   </div>
 </div>
 
@@ -315,20 +315,20 @@ fetch(BEEHIIV_FORM, {
 <!-- PART 4: WEEKLY WORKFLOW -->
 <!-- ═══════════════════════════════════ -->
 <div class="section">
-  <div class="section-label"><span class="dot"></span> Part 4 — Weekly Workflow</div>
+  <div class="section-label"><span class="dot"></span> Part 4, Weekly Workflow</div>
   <h2>Under 2 Hours Per Week</h2>
   <p class="section-desc">Your production rhythm so it never feels like a chore.</p>
 
   <div class="step">
     <span class="step-num">SUNDAY</span>
     <h3>Scan &amp; Save (20 min)</h3>
-    <p>Scan AI news — X, Hacker News, Ben's Bites, The Neuron, or any AI newsletter you follow. Save 5-8 articles that caught your eye. Don't write yet, just collect.</p>
+    <p>Scan AI news, X, Hacker News, Ben's Bites, The Neuron, or any AI newsletter you follow. Save 5-8 articles that caught your eye. Don't write yet, just collect.</p>
   </div>
 
   <div class="step">
     <span class="step-num">MONDAY AM</span>
     <h3>Draft (45 min)</h3>
-    <p>Pick your 3 technologies, 2 ideas, 1 tool. Open Beehiiv, duplicate the template, fill in the blanks. Use Claude to help draft if needed — then edit for your voice.</p>
+    <p>Pick your 3 technologies, 2 ideas, 1 tool. Open Beehiiv, duplicate the template, fill in the blanks. Use Claude to help draft if needed, then edit for your voice.</p>
   </div>
 
   <div class="step">
@@ -340,7 +340,7 @@ fetch(BEEHIIV_FORM, {
   <div class="step">
     <span class="step-num">TUESDAY</span>
     <h3>Engage (15 min)</h3>
-    <p>It sends. Reply to responses — every reply is a relationship. People who reply to your newsletter become clients.</p>
+    <p>It sends. Reply to responses, every reply is a relationship. People who reply to your newsletter become clients.</p>
   </div>
 </div>
 
@@ -356,7 +356,7 @@ fetch(BEEHIIV_FORM, {
 [ ] Copy your Supabase URL + anon key
 [ ] Paste credentials into index.html and the-3-2-1.html
 [ ] Upload both files to your hosting
-[ ] Test a signup on both pages — check Supabase table
+[ ] Test a signup on both pages, check Supabase table
 [ ] Create Beehiiv account (beehiiv.com)
 [ ] Name publication "The Signal"
 [ ] Set sender as Sunny Binjola + your email
@@ -369,7 +369,7 @@ fetch(BEEHIIV_FORM, {
   </div>
 </div>
 
-<!-- COMPACT SITE LINKS (SEO internal links — auto-injected) -->
+<!-- COMPACT SITE LINKS (SEO internal links, auto-injected) -->
 <footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
 

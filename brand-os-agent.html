@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Brand OS Agent · ElevateAI System</title>
-<meta name="description" content="An AI agent that interviews you and produces your full Brand OS — Avatar, Voice, Pillars, Scripts. Runs in your browser.">
+<title>The Brand OS Agent · ElevateAI Systems</title>
+<meta name="description" content="An AI agent that interviews you and produces your full Brand OS, Avatar, Voice, Pillars, Scripts. Runs in your browser.">
 <meta name="robots" content="noindex,follow">
 
 <style>
@@ -170,14 +170,14 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
 
   // The agent's pre-rendered opening message (also lives in the system prompt
   // so the model knows what it "said" when the user replies).
-  const OPENING = `Hey — I'm the Brand OS Agent. We're going to build your Avatar, Voice, Pillars, and Scripts. By the end you'll have one document that makes every future content/lead/sales decision easier.
+  const OPENING = `Hey, I'm the Brand OS Agent. We're going to build your Avatar, Voice, Pillars, and Scripts. By the end you'll have one document that makes every future content/lead/sales decision easier.
 
 **Two ways to run this:**
 
-1. **Full session (60–90 min)** — All four modules, back to back. Best if you have a quiet morning.
-2. **Module-at-a-time** — Tell me which one first. Pick it up later where you left off.
+1. **Full session (60-90 min)**, All four modules, back to back. Best if you have a quiet morning.
+2. **Module-at-a-time**, Tell me which one first. Pick it up later where you left off.
 
-Also, before we start — are you a coach, consultant, creator, or something else? And roughly what's your monthly revenue? (This calibrates how I probe. No judgment either way.)`;
+Also, before we start, are you a coach, consultant, creator, or something else? And roughly what's your monthly revenue? (This calibrates how I probe. No judgment either way.)`;
 
   // ============================================
   // State
@@ -308,7 +308,7 @@ Also, before we start — are you a coach, consultant, creator, or something els
   }
 
   // ============================================
-  // Init — render opening + any saved session
+  // Init, render opening + any saved session
   // ============================================
   function initOpening(){
     if (history.length === 0) {
