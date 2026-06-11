@@ -27,7 +27,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,0..100;1,9..144,400..900,0..100&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -50,7 +50,6 @@
 :root{
   --bg:#FAF8F3;
   --bg-warm:#F2EEDF;
-  --bg-cream:#F6F1E3;
   --ink:#0A0F1C;
   --ink-soft:#1F2638;
   --muted:#6A6A60;
@@ -58,14 +57,9 @@
   --accent:#0B6E23;
   --accent-dark:#064214;
   --accent-soft:#1F9B47;
-  --copper:#B58A1E;
   --line:#D9D4C5;
   --line-soft:#E8E3D4;
-  --pale:#F0EBDB;
-  --shadow-sm:0 1px 2px rgba(10,15,28,.04);
-  --shadow-md:0 8px 30px rgba(10,15,28,.06);
-  --shadow-lg:0 20px 50px rgba(10,15,28,.08);
-  --fd:'Fraunces', Georgia, serif;
+  --fd:'Playfair Display', Georgia, serif;
   --fb:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --fm:'JetBrains Mono', monospace;
 }
@@ -84,42 +78,32 @@ body{
 }
 ::selection{background:var(--accent);color:var(--bg)}
 a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 
-/* ─── Background grain & warm radial ──────────────────────────── */
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 15% 0%, rgba(11,110,35,.04), transparent 50%),
-    radial-gradient(ellipse at 85% 100%, rgba(181,138,30,.03), transparent 50%);
-  z-index:1;
-}
+/* Subtle warm grain over the warm bg */
 body::after{
   content:'';
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.32;
+  opacity:.28;
   mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .05  0 0 0 0 .06  0 0 0 0 .08  0 0 0 .18 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .05  0 0 0 0 .06  0 0 0 0 .08  0 0 0 .14 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
   z-index:1;
 }
 main,header,footer{position:relative;z-index:2}
 
-/* ─── Top bar ─────────────────────────────────────────────────── */
+/* ───────────────────────────── TOP BAR (single line, 72px) ─────────────────────────────── */
 .bar{
   max-width:1280px;
   margin:0 auto;
-  padding:24px 40px;
+  padding:20px 40px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:24px;
 }
-.bar .left{display:flex;align-items:center;gap:14px}
-.bar .mark{display:flex;align-items:center;gap:10px;line-height:0}
+.bar .mark{display:flex;align-items:center;gap:11px;line-height:0}
 .bar .mark .name{
   font-family:var(--fd);
   font-weight:700;
@@ -128,42 +112,32 @@ main,header,footer{position:relative;z-index:2}
   letter-spacing:-.005em;
   line-height:1;
 }
-.bar .meta{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-  display:flex;
-  align-items:center;
-  gap:18px;
+.bar .right{display:flex;align-items:center;gap:24px}
+.bar .right a.txt{
+  font-size:14.5px;color:var(--muted);
+  transition:color .2s ease;
 }
-.bar .meta .dot{
-  width:5px;height:5px;border-radius:50%;
-  background:var(--accent);
-  display:inline-block;
-  box-shadow:0 0 0 4px rgba(11,110,35,.12);
-  animation:pulse 2.6s ease-in-out infinite;
+.bar .right a.txt:hover{color:var(--ink)}
+.bar .cta-mini{
+  font-family:var(--fb);font-weight:600;font-size:13.5px;
+  background:var(--ink);
+  color:var(--bg);
+  padding:10px 18px;
+  border-radius:100px;
+  letter-spacing:.005em;
+  transition:background .2s ease, transform .2s ease;
 }
-@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(11,110,35,.12)}50%{box-shadow:0 0 0 8px rgba(11,110,35,0)}}
+.bar .cta-mini:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
-/* ─── Hero ────────────────────────────────────────────────────── */
+/* ───────────────────────────── HERO (asymmetric split, 4 elements max) ─────────────────────────────── */
 .hero{
   max-width:1280px;
   margin:0 auto;
-  padding:80px 40px 120px;
+  padding:64px 40px 112px;
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:80px;
   align-items:center;
-  position:relative;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  top:0;left:40px;
-  width:1px;height:60px;
-  background:linear-gradient(to bottom, transparent, var(--accent));
 }
 .eyebrow{
   font-family:var(--fm);
@@ -172,616 +146,296 @@ main,header,footer{position:relative;z-index:2}
   text-transform:uppercase;
   color:var(--accent);
   font-weight:500;
-  margin-bottom:32px;
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
+  margin-bottom:28px;
+  display:inline-flex;align-items:center;gap:12px;
 }
-.eyebrow::before{
-  content:'';width:24px;height:1px;background:var(--accent);
-}
-h1.display{
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+.h-display{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 144, "SOFT" 30, "wght" 600;
-  font-size:clamp(46px, 7.4vw, 96px);
-  line-height:.96;
-  letter-spacing:-.028em;
+  font-weight:700;
+  font-size:clamp(44px, 6.4vw, 80px);
+  line-height:1.02;
+  letter-spacing:-.022em;
   color:var(--ink);
-  margin-bottom:36px;
+  margin-bottom:28px;
+  /* italic descender clearance */
+  padding-bottom:6px;
 }
-h1.display em{
+.h-display em{
   font-style:italic;
-  font-variation-settings:"opsz" 144, "SOFT" 80, "wght" 500;
+  font-weight:600;
   color:var(--accent);
-  display:inline-block;
-  position:relative;
-}
-h1.display em::after{
-  content:'';
-  position:absolute;
-  left:0;right:0;bottom:.06em;
-  height:.22em;
-  background:rgba(11,110,35,.12);
-  z-index:-1;
-  border-radius:2px;
 }
 .lede{
-  font-size:20px;
+  font-size:19px;
   line-height:1.55;
   color:var(--ink-soft);
-  max-width:540px;
-  margin-bottom:42px;
+  max-width:520px;
+  margin-bottom:40px;
 }
-.cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.ctas{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .cta{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  font-family:var(--fb);
-  font-weight:600;
-  font-size:15.5px;
-  letter-spacing:.005em;
-  padding:17px 30px;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fb);font-weight:600;font-size:15.5px;
+  padding:16px 28px;
   border-radius:100px;
   transition:all .25s cubic-bezier(.2,.7,.3,1);
-  position:relative;
   white-space:nowrap;
+  cursor:pointer;
+  letter-spacing:.005em;
 }
 .cta.primary{
   background:var(--ink);
   color:var(--bg);
-  box-shadow:var(--shadow-md);
+  box-shadow:0 8px 24px rgba(10,15,28,.10);
 }
 .cta.primary:hover{
   background:var(--accent-dark);
   transform:translateY(-2px);
-  box-shadow:var(--shadow-lg);
+  box-shadow:0 14px 36px rgba(10,15,28,.14);
 }
-.cta.primary .arrow{transition:transform .25s ease}
-.cta.primary:hover .arrow{transform:translateX(4px)}
+.cta.primary .arr{transition:transform .25s ease}
+.cta.primary:hover .arr{transform:translateX(4px)}
 .cta.ghost{
-  color:var(--ink);
-  font-weight:500;
-  padding:17px 0;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
+  color:var(--ink);font-weight:500;
+  padding:16px 0;
+  display:inline-flex;align-items:center;gap:8px;
 }
 .cta.ghost::after{
-  content:'';
-  display:inline-block;
-  width:22px;height:1px;
-  background:var(--ink);
-  transition:width .25s ease;
+  content:'';display:inline-block;
+  width:22px;height:1px;background:var(--ink);
+  transition:width .25s ease, background .25s ease;
 }
 .cta.ghost:hover::after{width:34px;background:var(--accent)}
+.cta.ghost:hover{color:var(--accent)}
 
-.hero-meta{
-  margin-top:48px;
-  display:flex;align-items:center;gap:24px;
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.hero-meta b{color:var(--ink);font-weight:600}
-.hero-meta .sep{width:1px;height:14px;background:var(--line)}
-
-/* ─── Hero graphic ────────────────────────────────────────────── */
-.hero-art{
+/* Hero photo (real photography, swap with your own) */
+.hero-photo{
   position:relative;
   justify-self:center;
   width:100%;
-  max-width:520px;
-  aspect-ratio:1/1;
+  max-width:500px;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:6px;
+  background:var(--bg-warm);
+  box-shadow:0 30px 60px rgba(10,15,28,.10);
 }
-.hero-art svg{
+.hero-photo img{
   width:100%;height:100%;
-  filter:drop-shadow(0 30px 80px rgba(11,110,35,.12));
+  object-fit:cover;
+  filter:saturate(.88) contrast(.96);
 }
-.hero-art .float{
-  animation:floaty 8s ease-in-out infinite;
-  transform-origin:center;
+.hero-photo::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(10,15,28,.18));
+  pointer-events:none;
 }
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero-art .ring{
-  animation:spin 80s linear infinite;
-  transform-origin:center;
-}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.hero-art .pulse-line{
-  stroke-dasharray:200;
-  stroke-dashoffset:200;
-  animation:draw 3s ease-out forwards;
-}
-@keyframes draw{to{stroke-dashoffset:0}}
 
-/* ─── Decorative section divider ─────────────────────────────── */
-.divider{
-  max-width:1280px;
-  margin:40px auto;
-  padding:0 40px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-.divider .line{flex:1;height:1px;background:var(--line)}
-.divider .leaf{flex-shrink:0}
-
-/* ─── Trust strip ─────────────────────────────────────────────── */
+/* ───────────────────────────── TRUST (3 principles, no eyebrow) ─────────────────────────────── */
 .trust{
   max-width:1280px;
   margin:0 auto;
-  padding:48px 40px 96px;
-  border-top:1px solid var(--line);
+  padding:24px 40px 112px;
 }
-.trust .who{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+.trust .top{
+  font-family:var(--fd);
+  font-weight:500;
+  font-style:italic;
+  font-size:21px;
+  line-height:1.4;
   color:var(--muted);
-  margin-bottom:32px;
   text-align:center;
+  max-width:680px;
+  margin:0 auto 64px;
+  border-top:1px solid var(--line);
+  padding-top:48px;
 }
-.trust .principles{
+.trust .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:0;
+  gap:48px;
 }
-.trust .pr{
-  padding:0 32px;
-  position:relative;
-}
-.trust .pr + .pr{border-left:1px solid var(--line)}
-.trust .pr .pn{
+.trust .pr{padding:0 8px}
+.trust .pr .num{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 100, "SOFT" 50, "wght" 700;
-  font-size:42px;
+  font-weight:500;
+  font-style:italic;
+  font-size:44px;
   line-height:1;
   color:var(--accent);
-  margin-bottom:14px;
-  font-style:italic;
+  margin-bottom:18px;
 }
-.trust .pr .pt{
+.trust .pr h3{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 24, "wght" 700;
-  font-size:19px;
-  line-height:1.3;
+  font-weight:700;
+  font-size:21px;
+  line-height:1.25;
   color:var(--ink);
-  margin-bottom:8px;
+  margin-bottom:12px;
   letter-spacing:-.005em;
 }
-.trust .pr .pb{
-  font-size:14.5px;
-  line-height:1.5;
-  color:var(--muted);
-}
+.trust .pr p{font-size:15.5px;line-height:1.6;color:var(--muted)}
 
-/* ─── Section base ────────────────────────────────────────────── */
+/* ───────────────────────────── SECTION BASE ─────────────────────────────── */
 section{position:relative}
 .section{
   max-width:1280px;
   margin:0 auto;
-  padding:120px 40px;
+  padding:112px 40px;
 }
-.label{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--accent);
-  font-weight:500;
-  margin-bottom:24px;
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-}
-.label::before{
-  content:'';
-  width:18px;height:1px;background:var(--accent);
-  display:inline-block;
-}
-h2.display{
+.h2{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 96, "SOFT" 40, "wght" 600;
-  font-size:clamp(36px, 4.6vw, 60px);
-  line-height:1.02;
-  letter-spacing:-.022em;
+  font-weight:700;
+  font-size:clamp(34px, 4.4vw, 54px);
+  line-height:1.05;
+  letter-spacing:-.018em;
   color:var(--ink);
-  margin-bottom:32px;
+  margin-bottom:28px;
   max-width:760px;
+  padding-bottom:4px;
 }
-h2.display em{
+.h2 em{
   font-style:italic;
-  font-variation-settings:"opsz" 96, "SOFT" 90, "wght" 500;
+  font-weight:600;
   color:var(--accent);
 }
-p.body{
+.body{
   font-size:18px;
   line-height:1.65;
   color:var(--ink-soft);
   margin-bottom:18px;
   max-width:580px;
 }
-p.body.muted{color:var(--muted)}
+.body.muted{color:var(--muted)}
 
-/* ─── Problem section ─────────────────────────────────────────── */
+/* ───────────────────────────── PROBLEM (split reversed, real photo on left) ─────────────────────────────── */
 .problem{
   display:grid;
-  grid-template-columns:.85fr 1.15fr;
+  grid-template-columns:.92fr 1.08fr;
   gap:80px;
   align-items:center;
 }
-.problem-art{
+.problem-photo{
   position:relative;
   width:100%;
-  max-width:440px;
-  aspect-ratio:1/1;
-  justify-self:center;
-}
-.problem-art svg{width:100%;height:100%}
-.loop-arrow{
-  stroke-dasharray:400;
-  stroke-dashoffset:400;
-}
-.in-view .loop-arrow{
-  animation:draw 2.4s ease-out forwards;
-}
-
-/* ─── Reframe ─────────────────────────────────────────────────── */
-.reframe{
-  text-align:center;
-}
-.reframe h2.display{margin-left:auto;margin-right:auto}
-.reframe p.body{margin-left:auto;margin-right:auto;text-align:center}
-.reframe-grid{
-  margin-top:64px;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  gap:24px;
-  align-items:center;
-  max-width:920px;
-  margin-left:auto;margin-right:auto;
-}
-.rf-panel{
-  background:var(--bg-cream);
-  border:1px solid var(--line-soft);
-  border-radius:18px;
-  padding:36px 32px;
-  text-align:left;
-  min-height:260px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  position:relative;
+  max-width:480px;
+  aspect-ratio:5/6;
   overflow:hidden;
+  border-radius:6px;
+  background:var(--bg-warm);
+  box-shadow:0 24px 50px rgba(10,15,28,.08);
 }
-.rf-panel.after{
-  background:var(--ink);
-  color:var(--bg);
-  border-color:var(--ink);
+.problem-photo img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(.78) contrast(.94) brightness(.96);
 }
-.rf-panel.after .rf-h{color:var(--bg)}
-.rf-panel.after .rf-b{color:rgba(250,248,243,.75)}
-.rf-panel .rf-tag{
-  font-family:var(--fm);
-  font-size:10.5px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:500;
-  margin-bottom:14px;
-  color:var(--muted);
-}
-.rf-panel.after .rf-tag{color:rgba(250,248,243,.5)}
-.rf-panel .rf-h{
-  font-family:var(--fd);
-  font-variation-settings:"opsz" 48, "SOFT" 50, "wght" 700;
-  font-size:22px;
-  line-height:1.2;
-  color:var(--ink);
-  margin-bottom:12px;
-  letter-spacing:-.012em;
-}
-.rf-panel .rf-b{
-  font-size:14.5px;
-  line-height:1.55;
-  color:var(--muted);
-}
-.rf-panel .rf-svg{
-  margin-top:16px;
-  width:100%;
-  height:88px;
-}
-.rf-arrow{display:flex;align-items:center;justify-content:center}
-.rf-arrow svg{width:48px;height:48px;color:var(--accent)}
 
-/* ─── Five calls timeline ─────────────────────────────────────── */
-.calls-wrap{
-  max-width:920px;
-  margin:64px auto 0;
-  position:relative;
+/* ───────────────────────────── REFRAME (centered, single column) ─────────────────────────────── */
+.reframe{text-align:center;max-width:780px;margin:0 auto}
+.reframe .h2{margin-left:auto;margin-right:auto}
+.reframe .body{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ───────────────────────────── THE FIVE CALLS (vertical, serif numerals, no icons) ─────────────────────────────── */
+.calls-head{max-width:780px;margin:0 auto 48px;text-align:center}
+.calls-head .h2{margin-left:auto;margin-right:auto}
+.calls-head p{
+  font-family:var(--fd);font-style:italic;font-weight:500;
+  font-size:21px;color:var(--muted);
+  margin:0 auto;max-width:560px;
 }
-.calls-wrap::before{
-  content:'';
-  position:absolute;
-  left:62px;
-  top:48px;bottom:48px;
-  width:1px;
-  background:linear-gradient(to bottom,
-    transparent 0%,
-    var(--line) 8%,
-    var(--line) 92%,
-    transparent 100%);
-}
+.calls{max-width:880px;margin:0 auto;border-top:1px solid var(--line)}
 .call{
   display:grid;
-  grid-template-columns:128px 1fr;
-  gap:32px;
-  align-items:flex-start;
-  padding:32px 0;
-  position:relative;
+  grid-template-columns:140px 1fr;
+  gap:48px;
+  padding:42px 0;
+  border-bottom:1px solid var(--line);
+  align-items:baseline;
 }
-.call:not(:last-child)::after{
-  content:'';
-  position:absolute;
-  left:128px;right:0;bottom:0;
-  height:1px;
-  background:var(--line-soft);
-}
-.call .index{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:14px;
-  position:relative;
-  z-index:1;
-}
-.call .index .icon{
-  width:64px;height:64px;
-  background:var(--bg);
-  border:1px solid var(--line);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--accent);
-  position:relative;
-  z-index:1;
-  transition:all .35s ease;
-}
-.call:hover .index .icon{
-  border-color:var(--accent);
-  transform:scale(1.06);
-  background:var(--bg-warm);
-}
-.call .index .icon svg{width:32px;height:32px}
-.call .index .n{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.2em;
-  color:var(--muted);
-  font-weight:500;
-}
-.call .body{padding-top:6px}
-.call .body .nm{
+.call .n{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 48, "SOFT" 40, "wght" 700;
-  font-size:30px;
-  line-height:1.1;
+  font-weight:500;
+  font-style:italic;
+  font-size:54px;
+  line-height:1;
+  color:var(--accent);
+  padding-top:6px;
+}
+.call .nm{
+  font-family:var(--fd);
+  font-weight:700;
+  font-size:32px;
+  line-height:1.12;
   letter-spacing:-.014em;
   color:var(--ink);
-  margin-bottom:10px;
+  margin-bottom:12px;
+  padding-bottom:4px;
 }
-.call .body .nm em{
+.call .nm em{
   font-style:italic;
+  font-weight:600;
   color:var(--accent);
-  font-variation-settings:"opsz" 48, "SOFT" 80, "wght" 600;
 }
-.call .body .b{
-  font-size:16.5px;
-  line-height:1.6;
+.call .b{
+  font-size:17px;line-height:1.6;
   color:var(--muted);
   max-width:560px;
+  margin-bottom:14px;
 }
-.call .body .meta{
+.call .meta{
   font-family:var(--fm);
-  font-size:10.5px;
+  font-size:11px;
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--accent);
-  margin-top:12px;
   font-weight:500;
 }
 
-/* ─── Outcomes ────────────────────────────────────────────────── */
-.outcomes-section{
-  background:var(--bg-warm);
-  padding:120px 0;
-  margin-top:40px;
-  position:relative;
-}
-.outcomes-section::before,
-.outcomes-section::after{
-  content:'';
-  position:absolute;
-  left:0;right:0;height:1px;
-  background:var(--line);
-}
-.outcomes-section::before{top:0}
-.outcomes-section::after{bottom:0}
-.outcomes-inner{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 40px;
-}
-.outcomes-head{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:end;
-  margin-bottom:72px;
-}
-.outcomes-head h2{margin-bottom:0}
-.outcomes-head p{color:var(--muted);font-size:18px;line-height:1.55;max-width:440px}
-.outcomes-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-}
-.outcome{
-  background:var(--bg);
-  border:1px solid var(--line-soft);
-  border-radius:20px;
-  padding:40px 36px;
-  position:relative;
-  transition:all .3s ease;
-}
-.outcome:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-md);
-  border-color:var(--line);
-}
-.outcome .icon{
-  width:56px;height:56px;
-  background:var(--bg-cream);
-  border-radius:14px;
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:28px;
-  color:var(--accent);
-}
-.outcome .icon svg{width:30px;height:30px}
-.outcome h3{
-  font-family:var(--fd);
-  font-variation-settings:"opsz" 36, "SOFT" 30, "wght" 700;
-  font-size:24px;
-  line-height:1.2;
-  letter-spacing:-.012em;
-  color:var(--ink);
-  margin-bottom:14px;
-}
-.outcome p{
-  font-size:15.5px;
-  line-height:1.55;
-  color:var(--muted);
-}
-
-/* ─── Disqualifier ────────────────────────────────────────────── */
+/* ───────────────────────────── DISQUALIFIER (2-col simple) ─────────────────────────────── */
+.dq-head{max-width:680px;margin:0 auto 56px;text-align:center}
 .dq{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:32px;
-  margin-top:48px;
-}
-.dq-panel{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:40px 36px;
-  background:var(--bg);
-  position:relative;
-}
-.dq-panel.yes{border-color:var(--accent);background:linear-gradient(180deg, rgba(11,110,35,.04) 0%, var(--bg) 100%)}
-.dq-panel .tag{
-  font-family:var(--fm);
-  font-size:10.5px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:600;
-  margin-bottom:18px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-}
-.dq-panel.no .tag{color:var(--muted)}
-.dq-panel.yes .tag{color:var(--accent)}
-.dq-panel .tag .mark{
-  width:18px;height:18px;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--fb);
-  font-weight:700;
-}
-.dq-panel.no .tag .mark{background:var(--line);color:var(--muted)}
-.dq-panel.yes .tag .mark{background:var(--accent);color:var(--bg)}
-.dq-panel h3{
-  font-family:var(--fd);
-  font-variation-settings:"opsz" 36, "SOFT" 40, "wght" 700;
-  font-size:22px;
-  line-height:1.2;
-  letter-spacing:-.012em;
-  color:var(--ink);
-  margin-bottom:18px;
-}
-.dq-panel ul{list-style:none;padding:0;margin:0}
-.dq-panel li{
-  font-size:16px;
-  line-height:1.55;
-  color:var(--ink-soft);
-  padding:14px 0;
-  border-top:1px solid var(--line-soft);
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
-}
-.dq-panel li:first-child{border-top:none;padding-top:6px}
-.dq-panel li .dot{
-  margin-top:9px;
-  flex-shrink:0;
-  width:5px;height:5px;
-  border-radius:50%;
-  background:var(--line);
-}
-.dq-panel.yes li .dot{background:var(--accent)}
-
-/* ─── Scarcity ────────────────────────────────────────────────── */
-.scarcity{
-  text-align:center;
-  padding:80px 40px 120px;
-  max-width:880px;
+  gap:64px;
+  max-width:1040px;
   margin:0 auto;
 }
-.scarcity .quote{
+.dq .col h3{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 120, "SOFT" 60, "wght" 500;
-  font-style:italic;
-  font-size:clamp(28px, 3.6vw, 42px);
-  line-height:1.18;
-  letter-spacing:-.012em;
+  font-weight:700;
+  font-size:24px;
+  line-height:1.2;
   color:var(--ink);
-  margin-bottom:32px;
-  position:relative;
-  display:inline-block;
+  margin-bottom:24px;
+  letter-spacing:-.008em;
 }
-.scarcity .quote::before{
-  content:'';
-  display:block;
-  width:48px;height:1px;
-  background:var(--accent);
-  margin:0 auto 32px;
+.dq .col.yes h3{color:var(--accent)}
+.dq ul{list-style:none;padding:0;margin:0}
+.dq li{
+  font-size:16.5px;line-height:1.55;
+  color:var(--ink-soft);
+  padding:16px 0;
+  border-top:1px solid var(--line-soft);
 }
-.scarcity .by{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-top:20px;
-}
+.dq li:first-child{border-top:none;padding-top:4px}
 
-/* ─── Close ───────────────────────────────────────────────────── */
-.close-section{
+/* ───────────────────────────── CLOSE (dark, allowed Color Block Story) ─────────────────────────────── */
+.close{
   background:var(--ink);
   color:var(--bg);
-  padding:140px 0;
+  padding:128px 0;
   position:relative;
   overflow:hidden;
 }
-.close-section::before{
+.close::before{
   content:'';
-  position:absolute;
-  inset:0;
+  position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(11,110,35,.22), transparent 50%),
-    radial-gradient(ellipse at 80% 100%, rgba(181,138,30,.10), transparent 50%);
+    radial-gradient(ellipse at 20% 10%, rgba(31,155,71,.18), transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(11,110,35,.10), transparent 55%);
   pointer-events:none;
 }
 .close-inner{
@@ -789,258 +443,162 @@ p.body.muted{color:var(--muted)}
   margin:0 auto;
   padding:0 40px;
   display:grid;
-  grid-template-columns:1.2fr .8fr;
+  grid-template-columns:1.15fr .85fr;
   gap:80px;
   align-items:center;
   position:relative;
 }
-.close-section .label{color:var(--accent-soft)}
-.close-section .label::before{background:var(--accent-soft)}
-.close-section h2.display{
-  color:var(--bg);
-  font-size:clamp(36px, 4.8vw, 60px);
-  margin-bottom:32px;
-}
-.close-section h2.display em{color:var(--accent-soft)}
-.close-section .body{
-  color:rgba(250,248,243,.75);
-  font-size:17px;
-  line-height:1.6;
-  max-width:520px;
-  margin-bottom:36px;
-}
-.close-section .cta.primary{
-  background:var(--bg);
-  color:var(--ink);
-}
-.close-section .cta.primary:hover{
-  background:var(--accent-soft);
-  color:var(--ink);
-}
-.close-section .cta.ghost{color:var(--bg)}
-.close-section .cta.ghost::after{background:var(--bg)}
-.close-section .cta.ghost:hover::after{background:var(--accent-soft)}
-.close-section .fineprint{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
+.close .eyebrow{color:var(--accent-soft)}
+.close .eyebrow::before{background:var(--accent-soft)}
+.close .h2{color:var(--bg);max-width:520px}
+.close .h2 em{color:var(--accent-soft)}
+.close .body{color:rgba(250,248,243,.78);max-width:520px}
+.close .cta.primary{background:var(--bg);color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.30)}
+.close .cta.primary:hover{background:var(--accent-soft);color:var(--ink)}
+.close .cta.ghost{color:var(--bg)}
+.close .cta.ghost::after{background:var(--bg)}
+.close .cta.ghost:hover{color:var(--accent-soft)}
+.close .cta.ghost:hover::after{background:var(--accent-soft);width:34px}
+.close .fineprint{
+  font-family:var(--fm);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;
   color:rgba(250,248,243,.5);
-  margin-top:32px;
+  margin-top:28px;
 }
-
-/* Pricing card on close section */
-.price-card{
-  background:rgba(250,248,243,.04);
-  border:1px solid rgba(250,248,243,.12);
-  border-radius:24px;
-  padding:36px 36px 32px;
-  backdrop-filter:blur(8px);
-  position:relative;
+.offer{
+  padding:36px 0;
+  border-top:1px solid rgba(250,248,243,.18);
+  border-bottom:1px solid rgba(250,248,243,.18);
 }
-.price-card::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:24px;
-  padding:1px;
-  background:linear-gradient(135deg, rgba(11,110,35,.4), transparent 50%, rgba(181,138,30,.18));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  pointer-events:none;
-}
-.price-card .pc-label{
-  font-family:var(--fm);
-  font-size:10.5px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+.offer .lbl{
+  font-family:var(--fm);font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;
   color:var(--accent-soft);
-  font-weight:500;
-  margin-bottom:14px;
+  margin-bottom:18px;
 }
-.price-card .pc-amt{
+.offer .amt{
   font-family:var(--fd);
-  font-variation-settings:"opsz" 144, "SOFT" 60, "wght" 700;
-  font-size:72px;
-  line-height:1;
+  font-weight:700;
+  font-size:88px;
+  line-height:.95;
   color:var(--bg);
-  letter-spacing:-.025em;
-  margin-bottom:6px;
+  letter-spacing:-.026em;
+  margin-bottom:10px;
 }
-.price-card .pc-amt sup{
-  font-size:28px;
+.offer .amt sup{
+  font-size:34px;
   vertical-align:super;
   letter-spacing:0;
+  font-weight:600;
 }
-.price-card .pc-sub{
-  font-family:var(--fm);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
+.offer .sub{
+  font-family:var(--fm);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;
   color:rgba(250,248,243,.55);
-  margin-bottom:28px;
+  margin-bottom:24px;
 }
-.price-card ul{list-style:none;padding:0;margin:0 0 28px}
-.price-card li{
-  display:flex;align-items:flex-start;gap:12px;
+.offer ul{list-style:none;padding:0;margin:0}
+.offer li{
+  font-size:15px;line-height:1.55;
+  color:rgba(250,248,243,.86);
   padding:10px 0;
-  font-size:14.5px;
-  color:rgba(250,248,243,.85);
-  border-top:1px solid rgba(250,248,243,.08);
+  border-top:1px solid rgba(250,248,243,.10);
 }
-.price-card li:first-child{border-top:none}
-.price-card li::before{
-  content:'';
-  margin-top:8px;flex-shrink:0;
-  width:6px;height:6px;
-  background:var(--accent-soft);
-  border-radius:50%;
-}
-.price-card .cta{width:100%;justify-content:center}
+.offer li:first-child{border-top:none;padding-top:4px}
 
-/* ─── Sign-off ────────────────────────────────────────────────── */
+/* ───────────────────────────── SIGN-OFF ─────────────────────────────── */
 .signoff{
-  max-width:1080px;
+  max-width:880px;
   margin:0 auto;
-  padding:120px 40px;
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:48px;
-  align-items:center;
+  padding:112px 40px;
+  text-align:center;
 }
-.signoff .portrait{
-  width:160px;height:160px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 30% 30%, var(--accent-soft), var(--accent) 60%, var(--accent-dark)) ;
-  position:relative;
-  overflow:hidden;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--bg);
-  box-shadow:var(--shadow-md);
-}
-.signoff .portrait .initial{
+.signoff .open{
   font-family:var(--fd);
   font-style:italic;
-  font-variation-settings:"opsz" 144, "SOFT" 90, "wght" 500;
-  font-size:88px;
-  line-height:1;
-}
-.signoff .portrait::after{
-  content:'';
-  position:absolute;
-  inset:-1px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.16);
-}
-.signoff .who .open{
-  font-family:var(--fd);
-  font-style:italic;
-  font-variation-settings:"opsz" 96, "SOFT" 70, "wght" 500;
-  font-size:30px;
-  line-height:1.25;
+  font-weight:500;
+  font-size:clamp(24px, 2.8vw, 34px);
+  line-height:1.32;
   color:var(--ink);
-  letter-spacing:-.012em;
-  margin-bottom:16px;
+  letter-spacing:-.01em;
+  margin-bottom:36px;
+  padding-bottom:8px;
 }
-.signoff .who .nm{
-  font-family:var(--fd);
-  font-variation-settings:"opsz" 36, "wght" 700;
-  font-size:20px;
-  color:var(--ink);
-  margin-bottom:4px;
+.signoff .nm{
+  font-family:var(--fd);font-weight:700;
+  font-size:19px;color:var(--ink);
+  margin-bottom:6px;
 }
-.signoff .who .role{
-  font-family:var(--fm);
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
+.signoff .role{
+  font-family:var(--fm);font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);
 }
 
-/* ─── Footer ──────────────────────────────────────────────────── */
+/* ───────────────────────────── FOOTER ─────────────────────────────── */
 footer.site{
   border-top:1px solid var(--line);
-  padding:48px 40px 64px;
+  padding:36px 40px 48px;
 }
 footer.site .inner{
   max-width:1280px;
   margin:0 auto;
   display:grid;
   grid-template-columns:auto 1fr auto;
-  gap:48px;
+  gap:36px;
   align-items:center;
 }
-footer.site .brand{
-  display:flex;align-items:center;gap:12px;
-}
-footer.site .brand .nm{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:16px;
-  color:var(--ink);
-}
-footer.site .nav{
-  display:flex;gap:32px;justify-content:center;
-}
-footer.site .nav a{
-  font-size:14px;
-  color:var(--muted);
-  transition:color .2s ease;
-}
+footer.site .brand{display:flex;align-items:center;gap:11px}
+footer.site .brand .nm{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--ink)}
+footer.site .nav{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+footer.site .nav a{font-size:13.5px;color:var(--muted);transition:color .2s ease}
 footer.site .nav a:hover{color:var(--accent)}
-footer.site .email{
-  font-size:13px;
-  color:var(--muted);
-}
+footer.site .email{font-size:13px;color:var(--muted)}
 footer.site .email a{color:var(--ink);font-weight:500}
 footer.site .email a:hover{color:var(--accent)}
 
-/* ─── Reveal animations ──────────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease, transform .9s ease}
+/* ───────────────────────────── REVEAL (motion 5/10) ─────────────────────────────── */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+}
 .reveal.in-view{opacity:1;transform:translateY(0)}
-.delay-1{transition-delay:.1s}
-.delay-2{transition-delay:.2s}
-.delay-3{transition-delay:.3s}
+.d1{transition-delay:.08s}
+.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}
 
-/* ─── Responsive ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  .reveal,.reveal.in-view{opacity:1;transform:none;transition:none}
+  .cta.primary:hover{transform:none}
+}
+
+/* ───────────────────────────── RESPONSIVE (single-col below 960) ─────────────────────────────── */
 @media(max-width:960px){
   .bar{padding:18px 22px}
-  .bar .meta{display:none}
-  .hero{padding:48px 22px 80px;grid-template-columns:1fr;gap:48px}
-  .hero::before{display:none}
-  .hero-art{max-width:340px;order:-1}
-  .lede{font-size:17.5px}
-  .hero-meta{flex-wrap:wrap;gap:14px}
+  .bar .right a.txt{display:none}
+  .hero{padding:40px 22px 72px;grid-template-columns:1fr;gap:48px}
+  .hero-photo{max-width:380px;order:-1;aspect-ratio:4/5}
+  .h-display{font-size:clamp(36px, 9vw, 56px)}
+  .lede{font-size:17px}
   .section{padding:80px 22px}
+  .trust{padding:0 22px 80px}
+  .trust .grid{grid-template-columns:1fr;gap:32px;text-align:left}
+  .trust .top{font-size:18px;padding-top:36px;margin-bottom:48px}
   .problem{grid-template-columns:1fr;gap:48px}
-  .problem-art{order:-1;max-width:320px}
-  .reframe-grid{grid-template-columns:1fr;gap:14px}
-  .rf-arrow{transform:rotate(90deg)}
-  .calls-wrap::before{left:32px}
-  .call{grid-template-columns:80px 1fr;gap:18px;padding:24px 0}
-  .call:not(:last-child)::after{left:80px}
-  .call .index{gap:8px}
-  .call .index .icon{width:56px;height:56px}
-  .call .index .icon svg{width:26px;height:26px}
-  .call .body .nm{font-size:24px}
-  .outcomes-section{padding:80px 0}
-  .outcomes-inner{padding:0 22px}
-  .outcomes-head{grid-template-columns:1fr;gap:18px;margin-bottom:48px}
-  .outcomes-grid{grid-template-columns:1fr;gap:18px}
-  .dq{grid-template-columns:1fr;gap:18px}
-  .close-section{padding:96px 0}
-  .close-inner{grid-template-columns:1fr;gap:48px;padding:0 22px}
-  .price-card .pc-amt{font-size:56px}
-  .signoff{grid-template-columns:1fr;gap:24px;padding:80px 22px;text-align:center}
-  .signoff .portrait{justify-self:center}
-  .trust .principles{grid-template-columns:1fr;gap:32px}
-  .trust .pr{padding:0}
-  .trust .pr + .pr{border-left:none;border-top:1px solid var(--line);padding-top:32px}
+  .problem-photo{order:-1;max-width:340px}
+  .h2{font-size:clamp(28px, 8vw, 40px)}
+  .calls{margin-top:32px}
+  .call{grid-template-columns:64px 1fr;gap:20px;padding:32px 0}
+  .call .n{font-size:36px}
+  .call .nm{font-size:24px}
+  .dq{grid-template-columns:1fr;gap:48px}
+  .close{padding:88px 0}
+  .close-inner{grid-template-columns:1fr;gap:56px;padding:0 22px}
+  .offer .amt{font-size:68px}
+  .signoff{padding:80px 22px}
+  footer.site{padding:32px 22px 40px}
   footer.site .inner{grid-template-columns:1fr;gap:24px;text-align:center}
   footer.site .brand,footer.site .nav,footer.site .email{justify-content:center}
 }
@@ -1049,223 +607,81 @@ footer.site .email a:hover{color:var(--accent)}
 <body>
 
 <header class="bar">
-  <div class="left">
-    <a href="/" class="mark" aria-label="ElevateAI Systems">
-      <svg viewBox="0 0 88 88" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="8" width="72" height="72" rx="18" fill="#0B6E23"/>
-        <path d="M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z" fill="#FAF8F3"/>
-        <path d="M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9" stroke="#FAF8F3" stroke-width="5" stroke-linecap="round" fill="none"/>
-      </svg>
-      <span class="name">ElevateAI</span>
-    </a>
-  </div>
-  <div class="meta">
-    <span><b>The Resonance Build</b></span>
-    <span class="sep"></span>
-    <span><span class="dot"></span> Taking June applicants</span>
+  <a href="/" class="mark" aria-label="ElevateAI Systems">
+    <svg viewBox="0 0 88 88" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="8" width="72" height="72" rx="18" fill="#0B6E23"/>
+      <path d="M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z" fill="#FAF8F3"/>
+      <path d="M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9" stroke="#FAF8F3" stroke-width="5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="name">ElevateAI</span>
+  </a>
+  <div class="right">
+    <a href="/brand-os" class="txt">Brand OS</a>
+    <a href="https://cal.com/sunny-binjola/resonance-call" class="cta-mini">Book the first call</a>
   </div>
 </header>
 
 <main>
 
-  <!-- ─── HERO ──────────────────────────────────────────────── -->
+  <!-- HERO ─────────────────────────────────────────────────────────────────────── -->
   <section class="hero">
     <div>
-      <div class="eyebrow reveal">The Resonance Build &middot; $2,000</div>
-      <h1 class="display reveal delay-1">
-        Five calls. Thirty days. <em>The voice no one can clone.</em>
+      <div class="eyebrow reveal">The Resonance Build</div>
+      <h1 class="h-display reveal d1">
+        Five calls. Thirty days.<br/>
+        <em>The voice no one can clone.</em>
       </h1>
-      <p class="lede reveal delay-2">
-        I sit with you for five hours over thirty days and pull the real signal out. Your voice. Your clients&rsquo; actual words. The one thing only you say. Those calls become an engine that compounds every time you talk to a client.
+      <p class="lede reveal d2">
+        Five hours over thirty days. We pull your real signal and wire it into an engine that compounds.
       </p>
-      <div class="cta-row reveal delay-3">
+      <div class="ctas reveal d3">
         <a href="https://cal.com/sunny-binjola/resonance-call" class="cta primary">
           Book the first call
-          <svg class="arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13M8 2l6 6-6 6"/></svg>
+          <svg class="arr" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13M8 2l6 6-6 6"/></svg>
         </a>
         <a href="#what-we-do" class="cta ghost">See the five calls</a>
       </div>
-      <div class="hero-meta reveal delay-3">
-        <span><b>30 days</b> &middot; build window</span>
-        <span class="sep"></span>
-        <span><b>5 hours</b> &middot; with me, on Zoom</span>
-        <span class="sep"></span>
-        <span>Small batch &middot; capacity-capped</span>
-      </div>
     </div>
 
-    <!-- Hero engine graphic -->
-    <div class="hero-art reveal delay-2">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <radialGradient id="haloG" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#0B6E23" stop-opacity=".18"/>
-            <stop offset="55%" stop-color="#0B6E23" stop-opacity=".04"/>
-            <stop offset="100%" stop-color="#0B6E23" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="leafG" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#1F9B47"/>
-            <stop offset="100%" stop-color="#0B6E23"/>
-          </linearGradient>
-          <linearGradient id="leafD" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0B6E23"/>
-            <stop offset="100%" stop-color="#064214"/>
-          </linearGradient>
-        </defs>
-
-        <!-- atmospheric halo -->
-        <circle cx="260" cy="260" r="240" fill="url(#haloG)"/>
-
-        <!-- outer rotating ring -->
-        <g class="ring">
-          <circle cx="260" cy="260" r="220" fill="none" stroke="#D9D4C5" stroke-width="1" stroke-dasharray="2 8"/>
-        </g>
-
-        <!-- inner ring with notches -->
-        <g class="float">
-          <circle cx="260" cy="260" r="175" fill="none" stroke="#0B6E2330" stroke-width="1"/>
-          <circle cx="260" cy="260" r="175" fill="none" stroke="#0B6E23" stroke-width="2" stroke-dasharray="6 280" stroke-dashoffset="-40"/>
-          <circle cx="260" cy="260" r="175" fill="none" stroke="#0B6E23" stroke-width="2" stroke-dasharray="6 280" stroke-dashoffset="-200"/>
-        </g>
-
-        <!-- compass marks -->
-        <g stroke="#9A9A8E" stroke-width="1" stroke-linecap="round">
-          <line x1="260" y1="70" x2="260" y2="80"/>
-          <line x1="260" y1="440" x2="260" y2="450"/>
-          <line x1="70" y1="260" x2="80" y2="260"/>
-          <line x1="440" y1="260" x2="450" y2="260"/>
-        </g>
-
-        <!-- five orbiting nodes (the five calls) -->
-        <g class="float">
-          <!-- 01 top -->
-          <g transform="translate(260, 90)">
-            <circle r="22" fill="#FAF8F3" stroke="#0B6E23" stroke-width="1.5"/>
-            <circle r="6" fill="#0B6E23"/>
-            <text x="32" y="6" font-family="JetBrains Mono, monospace" font-size="11" fill="#0B6E23" letter-spacing="2">01</text>
-          </g>
-          <!-- 02 upper right -->
-          <g transform="translate(421, 175)">
-            <circle r="18" fill="#FAF8F3" stroke="#1F9B47" stroke-width="1.5"/>
-            <circle r="5" fill="#1F9B47"/>
-            <text x="26" y="5" font-family="JetBrains Mono, monospace" font-size="10" fill="#1F9B47" letter-spacing="2">02</text>
-          </g>
-          <!-- 03 lower right -->
-          <g transform="translate(421, 345)">
-            <circle r="18" fill="#FAF8F3" stroke="#0B6E23" stroke-width="1.5"/>
-            <circle r="5" fill="#0B6E23"/>
-            <text x="26" y="5" font-family="JetBrains Mono, monospace" font-size="10" fill="#0B6E23" letter-spacing="2">03</text>
-          </g>
-          <!-- 04 lower left -->
-          <g transform="translate(99, 345)">
-            <circle r="18" fill="#FAF8F3" stroke="#1F9B47" stroke-width="1.5"/>
-            <circle r="5" fill="#1F9B47"/>
-            <text x="-44" y="5" font-family="JetBrains Mono, monospace" font-size="10" fill="#1F9B47" letter-spacing="2">04</text>
-          </g>
-          <!-- 05 upper left -->
-          <g transform="translate(99, 175)">
-            <circle r="18" fill="#FAF8F3" stroke="#0B6E23" stroke-width="1.5"/>
-            <circle r="5" fill="#0B6E23"/>
-            <text x="-44" y="5" font-family="JetBrains Mono, monospace" font-size="10" fill="#0B6E23" letter-spacing="2">05</text>
-          </g>
-        </g>
-
-        <!-- connecting filaments to center -->
-        <g stroke="#0B6E2350" stroke-width="1" fill="none">
-          <path class="pulse-line" d="M260,112 Q280,180 260,200"/>
-          <path class="pulse-line" d="M403,180 Q330,210 280,220"/>
-          <path class="pulse-line" d="M403,340 Q330,300 280,290"/>
-          <path class="pulse-line" d="M117,340 Q190,300 240,290"/>
-          <path class="pulse-line" d="M117,180 Q190,210 240,220"/>
-        </g>
-
-        <!-- central leaf "voice core" -->
-        <g transform="translate(260, 260)">
-          <circle r="62" fill="#FAF8F3" stroke="#0B6E23" stroke-width="1"/>
-          <circle r="62" fill="url(#haloG)"/>
-          <!-- leaf shape -->
-          <g transform="translate(-26, -26)">
-            <rect x="0" y="0" width="52" height="52" rx="13" fill="url(#leafG)"/>
-            <path d="M16 38C15.3 30.8 17.2 25.1 22.4 21.6C26.3 19 31 19.2 35.8 15.7C37.8 24.9 35.3 32.8 28.7 36.4C24.5 38.7 20.2 38.5 17.3 37.3L16 38Z" fill="#FAF8F3"/>
-            <path d="M15 39.7C17.7 33.9 22.1 29.6 28.2 26.5" stroke="#FAF8F3" stroke-width="3" stroke-linecap="round" fill="none"/>
-          </g>
-          <text x="0" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5" fill="#0B6E23" font-weight="500">VOICE CORE</text>
-        </g>
-      </svg>
+    <!-- HERO PHOTO PLACEHOLDER - swap with your own portrait or lifestyle image (4:5 ratio recommended) -->
+    <div class="hero-photo reveal d2">
+      <img src="https://picsum.photos/seed/quiet-window-morning-light-32/720/900" alt="" loading="eager" decoding="async"/>
     </div>
   </section>
 
-  <!-- ─── TRUST ─────────────────────────────────────────────── -->
+  <!-- TRUST ────────────────────────────────────────────────────────────────────── -->
   <section class="trust">
-    <div class="who">For men&rsquo;s coaches who already sound like themselves in the room. Now we make the page sound like that too.</div>
-    <div class="principles">
-      <div class="pr">
-        <div class="pn">i.</div>
-        <div class="pt">Built, not taught.</div>
-        <div class="pb">Done with you, not handed off. You leave holding the engine, not a binder.</div>
+    <div class="top reveal">
+      For men&rsquo;s coaches who already sound like themselves in the room. Now we make the page sound like that too.
+    </div>
+    <div class="grid">
+      <div class="pr reveal">
+        <div class="num">i.</div>
+        <h3>Built, not taught.</h3>
+        <p>Done with you, not handed off. You leave holding the engine, not a binder.</p>
       </div>
-      <div class="pr">
-        <div class="pn">ii.</div>
-        <div class="pt">The calls are the product.</div>
-        <div class="pb">Five hours with me, not a course. The signal we mine in them is what makes the rest work.</div>
+      <div class="pr reveal d1">
+        <div class="num">ii.</div>
+        <h3>The calls are the product.</h3>
+        <p>Five hours with me. The signal we mine in them is what makes the rest work.</p>
       </div>
-      <div class="pr">
-        <div class="pn">iii.</div>
-        <div class="pt">Real scarcity. My time.</div>
-        <div class="pb">I&rsquo;m on every call. When the month is full, it&rsquo;s full. No fake timers on this page.</div>
+      <div class="pr reveal d2">
+        <div class="num">iii.</div>
+        <h3>Real scarcity. My time.</h3>
+        <p>I&rsquo;m on every call. When the month is full, it&rsquo;s full. No fake timers on this page.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── PROBLEM ───────────────────────────────────────────── -->
+  <!-- PROBLEM ─────────────────────────────────────────────────────────────────── -->
   <section class="section">
     <div class="problem">
-      <div class="problem-art reveal">
-        <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#6A6A60"/>
-            </marker>
-          </defs>
-          <!-- four nodes in a circle -->
-          <g font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2" fill="#0A0F1C">
-            <!-- POST top -->
-            <g transform="translate(180, 60)">
-              <circle r="36" fill="#F2EEDF" stroke="#D9D4C5"/>
-              <text text-anchor="middle" y="5">POST</text>
-            </g>
-            <!-- GHOST right -->
-            <g transform="translate(300, 180)">
-              <circle r="36" fill="#F2EEDF" stroke="#D9D4C5"/>
-              <text text-anchor="middle" y="5">GHOST</text>
-            </g>
-            <!-- DOUBT bottom -->
-            <g transform="translate(180, 300)">
-              <circle r="36" fill="#F2EEDF" stroke="#D9D4C5"/>
-              <text text-anchor="middle" y="5">DOUBT</text>
-            </g>
-            <!-- REPEAT left -->
-            <g transform="translate(60, 180)">
-              <circle r="36" fill="#F2EEDF" stroke="#D9D4C5"/>
-              <text text-anchor="middle" y="5">REPEAT</text>
-            </g>
-          </g>
-          <!-- arrows: tangled curves -->
-          <g fill="none" stroke="#6A6A60" stroke-width="1.5" marker-end="url(#arr)">
-            <path class="loop-arrow" d="M222,80 Q280,100 290,150"/>
-            <path class="loop-arrow" d="M295,220 Q280,270 222,288"/>
-            <path class="loop-arrow" d="M138,290 Q80,270 70,222"/>
-            <path class="loop-arrow" d="M68,148 Q80,90 138,75"/>
-          </g>
-          <!-- inner red circle indicating "stuck" -->
-          <circle cx="180" cy="180" r="60" fill="none" stroke="#B23A2E" stroke-opacity=".4" stroke-width="1" stroke-dasharray="4 6"/>
-          <text x="180" y="178" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#B23A2E" letter-spacing=".02em">the loop</text>
-          <text x="180" y="195" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2" fill="#B23A2E">YOU LIVE IN</text>
-        </svg>
+      <!-- PROBLEM PHOTO PLACEHOLDER - swap with an atmospheric studio / desk / morning-light shot (5:6 ratio) -->
+      <div class="problem-photo reveal">
+        <img src="https://picsum.photos/seed/wooden-desk-window-light-12/640/768" alt="" loading="lazy" decoding="async"/>
       </div>
       <div>
-        <div class="label reveal">The Problem</div>
-        <h2 class="display reveal">
+        <h2 class="h2 reveal">
           You have content. <em>You don&rsquo;t have a brand.</em>
         </h2>
         <p class="body reveal">
@@ -1281,142 +697,52 @@ footer.site .email a:hover{color:var(--accent)}
     </div>
   </section>
 
-  <!-- ─── REFRAME ───────────────────────────────────────────── -->
-  <section class="section reframe">
-    <div class="label reveal">The Reframe</div>
-    <h2 class="display reveal">
-      The Build is <em>not</em> a content package.
-    </h2>
-    <p class="body reveal">
-      The content is the easy part. We already automate that. The Build is five calls where I sit with you and pull the real signal out. Your voice. Your clients&rsquo; actual words. The way you say the one thing only you say.
-    </p>
-    <p class="body reveal" style="color:var(--muted)">
-      Those five calls become your engine. Not a folder of posts you&rsquo;ll abandon in a month. An engine that gets smarter every time you talk to a client.
-    </p>
-
-    <div class="reframe-grid">
-      <!-- BEFORE panel -->
-      <div class="rf-panel reveal">
-        <div>
-          <div class="rf-tag">Without the Build</div>
-          <div class="rf-h">A folder of posts you&rsquo;ll abandon in a month.</div>
-          <div class="rf-b">Templates. Calendars. A tab that stays open and a doc that goes stale.</div>
-        </div>
-        <svg class="rf-svg" viewBox="0 0 240 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- scattered shapes -->
-          <g opacity=".55">
-            <rect x="10" y="20" width="40" height="24" rx="3" fill="#D9D4C5"/>
-            <rect x="58" y="38" width="36" height="22" rx="3" fill="#D9D4C5"/>
-            <rect x="100" y="14" width="44" height="22" rx="3" fill="#D9D4C5"/>
-            <rect x="152" y="44" width="40" height="22" rx="3" fill="#D9D4C5"/>
-            <rect x="198" y="22" width="36" height="22" rx="3" fill="#D9D4C5"/>
-          </g>
-          <line x1="0" y1="78" x2="240" y2="78" stroke="#6A6A60" stroke-opacity=".4" stroke-dasharray="2 4"/>
-        </svg>
-      </div>
-
-      <div class="rf-arrow reveal" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M13 6l6 6-6 6"/>
-        </svg>
-      </div>
-
-      <!-- AFTER panel -->
-      <div class="rf-panel after reveal">
-        <div>
-          <div class="rf-tag">With the Build</div>
-          <div class="rf-h">An engine that compounds every time you talk to a client.</div>
-          <div class="rf-b">Voice captured. Signal flowing in. The one asset worth more next quarter than it is today.</div>
-        </div>
-        <svg class="rf-svg" viewBox="0 0 240 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- network growing rightward -->
-          <g stroke="#1F9B47" stroke-width="1.4" fill="none">
-            <path d="M10,60 Q40,50 60,40 T120,30 T210,20"/>
-            <path d="M10,68 Q40,62 70,56 T140,46 T220,36"/>
-          </g>
-          <g fill="#1F9B47">
-            <circle cx="10" cy="60" r="4"/>
-            <circle cx="60" cy="40" r="4"/>
-            <circle cx="120" cy="30" r="4"/>
-            <circle cx="170" cy="24" r="4"/>
-            <circle cx="220" cy="36" r="4"/>
-          </g>
-          <line x1="0" y1="80" x2="240" y2="80" stroke="#1F9B47" stroke-opacity=".5" stroke-dasharray="2 4"/>
-        </svg>
-      </div>
+  <!-- REFRAME ─────────────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="reframe">
+      <h2 class="h2 reveal">
+        The Build is <em>not</em> a content package.
+      </h2>
+      <p class="body reveal">
+        The content is the easy part. We already automate that. The Build is five calls where I sit with you and pull the real signal out. Your voice. Your clients&rsquo; actual words. The way you say the one thing only you say.
+      </p>
+      <p class="body muted reveal">
+        Those five calls become your engine. Not a folder of posts you&rsquo;ll abandon in a month. An engine that gets smarter every time you talk to a client.
+      </p>
     </div>
   </section>
 
-  <!-- ─── THE FIVE CALLS ────────────────────────────────────── -->
+  <!-- THE FIVE CALLS ──────────────────────────────────────────────────────────── -->
   <section class="section" id="what-we-do">
-    <div style="max-width:920px;margin:0 auto;text-align:center;">
-      <div class="label reveal">The Five Calls</div>
-      <h2 class="display reveal" style="margin-left:auto;margin-right:auto;">
+    <div class="calls-head">
+      <h2 class="h2 reveal">
         What we actually do, <em>in order.</em>
       </h2>
-      <p class="body reveal" style="margin-left:auto;margin-right:auto;text-align:center;color:var(--muted)">
-        Five hours over thirty days. Each call has one job. They stack.
-      </p>
+      <p class="reveal">Five hours over thirty days. Each call has one job. They stack.</p>
     </div>
 
-    <div class="calls-wrap">
-
+    <div class="calls">
       <div class="call reveal">
-        <div class="index">
-          <div class="icon">
-            <!-- 01 Voice: waveform turning into leaf -->
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M3 16 L6 16 L8 10 L10 22 L12 12 L14 20 L16 14"/>
-              <path d="M18 16 C20 12, 24 12, 26 16 C28 20, 26 24, 22 24 C20 24, 18 22, 18 20"/>
-              <path d="M22 24 C24 22, 26 20, 26 16" stroke-opacity=".55"/>
-            </svg>
-          </div>
-          <div class="n">CALL 01</div>
-        </div>
-        <div class="body">
+        <div class="n">01</div>
+        <div>
           <div class="nm"><em>Voice.</em></div>
           <div class="b">We find the way you actually talk. Not your &lsquo;brand voice.&rsquo; Your kitchen-table voice. The one your wife hears. The one a friend would recognize before reading the byline.</div>
-          <div class="meta">60 min &middot; Zoom &middot; recorded</div>
+          <div class="meta">60 min &middot; on Zoom</div>
         </div>
       </div>
 
       <div class="call reveal">
-        <div class="index">
-          <div class="icon">
-            <!-- 02 Signal: listening / nodes -->
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <circle cx="16" cy="16" r="3" fill="currentColor"/>
-              <circle cx="16" cy="16" r="7"/>
-              <circle cx="16" cy="16" r="11" stroke-opacity=".6"/>
-              <path d="M16 5 L18 8" stroke-opacity=".5"/>
-              <path d="M27 16 L24 18" stroke-opacity=".5"/>
-              <path d="M16 27 L14 24" stroke-opacity=".5"/>
-              <path d="M5 16 L8 14" stroke-opacity=".5"/>
-            </svg>
-          </div>
-          <div class="n">CALL 02</div>
-        </div>
-        <div class="body">
+        <div class="n">02</div>
+        <div>
           <div class="nm"><em>Signal.</em></div>
           <div class="b">We mine what your clients already say about the work. Their words, not your guesses. The phrases they used when something landed. The way they describe the before, the during, the after.</div>
-          <div class="meta">60 min &middot; transcripts in advance</div>
+          <div class="meta">60 min &middot; transcripts prepared</div>
         </div>
       </div>
 
       <div class="call reveal">
-        <div class="index">
-          <div class="icon">
-            <!-- 03 Engine: gears -->
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
-              <circle cx="13" cy="13" r="5"/>
-              <path d="M13 7 L13 5 M13 21 L13 19 M7 13 L5 13 M21 13 L19 13 M9 9 L7.5 7.5 M18.5 7.5 L17 9 M9 17 L7.5 18.5 M17 17 L18.5 18.5"/>
-              <circle cx="22" cy="22" r="4"/>
-              <path d="M22 16 L22 17 M22 27 L22 28 M16 22 L17 22 M27 22 L28 22"/>
-            </svg>
-          </div>
-          <div class="n">CALL 03</div>
-        </div>
-        <div class="body">
+        <div class="n">03</div>
+        <div>
           <div class="nm">The <em>engine.</em></div>
           <div class="b">We wire it into your platform so every future conversation feeds it. The voice rules, the pillar logic, the audience deltas. By the end of call three you have a thing that writes in your voice on demand, not a thing that pretends.</div>
           <div class="meta">60 min &middot; live in the app</div>
@@ -1424,220 +750,116 @@ footer.site .email a:hover{color:var(--accent)}
       </div>
 
       <div class="call reveal">
-        <div class="index">
-          <div class="icon">
-            <!-- 04 First runs: arrow + feedback -->
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 11 L20 11 L17 8 M20 11 L17 14"/>
-              <path d="M26 21 L12 21 L15 18 M12 21 L15 24"/>
-              <circle cx="6" cy="11" r="1.5" fill="currentColor"/>
-              <circle cx="26" cy="21" r="1.5" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="n">CALL 04</div>
-        </div>
-        <div class="body">
+        <div class="n">04</div>
+        <div>
           <div class="nm">The <em>first runs.</em></div>
           <div class="b">We watch the engine write in your voice and correct it together, out loud. You see what gets caught, what gets missed, what your face does when you read your own words back. That correction loop is what makes the engine yours.</div>
-          <div class="meta">60 min &middot; live, side-by-side</div>
+          <div class="meta">60 min &middot; live, side by side</div>
         </div>
       </div>
 
       <div class="call reveal">
-        <div class="index">
-          <div class="icon">
-            <!-- 05 Handoff: seed in palm -->
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 22 C6 18, 9 16, 12 16 L20 16 C24 16, 28 18, 28 21"/>
-              <path d="M16 16 C16 12, 18 9, 21 8 C20 11, 19 14, 16 16Z" fill="currentColor"/>
-              <path d="M21 8 L22 5" stroke-opacity=".6"/>
-            </svg>
-          </div>
-          <div class="n">CALL 05</div>
-        </div>
-        <div class="body">
+        <div class="n">05</div>
+        <div>
           <div class="nm">The <em>handoff.</em></div>
           <div class="b">You leave AI-native, holding an engine that compounds instead of a folder that rots. Every client call after this one makes it sharper. That is the asset. You walk in carrying it.</div>
-          <div class="meta">60 min &middot; recorded &middot; followups for 30 days</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── OUTCOMES ──────────────────────────────────────────── -->
-  <section class="outcomes-section">
-    <div class="outcomes-inner">
-      <div class="outcomes-head">
-        <div>
-          <div class="label reveal">What You Leave With</div>
-          <h2 class="display reveal" style="margin-bottom:0">
-            Three things <em>that compound.</em>
-          </h2>
-        </div>
-        <p class="reveal">
-          The deliverable is small. The asset is the thing the deliverable becomes after thirty days of you actually doing the work.
-        </p>
-      </div>
-
-      <div class="outcomes-grid">
-        <div class="outcome reveal">
-          <div class="icon">
-            <!-- spiral / compounding -->
-            <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M15 15 C15 11, 19 9, 22 11 C25 13, 25 18, 22 20 C18 22, 12 22, 9 19 C6 16, 6 9, 11 6 C16 3, 24 5, 27 11"/>
-              <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>An engine that compounds.</h3>
-          <p>It does not reset. It does not forget. It is worth more next quarter than it is today, because every client conversation feeds it.</p>
-        </div>
-
-        <div class="outcome reveal delay-1">
-          <div class="icon">
-            <!-- vocal / voiceprint -->
-            <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <line x1="6" y1="15" x2="8" y2="15"/>
-              <line x1="10" y1="11" x2="10" y2="19"/>
-              <line x1="13" y1="7" x2="13" y2="23"/>
-              <line x1="16" y1="10" x2="16" y2="20"/>
-              <line x1="19" y1="6" x2="19" y2="24"/>
-              <line x1="22" y1="12" x2="22" y2="18"/>
-              <line x1="25" y1="15" x2="27" y2="15"/>
-            </svg>
-          </div>
-          <h3>Your real voice, captured.</h3>
-          <p>Not your &lsquo;brand voice.&rsquo; The way you actually talk. Captured in language the engine can produce on demand, without making you sound like a stranger.</p>
-        </div>
-
-        <div class="outcome reveal delay-2">
-          <div class="icon">
-            <!-- signature / brand mark -->
-            <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M5 22 C7 18, 9 16, 11 17 C13 18, 13 22, 15 22 C17 22, 17 14, 19 14 C21 14, 21 22, 23 21 C25 20, 25 17, 26 17"/>
-              <line x1="5" y1="26" x2="25" y2="26" stroke-opacity=".4"/>
-            </svg>
-          </div>
-          <h3>A brand only you could own.</h3>
-          <p>Two coaches with the same playbook could rebuild your content in 90 days. They could not rebuild this. The voice underneath was never the part you could template.</p>
+          <div class="meta">60 min &middot; plus 30 days of followups</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── DISQUALIFIER ──────────────────────────────────────── -->
+  <!-- DISQUALIFIER ────────────────────────────────────────────────────────────── -->
   <section class="section">
-    <div style="max-width:920px;margin:0 auto;text-align:center;">
-      <div class="label reveal">Who This Is For</div>
-      <h2 class="display reveal" style="margin-left:auto;margin-right:auto;">
+    <div class="dq-head">
+      <h2 class="h2 reveal" style="margin-left:auto;margin-right:auto;">
         This isn&rsquo;t for <em>everyone.</em>
       </h2>
-      <p class="body reveal" style="margin-left:auto;margin-right:auto;text-align:center;color:var(--muted);max-width:620px;">
+      <p class="body muted reveal" style="margin-left:auto;margin-right:auto;text-align:center">
         The honest version, so we don&rsquo;t waste a first call.
       </p>
     </div>
 
     <div class="dq">
-      <div class="dq-panel no reveal">
-        <div class="tag"><span class="mark">&times;</span> Not the right fit</div>
+      <div class="col no reveal">
         <h3>Skip the call if</h3>
         <ul>
-          <li><span class="dot"></span>You want a folder of posts and a logout button.</li>
-          <li><span class="dot"></span>You&rsquo;ve never sat across from a client and felt the work land in the room.</li>
-          <li><span class="dot"></span>You&rsquo;re still hunting for your first idea or offer.</li>
-          <li><span class="dot"></span>You want someone to learn the craft for you instead of with you.</li>
+          <li>You want a folder of posts and a logout button.</li>
+          <li>You&rsquo;ve never sat across from a client and felt the work land in the room.</li>
+          <li>You&rsquo;re still hunting for your first idea or offer.</li>
+          <li>You want someone to learn the craft for you instead of with you.</li>
         </ul>
       </div>
-
-      <div class="dq-panel yes reveal delay-1">
-        <div class="tag"><span class="mark">&check;</span> Right fit</div>
+      <div class="col yes reveal d1">
         <h3>Book the call if</h3>
         <ul>
-          <li><span class="dot"></span>You already have an audience and a real offer, and the hours are the bottleneck.</li>
-          <li><span class="dot"></span>You can tell when a sentence sounds like you and when it doesn&rsquo;t.</li>
-          <li><span class="dot"></span>You want one engine you sharpen for years, not a campaign you redo each quarter.</li>
-          <li><span class="dot"></span>You&rsquo;re willing to be on five calls and tell the truth on each one.</li>
+          <li>You already have an audience and a real offer, and the hours are the bottleneck.</li>
+          <li>You can tell when a sentence sounds like you and when it doesn&rsquo;t.</li>
+          <li>You want one engine you sharpen for years, not a campaign you redo each quarter.</li>
+          <li>You&rsquo;re willing to be on five calls and tell the truth on each one.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ─── SCARCITY ──────────────────────────────────────────── -->
-  <section class="scarcity">
-    <div class="quote reveal">
-      I&rsquo;m on every one of these calls myself. When the month is full, it&rsquo;s full. No countdown on this page. Just one man, and only so many hours.
-    </div>
-    <div class="by reveal">&mdash; Sunny</div>
-  </section>
-
-  <!-- ─── CLOSE ─────────────────────────────────────────────── -->
-  <section class="close-section">
+  <!-- CLOSE (dark, allowed Color Block Story) ─────────────────────────────────── -->
+  <section class="close">
     <div class="close-inner">
       <div>
-        <div class="label reveal">The Close</div>
-        <h2 class="display reveal">
-          Thirty days. Five calls with me. <em>You leave with the engine.</em>
+        <div class="eyebrow reveal">$2,000 &middot; Thirty days</div>
+        <h2 class="h2 reveal">
+          Five calls with me. <em>You leave with the engine.</em>
         </h2>
         <p class="body reveal">
-          Book a thirty-minute Zoom and we&rsquo;ll look at what you have together. If the Build is the right move, we&rsquo;ll schedule call one on the same call. If it&rsquo;s not, you leave with the clearest read of your brand you&rsquo;ve had in a year. Either way, you don&rsquo;t lose.
+          Book a thirty-minute Zoom. We&rsquo;ll look at what you have together. If the Build is the right move, we schedule call one on the same call. If it isn&rsquo;t, you leave with the clearest read of your brand you&rsquo;ve had in a year.
         </p>
-        <div class="cta-row reveal">
+        <div class="ctas reveal">
           <a href="https://cal.com/sunny-binjola/resonance-call" class="cta primary">
             Book the first call
-            <svg class="arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13M8 2l6 6-6 6"/></svg>
+            <svg class="arr" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13M8 2l6 6-6 6"/></svg>
           </a>
-          <a href="mailto:sunny.binjola@gmail.com" class="cta ghost">Email me first</a>
+          <a href="mailto:sunny.binjola@gmail.com" class="cta ghost">Email first</a>
         </div>
         <div class="fineprint reveal">30 minutes &middot; No pitch unless you ask for one</div>
       </div>
 
-      <!-- Price card -->
-      <div class="price-card reveal delay-1">
-        <div class="pc-label">The Resonance Build</div>
-        <div class="pc-amt"><sup>$</sup>2,000</div>
-        <div class="pc-sub">One time &middot; thirty days &middot; small batch</div>
+      <div class="offer reveal d1">
+        <div class="lbl">The Resonance Build</div>
+        <div class="amt"><sup>$</sup>2,000</div>
+        <div class="sub">One time &middot; thirty days &middot; small batch</div>
         <ul>
           <li>Five one-hour calls with Sunny, on Zoom</li>
           <li>Your voice captured into a working engine</li>
           <li>Engine wired into your coach platform</li>
           <li>Recorded sessions &middot; thirty days of followups</li>
-          <li>Small monthly cohort &middot; capacity-capped</li>
+          <li>Capacity capped to a small monthly cohort</li>
         </ul>
-        <a href="https://cal.com/sunny-binjola/resonance-call" class="cta primary">
-          Book the first call
-          <svg class="arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h13M8 2l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── SIGN-OFF ──────────────────────────────────────────── -->
+  <!-- SIGN-OFF ───────────────────────────────────────────────────────────────── -->
   <section class="signoff">
-    <div class="portrait" aria-hidden="true">
-      <span class="initial">S</span>
+    <div class="open reveal">
+      Written, sat with, and run by one man.<br/>
+      Built for one man at a time.
     </div>
-    <div class="who">
-      <div class="open reveal">
-        Written, sat with, and run by one man.<br/>
-        Built for one man at a time.
-      </div>
-      <div class="nm reveal">Sunny Binjola</div>
-      <div class="role reveal">Founder &middot; ElevateAI Systems &middot; Men&rsquo;s Embodiment Coach</div>
-    </div>
+    <div class="nm reveal d1">Sunny Binjola</div>
+    <div class="role reveal d1">Founder, ElevateAI &middot; Men&rsquo;s Embodiment Coach</div>
   </section>
 
 </main>
 
 <footer class="site">
   <div class="inner">
-    <div class="brand">
-      <svg viewBox="0 0 88 88" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+    <a href="/" class="brand" aria-label="ElevateAI Systems">
+      <svg viewBox="0 0 88 88" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
         <rect x="6" y="8" width="72" height="72" rx="18" fill="#0B6E23"/>
         <path d="M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z" fill="#FAF8F3"/>
         <path d="M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9" stroke="#FAF8F3" stroke-width="5" stroke-linecap="round" fill="none"/>
       </svg>
       <span class="nm">ElevateAI Systems</span>
-    </div>
+    </a>
     <nav class="nav">
       <a href="/">Home</a>
       <a href="/brand-os">Brand OS</a>
@@ -1651,10 +873,9 @@ footer.site .email a:hover{color:var(--accent)}
 </footer>
 
 <script>
-// Tiny reveal-on-scroll
 (function(){
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')});
     return;
   }
   var io = new IntersectionObserver(function(entries){
@@ -1664,8 +885,8 @@ footer.site .email a:hover{color:var(--accent)}
         io.unobserve(e.target);
       }
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
-  document.querySelectorAll('.reveal, .problem-art').forEach(function(el){ io.observe(el); });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 })();
 </script>
 
