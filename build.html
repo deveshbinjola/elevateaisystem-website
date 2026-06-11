@@ -23,7 +23,7 @@
 
 <link rel="canonical" href="https://elevateaisystem.com/build">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%230B6E23'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23FAF8F3'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23FAF8F3' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect x='3' y='4' width='39' height='39' rx='9.8' fill='%2300F33D'/%3E%3Cpath d='M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z' fill='%23071126'/%3E%3Cpath d='M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1' stroke='%23071126' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,47 +93,83 @@ body::after{
 }
 main,header,footer{position:relative;z-index:2}
 
-/* ───────────────────────────── TOP BAR (single line, 72px) ─────────────────────────────── */
-.bar{
-  max-width:1280px;
-  margin:0 auto;
-  padding:20px 40px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
+/* ───────────────────────────── CANONICAL NAV (matches navbar.js across the site) ─────────────────────────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,248,.85);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid #E0E0D8;
+  padding:0 2rem;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .3s;
+  box-sizing:border-box;width:100%;
 }
-.bar .mark{display:flex;align-items:center;gap:11px;line-height:0}
-.bar .mark .name{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:17px;
-  color:var(--ink);
-  letter-spacing:-.005em;
-  line-height:1;
+.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.nav-logo{
+  font-size:1.4rem;font-weight:800;
+  color:#0A0F1C;letter-spacing:-.02em;
+  display:flex;align-items:center;gap:.5rem;text-decoration:none;
 }
-.bar .right{display:flex;align-items:center;gap:24px}
-.bar .right a.txt{
-  font-size:14.5px;color:var(--muted);
-  transition:color .2s ease;
+.nav-logo-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo-text span{color:#00CC34}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{
+  font-size:.85rem;font-weight:700;
+  color:#0A0F1C;letter-spacing:.08em;text-transform:uppercase;
+  transition:color .2s;position:relative;text-decoration:none;
 }
-.bar .right a.txt:hover{color:var(--ink)}
-.bar .cta-mini{
-  font-family:var(--fb);font-weight:600;font-size:13.5px;
-  background:var(--ink);
-  color:var(--bg);
-  padding:10px 18px;
-  border-radius:100px;
-  letter-spacing:.005em;
-  transition:background .2s ease, transform .2s ease;
+.nav-links a:hover{color:#0A0F1C}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;
+  width:0;height:2px;background:#00FF41;
+  transition:width .3s;
 }
-.bar .cta-mini:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:#00FF41;color:#0A0F1C !important;
+  padding:.65rem 1.6rem;border-radius:50px;
+  font-size:.85rem;font-weight:800;
+  transition:all .3s;letter-spacing:.02em;
+}
+.nav-cta:hover{background:#00CC34;transform:translateY(-1px);box-shadow:0 4px 15px rgba(0,255,65,.25)}
+.nav-cta::after{display:none !important}
+.mobile-menu{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  background:none;border:none;padding:12px;z-index:101;
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-menu span{display:block;width:26px;height:3px;background:#0A0F1C;border-radius:2px;transition:all .3s}
+.mobile-nav{
+  display:none;position:fixed;top:72px;left:0;right:0;
+  background:#FFFFFF;border-bottom:1px solid #E0E0D8;
+  padding:1.5rem 2rem;z-index:99;
+  flex-direction:column;gap:.75rem;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:.95rem;font-weight:600;color:#1A1A2E;padding:.5rem 0;text-decoration:none}
+.mobile-nav .nav-cta{text-align:center;margin-top:.5rem}
+@media (max-width:768px){
+  .nav{padding:0 1rem}
+  .nav-links{display:none}
+  .mobile-menu{display:flex;margin-right:-4px}
+  .mobile-nav{padding:1.25rem 1rem}
+  .nav-logo{font-size:1.2rem}
+}
+@media (max-width:380px){
+  .nav{padding:0 .75rem}
+  .nav-logo-text{font-size:1rem}
+}
+
+/* Push page content below the fixed nav */
+body{padding-top:72px}
 
 /* ───────────────────────────── HERO (asymmetric split, 4 elements max) ─────────────────────────────── */
 .hero{
   max-width:1280px;
   margin:0 auto;
-  padding:64px 40px 112px;
+  padding:24px 40px 112px;
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:80px;
@@ -424,11 +460,12 @@ section{position:relative}
 
 /* ───────────────────────────── CLOSE (dark, allowed Color Block Story) ─────────────────────────────── */
 .close{
-  background:var(--ink);
-  color:var(--bg);
+  background-color:#0A0F1C;
+  color:#FAF8F3;
   padding:128px 0;
   position:relative;
   overflow:hidden;
+  isolation:isolate;
 }
 .close::before{
   content:'';
@@ -578,7 +615,7 @@ footer.site .email a:hover{color:var(--accent)}
 @media(max-width:960px){
   .bar{padding:18px 22px}
   .bar .right a.txt{display:none}
-  .hero{padding:40px 22px 72px;grid-template-columns:1fr;gap:48px}
+  .hero{padding:16px 22px 72px;grid-template-columns:1fr;gap:48px}
   .hero-photo{max-width:380px;order:-1;aspect-ratio:4/5}
   .h-display{font-size:clamp(36px, 9vw, 56px)}
   .lede{font-size:17px}
@@ -606,20 +643,38 @@ footer.site .email a:hover{color:var(--accent)}
 </head>
 <body>
 
-<header class="bar">
-  <a href="/" class="mark" aria-label="ElevateAI Systems">
-    <svg viewBox="0 0 88 88" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="8" width="72" height="72" rx="18" fill="#0B6E23"/>
-      <path d="M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z" fill="#FAF8F3"/>
-      <path d="M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9" stroke="#FAF8F3" stroke-width="5" stroke-linecap="round" fill="none"/>
-    </svg>
-    <span class="name">ElevateAI</span>
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/>
+        <path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/>
+        <path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Elevate<span>AI</span></span>
   </a>
-  <div class="right">
-    <a href="/brand-os" class="txt">Brand OS</a>
-    <a href="https://cal.com/sunny-binjola/resonance-call" class="cta-mini">Book the first call</a>
+  <div class="nav-links">
+    <a href="/quiz">Quiz</a>
+    <a href="/brand-os">Brand OS</a>
+    <a href="/build-your-brand">Build Your Brand</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+    <a href="https://cal.com/sunny-binjola/resonance-call" class="nav-cta">Book the first call</a>
   </div>
-</header>
+  <button class="mobile-menu" aria-label="Menu" id="mobileMenuBtn">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/">Home</a>
+  <a href="/quiz">Quiz</a>
+  <a href="/brand-os">Brand OS</a>
+  <a href="/build-your-brand">Build Your Brand</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <a href="https://cal.com/sunny-binjola/resonance-call" class="nav-cta">Book the first call</a>
+</div>
 
 <main>
 
@@ -874,19 +929,38 @@ footer.site .email a:hover{color:var(--accent)}
 
 <script>
 (function(){
-  if (!('IntersectionObserver' in window)) {
+  // Reveal-on-scroll
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
     document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')});
-    return;
   }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-        io.unobserve(e.target);
-      }
+
+  // Mobile menu toggle (matches navbar.js)
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  if (mobileBtn && mobileNav) {
+    mobileBtn.addEventListener('click', function(){ mobileNav.classList.toggle('open'); });
+    mobileNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+
+  // Nav scroll shadow (matches navbar.js)
+  var nav = document.getElementById('nav');
+  if (nav) {
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
 })();
 </script>
 
