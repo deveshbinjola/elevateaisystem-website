@@ -87,8 +87,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
       <span class="nav-logo-text">Elevate<span>AI</span></span>
     </a>
     <div class="nav-links">
-      <!-- Lead magnet → trip-wire → flagship → ladder. Free quiz is the cold entry. -->
-      <a href="/quiz">Quiz</a>
+      <!-- Lead magnet → trip-wire → flagship → ladder. Free scorecard is the cold entry. -->
+      <a href="/scorecard">Free Scorecard</a>
       <a href="/brand-os">Brand OS</a>
       <a href="/build-your-brand">Build Your Brand</a>
       <a href="/about">About</a>
@@ -106,7 +106,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   mobileNav.id = 'mobileNav';
   mobileNav.innerHTML = `
     <a href="/">Home</a>
-    <a href="/quiz">Quiz · Free</a>
+    <a href="/scorecard">Scorecard · Free</a>
     <a href="/brand-os">Brand OS</a>
     <a href="/build-your-brand">Build Your Brand</a>
     <a href="/about">About</a>
