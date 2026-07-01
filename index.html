@@ -409,8 +409,11 @@ img{max-width:100%;display:block}
 .hero .hero-kicker .accent{color:var(--green-dark)}
 .hero p{font-size:1.25rem;color:var(--text-muted);max-width:650px;margin:0 auto 2.5rem;line-height:1.7;font-style:italic;font-weight:400;animation:fadeUp .8s ease .5s both}
 .hero .hero-you{font-size:clamp(3.2rem,7.5vw,6.5rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;color:var(--navy);margin:0 0 .1rem;font-style:normal;max-width:none;animation:fadeUp .8s ease .4s both}
-.hero .hero-tagline{font-size:clamp(3.2rem,7.5vw,6.5rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;color:var(--navy);margin:0 0 2.5rem;font-style:normal;max-width:none;animation:fadeUp .8s ease .5s both}
+.hero .hero-tagline{font-size:clamp(3.8rem,9.5vw,8.2rem);font-weight:800;line-height:1.02;letter-spacing:-.045em;color:var(--navy);margin:0 0 2.5rem;font-style:normal;max-width:none;animation:fadeUp .8s ease .5s both}
 .hero-tagline .rotating-text{display:inline-block;position:relative;color:var(--navy);background:var(--green);padding:.06em .22em}
+.hero-audiences{display:flex;flex-direction:column;align-items:center;gap:.15rem;margin:0 0 2.5rem;animation:fadeUp .8s ease .5s both}
+.hero-audiences span{font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:800;line-height:1.08;letter-spacing:-.04em;color:var(--green-dark)}
+.hero .hero-subhead{font-size:clamp(1.05rem,1.9vw,1.35rem);font-weight:500;line-height:1.5;color:var(--text-muted);max-width:600px;margin:2rem auto 2.5rem;letter-spacing:-.01em;animation:fadeUp .8s ease .6s both}
 .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .7s both}
 .hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
 .hero-cta:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,15,28,.2)}
@@ -510,8 +513,8 @@ img{max-width:100%;display:block}
 
 /* CASE STUDIES */
 .cases{background:var(--bg-alt)}
-.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.case-card{background:var(--card-bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:all .4s}
+.case-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:3rem}
+.case-card{flex:0 1 calc(50% - 1rem);min-width:300px;background:var(--card-bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:all .4s}
 .case-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
 .case-header{background:var(--navy);color:var(--white);padding:1.5rem 2rem}
 .case-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
@@ -622,7 +625,7 @@ img{max-width:100%;display:block}
   .hero{padding:8rem 1.25rem 4rem}
   .hero h1{font-size:.8rem}
   .hero .hero-you{font-size:clamp(2.6rem,9vw,3.8rem)}
-  .hero .hero-tagline{font-size:clamp(2.6rem,9vw,3.8rem)}
+  .hero .hero-tagline{font-size:clamp(3.2rem,13vw,4.8rem)}
   .hero-buttons{flex-direction:column;align-items:center}
   .section{padding:4rem 1.25rem}
   .friction-grid{grid-template-columns:1fr}
@@ -1338,20 +1341,19 @@ img{max-width:100%;display:block}
 <main id="main-content">
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 48 48" fill="none"><rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/><path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/><path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/></svg> For Coaches Who've Done The Inner Work</div>
-  <div class="hero-kicker">AI Marketing Trained On Your Actual Voice</div>
-  <h1 class="hero-you">You did the inner work.</h1>
-  <p class="hero-tagline"><span class="rotating-text" id="rotatingText">Make the marketing match.</span></p>
+  <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 48 48" fill="none"><rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/><path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/><path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/></svg> More of the right clients. Less of the busywork.</div>
+  <h1 class="hero-you">AI systems and marketing for</h1>
+  <p class="hero-tagline"><span class="rotating-text" id="rotatingText">coaches</span></p>
+  <p class="hero-subhead">We build the systems that bring in clients and win back your week. So you can do the work only you can do.</p>
   <!-- Two-CTA hero. Primary path → Coach Platform marketing page (the
        product). Secondary → Resonance Diagnostic quiz (still alive for
        tire-kickers, still feeds Supabase). Bullets stripped, they were
        quiz-specific and don't apply to the product page. -->
   <div class="hero-buttons">
-    <a href="https://app.elevateaisystem.com/login" class="hero-cta" style="background:var(--green);color:var(--navy);font-weight:800">Explore Coach Platform <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="https://cal.com/sunnybinjola/discovery-call" class="hero-cta" style="background:var(--green);color:var(--navy);font-weight:800">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <button type="button" class="hero-cta-secondary" onclick="qzOpen()">Take the Resonance Diagnostic</button>
   </div>
-  <p style="font-size:.78rem;color:var(--text-muted);margin:1.2rem 0 0;letter-spacing:.02em;">No credit card. No signup wall.</p>
-  <p style="font-size:.75rem;color:var(--text-muted);margin:1.6rem auto 0;letter-spacing:.02em;opacity:.65;max-width:540px;">Not for coaches looking for hacks, scripts, or "10x your revenue" tactics. There are faster places for that.</p>
+  <p style="font-size:.75rem;color:var(--text-muted);margin:1.6rem auto 0;letter-spacing:.02em;opacity:.65;max-width:540px;">Built for what's already working. We help you get clear and get found.</p>
 </header>
 
 <!-- THE FRICTION -->
@@ -1359,7 +1361,7 @@ img{max-width:100%;display:block}
   <div class="section-inner">
     <div class="section-label reveal">The Real Problem</div>
     <h2 class="section-title reveal">You're invisible to the people<br>who need you most.</h2>
-    <p class="friction-intro reveal">You change lives in sessions. But between sessions? Your marketing is inconsistent, your content doesn't reflect who you actually are, and you're invisible to the people who need you most.</p>
+    <p class="friction-intro reveal">You're great at what you actually do. But the marketing? It's inconsistent, your content doesn't reflect who you really are, and you're invisible to the people who need you most.</p>
     <div class="friction-grid">
       <div class="friction-card reveal" style="transition-delay:.1s">
         <div class="card-num">Problem 01</div>
@@ -1369,7 +1371,7 @@ img{max-width:100%;display:block}
       <div class="friction-card reveal" style="transition-delay:.2s">
         <div class="card-num">Problem 02</div>
         <h3>Chasing Instead of Attracting</h3>
-        <p>Every month you're scrambling, cold DMs, networking calls, "engagement strategy." None of it feels like you. And it's eating into the time you should be coaching.</p>
+        <p>Every month you're scrambling, cold DMs, networking calls, "engagement strategy." None of it feels like you. And it's eating into the time you should spend on the work you're great at.</p>
       </div>
       <div class="friction-card reveal" style="transition-delay:.3s">
         <div class="card-num">Problem 03</div>
@@ -1475,6 +1477,51 @@ img{max-width:100%;display:block}
         </div>
       </div>
 
+      <div class="case-card reveal" style="transition-delay:.3s">
+        <div class="case-header">
+          <div class="case-label">Case Study 03</div>
+          <h3>Missed Calls → 24/7 AI Receptionist</h3>
+        </div>
+        <div class="case-body">
+          <div class="case-columns">
+            <div class="case-col before">
+              <h4>Before</h4>
+              <ul>
+                <li>After-hours calls hit voicemail</li>
+                <li>Leads went cold before callback</li>
+                <li>Staff buried in phone tag</li>
+                <li>No record of who called or why</li>
+              </ul>
+            </div>
+            <div class="case-col after">
+              <h4>After</h4>
+              <ul>
+                <li>AI voice agent answers every call</li>
+                <li>Books and qualifies around the clock</li>
+                <li>Filters by fit before a human steps in</li>
+                <li>Every call logged and routed</li>
+              </ul>
+            </div>
+          </div>
+          <p class="case-context">Service business, a 24/7 AI receptionist that answers, qualifies, and books, so no call goes unanswered.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COACHING LAYER -->
+<section class="section" id="coaching" style="background:var(--navy)">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label reveal" style="color:var(--green)">Not Just Automation</div>
+    <h2 class="section-title reveal" style="color:var(--white)">You also get Sunny in your corner.</h2>
+    <p class="reveal" style="max-width:680px;margin:1.2rem auto 0;font-size:clamp(1.05rem,1.9vw,1.3rem);line-height:1.6;color:#B8C0D4;font-weight:500">The systems do the heavy lifting. The real leverage is the thinking behind them. You work directly with Sunny to sharpen your positioning, understand your market, tighten your offer, and get in front of the right people. This is direct business coaching, not a support ticket.</p>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2.2rem">
+      <span style="font-size:.85rem;font-weight:600;color:var(--white);background:rgba(0,255,65,.12);border:1px solid rgba(0,255,65,.3);padding:.55rem 1.2rem;border-radius:50px">Positioning</span>
+      <span style="font-size:.85rem;font-weight:600;color:var(--white);background:rgba(0,255,65,.12);border:1px solid rgba(0,255,65,.3);padding:.55rem 1.2rem;border-radius:50px">Market clarity</span>
+      <span style="font-size:.85rem;font-weight:600;color:var(--white);background:rgba(0,255,65,.12);border:1px solid rgba(0,255,65,.3);padding:.55rem 1.2rem;border-radius:50px">Offer design</span>
+      <span style="font-size:.85rem;font-weight:600;color:var(--white);background:rgba(0,255,65,.12);border:1px solid rgba(0,255,65,.3);padding:.55rem 1.2rem;border-radius:50px">Right-fit targeting</span>
     </div>
   </div>
 </section>
@@ -1610,11 +1657,10 @@ img{max-width:100%;display:block}
 </footer>
 
 <script>
-// Rotating text
-const words = ['Make the marketing match.', 'Sound like it online.', 'Scale depth, not noise.', 'Stop sounding like everyone.'];
+// Rotating audience
+const words = ['coaches', 'consultants', 'entrepreneurs', 'businesses'];
 let wordIndex = 0;
 const rotEl = document.getElementById('rotatingText');
-
 function rotateWord() {
   rotEl.style.opacity = '0';
   rotEl.style.transform = 'translateY(10px)';

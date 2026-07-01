@@ -93,7 +93,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
       <a href="/build-your-brand">Build Your Brand</a>
       <a href="/about">About</a>
       <a href="/blog">Blog</a>
-      <a href="https://app.elevateaisystem.com/login" class="nav-cta">Explore Coach Platform</a>
+      <a href="https://cal.com/sunnybinjola/discovery-call" class="nav-cta">Book a Free Call</a>
     </div>
     <button class="mobile-menu" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -111,7 +111,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
     <a href="/build-your-brand">Build Your Brand</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
-    <a href="https://app.elevateaisystem.com/login" class="nav-cta">Explore Coach Platform</a>
+    <a href="https://cal.com/sunnybinjola/discovery-call" class="nav-cta">Book a Free Call</a>
   `;
 
   // ── Insert into DOM ──
