@@ -2,16 +2,31 @@
 # elevateaisystem.com — Cloudflare Pages redirects & rewrites
 # =====================================================================
 
-# 1. Canonical domain — force www (301 permanent)
-# This ensures Google treats www.elevateaisystem.com as the single canonical domain.
-https://elevateaisystem.com/* https://www.elevateaisystem.com/:splat 301
+# 1. Canonical domain.
+# REMOVED 2026-09-02: this rule sent apex -> www, but the Cloudflare zone
+# already 301s www -> apex, and zone rules run before Pages. Two rules pointing
+# at each other is a redirect loop waiting to fire. Reality today is that the
+# APEX serves the site and www redirects to it, so this rule was both dead and
+# dangerous. Do not re-add a domain redirect here; set the direction once, at
+# the zone level, and leave this file out of it.
 
 # 2. Pretty-URL rewrites for marketing pages (clean, no .html)
 # NOTE: only list ALIASES here — pages whose source filename differs from the URL.
 # Pages handles /foo → /foo.html automatically when the filename matches the URL.
 # Adding a redundant rule for those collides with Pages' built-in clean-URL handler
 # and can cause loops. Only /free-map is a true alias to a different filename.
+# NOTE: do not add rules here to hide internal files. Pages serves a matching
+# static asset before consulting _redirects, so such rules never fire, and
+# adding them broke /api/* Functions routing (verified 2026-09-02).
+# Internal files are excluded at deploy time instead — see the deploy command
+# in the project notes: deploy from an rsync'd copy that drops *.md and .claude.
+
 /free-map            /your-map.html            200
+
+# Ops vertical (Aug 2026). /ops-audit was folded into the behavioral-health
+# landing page so the offer and the proof live on one page for outbound.
+/ops-audit           /behavioral-health        301
+/billing-census      /behavioral-health        301
 
 # 3. Portal pretty-URLs (auth-gated in the browser via Supabase)
 # NOTE: Cloudflare can't enforce auth on static files. These rewrites just make

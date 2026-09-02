@@ -6,11 +6,11 @@
 <title>Your Lead Magnet Score, Free Diagnostic · ElevateAI</title>
 <meta name="description" content="Most coaching lead magnets convert at 3%. The top ones hit 40%+. Answer 5 questions and get your lead magnet score, plus the one fix that changes everything.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.elevateaisystem.com/lead-magnet-diagnostic">
+<link rel="canonical" href="https://elevateaisystem.com/lead-magnet-diagnostic">
 
 <meta property="og:title" content="Your Lead Magnet Score">
 <meta property="og:description" content="5 questions. Your lead magnet scored. The one fix that changes everything.">
-<meta property="og:url" content="https://www.elevateaisystem.com/lead-magnet-diagnostic">
+<meta property="og:url" content="https://elevateaisystem.com/lead-magnet-diagnostic">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Your Lead Magnet Score">
@@ -28,13 +28,14 @@ o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+
 o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
 document.head.appendChild(o)}initApollo();</script>
 
+<link rel="stylesheet" href="/assets/brand.css">
 <style>
 :root{
   --navy:#0A0F1C;--navy-light:#1A2035;
-  --green:#00FF41;--green-dark:#00CC34;
-  --badge-green:#00F33D;--badge-dark:#071126;--ai:#13C93B;
+  --green:#00FF41;--green-dark:#0B6E23;
+  --badge-green:#00F33D;--badge-dark:#071126;--ai:#0B6E23;
   --bg:#FAFAF8;--bg-alt:#F2F2EE;
-  --text:#1A1A2E;--text-muted:#5A5A6E;--text-faint:#8A8A9A;
+  --text:#1A1A2E;--text-muted:#5A5A6E;--text-faint:#5A5A6E;
   --border:#E0E0D8;--white:#FFFFFF;
   --danger:#C1282B;--red:#FF3C3C;--red-soft:rgba(255,60,60,.08);
   --amber:#F59E0B;--amber-soft:rgba(245,158,11,.08);
@@ -61,7 +62,7 @@ a{color:inherit;text-decoration:none}
 .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.02rem;color:var(--navy);letter-spacing:-.02em}
 .brand svg{width:26px;height:26px;flex:none}
 .brand .ai{color:var(--ai)}
-.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--green-dark);color:var(--navy);
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background: var(--green);color:var(--navy);
   padding:9px 18px;border-radius:99px;font-family:var(--font);font-size:.82rem;font-weight:800;border:none;cursor:pointer;
   letter-spacing:-.01em;transition:all .25s;box-shadow:0 4px 14px rgba(0,204,52,.25)}
 .nav-cta:hover{background:var(--green);transform:translateY(-1px)}
@@ -79,7 +80,7 @@ a{color:inherit;text-decoration:none}
 h1.headline{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--navy);margin:0 auto 22px;max-width:18ch}
 h1.headline .accent{color:var(--green-dark)}
 .subheadline{font-size:clamp(1.05rem,1.7vw,1.18rem);color:var(--text-muted);line-height:1.55;margin:0 auto 36px;max-width:52ch;font-weight:500}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--green-dark);color:var(--navy);padding:18px 34px;
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background: var(--green);color:var(--navy);padding:18px 34px;
   border-radius:99px;font-family:var(--font);font-size:1.05rem;font-weight:800;border:none;cursor:pointer;transition:all .28s;
   letter-spacing:-.01em;box-shadow:0 10px 30px rgba(0,204,52,.3)}
 .hero-cta:hover{background:var(--green);transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,255,65,.4)}
@@ -221,7 +222,7 @@ select.answer-select:focus{outline:none;border-color:var(--green-dark);box-shado
 .result-cta h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
 .result-cta h3 .accent{color:var(--green)}
 .result-cta p{font-size:.92rem;color:rgba(255,255,255,.55);margin-bottom:22px;max-width:44ch;margin-left:auto;margin-right:auto}
-.cta-button{display:inline-flex;align-items:center;gap:10px;background:var(--green-dark);color:var(--navy);padding:16px 30px;
+.cta-button{display:inline-flex;align-items:center;gap:10px;background: var(--green);color:var(--navy);padding:16px 30px;
   border-radius:99px;font-family:var(--font);font-size:1rem;font-weight:800;border:none;cursor:pointer;transition:all .28s;text-decoration:none;
   box-shadow:0 8px 24px rgba(0,204,52,.3)}
 .cta-button:hover{background:var(--green);transform:translateY(-2px)}
@@ -680,8 +681,8 @@ function renderResult(d) {
   const verdictClass = (d.verdict || "fragile").toLowerCase();
   const circumference = 2 * Math.PI * 65;
   const offset = circumference - (score / 100) * circumference;
-  const colors = { critical: "#FF3C3C", fragile: "#F59E0B", functional: "#60A5FA", strong: "#00CC34", elite: "#00FF41" };
-  const strokeColor = colors[verdictClass] || "#00CC34";
+  const colors = { critical: "#FF3C3C", fragile: "#F59E0B", functional: "#60A5FA", strong: "#0B6E23", elite: "#00FF41" };
+  const strokeColor = colors[verdictClass] || "#0B6E23";
 
   document.getElementById("score-area").innerHTML =
     '<div class="score-ring">' +
@@ -699,7 +700,7 @@ function renderResult(d) {
   const dimArea = document.getElementById("dim-area");
   dimArea.innerHTML = dims.map(dim => {
     const statusClass = (dim.status || "weak").toLowerCase();
-    const barColor = { broken: "#FF3C3C", weak: "#F59E0B", decent: "#60A5FA", strong: "#00CC34" }[statusClass] || "#60A5FA";
+    const barColor = { broken: "#FF3C3C", weak: "#F59E0B", decent: "#60A5FA", strong: "#0B6E23" }[statusClass] || "#60A5FA";
     const pct = ((dim.score || 0) / 20) * 100;
     return '<div class="dim">' +
       '<div class="dim-header">' +

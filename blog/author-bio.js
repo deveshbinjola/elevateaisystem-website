@@ -143,7 +143,7 @@
     // Try to load photo; fall back to initials monogram
     const avatarHtml = `
       <img id="author-bio-avatar"
-           src="https://www.elevateaisystem.com/sunny.jpg"
+           src="https://elevateaisystem.com/sunny.jpg"
            alt="Sunny Binjola"
            onerror="this.style.display='none'; document.getElementById('author-bio-avatar-fallback').style.display='flex';"
       />
@@ -157,13 +157,13 @@
           <div id="author-bio-label">Written by</div>
           <div id="author-bio-name">Sunny Binjola</div>
           <div id="author-bio-titles">
-            Founder, <a href="https://www.elevateaisystem.com" target="_blank" rel="noopener">ElevateAI System</a>
+            Founder, <a href="https://elevateaisystem.com" target="_blank" rel="noopener">ElevateAI System</a>
             &nbsp;·&nbsp;
             <a href="https://sunnybinjola.com" target="_blank" rel="noopener">Men's Coach</a>
           </div>
           <p id="author-bio-text">Software engineer turned AI marketing strategist and men's coach. I build AI-powered marketing systems for coaches &amp; creators — and help men rebuild identity, purpose, and drive after major life transitions. Embodiment meets execution.</p>
           <div id="author-bio-links">
-            <a href="https://www.elevateaisystem.com" class="author-bio-link author-bio-link-primary" target="_blank" rel="noopener">AI Marketing Systems ↗</a>
+            <a href="https://elevateaisystem.com" class="author-bio-link author-bio-link-primary" target="_blank" rel="noopener">AI Marketing Systems ↗</a>
             <a href="https://sunnybinjola.com" class="author-bio-link author-bio-link-secondary" target="_blank" rel="noopener">Men's Coaching ↗</a>
           </div>
         </div>

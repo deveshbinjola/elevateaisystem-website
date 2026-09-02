@@ -22,7 +22,7 @@ const SITE_DIR = path.resolve(__dirname, 'site');  // Change this to your site d
 const BLOG_DIR = path.join(SITE_DIR, 'blog');
 const BLOG_LISTING = path.join(SITE_DIR, 'blog.html');
 const SITEMAP = path.join(SITE_DIR, 'sitemap.xml');
-const BASE_URL = 'https://www.elevateaisystem.com';
+const BASE_URL = 'https://elevateaisystem.com';
 
 const CATEGORY_MAP = {
   'seo':             { class: 'seo',      label: 'SEO',             pillBg: 'rgba(0, 255, 65, 0.15)',  pillColor: 'var(--green-dark)' },

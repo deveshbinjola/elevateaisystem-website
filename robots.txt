@@ -85,4 +85,4 @@ Allow: /
 User-agent: ia_archiver
 Allow: /
 
-Sitemap: https://www.elevateaisystem.com/sitemap.xml
+Sitemap: https://elevateaisystem.com/sitemap.xml

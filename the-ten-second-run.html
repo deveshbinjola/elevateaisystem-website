@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ten Second Run | Billing Census Case Study, Five-Facility Behavioral Health Network</title>
+<meta name="description" content="A five-facility behavioral health network built its weekly billing census by hand, a day and a half every week. What the audit found, what replaced it, and what was left to people.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sunny Binjola">
+<meta name="keywords" content="behavioral health billing case study, billing census automation, IOP PHP threshold errors, claim denial prevention, treatment network operations">
+<link rel="canonical" href="https://elevateaisystem.com/the-ten-second-run">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Ten Second Run | Billing Census Case Study">
+<meta property="og:description" content="A day and a half of manual census work became a ten second run across 943 client-days.">
+<meta property="og:url" content="https://elevateaisystem.com/the-ten-second-run">
+<meta property="og:image" content="https://elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Ten Second Run | Billing Census Case Study">
+<meta name="twitter:description" content="A day and a half of manual census work became a ten second run across 943 client-days.">
+<meta name="twitter:image" content="https://elevateaisystem.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Ten Second Run: replacing a manual billing census at a five-facility behavioral health network","description":"A case study in operations automation for multi-site treatment networks. Client anonymized. No patient data.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/the-ten-second-run","image":"https://elevateaisystem.com/og-image.png"}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-icon" width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/><path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/><path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/></svg>
+      Elevate<i>AI</i>
+    </a>
+    <div class="nav-links">
+      <!-- Keep in sync with the link set in navbar.js, which is the source of
+           truth for the rest of the site. These landing pages carry an inline
+           nav because they use site.css rather than navbar.js's injected CSS. -->
+      <a href="/behavioral-health" class="hide-sm">Ops Engine</a>
+      <a href="https://app.elevateaisystem.com" class="hide-sm">Coach Assistant</a>
+      <a href="/about" class="hide-xs">About</a>
+      <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page-hero">
+  <div class="page-hero-in">
+    <p class="section-label">Case study · Behavioral health</p>
+    <h1>The ten second run</h1>
+    <p class="lede">Five facilities. One operations lead. <b>A day and a half of retyping, every week</b>, to turn attendance logs into a billing census. This is what the audit found and what replaced it.</p>
+  </div>
+</header>
+
+<div class="statbar">
+  <div class="statbar-in">
+    <div class="stat"><b>5</b><span>Facilities, four outpatient, across two states</span></div>
+    <div class="stat"><b>$500K</b><span>Monthly ad spend feeding admissions</span></div>
+    <div class="stat"><b>1</b><span>Person responsible for the whole census</span></div>
+    <div class="stat"><b>15%</b><span>Denial rate, with no rework visibility</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">The operation</p>
+    <h2 class="section-title reveal">A network at the size where the spreadsheet breaks.</h2>
+    <div class="prose reveal">
+      <p>Attendance was marked daily at each facility. Money was billed by an outside company working from a census workbook. Between those two systems sat one person, retyping.</p>
+      <p>Once a week he transposed every facility's logs into the census, verified each line against the clinical record, and cleared the billing company's flags from the last cycle. Then seven people met on Monday and Tuesday to hunt discrepancies live, out loud, in a meeting.</p>
+      <p><b>That transposition took over a day, every week.</b> Not because anyone was slow. Because it is hundreds of client-days carried by hand between two systems that do not talk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-label reveal">The audit</p>
+    <h2 class="section-title reveal">Five checks, and one thing that was not an error at all.</h2>
+    <p class="section-subtitle reveal">The checks came from sitting with the operations lead and asking what actually goes wrong, then writing one for each answer.</p>
+
+    <div class="tablewrap reveal">
+      <table>
+        <thead><tr><th>Check</th><th>What it catches</th></tr></thead>
+        <tbody>
+          <tr><td><b>Unbilled attendance</b></td><td>Delivered and documented, never entered into the census</td></tr>
+          <tr><td><b>Billing above documentation</b></td><td>A census line the clinical record cannot support</td></tr>
+          <tr><td><b>Threshold days</b></td><td>IOP under 3 hours, PHP under 5, where the rate collapses</td></tr>
+          <tr><td><b>Level-of-care conflicts</b></td><td>Step-ups and step-downs that may have outrun authorization</td></tr>
+          <tr><td><b>Identity mismatches</b></td><td>Wrong-client entries, and services on discharged clients</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pull reveal">
+      <h3>The finding that mattered most was a missing column</h3>
+      <p>The facility attendance log carried no medical record number. Only a name. So every week, the link between a delivered service and its billing episode was made from one person's memory.</p>
+      <p>Every identity mismatch traced back to that. Not to carelessness. To a template that never had the field. <b>One added column closed the whole class of error, permanently, at no cost.</b></p>
+      <p>Nobody had seen it because nobody had ever looked at all four facilities in the same file on the same day. That is what an audit is for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">The engine</p>
+    <h2 class="section-title reveal">Ten seconds. 943 client-days.</h2>
+    <div class="prose reveal">
+      <p>The system reads a full facility month, 27 day tabs and 943 client-days, drafts the census from the raw attendance logs, and runs all five checks against it. That takes about ten seconds.</p>
+      <p>What it produces is not a verdict. It is a short list of client-days worth a human look before claims get built. In the pilot it also did something I was glad to see: it recognised the week that had not been entered yet as work in progress, rather than flagging it as hundreds of errors. <b>A tool that cries wolf on incomplete data gets switched off in week two.</b></p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-header">
+        <p class="case-label">Anonymized · Behavioral health network</p>
+        <h3>What changed</h3>
+      </div>
+      <div class="case-body">
+        <div class="case-columns">
+          <div class="case-col before">
+            <h4>Before</h4>
+            <ul>
+              <li>One person retyping the census for over a day, weekly</li>
+              <li>Seven people hunting discrepancies out loud every Monday</li>
+              <li>Errors found after the billing company, or after a denial</li>
+              <li>Under-threshold days quietly paying a fraction of full rate</li>
+              <li>Four more facilities coming, scaling only by hiring</li>
+            </ul>
+          </div>
+          <div class="case-col after">
+            <h4>After</h4>
+            <ul>
+              <li>The census drafts itself. The job is review and approve</li>
+              <li>Each director arrives with their list. The meeting is a checklist</li>
+              <li>Caught the same week, while the chart can still be fixed</li>
+              <li>Repeat patterns surface per client, for the site director</li>
+              <li>Every facility, same ten seconds. Headcount flat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="section-inner">
+    <p class="section-label reveal">The line I did not cross</p>
+    <h2 class="section-title reveal">What was left to people.</h2>
+    <p class="philosophy-quote reveal">The system does not bill. It does not approve. It does not decide whether a flag is a real error, because very often it is not. A short session can be legitimate. A clinician can have a reason that exists nowhere in the data.</p>
+    <div class="prose reveal" style="margin-top:2rem">
+      <ul>
+        <li><b>Clinical judgment stays with the directors.</b> A client repeatedly under threshold is an engagement conversation, not a billing correction.</li>
+        <li><b>Billing judgment stays with the operations lead.</b> He remains the final approver of every line. The engine drafts, he decides.</li>
+        <li><b>When in doubt, hold rather than bill.</b> An unbilled documented day can be billed late. A wrongly billed day becomes a clawback.</li>
+      </ul>
+      <p>In a network billing commercial insurance and Medicaid, a system that submits on its own is a liability with a countdown on it. The value was never removing the human. It was giving the human all of it at once, in the same week.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-label reveal">Honest status</p>
+    <h2 class="section-title reveal">Where this stands.</h2>
+    <div class="prose reveal">
+      <p><b>Proven:</b> the engine runs on real client data. The ten seconds, the 943 client-days, the five checks and the root cause are from actual runs, not a projection.</p>
+      <p><b>In progress:</b> the pilot covered one facility and one month. Rollout across all four outpatient sites, the scheduled overnight runs and the leadership dashboard are phased work underway.</p>
+      <p><b>Not claimed:</b> a recovered-dollars figure. Measuring that honestly needs a full billing cycle after go-live with rework tracking in place. When there is a real number it will appear here. Until then the mechanism is on the <a href="/five-leaks">five leaks page</a> with the arithmetic, so you can run it against your own volume instead of trusting mine.</p>
+    </div>
+
+    <div class="capture reveal" data-source="ten-second-run">
+      <h3>Run the same five checks on your own month.</h3>
+      <p>The one page checklist this audit starts from. Every check in order, with space to write what you find. One facility, one completed month.</p>
+      <form class="capture-form">
+        <input type="email" required placeholder="you@yournetwork.com" aria-label="Your email">
+        <button type="submit">Send me the checklist</button>
+      </form>
+      <p class="capture-fine">One email with the checklist, then occasional notes on operations systems. Unsubscribe whenever. I do not share your address.</p>
+      <p class="capture-msg"></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-inner">
+    <h2 class="section-title">Recognise the shape?</h2>
+    <p class="section-subtitle">Two to twelve locations, one person holding the census together, and a denial rate nobody can fully explain. Start with a free thirty minute call. Nothing to prepare, no data to send.</p>
+    <div class="hero-buttons">
+      <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="hero-cta">Book a free call</a>
+      <a href="/behavioral-health#audit" class="hero-cta-secondary">See the whole ladder</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-cols">
+      <div><h4>Behavioral health</h4><a href="/behavioral-health">Overview</a><a href="/the-ten-second-run">Case study</a><a href="/five-leaks">The Five Leaks</a><a href="/leak-checklist">Leak checklist</a></div>
+      <div><h4>Company</h4><a href="/about">About Sunny</a><a href="/blog">Blog</a><a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener">Book a call</a></div>
+      <div><h4>For coaches</h4><a href="/brand-os">Brand OS Blueprint</a><a href="/build-your-brand">Build Your Brand</a><a href="https://app.elevateaisystem.com/login">Coach Platform</a></div>
+      <div><h4>Contact</h4><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Elevate AI Systems. Built by Sunny Binjola.</span>
+      <span>Client identity anonymized. No patient data on this site.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/reveal.js" defer></script>
+<script src="/assets/capture.js" defer></script>
+<script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
+</body>
+</html>

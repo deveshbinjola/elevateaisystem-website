@@ -14,6 +14,27 @@
   const prefix = isSubfolder ? '../' : '';
   const absPrefix = '/'; // Use absolute paths for nav links
 
+  // ── Nav links (simplified 2026-09-02) ──
+  // Previously this switched between a coach nav and an ops nav based on the
+  // path. That existed only because the ops links were vertical-specific
+  // ("Behavioral Health", "The Five Leaks") and looked wrong to a coach.
+  // With Brand OS and Build Your Brand removed and the ops page labelled
+  // "Ops Engine", both audiences want the same two products, so the branching
+  // is gone. One nav, everywhere. Do not reintroduce audience switching
+  // without a reason that survives being said out loud.
+  //
+  // "Ops Engine" is deliberately broader than the /behavioral-health URL it
+  // points at, so it still fits when a second vertical lands.
+  const links = [
+    { href: '/behavioral-health',                  label: 'Ops Engine' },
+    { href: 'https://app.elevateaisystem.com',     label: 'Coach Assistant' },
+    { href: '/about',                              label: 'About' },
+    { href: '/blog',                               label: 'Blog' }
+  ];
+  const linkHTML = links.map(function (l) {
+    return '<a href="' + l.href + '">' + l.label + '</a>';
+  }).join('\n      ');
+
   // ── Inject Navbar CSS ──
   const style = document.createElement('style');
   style.textContent = `
@@ -87,13 +108,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
       <span class="nav-logo-text">Elevate<span>AI</span></span>
     </a>
     <div class="nav-links">
-      <!-- Lead magnet → trip-wire → flagship → ladder. Free scorecard is the cold entry. -->
-      <a href="/scorecard">Free Scorecard</a>
-      <a href="/brand-os">Brand OS</a>
-      <a href="/build-your-brand">Build Your Brand</a>
-      <a href="/about">About</a>
-      <a href="/blog">Blog</a>
-      <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Free Call</a>
+      ${linkHTML}
+      <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
     </div>
     <button class="mobile-menu" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -106,12 +122,8 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   mobileNav.id = 'mobileNav';
   mobileNav.innerHTML = `
     <a href="/">Home</a>
-    <a href="/scorecard">Scorecard · Free</a>
-    <a href="/brand-os">Brand OS</a>
-    <a href="/build-your-brand">Build Your Brand</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-    <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Free Call</a>
+    ${linkHTML}
+    <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
   `;
 
   // ── Insert into DOM ──

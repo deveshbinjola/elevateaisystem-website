@@ -3,25 +3,39 @@
 **Last refreshed:** 2026-05-04 (replaced stale Lead OS / Content OS / Growth Engine references; added SEO SOP)
 
 ## Me
-Sunny Binjola, Founder of ElevateAI System. AI men's coach guiding brothers through breathwork, clarity, purpose, and integration into systems. Agency runway funds the mission.
+Sunny Binjola, Founder of Elevate AI Systems. Builds operations and billing systems for multi-site behavioral health and treatment networks. Also an embodiment coach; that work funds and is funded by the agency but is NOT what this website sells.
 
-## Core Products (the only two that exist)
+## ⚠️ REPOSITIONED 2026-08-28 — read before writing any page
+The site pivoted from coaches to **multi-site healthcare operations**. Coaches did not produce recurring revenue. The ops vertical did: a $2,500 audit converted to a $15,000 build with a monthly retainer to follow.
+**Do not write new coach-facing pages unless explicitly asked.** Existing coach pages stay live at their URLs (no SEO loss) but are out of the primary nav.
+
+## Core Products (the ladder that matters)
 | Product | Price | Length | Status |
 |---------|-------|--------|--------|
-| **Brand OS Agent** | $7 quick start, $2K full cohort | Self-serve + 8wk cohort | Live |
-| **Build Your Brand** | $12K | 3 months | Live, flagship |
+| **The Ops Audit** | $2,500, credited to build | 2 weeks | Live, the front door |
+| **The Engine** | From $15,000 fixed, phased | ~6 weeks | Live |
+| **The Watch** | Monthly, quoted at handoff | Ongoing | Offered at handoff |
 
-Augmented Coach Cohort ($2K, 8 weeks, max 10 coaches) is the cohort delivery container for Brand OS Agent. Coach Platform ($497 + $100/mo) is the productized system layer.
+Primary pages: `index.html`, `ops-audit.html`, `the-ten-second-run.html` (case study), `five-leaks.html` (framework + calculator).
+
+## Legacy coach products (live, demoted, do not expand)
+Brand OS Blueprint (free), Build Your Brand ($12K), Coach Platform (app.elevateaisystem.com). Augmented Coach Cohort is PARKED, never pitch it.
 
 ## Deprecated — never reference these
-- ~~Lead OS~~ (collapsed into Brand OS Agent)
-- ~~Content OS~~ (collapsed into Brand OS Agent)
-- ~~Growth Engine~~ (collapsed into Build Your Brand)
-- ~~SEO Audit Landing Page~~ (still has audit skill but no longer a public page)
-- Sprint $497 (deprecated 2026-04-18)
+- ~~Lead OS~~ · ~~Content OS~~ · ~~Growth Engine~~ · ~~Sprint $497~~
 
-## ICP
-Men's coaches and creators doing $10K+/month (primary). Coaches and creators broadly (secondary). See `memory/seo/zipper-architecture.md` for the niche-specific landing page matrix.
+## ICP (changed 2026-08-28)
+**Primary:** multi-site behavioral health, addiction treatment and outpatient networks. 2 to 12 locations and opening more, founder-led or family-owned, commercial insurance or Medicaid billing or heavy ad spend, one operations person bridging two systems with a spreadsheet, no CTO or data team.
+**Disqualify:** PE roll-ups with 50+ sites, hospital systems, anyone fully live on a modern RCM platform end to end, single-site operators.
+**Secondary:** any operation where a human retypes data between two systems, gets paid on that data being right, and reports by hand.
+**Legacy:** coaches and creators. Do not write new pages for this audience without being asked.
+
+## ⚠️ Hard rules for the ops vertical
+1. **Never name the healthcare client.** Permanently anonymized: "a five-facility behavioral health network." No logo, no quote, no name, ever. This is a standing decision, not a pending approval.
+2. **No patient data anywhere.** Not in copy, examples, screenshots or og:images.
+3. **Never claim a recovered-dollars or ROI figure.** None has been measured. The `five-leaks` calculator makes the reader compute their own from their own inputs, and says so explicitly.
+4. **Only these numbers are verified and publishable:** 10 seconds per run · 27 day tabs / 943 client-days · 1.5 days of weekly manual work replaced · 5 checks · 15% denial rate with no rework visibility · under-threshold days reimburse at roughly a tenth · 7 people in the weekly discrepancy meeting · root cause was a missing MR number column. Everything else needs a source before it ships.
+5. **Always state that a human approves every line.** The system drafts and flags, it never bills. This is the trust position and the ethical one.
 
 ## New Page Template Rules
 Every new page MUST include:

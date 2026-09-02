@@ -223,7 +223,7 @@ function buildFollowUpEmail(d) {
 <div style="margin-top:24px;background:#fff;border-radius:16px;padding:28px;border:1px solid #E0E0D8;text-align:center">
   <h2 style="font-size:17px;font-weight:800;color:#0A0F1C;margin:0 0 8px">The Lead Magnet Playbook</h2>
   <p style="font-size:13px;color:#5A5A6E;margin:0 0 18px;line-height:1.5">The full breakdown: what converts in 2026, hook formulas, gating strategies, and the psychology behind 40%+ conversion rates.</p>
-  <a href="https://www.elevateaisystem.com/lead-magnet-playbook" style="display:inline-block;background:#00CC34;color:#0A0F1C;padding:12px 28px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none">Read the Playbook &rarr;</a>
+  <a href="https://elevateaisystem.com/lead-magnet-playbook" style="display:inline-block;background:#00CC34;color:#0A0F1C;padding:12px 28px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none">Read the Playbook &rarr;</a>
 </div>
 
 <div style="margin-top:24px;background:#0A0F1C;border-radius:16px;padding:28px;text-align:center">
@@ -233,7 +233,7 @@ function buildFollowUpEmail(d) {
 </div>
 
 <div style="margin-top:32px;text-align:center;font-size:12px;color:#8A8A9A;line-height:1.5">
-  <p>ElevateAI System &middot; <a href="https://www.elevateaisystem.com" style="color:#00CC34;text-decoration:none">elevateaisystem.com</a></p>
+  <p>ElevateAI System &middot; <a href="https://elevateaisystem.com" style="color:#00CC34;text-decoration:none">elevateaisystem.com</a></p>
 </div>
 
 </div></body></html>`;

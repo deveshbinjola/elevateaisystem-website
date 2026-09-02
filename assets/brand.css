@@ -1,0 +1,180 @@
+/* =====================================================================
+   elevateaisystem.com — shared brand stylesheet
+   =====================================================================
+   Single source of truth for the site's design tokens.
+
+   Before this file, all 54 root pages and 116 blog posts carried their own
+   inline <style> block (67 blocks in total). There was no shared sheet, so
+   every colour fix had to be made 170 times, and in practice it never was:
+   the same green drifted into --green-dark, --green-dk and --green-dim, and
+   two brand greens (#00FF41 and #00F33D) ended up in circulation together.
+
+   THE CONTRAST RULE THIS FILE EXISTS TO ENFORCE
+   ---------------------------------------------
+   Neon green is correct on navy and unreadable on paper:
+
+       #00FF41 on #0A0F1C  ->  13.6:1   excellent
+       #00FF41 on #FAFAF8  ->   1.31:1  invisible
+       #00CC34 on #FFFFFF  ->   2.07:1  fails (was used site-wide)
+       #0B6E23 on #FFFFFF  ->   6.47:1  passes
+
+   So green is never one token. --green is the neon, for dark surfaces only.
+   --green-dark is the forest, for text and icons on light surfaces. Picking
+   by surface rather than by name is the whole point; a global find-replace
+   of one for the other breaks the other context, which is why this is a
+   token file and not a codemod.
+
+   Text greys follow the same split. --text-muted and --text-faint are for
+   LIGHT surfaces. On navy use --text-on-dark / --text-on-dark-muted, which
+   are deliberately light. #A0A0B4 and #B0B0C0, the two greys previously
+   used for both, measure 2.57:1 and 2.14:1 on white and must not come back.
+
+   USAGE
+   -----
+   Link this before any page-level <style> block:
+       <link rel="stylesheet" href="/assets/brand.css">
+   ===================================================================== */
+
+:root {
+  /* ---------- Surfaces ---------- */
+  --bg:            #FAFAF8;
+  --bg-alt:        #F2F2EE;
+  --white:         #FFFFFF;
+  --card-bg:       #FFFFFF;
+  --border:        #E0E0D8;
+
+  --navy:          #0A0F1C;
+  --navy-light:    #1A2035;
+
+  /* ---------- Green, split by surface ---------- */
+  /* Neon. Dark surfaces only, or as a solid fill behind dark text. */
+  --green:         #00FF41;
+  /* Forest. Text, icons and small marks on light surfaces. 6.47:1 on white.
+     Was #00CC34 at 2.07:1, which failed everywhere it was used as text. */
+  --green-dark:    #0B6E23;
+  /* Slightly brighter forest for large text and non-text graphics on light,
+     where the bar is 3:1 rather than 4.5:1. */
+  --green-mid:     #0E8A2C;
+
+  /* ---------- Text on LIGHT surfaces ---------- */
+  --text:          #1A1A2E;   /* 15.3:1 on --bg */
+  --text-muted:    #5A5A6E;   /* 6.73:1 on white */
+  --text-faint:    #6A6A60;   /* 5.52:1 on white, the lightest that passes */
+
+  /* ---------- Text on DARK surfaces ---------- */
+  --text-on-dark:        #F5F5F0;
+  --text-on-dark-muted:  #C8C8D4;   /* light by design; never use on paper */
+
+  /* ---------- Radii ---------- */
+  --radius:        12px;
+  --radius-lg:     20px;
+
+  /* ---------- Type scale ----------
+     The footer alone previously used eight ad hoc sizes between .5rem and
+     .78rem. .5rem is 8px, which is not readable text at any viewing
+     distance. --t-meta is the floor for anything a visitor is meant to
+     read; nothing on the site should set a smaller size. */
+  --t-meta:        0.75rem;    /* 12px, footer and legal */
+  --t-caption:     0.8125rem;  /* 13px */
+  --t-body:        1rem;       /* 16px, the mobile body minimum */
+  --t-label:       0.7rem;     /* uppercase section eyebrows only */
+  --tracking-label: 0.14em;
+}
+
+/* =====================================================================
+   Footer
+   =====================================================================
+   The sitemap links were inline-styled at font-size:.58rem (9.3px) with
+   color:#A0A0B4 (2.57:1), and the legal line at .5rem (8px) with #B0B0C0
+   (2.14:1). Inline style attributes beat any stylesheet, so those had to
+   come out of the HTML rather than be overridden here.
+   ===================================================================== */
+
+.site-footer-links a,
+.site-footer-meta a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-footer-links a:hover,
+.site-footer-meta a:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+.site-footer-links a:focus-visible,
+.site-footer-meta a:focus-visible {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.site-footer-links p {
+  margin: 0;
+  font-size: var(--t-meta);
+  line-height: 1.9;   /* keeps stacked links ~24px apart for easier tapping */
+}
+
+/* Column headings. Previously .5rem, which is 8px. */
+.site-footer-heading {
+  font-size: var(--t-label);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 0.35rem;
+}
+
+.site-footer-heading.is-spaced { margin-top: 0.9rem; }
+
+/* The one link in the column that should read as an offer, not a sitemap
+   entry. Was #00CC34 at 2.07:1. */
+.site-footer-links a.is-featured {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.site-footer-meta {
+  font-size: var(--t-meta);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.site-footer-legal {
+  font-size: var(--t-meta);
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0 0 0.1rem;
+}
+
+/* Wordmark accent in the copyright line. */
+.site-footer-legal .accent { color: var(--green-dark); }
+
+/* =====================================================================
+   Shared utilities
+   ===================================================================== */
+
+/* The "THE REAL PROBLEM" style section eyebrow. */
+.section-label {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+
+/* Anything sitting on a navy panel opts in, and gets the dark-surface text
+   tokens plus the neon green rather than the forest one. */
+.on-dark {
+  color: var(--text-on-dark);
+  --text: var(--text-on-dark);
+  --text-muted: var(--text-on-dark-muted);
+  --text-faint: var(--text-on-dark-muted);
+  --green-dark: var(--green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer-links a,
+  .site-footer-meta a { transition: none; }
+}

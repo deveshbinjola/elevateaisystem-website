@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Five Leaks | Where Money Escapes a Manual Billing Census</title>
+<meta name="description" content="The five ways a manual billing census loses money: unbilled attendance, billing above documentation, threshold days, level-of-care conflicts and identity mismatches. With how to check each one this week.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sunny Binjola">
+<meta name="keywords" content="billing census errors, IOP under 3 hours reimbursement, PHP under 5 hours, unbilled attendance, clawback billing above documentation, level of care authorization denial, behavioral health revenue leakage">
+<link rel="canonical" href="https://elevateaisystem.com/five-leaks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Five Leaks | Where Money Escapes a Manual Billing Census">
+<meta property="og:description" content="Five ways a manual census loses money, the arithmetic behind each, and how to check yours this week.">
+<meta property="og:url" content="https://elevateaisystem.com/five-leaks">
+<meta property="og:image" content="https://elevateaisystem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Five Leaks | Where Money Escapes a Manual Billing Census">
+<meta name="twitter:description" content="Five ways a manual census loses money, the arithmetic behind each, and how to check yours this week.">
+<meta name="twitter:image" content="https://elevateaisystem.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Five Leaks: where money escapes a manual billing census","description":"The five classes of billing error that hide in a manually built census at multi-site treatment networks.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/five-leaks","image":"https://elevateaisystem.com/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What happens if an IOP day is under 3 hours?","acceptedAnswer":{"@type":"Answer","text":"Reimbursement collapses below the level-of-care threshold. An IOP day under 3 hours, or a PHP day under 5 hours, can reimburse at roughly a tenth of full rate, while the day cost the same to deliver."}},
+{"@type":"Question","name":"What is billing above documentation?","acceptedAnswer":{"@type":"Answer","text":"A census line the clinical record cannot support. Undocumented services are not billable even when they occurred. It bills cleanly at first and returns later as a clawback rather than a denial."}},
+{"@type":"Question","name":"Why do identity mismatches happen in billing censuses?","acceptedAnswer":{"@type":"Answer","text":"Because attendance is matched to a client by name rather than medical record number. If the facility log has no MR number field, the link between a service and its billing episode is made from memory every week. Adding that column closes the class of error."}},
+{"@type":"Question","name":"Why does catching billing errors in the same week matter?","acceptedAnswer":{"@type":"Answer","text":"Because documentation can still be corrected. Errors found at denial time are 30 to 90 days old, when the chart can no longer be amended and the only decision left is how much to write off."}}]}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-icon" width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="3" y="4" width="39" height="39" rx="9.8" fill="#00F33D"/><path d="M14.2 30.5C13.6 24 15.2 18.8 19.9 15.6C23.5 13.2 27.7 13.4 32.1 10.2C33.9 18.5 31.6 25.6 25.7 28.8C21.9 30.9 18 30.7 15.4 29.6L14.2 30.5Z" fill="#071126"/><path d="M13.4 32.1C15.8 26.9 19.8 22.9 25.3 20.1" stroke="#071126" stroke-width="2.7" stroke-linecap="round"/></svg>
+      Elevate<i>AI</i>
+    </a>
+    <div class="nav-links">
+      <!-- Keep in sync with the link set in navbar.js, which is the source of
+           truth for the rest of the site. These landing pages carry an inline
+           nav because they use site.css rather than navbar.js's injected CSS. -->
+      <a href="/behavioral-health" class="hide-sm">Ops Engine</a>
+      <a href="https://app.elevateaisystem.com" class="hide-sm">Coach Assistant</a>
+      <a href="/about" class="hide-xs">About</a>
+      <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page-hero">
+  <div class="page-hero-in">
+    <p class="section-label">The framework</p>
+    <h1>Five ways a census loses money.</h1>
+    <p class="lede">Every multi-site network I have opened leaks the same five ways. <b>You can check four of them yourself this week</b>, with one facility and one month.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">First principles</p>
+    <h2 class="section-title reveal wide">Three records that have to agree.</h2>
+    <div class="prose reveal">
+      <p>A service is <b>delivered</b>. It is <b>documented</b>. It is <b>billed</b>. Revenue is correct only when all three match.</p>
+      <p>Nothing in a manual process forces them to. One person compares a daily log against a chart against a spreadsheet, hundreds of rows, once a week, while doing four other jobs. The five leaks are not a list of mistakes. They are the five ways those three records come apart.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-label reveal">The five</p>
+    <h2 class="section-title reveal">Each leak, and how to catch it.</h2>
+
+    <div class="tablewrap reveal">
+      <table>
+        <thead><tr><th>Leak</th><th>Why it hides</th><th>What it costs</th></tr></thead>
+        <tbody>
+          <tr><td><b>Unbilled attendance</b><br>Delivered, documented, never entered</td><td>Nothing downstream asks about a claim you never made</td><td>Full rate. Pure loss</td></tr>
+          <tr><td><b>Billing above documentation</b><br>A line the chart cannot support</td><td>It bills cleanly. No denial ever fires</td><td>A clawback, months later</td></tr>
+          <tr><td><b>Threshold days</b><br>IOP under 3 hrs, PHP under 5</td><td>A short day looks identical to a full one in a cell</td><td>Roughly a tenth of full rate</td></tr>
+          <tr><td><b>Level-of-care conflicts</b><br>A step-up that outran its authorization</td><td>It lands in one system and the others catch up later</td><td>Denied at 90 days, window shut</td></tr>
+          <tr><td><b>Identity mismatches</b><br>Matched by name, not record number</td><td>Name matching fails silently and confidently</td><td>Wrong client, or billing after discharge</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose reveal">
+      <h3>How to check each one</h3>
+      <ul>
+        <li><b>Unbilled attendance.</b> Count attendance marks in one facility's logs for a completed month. Count billed entries in the census for the same period. They should reconcile.</li>
+        <li><b>Billing above documentation.</b> Pull twenty random billed lines. Trace each to a signed note. If more than one or two resist, it is a process gap, not a documentation gap.</li>
+        <li><b>Threshold days.</b> Sort last month by hours and read the bottom. Then read the names. Short days cluster on specific clients, and that is an engagement conversation, not a billing one.</li>
+        <li><b>Level-of-care conflicts.</b> List every client whose level changed. Confirm the effective date matches in all three systems and that an authorization covers it. This one finds real money on the first pass.</li>
+      </ul>
+    </div>
+
+    <div class="pull reveal">
+      <h3>The fifth one takes thirty seconds, and it is the highest return</h3>
+      <p>Open your facility attendance log template. Look for a medical record number column. If there is not one, your team is linking services to billing episodes from memory, every week.</p>
+      <p><b>Adding that column closes the entire class of error, permanently, for free.</b> At the network in the case study it was the root cause behind every identity mismatch we found.</p>
+    </div>
+
+    <div class="pull red reveal">
+      <h3>Why none of it is visible</h3>
+      <p>Every leak above is findable. What decides the money is <b>when</b> you find it. Same week, and it is a correction. Ninety days later, from a billing company report, and it is a write-off.</p>
+      <p>The error rate barely matters. The correction window is the whole game. That is the argument for running the checks weekly and upstream of your billing company, and it is the only argument that matters.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="estimate">
+  <div class="section-inner">
+    <p class="section-label reveal">The arithmetic</p>
+    <h2 class="section-title reveal">Run it on your own numbers.</h2>
+    <p class="section-subtitle reveal">I will not tell you what you are losing. Put your figures in. It computes in your browser and is sent nowhere.</p>
+
+    <div class="calc reveal">
+      <h3>Leak estimator</h3>
+      <p>Monthly figures. Rough is fine, this is about order of magnitude.</p>
+      <div class="calc-fields">
+        <div class="calc-f"><label for="cd">Billable client-days per month, all facilities</label><input id="cd" type="number" value="900" min="0"></div>
+        <div class="calc-f"><label for="rate">Average reimbursement per full day ($)</label><input id="rate" type="number" value="400" min="0"></div>
+        <div class="calc-f"><label for="thr">Days under the LOC threshold (%)</label><input id="thr" type="number" value="4" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="unb">Attended days never billed (%)</label><input id="unb" type="number" value="1" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="den">Denial rate (%)</label><input id="den" type="number" value="15" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="norw">Denials never reworked (%)</label><input id="norw" type="number" value="30" min="0" max="100" step="1"></div>
+      </div>
+      <div class="calc-out">
+        <div class="calc-row"><span>Threshold days, lost to the rate collapse</span><b id="o1">$0</b></div>
+        <div class="calc-row"><span>Delivered but never billed</span><b id="o2">$0</b></div>
+        <div class="calc-row"><span>Denials never reworked</span><b id="o3">$0</b></div>
+        <div class="calc-row total"><span>Estimated annual exposure</span><b id="o4">$0</b></div>
+      </div>
+      <p class="calc-note"><b>Before you quote that number.</b> This is arithmetic on figures you typed, not a finding about your business. It leaves out clawback exposure entirely, because that follows audit risk rather than volume. Treat it as a reason to look, not a result.</p>
+    </div>
+
+    <div class="capture reveal" data-source="five-leaks">
+      <h3>Go find the real number.</h3>
+      <p>The one page checklist that turns this into an afternoon of work. Every check above, in order, with space to write what you find. Print it and hand it to your operations lead.</p>
+      <form class="capture-form">
+        <input type="email" required placeholder="you@yournetwork.com" aria-label="Your email">
+        <button type="submit">Send me the checklist</button>
+      </form>
+      <p class="capture-fine">One email with the checklist, then occasional notes on operations systems. Unsubscribe whenever. I do not share your address.</p>
+      <p class="capture-msg"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-label reveal">The honest boundary</p>
+    <h2 class="section-title reveal wide">A person can find these. A person cannot find all of them, every week, forever.</h2>
+    <p class="section-subtitle reveal">Give someone this page, one facility and one completed month, and they will learn more in a day than in a quarter of dashboards. What nobody can do by hand is run it across every facility, every week, before the billing company opens the sheet. That is the only version that lands inside the correction window, and it is the only reason the engine exists.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-inner">
+    <h2 class="section-title">Find out what yours is costing.</h2>
+    <p class="section-subtitle">Start with a free thirty minute call. Walk me through how the work becomes money and I will tell you where I would look first. The paid audit comes after that, and only if it is worth it.</p>
+    <div class="hero-buttons">
+      <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="hero-cta">Book a free call</a>
+      <a href="/the-ten-second-run" class="hero-cta-secondary">See the case study</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-cols">
+      <div><h4>Behavioral health</h4><a href="/behavioral-health">Overview</a><a href="/the-ten-second-run">Case study</a><a href="/five-leaks">The Five Leaks</a><a href="/leak-checklist">Leak checklist</a></div>
+      <div><h4>Company</h4><a href="/about">About Sunny</a><a href="/blog">Blog</a><a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener">Book a call</a></div>
+      <div><h4>For coaches</h4><a href="/brand-os">Brand OS Blueprint</a><a href="/build-your-brand">Build Your Brand</a><a href="https://app.elevateaisystem.com/login">Coach Platform</a></div>
+      <div><h4>Contact</h4><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Elevate AI Systems. Built by Sunny Binjola.</span>
+      <span>Client details anonymized. No patient data on this site.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/reveal.js" defer></script>
+<script src="/assets/estimator.js" defer></script>
+<script src="/assets/capture.js" defer></script>
+<script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
+</body>
+</html>
