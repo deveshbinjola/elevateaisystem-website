@@ -219,6 +219,8 @@ details p{color:var(--text-muted);margin-top:.8rem;font-size:.95rem;line-height:
 .prose h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin:2rem 0 .7rem}
 .prose ul{margin:0 0 1.1rem 1.2rem}
 .prose li{margin-bottom:.6rem;color:var(--text-muted);line-height:1.65}
+/* A prose block that follows a diagram it comments on. */
+.prose.follow{margin-top:1.6rem}
 /* Prose sitting on a navy section. */
 .section.dark .prose p{color:rgba(255,255,255,.62)}
 .section.dark .prose li{color:rgba(255,255,255,.7)}
@@ -286,6 +288,12 @@ td b{color:var(--navy)}
 .bar-fill.warn{background:#E8B33A}
 .bar-fill.bad{background:#FF6B57}
 .bar-row .val{font-size:.78rem;color:var(--white);font-weight:700;text-align:right}
+/* Wider label column for rows whose label is a sentence, not a metric name. */
+.bar-row.wide{grid-template-columns:150px 1fr 74px}
+@media(max-width:560px){.bar-row.wide{grid-template-columns:104px 1fr 64px}}
+/* A truthful sliver: when the real value is too small to see at this scale,
+   keep it visible without inflating it. */
+.bar-fill.sliver{min-width:3px}
 
 .dash-note{margin-top:1.2rem;padding:.85rem 1rem;background:rgba(0,255,65,.07);border-radius:9px;font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.55}
 .dash-note b{color:var(--green)}
@@ -324,7 +332,8 @@ td b{color:var(--navy)}
 .lf-leak.is-hi .lf-num{color:var(--danger)}
 .lf-leak h4{font-size:.97rem;font-weight:700;color:var(--navy);margin:.15rem 0 .2rem}
 .lf-leak p{font-size:.88rem;color:var(--text-muted);line-height:1.5;margin:0}
-.lf-cost{display:inline-block;margin-top:.45rem;font-size:.8rem;font-weight:700;color:var(--danger)}
+.lf-cost{display:inline-block;margin-top:.45rem;font-size:.8rem;font-weight:700;color:var(--warn)}
+.lf-leak.is-hi .lf-cost{color:var(--danger)}
 
 /* the two ways it ends */
 .lf-end{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.4rem}
@@ -395,7 +404,15 @@ td b{color:var(--navy)}
 
 /* ---------- Check cards: the four you can run yourself ---------- */
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
-.check{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.35rem 1.15rem;display:flex;flex-direction:column}
+/* Left border carries the same severity colour as the matching leak card in
+   the flow diagram, so the two systems cross-reference by colour and number. */
+.check{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:var(--radius);padding:1.25rem 1.35rem 1.15rem;display:flex;flex-direction:column}
+.check.is-hi{border-left-color:var(--danger)}
+.check.is-hi .ck-n{background:var(--danger)}
+/* The thirty-second check. Highest return on the page, so it goes first and
+   spans the full row rather than sitting in a text box below the grid. */
+.check.first{grid-column:1/-1}
+.ck-flag{margin-left:auto;font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);background:rgba(11,110,35,.09);border:1px solid rgba(11,110,35,.25);padding:.3rem .65rem;border-radius:99px;white-space:nowrap}
 .ck-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.75rem}
 .ck-n{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);font-size:.76rem;font-weight:800;display:flex;align-items:center;justify-content:center}
 .check h4{font-size:1.02rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.25}

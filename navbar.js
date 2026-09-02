@@ -27,7 +27,7 @@
   // points at, so it still fits when a second vertical lands.
   const links = [
     { href: '/behavioral-health',                  label: 'Ops Engine' },
-    { href: 'https://app.elevateaisystem.com',     label: 'Coach Assistant' },
+    { href: '/coach-platform',                     label: 'Coach Assistant' },
     { href: '/about',                              label: 'About' },
     { href: '/blog',                               label: 'Blog' }
   ];

@@ -13,21 +13,21 @@
 <meta property="og:title" content="The Ten Second Run | Billing Census Case Study">
 <meta property="og:description" content="A day and a half of manual census work became a ten second run across 943 client-days.">
 <meta property="og:url" content="https://elevateaisystem.com/the-ten-second-run">
-<meta property="og:image" content="https://elevateaisystem.com/og-image.png">
+<meta property="og:image" content="https://elevateaisystem.com/the-ten-second-run-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Ten Second Run | Billing Census Case Study">
 <meta name="twitter:description" content="A day and a half of manual census work became a ten second run across 943 client-days.">
-<meta name="twitter:image" content="https://elevateaisystem.com/og-image.png">
+<meta name="twitter:image" content="https://elevateaisystem.com/the-ten-second-run-og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/brand.css">
-<link rel="stylesheet" href="/assets/site.css?v=20260902">
+<link rel="stylesheet" href="/assets/site.css?v=20260902c">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Ten Second Run: replacing a manual billing census at a five-facility behavioral health network","description":"A case study in operations automation for multi-site treatment networks. Client anonymized. No patient data.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/the-ten-second-run","image":"https://elevateaisystem.com/og-image.png"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Ten Second Run: replacing a manual billing census at a five-facility behavioral health network","description":"A case study in operations automation for multi-site treatment networks. Client anonymized. No patient data.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/the-ten-second-run","image":"https://elevateaisystem.com/the-ten-second-run-og.png"}
 </script>
 </head>
 <body>
@@ -43,7 +43,7 @@
            truth for the rest of the site. These landing pages carry an inline
            nav because they use site.css rather than navbar.js's injected CSS. -->
       <a href="/behavioral-health" class="hide-sm">Ops Engine</a>
-      <a href="https://app.elevateaisystem.com" class="hide-sm">Coach Assistant</a>
+      <a href="/coach-platform" class="hide-sm">Coach Assistant</a>
       <a href="/about" class="hide-xs">About</a>
       <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
     </div>
@@ -118,6 +118,16 @@
       <p>What it produces is not a verdict. It is a short list of client-days worth a human look before claims get built. In the pilot it also did something I was glad to see: it recognised the week that had not been entered yet as work in progress, rather than flagging it as hundreds of errors. <b>A tool that cries wolf on incomplete data gets switched off in week two.</b></p>
     </div>
 
+    <div class="dash dash-full reveal" role="img" aria-label="Two bars on the same time scale. Turning one facility month into a checked census took a day and a half by hand. The engine does the same job in ten seconds, which renders as a sliver three pixels wide.">
+      <div class="dash-head">
+        <div><div class="dash-title">The same job, on the same scale</div><div class="dash-sub">One facility month of attendance logs, turned into a census and checked five ways</div></div>
+        <span class="dash-badge">From the pilot</span>
+      </div>
+      <div class="bar-row wide"><span class="lab">By hand, weekly</span><span class="bar-track"><span class="bar-fill bad" style="width:100%"></span></span><span class="val">1.5 days</span></div>
+      <div class="bar-row wide"><span class="lab">The engine</span><span class="bar-track"><span class="bar-fill sliver" style="width:.4%"></span></span><span class="val">10 sec</span></div>
+      <div class="dash-note">The green bar is drawn to scale. It is three pixels wide. <b>What remains for a person is the review of the short list, and every decision.</b></div>
+    </div>
+
     <div class="case-card reveal">
       <div class="case-header">
         <p class="case-label">Anonymized · Behavioral health network</p>
@@ -177,15 +187,12 @@
       <p><b>Not claimed:</b> a recovered-dollars figure. Measuring that honestly needs a full billing cycle after go-live with rework tracking in place. When there is a real number it will appear here. Until then the mechanism is on the <a href="/five-leaks">five leaks page</a> with the arithmetic, so you can run it against your own volume instead of trusting mine.</p>
     </div>
 
-    <div class="capture reveal" data-source="ten-second-run">
-      <h3>Run the same five checks on your own month.</h3>
-      <p>The one page checklist this audit starts from. Every check in order, with space to write what you find. One facility, one completed month.</p>
-      <form class="capture-form">
-        <input type="email" required placeholder="you@yournetwork.com" aria-label="Your email">
-        <button type="submit">Send me the checklist</button>
-      </form>
-      <p class="capture-fine">One email with the checklist, then occasional notes on operations systems. Unsubscribe whenever. I do not share your address.</p>
-      <p class="capture-msg"></p>
+    <div class="door reveal">
+      <div class="door-txt">
+        <h3>Run the same five checks on your own month.</h3>
+        <p>The one page checklist this audit starts from. Every check in order, with space to write what you find. One facility, one completed month. No email, no gate.</p>
+      </div>
+      <a href="/leak-checklist" class="hero-cta-secondary">Open the checklist</a>
     </div>
   </div>
 </section>
@@ -219,7 +226,6 @@
 </footer>
 
 <script src="/assets/reveal.js" defer></script>
-<script src="/assets/capture.js" defer></script>
 <script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
 </body>
 </html>

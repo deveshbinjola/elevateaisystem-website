@@ -13,21 +13,21 @@
 <meta property="og:title" content="The Five Leaks | Where Money Escapes a Manual Billing Census">
 <meta property="og:description" content="Five ways a manual census loses money, the arithmetic behind each, and how to check yours this week.">
 <meta property="og:url" content="https://elevateaisystem.com/five-leaks">
-<meta property="og:image" content="https://elevateaisystem.com/og-image.png">
+<meta property="og:image" content="https://elevateaisystem.com/five-leaks-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Five Leaks | Where Money Escapes a Manual Billing Census">
 <meta name="twitter:description" content="Five ways a manual census loses money, the arithmetic behind each, and how to check yours this week.">
-<meta name="twitter:image" content="https://elevateaisystem.com/og-image.png">
+<meta name="twitter:image" content="https://elevateaisystem.com/five-leaks-og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/brand.css">
-<link rel="stylesheet" href="/assets/site.css?v=20260902">
+<link rel="stylesheet" href="/assets/site.css?v=20260902c">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Five Leaks: where money escapes a manual billing census","description":"The five classes of billing error that hide in a manually built census at multi-site treatment networks.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/five-leaks","image":"https://elevateaisystem.com/og-image.png"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Five Leaks: where money escapes a manual billing census","description":"The five classes of billing error that hide in a manually built census at multi-site treatment networks.","author":{"@type":"Person","name":"Sunny Binjola"},"publisher":{"@type":"Organization","name":"Elevate AI Systems"},"mainEntityOfPage":"https://elevateaisystem.com/five-leaks","image":"https://elevateaisystem.com/five-leaks-og.png"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -50,7 +50,7 @@
            truth for the rest of the site. These landing pages carry an inline
            nav because they use site.css rather than navbar.js's injected CSS. -->
       <a href="/behavioral-health" class="hide-sm">Ops Engine</a>
-      <a href="https://app.elevateaisystem.com" class="hide-sm">Coach Assistant</a>
+      <a href="/coach-platform" class="hide-sm">Coach Assistant</a>
       <a href="/about" class="hide-xs">About</a>
       <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
     </div>
@@ -103,7 +103,7 @@
       <div class="lf-out bad"><b>Any one drifts</b>Money leaves, and no alarm goes off.</div>
     </div>
 
-    <div class="prose reveal" style="margin-top:1.6rem">
+    <div class="prose follow reveal">
       <p>Nothing in a manual process forces them to agree. One person compares a daily log against a chart against a spreadsheet, hundreds of rows, once a week, while doing four other jobs. The five leaks are not a list of mistakes. They are the five ways those three records come apart.</p>
     </div>
   </div>
@@ -171,17 +171,23 @@
 
     <div class="prose reveal">
       <h3>How to check each one</h3>
-      <p>One facility, one completed month. No systems access, no vendor, no permission needed.</p>
+      <p>One facility, one completed month. No systems access, no vendor, no permission needed. Numbers and colours match the diagram above.</p>
     </div>
 
     <div class="checks reveal">
+      <div class="check first is-hi">
+        <div class="ck-head"><span class="ck-n">05</span><h4>Identity mismatches</h4><span class="ck-flag">Do this one first</span></div>
+        <p><b>Pull</b> Your facility attendance log template. Look for a medical record number column.</p>
+        <p class="see"><b>Look for</b> No MRN column means your team is linking services to billing episodes from memory, every week. Adding the column closes the entire class of error, permanently, for free. At the network in the case study it was the root cause behind every identity mismatch we found.</p>
+        <span class="ck-time">Thirty seconds. The highest return on this page</span>
+      </div>
       <div class="check">
         <div class="ck-head"><span class="ck-n">01</span><h4>Unbilled attendance</h4></div>
         <p><b>Pull</b> Attendance marks from one facility's logs for a completed month, and billed entries from the census for the same period.</p>
         <p class="see"><b>Look for</b> Two counts that do not reconcile. Every gap is a service you delivered and never charged anyone for.</p>
         <span class="ck-time">About an hour</span>
       </div>
-      <div class="check">
+      <div class="check is-hi">
         <div class="ck-head"><span class="ck-n">02</span><h4>Billing above documentation</h4></div>
         <p><b>Pull</b> Twenty billed lines at random. Trace each one back to a signed note.</p>
         <p class="see"><b>Look for</b> Lines that resist. More than one or two and it is a process gap, not a documentation gap.</p>
@@ -201,11 +207,6 @@
       </div>
     </div>
 
-    <div class="pull reveal">
-      <h3>The fifth one takes thirty seconds, and it is the highest return</h3>
-      <p>Open your facility attendance log template. Look for a medical record number column. If there is not one, your team is linking services to billing episodes from memory, every week.</p>
-      <p><b>Adding that column closes the entire class of error, permanently, for free.</b> At the network in the case study it was the root cause behind every identity mismatch we found.</p>
-    </div>
 
     <div class="prose reveal">
       <h3>Why the error rate is not the point</h3>
@@ -224,7 +225,7 @@
       </div>
     </div>
 
-    <div class="prose reveal" style="margin-top:1.6rem">
+    <div class="prose follow reveal">
       <p>The error rate barely matters. The correction window is the whole game. That is the argument for running these checks weekly, and upstream of your billing company, and it is the only argument that matters.</p>
     </div>
   </div>
@@ -259,15 +260,12 @@
       <p class="calc-note"><b>Before you quote that number.</b> This is arithmetic on figures you typed, not a finding about your business. It leaves out clawback exposure entirely, because that follows audit risk rather than volume. Treat it as a reason to look, not a result.</p>
     </div>
 
-    <div class="capture reveal" data-source="five-leaks">
-      <h3>Go find the real number.</h3>
-      <p>The one page checklist that turns this into an afternoon of work. Every check above, in order, with space to write what you find. Print it and hand it to your operations lead.</p>
-      <form class="capture-form">
-        <input type="email" required placeholder="you@yournetwork.com" aria-label="Your email">
-        <button type="submit">Send me the checklist</button>
-      </form>
-      <p class="capture-fine">One email with the checklist, then occasional notes on operations systems. Unsubscribe whenever. I do not share your address.</p>
-      <p class="capture-msg"></p>
+    <div class="door reveal">
+      <div class="door-txt">
+        <h3>Go find the real number.</h3>
+        <p>The one page checklist that turns this into an afternoon of work. Every check above, in order, with space to write what you find. Print it and hand it to your operations lead. No email, no gate.</p>
+      </div>
+      <a href="/leak-checklist" class="hero-cta-secondary">Open the checklist</a>
     </div>
   </div>
 </section>
@@ -310,7 +308,6 @@
 
 <script src="/assets/reveal.js" defer></script>
 <script src="/assets/estimator.js?v=20260902" defer></script>
-<script src="/assets/capture.js" defer></script>
 <script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
 </body>
 </html>
