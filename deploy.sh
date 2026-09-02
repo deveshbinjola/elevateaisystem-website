@@ -42,6 +42,9 @@ EXCLUDES=(
   --exclude='.gitignore' --exclude='.DS_Store'
   --exclude='blog/drafts/' --exclude='blog/_drafts/'
   --exclude='deploy.sh'
+  # Internal strategy docs. /deliverables/hermes-vugola-paperclip-playbook
+  # was publicly readable and unlinked, naming a third party's stack.
+  --exclude='deliverables/'
 )
 for f in "${RETIRED[@]}"; do EXCLUDES+=( --exclude="/$f" ); done
 

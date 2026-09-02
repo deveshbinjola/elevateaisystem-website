@@ -414,7 +414,7 @@ function getFooter() {
       <p style="margin:0"><a href="/brand-os" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Brand OS Agent</a></p>
       <p style="margin:0"><a href="/build-your-brand" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Build Your Brand</a></p>
       <p style="margin:0"><a href="/augmented-coach" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Augmented Coach Cohort</a></p>
-      <p style="margin:0"><a href="/coach-platform" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Coach Platform</a></p>
+      <p style="margin:0"><a href="/coach-platform" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Coach Assistant</a></p>
       <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">Search Visibility Audit</a></p>
       <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#A0A0B4;text-decoration:none">AI Strategy Hour</a></p>
     </div>
