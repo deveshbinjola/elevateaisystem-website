@@ -137,6 +137,13 @@ footer p { font-size: .82rem; color: var(--text-muted); font-weight: 500; }
   .cant-replace { grid-template-columns: 1fr; }
   .philosophy { padding: 3rem 1.5rem; }
 }
+
+/* Founder values, mirrored from the homepage founder section.
+   Keep the three labels identical on both pages. */
+.founder-values{display:flex;gap:.75rem;flex-wrap:wrap;margin:0 0 1.6rem}
+.founder-value{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--text,#1A1A2E);padding:.4rem .9rem;border-radius:50px;background:var(--bg-alt,#F2F2EE);border:1px solid var(--border,#E0E0D8)}
+.founder-value svg{width:14px;height:14px;color:var(--green-dark,#0B6E23);flex-shrink:0}
+@media(max-width:640px){.founder-values{justify-content:center}}
 </style>
 <script type="application/ld+json">
 {
@@ -158,6 +165,12 @@ footer p { font-size: .82rem; color: var(--text-muted); font-weight: 500; }
     <div class="hero-badge">The Person Behind the Systems</div>
     <h1>I'm <span class="hl">Sunny.</span><br>I build what your business is missing.</h1>
     <p class="intro">10+ years as a software engineer. AI practitioner. Men's coach. I created ElevateAI because I kept walking into businesses doing real, valuable work and finding the same thing: money leaking where nobody was looking, revenue capped by one person's hours, and a stack of tools that never produced. Software solved most of it years ago. Almost nobody knew which part applied to them.</p>
+    <!-- Same three values as the homepage founder section. Keep them in sync. -->
+    <div class="founder-values">
+      <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Systems Thinker</span>
+      <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI Strategist</span>
+      <span class="founder-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Human-First Approach</span>
+    </div>
     <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener noreferrer" class="hero-cta">Let's Talk &rarr;</a>
   </div>
   <div class="hero-image">
