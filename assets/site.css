@@ -9,6 +9,15 @@
    variant into a page. One subsystem, not N.
    ===================================================================== */
 
+/* brand.css owns the palette, but never defined these two. They were being
+   used by .striprow.is-red and .fitline .no, which meant those rendered with
+   no colour at all. Defined here rather than in brand.css so the fix stays
+   with the components that need it. */
+:root{
+  --danger: #C1282B;   /* matches the red already used across the site */
+  --warn:   #B8860B;
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--green-dark);text-decoration:none}
@@ -285,6 +294,51 @@ td b{color:var(--navy)}
 .dash-full{margin-top:1.3rem}
 .dash-legend{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:1rem;font-size:.72rem;color:rgba(255,255,255,.5)}
 .dash-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:.35rem;vertical-align:baseline}
+
+/* ---------- The Five Leaks diagram ----------
+   The money path runs top to bottom as a spine; each leak branches off it at
+   the stage where it actually happens. Built from CSS boxes and borders only:
+   no image, no SVG, no payload, and it reflows to a single column on a phone
+   without a second layout. Colours come from the tokens above so it stays
+   correct if the palette moves. */
+.leakflow{position:relative;margin:2.5rem 0 0;padding-left:0}
+.lf-row{position:relative;padding-left:2.6rem;padding-bottom:.2rem}
+/* the spine */
+.lf-row::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--green-dark);opacity:.35}
+.lf-row:first-child::before{top:14px}
+.lf-row:last-child::before{bottom:auto;height:14px}
+
+/* a stage on the money path */
+.lf-stage{display:flex;align-items:baseline;gap:.7rem;padding:.55rem 0}
+.lf-stage::before{content:'';position:absolute;left:4px;width:16px;height:16px;border-radius:50%;background:var(--green-dark);border:3px solid var(--bg);margin-top:.28rem}
+.lf-stage b{font-size:1rem;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.lf-stage span{font-size:.86rem;color:var(--text-muted)}
+
+/* a leak branching away from the spine */
+.lf-leak{position:relative;margin:.45rem 0 .45rem 1.1rem;padding:.75rem .95rem .75rem 1.1rem;
+  background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:0 10px 10px 0}
+.lf-leak::before{content:'';position:absolute;left:-1.1rem;top:1.35rem;width:1.1rem;height:2px;background:var(--warn);opacity:.55}
+.lf-leak.is-hi{border-left-color:var(--danger)}
+.lf-leak.is-hi::before{background:var(--danger)}
+.lf-num{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--warn)}
+.lf-leak.is-hi .lf-num{color:var(--danger)}
+.lf-leak h4{font-size:.97rem;font-weight:700;color:var(--navy);margin:.15rem 0 .2rem}
+.lf-leak p{font-size:.88rem;color:var(--text-muted);line-height:1.5;margin:0}
+.lf-cost{display:inline-block;margin-top:.45rem;font-size:.8rem;font-weight:700;color:var(--danger)}
+
+/* the two ways it ends */
+.lf-end{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.4rem}
+.lf-out{padding:.9rem 1.05rem;border-radius:10px;font-size:.88rem;line-height:1.5}
+.lf-out b{display:block;font-size:.95rem;margin-bottom:.15rem}
+.lf-out.good{background:var(--green-tint,rgba(11,110,35,.07));border:1px solid rgba(11,110,35,.25)}
+.lf-out.good b{color:var(--green-dark)}
+.lf-out.bad{background:rgba(193,40,43,.06);border:1px solid rgba(193,40,43,.25)}
+.lf-out.bad b{color:var(--danger)}
+@media(max-width:560px){
+  .lf-end{grid-template-columns:1fr}
+  .lf-row{padding-left:2.1rem}
+  .lf-leak{margin-left:.6rem}
+}
 
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}

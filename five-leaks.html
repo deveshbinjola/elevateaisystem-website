@@ -83,17 +83,64 @@
     <p class="section-label reveal">The five</p>
     <h2 class="section-title reveal">Each leak, and how to catch it.</h2>
 
-    <div class="tablewrap reveal">
-      <table>
-        <thead><tr><th>Leak</th><th>Why it hides</th><th>What it costs</th></tr></thead>
-        <tbody>
-          <tr><td><b>Unbilled attendance</b><br>Delivered, documented, never entered</td><td>Nothing downstream asks about a claim you never made</td><td>Full rate. Pure loss</td></tr>
-          <tr><td><b>Billing above documentation</b><br>A line the chart cannot support</td><td>It bills cleanly. No denial ever fires</td><td>A clawback, months later</td></tr>
-          <tr><td><b>Threshold days</b><br>IOP under 3 hrs, PHP under 5</td><td>A short day looks identical to a full one in a cell</td><td>Roughly a tenth of full rate</td></tr>
-          <tr><td><b>Level-of-care conflicts</b><br>A step-up that outran its authorization</td><td>It lands in one system and the others catch up later</td><td>Denied at 90 days, window shut</td></tr>
-          <tr><td><b>Identity mismatches</b><br>Matched by name, not record number</td><td>Name matching fails silently and confidently</td><td>Wrong client, or billing after discharge</td></tr>
-        </tbody>
-      </table>
+    <p class="section-subtitle reveal">One service, from the room it happened in to the money arriving. Each leak branches off at the exact point it happens.</p>
+
+    <div class="leakflow reveal" role="img" aria-label="The path a service takes from delivery to payment, with the five points where revenue leaks out: identity mismatches at the log, unbilled attendance at the census, threshold days and level-of-care conflicts at billing, and billing above documentation after the claim is paid.">
+
+      <div class="lf-row">
+        <div class="lf-stage"><b>Service delivered</b> <span>a client attends, at the facility</span></div>
+        <div class="lf-leak is-hi">
+          <p class="lf-num">Leak 05</p>
+          <h4>Identity mismatches</h4>
+          <p>The log has a name but no record number, so the service is matched to the wrong episode, or to a client discharged last month.</p>
+          <span class="lf-cost">Wrong client. The hardest one to defend</span>
+        </div>
+      </div>
+
+      <div class="lf-row">
+        <div class="lf-stage"><b>Documented</b> <span>written and signed in the chart</span></div>
+        <div class="lf-leak">
+          <p class="lf-num">Leak 01</p>
+          <h4>Unbilled attendance</h4>
+          <p>Delivered and documented, but it never gets entered. No claim is ever made, so nothing downstream asks about it.</p>
+          <span class="lf-cost">Full rate, gone</span>
+        </div>
+      </div>
+
+      <div class="lf-row">
+        <div class="lf-stage"><b>Entered in the census</b> <span>retyped by hand, once a week</span></div>
+        <div class="lf-leak">
+          <p class="lf-num">Leak 03</p>
+          <h4>Threshold days</h4>
+          <p>An IOP day under three hours, a PHP day under five. In the sheet it looks identical to a full day.</p>
+          <span class="lf-cost">Pays roughly a tenth. Cost you full price</span>
+        </div>
+        <div class="lf-leak">
+          <p class="lf-num">Leak 04</p>
+          <h4>Level-of-care conflicts</h4>
+          <p>A step-up recorded in one system, with an authorization that never caught up to it.</p>
+          <span class="lf-cost">Denied at ninety days, window shut</span>
+        </div>
+      </div>
+
+      <div class="lf-row">
+        <div class="lf-stage"><b>Billed</b> <span>the billing company builds the claim</span></div>
+        <div class="lf-leak is-hi">
+          <p class="lf-num">Leak 02</p>
+          <h4>Billing above documentation</h4>
+          <p>A line the chart cannot support. It bills cleanly and no denial ever fires, so nobody learns about it now.</p>
+          <span class="lf-cost">Returns later as a clawback</span>
+        </div>
+      </div>
+
+      <div class="lf-row">
+        <div class="lf-stage"><b>Paid</b> <span>or not, and you find out much later</span></div>
+      </div>
+
+      <div class="lf-end">
+        <div class="lf-out good"><b>Caught the same week</b>The chart can still be corrected. It is a correction.</div>
+        <div class="lf-out bad"><b>Caught at denial, 30 to 90 days</b>The window has closed. It is a write-off.</div>
+      </div>
     </div>
 
     <div class="prose reveal">
