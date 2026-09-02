@@ -72,8 +72,39 @@
     <p class="section-label reveal">First principles</p>
     <h2 class="section-title reveal wide">Three records that have to agree.</h2>
     <div class="prose reveal">
-      <p>A service is <b>delivered</b>. It is <b>documented</b>. It is <b>billed</b>. Revenue is correct only when all three match.</p>
-      <p>Nothing in a manual process forces them to. One person compares a daily log against a chart against a spreadsheet, hundreds of rows, once a week, while doing four other jobs. The five leaks are not a list of mistakes. They are the five ways those three records come apart.</p>
+      <p>A service is <b>delivered</b>. It is <b>documented</b>. It is <b>billed</b>. Revenue is correct only when all three say the same thing.</p>
+    </div>
+
+    <div class="triad reveal" role="img" aria-label="Three records that have to agree: the attendance log for what was delivered, the signed chart for what was documented, and the claim for what was billed.">
+      <div class="triad-rec">
+        <span class="tr-tag">Delivered</span>
+        <b>The attendance log</b>
+        <span class="tr-sub">Kept at the facility. Often on paper.</span>
+        <div class="tr-lines"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="triad-eq" aria-hidden="true">=</div>
+      <div class="triad-rec">
+        <span class="tr-tag">Documented</span>
+        <b>The signed chart</b>
+        <span class="tr-sub">In the EMR, written after the session.</span>
+        <div class="tr-lines"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="triad-eq" aria-hidden="true">=</div>
+      <div class="triad-rec">
+        <span class="tr-tag">Billed</span>
+        <b>The claim</b>
+        <span class="tr-sub">Built downstream, off a spreadsheet.</span>
+        <div class="tr-lines"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="lf-end reveal">
+      <div class="lf-out good"><b>All three agree</b>Revenue is correct. There is nothing to find.</div>
+      <div class="lf-out bad"><b>Any one drifts</b>Money leaves, and no alarm goes off.</div>
+    </div>
+
+    <div class="prose reveal" style="margin-top:1.6rem">
+      <p>Nothing in a manual process forces them to agree. One person compares a daily log against a chart against a spreadsheet, hundreds of rows, once a week, while doing four other jobs. The five leaks are not a list of mistakes. They are the five ways those three records come apart.</p>
     </div>
   </div>
 </section>
@@ -85,7 +116,7 @@
 
     <p class="section-subtitle reveal">One service, from the room it happened in to the money arriving. Each leak branches off at the exact point it happens.</p>
 
-    <div class="leakflow reveal" role="img" aria-label="The path a service takes from delivery to payment, with the five points where revenue leaks out: identity mismatches at the log, unbilled attendance at the census, threshold days and level-of-care conflicts at billing, and billing above documentation after the claim is paid.">
+    <div class="leakflow reveal" role="img" aria-label="The path a service takes from delivery to payment, with the five points where revenue leaks out: identity mismatches when the service is delivered, unbilled attendance once it is documented, threshold days and level-of-care conflicts as it is entered in the census, and billing above documentation when the claim is built.">
 
       <div class="lf-row">
         <div class="lf-stage"><b>Service delivered</b> <span>a client attends, at the facility</span></div>
@@ -136,21 +167,38 @@
       <div class="lf-row">
         <div class="lf-stage"><b>Paid</b> <span>or not, and you find out much later</span></div>
       </div>
-
-      <div class="lf-end">
-        <div class="lf-out good"><b>Caught the same week</b>The chart can still be corrected. It is a correction.</div>
-        <div class="lf-out bad"><b>Caught at denial, 30 to 90 days</b>The window has closed. It is a write-off.</div>
-      </div>
     </div>
 
     <div class="prose reveal">
       <h3>How to check each one</h3>
-      <ul>
-        <li><b>Unbilled attendance.</b> Count attendance marks in one facility's logs for a completed month. Count billed entries in the census for the same period. They should reconcile.</li>
-        <li><b>Billing above documentation.</b> Pull twenty random billed lines. Trace each to a signed note. If more than one or two resist, it is a process gap, not a documentation gap.</li>
-        <li><b>Threshold days.</b> Sort last month by hours and read the bottom. Then read the names. Short days cluster on specific clients, and that is an engagement conversation, not a billing one.</li>
-        <li><b>Level-of-care conflicts.</b> List every client whose level changed. Confirm the effective date matches in all three systems and that an authorization covers it. This one finds real money on the first pass.</li>
-      </ul>
+      <p>One facility, one completed month. No systems access, no vendor, no permission needed.</p>
+    </div>
+
+    <div class="checks reveal">
+      <div class="check">
+        <div class="ck-head"><span class="ck-n">01</span><h4>Unbilled attendance</h4></div>
+        <p><b>Pull</b> Attendance marks from one facility's logs for a completed month, and billed entries from the census for the same period.</p>
+        <p class="see"><b>Look for</b> Two counts that do not reconcile. Every gap is a service you delivered and never charged anyone for.</p>
+        <span class="ck-time">About an hour</span>
+      </div>
+      <div class="check">
+        <div class="ck-head"><span class="ck-n">02</span><h4>Billing above documentation</h4></div>
+        <p><b>Pull</b> Twenty billed lines at random. Trace each one back to a signed note.</p>
+        <p class="see"><b>Look for</b> Lines that resist. More than one or two and it is a process gap, not a documentation gap.</p>
+        <span class="ck-time">Half a day</span>
+      </div>
+      <div class="check">
+        <div class="ck-head"><span class="ck-n">03</span><h4>Threshold days</h4></div>
+        <p><b>Pull</b> Last month sorted by hours delivered. Read the bottom of the list, then read the names on it.</p>
+        <p class="see"><b>Look for</b> Short days clustering on the same clients. That is an engagement conversation, not a billing one.</p>
+        <span class="ck-time">Twenty minutes</span>
+      </div>
+      <div class="check">
+        <div class="ck-head"><span class="ck-n">04</span><h4>Level-of-care conflicts</h4></div>
+        <p><b>Pull</b> Every client whose level of care changed. Check the effective date in all three systems.</p>
+        <p class="see"><b>Look for</b> A date that does not match, or a step-up no authorization ever covered. This one finds real money on the first pass.</p>
+        <span class="ck-time">An hour or two</span>
+      </div>
     </div>
 
     <div class="pull reveal">
@@ -159,10 +207,25 @@
       <p><b>Adding that column closes the entire class of error, permanently, for free.</b> At the network in the case study it was the root cause behind every identity mismatch we found.</p>
     </div>
 
-    <div class="pull red reveal">
-      <h3>Why none of it is visible</h3>
-      <p>Every leak above is findable. What decides the money is <b>when</b> you find it. Same week, and it is a correction. Ninety days later, from a billing company report, and it is a write-off.</p>
-      <p>The error rate barely matters. The correction window is the whole game. That is the argument for running the checks weekly and upstream of your billing company, and it is the only argument that matters.</p>
+    <div class="prose reveal">
+      <h3>Why the error rate is not the point</h3>
+      <p>Every leak above is findable. What decides the money is <b>when</b> you find it.</p>
+    </div>
+
+    <div class="win reveal" role="img" aria-label="A timeline running from the day a service is delivered to ninety days later. Days zero to seven are the correction window, when the chart can still be fixed. From day seven to thirty the window narrows. From day thirty to ninety the same error becomes a write-off.">
+      <div class="win-bar">
+        <div class="wz good" style="flex-grow:2"><b>Day 0 to 7</b><span>Correction window</span></div>
+        <div class="wz warn" style="flex-grow:3"><b>Day 7 to 30</b><span>Narrowing</span></div>
+        <div class="wz bad" style="flex-grow:6"><b>Day 30 to 90</b><span>Write-off</span></div>
+      </div>
+      <div class="win-notes">
+        <div class="wn"><b>Found by a weekly check</b>The note can still be written, the authorization still chased, the claim still corrected before it goes out. It costs an hour of someone's time.</div>
+        <div class="wn bad"><b>Found on a billing company report</b>The same error, the same size, ninety days older. There is nothing left to do but write it off.</div>
+      </div>
+    </div>
+
+    <div class="prose reveal" style="margin-top:1.6rem">
+      <p>The error rate barely matters. The correction window is the whole game. That is the argument for running these checks weekly, and upstream of your billing company, and it is the only argument that matters.</p>
     </div>
   </div>
 </section>
@@ -186,8 +249,11 @@
       </div>
       <div class="calc-out">
         <div class="calc-row"><span>Threshold days, lost to the rate collapse</span><b id="o1">$0</b></div>
+        <div class="calc-bar" id="o1-bar" aria-hidden="true"><i></i></div>
         <div class="calc-row"><span>Delivered but never billed</span><b id="o2">$0</b></div>
+        <div class="calc-bar" id="o2-bar" aria-hidden="true"><i></i></div>
         <div class="calc-row"><span>Denials never reworked</span><b id="o3">$0</b></div>
+        <div class="calc-bar" id="o3-bar" aria-hidden="true"><i></i></div>
         <div class="calc-row total"><span>Estimated annual exposure</span><b id="o4">$0</b></div>
       </div>
       <p class="calc-note"><b>Before you quote that number.</b> This is arithmetic on figures you typed, not a finding about your business. It leaves out clawback exposure entirely, because that follows audit risk rather than volume. Treat it as a reason to look, not a result.</p>

@@ -49,6 +49,19 @@
     document.getElementById('o2').textContent = money(unbilled);
     document.getElementById('o3').textContent = money(deadDenials);
     document.getElementById('o4').textContent = money((threshold + unbilled + deadDenials) * 12);
+
+    // Bars are scaled to the largest of the three, not to the total, so the
+    // smallest component stays visible instead of collapsing to a sliver.
+    var peak = Math.max(threshold, unbilled, deadDenials, 1);
+    bar('o1', threshold / peak);
+    bar('o2', unbilled / peak);
+    bar('o3', deadDenials / peak);
+  }
+
+  function bar(id, frac) {
+    var el = document.getElementById(id + '-bar');
+    if (!el || !el.firstElementChild) return;
+    el.firstElementChild.style.width = (Math.max(0, Math.min(1, frac)) * 100) + '%';
   }
 
   IDS.forEach(function (id) {

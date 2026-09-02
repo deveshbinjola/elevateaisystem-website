@@ -340,6 +340,80 @@ td b{color:var(--navy)}
   .lf-leak{margin-left:.6rem}
 }
 
+/* ---------- Record triad: the three records that have to agree ----------
+   Three "records" drawn as skeleton rows rather than described in a
+   paragraph. The rows are pure CSS bars, so this costs nothing to load and
+   restyles with the palette. Reuses .lf-end / .lf-out for the verdict so the
+   two diagrams on this page read as one system. */
+.triad{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.8rem;align-items:stretch;margin-top:2.4rem}
+.triad-rec{background:var(--card-bg);border:1px solid var(--border);border-top:3px solid var(--green-dark);border-radius:var(--radius);padding:1.05rem 1.15rem 1.15rem}
+.tr-tag{display:block;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark)}
+.triad-rec b{display:block;font-size:1.02rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:.3rem 0 .1rem}
+.triad-rec .tr-sub{display:block;font-size:.82rem;color:var(--text-muted);line-height:1.45}
+/* Skeleton rows. Ragged widths so it reads as a document, not a chart. */
+.tr-lines{margin-top:.9rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.tr-lines i{display:block;height:6px;border-radius:99px;background:var(--navy);opacity:.11;margin-top:.4rem}
+.tr-lines i:first-child{margin-top:0}
+.tr-lines i:nth-child(2){width:82%}
+.tr-lines i:nth-child(3){width:64%}
+.tr-lines i:nth-child(4){width:91%}
+.triad-eq{align-self:center;font-size:1.5rem;font-weight:800;color:var(--green-dark);opacity:.5;line-height:1}
+@media(max-width:760px){
+  .triad{grid-template-columns:1fr;gap:.55rem}
+  .triad-eq{justify-self:center;font-size:1.2rem;transform:rotate(90deg)}
+}
+
+/* ---------- Correction window ----------
+   The page's central argument, drawn instead of asserted: zone width is
+   elapsed time, so "the window shuts" is something you see. Day ranges live
+   inside each zone rather than on a separate scale, which means nothing has
+   to be positioned by percentage and nothing can drift out of alignment.
+   On narrow screens the bar turns vertical and height carries the time, so
+   the metaphor survives without a second implementation. */
+.win{margin-top:2.4rem}
+.win-bar{display:flex;gap:.4rem;align-items:stretch}
+.wz{flex-basis:0;border-radius:10px;padding:.95rem 1rem 1.05rem;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.wz b{display:block;font-size:.95rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.wz span{display:block;font-size:.78rem;margin-top:.25rem;line-height:1.35}
+.wz.good{background:rgba(11,110,35,.10);border:1px solid rgba(11,110,35,.28)}
+.wz.good b{color:var(--green-dark)}
+.wz.warn{background:rgba(184,134,11,.10);border:1px solid rgba(184,134,11,.30)}
+.wz.warn b{color:var(--warn)}
+.wz.bad{background:rgba(193,40,43,.09);border:1px solid rgba(193,40,43,.28)}
+.wz.bad b{color:var(--danger)}
+.wz span{color:var(--text-muted)}
+.win-notes{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1rem}
+.wn{padding:.95rem 1.1rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--green-dark);font-size:.89rem;color:var(--text-muted);line-height:1.55}
+.wn.bad{border-left-color:var(--danger)}
+.wn b{display:block;font-size:.94rem;color:var(--navy);margin-bottom:.2rem}
+@media(max-width:760px){
+  /* Height becomes the time axis. Same markup, same proportions. */
+  .win-bar{flex-direction:column;height:290px}
+  .wz{padding:.7rem .9rem}
+  .win-notes{grid-template-columns:1fr}
+}
+
+/* ---------- Check cards: the four you can run yourself ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.check{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.35rem 1.15rem;display:flex;flex-direction:column}
+.ck-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.75rem}
+.ck-n{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);font-size:.76rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.check h4{font-size:1.02rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.25}
+.check p{font-size:.88rem;color:var(--text-muted);line-height:1.55;margin-bottom:.5rem}
+.check p b{display:block;font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.12rem}
+.check p.see b{color:var(--warn)}
+.ck-time{margin-top:auto;padding-top:.75rem;font-size:.76rem;font-weight:700;color:var(--text-faint);border-top:1px solid var(--border)}
+@media(max-width:760px){.checks{grid-template-columns:1fr}}
+
+/* ---------- Estimator bars ----------
+   The three loss lines carry a bar scaled to the largest of them, so the
+   shape of the exposure is visible before the numbers are read. Widths are
+   set by estimator.js; everything else is here. */
+.calc-row:has(+ .calc-bar){border-bottom:none}
+.calc-bar{height:5px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;margin:-.15rem 0 .5rem}
+.calc-bar i{display:block;height:100%;border-radius:99px;background:var(--green);width:0;transition:width .35s ease}
+@media (prefers-reduced-motion: reduce){.calc-bar i{transition:none}}
+
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
 .striprow{display:grid;grid-template-columns:215px 1fr;gap:1.3rem;padding:.95rem 0;border-bottom:1px solid var(--border);align-items:baseline}
