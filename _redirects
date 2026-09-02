@@ -21,6 +21,18 @@
 # Internal files are excluded at deploy time instead — see the deploy command
 # in the project notes: deploy from an rsync'd copy that drops *.md and .claude.
 
+# Retired coach products -> the one live coach product (2026-09-02).
+# These only fire because deploy.sh keeps the matching .html out of the
+# upload. Pages serves a static asset before reading this file, so if the
+# page is ever re-published the redirect goes dead without warning.
+/brand-os            /coach-platform           301
+/build-your-brand    /coach-platform           301
+/brand-os-session    /coach-platform           301
+/augmented-coach     /coach-platform           301
+/content-os          /coach-platform           301
+/growth-engine       /coach-platform           301
+/lead-os             /coach-platform           301
+
 /free-map            /your-map.html            200
 
 # Ops vertical (Aug 2026). /ops-audit was folded into the behavioral-health
