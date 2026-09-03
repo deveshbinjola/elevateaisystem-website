@@ -16,6 +16,13 @@
 #   3. Production is branch `main`; the local git branch is `master`. Omit
 #      --branch and the deploy silently lands in Preview.
 #
+#   4. Pages serves HTML uncached but caches /assets/* and navbar.js at the
+#      edge for many hours, so an edited asset ships invisibly unless its URL
+#      changes (bit us twice on 2026-09-02). Before upload, every reference to
+#      a shared asset in the staged HTML is rewritten to ?v=<content hash>, so
+#      the URL changes exactly when the file does. Source files may reference
+#      assets with or without a ?v=; the rewrite normalizes both.
+#
 # Usage:  ./deploy.sh
 set -euo pipefail
 
@@ -53,6 +60,49 @@ EXCLUDES=(
 for f in "${RETIRED[@]}"; do EXCLUDES+=( --exclude="/$f" ); done
 
 rsync -a "${EXCLUDES[@]}" "$SRC/" "$STAGE/"
+
+# Stamp content-hash versions onto shared-asset references (see header, #4).
+/usr/bin/python3 - "$STAGE" <<'PYEOF'
+import hashlib, os, re, sys
+stage = sys.argv[1]
+
+hashes = {}  # site-absolute path -> 8-char content hash
+for rel in ['navbar.js'] + sorted(
+        'assets/' + f for f in os.listdir(os.path.join(stage, 'assets'))
+        if f.endswith(('.css', '.js'))):
+    p = os.path.join(stage, rel)
+    if os.path.isfile(p):
+        hashes[rel] = hashlib.md5(open(p, 'rb').read()).hexdigest()[:8]
+
+# Matches src/href to a known asset, with or without an existing ?v=,
+# via "/assets/x.css", "assets/x.css" or "../navbar.js" style paths.
+pat = re.compile(
+    r'((?:src|href)=")((?:\.\./)*/?)((?:assets/[\w.-]+\.(?:css|js))|navbar\.js)(\?[^"]*)?(")')
+
+def stamp(m):
+    rel = m.group(3)
+    if rel not in hashes:
+        return m.group(0)
+    return f'{m.group(1)}{m.group(2)}{rel}?v={hashes[rel]}{m.group(5)}'
+
+count = 0
+for root, dirs, files in os.walk(stage):
+    dirs[:] = [d for d in dirs if not d.startswith('.')]
+    for f in files:
+        if not f.endswith('.html'):
+            continue
+        p = os.path.join(root, f)
+        try:
+            html = open(p, encoding='utf-8', errors='ignore').read()
+        except OSError:
+            continue
+        new, n = pat.subn(stamp, html)
+        if n:
+            open(p, 'w', encoding='utf-8').write(new)
+            count += n
+print(f"Stamped {count} asset references with content-hash versions "
+      f"({len(hashes)} assets).")
+PYEOF
 
 # Fail loudly rather than shipping something private.
 if find "$STAGE" -name '*.md' | grep -q .; then
