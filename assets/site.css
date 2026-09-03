@@ -53,7 +53,8 @@ img{max-width:100%;display:block}
 /* Below this the wordmark plus two links no longer fit on one line, so the
    secondary link drops and only the CTA remains beside the logo. */
 @media(max-width:560px){
-  .nav-links a.hide-xs{display:none}
+  /* Keep About reachable on phones; only extra links drop. */
+  .nav-links a.hide-xs:not([href="/about"]){display:none}
   .nav-in{padding:.85rem 1.1rem;gap:.75rem}
   .nav-links{gap:.9rem}
   .nav-cta{padding:.55rem .9rem;font-size:.85rem}
@@ -430,6 +431,23 @@ td b{color:var(--navy)}
 .calc-bar{height:5px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;margin:-.15rem 0 .5rem}
 .calc-bar i{display:block;height:100%;border-radius:99px;background:var(--green);width:0;transition:width .35s ease}
 @media (prefers-reduced-motion: reduce){.calc-bar i{transition:none}}
+
+/* ---------- Two doors: audience chooser (homepage) ---------- */
+.doors-band{padding-top:0;margin-top:-1.5rem}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.door-card{display:block;background:var(--card-bg);border:1px solid var(--border);border-top:3px solid var(--green-dark);border-radius:var(--radius-lg);padding:1.7rem 1.8rem 1.5rem;transition:transform .25s,box-shadow .25s}
+.door-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.dc-tag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--green-dark);margin-bottom:.6rem}
+.door-card h3{font-size:1.35rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:.4rem}
+.door-card p{font-size:.95rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem}
+.dc-go{font-size:.9rem;font-weight:800;color:var(--green-dark)}
+@media(max-width:760px){.doors{grid-template-columns:1fr}}
+
+/* ---------- Case card stat + flagship badge ---------- */
+.case-stat{display:flex;align-items:baseline;gap:.55rem;margin-top:.8rem}
+.case-stat b{font-size:1.7rem;font-weight:800;color:var(--green);line-height:1;letter-spacing:-.02em}
+.case-stat span{font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.3}
+.case-flag{display:inline-block;margin-left:.5rem;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--green);padding:.2rem .55rem;border-radius:99px;vertical-align:middle}
 
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
