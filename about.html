@@ -99,7 +99,8 @@ document.head.appendChild(o)}initApollo();</script>
 .cant-replace{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
 .cant-card{ background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.8rem 1.5rem; text-align: center; transition: all .3s; }
 .cant-card:hover{ transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
-.cant-icon{ font-size: 1.8rem; margin-bottom: .6rem; }
+.cant-icon{ margin-bottom: .7rem; }
+.cant-icon svg{ width: 26px; height: 26px; color: var(--green-dark); }
 .cant-label{ font-size: .85rem; font-weight: 800; color: var(--navy); margin-bottom: .3rem; }
 .cant-desc{ font-size: .82rem; color: var(--text-muted); line-height: 1.55; }
 .philosophy-line{ font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-top: 2rem; line-height: 1.6; }
@@ -187,17 +188,17 @@ footer p{ font-size: .82rem; color: var(--text-muted); font-weight: 500; }
 
     <div class="cant-replace">
       <div class="cant-card reveal" style="transition-delay:.1s">
-        <div class="cant-icon">&#x1F9E0;</div>
+        <div class="cant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
         <div class="cant-label">Intuition</div>
         <div class="cant-desc">The gut feeling that tells you something is off before the data does. AI can process, it cannot sense.</div>
       </div>
       <div class="cant-card reveal" style="transition-delay:.2s">
-        <div class="cant-icon">&#x1F525;</div>
+        <div class="cant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg></div>
         <div class="cant-label">Creativity</div>
         <div class="cant-desc">The spark that makes your work yours. AI can edit, sharpen, and optimize, it cannot originate.</div>
       </div>
       <div class="cant-card reveal" style="transition-delay:.3s">
-        <div class="cant-icon">&#x2764;&#xFE0F;</div>
+        <div class="cant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
         <div class="cant-label">Emotional Depth</div>
         <div class="cant-desc">The connection that makes someone trust you with their transformation. AI can scale your reach, it cannot feel.</div>
       </div>
@@ -205,7 +206,7 @@ footer p{ font-size: .82rem; color: var(--text-muted); font-weight: 500; }
 
     <p class="philosophy-body reveal">Creativity lives in the heart. Use AI to edit, to sharpen, to optimize, never to originate. <strong>That's the philosophy behind every system I build.</strong></p>
 
-    <p class="philosophy-body reveal">I don't build AI that replaces you. I run your marketing so you have more time for the work only you can do.</p>
+    <p class="philosophy-body reveal">I don't build AI that replaces you. I build the system underneath, so more of your time goes to the work only you can do.</p>
 
     <p class="philosophy-line reveal">Human first. <span class="hl">Systems second.</span> Always.</p>
   </div>
@@ -213,8 +214,8 @@ footer p{ font-size: .82rem; color: var(--text-muted); font-weight: 500; }
 
 <!-- CTA -->
 <section class="about-cta">
-  <h2>You coach the humans.<br>I'll run the marketing.</h2>
-  <p>Book a free discovery call and I'll show you exactly where your business is leaking time and money, and what AI-powered marketing automation would change.</p>
+  <h2>Walk me through your business.<br>I'll tell you where I'd look first.</h2>
+  <p>A free thirty minute call. Whether you run five facilities or coach twenty clients, we start the same way: where the work becomes money, and where it leaks. Nothing to prepare.</p>
   <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener noreferrer" class="cta-green">Book Your Free Call &rarr;</a>
 </section>
 
@@ -222,43 +223,34 @@ footer p{ font-size: .82rem; color: var(--text-muted); font-weight: 500; }
 <footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
 
-    <!-- LEFT: Services -->
     <div style="text-align:left;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
-      <p style="margin:0"><a href="/behavioral-health" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Ops Engine</a></p>
-      <p style="margin:0"><a href="/coach-platform" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Coach Assistant</a></p>
-      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Search Visibility Audit</a></p>
-      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Strategy Hour</a></p>
-      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Systems Audit</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Ops Engine</p>
+      <p style="margin:0"><a href="/behavioral-health" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Overview</a></p>
+      <p style="margin:0"><a href="/the-ten-second-run" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">The case study</a></p>
+      <p style="margin:0"><a href="/five-leaks" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">The Five Leaks</a></p>
+      <p style="margin:0"><a href="/leak-checklist" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Leak checklist</a></p>
     </div>
 
-    <!-- MIDDLE: Compare + Free Tools -->
     <div style="text-align:center;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
-      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs HubSpot</a></p>
-      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs Coachvox</a></p>
-      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs DIY</a></p>
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
-      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Lead Clarity Score</a></p>
-      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Free SEO Audit</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Coach Assistant</p>
+      <p style="margin:0"><a href="/coach-platform" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Overview</a></p>
+      <p style="margin:0"><a href="https://app.elevateaisystem.com" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Open the app</a></p>
+      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Systems Audit</a></p>
+      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Strategy Hour</a></p>
     </div>
 
-    <!-- RIGHT: Top Posts -->
     <div style="text-align:right;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
-      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Marketing Guide</a></p>
-      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">4-Pillar Framework</a></p>
-      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">SEO for Coaches</a></p>
-      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI for Coaches</a></p>
-      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">What Is LLMO?</a></p>
-      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Done-for-You vs DIY</a></p>
-      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Getting Clients Online</a></p>
+      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Company</p>
+      <p style="margin:0"><a href="/about" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">About Sunny</a></p>
+      <p style="margin:0"><a href="/blog" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Blog · The Signal</a></p>
+      <p style="margin:0"><a href="/faq" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">FAQ</a></p>
+      <p style="margin:0"><a href="https://cal.com/sunny-binjola/discovery-call" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Book a call</a></p>
     </div>
   </div>
 
   <!-- Bottom: copyright + email + company links -->
   <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
-    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#0B6E23">AI</span> System &middot; You Coach. We Handle Everything Else.</p>
+    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#0B6E23">AI</span> System &middot; You do the work. The system handles the rest.</p>
     <p style="font-size:.56rem;color:#5A5A6E;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#5A5A6E;text-decoration:none">sunny.binjola@gmail.com</a></p>
     <p style="font-size:.5rem;color:#5A5A6E;margin:0"><a href="/about" style="color:#5A5A6E;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#5A5A6E;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#5A5A6E;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#5A5A6E;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#5A5A6E;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#5A5A6E;text-decoration:none">Terms</a></p>
   </div>

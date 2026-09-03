@@ -449,12 +449,25 @@ td b{color:var(--navy)}
 .case-stat span{font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.3}
 .case-flag{display:inline-block;margin-left:.5rem;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--green);padding:.2rem .55rem;border-radius:99px;vertical-align:middle}
 
+/* ---------- Findings rows: the five checks in the leak-card language ---------- */
+.findings{margin-top:2rem;display:flex;flex-direction:column;gap:.55rem}
+.findrow{display:grid;grid-template-columns:34px 220px 1fr;gap:1rem;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:0 10px 10px 0;padding:.75rem 1rem}
+.findrow.is-hi{border-left-color:var(--danger)}
+.fr-n{width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--white);font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.findrow.is-hi .fr-n{background:var(--danger)}
+.findrow b{font-size:.95rem;font-weight:700;color:var(--navy)}
+.fr-what{font-size:.88rem;color:var(--text-muted);line-height:1.5}
+@media(max-width:640px){.findrow{grid-template-columns:34px 1fr}.fr-what{grid-column:2}}
+
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
 .striprow{display:grid;grid-template-columns:215px 1fr;gap:1.3rem;padding:.95rem 0;border-bottom:1px solid var(--border);align-items:baseline}
 .striprow b{font-size:.97rem;color:var(--navy);font-weight:700}
 .striprow span{font-size:.94rem;color:var(--text-muted);line-height:1.55}
 .striprow.is-red b{color:var(--danger)}
+/* Leak numbers, matching the diagram on /five-leaks so the pages cross-reference. */
+.leakchip{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--warn);color:var(--white);font-size:.62rem;font-weight:800;margin-right:.55rem;vertical-align:2px}
+.leakchip.hi{background:var(--danger)}
 @media(max-width:640px){.striprow{grid-template-columns:1fr;gap:.15rem}}
 
 /* One-line qualifier, near the top, so wrong-fit readers leave early. */
