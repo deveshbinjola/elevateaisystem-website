@@ -3,93 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | ElevateAI Systems</title>
+<title>Page Not Found | Elevate AI Systems</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#FAFAF8;color:#1A1A2E;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
-.container{max-width:520px}
-.code{font-size:8rem;font-weight:800;line-height:1;color:#0A0F1C;letter-spacing:-.04em}
-.code span{color:#00FF41}
-h1{font-size:1.5rem;font-weight:700;margin:1rem 0 .75rem;color:#0A0F1C}
-p{color:#5A5A6E;font-size:1rem;line-height:1.6;margin-bottom:2rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;background:#0A0F1C;color:#00FF41;padding:.85rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s}
-.btn:hover{background:#1A2035;transform:translateY(-2px)}
-.btn svg{width:18px;height:18px}
-.links{margin-top:2.5rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-.links a{color:#5A5A6E;text-decoration:none;font-size:.85rem;transition:color .2s}
-.links a:hover{color:#0B6E23}
+/* 404-only: center the page, size the code. Everything else is site.css. */
+.nf{min-height:calc(100vh - 72px);display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
+.nf-in{max-width:820px;width:100%;text-align:center}
+.nf-code{font-size:clamp(5rem,14vw,8rem);font-weight:800;line-height:1;color:var(--navy);letter-spacing:-.04em}
+.nf-code span{color:var(--green-dark)}
+.nf h1{font-size:1.4rem;font-weight:800;color:var(--navy);margin:.8rem 0 .5rem}
+.nf>.nf-in>p{color:var(--text-muted);font-size:1rem;line-height:1.6;max-width:44ch;margin:0 auto 2.2rem}
+.nf .doors{text-align:left;margin-top:0}
+.nf-home{margin-top:2rem;font-size:.9rem}
 </style>
 <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
 o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
+o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
 document.head.appendChild(o)}initApollo();</script>
 </head>
 <body>
-<script src="navbar.js?v=20260902"></script>
-<div class="container">
-  <div class="code">4<span>0</span>4</div>
-  <h1>This page doesn't exist</h1>
-  <p>The page you're looking for may have been moved or no longer exists. Let's get you back on track.</p>
-  <a href="/" class="btn">Back to Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  <div class="links">
-    <a href="/coach-platform">Lead OS</a>
-    <a href="/coach-platform">Content OS</a>
-    <a href="/coach-platform">Growth Engine</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-  </div>
-</div>
+<script src="navbar.js"></script>
 
-<footer style="background:#FFFFFF;border-top:1px solid #E0E0D8;padding:.9rem 3rem .7rem;margin-top:0;" role="contentinfo">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;max-width:1100px;margin:0 auto .5rem;gap:.6rem;flex-wrap:wrap;">
+<main class="nf">
+  <div class="nf-in">
+    <div class="nf-code">4<span>0</span>4</div>
+    <h1>This page is not here.</h1>
+    <p>It may have moved, or it belonged to something we retired. Either way, everything that matters is one of these two doors.</p>
 
-    <!-- LEFT: Services -->
-    <div style="text-align:left;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Services</p>
-      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Search Visibility Audit</a></p>
-      <p style="margin:0"><a href="/ai-strategy-hour" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Strategy Hour</a></p>
-      <p style="margin:0"><a href="/ai-audit" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Systems Audit</a></p>
+    <div class="doors">
+      <a href="/behavioral-health" class="door-card">
+        <span class="dc-tag">For operators</span>
+        <h3>You run a multi-site operation.</h3>
+        <p>Centers, clinics, service businesses. The numbers are retyped by hand and checked too late.</p>
+        <span class="dc-go">See the Ops Engine &rarr;</span>
+      </a>
+      <a href="/coach-platform" class="door-card">
+        <span class="dc-tag">For coaches</span>
+        <h3>You coach.</h3>
+        <p>Your next clients are already in your DMs. You need replies, content and follow-up that sound like you.</p>
+        <span class="dc-go">See the Coach Assistant &rarr;</span>
+      </a>
     </div>
 
-    <!-- MIDDLE: Compare + Free Tools -->
-    <div style="text-align:center;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Compare</p>
-      <p style="margin:0"><a href="/elevateai-vs-hubspot" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs HubSpot</a></p>
-      <p style="margin:0"><a href="/elevateai-vs-coachvox" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs Coachvox</a></p>
-      <p style="margin:0"><a href="/elevateai-vs-diy" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">ElevateAI vs DIY</a></p>
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:.3rem 0 .2rem">Free Tools</p>
-      <p style="margin:0"><a href="/lead-clarity-score" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Lead Clarity Score</a></p>
-      <p style="margin:0"><a href="/seo-audit-landing-page" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Free SEO Audit</a></p>
-    </div>
-
-    <!-- RIGHT: Top Posts -->
-    <div style="text-align:right;">
-      <p style="font-size:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A0F1C;margin:0 0 .2rem">Top Posts</p>
-      <p style="margin:0"><a href="/blog/complete-guide-ai-marketing-coaching-2026" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI Marketing Guide</a></p>
-      <p style="margin:0"><a href="/blog/4-pillar-search-visibility-framework" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">4-Pillar Framework</a></p>
-      <p style="margin:0"><a href="/blog/seo-for-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">SEO for Coaches</a></p>
-      <p style="margin:0"><a href="/blog/ai-for-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">AI for Coaches</a></p>
-      <p style="margin:0"><a href="/blog/what-is-llmo" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">What Is LLMO?</a></p>
-      <p style="margin:0"><a href="/blog/done-for-you-vs-diy-marketing-coaches" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Done-for-You vs DIY</a></p>
-      <p style="margin:0"><a href="/blog/getting-clients-online" style="font-size:.58rem;color:#5A5A6E;text-decoration:none">Getting Clients Online</a></p>
-    </div>
+    <p class="nf-home"><a href="/">Or go to the homepage &rarr;</a></p>
   </div>
+</main>
 
-  <!-- Bottom: copyright + email + company links -->
-  <div style="border-top:1px solid #E0E0D8;padding-top:.45rem;text-align:center;max-width:1100px;margin:0 auto;">
-    <p style="font-size:.68rem;color:#5A5A6E;font-weight:500;margin:0 0 .1rem">&copy; 2026 Elevate<span style="color:#0B6E23">AI</span> System &middot; You do the work. The system handles the rest.</p>
-    <p style="font-size:.56rem;color:#5A5A6E;margin:0 0 .1rem"><a href="mailto:sunny.binjola@gmail.com" style="color:#5A5A6E;text-decoration:none">sunny.binjola@gmail.com</a></p>
-    <p style="font-size:.5rem;color:#5A5A6E;margin:0"><a href="/about" style="color:#5A5A6E;text-decoration:none">About</a> &middot; <a href="/blog" style="color:#5A5A6E;text-decoration:none">Blog</a> &middot; <a href="/the-signal" style="color:#5A5A6E;text-decoration:none">The Signal</a> &middot; <a href="/faq" style="color:#5A5A6E;text-decoration:none">FAQ</a> &middot; <a href="/privacy" style="color:#5A5A6E;text-decoration:none">Privacy</a> &middot; <a href="/terms" style="color:#5A5A6E;text-decoration:none">Terms</a></p>
-  </div>
-</footer>
 </body>
 </html>

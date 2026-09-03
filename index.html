@@ -549,14 +549,27 @@ html{scroll-behavior:smooth}
         <p><b>That job now drafts itself.</b> The system flags what is wrong before claims go out, surfaces the clients quietly costing money, and puts the whole operation on one screen for the owner. Nothing is billed without a human approving it.</p>
         <a href="/behavioral-health" class="ob-cta">See exactly how it works</a>
       </div>
-      <div class="ob-who reveal">
-        <h4>Built for</h4>
-        <ul>
-          <li>Treatment centers and clinics, two to twelve locations</li>
-          <li>Multi-site service businesses with one ops person holding it together</li>
-          <li>Anyone whose reporting is assembled by hand, monthly</li>
-          <li>Owner-led, where one person can decide</li>
-        </ul>
+      <div class="reveal">
+        <div class="dash" role="img" aria-label="A sample of the weekly worklist the engine produces: three flagged items with severity and dollar amounts, and a note that the census was drafted in ten seconds.">
+          <div class="dash-head">
+            <div><div class="dash-title">Monday worklist</div><div class="dash-sub">What the engine flagged this week</div></div>
+            <span class="dash-badge">Sample data</span>
+          </div>
+          <div class="dash-rows">
+            <div class="drow sev-hi"><div><div class="t">3 days under the IOP threshold</div><div class="m">Same client, twice in two weeks</div></div><div class="amt">$1,140<small>at risk</small></div></div>
+            <div class="drow sev-md"><div><div class="t">Step-up without authorization</div><div class="m">Level changed Tuesday, auth still at old level</div></div><div class="amt">$3,800<small>at risk</small></div></div>
+            <div class="drow"><div><div class="t">2 attended days never entered</div><div class="m">In the logs, missing from the census</div></div><div class="amt">$760<small>recoverable</small></div></div>
+          </div>
+          <div class="dash-note">Census drafted in <b>10 seconds</b>. Three items for a human. <b>Nothing moves without approval.</b></div>
+        </div>
+        <div class="ob-who ob-who-after-dash">
+          <h4>Built for</h4>
+          <ul>
+            <li>Treatment centers and clinics, two to twelve locations</li>
+            <li>Multi-site service businesses, reporting assembled by hand</li>
+            <li>Owner-led, where one person can decide</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
