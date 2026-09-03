@@ -409,7 +409,7 @@ html{scroll-behavior:smooth}
 .pillar{text-align:center;padding:1.5rem 1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);transition:all .3s}
 .pillar:hover{border-color:rgba(0,255,65,.2);background:rgba(0,255,65,.04)}
 .pillar-icon svg{width:20px;height:20px;color:var(--green)}
-.pillar h4{font-size:.9rem;font-weight:700;color:var(--white)}
+.pillar h4,.pillar h3{font-size:.9rem;font-weight:700;color:var(--white)}
 /* Problem 01's mini diagram: two systems joined by a person's memory. */
 .carry{display:flex;align-items:stretch;gap:.4rem;margin-top:1.1rem;flex-wrap:wrap}
 .carry-box{flex:1 1 0;min-width:0;font-size:.68rem;font-weight:700;color:var(--text-muted);background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;padding:.5rem .55rem;text-align:center;line-height:1.35;display:flex;align-items:center;justify-content:center}
@@ -437,7 +437,7 @@ html{scroll-behavior:smooth}
 .case-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
 .case-header h3{font-size:1.15rem;font-weight:700}
 .case-columns{display:grid;grid-template-columns:1fr;gap:1.3rem}
-.case-col h4{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem}
+.case-col h4,.case-col h3{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem}
 .case-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .case-col li{font-size:.85rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:.5rem}
 .case-col li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px}
@@ -489,7 +489,7 @@ html{scroll-behavior:smooth}
        tire-kickers, still feeds Supabase). Bullets stripped, they were
        quiz-specific and don't apply to the product page. -->
   <div class="hero-buttons">
-    <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" class="hero-cta" style="background:var(--green);color:var(--navy);font-weight:800">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=home" target="_blank" rel="noopener" class="hero-cta" style="background:var(--green);color:var(--navy);font-weight:800">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <a href="/behavioral-health" class="hero-cta-secondary">See a real build</a>
   </div>
   <p style="font-size:.75rem;color:var(--text-muted);margin:1.6rem auto 0;letter-spacing:.02em;opacity:.65;max-width:540px;">First call is free. Nothing to prepare.</p>
@@ -501,13 +501,13 @@ html{scroll-behavior:smooth}
     <div class="doors">
       <a href="/behavioral-health" class="door-card reveal">
         <span class="dc-tag">For operators</span>
-        <h3>You run a multi-site operation.</h3>
+        <h2>You run a multi-site operation.</h2>
         <p>Centers, clinics, service businesses. The numbers are retyped by hand and checked too late.</p>
         <span class="dc-go">See the Ops Engine &rarr;</span>
       </a>
       <a href="/coach-platform" class="door-card reveal">
         <span class="dc-tag">For coaches</span>
-        <h3>You coach.</h3>
+        <h2>You coach.</h2>
         <p>Your next clients are already in your DMs. You need replies, content and follow-up that sound like you.</p>
         <span class="dc-go">See the Coach Assistant &rarr;</span>
       </a>
@@ -563,7 +563,7 @@ html{scroll-behavior:smooth}
           <div class="dash-note">Census drafted in <b>10 seconds</b>. Three items for a human. <b>Nothing moves without approval.</b></div>
         </div>
         <div class="ob-who ob-who-after-dash">
-          <h4>Built for</h4>
+          <h3>Built for</h3>
           <ul>
             <li>Treatment centers and clinics, two to twelve locations</li>
             <li>Multi-site service businesses, reporting assembled by hand</li>
@@ -621,19 +621,19 @@ html{scroll-behavior:smooth}
       <div class="pillars">
       <div class="pillar reveal" style="transition-delay:.1s">
         <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
-        <h4>Never bills alone</h4>
+        <h3>Never bills alone</h3>
       </div>
       <div class="pillar reveal" style="transition-delay:.2s">
         <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h4>Never sends alone</h4>
+        <h3>Never sends alone</h3>
       </div>
       <div class="pillar reveal" style="transition-delay:.3s">
         <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h4>Flags, not verdicts</h4>
+        <h3>Flags, not verdicts</h3>
       </div>
       <div class="pillar reveal" style="transition-delay:.4s">
         <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-        <h4>A person signs everything</h4>
+        <h3>A person signs everything</h3>
       </div>
     </div>
     </div>
@@ -656,7 +656,7 @@ html{scroll-behavior:smooth}
         <div class="case-body">
           <div class="case-columns">
             <div class="case-col before">
-              <h4>Before</h4>
+              <h3>Before</h3>
               <ul>
                 <li>One person retyping the billing census, over a day, weekly</li>
                 <li>Errors surfaced at denial, 30 to 90 days late</li>
@@ -664,7 +664,7 @@ html{scroll-behavior:smooth}
               </ul>
             </div>
             <div class="case-col after">
-              <h4>After</h4>
+              <h3>After</h3>
               <ul>
                 <li>The census drafts itself in ten seconds, checked five ways</li>
                 <li>Exceptions flagged the same week, while they can be fixed</li>
@@ -685,7 +685,7 @@ html{scroll-behavior:smooth}
         <div class="case-body">
           <div class="case-columns">
             <div class="case-col before">
-              <h4>Before</h4>
+              <h3>Before</h3>
               <ul>
                 <li>After-hours calls hit voicemail and went cold</li>
                 <li>Staff buried in phone tag</li>
@@ -693,7 +693,7 @@ html{scroll-behavior:smooth}
               </ul>
             </div>
             <div class="case-col after">
-              <h4>After</h4>
+              <h3>After</h3>
               <ul>
                 <li>Every call answered, qualified, and booked</li>
                 <li>Filtered by fit before a human steps in</li>
@@ -714,7 +714,7 @@ html{scroll-behavior:smooth}
         <div class="case-body">
           <div class="case-columns">
             <div class="case-col before">
-              <h4>Before</h4>
+              <h3>Before</h3>
               <ul>
                 <li>No lead capture, referrals only</li>
                 <li>No follow-up system</li>
@@ -722,7 +722,7 @@ html{scroll-behavior:smooth}
               </ul>
             </div>
             <div class="case-col after">
-              <h4>After</h4>
+              <h3>After</h3>
               <ul>
                 <li>A quiz that captures the lead and remembers what they said</li>
                 <li>Follow-up that never forgets a conversation</li>
@@ -780,7 +780,7 @@ html{scroll-behavior:smooth}
     <p style="font-size:1rem;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 30px;line-height:1.55">
       A free thirty minute call. Walk me through how the work becomes money and I will tell you where I would look first. Nothing to prepare.
     </p>
-    <a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--green);color:var(--navy);padding:18px 36px;border-radius:10px;font-size:1.05rem;font-weight:800;transition:all .3s;letter-spacing:-.01em">
+    <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=home" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--green);color:var(--navy);padding:18px 36px;border-radius:10px;font-size:1.05rem;font-weight:800;transition:all .3s;letter-spacing:-.01em">
       Book a Free Call
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -820,7 +820,7 @@ html{scroll-behavior:smooth}
       <p><a href="/about">About Sunny</a></p>
       <p><a href="/blog">Blog · The Signal</a></p>
       <p><a href="/faq">FAQ</a></p>
-      <p><a href="https://cal.com/sunny-binjola/discovery-call" target="_blank" rel="noopener">Book a call</a></p>
+      <p><a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=home" target="_blank" rel="noopener">Book a call</a></p>
     </div>
   </div>
 
