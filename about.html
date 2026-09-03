@@ -59,74 +59,62 @@ o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+
 o.onload=function(){window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},
 document.head.appendChild(o)}initApollo();</script>
 <link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="/assets/site.css?v=20260902d">
 <style>
-:root {
-  --bg: #FAFAF8; --bg-alt: #F2F2EE;
-  --green: #00FF41; --green-dark: #0B6E23;
-  --navy: #0A0F1C; --navy-light: #1A2035;
-  --text: #1A1A2E; --text-muted: #5A5A6E;
-  --border: #E0E0D8; --white: #FFFFFF; --card-bg: #FFFFFF;
-  --radius: 12px; --radius-lg: 20px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-
+/* =====================================================================
+   About-page layout only. Tokens come from brand.css, shared components
+   (founder values, reveals, motion) from site.css. This page's hero is a
+   two-column grid, unlike the centered interior hero, so it overrides
+   the shared .hero on purpose.
+   ===================================================================== */
+.hero::before{content:none}
+.philosophy-quote{margin-bottom:0}
+*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 /* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
+@keyframes fadeUp{ from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 /* HERO */
-.hero { padding: 10rem 2rem 5rem; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.hero-text { animation: fadeUp .8s ease; }
-.hero-badge { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--green-dark); background: rgba(0,204,52,.08); padding: .5rem 1.2rem; border-radius: 50px; margin-bottom: 1.5rem; }
-.hero-text h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -.03em; color: var(--navy); margin-bottom: 1.5rem; }
-.hero-text h1 .hl { color: var(--green-dark); }
-.hero-text .intro { font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
-.hero-cta { display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: .9rem 2rem; border-radius: 50px; font-weight: 800; font-size: .95rem; transition: all .3s; }
-.hero-cta:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,255,65,.25); }
-.hero-image { animation: fadeUp .8s ease .2s both; }
-.hero-image img { width: 100%; max-width: 420px; height: auto; object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,.12); margin: 0 auto; }
-
+.hero{ padding: 10rem 2rem 5rem; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-text{ animation: fadeUp .8s ease; }
+.hero-badge{ display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--green-dark); background: rgba(0,204,52,.08); padding: .5rem 1.2rem; border-radius: 50px; margin-bottom: 1.5rem; }
+.hero-text h1{ font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -.03em; color: var(--navy); margin-bottom: 1.5rem; }
+.hero-text h1 .hl{ color: var(--green-dark); }
+.hero-text .intro{ font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
+.hero-cta{ display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: .9rem 2rem; border-radius: 50px; font-weight: 800; font-size: .95rem; transition: all .3s; }
+.hero-cta:hover{ background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,255,65,.25); }
+.hero-image{ animation: fadeUp .8s ease .2s both; }
+.hero-image img{ width: 100%; max-width: 420px; height: auto; object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,.12); margin: 0 auto; }
 /* STORY */
-.story { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
-.story h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: var(--navy); letter-spacing: -.02em; margin-bottom: 2rem; line-height: 1.2; }
-.story h2 .hl { color: var(--green-dark); }
-.story p { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
-.story p strong { color: var(--text); font-weight: 700; }
-
+.story{ padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
+.story h2{ font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: var(--navy); letter-spacing: -.02em; margin-bottom: 2rem; line-height: 1.2; }
+.story h2 .hl{ color: var(--green-dark); }
+.story p{ font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
+.story p strong{ color: var(--text); font-weight: 700; }
 /* PHILOSOPHY */
-.philosophy { padding: 5rem 2rem; background: var(--bg-alt); }
-.philosophy-inner { max-width: 800px; margin: 0 auto; }
-.philosophy-quote { font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 800; color: var(--navy); line-height: 1.3; letter-spacing: -.02em; margin-bottom: 2rem; }
-.philosophy-quote .hl { color: var(--green-dark); }
-.philosophy-body { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
-.philosophy-body strong { color: var(--text); font-weight: 700; }
-.cant-replace { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
-.cant-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.8rem 1.5rem; text-align: center; transition: all .3s; }
-.cant-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
-.cant-icon { font-size: 1.8rem; margin-bottom: .6rem; }
-.cant-label { font-size: .85rem; font-weight: 800; color: var(--navy); margin-bottom: .3rem; }
-.cant-desc { font-size: .82rem; color: var(--text-muted); line-height: 1.55; }
-.philosophy-line { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-top: 2rem; line-height: 1.6; }
-.philosophy-line .hl { color: var(--green-dark); }
-
+.philosophy{ padding: 5rem 2rem; background: var(--bg-alt); }
+.philosophy-inner{ max-width: 800px; margin: 0 auto; }
+.philosophy-quote{ font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 800; color: var(--navy); line-height: 1.3; letter-spacing: -.02em; margin-bottom: 2rem; }
+.philosophy-quote .hl{ color: var(--green-dark); }
+.philosophy-body{ font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
+.philosophy-body strong{ color: var(--text); font-weight: 700; }
+.cant-replace{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
+.cant-card{ background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.8rem 1.5rem; text-align: center; transition: all .3s; }
+.cant-card:hover{ transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
+.cant-icon{ font-size: 1.8rem; margin-bottom: .6rem; }
+.cant-label{ font-size: .85rem; font-weight: 800; color: var(--navy); margin-bottom: .3rem; }
+.cant-desc{ font-size: .82rem; color: var(--text-muted); line-height: 1.55; }
+.philosophy-line{ font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-top: 2rem; line-height: 1.6; }
+.philosophy-line .hl{ color: var(--green-dark); }
 /* CTA */
-.about-cta { padding: 5rem 2rem; text-align: center; background: var(--navy); color: var(--white); }
-.about-cta h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 1rem; }
-.about-cta p { font-size: 1.05rem; color: rgba(255,255,255,.6); max-width: 550px; margin: 0 auto 2rem; line-height: 1.7; }
-.about-cta .cta-green { display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 800; font-size: 1rem; transition: all .3s; }
-.about-cta .cta-green:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,255,65,.3); }
-
+.about-cta{ padding: 5rem 2rem; text-align: center; background: var(--navy); color: var(--white); }
+.about-cta h2{ font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 1rem; }
+.about-cta p{ font-size: 1.05rem; color: rgba(255,255,255,.6); max-width: 550px; margin: 0 auto 2rem; line-height: 1.7; }
+.about-cta .cta-green{ display: inline-flex; align-items: center; gap: .5rem; background: var(--green); color: var(--navy); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 800; font-size: 1rem; transition: all .3s; }
+.about-cta .cta-green:hover{ background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,255,65,.3); }
 /* FOOTER */
-footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border); }
-footer p { font-size: .82rem; color: var(--text-muted); font-weight: 500; }
-
+footer{ padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border); }
+footer p{ font-size: .82rem; color: var(--text-muted); font-weight: 500; }
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .nav-links { display: none; }
   .mobile-menu { display: flex; }
   .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 3rem; text-align: center; gap: 2rem; }
@@ -137,13 +125,6 @@ footer p { font-size: .82rem; color: var(--text-muted); font-weight: 500; }
   .cant-replace { grid-template-columns: 1fr; }
   .philosophy { padding: 3rem 1.5rem; }
 }
-
-/* Founder values, mirrored from the homepage founder section.
-   Keep the three labels identical on both pages. */
-.founder-values{display:flex;gap:.75rem;flex-wrap:wrap;margin:0 0 1.6rem}
-.founder-value{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--text,#1A1A2E);padding:.4rem .9rem;border-radius:50px;background:var(--bg-alt,#F2F2EE);border:1px solid var(--border,#E0E0D8)}
-.founder-value svg{width:14px;height:14px;color:var(--green-dark,#0B6E23);flex-shrink:0}
-@media(max-width:640px){.founder-values{justify-content:center}}
 </style>
 <script type="application/ld+json">
 {
