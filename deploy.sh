@@ -45,6 +45,10 @@ EXCLUDES=(
   # Internal strategy docs. /deliverables/hermes-vugola-paperclip-playbook
   # was publicly readable and unlinked, naming a third party's stack.
   --exclude='deliverables/'
+  # 30 coach-niche landing pages retired 2026-09-02: they marketed Lead OS /
+  # Content OS / Growth Engine, all retired products. _redirects sends
+  # /niches/* to /coach-platform; files stay in git.
+  --exclude='niches/'
 )
 for f in "${RETIRED[@]}"; do EXCLUDES+=( --exclude="/$f" ); done
 

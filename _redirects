@@ -59,9 +59,10 @@
 /portal/week-8       /portal/week-8.html       200
 /portal/your-drop    /portal/your-drop.html    200
 
-# 4. Legacy Sprint $497 page → deprecated, send to cohort
-/sprint              /augmented-coach          301
-/sprint.html         /augmented-coach          301
+# 4. Legacy Sprint $497 page. Was chained through /augmented-coach, which is
+# itself retired and 301s onward; point straight at the destination.
+/sprint              /coach-platform           301
+/sprint.html         /coach-platform           301
 
 # 5. Coach Platform page consolidation (May 2026)
 # Old long-form coach-platform.html was archived to coach-platform-archived-2026-05.html
@@ -69,3 +70,7 @@
 # (formerly /start) is now the canonical /coach-platform. Redirect /start → /coach-platform.
 /start               /coach-platform           301
 /start.html          /coach-platform           301
+
+# 6. Coach-niche pages retired 2026-09-02 (30 pages marketing retired
+# products). Files excluded from deploy in deploy.sh, kept in git.
+/niches/*            /coach-platform           301
