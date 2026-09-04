@@ -12,6 +12,9 @@
   const path = window.location.pathname;
   const isSubfolder = path.includes('/blog/') && !path.endsWith('/blog/') && !path.endsWith('/blog');
   const prefix = isSubfolder ? '../' : '';
+  // Attribution: the nav CTA reports which page the click came from.
+  const pageSlug = (path.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home');
+  const ctaHref = 'https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=nav-' + pageSlug;
   const absPrefix = '/'; // Use absolute paths for nav links
 
   // ── Nav links (simplified 2026-09-02) ──
@@ -109,7 +112,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
     </a>
     <div class="nav-links">
       ${linkHTML}
-      <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
+      <a href="${ctaHref}" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
     </div>
     <button class="mobile-menu" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -123,7 +126,7 @@ img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
   mobileNav.innerHTML = `
     <a href="/">Home</a>
     ${linkHTML}
-    <a href="https://cal.com/sunny-binjola/discovery-call" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
+    <a href="${ctaHref}" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
   `;
 
   // ── Insert into DOM ──
