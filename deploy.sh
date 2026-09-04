@@ -104,6 +104,36 @@ print(f"Stamped {count} asset references with content-hash versions "
       f"({len(hashes)} assets).")
 PYEOF
 
+# Cloudflare Web Analytics: if analytics-token.txt exists (the site token
+# from dash.cloudflare.com -> Analytics & Logs -> Web Analytics -> Add a
+# site -> "use JS snippet"), inject the beacon into every staged page.
+# The token is not a secret; it ships in page source by design. Prefer the
+# dashboard's AUTOMATIC setup instead when available: it injects at the
+# edge and this block then stays dormant (no token file, no injection).
+if [ -f "$SRC/analytics-token.txt" ]; then
+  CF_ANALYTICS_TOKEN=$(cat "$SRC/analytics-token.txt" | tr -d '[:space:]')
+  /usr/bin/python3 - "$STAGE" "$CF_ANALYTICS_TOKEN" <<'PYEOF'
+import os, sys
+stage, token = sys.argv[1], sys.argv[2]
+snippet = ('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
+           f'data-cf-beacon=\'{{"token": "{token}"}}\'></script>')
+count = 0
+for root, dirs, files in os.walk(stage):
+    dirs[:] = [d for d in dirs if not d.startswith('.')]
+    for f in files:
+        if not f.endswith('.html'):
+            continue
+        p = os.path.join(root, f)
+        html = open(p, encoding='utf-8', errors='ignore').read()
+        if 'cloudflareinsights.com/beacon' in html or '</body>' not in html:
+            continue
+        open(p, 'w', encoding='utf-8').write(
+            html.replace('</body>', snippet + '\n</body>', 1))
+        count += 1
+print(f"Injected Web Analytics beacon into {count} pages.")
+PYEOF
+fi
+
 # Fail loudly rather than shipping something private.
 if find "$STAGE" -name '*.md' | grep -q .; then
   echo "ABORT: markdown files reached the staging copy" >&2; exit 1
