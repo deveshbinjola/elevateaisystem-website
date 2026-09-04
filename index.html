@@ -369,8 +369,11 @@ html{scroll-behavior:smooth}
 .case-card{margin-top:0}
 
 /* HERO */
-.hero{padding:10rem 2rem 6rem;text-align:center;max-width:900px;margin:0 auto;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;z-index:-1}
+.hero{padding:10rem 2rem 6rem;text-align:center;position:relative;overflow:hidden}
+/* Full-bleed so site.css's ledger-paper background reaches the viewport
+   edges; the old 900px cap moves onto the children. */
+.hero>*{max-width:900px;margin-left:auto;margin-right:auto}
+.hero::before{content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,.11) 0%,transparent 70%);border-radius:50%;pointer-events:none;z-index:-1}
 .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg-alt);color:var(--text);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.4rem;border-radius:50px;margin-bottom:2rem;border:1px solid var(--border);animation:fadeIn .8s ease .2s both}
 .hero-badge svg{width:16px;height:16px;color:var(--green-dark)}
 .hero .hero-kicker{font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.5rem;animation:fadeUp .8s ease .3s both;opacity:.75}
@@ -471,6 +474,8 @@ html{scroll-behavior:smooth}
     .qz-modal { padding: 0; }
     .qz-dialog { max-height: 100dvh; height: 100dvh; border-radius: 0; }
   }
+/* Keep the original 900px text measure now the hero box is full-bleed. */
+.hero .hero-you,.hero .hero-tagline{max-width:900px;margin-left:auto;margin-right:auto}
 </style>
 </head>
 <body>
