@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Billing Census Automation for Multi-Site Networks | ElevateAI</title>
-<meta name="description" content="Your billing census is rebuilt by hand every week by one person. See the worklist and the leadership dashboard that replace it, and how a network goes from first call to live in under two months.">
+<title>Billing Census Automation for Behavioral Health | ElevateAI</title>
+<meta name="description" content="Your billing company bills whatever you send them. The Ops Engine drafts the billing census from attendance in Kipu, Sunwave or paper logs, runs five checks, and holds the ugly lines for a person. For IOP and PHP networks, two to twelve sites. BAA first, runs local, never auto-bills.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Sunny Binjola">
 <meta name="keywords" content="billing census automation, behavioral health billing errors, IOP PHP threshold billing, treatment network operations, claim denial prevention, census reconciliation, multi-site treatment billing">
 <link rel="canonical" href="https://elevateaisystem.com/behavioral-health">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Your billing census runs on one person's memory">
-<meta property="og:description" content="Over a day a week of retyping. See the two screens that replace it.">
+<meta property="og:title" content="Billing Census Automation for Behavioral Health | ElevateAI">
+<meta property="og:description" content="Your billing company bills whatever you send them. The engine makes sure what you send is right. IOP and PHP networks, two to twelve sites. BAA first, runs local, never auto-bills.">
 <meta property="og:url" content="https://elevateaisystem.com/behavioral-health">
 <meta property="og:site_name" content="Elevate AI Systems">
 <meta property="og:image" content="https://elevateaisystem.com/behavioral-health-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Your billing census runs on one person's memory">
-<meta name="twitter:description" content="Over a day a week of retyping. See the two screens that replace it.">
+<meta name="twitter:title" content="Billing Census Automation for Behavioral Health">
+<meta name="twitter:description" content="Your billing company bills whatever you send them. The engine makes sure what you send is right.">
 <meta name="twitter:image" content="https://elevateaisystem.com/behavioral-health-og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect x='6' y='8' width='72' height='72' rx='18' fill='%2300F33D'/%3E%3Cpath d='M26 56C24.9 44.1 27.9 34.6 36.5 28.8C43 24.4 50.8 24.8 58.8 18.9C62.2 34.2 58 47.3 47.1 53.2C40.1 57 33 56.7 28.2 54.7L26 56Z' fill='%23071126'/%3E%3Cpath d='M24.4 58.9C28.8 49.3 36.1 42.1 46.2 36.9' stroke='%23071126' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,9 +51,9 @@
       <!-- Keep in sync with the link set in navbar.js, which is the source of
            truth for the rest of the site. These landing pages carry an inline
            nav because they use site.css rather than navbar.js's injected CSS. -->
-      <a href="/behavioral-health" class="hide-sm">Ops Engine</a>
-      <a href="/coach-platform" class="hide-sm">Coach Assistant</a>
-      <a href="/about" class="hide-xs">About</a>
+      <a href="/five-leaks" class="hide-sm">Five leaks</a>
+      <a href="/the-ten-second-run" class="hide-sm">Case study</a>
+      <a href="/leak-checklist" class="hide-xs">Checklist</a>
       <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
     </div>
   </div>
@@ -64,155 +64,39 @@
 <header class="hero">
   <div class="hero-badge">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-    For multi-site treatment networks
+    IOP and PHP &middot; founder-led &middot; two to twelve sites
   </div>
-  <h1 class="hero-you">Your billing census runs on</h1>
-  <p class="hero-tagline">one person's <span class="mark">memory.</span></p>
-  <p class="hero-subhead">Over a day a week of retyping, at a five-facility network. <b>The first real run composed 637 census entries with zero conflicts against the hand-typed ones.</b></p>
+  <h1 class="hero-you" style="font-size:clamp(2.4rem,5.5vw,4.2rem);max-width:17ch;margin-inline:auto">Your billing company bills whatever you send them.</h1>
+  <p class="hero-subhead">At a five-site network, one operations lead spent over a day every week retyping attendance, from Kipu or a paper log, into the billing census their biller works from. Errors surfaced as denials, or as a takeback months later. <b>Nothing here replaces your EHR or your biller.</b></p>
   <div class="hero-buttons">
     <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener" class="hero-cta">Book a free call</a>
-    <a href="#how" class="hero-cta-secondary">How it works</a>
+    <a href="/leak-checklist" class="hero-cta-secondary">Check last month yourself</a>
   </div>
-  <p class="hero-note">First call is free. BAA before anything touches real data. A person approves every line.</p>
+  <p class="hero-note">BAA before anything touches real data. Runs local. A person approves every line.<br>If you are a hospital system or already live end to end on a modern RCM platform, I will say so on the first call.</p>
 </header>
 
-<div class="statbar">
+<div class="statbar on-paper">
   <div class="statbar-in">
-    <div class="stat"><b>637</b><span>Entries composed in one run, zero conflicts with the manual version</span></div>
-    <div class="stat"><b>1 day+</b><span>Of skilled ops time per week, going to retyping</span></div>
-    <div class="stat"><b>10 sec</b><span>To read a facility month, 943 client-days</span></div>
-    <div class="stat"><b>&lt;2 mo</b><span>From first call to live</span></div>
+    <div class="stat"><b>1</b><span>Person holding the census together, by hand</span></div>
+    <div class="stat"><b>1.5 days</b><span>Of retyping, every single week</span></div>
+    <div class="stat"><b>15%</b><span>Denial rate, with no rework visibility</span></div>
+    <div class="stat"><b>$500K</b><span>A month in ads feeding admissions</span></div>
   </div>
 </div>
 
-<section class="section">
-  <div class="section-inner">
-    <p class="section-label reveal">What you end up with</p>
-    <h2 class="section-title reveal wide">Two screens. One for the person fixing it, one for the person funding it.</h2>
-    <p class="section-subtitle reveal">Shown with invented numbers so you can see the shape of it. Nothing below is a real client, and no patient data appears anywhere on this site.</p>
-
-    <div class="dash-grid">
-
-      <div class="dash reveal">
-        <div class="dash-head">
-          <div>
-            <p class="dash-title">Monday worklist</p>
-            <p class="dash-sub">For the billing lead. Before claims go out.</p>
-          </div>
-          <span class="dash-badge">Sample data</span>
-        </div>
-        <div class="dash-kpis">
-          <div class="dash-kpi"><b>18</b><span>Flags to review</span></div>
-          <div class="dash-kpi"><b>943</b><span>Client-days scanned</span></div>
-          <div class="dash-kpi"><b>9s</b><span>Run time</span></div>
-        </div>
-        <div class="dash-rows">
-          <div class="drow sev-hi">
-            <div>
-              <p class="t">Service after discharge</p>
-              <p class="m">MR-5502 · Cedar Park · discharged the 2nd, services posted the 4th and 5th</p>
-            </div>
-            <span class="amt">Hold<small>Clawback risk</small></span>
-          </div>
-          <div class="drow sev-hi">
-            <div>
-              <p class="t">Billed above documentation</p>
-              <p class="m">MR-3871 · Northgate · IOP 3 hr on the census, no signed note in the chart</p>
-            </div>
-            <span class="amt">Hold<small>Fix or pull</small></span>
-          </div>
-          <div class="drow sev-md">
-            <div>
-              <p class="t">Under threshold</p>
-              <p class="m">MR-4417 · Lakeview · IOP 2.0 hrs, below the 3 hr line</p>
-            </div>
-            <span class="amt">~$360<small>Est. exposure</small></span>
-          </div>
-          <div class="drow sev-md">
-            <div>
-              <p class="t">Level-of-care conflict</p>
-              <p class="m">MR-2298 · Fairmont · stepped up to PHP, authorization covers IOP only</p>
-            </div>
-            <span class="amt">Re-auth<small>Before billing</small></span>
-          </div>
-          <div class="drow">
-            <div>
-              <p class="t">Unbilled attendance</p>
-              <p class="m">MR-6130 · Northgate · attended and documented, never entered</p>
-            </div>
-            <span class="amt">Add<small>Full rate</small></span>
-          </div>
-        </div>
-        <p class="dash-note">Every flag is a <b>candidate for review, not a verdict</b>. A short session can be perfectly legitimate. The list exists so one person sees all of it at once, in the same week.</p>
-      </div>
-
-      <div class="dash reveal">
-        <div class="dash-head">
-          <div>
-            <p class="dash-title">Executive summary</p>
-            <p class="dash-sub">For ownership. No patient data, ever.</p>
-          </div>
-          <span class="dash-badge">Sample data</span>
-        </div>
-        <div class="dash-kpis">
-          <div class="dash-kpi"><b>4</b><span>Facilities</span></div>
-          <div class="dash-kpi"><b>100%</b><span>Census vs break-even</span></div>
-          <div class="dash-kpi"><b>&lt;24h</b><span>Data age</span></div>
-        </div>
-        <p class="dash-sub" style="margin-bottom:.9rem">Census strength against break-even, month to date</p>
-        <div class="bar-row"><span class="lab">Fairmont</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">112%</span></div>
-        <div class="bar-row"><span class="lab">Northgate</span><span class="bar-track"><span class="bar-fill" style="width:93%"></span></span><span class="val">104%</span></div>
-        <div class="bar-row"><span class="lab">Lakeview</span><span class="bar-track"><span class="bar-fill warn" style="width:87%"></span></span><span class="val">97%</span></div>
-        <div class="bar-row"><span class="lab">Cedar Park</span><span class="bar-track"><span class="bar-fill bad" style="width:79%"></span></span><span class="val">88%</span></div>
-
-        <p class="dash-sub" style="margin:1.3rem 0 .4rem">Network census trend, with projection to month end</p>
-        <svg viewBox="0 0 320 84" width="100%" height="84" role="img" aria-label="Sample census trend with a dashed projection to month end">
-          <line x1="0" y1="42" x2="320" y2="42" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="3 4"/>
-          <polyline points="6,58 58,50 110,54 162,38 214,30" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="214,30 266,26 314,22" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" opacity=".55"/>
-          <circle cx="214" cy="30" r="4" fill="#00FF41"/>
-          <text x="6" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Wk 1</text>
-          <text x="196" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Today</text>
-          <text x="276" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Proj.</text>
-        </svg>
-        <p class="dash-note"><b>Cedar Park has run under break-even for three straight weeks.</b> At this trend it closes the month nine percent short. All aggregate, so it travels to a phone without a single patient name.</p>
-      </div>
-    </div>
-
-    <div class="dash dash-full reveal">
-      <div class="dash-head">
-        <div>
-          <p class="dash-title">Patterns you cannot see one week at a time</p>
-          <p class="dash-sub">Repeat under-threshold attendance this month, by client reference</p>
-        </div>
-        <span class="dash-badge">Sample data</span>
-      </div>
-      <div class="bar-row"><span class="lab">MR-4417</span><span class="bar-track"><span class="bar-fill bad" style="width:100%"></span></span><span class="val">6 days</span></div>
-      <div class="bar-row"><span class="lab">MR-2298</span><span class="bar-track"><span class="bar-fill warn" style="width:67%"></span></span><span class="val">4 days</span></div>
-      <div class="bar-row"><span class="lab">MR-7741</span><span class="bar-track"><span class="bar-fill warn" style="width:50%"></span></span><span class="val">3 days</span></div>
-      <div class="bar-row"><span class="lab">MR-5093</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="val">2 days</span></div>
-      <p class="dash-note">Any single short day looks like nothing. <b>Six from one client in four weeks is not a billing problem, it is an engagement conversation</b> for the site director. Nobody catches that reading one week at a time, which is exactly why nobody was catching it.</p>
-    </div>
-
-    <div class="fitline reveal">
-      <b>Built for</b> two to twelve locations, founder-led, with one operations person and a spreadsheet sitting between the work and the money.
-      <br><span class="no">Not for</span> fifty-site roll-ups, hospital systems, or anyone already live end to end on a modern RCM platform. If that is you, I will say so on the first call.
-    </div>
-  </div>
-</section>
 
 <section class="section alt">
   <div class="section-inner">
     <p class="section-label reveal">Why the numbers are wrong</p>
     <h2 class="section-title reveal">Money leaves a manual census five ways.</h2>
-    <p class="section-subtitle reveal">Not fraud, not carelessness. Attendance lives in one system, money lives in another, and a person carries it across by hand every week.</p>
+    <p class="section-subtitle reveal">Not fraud, not carelessness. Attendance lives in one system, Kipu, Sunwave, or a paper log. Money lives in another, the census workbook your billing company reads. A person carries it across by hand every week.</p>
     <div class="striplist reveal">
       <div class="striprow"><b><span class="leakchip">01</span>Unbilled attendance</b><span>Delivered, documented, never entered. No claim was ever made, so nothing downstream ever asks.</span></div>
       <div class="striprow"><b><span class="leakchip hi">02</span>Billing above documentation</b><span>A line the chart cannot support. It bills cleanly today and returns later as a clawback.</span></div>
       <div class="striprow"><b><span class="leakchip">03</span>Threshold days</b><span>An IOP day under three hours, a PHP day under five. Reimburses at roughly a tenth, cost you full price.</span></div>
       <div class="striprow"><b><span class="leakchip">04</span>Level-of-care conflicts</b><span>A step-up recorded in one system, with an authorization that never caught up. Denied ninety days later.</span></div>
       <div class="striprow"><b><span class="leakchip hi">05</span>Identity mismatches</b><span>Matched by name instead of record number, or a client discharged last month. Hardest to defend afterward.</span></div>
-      <div class="striprow is-red"><b>And why you cannot see it</b><span>You find out at denial time, ninety days late, from someone else's report. <b>Same week is a correction. Ninety days is a write-off.</b></span></div>
+      <div class="striprow is-red"><b>And why you cannot see it</b><span>You find out at denial time, ninety days late, from someone else's report. Or worse: a payer audit finds it 12 to 24 months later, and the recoupment letter asks for money you already spent. <b>Same week is a correction. Ninety days is a write-off. Two years is a takeback.</b></span></div>
     </div>
     <p class="section-subtitle reveal" style="margin-top:1.6rem"><a href="/five-leaks"><b>Each leak, and how to check yours this week →</b></a></p>
   </div>
@@ -251,7 +135,125 @@
         </div>
       </div>
     </div>
-    <p class="section-subtitle reveal" style="margin-top:1.6rem"><a href="/the-ten-second-run"><b>The full case study, including what I will not claim →</b></a></p>
+    <p class="section-subtitle reveal" style="margin-top:1.6rem">Pilot so far: one facility, one month, on real client data. Rollout across the other sites is underway. I do not claim a recovered-dollars number until a full billing cycle proves one.</p>
+    <p class="section-subtitle reveal" style="margin-top:.6rem"><a href="/the-ten-second-run"><b>The full case study, including what I will not claim →</b></a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">What you end up with</p>
+    <h2 class="section-title reveal wide">The patterns nobody can see one week at a time.</h2>
+    <p class="section-subtitle reveal">If your billing person leaves. A step-up the authorization never followed. One site running under break-even while the ads stay hot. Two screens catch them: one for the person fixing it, one for the person funding it.</p>
+    <p class="section-subtitle reveal" style="font-size:.85rem;color:var(--text-faint)">Shown with invented numbers. Nothing below is a real client, and no patient data appears anywhere on this site.</p>
+
+    <div class="dash-grid">
+
+      <div class="dash reveal">
+        <div class="dash-head">
+          <div>
+            <p class="dash-title">Monday worklist</p>
+            <p class="dash-sub">For the billing lead. Before claims go out.</p>
+          </div>
+          <span class="dash-badge">Sample data</span>
+        </div>
+        <div class="dash-kpis">
+          <div class="dash-kpi"><b>18</b><span>Flags to review</span></div>
+          <div class="dash-kpi"><b>943</b><span>Client-days scanned</span></div>
+          <div class="dash-kpi"><b>9s</b><span>Run time</span></div>
+        </div>
+        <div class="dash-rows">
+          <div class="drow sev-hi">
+            <div>
+              <p class="t">Service after discharge</p>
+              <p class="m">MR-5502 · Site D · discharged the 2nd, services posted the 4th and 5th</p>
+            </div>
+            <span class="amt">Hold<small>Clawback risk</small></span>
+          </div>
+          <div class="drow sev-hi">
+            <div>
+              <p class="t">Billed above documentation</p>
+              <p class="m">MR-3871 · Site B · IOP 3 hr on the census, no signed note in the chart</p>
+            </div>
+            <span class="amt">Hold<small>Fix or pull</small></span>
+          </div>
+          <div class="drow sev-md">
+            <div>
+              <p class="t">Under threshold</p>
+              <p class="m">MR-4417 · Site C · IOP 2.0 hrs, below the 3 hr line</p>
+            </div>
+            <span class="amt">~$360<small>Est. exposure</small></span>
+          </div>
+          <div class="drow sev-md">
+            <div>
+              <p class="t">Level-of-care conflict</p>
+              <p class="m">MR-2298 · Site A · stepped up to PHP, authorization covers IOP only</p>
+            </div>
+            <span class="amt">Re-auth<small>Before billing</small></span>
+          </div>
+          <div class="drow">
+            <div>
+              <p class="t">Unbilled attendance</p>
+              <p class="m">MR-6130 · Site B · attended and documented, never entered</p>
+            </div>
+            <span class="amt">Add<small>Full rate</small></span>
+          </div>
+        </div>
+        <p class="dash-note">Every flag is a <b>candidate for review, not a verdict</b>. A short session can be perfectly legitimate. The list exists so one person sees all of it at once, in the same week.</p>
+      </div>
+
+      <div class="dash reveal">
+        <div class="dash-head">
+          <div>
+            <p class="dash-title">Executive summary</p>
+            <p class="dash-sub">For ownership. No patient data, ever.</p>
+          </div>
+          <span class="dash-badge">Sample data</span>
+        </div>
+        <div class="dash-kpis">
+          <div class="dash-kpi"><b>4</b><span>Facilities</span></div>
+          <div class="dash-kpi"><b>100%</b><span>Census vs break-even</span></div>
+          <div class="dash-kpi"><b>&lt;24h</b><span>Data age</span></div>
+        </div>
+        <p class="dash-sub" style="margin-bottom:.9rem">Census strength against break-even, month to date</p>
+        <div class="bar-row"><span class="lab">Site A</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">112%</span></div>
+        <div class="bar-row"><span class="lab">Site B</span><span class="bar-track"><span class="bar-fill" style="width:93%"></span></span><span class="val">104%</span></div>
+        <div class="bar-row"><span class="lab">Site C</span><span class="bar-track"><span class="bar-fill warn" style="width:87%"></span></span><span class="val">97%</span></div>
+        <div class="bar-row"><span class="lab">Site D</span><span class="bar-track"><span class="bar-fill bad" style="width:79%"></span></span><span class="val">88%</span></div>
+
+        <p class="dash-sub" style="margin:1.3rem 0 .4rem">Network census trend, with projection to month end</p>
+        <svg viewBox="0 0 320 84" width="100%" height="84" role="img" aria-label="Sample census trend with a dashed projection to month end">
+          <line x1="0" y1="42" x2="320" y2="42" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="3 4"/>
+          <polyline points="6,58 58,50 110,54 162,38 214,30" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="214,30 266,26 314,22" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" opacity=".55"/>
+          <circle cx="214" cy="30" r="4" fill="#00FF41"/>
+          <text x="6" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Wk 1</text>
+          <text x="196" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Today</text>
+          <text x="276" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Proj.</text>
+        </svg>
+        <p class="dash-note"><b>Site D has run under break-even for three straight weeks.</b> At this trend it closes the month nine percent short. All aggregate, so it travels to a phone without a single patient name.</p>
+      </div>
+    </div>
+
+    <div class="dash dash-full reveal">
+      <div class="dash-head">
+        <div>
+          <p class="dash-title">Patterns you cannot see one week at a time</p>
+          <p class="dash-sub">Repeat under-threshold attendance this month, by client reference</p>
+        </div>
+        <span class="dash-badge">Sample data</span>
+      </div>
+      <div class="bar-row"><span class="lab">MR-4417</span><span class="bar-track"><span class="bar-fill bad" style="width:100%"></span></span><span class="val">6 days</span></div>
+      <div class="bar-row"><span class="lab">MR-2298</span><span class="bar-track"><span class="bar-fill warn" style="width:67%"></span></span><span class="val">4 days</span></div>
+      <div class="bar-row"><span class="lab">MR-7741</span><span class="bar-track"><span class="bar-fill warn" style="width:50%"></span></span><span class="val">3 days</span></div>
+      <div class="bar-row"><span class="lab">MR-5093</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="val">2 days</span></div>
+      <p class="dash-note">Any single short day looks like nothing. <b>Six from one client in four weeks is not a billing problem, it is an engagement conversation</b> for the site director. Nobody catches that reading one week at a time, which is exactly why nobody was catching it.</p>
+    </div>
+
+    <div class="fitline reveal">
+      <b>Built for</b> two to twelve locations, founder-led, with one operations person and a spreadsheet sitting between the work and the money.
+      <br><span class="no">Not for</span> fifty-site roll-ups, hospital systems, or anyone already live end to end on a modern RCM platform. If that is you, I will say so on the first call.
+    </div>
   </div>
 </section>
 
@@ -278,21 +280,18 @@
     <div class="phase-grid">
       <div class="phase-card reveal">
         <span class="phase-connector"></span>
-        <div class="phase-num">1</div>
-        <h3>The Ops Audit</h3>
+                <h3>The Ops Audit</h3>
         <p class="price">Two to three weeks</p>
         <p>Your real census, not a demo. Ends with the leaks quantified and a billing SOP your team can run without the person who normally does it.</p>
       </div>
       <div class="phase-card reveal">
         <span class="phase-connector"></span>
-        <div class="phase-num">2</div>
-        <h3>The Engine</h3>
+                <h3>The Engine</h3>
         <p class="price">Four to six weeks</p>
         <p>Your rules go into config: rates, tiers, thresholds, and each site's spreadsheet dialect. It fills the census in your exact format and builds both dashboards.</p>
       </div>
       <div class="phase-card reveal">
-        <div class="phase-num">3</div>
-        <h3>Live</h3>
+                <h3>Live</h3>
         <p class="price">Then it just runs</p>
         <p>Scheduled overnight, your list waiting Monday morning. Rules recalibrated as payers move, new facilities onto the same engine.</p>
       </div>
@@ -318,12 +317,44 @@
   </div>
 </section>
 
+<section class="section" id="estimate">
+  <div class="section-inner">
+    <p class="section-label reveal">The arithmetic</p>
+    <h2 class="section-title reveal">Run it on your own numbers.</h2>
+    <p class="section-subtitle reveal">I will not tell you what you are losing. Put your figures in. It computes in your browser and is sent nowhere.</p>
+    <div class="calc reveal">
+      <h3>Leak estimator</h3>
+      <p>Monthly figures. Rough is fine, this is about order of magnitude.</p>
+      <div class="calc-fields">
+        <div class="calc-f"><label for="cd">Billable client-days per month, all facilities</label><input id="cd" type="number" value="900" min="0"></div>
+        <div class="calc-f"><label for="rate">Average reimbursement per full day ($)</label><input id="rate" type="number" value="400" min="0"></div>
+        <div class="calc-f"><label for="thr">Days under the LOC threshold (%)</label><input id="thr" type="number" value="4" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="unb">Attended days never billed (%)</label><input id="unb" type="number" value="1" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="den">Denial rate (%)</label><input id="den" type="number" value="15" min="0" max="100" step="0.5"></div>
+        <div class="calc-f"><label for="norw">Denials never reworked (%)</label><input id="norw" type="number" value="30" min="0" max="100" step="1"></div>
+      </div>
+      <div class="calc-out">
+        <div class="calc-row"><span>Threshold days, lost to the rate collapse</span><b id="o1">$0</b></div>
+        <div class="calc-bar" id="o1-bar" aria-hidden="true"><i></i></div>
+        <div class="calc-row"><span>Delivered but never billed</span><b id="o2">$0</b></div>
+        <div class="calc-bar" id="o2-bar" aria-hidden="true"><i></i></div>
+        <div class="calc-row"><span>Denials never reworked</span><b id="o3">$0</b></div>
+        <div class="calc-bar" id="o3-bar" aria-hidden="true"><i></i></div>
+        <div class="calc-row total"><span>Estimated annual exposure</span><b id="o4">$0</b></div>
+      </div>
+      <p class="calc-note"><b>Before you quote that number.</b> This is arithmetic on figures you typed, not a finding about your business. It leaves out clawback exposure entirely, because that follows audit risk rather than volume. Treat it as a reason to look, not a result.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section alt">
   <div class="section-inner">
     <p class="section-label reveal">Questions</p>
     <h2 class="section-title reveal">What operators ask first.</h2>
     <div class="faq reveal">
-      <details><summary>We already have a billing company.</summary><p>So did they. Your billing company bills whatever you send them. This makes sure what you send is right. Theirs liked it, because we made their input cleaner.</p></details>
+      <details><summary>We already have a billing company.</summary><p>Keep them. They bill what you send. This makes sure what you send is right, and at the network above, the billing company liked it, because their input got cleaner.</p></details>
+      <details><summary>We already run Kipu, or Kipu RCM, or CMD.</summary><p>Good. Keep those too. Between attendance in your EMR and the file your biller reads, a person still carries the week across by hand. This checks that week before it leaves the building. Nothing gets replaced.</p></details>
+      <details><summary>Are you another AI note vendor?</summary><p>No. We do not write clinical notes and we do not touch claims. The engine drafts the census from attendance you already recorded, runs five checks, and holds the ugly lines for a person to decide.</p></details>
       <details><summary>Our data is too sensitive for AI.</summary><p>Agreed, which is why patient data never leaves your infrastructure. Local scripts, BAA signed, aggregates only. Ask any vendor where the data physically goes. My answer is nowhere.</p></details>
       <details><summary>We are too messy, and every site does it differently.</summary><p>Messy is the qualification, not the disqualification. If your spreadsheets were clean you would not need me. Each site has its own dialect of colours, time slots and naming, and the parser learns all of them before anyone talks about standardising.</p></details>
       <details><summary>How do we know it works?</summary><p>Parallel run. Your person does one normal week by hand, the system does the same week, and we compare line by line before you rely on it.</p></details>
@@ -335,8 +366,8 @@
 
 <section class="cta-band">
   <div class="section-inner">
-    <h2 class="section-title">Start with the call.</h2>
-    <p class="section-subtitle">Thirty minutes, free, nothing to prepare. Walk me through how a session becomes a paid claim and I will tell you where I would look first. If you are not a fit, I will say so on that call.</p>
+    <h2 class="section-title">Bring one completed month.</h2>
+    <p class="section-subtitle">Thirty minutes, free. Walk me through how a session becomes a paid claim at one facility, and I will tell you where I would look first. If you are not a fit, I will say so on that call. And if the audit finds nothing much, you keep the SOP and we build nothing.</p>
     <div class="hero-buttons">
       <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener" class="hero-cta">Book a free call</a>
     </div>
@@ -350,8 +381,7 @@
     <div class="footer-cols">
       <div><h3>Behavioral health</h3><a href="/behavioral-health">Overview</a><a href="/the-ten-second-run">Case study</a><a href="/five-leaks">The Five Leaks</a><a href="/leak-checklist">Leak checklist</a></div>
       <div><h3>Company</h3><a href="/">Home</a><a href="/about">About Sunny</a><a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener">Book a call</a></div>
-      <div><h3>For coaches</h3><a href="/coach-platform">Coach Assistant</a><a href="https://app.elevateaisystem.com">Open the app</a></div>
-      <div><h3>Contact</h3><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></div>
+            <div><h3>Contact</h3><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></div>
     </div>
     <div class="footer-bot">
       <span>© 2026 Elevate AI Systems. Built by Sunny Binjola.</span>
@@ -360,6 +390,7 @@
   </div>
 </footer>
 
+<script src="/assets/estimator.js" defer></script>
 <script src="/assets/reveal.js" defer></script>
 <script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
 </body>
