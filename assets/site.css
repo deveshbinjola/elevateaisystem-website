@@ -565,6 +565,26 @@ td b{color:var(--navy)}
 .heat-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:1rem;font-size:.74rem;color:var(--text-muted)}
 .heat-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:.4rem;vertical-align:-1px}
 
+/* ---------- The five leaks, each anchored by its cell from the week grid.
+   The list doubles as the legend for the boards below it. ---------- */
+.leaks5{margin-top:2.2rem;display:flex;flex-direction:column}
+.lk{display:grid;grid-template-columns:84px 240px 1fr;gap:1.2rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+.lk:first-child{border-top:1px solid var(--border)}
+.lk-cell{display:flex;align-items:center;justify-content:center;width:84px;height:46px;border-radius:9px;font-weight:800;font-size:.82rem}
+.lk b{font-size:.97rem;color:var(--navy);font-weight:700;line-height:1.3}
+.lk b i{font-style:normal;font-size:.72rem;color:var(--text-faint);font-weight:800;margin-right:.4rem}
+.lk p{font-size:.92rem;color:var(--text-muted);line-height:1.55;margin:0}
+.lk-note{font-size:.78rem;color:var(--text-faint);margin-top:.8rem}
+.lk-callout{margin-top:1.4rem;background:rgba(193,40,43,.05);border:1px solid rgba(193,40,43,.35);border-radius:12px;padding:1.1rem 1.3rem}
+.lk-callout b.h{display:block;color:var(--danger);font-size:.95rem;margin-bottom:.35rem}
+.lk-callout p{font-size:.93rem;color:var(--text-muted);line-height:1.6;margin:0}
+.lk-callout p b{color:var(--danger)}
+@media(max-width:700px){
+  .lk{grid-template-columns:64px 1fr;row-gap:.35rem}
+  .lk-cell{width:64px;height:40px;font-size:.74rem}
+  .lk p{grid-column:1/-1}
+}
+
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
 .striprow{display:grid;grid-template-columns:215px 1fr;gap:1.3rem;padding:.95rem 0;border-bottom:1px solid var(--border);align-items:baseline}
