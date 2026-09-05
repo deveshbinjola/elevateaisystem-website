@@ -65,6 +65,21 @@
   --text-on-dark:        #F5F5F0;
   --text-on-dark-muted:  #C8C8D4;   /* light by design; never use on paper */
 
+  /* ---------- Ops-board traffic lights (behavioral-health path) ----------
+     Named by meaning. Every heat cell carries a number or code; these
+     colors annotate, they never replace the value. */
+  --heat-over:     #0B6E23;   /* >=105% of break-even */
+  --heat-ok:       #2E8C40;   /* 100-104 */
+  --heat-warn:     #D4A830;   /* 95-99 accent (text uses a darker step) */
+  --heat-low:      #CC6228;   /* 90-94 accent */
+  --heat-under:    #C1282B;   /* <90, and after-discharge */
+  --heat-full-bg:  #D6E8D6;   /* full-day / at-or-over cell */
+  --heat-under-bg: #F4E8C4;   /* short-day / warn cell */
+  --heat-empty:    #E8E6DE;   /* never entered */
+  --heat-dc:       #C1282B;   /* service after discharge */
+  --heat-loc:      #8C40B4;   /* level of care vs authorization */
+  --heat-nonote:   #B45028;   /* billed, no signed note */
+
   /* ---------- Radii ---------- */
   --radius:        12px;
   --radius-lg:     20px;

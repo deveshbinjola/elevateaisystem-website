@@ -147,107 +147,73 @@
     <p class="section-subtitle reveal">If your billing person leaves. A step-up the authorization never followed. One site running under break-even while the ads stay hot. Two screens catch them: one for the person fixing it, one for the person funding it.</p>
     <p class="section-subtitle reveal" style="font-size:.85rem;color:var(--text-faint)">Shown with invented numbers. Nothing below is a real client, and no patient data appears anywhere on this site.</p>
 
-    <div class="dash-grid">
-
-      <div class="dash reveal">
-        <div class="dash-head">
-          <div>
-            <p class="dash-title">Monday worklist</p>
-            <p class="dash-sub">For the billing lead. Before claims go out.</p>
-          </div>
-          <span class="dash-badge">Sample data</span>
-        </div>
-        <div class="dash-kpis">
-          <div class="dash-kpi"><b>18</b><span>Flags to review</span></div>
-          <div class="dash-kpi"><b>943</b><span>Client-days scanned</span></div>
-          <div class="dash-kpi"><b>9s</b><span>Run time</span></div>
-        </div>
-        <div class="dash-rows">
-          <div class="drow sev-hi">
-            <div>
-              <p class="t">Service after discharge</p>
-              <p class="m">MR-5502 · Site D · discharged the 2nd, services posted the 4th and 5th</p>
-            </div>
-            <span class="amt">Hold<small>Clawback risk</small></span>
-          </div>
-          <div class="drow sev-hi">
-            <div>
-              <p class="t">Billed above documentation</p>
-              <p class="m">MR-3871 · Site B · IOP 3 hr on the census, no signed note in the chart</p>
-            </div>
-            <span class="amt">Hold<small>Fix or pull</small></span>
-          </div>
-          <div class="drow sev-md">
-            <div>
-              <p class="t">Under threshold</p>
-              <p class="m">MR-4417 · Site C · IOP 2.0 hrs, below the 3 hr line</p>
-            </div>
-            <span class="amt">~$360<small>Est. exposure</small></span>
-          </div>
-          <div class="drow sev-md">
-            <div>
-              <p class="t">Level-of-care conflict</p>
-              <p class="m">MR-2298 · Site A · stepped up to PHP, authorization covers IOP only</p>
-            </div>
-            <span class="amt">Re-auth<small>Before billing</small></span>
-          </div>
-          <div class="drow">
-            <div>
-              <p class="t">Unbilled attendance</p>
-              <p class="m">MR-6130 · Site B · attended and documented, never entered</p>
-            </div>
-            <span class="amt">Add<small>Full rate</small></span>
-          </div>
-        </div>
-        <p class="dash-note">Every flag is a <b>candidate for review, not a verdict</b>. A short session can be perfectly legitimate. The list exists so one person sees all of it at once, in the same week.</p>
+    <div class="board">
+      <div class="board-head">
+        <div><p class="board-title">Two boards. One week. No essay.</p><p class="board-sub">What you see on Monday, before claims go out.</p></div>
+        <span class="board-badge">Sample data</span>
       </div>
-
-      <div class="dash reveal">
-        <div class="dash-head">
-          <div>
-            <p class="dash-title">Executive summary</p>
-            <p class="dash-sub">For ownership. No patient data, ever.</p>
-          </div>
-          <span class="dash-badge">Sample data</span>
+      <div class="board-split">
+        <div>
+          <p class="board-col-label"><b>Owner</b> &middot; census vs break-even</p>
+          <p class="heat-weekhint">Week 1 to this week, left to right</p>
+          <table class="heat">
+            <caption class="board-sub" style="text-align:left;margin-bottom:.5rem">Census against break-even, by site and week</caption>
+            <thead><tr><th></th><th scope="col">Week 1</th><th scope="col">Week 2</th><th scope="col">Week 3</th><th scope="col">This week</th></tr></thead>
+            <tbody>
+          <tr><th scope="row" aria-label="Site A">A</th><td class="h-over">108</td><td class="h-over">111</td><td class="h-over">114</td><td class="h-over">112</td></tr>
+          <tr><th scope="row" aria-label="Site B">B</th><td class="h-ok">101</td><td class="h-over">106</td><td class="h-ok">103</td><td class="h-ok">104</td></tr>
+          <tr><th scope="row" aria-label="Site C">C</th><td class="h-warn">99</td><td class="h-warn">96</td><td class="h-warn">98</td><td class="h-warn">97</td></tr>
+          <tr><th scope="row" aria-label="Site D">D</th><td class="h-low">94</td><td class="h-low">91</td><td class="h-under">89</td><td class="h-under">88</td></tr>
+            </tbody>
+          </table>
+          <p class="board-cap"><b>Site D has been under for four straight weeks.</b> Ads are still running. This is the owner screen. No names. Travels to a phone.</p>
         </div>
-        <div class="dash-kpis">
-          <div class="dash-kpi"><b>4</b><span>Facilities</span></div>
-          <div class="dash-kpi"><b>100%</b><span>Census vs break-even</span></div>
-          <div class="dash-kpi"><b>&lt;24h</b><span>Data age</span></div>
+        <div>
+          <p class="board-col-label"><b>Ops</b> &middot; flags before claims go out</p>
+          <ul class="tickets">
+            <li class="ticket t-dc"><span class="chip hold">HOLD</span><div><p class="t">Service after discharge</p><p class="m">MR-5502 &middot; Site D &middot; clawback risk</p></div></li>
+            <li class="ticket t-note"><span class="chip hold-note">HOLD</span><div><p class="t">Billed, no signed note</p><p class="m">MR-3871 &middot; Site B &middot; IOP 3h on the census</p></div></li>
+            <li class="ticket t-thresh"><span class="chip amt">~$360</span><div><p class="t">Under threshold, third time</p><p class="m">MR-4417 &middot; Site C &middot; 2.0h</p></div></li>
+            <li class="ticket t-loc"><span class="chip reauth">RE-AUTH</span><div><p class="t">Stepped to PHP, auth is IOP</p><p class="m">MR-2298 &middot; Site A</p></div></li>
+            <li class="ticket t-add"><span class="chip add">ADD</span><div><p class="t">Attended, never entered</p><p class="m">MR-6130 &middot; Site B &middot; full rate</p></div></li>
+          </ul>
         </div>
-        <p class="dash-sub" style="margin-bottom:.9rem">Census strength against break-even, month to date</p>
-        <div class="bar-row"><span class="lab">Site A</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">112%</span></div>
-        <div class="bar-row"><span class="lab">Site B</span><span class="bar-track"><span class="bar-fill" style="width:93%"></span></span><span class="val">104%</span></div>
-        <div class="bar-row"><span class="lab">Site C</span><span class="bar-track"><span class="bar-fill warn" style="width:87%"></span></span><span class="val">97%</span></div>
-        <div class="bar-row"><span class="lab">Site D</span><span class="bar-track"><span class="bar-fill bad" style="width:79%"></span></span><span class="val">88%</span></div>
-
-        <p class="dash-sub" style="margin:1.3rem 0 .4rem">Network census trend, with projection to month end</p>
-        <svg viewBox="0 0 320 84" width="100%" height="84" role="img" aria-label="Sample census trend with a dashed projection to month end">
-          <line x1="0" y1="42" x2="320" y2="42" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="3 4"/>
-          <polyline points="6,58 58,50 110,54 162,38 214,30" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="214,30 266,26 314,22" fill="none" stroke="#00FF41" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" opacity=".55"/>
-          <circle cx="214" cy="30" r="4" fill="#00FF41"/>
-          <text x="6" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Wk 1</text>
-          <text x="196" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Today</text>
-          <text x="276" y="78" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Proj.</text>
-        </svg>
-        <p class="dash-note"><b>Site D has run under break-even for three straight weeks.</b> At this trend it closes the month nine percent short. All aggregate, so it travels to a phone without a single patient name.</p>
+      </div>
+      <div class="board-foot">
+        <div class="bf-stats"><span>18 flags</span><span>943 client-days</span><span>9 seconds</span><span>a person still approves every line</span></div>
+        <p class="bf-sub"><b>Heat tells you where to look. The list tells you what to do.</b> Neither is a verdict.</p>
       </div>
     </div>
 
-    <div class="dash dash-full reveal">
-      <div class="dash-head">
-        <div>
-          <p class="dash-title">Patterns you cannot see one week at a time</p>
-          <p class="dash-sub">Repeat under-threshold attendance this month, by client reference</p>
-        </div>
-        <span class="dash-badge">Sample data</span>
+    <div class="board">
+      <div class="board-head">
+        <div><p class="board-title">This week&rsquo;s attendance</p><p class="board-sub">Each cell is a client-day. Full IOP is 3 hours, full PHP is 5. Empty is unbilled. You read the week in one look.</p></div>
+        <span class="board-badge">Sample &middot; client references only</span>
       </div>
-      <div class="bar-row"><span class="lab">MR-4417</span><span class="bar-track"><span class="bar-fill bad" style="width:100%"></span></span><span class="val">6 days</span></div>
-      <div class="bar-row"><span class="lab">MR-2298</span><span class="bar-track"><span class="bar-fill warn" style="width:67%"></span></span><span class="val">4 days</span></div>
-      <div class="bar-row"><span class="lab">MR-7741</span><span class="bar-track"><span class="bar-fill warn" style="width:50%"></span></span><span class="val">3 days</span></div>
-      <div class="bar-row"><span class="lab">MR-5093</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="val">2 days</span></div>
-      <p class="dash-note">Any single short day looks like nothing. <b>Six from one client in four weeks is not a billing problem, it is an engagement conversation</b> for the site director. Nobody catches that reading one week at a time, which is exactly why nobody was catching it.</p>
+      <div class="weekwrap">
+        <table class="weekgrid">
+          <thead><tr><th></th><th scope="col">Mon 8</th><th scope="col">Tue 9</th><th scope="col">Wed 10</th><th scope="col">Thu 11</th><th scope="col">Fri 12</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">MR-4417 <small>&middot; Site C · IOP</small></th><td class="wg-full">3.0h</td><td class="wg-under">2.0h</td><td class="wg-under">1.5h</td><td class="wg-under">2.0h</td><td class="wg-full">3.0h</td></tr>
+          <tr><th scope="row">MR-2298 <small>&middot; Site A · PHP</small></th><td class="wg-full">5.5h</td><td class="wg-full">5.0h</td><td class="wg-loc">LOC</td><td class="wg-under">3.0h</td><td class="wg-full">5.0h</td></tr>
+          <tr><th scope="row">MR-7741 <small>&middot; Site B · IOP</small></th><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-empty">&mdash;</td><td class="wg-under">2.0h</td><td class="wg-full">3.0h</td></tr>
+          <tr><th scope="row">MR-5093 <small>&middot; Site B · IOP</small></th><td class="wg-full">3.5h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td></tr>
+          <tr><th scope="row">MR-5502 <small>&middot; Site D · IOP</small></th><td class="wg-dc">DC</td><td class="wg-dc">DC</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-empty">&mdash;</td></tr>
+          <tr><th scope="row">MR-3871 <small>&middot; Site B · IOP</small></th><td class="wg-full">3.0h</td><td class="wg-nonote">NO NOTE</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td></tr>
+          <tr><th scope="row">MR-6130 <small>&middot; Site B · IOP</small></th><td class="wg-empty">&mdash;</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-empty">&mdash;</td><td class="wg-full">3.0h</td></tr>
+          <tr><th scope="row">MR-8022 <small>&middot; Site A · IOP</small></th><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td><td class="wg-full">3.0h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="heat-legend">
+        <span><i style="background:var(--heat-full-bg)"></i>Full day</span>
+        <span><i style="background:var(--heat-under-bg)"></i>Under 3h / 5h</span>
+        <span><i style="background:var(--heat-empty)"></i>Never entered</span>
+        <span><i style="background:var(--heat-dc)"></i>After discharge</span>
+        <span><i style="background:var(--heat-loc)"></i>LOC vs auth</span>
+        <span><i style="background:var(--heat-nonote)"></i>No signed note</span>
+      </div>
+      <p class="board-cap">Every colour has a number or a code in it. Colour without a number is decoration.</p>
     </div>
 
     <div class="fitline reveal">
@@ -390,7 +356,7 @@
   <div class="footer-in">
     <div class="footer-cols">
       <div><h3>Behavioral health</h3><a href="/behavioral-health">Overview</a><a href="/the-ten-second-run">Case study</a><a href="/five-leaks">The Five Leaks</a><a href="/leak-checklist">Leak checklist</a></div>
-      <div><h3>Company</h3><a href="/">Home</a><a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener">Book a call</a></div>
+      <div><h3>Company</h3><a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=behavioral-health" target="_blank" rel="noopener">Book a call</a></div>
             <div><h3>Contact</h3><a href="mailto:sunny.binjola@gmail.com">sunny.binjola@gmail.com</a></div>
     </div>
     <div class="footer-bot">

@@ -490,6 +490,81 @@ td b{color:var(--navy)}
 .who p b{color:var(--navy)}
 @media(max-width:560px){.who{flex-direction:column;text-align:center;padding:1.4rem}.who img{width:104px;height:104px}}
 
+/* ---------- Ops boards: paper heatmaps for the behavioral-health path ----
+   Ink on paper, traffic-light cells, a number or code in every cell.
+   Real tables, so the markup is its own text alternative. No motion. */
+.board{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:1.5rem 1.6rem;margin-top:2rem}
+.board-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.1rem}
+.board-title{font-weight:800;font-size:1.02rem;color:var(--navy);letter-spacing:-.01em}
+.board-sub{font-size:.78rem;color:var(--text-muted);margin-top:.15rem}
+.board-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;padding:.3rem .6rem;border-radius:99px;background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border);white-space:nowrap;flex-shrink:0}
+.board-split{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;align-items:start}
+@media(max-width:860px){.board-split{grid-template-columns:1fr}}
+.board-cap{font-size:.83rem;color:var(--text-muted);line-height:1.55;margin-top:.9rem}
+.board-cap b{color:var(--navy)}
+.board-col-label{font-size:.78rem;font-weight:800;color:var(--text-muted);margin-bottom:.8rem}
+.board-col-label b{color:var(--navy)}
+.board-foot{margin-top:1.3rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;padding:.85rem 1.1rem;font-size:.85rem;color:var(--navy)}
+.board-foot .bf-stats{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-weight:800}
+.board-foot .bf-stats span b{font-weight:800}
+.board-foot .bf-sub{font-size:.78rem;color:var(--text-muted);font-weight:400;margin-top:.25rem}
+.board-foot .bf-sub b{color:var(--navy);font-weight:700}
+
+/* Owner heatmap: sites x weeks, percentage in every cell */
+.heat{width:100%;border-collapse:separate;border-spacing:4px}
+.heat th{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);padding:.3rem .4rem;text-align:center}
+.heat th[scope=row]{text-align:left;color:var(--navy);white-space:nowrap}
+.heat td{text-align:center;font-weight:800;font-size:.92rem;padding:.7rem .4rem;border-radius:8px;min-width:56px}
+.heat td.h-over{background:var(--heat-over);color:#fff}
+.heat td.h-ok{background:var(--heat-ok);color:#fff}
+.heat td.h-warn{background:var(--heat-warn);color:var(--navy)}
+.heat td.h-low{background:var(--heat-low);color:#fff}
+.heat td.h-under{background:var(--heat-under);color:#fff}
+/* Below 700px the owner heatmap stacks: each site becomes a row of four
+   week chips, per the board spec. The table semantics stay intact. */
+@media(max-width:700px){
+  .heat thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .heat,.heat tbody,.heat tr,.heat caption{display:block;width:100%}
+  .heat tr{margin-bottom:.75rem}
+  .heat th[scope=row]{display:block;padding:.15rem 0 .3rem;text-align:left}
+  .heat td{display:inline-block;width:calc(25% - 5px);min-width:0;margin-right:3px;font-size:.84rem;padding:.55rem .2rem}
+  .heat-weekhint{display:block}
+}
+.heat-weekhint{display:none;font-size:.7rem;color:var(--text-faint);margin-bottom:.5rem}
+
+/* Ops tickets: verb chip first, then the line */
+.tickets{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:0}
+.ticket{display:grid;grid-template-columns:86px 1fr;gap:.9rem;align-items:center;border-radius:12px;padding:.8rem .9rem}
+.ticket.t-dc{background:rgba(193,40,43,.10)}
+.ticket.t-note{background:rgba(180,80,40,.12)}
+.ticket.t-thresh{background:var(--heat-under-bg)}
+.ticket.t-loc{background:rgba(140,64,180,.10)}
+.ticket.t-add{background:var(--heat-full-bg)}
+.ticket .chip{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-align:center;padding:.4rem .3rem;border-radius:7px;color:#fff}
+.ticket .chip.hold{background:var(--heat-under)}
+.ticket .chip.hold-note{background:var(--heat-nonote)}
+.ticket .chip.amt{background:#a67f14}
+.ticket .chip.reauth{background:var(--heat-loc)}
+.ticket .chip.add{background:var(--heat-over)}
+.ticket .t{font-size:.86rem;font-weight:700;color:var(--navy);line-height:1.3}
+.ticket .m{font-size:.74rem;color:var(--text-muted);margin-top:.1rem;line-height:1.4}
+
+/* Week grid: client-days, one coded cell each */
+.weekwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.weekgrid{border-collapse:separate;border-spacing:4px;min-width:640px;width:100%}
+.weekgrid th{font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);padding:.3rem .4rem;text-align:center}
+.weekgrid th[scope=row]{text-align:left;color:var(--navy);font-size:.76rem;white-space:nowrap;position:sticky;left:0;background:var(--card-bg);z-index:1}
+.weekgrid th[scope=row] small{font-weight:600;color:var(--text-muted);font-size:.7rem;letter-spacing:0;text-transform:none}
+.weekgrid td{text-align:center;font-weight:800;font-size:.8rem;padding:.6rem .35rem;border-radius:8px;min-width:62px}
+.wg-full{background:var(--heat-full-bg);color:var(--heat-over)}
+.wg-under{background:var(--heat-under-bg);color:#7c5c10}
+.wg-empty{background:var(--heat-empty);color:var(--text-faint)}
+.wg-dc{background:var(--heat-dc);color:#fff}
+.wg-loc{background:var(--heat-loc);color:#fff}
+.wg-nonote{background:var(--heat-nonote);color:#fff;font-size:.64rem;letter-spacing:.02em}
+.heat-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:1rem;font-size:.74rem;color:var(--text-muted)}
+.heat-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:.4rem;vertical-align:-1px}
+
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
 .striprow{display:grid;grid-template-columns:215px 1fr;gap:1.3rem;padding:.95rem 0;border-bottom:1px solid var(--border);align-items:baseline}
