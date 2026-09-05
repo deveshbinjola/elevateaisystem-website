@@ -483,6 +483,13 @@ td b{color:var(--navy)}
 .quote-strip figcaption b{display:block;font-size:.9rem;color:var(--navy)}
 .qs-avatar{width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--green);font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
+/* ---------- Who does the work: face + one paragraph, no chips ---------- */
+.who{display:flex;gap:1.6rem;align-items:center;max-width:760px;margin:0 auto;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.6rem 1.8rem}
+.who img{width:120px;height:120px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.who p{font-size:.97rem;color:var(--text-muted);line-height:1.65;margin:0}
+.who p b{color:var(--navy)}
+@media(max-width:560px){.who{flex-direction:column;text-align:center;padding:1.4rem}.who img{width:104px;height:104px}}
+
 /* ---------- Compact strip list (replaces card grids where cards were overkill) ---------- */
 .striplist{margin-top:2rem;border-top:1px solid var(--border)}
 .striprow{display:grid;grid-template-columns:215px 1fr;gap:1.3rem;padding:.95rem 0;border-bottom:1px solid var(--border);align-items:baseline}
