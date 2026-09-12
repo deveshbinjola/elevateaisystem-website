@@ -36,6 +36,12 @@
 .brief-row .t{font-size:.9rem;font-weight:700;color:var(--navy)}
 .brief-row .m{font-size:.78rem;color:var(--text-muted);margin-top:.1rem}
 .brief-row .when{font-size:.72rem;font-weight:700;color:var(--text-faint);white-space:nowrap}
+/* Founder strip, coaches edition: the photo leads, face centered. */
+.who.who-big{max-width:820px;align-items:flex-start;gap:1.8rem;padding:1.8rem}
+.who.who-big img{width:230px;height:280px;border-radius:14px;object-fit:cover;object-position:50% 22%}
+@media(max-width:560px){.who.who-big img{width:170px;height:200px}}
+/* The machine's verb rotates: chases, administers, operates, closes. */
+.mword{display:inline-block;background:var(--green);color:var(--navy);padding:.02em .18em}
 </style>
 <script>window.addEventListener('load',function(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions&&window.trackingFunctions.onLoad({appId:"69af333ec98ca400116945f0"})},document.head.appendChild(o)});</script>
 </head>
@@ -75,7 +81,7 @@
   <div class="section-inner">
     <p class="section-label reveal">First, the map</p>
     <h2 class="section-title reveal wide">We pull the practice out of your head.</h2>
-    <p class="ob-lede reveal">Most of the business still lives as a workflow only you can run. We write down the offerings, the path from stranger to alumni, where a lead or a payment dies, and the five things that actually need you. <b>Then we take the rest.</b></p>
+    <p class="ob-lede reveal">Most of the business still lives as a workflow only you can run, in your head. We listen, we watch how you actually work, and we write it down as a real process. We map the offerings and the path from stranger to alumni, so you can see where the revenue actually comes from, where the clients come from, and what is worth doubling down on. <b>Then we take the rest.</b></p>
 
     <div class="ob-flow path-flow reveal" role="img" aria-label="The path a person takes through a coaching practice: stranger, lead, first session, enrolled, alumni.">
       <div class="ob-f"><small>01</small><b>Stranger</b><span>Finds you in search, a feed, or a friend.</span></div>
@@ -91,32 +97,42 @@
 
     <div class="ob-split" style="margin-top:2.4rem">
       <div class="ob-story reveal">
-        <p>Every offering gets treated as real: 1:1, drop-in, membership, cohort, retreat, waitlist. Each one wired to the same map, so a person can move between them without falling through the crack in the middle.</p>
-        <p><b>The map decides the build.</b> Nothing is guessed, and nothing is built twice.</p>
+        <p>Every offering gets treated as real: 1:1, drop-in, membership, cohort, retreat, waitlist. Each one becomes a written SOP, so the day you hire someone, they can run it without you. <b>The practice starts running as a business instead of a memory.</b></p>
+        <p>Along the way we find the bottlenecks, and we either fix them or hand you the fix. The map decides the build. Nothing is guessed, and nothing is built twice.</p>
       </div>
       <div class="ob-who reveal">
         <h3>What we write down</h3>
         <ul>
           <li>Workflows that still live in your head</li>
-          <li>What only you should keep doing</li>
+          <li>Where the revenue actually comes from, offer by offer</li>
+          <li>Where your leads and clients actually come from</li>
+          <li>What is working, what to enhance, what to drop</li>
           <li>Where a lead or a payment dies today</li>
-          <li>The onboarding for each offering</li>
-          <li>One strategy: site, offers, ops, search on one map</li>
+          <li>The SOP a future hire could run</li>
         </ul>
       </div>
+    </div>
+
+    <div class="ob-who reveal" style="margin-top:1.4rem;border-color:rgba(0,255,65,.35)">
+      <h3>And every week, you and me</h3>
+      <ul>
+        <li>Every engagement includes a weekly one-on-one with me</li>
+        <li>We work the build, and we work whatever life is throwing at you</li>
+        <li>Embodiment first, in the systems and in the sessions. Body first, always.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="section" id="work">
   <div class="section-inner">
-    <h2 class="section-title reveal wide">Then we build the machine that chases.</h2>
-    <p class="section-subtitle reveal">The money, the paperwork, and the follow-up stop depending on your memory. You do not become a part-time funnel tech.</p>
+    <h2 class="section-title reveal wide">Then we build the machine that <span style="white-space:nowrap"><span class="mword" id="machineWord">chases</span>.</span></h2>
+    <p class="section-subtitle reveal">The money, the paperwork, the follow-up, the client notes. None of it depends on your memory anymore. <b>You just coach. We take the rest of the ops.</b></p>
 
     <div class="checks reveal">
-      <div class="check">
+      <div class="check first">
         <div class="ck-head"><span class="ck-n">01</span><h3>Money that chases itself</h3></div>
-        <p><b>Built</b> Deposits, payment plans, and the follow-up on every unpaid invoice.</p>
+        <p><b>Built</b> Deposits, payment plans, the follow-up on every unpaid invoice, and the backend that sends it. Clients keep coming in, and the money is managed cleanly.</p>
         <p class="see"><b>You see</b> Who paid, who is on a plan, who the machine is chasing this week.</p>
       </div>
       <div class="check">
@@ -126,7 +142,7 @@
       </div>
       <div class="check">
         <div class="ck-head"><span class="ck-n">03</span><h3>A site that holds the offers</h3></div>
-        <p><b>Built</b> Design or redesign, with every offering wired through one path.</p>
+        <p><b>Built</b> A new site or a redesign, every offering wired through one path, and a landing page for every new container you launch.</p>
         <p class="see"><b>You see</b> One site, not seven tabs held together by memory.</p>
       </div>
       <div class="check">
@@ -135,12 +151,17 @@
         <p class="see"><b>You see</b> Calls logged, sessions booked, nothing dying in voicemail.</p>
       </div>
       <div class="check">
-        <div class="ck-head"><span class="ck-n">05</span><h3>Content, shipped</h3></div>
-        <p><b>Built</b> We help you make it in your voice. Drafts arrive, you approve, it ships.</p>
+        <div class="ck-head"><span class="ck-n">05</span><h3>Client notes and memory</h3></div>
+        <p><b>Built</b> Session notes captured, clients managed, nothing riding on what you remember at 9pm.</p>
+        <p class="see"><b>You see</b> Every client's thread in one place before you walk into the session.</p>
+      </div>
+      <div class="check">
+        <div class="ck-head"><span class="ck-n">06</span><h3>Content, shipped</h3></div>
+        <p><b>Built</b> Content that shapes the answers and the conversations people find you in. Drafts in your voice, you approve, it ships.</p>
         <p class="see"><b>You see</b> A draft in the queue, not a blank page at 9pm.</p>
       </div>
       <div class="check">
-        <div class="ck-head"><span class="ck-n">06</span><h3>Tracking that answers questions</h3></div>
+        <div class="ck-head"><span class="ck-n">07</span><h3>Tracking that answers questions</h3></div>
         <p><b>Built</b> What a visitor did, which page, which offer, before they wrote to you.</p>
         <p class="see"><b>You see</b> Context on every lead instead of a cold name.</p>
       </div>
@@ -157,7 +178,7 @@
   <div class="section-inner">
     <p class="section-label reveal">What you touch</p>
     <h2 class="section-title reveal wide">Two moments a day. That is the product.</h2>
-    <p class="section-subtitle reveal">The thing you actually use is <a href="/coach-platform"><b>Coach Assistant</b></a>. Everything on this page runs underneath it. Shown with sample data.</p>
+    <p class="section-subtitle reveal">This is what your mornings look like when the machine runs on <a href="/coach-platform"><b>Coach Assistant</b></a>, our product. Everything on this page runs underneath it. Shown with sample data.</p>
 
     <div class="board-split" style="margin-top:2.2rem">
       <div class="board reveal" style="margin-top:0">
@@ -220,9 +241,12 @@
 
 <section class="section alt">
   <div class="section-inner">
-    <figure class="who reveal">
-      <img src="/sunny-560.jpg" alt="Sunny Binjola" width="120" height="120" loading="lazy">
-      <p><b>Sunny Binjola.</b> A decade as a software engineer, and a men&rsquo;s embodiment coach myself. I have sat on both sides of this: the practice that runs on love, and the spreadsheet that quietly eats it. The person building your system is the person on your calls.</p>
+    <figure class="who who-big reveal">
+      <img src="/sunny-560.jpg" alt="Sunny Binjola" width="230" height="280" loading="lazy">
+      <div>
+        <p><b>Sunny Binjola.</b> A decade as a software engineer. I build the machine, and the person building your system is the person on your calls.</p>
+        <p style="margin-top:.9rem">And I am a men&rsquo;s embodiment coach myself. I have sat on both sides of this: the practice that runs on love, and the spreadsheet that quietly eats it. That is why the work is body first, even the ops.</p>
+      </div>
     </figure>
 
     <div class="fitline reveal" style="margin-top:1.6rem">
@@ -234,11 +258,11 @@
 
 <section class="cta-band">
   <div class="section-inner">
-    <h2 class="section-title">See it before you talk to me.</h2>
-    <p class="section-subtitle">Coach Assistant is the product you would touch every day. It is free for your first 500 leads, so the honest next step is to go look at it. When you want the whole machine underneath it, that is the call. A build, then a monthly, quoted flat on that call. If the map shows you do not need the build, I will say so.</p>
+    <h2 class="section-title">Bring the practice. Leave with the map.</h2>
+    <p class="section-subtitle">A free call. Walk me through how the practice runs today and I will tell you what I would build first, and what should stay exactly as it is. A build, then a monthly, quoted flat on that call. If the map shows you do not need the build, I will say so.</p>
     <div class="hero-buttons">
-      <a href="/coach-platform" class="hero-cta">See Coach Assistant</a>
-      <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=coaches" target="_blank" rel="noopener" class="hero-cta-secondary">Book a free call</a>
+      <a href="https://cal.com/sunny-binjola/discovery-call?utm_source=website&utm_campaign=coaches" target="_blank" rel="noopener" class="hero-cta">Book a free call</a>
+      <a href="/coach-platform" class="hero-cta-secondary">See Coach Assistant first</a>
     </div>
   </div>
 </section>
@@ -259,5 +283,15 @@
 </footer>
 
 <script src="/assets/reveal.js" defer></script>
+<script>
+(function(){
+  var el=document.getElementById('machineWord');
+  if(!el||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var words=['chases','administers','operates','closes'],i=0;
+  setInterval(function(){i=(i+1)%words.length;el.style.opacity='0';
+    setTimeout(function(){el.textContent=words[i];el.style.opacity='1';},220);},2600);
+  el.style.transition='opacity .22s ease';
+})();
+</script>
 </body>
 </html>
